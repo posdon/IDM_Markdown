@@ -1,11 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/Markdown/src-gen" creationIcons="false" editDirectory="/Markdown.edit/src-gen"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/Markdown/src-gen" creationIcons="false" editDirectory="/Markdown.edit/src-gen"
     editorDirectory="/Markdown.editor/src-gen" modelPluginID="Markdown" modelName="Markdown"
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
     operationReflection="true" importOrganizing="true">
   <foreignModel>markdown.ecore</foreignModel>
   <testsDirectory xsi:nil="true"/>
-  <genPackages prefix="Markdown" disposableProviderFactory="true" ecorePackage="markdown.ecore#/"/>
+  <genPackages prefix="Markdown" disposableProviderFactory="true" ecorePackage="markdown.ecore#/">
+    <genClasses ecoreClass="markdown.ecore#//FileText">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference markdown.ecore#//FileText/outtextbalise"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference markdown.ecore#//FileText/markdownText"/>
+    </genClasses>
+    <genClasses ecoreClass="markdown.ecore#//OutTextBalise"/>
+    <genClasses ecoreClass="markdown.ecore#//Headers">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference markdown.ecore#//Headers/content"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute markdown.ecore#//Headers/level"/>
+    </genClasses>
+    <genClasses ecoreClass="markdown.ecore#//Lists"/>
+    <genClasses ecoreClass="markdown.ecore#//CodeHighlighting">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute markdown.ecore#//CodeHighlighting/language"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute markdown.ecore#//CodeHighlighting/code"/>
+    </genClasses>
+    <genClasses ecoreClass="markdown.ecore#//Images">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute markdown.ecore#//Images/text"/>
+    </genClasses>
+    <genClasses ecoreClass="markdown.ecore#//Links"/>
+    <genClasses ecoreClass="markdown.ecore#//Emphasis">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference markdown.ecore#//Emphasis/content"/>
+    </genClasses>
+    <genClasses ecoreClass="markdown.ecore#//Table">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference markdown.ecore#//Table/columns"/>
+    </genClasses>
+    <genClasses ecoreClass="markdown.ecore#//InlineHTML">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute markdown.ecore#//InlineHTML/codeHTML"/>
+    </genClasses>
+    <genClasses ecoreClass="markdown.ecore#//BlockQuotes">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference markdown.ecore#//BlockQuotes/content"/>
+    </genClasses>
+    <genClasses ecoreClass="markdown.ecore#//HorizontalRule"/>
+    <genClasses ecoreClass="markdown.ecore#//LIneBreaks"/>
+    <genClasses ecoreClass="markdown.ecore#//VideoYoutube">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute markdown.ecore#//VideoYoutube/href"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute markdown.ecore#//VideoYoutube/img"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute markdown.ecore#//VideoYoutube/text"/>
+    </genClasses>
+    <genClasses ecoreClass="markdown.ecore#//StrongEmphasis"/>
+    <genClasses ecoreClass="markdown.ecore#//ItalicEmphasis"/>
+    <genClasses ecoreClass="markdown.ecore#//ScratchEmphasis"/>
+    <genClasses ecoreClass="markdown.ecore#//MarkdownText"/>
+    <genClasses ecoreClass="markdown.ecore#//Column">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference markdown.ecore#//Column/lines"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference markdown.ecore#//Column/header"/>
+    </genClasses>
+    <genClasses ecoreClass="markdown.ecore#//Reference"/>
+  </genPackages>
 </genmodel:GenModel>
