@@ -29,7 +29,16 @@ ListExpression : HeaderList | ContentList
 HeaderList : OneLineExpression | HeaderList | -- || OneLineExpression | --
 ContentList : OneLineExpression | ContentList || OneLineExpression
 
-OneLineExpression : String without BL
 
+```
+
+### Done grammar
+
+```
+File -> (Expression)*
+
+Expression -> HeaderExpression | TextExpression
+
+HeaderExpression -> #(1..6) TextExpression #* |  TextExpression '\n' (-|=)+
 
 ```

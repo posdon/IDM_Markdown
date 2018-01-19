@@ -1,66 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="markdown" nsURI="http://www.example.org/markdown" nsPrefix="markdown">
-  <eClassifiers xsi:type="ecore:EClass" name="FileText">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="outtextbalise" upperBound="-1"
-        eType="#//OutTextBalise" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="markdownText" upperBound="-1"
-        eType="#//MarkdownText" containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="File">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" upperBound="-1"
+        eType="#//Expression" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="OutTextBalise" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Headers" eSuperTypes="#//OutTextBalise">
+  <eClassifiers xsi:type="ecore:EClass" name="Expression" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HeaderExpression" eSuperTypes="#//Expression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" lowerBound="1"
-        eType="#//MarkdownText" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="level" ordered="false"
-        unique="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
+        eType="#//TextExpression"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="depth" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//IntObject"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Lists" eSuperTypes="#//OutTextBalise"/>
-  <eClassifiers xsi:type="ecore:EClass" name="CodeHighlighting" eSuperTypes="#//OutTextBalise">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="language" ordered="false"
-        unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" ordered="false" unique="false"
-        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Images" eSuperTypes="#//OutTextBalise">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" ordered="false" unique="false"
-        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Links" eSuperTypes="#//OutTextBalise"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Emphasis" abstract="true" eSuperTypes="#//MarkdownText">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="content" lowerBound="1"
-        upperBound="-1" eType="#//MarkdownText" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Table" eSuperTypes="#//OutTextBalise">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="columns" lowerBound="1"
-        upperBound="-1" eType="#//Column" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InlineHTML" eSuperTypes="#//OutTextBalise">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="codeHTML" ordered="false"
-        unique="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BlockQuotes" eSuperTypes="#//OutTextBalise">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="content" lowerBound="1"
-        eType="#//MarkdownText" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="HorizontalRule" eSuperTypes="#//OutTextBalise"/>
-  <eClassifiers xsi:type="ecore:EClass" name="LIneBreaks" eSuperTypes="#//OutTextBalise"/>
-  <eClassifiers xsi:type="ecore:EClass" name="VideoYoutube" eSuperTypes="#//OutTextBalise">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="href" ordered="false" unique="false"
-        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="img" ordered="false" unique="false"
-        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" ordered="false" unique="false"
-        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="StrongEmphasis" eSuperTypes="#//Emphasis"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ItalicEmphasis" eSuperTypes="#//Emphasis"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ScratchEmphasis" eSuperTypes="#//Emphasis"/>
-  <eClassifiers xsi:type="ecore:EClass" name="MarkdownText"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Column">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="lines" lowerBound="1" upperBound="-1"
-        eType="#//MarkdownText" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="header" lowerBound="1"
-        eType="#//MarkdownText"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Reference" eSuperTypes="#//OutTextBalise"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TextExpression" eSuperTypes="#//Expression"/>
 </ecore:EPackage>
