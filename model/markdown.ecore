@@ -35,4 +35,5 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="textexpression" lowerBound="1"
         eType="#//TextExpression" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LineBreakExpression" eSuperTypes="#//Expression"/>
 </ecore:EPackage>

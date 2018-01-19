@@ -37,7 +37,7 @@ ContentList : OneLineExpression | ContentList || OneLineExpression
 ```
 File -> (Expression)*
 
-Expression -> HeaderExpression | TextExpression
+Expression -> HeaderExpression | TextExpression | TableExpression | ListExpression | LineBreakExpression
 
 HeaderExpression -> #(1..6) TextExpression #* |  TextExpression '\n' (-|=)+
 
