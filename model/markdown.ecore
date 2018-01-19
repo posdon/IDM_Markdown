@@ -29,7 +29,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="TableLine">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbColumn" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//IntObject"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="content" upperBound="-1"
-        eType="#//TextExpression" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="content" lowerBound="1"
+        upperBound="-1" eType="#//TextExpression" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>
