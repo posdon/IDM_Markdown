@@ -20,16 +20,17 @@
     <genClasses ecoreClass="markdown.ecore#//TextExpression"/>
     <genClasses ecoreClass="markdown.ecore#//TableExpression">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute markdown.ecore#//TableExpression/nbColumn"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference markdown.ecore#//TableExpression/tableheader"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference markdown.ecore#//TableExpression/tablelines"/>
-    </genClasses>
-    <genClasses ecoreClass="markdown.ecore#//TableHeader">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute markdown.ecore#//TableHeader/nbColumn"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference markdown.ecore#//TableHeader/content"/>
     </genClasses>
     <genClasses ecoreClass="markdown.ecore#//TableLine">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute markdown.ecore#//TableLine/nbColumn"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference markdown.ecore#//TableLine/content"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference markdown.ecore#//TableLine/cellContent"/>
+    </genClasses>
+    <genClasses ecoreClass="markdown.ecore#//HorizontalExpression"/>
+    <genClasses ecoreClass="markdown.ecore#//ListExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute markdown.ecore#//ListExpression/startingValue"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference markdown.ecore#//ListExpression/%"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference markdown.ecore#//ListExpression/textexpression"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
