@@ -31,23 +31,3 @@ ContentList : OneLineExpression | ContentList || OneLineExpression
 
 
 ```
-
-### Done grammar
-
-```
-File -> (Expression)*
-
-Expression -> HeaderExpression | TextExpression | TableExpression | ListExpression | LineBreakExpression
-
-HeaderExpression -> #(1..6) TextExpression #* |  TextExpression '\n' (-|=)+
-
-TableExpression -> TableLine | (== |)+ TableLine*
-TableLine -> TextExpression (| TextExpression)+
-
-ListExpression -> (TextExpression)+
-
-TextExpression -> QuoteExpression | String
-
-QuoteExpression -> > TextExpression
-
-```
