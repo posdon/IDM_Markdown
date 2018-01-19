@@ -58,5 +58,9 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference markdown.ecore#//ReferenceExpression/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference markdown.ecore#//ReferenceExpression/value"/>
     </genClasses>
+    <genClasses ecoreClass="markdown.ecore#//LinkExpression">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference markdown.ecore#//LinkExpression/textbloc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute markdown.ecore#//LinkExpression/textURL"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -62,4 +62,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="name" lowerBound="1" eType="#//TextBloc"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1" eType="#//TextBloc"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LinkExpression" eSuperTypes="#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="textbloc" lowerBound="1"
+        eType="#//TextBloc"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="textURL" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+  </eClassifiers>
 </ecore:EPackage>
