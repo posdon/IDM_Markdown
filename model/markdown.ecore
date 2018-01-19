@@ -8,7 +8,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Expression" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="HeaderExpression" eSuperTypes="#//Expression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" lowerBound="1"
-        eType="#//TextExpression"/>
+        eType="#//EmphasisExpression"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="depth" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//IntObject"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TextExpression" eSuperTypes="#//Expression"/>
@@ -24,7 +24,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="cellContent" lowerBound="1"
         upperBound="-1" eType="#//TextExpression" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="HorizontalExpression" eSuperTypes="#//Expression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HorizontalExpression" eSuperTypes="#//TextExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="ListExpression" eSuperTypes="#//Expression">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="startingValue" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//IntObject"/>
@@ -36,4 +36,26 @@
         eType="#//TextExpression" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LineBreakExpression" eSuperTypes="#//Expression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EmphasisExpression" eSuperTypes="#//TextExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ItalicExpression" eSuperTypes="#//EmphasisExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="content" lowerBound="1"
+        upperBound="-1" eType="#//EmphasisExpression" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StrongExpression" eSuperTypes="#//EmphasisExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="content" lowerBound="1"
+        upperBound="-1" eType="#//EmphasisExpression" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ScratchExpression" eSuperTypes="#//EmphasisExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="content" lowerBound="1"
+        upperBound="-1" eType="#//EmphasisExpression" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TextBloc" eSuperTypes="#//EmphasisExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HTMLExpression" eSuperTypes="#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="text" lowerBound="1" eType="#//TextBloc"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CodeExpression" eSuperTypes="#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="text" eType="#//TextBloc"/>
+  </eClassifiers>
 </ecore:EPackage>

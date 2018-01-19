@@ -35,5 +35,24 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference markdown.ecore#//QuoteExpression/textexpression"/>
     </genClasses>
     <genClasses ecoreClass="markdown.ecore#//LineBreakExpression"/>
+    <genClasses ecoreClass="markdown.ecore#//EmphasisExpression"/>
+    <genClasses ecoreClass="markdown.ecore#//ItalicExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference markdown.ecore#//ItalicExpression/content"/>
+    </genClasses>
+    <genClasses ecoreClass="markdown.ecore#//StrongExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference markdown.ecore#//StrongExpression/content"/>
+    </genClasses>
+    <genClasses ecoreClass="markdown.ecore#//ScratchExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference markdown.ecore#//ScratchExpression/content"/>
+    </genClasses>
+    <genClasses ecoreClass="markdown.ecore#//TextBloc">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute markdown.ecore#//TextBloc/text"/>
+    </genClasses>
+    <genClasses ecoreClass="markdown.ecore#//HTMLExpression">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference markdown.ecore#//HTMLExpression/text"/>
+    </genClasses>
+    <genClasses ecoreClass="markdown.ecore#//CodeExpression">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference markdown.ecore#//CodeExpression/text"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>
