@@ -41,4 +41,13 @@ Expression -> HeaderExpression | TextExpression
 
 HeaderExpression -> #(1..6) TextExpression #* |  TextExpression '\n' (-|=)+
 
+TableExpression -> TableLine | (== |)+ TableLine*
+TableLine -> TextExpression (| TextExpression)+
+
+ListExpression -> (TextExpression)+
+
+TextExpression -> QuoteExpression | String
+
+QuoteExpression -> > TextExpression
+
 ```

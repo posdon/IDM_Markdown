@@ -28,7 +28,11 @@
   <eClassifiers xsi:type="ecore:EClass" name="ListExpression" eSuperTypes="#//Expression">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="startingValue" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//IntObject"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="textexpression" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="listContent" lowerBound="1"
+        upperBound="-1" eType="#//TextExpression" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="QuoteExpression" eSuperTypes="#//TextExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="textexpression" lowerBound="1"
         eType="#//TextExpression" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>
