@@ -13,3 +13,23 @@ Image : references
 MarkdownText
 list
 link
+
+## Markdown Grammar
+
+```
+
+File : ( MdExpr ) *
+
+MdExpr : ( HeaderExpr | TableExpr | ListExpr | Images | Video | References | Code | HTML | Link | Quote | HRule | LB )? | ExprWithLB
+
+
+HeaderExpr : #(1..6) ExprUnbroken #* | ExprUnbroken '\n' (-|=)+
+
+ListExpression : HeaderList | ContentList 
+HeaderList : OneLineExpression | HeaderList | -- || OneLineExpression | --
+ContentList : OneLineExpression | ContentList || OneLineExpression
+
+OneLineExpression : String without BL
+
+
+```
