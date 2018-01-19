@@ -58,4 +58,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="CodeExpression" eSuperTypes="#//Expression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="text" eType="#//TextBloc"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReferenceExpression" eSuperTypes="#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="name" lowerBound="1" eType="#//TextBloc"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1" eType="#//TextBloc"/>
+  </eClassifiers>
 </ecore:EPackage>

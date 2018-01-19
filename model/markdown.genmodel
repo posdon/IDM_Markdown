@@ -54,5 +54,9 @@
     <genClasses ecoreClass="markdown.ecore#//CodeExpression">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference markdown.ecore#//CodeExpression/text"/>
     </genClasses>
+    <genClasses ecoreClass="markdown.ecore#//ReferenceExpression">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference markdown.ecore#//ReferenceExpression/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference markdown.ecore#//ReferenceExpression/value"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>
