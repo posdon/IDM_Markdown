@@ -12,4 +12,24 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="depth" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//IntObject"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TextExpression" eSuperTypes="#//Expression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TableExpression" eSuperTypes="#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbColumn" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//IntObject"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tableheader" lowerBound="1"
+        eType="#//TableHeader" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tablelines" upperBound="-1"
+        eType="#//TableLine" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TableHeader">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbColumn" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//IntObject"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="content" lowerBound="1"
+        upperBound="-1" eType="#//TextExpression" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TableLine">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbColumn" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//IntObject"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="content" upperBound="-1"
+        eType="#//TextExpression" containment="true"/>
+  </eClassifiers>
 </ecore:EPackage>

@@ -18,5 +18,18 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute markdown.ecore#//HeaderExpression/depth"/>
     </genClasses>
     <genClasses ecoreClass="markdown.ecore#//TextExpression"/>
+    <genClasses ecoreClass="markdown.ecore#//TableExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute markdown.ecore#//TableExpression/nbColumn"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference markdown.ecore#//TableExpression/tableheader"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference markdown.ecore#//TableExpression/tablelines"/>
+    </genClasses>
+    <genClasses ecoreClass="markdown.ecore#//TableHeader">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute markdown.ecore#//TableHeader/nbColumn"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference markdown.ecore#//TableHeader/content"/>
+    </genClasses>
+    <genClasses ecoreClass="markdown.ecore#//TableLine">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute markdown.ecore#//TableLine/nbColumn"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference markdown.ecore#//TableLine/content"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>
