@@ -128,12 +128,10 @@ HeaderDepth4Expression returns markdown::HeaderDepth4Expression:
 	'####' content=[markdown::EmphasisExpression] LINE_BREAK_EXPRESSION
 	;
 
-TextualExpression returns TextualExpression:
-	'TextualExpression'
-	'{'
-		'newAttribute' newAttribute=String0
-		('followingExpression' followingExpression=[EmphasisExpression|EString])?
-	'}';
+TextualExpression returns markdown::TextualExpression hidden(LINE_BREAK_EXPRESSION):
+		newAttribute=String0
+		(followingExpression=[markdown::EmphasisExpression])?
+	;
 
 TableLine returns TableLine:
 	'TableLine'
