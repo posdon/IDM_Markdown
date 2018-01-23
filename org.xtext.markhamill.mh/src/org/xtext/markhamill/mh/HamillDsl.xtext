@@ -49,11 +49,9 @@ LineBreakExpression returns LineBreakExpression:
 	'LineBreakExpression'
 	;
 
-ItalicExpression returns ItalicExpression:
-	'ItalicExpression'
-	'{'
-		'content' '(' content+=[EmphasisExpression|EString] ( "," content+=[EmphasisExpression|EString])* ')' 
-	'}';
+ItalicExpression returns markdown::ItalicExpression hidden(WS):
+	 ('*'|'_') content+=[markdown::EmphasisExpression] ('*'|'_') WS* (content+=[markdown::EmphasisExpression])*
+	;
 
 StrongExpression returns StrongExpression:
 	'StrongExpression'
