@@ -40,11 +40,9 @@ ListExpression returns ListExpression:
 		'listContent' '{' listContent+=TextExpression ( "," listContent+=TextExpression)* '}' 
 	'}';
 
-QuoteExpression returns QuoteExpression:
-	'QuoteExpression'
-	'{'
-		'textexpression' textexpression=TextExpression
-	'}';
+QuoteExpression returns markdown::QuoteExpression:
+		'>' textexpression=TextExpression '\n' '\n'
+	;
 
 LineBreakExpression returns LineBreakExpression:
 	{LineBreakExpression}
