@@ -26,9 +26,11 @@ TableExpression returns TableExpression:
 		'tablelines' '{' tablelines+=TableLine ( "," tablelines+=TableLine)* '}' 
 	'}';
 
-HorizontalExpression returns HorizontalExpression:
-	{HorizontalExpression}
-	'HorizontalExpression'
+HorizontalExpression returns markdown::HorizontalExpression:
+	{markdown::HorizontalExpression}
+	'-' '-' '-' ('-')* |
+	'_' '_' '_' ('_')* |
+	'*' '*' '*' ('*')
 	;
 
 ListExpression returns ListExpression:
