@@ -11,11 +11,11 @@ File returns markdown::File:
 	;
 
 Expression returns markdown::Expression:
-	TableExpression | HorizontalExpression | ListExpression | QuoteExpression | LineBreakExpression | ItalicExpression | StrongExpression | ScratchExpression | HTMLExpression | CodeExpression | ReferenceExpression | LinkExpression | ImageExpression | VideoExpression | HeaderDepth1Expression | HeaderDepth2Expression | HeaderDepth3Expression | HeaderDepth5Expression | HeaderDepth6Expression | HeaderDepth4Expression | TextualExpression;
+	TableExpression | TextExpression | ListExpression | LINE_BREAK_EXPRESSION | HTMLExpression | CodeExpression | ReferenceExpression | LinkExpression | ImageExpression | VideoExpression | HeaderExpression;
 
 
 TextExpression returns markdown::TextExpression:
-	HorizontalExpression | QuoteExpression | ItalicExpression | StrongExpression | ScratchExpression | TextualExpression;
+	HORIZONTAL_EXPRESSION | QuoteExpression | EmphasisExpression;
 
 EmphasisExpression returns markdown::EmphasisExpression:
 	StrongExpression | ItalicExpression  | ScratchExpression | TextualExpression;
@@ -26,11 +26,10 @@ TableExpression returns TableExpression:
 		'tablelines' '{' tablelines+=TableLine ( "," tablelines+=TableLine)* '}' 
 	'}';
 
-HorizontalExpression returns markdown::HorizontalExpression:
-	{markdown::HorizontalExpression}
-	'-' '-' '-' ('-')* |
+terminal HORIZONTAL_EXPRESSION returns markdown::HorizontalExpression:
+	('-' '-' '-' ('-')* |
 	'_' '_' '_' ('_')* |
-	'*' '*' '*' ('*')
+	'*' '*' '*' ('*')) LINE_BREAK_EXPRESSION
 	;
 
 ListExpression returns ListExpression:
@@ -45,7 +44,7 @@ QuoteExpression returns markdown::QuoteExpression:
 	;
 
 terminal LINE_BREAK_EXPRESSION returns markdown::LineBreakExpression:
-	('\r'? '\n')?
+	('\r'? '\n')? | EOF
 	;
 
 ItalicExpression returns markdown::ItalicExpression hidden(WS):
@@ -98,6 +97,10 @@ VideoExpression returns VideoExpression:
 		'textIMG' textIMG=String0
 		'textBloc' textBloc=[EmphasisExpression|EString]
 	'}';
+
+HeaderExpression returns markdown::HeaderExpression:
+	HeaderDepth1Expression | HeaderDepth2Expression | HeaderDepth3Expression | HeaderDepth4Expression | HeaderDepth5Expression | HeaderDepth6Expression
+;
 
 HeaderDepth1Expression returns HeaderDepth1Expression:
 	'HeaderDepth1Expression'
