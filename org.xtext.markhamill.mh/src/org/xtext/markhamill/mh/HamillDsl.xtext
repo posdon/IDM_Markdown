@@ -53,11 +53,9 @@ ItalicExpression returns markdown::ItalicExpression hidden(WS):
 	 ('*'|'_') content+=[markdown::EmphasisExpression] ('*'|'_') WS* (content+=[markdown::EmphasisExpression])*
 	;
 
-StrongExpression returns StrongExpression:
-	'StrongExpression'
-	'{'
-		'content' '(' content+=[EmphasisExpression|EString] ( "," content+=[EmphasisExpression|EString])* ')' 
-	'}';
+StrongExpression returns markdown::StrongExpression:
+	 ('**'|'__') content+=[markdown::EmphasisExpression] ('**'|'__') WS* (content+=[markdown::EmphasisExpression])*
+	 ;
 
 ScratchExpression returns ScratchExpression:
 	'ScratchExpression'
