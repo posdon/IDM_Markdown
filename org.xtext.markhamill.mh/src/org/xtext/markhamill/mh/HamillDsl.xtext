@@ -102,41 +102,31 @@ HeaderExpression returns markdown::HeaderExpression:
 	HeaderDepth1Expression | HeaderDepth2Expression | HeaderDepth3Expression | HeaderDepth4Expression | HeaderDepth5Expression | HeaderDepth6Expression
 ;
 
-HeaderDepth1Expression returns HeaderDepth1Expression:
-	'HeaderDepth1Expression'
-	'{'
-		'content' content=[EmphasisExpression|EString]
-	'}';
+HeaderDepth1Expression returns markdown::HeaderDepth1Expression:
+		'#' content=[markdown::EmphasisExpression] LINE_BREAK_EXPRESSION |
+		content=[markdown::EmphasisExpression] LINE_BREAK_EXPRESSION ('=')* LINE_BREAK_EXPRESSION
+	;
 
-HeaderDepth2Expression returns HeaderDepth2Expression:
-	'HeaderDepth2Expression'
-	'{'
-		'content' content=[EmphasisExpression|EString]
-	'}';
+HeaderDepth2Expression returns markdown::HeaderDepth2Expression:
+		'##' content=[markdown::EmphasisExpression] LINE_BREAK_EXPRESSION |
+		content=[markdown::EmphasisExpression] LINE_BREAK_EXPRESSION ('-')* LINE_BREAK_EXPRESSION
+	;
 
-HeaderDepth3Expression returns HeaderDepth3Expression:
-	'HeaderDepth3Expression'
-	'{'
-		'content' content=[EmphasisExpression|EString]
-	'}';
+HeaderDepth3Expression returns markdown::HeaderDepth3Expression:
+	'###' content=[markdown::EmphasisExpression] LINE_BREAK_EXPRESSION
+	;
 
-HeaderDepth5Expression returns HeaderDepth5Expression:
-	'HeaderDepth5Expression'
-	'{'
-		'content' content=[EmphasisExpression|EString]
-	'}';
+HeaderDepth5Expression returns markdown::HeaderDepth5Expression:
+	'#####' content=[markdown::EmphasisExpression] LINE_BREAK_EXPRESSION
+	;
 
-HeaderDepth6Expression returns HeaderDepth6Expression:
-	'HeaderDepth6Expression'
-	'{'
-		'content' content=[EmphasisExpression|EString]
-	'}';
+HeaderDepth6Expression returns markdown::HeaderDepth6Expression:
+	'######' content=[markdown::EmphasisExpression] LINE_BREAK_EXPRESSION
+	;
 
-HeaderDepth4Expression returns HeaderDepth4Expression:
-	'HeaderDepth4Expression'
-	'{'
-		'content' content=[EmphasisExpression|EString]
-	'}';
+HeaderDepth4Expression returns markdown::HeaderDepth4Expression:
+	'####' content=[markdown::EmphasisExpression] LINE_BREAK_EXPRESSION
+	;
 
 TextualExpression returns TextualExpression:
 	'TextualExpression'
