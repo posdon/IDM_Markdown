@@ -41,12 +41,11 @@ ListExpression returns ListExpression:
 	'}';
 
 QuoteExpression returns markdown::QuoteExpression:
-		'>' textexpression=TextExpression '\n' '\n'
+		'>' textexpression=TextExpression LINE_BREAK_EXPRESSION
 	;
 
-LineBreakExpression returns LineBreakExpression:
-	{LineBreakExpression}
-	'LineBreakExpression'
+terminal LINE_BREAK_EXPRESSION returns markdown::LineBreakExpression:
+	('\r'? '\n')?
 	;
 
 ItalicExpression returns markdown::ItalicExpression hidden(WS):
