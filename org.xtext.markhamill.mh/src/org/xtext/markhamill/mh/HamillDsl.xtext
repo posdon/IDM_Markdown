@@ -61,11 +61,9 @@ ScratchExpression returns markdown::ScratchExpression:
 	'~~' content+=[markdown::EmphasisExpression] '~~' WS* (content+=[markdown::EmphasisExpression])*
 	;
 
-HTMLExpression returns HTMLExpression:
-	'HTMLExpression'
-	'{'
-		'text' text=String0
-	'}';
+HTMLExpression returns markdown::HTMLExpression hidden(WS):
+		'<' text=String0 '>'
+	;
 
 CodeExpression returns CodeExpression:
 	'CodeExpression'
