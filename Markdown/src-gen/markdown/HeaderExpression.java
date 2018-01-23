@@ -12,11 +12,10 @@ package markdown;
  * </p>
  * <ul>
  *   <li>{@link markdown.HeaderExpression#getContent <em>Content</em>}</li>
- *   <li>{@link markdown.HeaderExpression#getDepth <em>Depth</em>}</li>
  * </ul>
  *
  * @see markdown.MarkdownPackage#getHeaderExpression()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface HeaderExpression extends Expression {
@@ -45,31 +44,5 @@ public interface HeaderExpression extends Expression {
 	 * @generated
 	 */
 	void setContent(EmphasisExpression value);
-
-	/**
-	 * Returns the value of the '<em><b>Depth</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Depth</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Depth</em>' attribute.
-	 * @see #setDepth(Integer)
-	 * @see markdown.MarkdownPackage#getHeaderExpression_Depth()
-	 * @model dataType="org.eclipse.emf.ecore.xml.type.IntObject" required="true"
-	 * @generated
-	 */
-	Integer getDepth();
-
-	/**
-	 * Sets the value of the '{@link markdown.HeaderExpression#getDepth <em>Depth</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Depth</em>' attribute.
-	 * @see #getDepth()
-	 * @generated
-	 */
-	void setDepth(Integer value);
 
 } // HeaderExpression

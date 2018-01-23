@@ -22,12 +22,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link markdown.impl.HeaderExpressionImpl#getContent <em>Content</em>}</li>
- *   <li>{@link markdown.impl.HeaderExpressionImpl#getDepth <em>Depth</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class HeaderExpressionImpl extends ExpressionImpl implements HeaderExpression {
+public abstract class HeaderExpressionImpl extends ExpressionImpl implements HeaderExpression {
 	/**
 	 * The cached value of the '{@link #getContent() <em>Content</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -37,26 +36,6 @@ public class HeaderExpressionImpl extends ExpressionImpl implements HeaderExpres
 	 * @ordered
 	 */
 	protected EmphasisExpression content;
-
-	/**
-	 * The default value of the '{@link #getDepth() <em>Depth</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDepth()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Integer DEPTH_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDepth() <em>Depth</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDepth()
-	 * @generated
-	 * @ordered
-	 */
-	protected Integer depth = DEPTH_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -122,28 +101,6 @@ public class HeaderExpressionImpl extends ExpressionImpl implements HeaderExpres
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Integer getDepth() {
-		return depth;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setDepth(Integer newDepth) {
-		Integer oldDepth = depth;
-		depth = newDepth;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MarkdownPackage.HEADER_EXPRESSION__DEPTH, oldDepth,
-					depth));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -151,8 +108,6 @@ public class HeaderExpressionImpl extends ExpressionImpl implements HeaderExpres
 			if (resolve)
 				return getContent();
 			return basicGetContent();
-		case MarkdownPackage.HEADER_EXPRESSION__DEPTH:
-			return getDepth();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -167,9 +122,6 @@ public class HeaderExpressionImpl extends ExpressionImpl implements HeaderExpres
 		switch (featureID) {
 		case MarkdownPackage.HEADER_EXPRESSION__CONTENT:
 			setContent((EmphasisExpression) newValue);
-			return;
-		case MarkdownPackage.HEADER_EXPRESSION__DEPTH:
-			setDepth((Integer) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -186,9 +138,6 @@ public class HeaderExpressionImpl extends ExpressionImpl implements HeaderExpres
 		case MarkdownPackage.HEADER_EXPRESSION__CONTENT:
 			setContent((EmphasisExpression) null);
 			return;
-		case MarkdownPackage.HEADER_EXPRESSION__DEPTH:
-			setDepth(DEPTH_EDEFAULT);
-			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -203,27 +152,8 @@ public class HeaderExpressionImpl extends ExpressionImpl implements HeaderExpres
 		switch (featureID) {
 		case MarkdownPackage.HEADER_EXPRESSION__CONTENT:
 			return content != null;
-		case MarkdownPackage.HEADER_EXPRESSION__DEPTH:
-			return DEPTH_EDEFAULT == null ? depth != null : !DEPTH_EDEFAULT.equals(depth);
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy())
-			return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (depth: ");
-		result.append(depth);
-		result.append(')');
-		return result.toString();
 	}
 
 } //HeaderExpressionImpl

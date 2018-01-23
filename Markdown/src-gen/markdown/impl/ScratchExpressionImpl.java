@@ -7,16 +7,10 @@ import java.util.Collection;
 import markdown.EmphasisExpression;
 import markdown.MarkdownPackage;
 import markdown.ScratchExpression;
-
-import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,7 +27,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class ScratchExpressionImpl extends EmphasisExpressionImpl implements ScratchExpression {
 	/**
-	 * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference list.
+	 * The cached value of the '{@link #getContent() <em>Content</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getContent()
@@ -68,24 +62,10 @@ public class ScratchExpressionImpl extends EmphasisExpressionImpl implements Scr
 	 */
 	public EList<EmphasisExpression> getContent() {
 		if (content == null) {
-			content = new EObjectContainmentEList<EmphasisExpression>(EmphasisExpression.class, this,
+			content = new EObjectResolvingEList<EmphasisExpression>(EmphasisExpression.class, this,
 					MarkdownPackage.SCRATCH_EXPRESSION__CONTENT);
 		}
 		return content;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-		case MarkdownPackage.SCRATCH_EXPRESSION__CONTENT:
-			return ((InternalEList<?>) getContent()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**

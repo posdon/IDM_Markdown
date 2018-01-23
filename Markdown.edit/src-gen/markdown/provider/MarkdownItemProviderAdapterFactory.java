@@ -96,52 +96,6 @@ public class MarkdownItemProviderAdapterFactory extends MarkdownAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link markdown.HeaderExpression} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected HeaderExpressionItemProvider headerExpressionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link markdown.HeaderExpression}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createHeaderExpressionAdapter() {
-		if (headerExpressionItemProvider == null) {
-			headerExpressionItemProvider = new HeaderExpressionItemProvider(this);
-		}
-
-		return headerExpressionItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link markdown.TextExpression} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected TextExpressionItemProvider textExpressionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link markdown.TextExpression}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createTextExpressionAdapter() {
-		if (textExpressionItemProvider == null) {
-			textExpressionItemProvider = new TextExpressionItemProvider(this);
-		}
-
-		return textExpressionItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link markdown.TableExpression} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -280,29 +234,6 @@ public class MarkdownItemProviderAdapterFactory extends MarkdownAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link markdown.EmphasisExpression} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected EmphasisExpressionItemProvider emphasisExpressionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link markdown.EmphasisExpression}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createEmphasisExpressionAdapter() {
-		if (emphasisExpressionItemProvider == null) {
-			emphasisExpressionItemProvider = new EmphasisExpressionItemProvider(this);
-		}
-
-		return emphasisExpressionItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link markdown.ItalicExpression} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -369,29 +300,6 @@ public class MarkdownItemProviderAdapterFactory extends MarkdownAdapterFactory
 		}
 
 		return scratchExpressionItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link markdown.TextBloc} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected TextBlocItemProvider textBlocItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link markdown.TextBloc}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createTextBlocAdapter() {
-		if (textBlocItemProvider == null) {
-			textBlocItemProvider = new TextBlocItemProvider(this);
-		}
-
-		return textBlocItemProvider;
 	}
 
 	/**
@@ -533,6 +441,167 @@ public class MarkdownItemProviderAdapterFactory extends MarkdownAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link markdown.HeaderDepth1Expression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected HeaderDepth1ExpressionItemProvider headerDepth1ExpressionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link markdown.HeaderDepth1Expression}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createHeaderDepth1ExpressionAdapter() {
+		if (headerDepth1ExpressionItemProvider == null) {
+			headerDepth1ExpressionItemProvider = new HeaderDepth1ExpressionItemProvider(this);
+		}
+
+		return headerDepth1ExpressionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link markdown.HeaderDepth2Expression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected HeaderDepth2ExpressionItemProvider headerDepth2ExpressionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link markdown.HeaderDepth2Expression}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createHeaderDepth2ExpressionAdapter() {
+		if (headerDepth2ExpressionItemProvider == null) {
+			headerDepth2ExpressionItemProvider = new HeaderDepth2ExpressionItemProvider(this);
+		}
+
+		return headerDepth2ExpressionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link markdown.HeaderDepth3Expression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected HeaderDepth3ExpressionItemProvider headerDepth3ExpressionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link markdown.HeaderDepth3Expression}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createHeaderDepth3ExpressionAdapter() {
+		if (headerDepth3ExpressionItemProvider == null) {
+			headerDepth3ExpressionItemProvider = new HeaderDepth3ExpressionItemProvider(this);
+		}
+
+		return headerDepth3ExpressionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link markdown.HeaderDepth5Expression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected HeaderDepth5ExpressionItemProvider headerDepth5ExpressionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link markdown.HeaderDepth5Expression}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createHeaderDepth5ExpressionAdapter() {
+		if (headerDepth5ExpressionItemProvider == null) {
+			headerDepth5ExpressionItemProvider = new HeaderDepth5ExpressionItemProvider(this);
+		}
+
+		return headerDepth5ExpressionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link markdown.HeaderDepth6Expression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected HeaderDepth6ExpressionItemProvider headerDepth6ExpressionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link markdown.HeaderDepth6Expression}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createHeaderDepth6ExpressionAdapter() {
+		if (headerDepth6ExpressionItemProvider == null) {
+			headerDepth6ExpressionItemProvider = new HeaderDepth6ExpressionItemProvider(this);
+		}
+
+		return headerDepth6ExpressionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link markdown.HeaderDepth4Expression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected HeaderDepth4ExpressionItemProvider headerDepth4ExpressionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link markdown.HeaderDepth4Expression}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createHeaderDepth4ExpressionAdapter() {
+		if (headerDepth4ExpressionItemProvider == null) {
+			headerDepth4ExpressionItemProvider = new HeaderDepth4ExpressionItemProvider(this);
+		}
+
+		return headerDepth4ExpressionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link markdown.TextualExpression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TextualExpressionItemProvider textualExpressionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link markdown.TextualExpression}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createTextualExpressionAdapter() {
+		if (textualExpressionItemProvider == null) {
+			textualExpressionItemProvider = new TextualExpressionItemProvider(this);
+		}
+
+		return textualExpressionItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -633,10 +702,6 @@ public class MarkdownItemProviderAdapterFactory extends MarkdownAdapterFactory
 	public void dispose() {
 		if (fileItemProvider != null)
 			fileItemProvider.dispose();
-		if (headerExpressionItemProvider != null)
-			headerExpressionItemProvider.dispose();
-		if (textExpressionItemProvider != null)
-			textExpressionItemProvider.dispose();
 		if (tableExpressionItemProvider != null)
 			tableExpressionItemProvider.dispose();
 		if (tableLineItemProvider != null)
@@ -649,16 +714,12 @@ public class MarkdownItemProviderAdapterFactory extends MarkdownAdapterFactory
 			quoteExpressionItemProvider.dispose();
 		if (lineBreakExpressionItemProvider != null)
 			lineBreakExpressionItemProvider.dispose();
-		if (emphasisExpressionItemProvider != null)
-			emphasisExpressionItemProvider.dispose();
 		if (italicExpressionItemProvider != null)
 			italicExpressionItemProvider.dispose();
 		if (strongExpressionItemProvider != null)
 			strongExpressionItemProvider.dispose();
 		if (scratchExpressionItemProvider != null)
 			scratchExpressionItemProvider.dispose();
-		if (textBlocItemProvider != null)
-			textBlocItemProvider.dispose();
 		if (htmlExpressionItemProvider != null)
 			htmlExpressionItemProvider.dispose();
 		if (codeExpressionItemProvider != null)
@@ -671,6 +732,20 @@ public class MarkdownItemProviderAdapterFactory extends MarkdownAdapterFactory
 			imageExpressionItemProvider.dispose();
 		if (videoExpressionItemProvider != null)
 			videoExpressionItemProvider.dispose();
+		if (headerDepth1ExpressionItemProvider != null)
+			headerDepth1ExpressionItemProvider.dispose();
+		if (headerDepth2ExpressionItemProvider != null)
+			headerDepth2ExpressionItemProvider.dispose();
+		if (headerDepth3ExpressionItemProvider != null)
+			headerDepth3ExpressionItemProvider.dispose();
+		if (headerDepth5ExpressionItemProvider != null)
+			headerDepth5ExpressionItemProvider.dispose();
+		if (headerDepth6ExpressionItemProvider != null)
+			headerDepth6ExpressionItemProvider.dispose();
+		if (headerDepth4ExpressionItemProvider != null)
+			headerDepth4ExpressionItemProvider.dispose();
+		if (textualExpressionItemProvider != null)
+			textualExpressionItemProvider.dispose();
 	}
 
 }

@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class TextExpressionImpl extends ExpressionImpl implements TextExpression {
+public abstract class TextExpressionImpl extends ExpressionImpl implements TextExpression {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

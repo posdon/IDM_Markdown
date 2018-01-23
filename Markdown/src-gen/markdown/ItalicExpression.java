@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface ItalicExpression extends EmphasisExpression {
 	/**
-	 * Returns the value of the '<em><b>Content</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Content</b></em>' reference list.
 	 * The list contents are of type {@link markdown.EmphasisExpression}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -30,9 +30,9 @@ public interface ItalicExpression extends EmphasisExpression {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Content</em>' containment reference list.
+	 * @return the value of the '<em>Content</em>' reference list.
 	 * @see markdown.MarkdownPackage#getItalicExpression_Content()
-	 * @model containment="true" required="true"
+	 * @model required="true" upper="2"
 	 * @generated
 	 */
 	EList<EmphasisExpression> getContent();

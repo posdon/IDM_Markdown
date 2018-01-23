@@ -167,16 +167,10 @@ public class ListExpressionItemProvider extends ExpressionItemProvider {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add(createChildParameter(MarkdownPackage.Literals.LIST_EXPRESSION__LIST_CONTENT,
-				MarkdownFactory.eINSTANCE.createTextExpression()));
-
-		newChildDescriptors.add(createChildParameter(MarkdownPackage.Literals.LIST_EXPRESSION__LIST_CONTENT,
 				MarkdownFactory.eINSTANCE.createHorizontalExpression()));
 
 		newChildDescriptors.add(createChildParameter(MarkdownPackage.Literals.LIST_EXPRESSION__LIST_CONTENT,
 				MarkdownFactory.eINSTANCE.createQuoteExpression()));
-
-		newChildDescriptors.add(createChildParameter(MarkdownPackage.Literals.LIST_EXPRESSION__LIST_CONTENT,
-				MarkdownFactory.eINSTANCE.createEmphasisExpression()));
 
 		newChildDescriptors.add(createChildParameter(MarkdownPackage.Literals.LIST_EXPRESSION__LIST_CONTENT,
 				MarkdownFactory.eINSTANCE.createItalicExpression()));
@@ -188,7 +182,7 @@ public class ListExpressionItemProvider extends ExpressionItemProvider {
 				MarkdownFactory.eINSTANCE.createScratchExpression()));
 
 		newChildDescriptors.add(createChildParameter(MarkdownPackage.Literals.LIST_EXPRESSION__LIST_CONTENT,
-				MarkdownFactory.eINSTANCE.createTextBloc()));
+				MarkdownFactory.eINSTANCE.createTextualExpression()));
 	}
 
 }

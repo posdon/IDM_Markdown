@@ -137,11 +137,6 @@ public class MarkdownAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseTextBloc(TextBloc object) {
-			return createTextBlocAdapter();
-		}
-
-		@Override
 		public Adapter caseHTMLExpression(HTMLExpression object) {
 			return createHTMLExpressionAdapter();
 		}
@@ -169,6 +164,41 @@ public class MarkdownAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseVideoExpression(VideoExpression object) {
 			return createVideoExpressionAdapter();
+		}
+
+		@Override
+		public Adapter caseHeaderDepth1Expression(HeaderDepth1Expression object) {
+			return createHeaderDepth1ExpressionAdapter();
+		}
+
+		@Override
+		public Adapter caseHeaderDepth2Expression(HeaderDepth2Expression object) {
+			return createHeaderDepth2ExpressionAdapter();
+		}
+
+		@Override
+		public Adapter caseHeaderDepth3Expression(HeaderDepth3Expression object) {
+			return createHeaderDepth3ExpressionAdapter();
+		}
+
+		@Override
+		public Adapter caseHeaderDepth5Expression(HeaderDepth5Expression object) {
+			return createHeaderDepth5ExpressionAdapter();
+		}
+
+		@Override
+		public Adapter caseHeaderDepth6Expression(HeaderDepth6Expression object) {
+			return createHeaderDepth6ExpressionAdapter();
+		}
+
+		@Override
+		public Adapter caseHeaderDepth4Expression(HeaderDepth4Expression object) {
+			return createHeaderDepth4ExpressionAdapter();
+		}
+
+		@Override
+		public Adapter caseTextualExpression(TextualExpression object) {
+			return createTextualExpressionAdapter();
 		}
 
 		@Override
@@ -387,20 +417,6 @@ public class MarkdownAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link markdown.TextBloc <em>Text Bloc</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see markdown.TextBloc
-	 * @generated
-	 */
-	public Adapter createTextBlocAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link markdown.HTMLExpression <em>HTML Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -481,6 +497,104 @@ public class MarkdownAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createVideoExpressionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link markdown.HeaderDepth1Expression <em>Header Depth1 Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see markdown.HeaderDepth1Expression
+	 * @generated
+	 */
+	public Adapter createHeaderDepth1ExpressionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link markdown.HeaderDepth2Expression <em>Header Depth2 Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see markdown.HeaderDepth2Expression
+	 * @generated
+	 */
+	public Adapter createHeaderDepth2ExpressionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link markdown.HeaderDepth3Expression <em>Header Depth3 Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see markdown.HeaderDepth3Expression
+	 * @generated
+	 */
+	public Adapter createHeaderDepth3ExpressionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link markdown.HeaderDepth5Expression <em>Header Depth5 Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see markdown.HeaderDepth5Expression
+	 * @generated
+	 */
+	public Adapter createHeaderDepth5ExpressionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link markdown.HeaderDepth6Expression <em>Header Depth6 Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see markdown.HeaderDepth6Expression
+	 * @generated
+	 */
+	public Adapter createHeaderDepth6ExpressionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link markdown.HeaderDepth4Expression <em>Header Depth4 Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see markdown.HeaderDepth4Expression
+	 * @generated
+	 */
+	public Adapter createHeaderDepth4ExpressionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link markdown.TextualExpression <em>Textual Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see markdown.TextualExpression
+	 * @generated
+	 */
+	public Adapter createTextualExpressionAdapter() {
 		return null;
 	}
 

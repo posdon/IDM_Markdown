@@ -15,7 +15,6 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link markdown.TableLine#getNbColumn <em>Nb Column</em>}</li>
  *   <li>{@link markdown.TableLine#getCellContent <em>Cell Content</em>}</li>
  * </ul>
  *
@@ -24,32 +23,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface TableLine extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Nb Column</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Nb Column</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Nb Column</em>' attribute.
-	 * @see #setNbColumn(Integer)
-	 * @see markdown.MarkdownPackage#getTableLine_NbColumn()
-	 * @model dataType="org.eclipse.emf.ecore.xml.type.IntObject" required="true"
-	 * @generated
-	 */
-	Integer getNbColumn();
-
-	/**
-	 * Sets the value of the '{@link markdown.TableLine#getNbColumn <em>Nb Column</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Nb Column</em>' attribute.
-	 * @see #getNbColumn()
-	 * @generated
-	 */
-	void setNbColumn(Integer value);
-
 	/**
 	 * Returns the value of the '<em><b>Cell Content</b></em>' containment reference list.
 	 * The list contents are of type {@link markdown.TextExpression}.

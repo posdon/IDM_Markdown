@@ -13,7 +13,8 @@ package markdown;
  * <ul>
  *   <li>{@link markdown.VideoExpression#getTextURL <em>Text URL</em>}</li>
  *   <li>{@link markdown.VideoExpression#getTextIMG <em>Text IMG</em>}</li>
- *   <li>{@link markdown.VideoExpression#getTextbloc <em>Textbloc</em>}</li>
+ *   <li>{@link markdown.VideoExpression#getTextBloc <em>Text Bloc</em>}</li>
+ *   <li>{@link markdown.VideoExpression#getIsReferenced <em>Is Referenced</em>}</li>
  * </ul>
  *
  * @see markdown.MarkdownPackage#getVideoExpression()
@@ -74,29 +75,55 @@ public interface VideoExpression extends Expression {
 	void setTextIMG(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Textbloc</b></em>' reference.
+	 * Returns the value of the '<em><b>Text Bloc</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Textbloc</em>' reference isn't clear,
+	 * If the meaning of the '<em>Text Bloc</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Textbloc</em>' reference.
-	 * @see #setTextbloc(TextBloc)
-	 * @see markdown.MarkdownPackage#getVideoExpression_Textbloc()
+	 * @return the value of the '<em>Text Bloc</em>' reference.
+	 * @see #setTextBloc(EmphasisExpression)
+	 * @see markdown.MarkdownPackage#getVideoExpression_TextBloc()
 	 * @model required="true"
 	 * @generated
 	 */
-	TextBloc getTextbloc();
+	EmphasisExpression getTextBloc();
 
 	/**
-	 * Sets the value of the '{@link markdown.VideoExpression#getTextbloc <em>Textbloc</em>}' reference.
+	 * Sets the value of the '{@link markdown.VideoExpression#getTextBloc <em>Text Bloc</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Textbloc</em>' reference.
-	 * @see #getTextbloc()
+	 * @param value the new value of the '<em>Text Bloc</em>' reference.
+	 * @see #getTextBloc()
 	 * @generated
 	 */
-	void setTextbloc(TextBloc value);
+	void setTextBloc(EmphasisExpression value);
+
+	/**
+	 * Returns the value of the '<em><b>Is Referenced</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Is Referenced</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Is Referenced</em>' attribute.
+	 * @see #setIsReferenced(Boolean)
+	 * @see markdown.MarkdownPackage#getVideoExpression_IsReferenced()
+	 * @model dataType="org.eclipse.emf.ecore.xml.type.BooleanObject"
+	 * @generated
+	 */
+	Boolean getIsReferenced();
+
+	/**
+	 * Sets the value of the '{@link markdown.VideoExpression#getIsReferenced <em>Is Referenced</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is Referenced</em>' attribute.
+	 * @see #getIsReferenced()
+	 * @generated
+	 */
+	void setIsReferenced(Boolean value);
 
 } // VideoExpression

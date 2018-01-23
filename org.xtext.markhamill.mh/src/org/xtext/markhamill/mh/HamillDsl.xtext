@@ -30,13 +30,14 @@ terminal S :
 	(' '|'\t')
 ;
 
-terminal HORIZONTAL_EXPRESSION returns markdown::HorizontalExpression:
+terminal HORIZONTAL_EXPRESSION :
 	S* ('-' S* '-' S* '-' S* ('-' S*)* |
 	    '_' S* '_' S* '_' S* ('_' S*)* |
 	    '*' S* '*' S* '*' S* ('*' S*)*  ) LINE_BREAK_EXPRESSION
 	;
 
-ListExpression returns ListExpression:
+//TODO
+ListExpression returns markdown::ListExpression:
 	'ListExpression'
 	'{'
 		'startingValue' startingValue=IntObject
@@ -47,7 +48,7 @@ QuoteExpression returns markdown::QuoteExpression hidden(WS):
 		'>'textexpression=TextExpression LINE_BREAK_EXPRESSION
 	;
 
-terminal LINE_BREAK_EXPRESSION returns markdown::LineBreakExpression:
+terminal LINE_BREAK_EXPRESSION :
 	('\r'? '\n')? | EOF
 	;
 
@@ -67,7 +68,8 @@ HTMLExpression returns markdown::HTMLExpression hidden(WS):
 		'<' text=String0 '>'
 	;
 
-CodeExpression returns CodeExpression:
+//TODO
+CodeExpression returns markdown::CodeExpression:
 	'CodeExpression'
 	'{'
 		'text' text=String0
@@ -77,26 +79,29 @@ ReferenceExpression returns markdown::ReferenceExpression hidden(WS):
 	'[' S* name=String0 S* ']:' S* value=String0 S* LINE_BREAK_EXPRESSION
 	;
 
-LinkExpression returns LinkExpression:
+//TODO
+LinkExpression returns markdown::LinkExpression:
 	'LinkExpression'
 	'{'
 		'textURL' textURL=String0
-		'textBloc' textBloc=[EmphasisExpression|EString]
+		'textBloc' textBloc=[markdown::EmphasisExpression]
 	'}';
 
-ImageExpression returns ImageExpression:
+//TODO
+ImageExpression returns markdown::ImageExpression:
 	'ImageExpression'
 	'{'
 		'textURL' textURL=String0
-		'textBloc' textBloc=[EmphasisExpression|EString]
+		'textBloc' textBloc=[markdown::EmphasisExpression]
 	'}';
 
-VideoExpression returns VideoExpression:
+//TODO
+VideoExpression returns markdown::VideoExpression:
 	'VideoExpression'
 	'{'
 		'textURL' textURL=String0
 		'textIMG' textIMG=String0
-		'textBloc' textBloc=[EmphasisExpression|EString]
+		'textBloc' textBloc=[markdown::EmphasisExpression]
 	'}';
 
 HeaderExpression returns markdown::HeaderExpression:
@@ -130,11 +135,12 @@ HeaderDepth4Expression returns markdown::HeaderDepth4Expression hidden(WS):
 	;
 
 TextualExpression returns markdown::TextualExpression hidden(WS):
-		newAttribute=String0
+		content=String0
 		(followingExpression=[markdown::EmphasisExpression])?
 	;
 
-TableLine returns TableLine:
+//TODO
+TableLine returns markdown::TableLine:
 	'TableLine'
 	'{'
 		'cellContent' '{' cellContent+=TextExpression ( "," cellContent+=TextExpression)* '}' 

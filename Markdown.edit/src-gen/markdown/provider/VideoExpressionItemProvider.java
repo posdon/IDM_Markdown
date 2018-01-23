@@ -46,7 +46,8 @@ public class VideoExpressionItemProvider extends ExpressionItemProvider {
 
 			addTextURLPropertyDescriptor(object);
 			addTextIMGPropertyDescriptor(object);
-			addTextblocPropertyDescriptor(object);
+			addTextBlocPropertyDescriptor(object);
+			addIsReferencedPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -84,18 +85,34 @@ public class VideoExpressionItemProvider extends ExpressionItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Textbloc feature.
+	 * This adds a property descriptor for the Text Bloc feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTextblocPropertyDescriptor(Object object) {
+	protected void addTextBlocPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_VideoExpression_textbloc_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_VideoExpression_textbloc_feature",
+						getResourceLocator(), getString("_UI_VideoExpression_textBloc_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_VideoExpression_textBloc_feature",
 								"_UI_VideoExpression_type"),
-						MarkdownPackage.Literals.VIDEO_EXPRESSION__TEXTBLOC, true, false, true, null, null, null));
+						MarkdownPackage.Literals.VIDEO_EXPRESSION__TEXT_BLOC, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Referenced feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsReferencedPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_VideoExpression_isReferenced_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_VideoExpression_isReferenced_feature",
+								"_UI_VideoExpression_type"),
+						MarkdownPackage.Literals.VIDEO_EXPRESSION__IS_REFERENCED, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -146,6 +163,7 @@ public class VideoExpressionItemProvider extends ExpressionItemProvider {
 		switch (notification.getFeatureID(VideoExpression.class)) {
 		case MarkdownPackage.VIDEO_EXPRESSION__TEXT_URL:
 		case MarkdownPackage.VIDEO_EXPRESSION__TEXT_IMG:
+		case MarkdownPackage.VIDEO_EXPRESSION__IS_REFERENCED:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

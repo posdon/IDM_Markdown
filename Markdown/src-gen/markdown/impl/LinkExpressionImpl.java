@@ -2,10 +2,9 @@
  */
 package markdown.impl;
 
+import markdown.EmphasisExpression;
 import markdown.LinkExpression;
 import markdown.MarkdownPackage;
-import markdown.TextBloc;
-
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -21,23 +20,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link markdown.impl.LinkExpressionImpl#getTextbloc <em>Textbloc</em>}</li>
  *   <li>{@link markdown.impl.LinkExpressionImpl#getTextURL <em>Text URL</em>}</li>
+ *   <li>{@link markdown.impl.LinkExpressionImpl#getTextBloc <em>Text Bloc</em>}</li>
+ *   <li>{@link markdown.impl.LinkExpressionImpl#getIsReferenced <em>Is Referenced</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class LinkExpressionImpl extends ExpressionImpl implements LinkExpression {
-	/**
-	 * The cached value of the '{@link #getTextbloc() <em>Textbloc</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTextbloc()
-	 * @generated
-	 * @ordered
-	 */
-	protected TextBloc textbloc;
-
 	/**
 	 * The default value of the '{@link #getTextURL() <em>Text URL</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -59,6 +49,36 @@ public class LinkExpressionImpl extends ExpressionImpl implements LinkExpression
 	protected String textURL = TEXT_URL_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getTextBloc() <em>Text Bloc</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTextBloc()
+	 * @generated
+	 * @ordered
+	 */
+	protected EmphasisExpression textBloc;
+
+	/**
+	 * The default value of the '{@link #getIsReferenced() <em>Is Referenced</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIsReferenced()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Boolean IS_REFERENCED_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getIsReferenced() <em>Is Referenced</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIsReferenced()
+	 * @generated
+	 * @ordered
+	 */
+	protected Boolean isReferenced = IS_REFERENCED_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -75,46 +95,6 @@ public class LinkExpressionImpl extends ExpressionImpl implements LinkExpression
 	@Override
 	protected EClass eStaticClass() {
 		return MarkdownPackage.Literals.LINK_EXPRESSION;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public TextBloc getTextbloc() {
-		if (textbloc != null && textbloc.eIsProxy()) {
-			InternalEObject oldTextbloc = (InternalEObject) textbloc;
-			textbloc = (TextBloc) eResolveProxy(oldTextbloc);
-			if (textbloc != oldTextbloc) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MarkdownPackage.LINK_EXPRESSION__TEXTBLOC,
-							oldTextbloc, textbloc));
-			}
-		}
-		return textbloc;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public TextBloc basicGetTextbloc() {
-		return textbloc;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTextbloc(TextBloc newTextbloc) {
-		TextBloc oldTextbloc = textbloc;
-		textbloc = newTextbloc;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MarkdownPackage.LINK_EXPRESSION__TEXTBLOC,
-					oldTextbloc, textbloc));
 	}
 
 	/**
@@ -144,15 +124,79 @@ public class LinkExpressionImpl extends ExpressionImpl implements LinkExpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EmphasisExpression getTextBloc() {
+		if (textBloc != null && textBloc.eIsProxy()) {
+			InternalEObject oldTextBloc = (InternalEObject) textBloc;
+			textBloc = (EmphasisExpression) eResolveProxy(oldTextBloc);
+			if (textBloc != oldTextBloc) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							MarkdownPackage.LINK_EXPRESSION__TEXT_BLOC, oldTextBloc, textBloc));
+			}
+		}
+		return textBloc;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EmphasisExpression basicGetTextBloc() {
+		return textBloc;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTextBloc(EmphasisExpression newTextBloc) {
+		EmphasisExpression oldTextBloc = textBloc;
+		textBloc = newTextBloc;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MarkdownPackage.LINK_EXPRESSION__TEXT_BLOC,
+					oldTextBloc, textBloc));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Boolean getIsReferenced() {
+		return isReferenced;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIsReferenced(Boolean newIsReferenced) {
+		Boolean oldIsReferenced = isReferenced;
+		isReferenced = newIsReferenced;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MarkdownPackage.LINK_EXPRESSION__IS_REFERENCED,
+					oldIsReferenced, isReferenced));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case MarkdownPackage.LINK_EXPRESSION__TEXTBLOC:
-			if (resolve)
-				return getTextbloc();
-			return basicGetTextbloc();
 		case MarkdownPackage.LINK_EXPRESSION__TEXT_URL:
 			return getTextURL();
+		case MarkdownPackage.LINK_EXPRESSION__TEXT_BLOC:
+			if (resolve)
+				return getTextBloc();
+			return basicGetTextBloc();
+		case MarkdownPackage.LINK_EXPRESSION__IS_REFERENCED:
+			return getIsReferenced();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -165,11 +209,14 @@ public class LinkExpressionImpl extends ExpressionImpl implements LinkExpression
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case MarkdownPackage.LINK_EXPRESSION__TEXTBLOC:
-			setTextbloc((TextBloc) newValue);
-			return;
 		case MarkdownPackage.LINK_EXPRESSION__TEXT_URL:
 			setTextURL((String) newValue);
+			return;
+		case MarkdownPackage.LINK_EXPRESSION__TEXT_BLOC:
+			setTextBloc((EmphasisExpression) newValue);
+			return;
+		case MarkdownPackage.LINK_EXPRESSION__IS_REFERENCED:
+			setIsReferenced((Boolean) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -183,11 +230,14 @@ public class LinkExpressionImpl extends ExpressionImpl implements LinkExpression
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case MarkdownPackage.LINK_EXPRESSION__TEXTBLOC:
-			setTextbloc((TextBloc) null);
-			return;
 		case MarkdownPackage.LINK_EXPRESSION__TEXT_URL:
 			setTextURL(TEXT_URL_EDEFAULT);
+			return;
+		case MarkdownPackage.LINK_EXPRESSION__TEXT_BLOC:
+			setTextBloc((EmphasisExpression) null);
+			return;
+		case MarkdownPackage.LINK_EXPRESSION__IS_REFERENCED:
+			setIsReferenced(IS_REFERENCED_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -201,10 +251,12 @@ public class LinkExpressionImpl extends ExpressionImpl implements LinkExpression
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case MarkdownPackage.LINK_EXPRESSION__TEXTBLOC:
-			return textbloc != null;
 		case MarkdownPackage.LINK_EXPRESSION__TEXT_URL:
 			return TEXT_URL_EDEFAULT == null ? textURL != null : !TEXT_URL_EDEFAULT.equals(textURL);
+		case MarkdownPackage.LINK_EXPRESSION__TEXT_BLOC:
+			return textBloc != null;
+		case MarkdownPackage.LINK_EXPRESSION__IS_REFERENCED:
+			return IS_REFERENCED_EDEFAULT == null ? isReferenced != null : !IS_REFERENCED_EDEFAULT.equals(isReferenced);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -222,6 +274,8 @@ public class LinkExpressionImpl extends ExpressionImpl implements LinkExpression
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (textURL: ");
 		result.append(textURL);
+		result.append(", isReferenced: ");
+		result.append(isReferenced);
 		result.append(')');
 		return result.toString();
 	}

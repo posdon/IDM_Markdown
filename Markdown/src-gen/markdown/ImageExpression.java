@@ -11,8 +11,9 @@ package markdown;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link markdown.ImageExpression#getTextbloc <em>Textbloc</em>}</li>
  *   <li>{@link markdown.ImageExpression#getTextURL <em>Text URL</em>}</li>
+ *   <li>{@link markdown.ImageExpression#getTextBloc <em>Text Bloc</em>}</li>
+ *   <li>{@link markdown.ImageExpression#getIsReferenced <em>Is Referenced</em>}</li>
  * </ul>
  *
  * @see markdown.MarkdownPackage#getImageExpression()
@@ -20,32 +21,6 @@ package markdown;
  * @generated
  */
 public interface ImageExpression extends Expression {
-	/**
-	 * Returns the value of the '<em><b>Textbloc</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Textbloc</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Textbloc</em>' reference.
-	 * @see #setTextbloc(TextBloc)
-	 * @see markdown.MarkdownPackage#getImageExpression_Textbloc()
-	 * @model required="true"
-	 * @generated
-	 */
-	TextBloc getTextbloc();
-
-	/**
-	 * Sets the value of the '{@link markdown.ImageExpression#getTextbloc <em>Textbloc</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Textbloc</em>' reference.
-	 * @see #getTextbloc()
-	 * @generated
-	 */
-	void setTextbloc(TextBloc value);
-
 	/**
 	 * Returns the value of the '<em><b>Text URL</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -71,5 +46,57 @@ public interface ImageExpression extends Expression {
 	 * @generated
 	 */
 	void setTextURL(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Text Bloc</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Text Bloc</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Text Bloc</em>' reference.
+	 * @see #setTextBloc(EmphasisExpression)
+	 * @see markdown.MarkdownPackage#getImageExpression_TextBloc()
+	 * @model required="true"
+	 * @generated
+	 */
+	EmphasisExpression getTextBloc();
+
+	/**
+	 * Sets the value of the '{@link markdown.ImageExpression#getTextBloc <em>Text Bloc</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Text Bloc</em>' reference.
+	 * @see #getTextBloc()
+	 * @generated
+	 */
+	void setTextBloc(EmphasisExpression value);
+
+	/**
+	 * Returns the value of the '<em><b>Is Referenced</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Is Referenced</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Is Referenced</em>' attribute.
+	 * @see #setIsReferenced(Boolean)
+	 * @see markdown.MarkdownPackage#getImageExpression_IsReferenced()
+	 * @model dataType="org.eclipse.emf.ecore.xml.type.BooleanObject"
+	 * @generated
+	 */
+	Boolean getIsReferenced();
+
+	/**
+	 * Sets the value of the '{@link markdown.ImageExpression#getIsReferenced <em>Is Referenced</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is Referenced</em>' attribute.
+	 * @see #getIsReferenced()
+	 * @generated
+	 */
+	void setIsReferenced(Boolean value);
 
 } // ImageExpression

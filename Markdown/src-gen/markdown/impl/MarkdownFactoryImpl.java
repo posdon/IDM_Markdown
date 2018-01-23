@@ -58,10 +58,6 @@ public class MarkdownFactoryImpl extends EFactoryImpl implements MarkdownFactory
 		switch (eClass.getClassifierID()) {
 		case MarkdownPackage.FILE:
 			return createFile();
-		case MarkdownPackage.HEADER_EXPRESSION:
-			return createHeaderExpression();
-		case MarkdownPackage.TEXT_EXPRESSION:
-			return createTextExpression();
 		case MarkdownPackage.TABLE_EXPRESSION:
 			return createTableExpression();
 		case MarkdownPackage.TABLE_LINE:
@@ -74,16 +70,12 @@ public class MarkdownFactoryImpl extends EFactoryImpl implements MarkdownFactory
 			return createQuoteExpression();
 		case MarkdownPackage.LINE_BREAK_EXPRESSION:
 			return createLineBreakExpression();
-		case MarkdownPackage.EMPHASIS_EXPRESSION:
-			return createEmphasisExpression();
 		case MarkdownPackage.ITALIC_EXPRESSION:
 			return createItalicExpression();
 		case MarkdownPackage.STRONG_EXPRESSION:
 			return createStrongExpression();
 		case MarkdownPackage.SCRATCH_EXPRESSION:
 			return createScratchExpression();
-		case MarkdownPackage.TEXT_BLOC:
-			return createTextBloc();
 		case MarkdownPackage.HTML_EXPRESSION:
 			return createHTMLExpression();
 		case MarkdownPackage.CODE_EXPRESSION:
@@ -96,6 +88,20 @@ public class MarkdownFactoryImpl extends EFactoryImpl implements MarkdownFactory
 			return createImageExpression();
 		case MarkdownPackage.VIDEO_EXPRESSION:
 			return createVideoExpression();
+		case MarkdownPackage.HEADER_DEPTH1_EXPRESSION:
+			return createHeaderDepth1Expression();
+		case MarkdownPackage.HEADER_DEPTH2_EXPRESSION:
+			return createHeaderDepth2Expression();
+		case MarkdownPackage.HEADER_DEPTH3_EXPRESSION:
+			return createHeaderDepth3Expression();
+		case MarkdownPackage.HEADER_DEPTH5_EXPRESSION:
+			return createHeaderDepth5Expression();
+		case MarkdownPackage.HEADER_DEPTH6_EXPRESSION:
+			return createHeaderDepth6Expression();
+		case MarkdownPackage.HEADER_DEPTH4_EXPRESSION:
+			return createHeaderDepth4Expression();
+		case MarkdownPackage.TEXTUAL_EXPRESSION:
+			return createTextualExpression();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -109,26 +115,6 @@ public class MarkdownFactoryImpl extends EFactoryImpl implements MarkdownFactory
 	public File createFile() {
 		FileImpl file = new FileImpl();
 		return file;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public HeaderExpression createHeaderExpression() {
-		HeaderExpressionImpl headerExpression = new HeaderExpressionImpl();
-		return headerExpression;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public TextExpression createTextExpression() {
-		TextExpressionImpl textExpression = new TextExpressionImpl();
-		return textExpression;
 	}
 
 	/**
@@ -196,16 +182,6 @@ public class MarkdownFactoryImpl extends EFactoryImpl implements MarkdownFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EmphasisExpression createEmphasisExpression() {
-		EmphasisExpressionImpl emphasisExpression = new EmphasisExpressionImpl();
-		return emphasisExpression;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public ItalicExpression createItalicExpression() {
 		ItalicExpressionImpl italicExpression = new ItalicExpressionImpl();
 		return italicExpression;
@@ -229,16 +205,6 @@ public class MarkdownFactoryImpl extends EFactoryImpl implements MarkdownFactory
 	public ScratchExpression createScratchExpression() {
 		ScratchExpressionImpl scratchExpression = new ScratchExpressionImpl();
 		return scratchExpression;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public TextBloc createTextBloc() {
-		TextBlocImpl textBloc = new TextBlocImpl();
-		return textBloc;
 	}
 
 	/**
@@ -299,6 +265,76 @@ public class MarkdownFactoryImpl extends EFactoryImpl implements MarkdownFactory
 	public VideoExpression createVideoExpression() {
 		VideoExpressionImpl videoExpression = new VideoExpressionImpl();
 		return videoExpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HeaderDepth1Expression createHeaderDepth1Expression() {
+		HeaderDepth1ExpressionImpl headerDepth1Expression = new HeaderDepth1ExpressionImpl();
+		return headerDepth1Expression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HeaderDepth2Expression createHeaderDepth2Expression() {
+		HeaderDepth2ExpressionImpl headerDepth2Expression = new HeaderDepth2ExpressionImpl();
+		return headerDepth2Expression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HeaderDepth3Expression createHeaderDepth3Expression() {
+		HeaderDepth3ExpressionImpl headerDepth3Expression = new HeaderDepth3ExpressionImpl();
+		return headerDepth3Expression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HeaderDepth5Expression createHeaderDepth5Expression() {
+		HeaderDepth5ExpressionImpl headerDepth5Expression = new HeaderDepth5ExpressionImpl();
+		return headerDepth5Expression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HeaderDepth6Expression createHeaderDepth6Expression() {
+		HeaderDepth6ExpressionImpl headerDepth6Expression = new HeaderDepth6ExpressionImpl();
+		return headerDepth6Expression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HeaderDepth4Expression createHeaderDepth4Expression() {
+		HeaderDepth4ExpressionImpl headerDepth4Expression = new HeaderDepth4ExpressionImpl();
+		return headerDepth4Expression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TextualExpression createTextualExpression() {
+		TextualExpressionImpl textualExpression = new TextualExpressionImpl();
+		return textualExpression;
 	}
 
 	/**

@@ -31,24 +31,6 @@ public interface MarkdownFactory extends EFactory {
 	File createFile();
 
 	/**
-	 * Returns a new object of class '<em>Header Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Header Expression</em>'.
-	 * @generated
-	 */
-	HeaderExpression createHeaderExpression();
-
-	/**
-	 * Returns a new object of class '<em>Text Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Text Expression</em>'.
-	 * @generated
-	 */
-	TextExpression createTextExpression();
-
-	/**
 	 * Returns a new object of class '<em>Table Expression</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -103,15 +85,6 @@ public interface MarkdownFactory extends EFactory {
 	LineBreakExpression createLineBreakExpression();
 
 	/**
-	 * Returns a new object of class '<em>Emphasis Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Emphasis Expression</em>'.
-	 * @generated
-	 */
-	EmphasisExpression createEmphasisExpression();
-
-	/**
 	 * Returns a new object of class '<em>Italic Expression</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -137,15 +110,6 @@ public interface MarkdownFactory extends EFactory {
 	 * @generated
 	 */
 	ScratchExpression createScratchExpression();
-
-	/**
-	 * Returns a new object of class '<em>Text Bloc</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Text Bloc</em>'.
-	 * @generated
-	 */
-	TextBloc createTextBloc();
 
 	/**
 	 * Returns a new object of class '<em>HTML Expression</em>'.
@@ -200,6 +164,69 @@ public interface MarkdownFactory extends EFactory {
 	 * @generated
 	 */
 	VideoExpression createVideoExpression();
+
+	/**
+	 * Returns a new object of class '<em>Header Depth1 Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Header Depth1 Expression</em>'.
+	 * @generated
+	 */
+	HeaderDepth1Expression createHeaderDepth1Expression();
+
+	/**
+	 * Returns a new object of class '<em>Header Depth2 Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Header Depth2 Expression</em>'.
+	 * @generated
+	 */
+	HeaderDepth2Expression createHeaderDepth2Expression();
+
+	/**
+	 * Returns a new object of class '<em>Header Depth3 Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Header Depth3 Expression</em>'.
+	 * @generated
+	 */
+	HeaderDepth3Expression createHeaderDepth3Expression();
+
+	/**
+	 * Returns a new object of class '<em>Header Depth5 Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Header Depth5 Expression</em>'.
+	 * @generated
+	 */
+	HeaderDepth5Expression createHeaderDepth5Expression();
+
+	/**
+	 * Returns a new object of class '<em>Header Depth6 Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Header Depth6 Expression</em>'.
+	 * @generated
+	 */
+	HeaderDepth6Expression createHeaderDepth6Expression();
+
+	/**
+	 * Returns a new object of class '<em>Header Depth4 Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Header Depth4 Expression</em>'.
+	 * @generated
+	 */
+	HeaderDepth4Expression createHeaderDepth4Expression();
+
+	/**
+	 * Returns a new object of class '<em>Textual Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Textual Expression</em>'.
+	 * @generated
+	 */
+	TextualExpression createTextualExpression();
 
 	/**
 	 * Returns the package supported by this factory.

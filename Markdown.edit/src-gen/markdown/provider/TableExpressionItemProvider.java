@@ -13,10 +13,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
-
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
@@ -47,25 +44,8 @@ public class TableExpressionItemProvider extends ExpressionItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNbColumnPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Nb Column feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNbColumnPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_TableExpression_nbColumn_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_TableExpression_nbColumn_feature",
-								"_UI_TableExpression_type"),
-						MarkdownPackage.Literals.TABLE_EXPRESSION__NB_COLUMN, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -127,10 +107,7 @@ public class TableExpressionItemProvider extends ExpressionItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		Integer labelValue = ((TableExpression) object).getNbColumn();
-		String label = labelValue == null ? null : labelValue.toString();
-		return label == null || label.length() == 0 ? getString("_UI_TableExpression_type")
-				: getString("_UI_TableExpression_type") + " " + label;
+		return getString("_UI_TableExpression_type");
 	}
 
 	/**
@@ -145,9 +122,6 @@ public class TableExpressionItemProvider extends ExpressionItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(TableExpression.class)) {
-		case MarkdownPackage.TABLE_EXPRESSION__NB_COLUMN:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
 		case MarkdownPackage.TABLE_EXPRESSION__TABLELINES:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;

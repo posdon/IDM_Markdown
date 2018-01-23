@@ -151,12 +151,6 @@ public class FileItemProvider extends ItemProviderAdapter implements IEditingDom
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add(createChildParameter(MarkdownPackage.Literals.FILE__EXPRESSION,
-				MarkdownFactory.eINSTANCE.createHeaderExpression()));
-
-		newChildDescriptors.add(createChildParameter(MarkdownPackage.Literals.FILE__EXPRESSION,
-				MarkdownFactory.eINSTANCE.createTextExpression()));
-
-		newChildDescriptors.add(createChildParameter(MarkdownPackage.Literals.FILE__EXPRESSION,
 				MarkdownFactory.eINSTANCE.createTableExpression()));
 
 		newChildDescriptors.add(createChildParameter(MarkdownPackage.Literals.FILE__EXPRESSION,
@@ -172,9 +166,6 @@ public class FileItemProvider extends ItemProviderAdapter implements IEditingDom
 				MarkdownFactory.eINSTANCE.createLineBreakExpression()));
 
 		newChildDescriptors.add(createChildParameter(MarkdownPackage.Literals.FILE__EXPRESSION,
-				MarkdownFactory.eINSTANCE.createEmphasisExpression()));
-
-		newChildDescriptors.add(createChildParameter(MarkdownPackage.Literals.FILE__EXPRESSION,
 				MarkdownFactory.eINSTANCE.createItalicExpression()));
 
 		newChildDescriptors.add(createChildParameter(MarkdownPackage.Literals.FILE__EXPRESSION,
@@ -182,9 +173,6 @@ public class FileItemProvider extends ItemProviderAdapter implements IEditingDom
 
 		newChildDescriptors.add(createChildParameter(MarkdownPackage.Literals.FILE__EXPRESSION,
 				MarkdownFactory.eINSTANCE.createScratchExpression()));
-
-		newChildDescriptors.add(createChildParameter(MarkdownPackage.Literals.FILE__EXPRESSION,
-				MarkdownFactory.eINSTANCE.createTextBloc()));
 
 		newChildDescriptors.add(createChildParameter(MarkdownPackage.Literals.FILE__EXPRESSION,
 				MarkdownFactory.eINSTANCE.createHTMLExpression()));
@@ -203,6 +191,27 @@ public class FileItemProvider extends ItemProviderAdapter implements IEditingDom
 
 		newChildDescriptors.add(createChildParameter(MarkdownPackage.Literals.FILE__EXPRESSION,
 				MarkdownFactory.eINSTANCE.createVideoExpression()));
+
+		newChildDescriptors.add(createChildParameter(MarkdownPackage.Literals.FILE__EXPRESSION,
+				MarkdownFactory.eINSTANCE.createHeaderDepth1Expression()));
+
+		newChildDescriptors.add(createChildParameter(MarkdownPackage.Literals.FILE__EXPRESSION,
+				MarkdownFactory.eINSTANCE.createHeaderDepth2Expression()));
+
+		newChildDescriptors.add(createChildParameter(MarkdownPackage.Literals.FILE__EXPRESSION,
+				MarkdownFactory.eINSTANCE.createHeaderDepth3Expression()));
+
+		newChildDescriptors.add(createChildParameter(MarkdownPackage.Literals.FILE__EXPRESSION,
+				MarkdownFactory.eINSTANCE.createHeaderDepth5Expression()));
+
+		newChildDescriptors.add(createChildParameter(MarkdownPackage.Literals.FILE__EXPRESSION,
+				MarkdownFactory.eINSTANCE.createHeaderDepth6Expression()));
+
+		newChildDescriptors.add(createChildParameter(MarkdownPackage.Literals.FILE__EXPRESSION,
+				MarkdownFactory.eINSTANCE.createHeaderDepth4Expression()));
+
+		newChildDescriptors.add(createChildParameter(MarkdownPackage.Literals.FILE__EXPRESSION,
+				MarkdownFactory.eINSTANCE.createTextualExpression()));
 	}
 
 	/**

@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class EmphasisExpressionImpl extends TextExpressionImpl implements EmphasisExpression {
+public abstract class EmphasisExpressionImpl extends TextExpressionImpl implements EmphasisExpression {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

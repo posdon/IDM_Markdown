@@ -9,7 +9,7 @@ package markdown;
  *
  *
  * @see markdown.MarkdownPackage#getEmphasisExpression()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface EmphasisExpression extends TextExpression {

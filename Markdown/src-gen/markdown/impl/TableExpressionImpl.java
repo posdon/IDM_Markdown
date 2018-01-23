@@ -7,17 +7,12 @@ import java.util.Collection;
 import markdown.MarkdownPackage;
 import markdown.TableExpression;
 import markdown.TableLine;
-
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -29,33 +24,12 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link markdown.impl.TableExpressionImpl#getNbColumn <em>Nb Column</em>}</li>
  *   <li>{@link markdown.impl.TableExpressionImpl#getTablelines <em>Tablelines</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class TableExpressionImpl extends ExpressionImpl implements TableExpression {
-	/**
-	 * The default value of the '{@link #getNbColumn() <em>Nb Column</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNbColumn()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Integer NB_COLUMN_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getNbColumn() <em>Nb Column</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNbColumn()
-	 * @generated
-	 * @ordered
-	 */
-	protected Integer nbColumn = NB_COLUMN_EDEFAULT;
-
 	/**
 	 * The cached value of the '{@link #getTablelines() <em>Tablelines</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -83,28 +57,6 @@ public class TableExpressionImpl extends ExpressionImpl implements TableExpressi
 	@Override
 	protected EClass eStaticClass() {
 		return MarkdownPackage.Literals.TABLE_EXPRESSION;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Integer getNbColumn() {
-		return nbColumn;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setNbColumn(Integer newNbColumn) {
-		Integer oldNbColumn = nbColumn;
-		nbColumn = newNbColumn;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MarkdownPackage.TABLE_EXPRESSION__NB_COLUMN,
-					oldNbColumn, nbColumn));
 	}
 
 	/**
@@ -142,8 +94,6 @@ public class TableExpressionImpl extends ExpressionImpl implements TableExpressi
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case MarkdownPackage.TABLE_EXPRESSION__NB_COLUMN:
-			return getNbColumn();
 		case MarkdownPackage.TABLE_EXPRESSION__TABLELINES:
 			return getTablelines();
 		}
@@ -159,9 +109,6 @@ public class TableExpressionImpl extends ExpressionImpl implements TableExpressi
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case MarkdownPackage.TABLE_EXPRESSION__NB_COLUMN:
-			setNbColumn((Integer) newValue);
-			return;
 		case MarkdownPackage.TABLE_EXPRESSION__TABLELINES:
 			getTablelines().clear();
 			getTablelines().addAll((Collection<? extends TableLine>) newValue);
@@ -178,9 +125,6 @@ public class TableExpressionImpl extends ExpressionImpl implements TableExpressi
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case MarkdownPackage.TABLE_EXPRESSION__NB_COLUMN:
-			setNbColumn(NB_COLUMN_EDEFAULT);
-			return;
 		case MarkdownPackage.TABLE_EXPRESSION__TABLELINES:
 			getTablelines().clear();
 			return;
@@ -196,29 +140,10 @@ public class TableExpressionImpl extends ExpressionImpl implements TableExpressi
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case MarkdownPackage.TABLE_EXPRESSION__NB_COLUMN:
-			return NB_COLUMN_EDEFAULT == null ? nbColumn != null : !NB_COLUMN_EDEFAULT.equals(nbColumn);
 		case MarkdownPackage.TABLE_EXPRESSION__TABLELINES:
 			return tablelines != null && !tablelines.isEmpty();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy())
-			return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (nbColumn: ");
-		result.append(nbColumn);
-		result.append(')');
-		return result.toString();
 	}
 
 } //TableExpressionImpl

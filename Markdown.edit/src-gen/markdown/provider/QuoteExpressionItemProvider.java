@@ -142,16 +142,10 @@ public class QuoteExpressionItemProvider extends TextExpressionItemProvider {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add(createChildParameter(MarkdownPackage.Literals.QUOTE_EXPRESSION__TEXTEXPRESSION,
-				MarkdownFactory.eINSTANCE.createTextExpression()));
-
-		newChildDescriptors.add(createChildParameter(MarkdownPackage.Literals.QUOTE_EXPRESSION__TEXTEXPRESSION,
 				MarkdownFactory.eINSTANCE.createHorizontalExpression()));
 
 		newChildDescriptors.add(createChildParameter(MarkdownPackage.Literals.QUOTE_EXPRESSION__TEXTEXPRESSION,
 				MarkdownFactory.eINSTANCE.createQuoteExpression()));
-
-		newChildDescriptors.add(createChildParameter(MarkdownPackage.Literals.QUOTE_EXPRESSION__TEXTEXPRESSION,
-				MarkdownFactory.eINSTANCE.createEmphasisExpression()));
 
 		newChildDescriptors.add(createChildParameter(MarkdownPackage.Literals.QUOTE_EXPRESSION__TEXTEXPRESSION,
 				MarkdownFactory.eINSTANCE.createItalicExpression()));
@@ -163,7 +157,7 @@ public class QuoteExpressionItemProvider extends TextExpressionItemProvider {
 				MarkdownFactory.eINSTANCE.createScratchExpression()));
 
 		newChildDescriptors.add(createChildParameter(MarkdownPackage.Literals.QUOTE_EXPRESSION__TEXTEXPRESSION,
-				MarkdownFactory.eINSTANCE.createTextBloc()));
+				MarkdownFactory.eINSTANCE.createTextualExpression()));
 	}
 
 }

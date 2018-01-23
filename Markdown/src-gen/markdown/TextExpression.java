@@ -9,7 +9,7 @@ package markdown;
  *
  *
  * @see markdown.MarkdownPackage#getTextExpression()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface TextExpression extends Expression {
