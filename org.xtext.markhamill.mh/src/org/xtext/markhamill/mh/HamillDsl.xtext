@@ -20,16 +20,20 @@ TextExpression returns markdown::TextExpression:
 EmphasisExpression returns markdown::EmphasisExpression:
 	StrongExpression | ItalicExpression  | ScratchExpression | TextualExpression;
 
-TableExpression returns TableExpression:
-	'TableExpression'
-	'{'
-		'tablelines' '{' tablelines+=TableLine ( "," tablelines+=TableLine)* '}' 
-	'}';
+TableExpression returns markdown::TableExpression hidden(WS):
+		'|'? S* tablelines+=TableLine S* '|'? S* LINE_BREAK_EXPRESSION
+		'|'? S* ( '--''-'* ) (S* '|' S* '--''-'* S*)+ '|'? LINE_BREAK_EXPRESSION
+		('|'? S* tablelines+=TableLine S* '|'? S* LINE_BREAK_EXPRESSION)*  
+	;
+
+terminal S : 
+	(' '|'\t')
+;
 
 terminal HORIZONTAL_EXPRESSION returns markdown::HorizontalExpression:
-	('-' '-' '-' ('-')* |
-	'_' '_' '_' ('_')* |
-	'*' '*' '*' ('*')) LINE_BREAK_EXPRESSION
+	S* ('-' S* '-' S* '-' S* ('-' S*)* |
+	    '_' S* '_' S* '_' S* ('_' S*)* |
+	    '*' S* '*' S* '*' S* ('*' S*)*  ) LINE_BREAK_EXPRESSION
 	;
 
 ListExpression returns ListExpression:
@@ -39,8 +43,8 @@ ListExpression returns ListExpression:
 		'listContent' '{' listContent+=TextExpression ( "," listContent+=TextExpression)* '}' 
 	'}';
 
-QuoteExpression returns markdown::QuoteExpression:
-		'>' textexpression=TextExpression LINE_BREAK_EXPRESSION
+QuoteExpression returns markdown::QuoteExpression hidden(WS):
+		'>'textexpression=TextExpression LINE_BREAK_EXPRESSION
 	;
 
 terminal LINE_BREAK_EXPRESSION returns markdown::LineBreakExpression:
@@ -51,11 +55,11 @@ ItalicExpression returns markdown::ItalicExpression hidden(WS):
 	 ('*'|'_') content+=[markdown::EmphasisExpression] ('*'|'_') WS* (content+=[markdown::EmphasisExpression])*
 	;
 
-StrongExpression returns markdown::StrongExpression:
+StrongExpression returns markdown::StrongExpression hidden(WS):
 	 ('**'|'__') content+=[markdown::EmphasisExpression] ('**'|'__') WS* (content+=[markdown::EmphasisExpression])*
 	 ;
 
-ScratchExpression returns markdown::ScratchExpression:
+ScratchExpression returns markdown::ScratchExpression hidden(WS):
 	'~~' content+=[markdown::EmphasisExpression] '~~' WS* (content+=[markdown::EmphasisExpression])*
 	;
 
@@ -102,33 +106,33 @@ HeaderExpression returns markdown::HeaderExpression:
 	HeaderDepth1Expression | HeaderDepth2Expression | HeaderDepth3Expression | HeaderDepth4Expression | HeaderDepth5Expression | HeaderDepth6Expression
 ;
 
-HeaderDepth1Expression returns markdown::HeaderDepth1Expression:
-		'#' content=[markdown::EmphasisExpression] LINE_BREAK_EXPRESSION |
-		content=[markdown::EmphasisExpression] LINE_BREAK_EXPRESSION ('=')* LINE_BREAK_EXPRESSION
+HeaderDepth1Expression returns markdown::HeaderDepth1Expression hidden(WS):
+	'#' S* content=[markdown::EmphasisExpression] LINE_BREAK_EXPRESSION |
+	content=[markdown::EmphasisExpression] LINE_BREAK_EXPRESSION ('=')* LINE_BREAK_EXPRESSION
 	;
 
-HeaderDepth2Expression returns markdown::HeaderDepth2Expression:
-		'##' content=[markdown::EmphasisExpression] LINE_BREAK_EXPRESSION |
-		content=[markdown::EmphasisExpression] LINE_BREAK_EXPRESSION ('-')* LINE_BREAK_EXPRESSION
+HeaderDepth2Expression returns markdown::HeaderDepth2Expression hidden(WS):
+	'##' S* content=[markdown::EmphasisExpression] LINE_BREAK_EXPRESSION |
+	content=[markdown::EmphasisExpression] LINE_BREAK_EXPRESSION ('-')* LINE_BREAK_EXPRESSION
 	;
 
-HeaderDepth3Expression returns markdown::HeaderDepth3Expression:
-	'###' content=[markdown::EmphasisExpression] LINE_BREAK_EXPRESSION
+HeaderDepth3Expression returns markdown::HeaderDepth3Expression hidden(WS):
+	'###' S* content=[markdown::EmphasisExpression] LINE_BREAK_EXPRESSION
 	;
 
-HeaderDepth5Expression returns markdown::HeaderDepth5Expression:
-	'#####' content=[markdown::EmphasisExpression] LINE_BREAK_EXPRESSION
+HeaderDepth5Expression returns markdown::HeaderDepth5Expression hidden(WS):
+	'#####' S* content=[markdown::EmphasisExpression] LINE_BREAK_EXPRESSION
 	;
 
-HeaderDepth6Expression returns markdown::HeaderDepth6Expression:
-	'######' content=[markdown::EmphasisExpression] LINE_BREAK_EXPRESSION
+HeaderDepth6Expression returns markdown::HeaderDepth6Expression hidden(WS):
+	'######' S* content=[markdown::EmphasisExpression] LINE_BREAK_EXPRESSION
 	;
 
-HeaderDepth4Expression returns markdown::HeaderDepth4Expression:
-	'####' content=[markdown::EmphasisExpression] LINE_BREAK_EXPRESSION
+HeaderDepth4Expression returns markdown::HeaderDepth4Expression hidden(WS):
+	'####' S* content=[markdown::EmphasisExpression] LINE_BREAK_EXPRESSION
 	;
 
-TextualExpression returns markdown::TextualExpression hidden(LINE_BREAK_EXPRESSION):
+TextualExpression returns markdown::TextualExpression hidden(WS):
 		newAttribute=String0
 		(followingExpression=[markdown::EmphasisExpression])?
 	;
