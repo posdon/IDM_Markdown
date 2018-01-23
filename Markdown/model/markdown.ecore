@@ -60,14 +60,16 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="textBloc" lowerBound="1"
         eType="#//EmphasisExpression"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isReferenced" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//BooleanObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isReferenced" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//BooleanObject"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ImageExpression" eSuperTypes="#//Expression">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="textURL" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="textBloc" lowerBound="1"
         eType="#//EmphasisExpression"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isReferenced" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//BooleanObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isReferenced" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//BooleanObject"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VideoExpression" eSuperTypes="#//Expression">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="textURL" lowerBound="1"
@@ -76,7 +78,8 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="textBloc" lowerBound="1"
         eType="#//EmphasisExpression"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isReferenced" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//BooleanObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isReferenced" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//BooleanObject"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="HeaderDepth1Expression" eSuperTypes="#//HeaderExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="HeaderDepth2Expression" eSuperTypes="#//HeaderExpression"/>

@@ -111,7 +111,7 @@ public interface VideoExpression extends Expression {
 	 * @return the value of the '<em>Is Referenced</em>' attribute.
 	 * @see #setIsReferenced(Boolean)
 	 * @see markdown.MarkdownPackage#getVideoExpression_IsReferenced()
-	 * @model dataType="org.eclipse.emf.ecore.xml.type.BooleanObject"
+	 * @model dataType="org.eclipse.emf.ecore.xml.type.BooleanObject" required="true"
 	 * @generated
 	 */
 	Boolean getIsReferenced();

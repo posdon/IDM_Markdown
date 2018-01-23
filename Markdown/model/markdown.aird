@@ -1434,8 +1434,8 @@
       <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_ZNUO0ABIEei2QMFa40m1NA" name="isReferenced : BooleanObject" tooltipText="">
         <target xmi:type="ecore:EAttribute" href="markdown.ecore#//LinkExpression/isReferenced"/>
         <semanticElements xmi:type="ecore:EAttribute" href="markdown.ecore#//LinkExpression/isReferenced"/>
-        <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_cOXlAABIEei2QMFa40m1NA" labelAlignment="LEFT">
-          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+        <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_NmPWoABLEei2QMFa40m1NA" labelAlignment="LEFT" description="_nLsgMP0REeelnZ89q--4PA">
+          <labelFormat>bold</labelFormat>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
@@ -1473,8 +1473,8 @@
       <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_clH4IABIEei2QMFa40m1NA" name="isReferenced : BooleanObject" tooltipText="">
         <target xmi:type="ecore:EAttribute" href="markdown.ecore#//ImageExpression/isReferenced"/>
         <semanticElements xmi:type="ecore:EAttribute" href="markdown.ecore#//ImageExpression/isReferenced"/>
-        <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_clH4IQBIEei2QMFa40m1NA" labelAlignment="LEFT">
-          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+        <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_N8IHEABLEei2QMFa40m1NA" labelAlignment="LEFT" description="_nLsgMP0REeelnZ89q--4PA">
+          <labelFormat>bold</labelFormat>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
@@ -1508,8 +1508,8 @@
       <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_cw5qUABIEei2QMFa40m1NA" name="isReferenced : BooleanObject" tooltipText="">
         <target xmi:type="ecore:EAttribute" href="markdown.ecore#//VideoExpression/isReferenced"/>
         <semanticElements xmi:type="ecore:EAttribute" href="markdown.ecore#//VideoExpression/isReferenced"/>
-        <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_cw5qUQBIEei2QMFa40m1NA" labelAlignment="LEFT">
-          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+        <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_OXGL0ABLEei2QMFa40m1NA" labelAlignment="LEFT" description="_nLsgMP0REeelnZ89q--4PA">
+          <labelFormat>bold</labelFormat>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>

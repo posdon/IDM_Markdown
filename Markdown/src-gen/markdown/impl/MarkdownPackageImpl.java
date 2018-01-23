@@ -1049,7 +1049,7 @@ public class MarkdownPackageImpl extends EPackageImpl implements MarkdownPackage
 		initEReference(getLinkExpression_TextBloc(), this.getEmphasisExpression(), null, "textBloc", null, 1, 1,
 				LinkExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getLinkExpression_IsReferenced(), theXMLTypePackage.getBooleanObject(), "isReferenced", null, 0,
+		initEAttribute(getLinkExpression_IsReferenced(), theXMLTypePackage.getBooleanObject(), "isReferenced", null, 1,
 				1, LinkExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
 
@@ -1061,7 +1061,7 @@ public class MarkdownPackageImpl extends EPackageImpl implements MarkdownPackage
 		initEReference(getImageExpression_TextBloc(), this.getEmphasisExpression(), null, "textBloc", null, 1, 1,
 				ImageExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getImageExpression_IsReferenced(), theXMLTypePackage.getBooleanObject(), "isReferenced", null, 0,
+		initEAttribute(getImageExpression_IsReferenced(), theXMLTypePackage.getBooleanObject(), "isReferenced", null, 1,
 				1, ImageExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
 
@@ -1076,7 +1076,7 @@ public class MarkdownPackageImpl extends EPackageImpl implements MarkdownPackage
 		initEReference(getVideoExpression_TextBloc(), this.getEmphasisExpression(), null, "textBloc", null, 1, 1,
 				VideoExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVideoExpression_IsReferenced(), theXMLTypePackage.getBooleanObject(), "isReferenced", null, 0,
+		initEAttribute(getVideoExpression_IsReferenced(), theXMLTypePackage.getBooleanObject(), "isReferenced", null, 1,
 				1, VideoExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
 

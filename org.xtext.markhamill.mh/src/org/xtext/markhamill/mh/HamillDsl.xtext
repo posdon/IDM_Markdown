@@ -81,11 +81,10 @@ ReferenceExpression returns markdown::ReferenceExpression hidden(WS):
 
 //TODO
 LinkExpression returns markdown::LinkExpression:
-	'LinkExpression'
-	'{'
-		'textURL' textURL=String0
-		'textBloc' textBloc=[markdown::EmphasisExpression]
-	'}';
+	'[' textBloc=[markdown::EmphasisExpression] ']' 
+	('(' textURL=String0 ')' | '[' textURL=String0  ']') 
+	;
+
 
 //TODO
 ImageExpression returns markdown::ImageExpression:
@@ -145,6 +144,7 @@ TableLine returns markdown::TableLine:
 	'{'
 		'cellContent' '{' cellContent+=TextExpression ( "," cellContent+=TextExpression)* '}' 
 	'}';
+	
 
 IntObject returns type::IntObject:
 	'IntObject' /* TODO: implement this rule and an appropriate IValueConverter */;
