@@ -73,12 +73,9 @@ CodeExpression returns CodeExpression:
 		'text' text=String0
 	'}';
 
-ReferenceExpression returns ReferenceExpression:
-	'ReferenceExpression'
-	'{'
-		'name' name=String0
-		'value' value=String0
-	'}';
+ReferenceExpression returns markdown::ReferenceExpression hidden(WS):
+	'[' S* name=String0 S* ']:' S* value=String0 S* LINE_BREAK_EXPRESSION
+	;
 
 LinkExpression returns LinkExpression:
 	'LinkExpression'
@@ -108,12 +105,12 @@ HeaderExpression returns markdown::HeaderExpression:
 
 HeaderDepth1Expression returns markdown::HeaderDepth1Expression hidden(WS):
 	'#' S* content=[markdown::EmphasisExpression] LINE_BREAK_EXPRESSION |
-	content=[markdown::EmphasisExpression] LINE_BREAK_EXPRESSION ('=')* LINE_BREAK_EXPRESSION
+	content=[markdown::EmphasisExpression] LINE_BREAK_EXPRESSION S* ('=')* S* LINE_BREAK_EXPRESSION
 	;
 
 HeaderDepth2Expression returns markdown::HeaderDepth2Expression hidden(WS):
 	'##' S* content=[markdown::EmphasisExpression] LINE_BREAK_EXPRESSION |
-	content=[markdown::EmphasisExpression] LINE_BREAK_EXPRESSION ('-')* LINE_BREAK_EXPRESSION
+	content=[markdown::EmphasisExpression] LINE_BREAK_EXPRESSION S* ('-')* S* LINE_BREAK_EXPRESSION
 	;
 
 HeaderDepth3Expression returns markdown::HeaderDepth3Expression hidden(WS):
