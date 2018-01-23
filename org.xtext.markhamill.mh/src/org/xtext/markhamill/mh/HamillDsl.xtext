@@ -57,11 +57,9 @@ StrongExpression returns markdown::StrongExpression:
 	 ('**'|'__') content+=[markdown::EmphasisExpression] ('**'|'__') WS* (content+=[markdown::EmphasisExpression])*
 	 ;
 
-ScratchExpression returns ScratchExpression:
-	'ScratchExpression'
-	'{'
-		'content' '(' content+=[EmphasisExpression|EString] ( "," content+=[EmphasisExpression|EString])* ')' 
-	'}';
+ScratchExpression returns markdown::ScratchExpression:
+	'~~' content+=[markdown::EmphasisExpression] '~~' WS* (content+=[markdown::EmphasisExpression])*
+	;
 
 HTMLExpression returns HTMLExpression:
 	'HTMLExpression'
