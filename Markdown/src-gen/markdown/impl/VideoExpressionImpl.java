@@ -2,14 +2,12 @@
  */
 package markdown.impl;
 
-import markdown.EmphasisExpression;
 import markdown.MarkdownPackage;
 import markdown.VideoExpression;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -23,7 +21,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link markdown.impl.VideoExpressionImpl#getTextURL <em>Text URL</em>}</li>
  *   <li>{@link markdown.impl.VideoExpressionImpl#getTextIMG <em>Text IMG</em>}</li>
- *   <li>{@link markdown.impl.VideoExpressionImpl#getTextBloc <em>Text Bloc</em>}</li>
  *   <li>{@link markdown.impl.VideoExpressionImpl#getIsReferenced <em>Is Referenced</em>}</li>
  * </ul>
  *
@@ -69,16 +66,6 @@ public class VideoExpressionImpl extends ExpressionImpl implements VideoExpressi
 	 * @ordered
 	 */
 	protected String textIMG = TEXT_IMG_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getTextBloc() <em>Text Bloc</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTextBloc()
-	 * @generated
-	 * @ordered
-	 */
-	protected EmphasisExpression textBloc;
 
 	/**
 	 * The default value of the '{@link #getIsReferenced() <em>Is Referenced</em>}' attribute.
@@ -168,46 +155,6 @@ public class VideoExpressionImpl extends ExpressionImpl implements VideoExpressi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EmphasisExpression getTextBloc() {
-		if (textBloc != null && textBloc.eIsProxy()) {
-			InternalEObject oldTextBloc = (InternalEObject) textBloc;
-			textBloc = (EmphasisExpression) eResolveProxy(oldTextBloc);
-			if (textBloc != oldTextBloc) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							MarkdownPackage.VIDEO_EXPRESSION__TEXT_BLOC, oldTextBloc, textBloc));
-			}
-		}
-		return textBloc;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EmphasisExpression basicGetTextBloc() {
-		return textBloc;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTextBloc(EmphasisExpression newTextBloc) {
-		EmphasisExpression oldTextBloc = textBloc;
-		textBloc = newTextBloc;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MarkdownPackage.VIDEO_EXPRESSION__TEXT_BLOC,
-					oldTextBloc, textBloc));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Boolean getIsReferenced() {
 		return isReferenced;
 	}
@@ -237,10 +184,6 @@ public class VideoExpressionImpl extends ExpressionImpl implements VideoExpressi
 			return getTextURL();
 		case MarkdownPackage.VIDEO_EXPRESSION__TEXT_IMG:
 			return getTextIMG();
-		case MarkdownPackage.VIDEO_EXPRESSION__TEXT_BLOC:
-			if (resolve)
-				return getTextBloc();
-			return basicGetTextBloc();
 		case MarkdownPackage.VIDEO_EXPRESSION__IS_REFERENCED:
 			return getIsReferenced();
 		}
@@ -260,9 +203,6 @@ public class VideoExpressionImpl extends ExpressionImpl implements VideoExpressi
 			return;
 		case MarkdownPackage.VIDEO_EXPRESSION__TEXT_IMG:
 			setTextIMG((String) newValue);
-			return;
-		case MarkdownPackage.VIDEO_EXPRESSION__TEXT_BLOC:
-			setTextBloc((EmphasisExpression) newValue);
 			return;
 		case MarkdownPackage.VIDEO_EXPRESSION__IS_REFERENCED:
 			setIsReferenced((Boolean) newValue);
@@ -285,9 +225,6 @@ public class VideoExpressionImpl extends ExpressionImpl implements VideoExpressi
 		case MarkdownPackage.VIDEO_EXPRESSION__TEXT_IMG:
 			setTextIMG(TEXT_IMG_EDEFAULT);
 			return;
-		case MarkdownPackage.VIDEO_EXPRESSION__TEXT_BLOC:
-			setTextBloc((EmphasisExpression) null);
-			return;
 		case MarkdownPackage.VIDEO_EXPRESSION__IS_REFERENCED:
 			setIsReferenced(IS_REFERENCED_EDEFAULT);
 			return;
@@ -307,8 +244,6 @@ public class VideoExpressionImpl extends ExpressionImpl implements VideoExpressi
 			return TEXT_URL_EDEFAULT == null ? textURL != null : !TEXT_URL_EDEFAULT.equals(textURL);
 		case MarkdownPackage.VIDEO_EXPRESSION__TEXT_IMG:
 			return TEXT_IMG_EDEFAULT == null ? textIMG != null : !TEXT_IMG_EDEFAULT.equals(textIMG);
-		case MarkdownPackage.VIDEO_EXPRESSION__TEXT_BLOC:
-			return textBloc != null;
 		case MarkdownPackage.VIDEO_EXPRESSION__IS_REFERENCED:
 			return IS_REFERENCED_EDEFAULT == null ? isReferenced != null : !IS_REFERENCED_EDEFAULT.equals(isReferenced);
 		}

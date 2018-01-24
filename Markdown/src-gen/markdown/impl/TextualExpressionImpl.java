@@ -2,15 +2,12 @@
  */
 package markdown.impl;
 
-import markdown.EmphasisExpression;
 import markdown.MarkdownPackage;
 import markdown.TextualExpression;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -21,42 +18,31 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link markdown.impl.TextualExpressionImpl#getContent <em>Content</em>}</li>
- *   <li>{@link markdown.impl.TextualExpressionImpl#getFollowingExpression <em>Following Expression</em>}</li>
+ *   <li>{@link markdown.impl.TextualExpressionImpl#getContentString <em>Content String</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class TextualExpressionImpl extends EmphasisExpressionImpl implements TextualExpression {
 	/**
-	 * The default value of the '{@link #getContent() <em>Content</em>}' attribute.
+	 * The default value of the '{@link #getContentString() <em>Content String</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getContent()
+	 * @see #getContentString()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CONTENT_EDEFAULT = null;
+	protected static final String CONTENT_STRING_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getContent() <em>Content</em>}' attribute.
+	 * The cached value of the '{@link #getContentString() <em>Content String</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getContent()
+	 * @see #getContentString()
 	 * @generated
 	 * @ordered
 	 */
-	protected String content = CONTENT_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getFollowingExpression() <em>Following Expression</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFollowingExpression()
-	 * @generated
-	 * @ordered
-	 */
-	protected EmphasisExpression followingExpression;
+	protected String contentString = CONTENT_STRING_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -82,8 +68,8 @@ public class TextualExpressionImpl extends EmphasisExpressionImpl implements Tex
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getContent() {
-		return content;
+	public String getContentString() {
+		return contentString;
 	}
 
 	/**
@@ -91,54 +77,12 @@ public class TextualExpressionImpl extends EmphasisExpressionImpl implements Tex
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setContent(String newContent) {
-		String oldContent = content;
-		content = newContent;
+	public void setContentString(String newContentString) {
+		String oldContentString = contentString;
+		contentString = newContentString;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MarkdownPackage.TEXTUAL_EXPRESSION__CONTENT,
-					oldContent, content));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EmphasisExpression getFollowingExpression() {
-		if (followingExpression != null && followingExpression.eIsProxy()) {
-			InternalEObject oldFollowingExpression = (InternalEObject) followingExpression;
-			followingExpression = (EmphasisExpression) eResolveProxy(oldFollowingExpression);
-			if (followingExpression != oldFollowingExpression) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							MarkdownPackage.TEXTUAL_EXPRESSION__FOLLOWING_EXPRESSION, oldFollowingExpression,
-							followingExpression));
-			}
-		}
-		return followingExpression;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EmphasisExpression basicGetFollowingExpression() {
-		return followingExpression;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setFollowingExpression(EmphasisExpression newFollowingExpression) {
-		EmphasisExpression oldFollowingExpression = followingExpression;
-		followingExpression = newFollowingExpression;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					MarkdownPackage.TEXTUAL_EXPRESSION__FOLLOWING_EXPRESSION, oldFollowingExpression,
-					followingExpression));
+			eNotify(new ENotificationImpl(this, Notification.SET, MarkdownPackage.TEXTUAL_EXPRESSION__CONTENT_STRING,
+					oldContentString, contentString));
 	}
 
 	/**
@@ -149,12 +93,8 @@ public class TextualExpressionImpl extends EmphasisExpressionImpl implements Tex
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case MarkdownPackage.TEXTUAL_EXPRESSION__CONTENT:
-			return getContent();
-		case MarkdownPackage.TEXTUAL_EXPRESSION__FOLLOWING_EXPRESSION:
-			if (resolve)
-				return getFollowingExpression();
-			return basicGetFollowingExpression();
+		case MarkdownPackage.TEXTUAL_EXPRESSION__CONTENT_STRING:
+			return getContentString();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -167,11 +107,8 @@ public class TextualExpressionImpl extends EmphasisExpressionImpl implements Tex
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case MarkdownPackage.TEXTUAL_EXPRESSION__CONTENT:
-			setContent((String) newValue);
-			return;
-		case MarkdownPackage.TEXTUAL_EXPRESSION__FOLLOWING_EXPRESSION:
-			setFollowingExpression((EmphasisExpression) newValue);
+		case MarkdownPackage.TEXTUAL_EXPRESSION__CONTENT_STRING:
+			setContentString((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -185,11 +122,8 @@ public class TextualExpressionImpl extends EmphasisExpressionImpl implements Tex
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case MarkdownPackage.TEXTUAL_EXPRESSION__CONTENT:
-			setContent(CONTENT_EDEFAULT);
-			return;
-		case MarkdownPackage.TEXTUAL_EXPRESSION__FOLLOWING_EXPRESSION:
-			setFollowingExpression((EmphasisExpression) null);
+		case MarkdownPackage.TEXTUAL_EXPRESSION__CONTENT_STRING:
+			setContentString(CONTENT_STRING_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -203,10 +137,9 @@ public class TextualExpressionImpl extends EmphasisExpressionImpl implements Tex
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case MarkdownPackage.TEXTUAL_EXPRESSION__CONTENT:
-			return CONTENT_EDEFAULT == null ? content != null : !CONTENT_EDEFAULT.equals(content);
-		case MarkdownPackage.TEXTUAL_EXPRESSION__FOLLOWING_EXPRESSION:
-			return followingExpression != null;
+		case MarkdownPackage.TEXTUAL_EXPRESSION__CONTENT_STRING:
+			return CONTENT_STRING_EDEFAULT == null ? contentString != null
+					: !CONTENT_STRING_EDEFAULT.equals(contentString);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -222,8 +155,8 @@ public class TextualExpressionImpl extends EmphasisExpressionImpl implements Tex
 			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (content: ");
-		result.append(content);
+		result.append(" (contentString: ");
+		result.append(contentString);
 		result.append(')');
 		return result.toString();
 	}

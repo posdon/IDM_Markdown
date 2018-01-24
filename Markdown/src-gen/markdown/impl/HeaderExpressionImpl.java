@@ -8,6 +8,7 @@ import markdown.MarkdownPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -21,21 +22,21 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link markdown.impl.HeaderExpressionImpl#getContent <em>Content</em>}</li>
+ *   <li>{@link markdown.impl.HeaderExpressionImpl#getTitle <em>Title</em>}</li>
  * </ul>
  *
  * @generated
  */
 public abstract class HeaderExpressionImpl extends ExpressionImpl implements HeaderExpression {
 	/**
-	 * The cached value of the '{@link #getContent() <em>Content</em>}' reference.
+	 * The cached value of the '{@link #getTitle() <em>Title</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getContent()
+	 * @see #getTitle()
 	 * @generated
 	 * @ordered
 	 */
-	protected EmphasisExpression content;
+	protected EmphasisExpression title;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -61,17 +62,27 @@ public abstract class HeaderExpressionImpl extends ExpressionImpl implements Hea
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EmphasisExpression getContent() {
-		if (content != null && content.eIsProxy()) {
-			InternalEObject oldContent = (InternalEObject) content;
-			content = (EmphasisExpression) eResolveProxy(oldContent);
-			if (content != oldContent) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							MarkdownPackage.HEADER_EXPRESSION__CONTENT, oldContent, content));
-			}
+	public EmphasisExpression getTitle() {
+		return title;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetTitle(EmphasisExpression newTitle, NotificationChain msgs) {
+		EmphasisExpression oldTitle = title;
+		title = newTitle;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					MarkdownPackage.HEADER_EXPRESSION__TITLE, oldTitle, newTitle);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
-		return content;
+		return msgs;
 	}
 
 	/**
@@ -79,8 +90,21 @@ public abstract class HeaderExpressionImpl extends ExpressionImpl implements Hea
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EmphasisExpression basicGetContent() {
-		return content;
+	public void setTitle(EmphasisExpression newTitle) {
+		if (newTitle != title) {
+			NotificationChain msgs = null;
+			if (title != null)
+				msgs = ((InternalEObject) title).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - MarkdownPackage.HEADER_EXPRESSION__TITLE, null, msgs);
+			if (newTitle != null)
+				msgs = ((InternalEObject) newTitle).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - MarkdownPackage.HEADER_EXPRESSION__TITLE, null, msgs);
+			msgs = basicSetTitle(newTitle, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MarkdownPackage.HEADER_EXPRESSION__TITLE, newTitle,
+					newTitle));
 	}
 
 	/**
@@ -88,12 +112,13 @@ public abstract class HeaderExpressionImpl extends ExpressionImpl implements Hea
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setContent(EmphasisExpression newContent) {
-		EmphasisExpression oldContent = content;
-		content = newContent;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MarkdownPackage.HEADER_EXPRESSION__CONTENT,
-					oldContent, content));
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case MarkdownPackage.HEADER_EXPRESSION__TITLE:
+			return basicSetTitle(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -104,10 +129,8 @@ public abstract class HeaderExpressionImpl extends ExpressionImpl implements Hea
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case MarkdownPackage.HEADER_EXPRESSION__CONTENT:
-			if (resolve)
-				return getContent();
-			return basicGetContent();
+		case MarkdownPackage.HEADER_EXPRESSION__TITLE:
+			return getTitle();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -120,8 +143,8 @@ public abstract class HeaderExpressionImpl extends ExpressionImpl implements Hea
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case MarkdownPackage.HEADER_EXPRESSION__CONTENT:
-			setContent((EmphasisExpression) newValue);
+		case MarkdownPackage.HEADER_EXPRESSION__TITLE:
+			setTitle((EmphasisExpression) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -135,8 +158,8 @@ public abstract class HeaderExpressionImpl extends ExpressionImpl implements Hea
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case MarkdownPackage.HEADER_EXPRESSION__CONTENT:
-			setContent((EmphasisExpression) null);
+		case MarkdownPackage.HEADER_EXPRESSION__TITLE:
+			setTitle((EmphasisExpression) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -150,8 +173,8 @@ public abstract class HeaderExpressionImpl extends ExpressionImpl implements Hea
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case MarkdownPackage.HEADER_EXPRESSION__CONTENT:
-			return content != null;
+		case MarkdownPackage.HEADER_EXPRESSION__TITLE:
+			return title != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -2,13 +2,12 @@
  */
 package markdown.impl;
 
-import markdown.EmphasisExpression;
 import markdown.LinkExpression;
 import markdown.MarkdownPackage;
+
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -21,7 +20,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link markdown.impl.LinkExpressionImpl#getTextURL <em>Text URL</em>}</li>
- *   <li>{@link markdown.impl.LinkExpressionImpl#getTextBloc <em>Text Bloc</em>}</li>
  *   <li>{@link markdown.impl.LinkExpressionImpl#getIsReferenced <em>Is Referenced</em>}</li>
  * </ul>
  *
@@ -47,16 +45,6 @@ public class LinkExpressionImpl extends ExpressionImpl implements LinkExpression
 	 * @ordered
 	 */
 	protected String textURL = TEXT_URL_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getTextBloc() <em>Text Bloc</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTextBloc()
-	 * @generated
-	 * @ordered
-	 */
-	protected EmphasisExpression textBloc;
 
 	/**
 	 * The default value of the '{@link #getIsReferenced() <em>Is Referenced</em>}' attribute.
@@ -124,46 +112,6 @@ public class LinkExpressionImpl extends ExpressionImpl implements LinkExpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EmphasisExpression getTextBloc() {
-		if (textBloc != null && textBloc.eIsProxy()) {
-			InternalEObject oldTextBloc = (InternalEObject) textBloc;
-			textBloc = (EmphasisExpression) eResolveProxy(oldTextBloc);
-			if (textBloc != oldTextBloc) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							MarkdownPackage.LINK_EXPRESSION__TEXT_BLOC, oldTextBloc, textBloc));
-			}
-		}
-		return textBloc;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EmphasisExpression basicGetTextBloc() {
-		return textBloc;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTextBloc(EmphasisExpression newTextBloc) {
-		EmphasisExpression oldTextBloc = textBloc;
-		textBloc = newTextBloc;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MarkdownPackage.LINK_EXPRESSION__TEXT_BLOC,
-					oldTextBloc, textBloc));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Boolean getIsReferenced() {
 		return isReferenced;
 	}
@@ -191,10 +139,6 @@ public class LinkExpressionImpl extends ExpressionImpl implements LinkExpression
 		switch (featureID) {
 		case MarkdownPackage.LINK_EXPRESSION__TEXT_URL:
 			return getTextURL();
-		case MarkdownPackage.LINK_EXPRESSION__TEXT_BLOC:
-			if (resolve)
-				return getTextBloc();
-			return basicGetTextBloc();
 		case MarkdownPackage.LINK_EXPRESSION__IS_REFERENCED:
 			return getIsReferenced();
 		}
@@ -211,9 +155,6 @@ public class LinkExpressionImpl extends ExpressionImpl implements LinkExpression
 		switch (featureID) {
 		case MarkdownPackage.LINK_EXPRESSION__TEXT_URL:
 			setTextURL((String) newValue);
-			return;
-		case MarkdownPackage.LINK_EXPRESSION__TEXT_BLOC:
-			setTextBloc((EmphasisExpression) newValue);
 			return;
 		case MarkdownPackage.LINK_EXPRESSION__IS_REFERENCED:
 			setIsReferenced((Boolean) newValue);
@@ -233,9 +174,6 @@ public class LinkExpressionImpl extends ExpressionImpl implements LinkExpression
 		case MarkdownPackage.LINK_EXPRESSION__TEXT_URL:
 			setTextURL(TEXT_URL_EDEFAULT);
 			return;
-		case MarkdownPackage.LINK_EXPRESSION__TEXT_BLOC:
-			setTextBloc((EmphasisExpression) null);
-			return;
 		case MarkdownPackage.LINK_EXPRESSION__IS_REFERENCED:
 			setIsReferenced(IS_REFERENCED_EDEFAULT);
 			return;
@@ -253,8 +191,6 @@ public class LinkExpressionImpl extends ExpressionImpl implements LinkExpression
 		switch (featureID) {
 		case MarkdownPackage.LINK_EXPRESSION__TEXT_URL:
 			return TEXT_URL_EDEFAULT == null ? textURL != null : !TEXT_URL_EDEFAULT.equals(textURL);
-		case MarkdownPackage.LINK_EXPRESSION__TEXT_BLOC:
-			return textBloc != null;
 		case MarkdownPackage.LINK_EXPRESSION__IS_REFERENCED:
 			return IS_REFERENCED_EDEFAULT == null ? isReferenced != null : !IS_REFERENCED_EDEFAULT.equals(isReferenced);
 		}

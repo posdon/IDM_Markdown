@@ -44,42 +44,25 @@ public class TextualExpressionItemProvider extends EmphasisExpressionItemProvide
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addContentPropertyDescriptor(object);
-			addFollowingExpressionPropertyDescriptor(object);
+			addContentStringPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Content feature.
+	 * This adds a property descriptor for the Content String feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addContentPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_TextualExpression_content_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_TextualExpression_content_feature",
-								"_UI_TextualExpression_type"),
-						MarkdownPackage.Literals.TEXTUAL_EXPRESSION__CONTENT, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Following Expression feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addFollowingExpressionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_TextualExpression_followingExpression_feature"),
-						getString("_UI_PropertyDescriptor_description",
-								"_UI_TextualExpression_followingExpression_feature", "_UI_TextualExpression_type"),
-						MarkdownPackage.Literals.TEXTUAL_EXPRESSION__FOLLOWING_EXPRESSION, true, false, true, null,
-						null, null));
+	protected void addContentStringPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_TextualExpression_contentString_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_TextualExpression_contentString_feature",
+						"_UI_TextualExpression_type"),
+				MarkdownPackage.Literals.TEXTUAL_EXPRESSION__CONTENT_STRING, true, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -111,7 +94,7 @@ public class TextualExpressionItemProvider extends EmphasisExpressionItemProvide
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((TextualExpression) object).getContent();
+		String label = ((TextualExpression) object).getContentString();
 		return label == null || label.length() == 0 ? getString("_UI_TextualExpression_type")
 				: getString("_UI_TextualExpression_type") + " " + label;
 	}
@@ -128,7 +111,7 @@ public class TextualExpressionItemProvider extends EmphasisExpressionItemProvide
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(TextualExpression.class)) {
-		case MarkdownPackage.TEXTUAL_EXPRESSION__CONTENT:
+		case MarkdownPackage.TEXTUAL_EXPRESSION__CONTENT_STRING:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

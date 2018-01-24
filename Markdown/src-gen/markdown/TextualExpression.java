@@ -11,8 +11,7 @@ package markdown;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link markdown.TextualExpression#getContent <em>Content</em>}</li>
- *   <li>{@link markdown.TextualExpression#getFollowingExpression <em>Following Expression</em>}</li>
+ *   <li>{@link markdown.TextualExpression#getContentString <em>Content String</em>}</li>
  * </ul>
  *
  * @see markdown.MarkdownPackage#getTextualExpression()
@@ -21,55 +20,29 @@ package markdown;
  */
 public interface TextualExpression extends EmphasisExpression {
 	/**
-	 * Returns the value of the '<em><b>Content</b></em>' attribute.
+	 * Returns the value of the '<em><b>Content String</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Content</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Content String</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Content</em>' attribute.
-	 * @see #setContent(String)
-	 * @see markdown.MarkdownPackage#getTextualExpression_Content()
-	 * @model dataType="org.eclipse.emf.ecore.xml.type.String" required="true"
+	 * @return the value of the '<em>Content String</em>' attribute.
+	 * @see #setContentString(String)
+	 * @see markdown.MarkdownPackage#getTextualExpression_ContentString()
+	 * @model required="true"
 	 * @generated
 	 */
-	String getContent();
+	String getContentString();
 
 	/**
-	 * Sets the value of the '{@link markdown.TextualExpression#getContent <em>Content</em>}' attribute.
+	 * Sets the value of the '{@link markdown.TextualExpression#getContentString <em>Content String</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Content</em>' attribute.
-	 * @see #getContent()
+	 * @param value the new value of the '<em>Content String</em>' attribute.
+	 * @see #getContentString()
 	 * @generated
 	 */
-	void setContent(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Following Expression</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Following Expression</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Following Expression</em>' reference.
-	 * @see #setFollowingExpression(EmphasisExpression)
-	 * @see markdown.MarkdownPackage#getTextualExpression_FollowingExpression()
-	 * @model
-	 * @generated
-	 */
-	EmphasisExpression getFollowingExpression();
-
-	/**
-	 * Sets the value of the '{@link markdown.TextualExpression#getFollowingExpression <em>Following Expression</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Following Expression</em>' reference.
-	 * @see #getFollowingExpression()
-	 * @generated
-	 */
-	void setFollowingExpression(EmphasisExpression value);
+	void setContentString(String value);
 
 } // TextualExpression

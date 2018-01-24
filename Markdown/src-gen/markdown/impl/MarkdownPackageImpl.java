@@ -344,7 +344,7 @@ public class MarkdownPackageImpl extends EPackageImpl implements MarkdownPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getHeaderExpression_Content() {
+	public EReference getHeaderExpression_Title() {
 		return (EReference) headerExpressionEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -605,17 +605,8 @@ public class MarkdownPackageImpl extends EPackageImpl implements MarkdownPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getLinkExpression_TextBloc() {
-		return (EReference) linkExpressionEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getLinkExpression_IsReferenced() {
-		return (EAttribute) linkExpressionEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) linkExpressionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -641,17 +632,8 @@ public class MarkdownPackageImpl extends EPackageImpl implements MarkdownPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getImageExpression_TextBloc() {
-		return (EReference) imageExpressionEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getImageExpression_IsReferenced() {
-		return (EAttribute) imageExpressionEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) imageExpressionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -686,17 +668,8 @@ public class MarkdownPackageImpl extends EPackageImpl implements MarkdownPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getVideoExpression_TextBloc() {
-		return (EReference) videoExpressionEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getVideoExpression_IsReferenced() {
-		return (EAttribute) videoExpressionEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) videoExpressionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -767,17 +740,8 @@ public class MarkdownPackageImpl extends EPackageImpl implements MarkdownPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTextualExpression_Content() {
+	public EAttribute getTextualExpression_ContentString() {
 		return (EAttribute) textualExpressionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getTextualExpression_FollowingExpression() {
-		return (EReference) textualExpressionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -815,7 +779,7 @@ public class MarkdownPackageImpl extends EPackageImpl implements MarkdownPackage
 		expressionEClass = createEClass(EXPRESSION);
 
 		headerExpressionEClass = createEClass(HEADER_EXPRESSION);
-		createEReference(headerExpressionEClass, HEADER_EXPRESSION__CONTENT);
+		createEReference(headerExpressionEClass, HEADER_EXPRESSION__TITLE);
 
 		textExpressionEClass = createEClass(TEXT_EXPRESSION);
 
@@ -859,18 +823,15 @@ public class MarkdownPackageImpl extends EPackageImpl implements MarkdownPackage
 
 		linkExpressionEClass = createEClass(LINK_EXPRESSION);
 		createEAttribute(linkExpressionEClass, LINK_EXPRESSION__TEXT_URL);
-		createEReference(linkExpressionEClass, LINK_EXPRESSION__TEXT_BLOC);
 		createEAttribute(linkExpressionEClass, LINK_EXPRESSION__IS_REFERENCED);
 
 		imageExpressionEClass = createEClass(IMAGE_EXPRESSION);
 		createEAttribute(imageExpressionEClass, IMAGE_EXPRESSION__TEXT_URL);
-		createEReference(imageExpressionEClass, IMAGE_EXPRESSION__TEXT_BLOC);
 		createEAttribute(imageExpressionEClass, IMAGE_EXPRESSION__IS_REFERENCED);
 
 		videoExpressionEClass = createEClass(VIDEO_EXPRESSION);
 		createEAttribute(videoExpressionEClass, VIDEO_EXPRESSION__TEXT_URL);
 		createEAttribute(videoExpressionEClass, VIDEO_EXPRESSION__TEXT_IMG);
-		createEReference(videoExpressionEClass, VIDEO_EXPRESSION__TEXT_BLOC);
 		createEAttribute(videoExpressionEClass, VIDEO_EXPRESSION__IS_REFERENCED);
 
 		headerDepth1ExpressionEClass = createEClass(HEADER_DEPTH1_EXPRESSION);
@@ -886,8 +847,7 @@ public class MarkdownPackageImpl extends EPackageImpl implements MarkdownPackage
 		headerDepth4ExpressionEClass = createEClass(HEADER_DEPTH4_EXPRESSION);
 
 		textualExpressionEClass = createEClass(TEXTUAL_EXPRESSION);
-		createEAttribute(textualExpressionEClass, TEXTUAL_EXPRESSION__CONTENT);
-		createEReference(textualExpressionEClass, TEXTUAL_EXPRESSION__FOLLOWING_EXPRESSION);
+		createEAttribute(textualExpressionEClass, TEXTUAL_EXPRESSION__CONTENT_STRING);
 	}
 
 	/**
@@ -959,8 +919,8 @@ public class MarkdownPackageImpl extends EPackageImpl implements MarkdownPackage
 
 		initEClass(headerExpressionEClass, HeaderExpression.class, "HeaderExpression", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getHeaderExpression_Content(), this.getEmphasisExpression(), null, "content", null, 1, 1,
-				HeaderExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+		initEReference(getHeaderExpression_Title(), this.getEmphasisExpression(), null, "title", null, 1, 1,
+				HeaderExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(textExpressionEClass, TextExpression.class, "TextExpression", IS_ABSTRACT, !IS_INTERFACE,
@@ -1004,20 +964,20 @@ public class MarkdownPackageImpl extends EPackageImpl implements MarkdownPackage
 
 		initEClass(italicExpressionEClass, ItalicExpression.class, "ItalicExpression", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getItalicExpression_Content(), this.getEmphasisExpression(), null, "content", null, 1, 2,
-				ItalicExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+		initEReference(getItalicExpression_Content(), this.getEmphasisExpression(), null, "content", null, 1, -1,
+				ItalicExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(strongExpressionEClass, StrongExpression.class, "StrongExpression", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getStrongExpression_Content(), this.getEmphasisExpression(), null, "content", null, 1, 2,
-				StrongExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+		initEReference(getStrongExpression_Content(), this.getEmphasisExpression(), null, "content", null, 1, -1,
+				StrongExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(scratchExpressionEClass, ScratchExpression.class, "ScratchExpression", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getScratchExpression_Content(), this.getEmphasisExpression(), null, "content", null, 1, 2,
-				ScratchExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+		initEReference(getScratchExpression_Content(), this.getEmphasisExpression(), null, "content", null, 1, -1,
+				ScratchExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(htmlExpressionEClass, HTMLExpression.class, "HTMLExpression", !IS_ABSTRACT, !IS_INTERFACE,
@@ -1046,9 +1006,6 @@ public class MarkdownPackageImpl extends EPackageImpl implements MarkdownPackage
 		initEAttribute(getLinkExpression_TextURL(), theXMLTypePackage.getString(), "textURL", null, 1, 1,
 				LinkExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-		initEReference(getLinkExpression_TextBloc(), this.getEmphasisExpression(), null, "textBloc", null, 1, 1,
-				LinkExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLinkExpression_IsReferenced(), theXMLTypePackage.getBooleanObject(), "isReferenced", null, 1,
 				1, LinkExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
@@ -1058,9 +1015,6 @@ public class MarkdownPackageImpl extends EPackageImpl implements MarkdownPackage
 		initEAttribute(getImageExpression_TextURL(), theXMLTypePackage.getString(), "textURL", null, 1, 1,
 				ImageExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-		initEReference(getImageExpression_TextBloc(), this.getEmphasisExpression(), null, "textBloc", null, 1, 1,
-				ImageExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getImageExpression_IsReferenced(), theXMLTypePackage.getBooleanObject(), "isReferenced", null, 1,
 				1, ImageExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
@@ -1073,9 +1027,6 @@ public class MarkdownPackageImpl extends EPackageImpl implements MarkdownPackage
 		initEAttribute(getVideoExpression_TextIMG(), theXMLTypePackage.getString(), "textIMG", null, 1, 1,
 				VideoExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-		initEReference(getVideoExpression_TextBloc(), this.getEmphasisExpression(), null, "textBloc", null, 1, 1,
-				VideoExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getVideoExpression_IsReferenced(), theXMLTypePackage.getBooleanObject(), "isReferenced", null, 1,
 				1, VideoExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
@@ -1100,12 +1051,9 @@ public class MarkdownPackageImpl extends EPackageImpl implements MarkdownPackage
 
 		initEClass(textualExpressionEClass, TextualExpression.class, "TextualExpression", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTextualExpression_Content(), theXMLTypePackage.getString(), "content", null, 1, 1,
+		initEAttribute(getTextualExpression_ContentString(), ecorePackage.getEString(), "contentString", null, 1, 1,
 				TextualExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-		initEReference(getTextualExpression_FollowingExpression(), this.getEmphasisExpression(), null,
-				"followingExpression", null, 0, 1, TextualExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -7,51 +7,16 @@ import "platform:/resource/Markdown/model/markdown.ecore" as markdown
 
 File returns markdown::File:
 	{markdown::File}
-	(expression+=Expression)*
+	((expression+=Expression)*)?
 	;
 
 Expression returns markdown::Expression:
-	TableExpression | TextExpression | ListExpression | LINE_BREAK_EXPRESSION | HTMLExpression | CodeExpression | ReferenceExpression | LinkExpression | ImageExpression | VideoExpression | HeaderExpression;
-
-
-TextExpression returns markdown::TextExpression:
-	HORIZONTAL_EXPRESSION | QuoteExpression | EmphasisExpression;
+	HeaderExpression; // | HeaderExpression;
 
 EmphasisExpression returns markdown::EmphasisExpression:
-	StrongExpression | ItalicExpression  | ScratchExpression | TextualExpression;
+	 TextualExpression;
 
-TableExpression returns markdown::TableExpression hidden(WS):
-		'|'? S* tablelines+=TableLine S* '|'? S* LINE_BREAK_EXPRESSION
-		'|'? S* ( '--''-'* ) (S* '|' S* '--''-'* S*)+ '|'? LINE_BREAK_EXPRESSION
-		('|'? S* tablelines+=TableLine S* '|'? S* LINE_BREAK_EXPRESSION)*  
-	;
-
-terminal S : 
-	(' '|'\t')
-;
-
-terminal HORIZONTAL_EXPRESSION :
-	S* ('-' S* '-' S* '-' S* ('-' S*)* |
-	    '_' S* '_' S* '_' S* ('_' S*)* |
-	    '*' S* '*' S* '*' S* ('*' S*)*  ) LINE_BREAK_EXPRESSION
-	;
-
-//TODO
-ListExpression returns markdown::ListExpression:
-	'ListExpression'
-	'{'
-		'startingValue' startingValue=IntObject
-		'listContent' '{' listContent+=TextExpression ( "," listContent+=TextExpression)* '}' 
-	'}';
-
-QuoteExpression returns markdown::QuoteExpression hidden(WS):
-		'>'textexpression=TextExpression LINE_BREAK_EXPRESSION
-	;
-
-terminal LINE_BREAK_EXPRESSION :
-	('\r'? '\n')? | EOF
-	;
-
+/* 
 ItalicExpression returns markdown::ItalicExpression hidden(WS):
 	 ('*'|'_') content+=[markdown::EmphasisExpression] ('*'|'_') WS* (content+=[markdown::EmphasisExpression])*
 	;
@@ -64,90 +29,77 @@ ScratchExpression returns markdown::ScratchExpression hidden(WS):
 	'~~' content+=[markdown::EmphasisExpression] '~~' WS* (content+=[markdown::EmphasisExpression])*
 	;
 
-HTMLExpression returns markdown::HTMLExpression hidden(WS):
-		'<' text=String0 '>'
+*/
+
+TextualExpression returns markdown::TextualExpression hidden(WS):
+		content=ID
+		//(followingExpression=[markdown::EmphasisExpression])?
 	;
-
-//TODO
-CodeExpression returns markdown::CodeExpression:
-	'CodeExpression'
-	'{'
-		'text' text=String0
-	'}';
-
-ReferenceExpression returns markdown::ReferenceExpression hidden(WS):
-	'[' S* name=String0 S* ']:' S* value=String0 S* LINE_BREAK_EXPRESSION
-	;
-
-//TODO
-LinkExpression returns markdown::LinkExpression:
-	'[' textBloc=[markdown::EmphasisExpression] ']' 
-	('(' textURL=String0 ')' | '[' textURL=String0  ']') 
-	;
-
-
-//TODO
-ImageExpression returns markdown::ImageExpression:
-	'ImageExpression'
-	'{'
-		'textURL' textURL=String0
-		'textBloc' textBloc=[markdown::EmphasisExpression]
-	'}';
-
-//TODO
-VideoExpression returns markdown::VideoExpression:
-	'VideoExpression'
-	'{'
-		'textURL' textURL=String0
-		'textIMG' textIMG=String0
-		'textBloc' textBloc=[markdown::EmphasisExpression]
-	'}';
+	
+	
+	
 
 HeaderExpression returns markdown::HeaderExpression:
-	HeaderDepth1Expression | HeaderDepth2Expression | HeaderDepth3Expression | HeaderDepth4Expression | HeaderDepth5Expression | HeaderDepth6Expression
+	HeaderDepth1Expression //| =>( HeaderDepth2Expression |  =>( HeaderDepth3Expression | =>( HeaderDepth4Expression | =>(HeaderDepth5Expression | =>HeaderDepth6Expression))))
 ;
 
 HeaderDepth1Expression returns markdown::HeaderDepth1Expression hidden(WS):
-	'#' S* content=[markdown::EmphasisExpression] LINE_BREAK_EXPRESSION |
-	content=[markdown::EmphasisExpression] LINE_BREAK_EXPRESSION S* ('=')* S* LINE_BREAK_EXPRESSION
+	'#'  content=EmphasisExpression //|
+	//content=[markdown::EmphasisExpression] LINE_BREAK_EXPRESSION  ('=')+  LINE_BREAK_EXPRESSION
 	;
 
+
+
+
+/* 
 HeaderDepth2Expression returns markdown::HeaderDepth2Expression hidden(WS):
-	'##' S* content=[markdown::EmphasisExpression] LINE_BREAK_EXPRESSION |
-	content=[markdown::EmphasisExpression] LINE_BREAK_EXPRESSION S* ('-')* S* LINE_BREAK_EXPRESSION
+	'##'  content=[markdown::EmphasisExpression] LINE_BREAK_EXPRESSION |
+	content=[markdown::EmphasisExpression] LINE_BREAK_EXPRESSION  ('-')+  LINE_BREAK_EXPRESSION
 	;
 
 HeaderDepth3Expression returns markdown::HeaderDepth3Expression hidden(WS):
-	'###' S* content=[markdown::EmphasisExpression] LINE_BREAK_EXPRESSION
+	'###'  content=[markdown::EmphasisExpression] LINE_BREAK_EXPRESSION
 	;
 
 HeaderDepth5Expression returns markdown::HeaderDepth5Expression hidden(WS):
-	'#####' S* content=[markdown::EmphasisExpression] LINE_BREAK_EXPRESSION
+	'#####'  content=[markdown::EmphasisExpression] LINE_BREAK_EXPRESSION
 	;
 
 HeaderDepth6Expression returns markdown::HeaderDepth6Expression hidden(WS):
-	'######' S* content=[markdown::EmphasisExpression] LINE_BREAK_EXPRESSION
+	'######'  content=[markdown::EmphasisExpression] LINE_BREAK_EXPRESSION
 	;
 
 HeaderDepth4Expression returns markdown::HeaderDepth4Expression hidden(WS):
-	'####' S* content=[markdown::EmphasisExpression] LINE_BREAK_EXPRESSION
+	'####'  content=[markdown::EmphasisExpression] LINE_BREAK_EXPRESSION
 	;
-
-TextualExpression returns markdown::TextualExpression hidden(WS):
-		content=String0
-		(followingExpression=[markdown::EmphasisExpression])?
-	;
-
-//TODO
-TableLine returns markdown::TableLine:
-	'TableLine'
-	'{'
-		'cellContent' '{' cellContent+=TextExpression ( "," cellContent+=TextExpression)* '}' 
-	'}';
+*/
 	
-
+	
+	
+/* 
 IntObject returns type::IntObject:
-	'IntObject' /* TODO: implement this rule and an appropriate IValueConverter */;
+	'IntObject'; // TODO: implement this rule and an appropriate IValueConverter
+*/
 
-String0 returns type::String:
-	'String' /* TODO: implement this rule and an appropriate IValueConverter */;
+
+BOOLEAN_LITERAL returns ecore::EBoolean: 'true'|'false';
+terminal STRING	: 
+			'"' ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|'"') )* '"' |
+			"'" ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|"'") )* "'";	
+terminal ID  		: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+terminal ML_COMMENT
+: '/*' -> '*/';
+terminal SL_COMMENT 
+: '//' !('\n'|'\r')* ('\r'? '\n')?;
+terminal WS
+: (' '|'\t'|'\r'|'\n')+;
+terminal fragment DIGIT: '0'..'9';
+terminal DOUBLE returns ecore::EDouble: INT ('.' DIGIT*);
+terminal INT returns ecore::EInt: '0' | ('1'..'9' DIGIT*);
+
+/*
+terminal LINE_BREAK_EXPRESSION :
+	('\r'? '\n')?
+	;
+	* /
+	*/

@@ -11,7 +11,7 @@ package markdown;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link markdown.HeaderExpression#getContent <em>Content</em>}</li>
+ *   <li>{@link markdown.HeaderExpression#getTitle <em>Title</em>}</li>
  * </ul>
  *
  * @see markdown.MarkdownPackage#getHeaderExpression()
@@ -20,29 +20,29 @@ package markdown;
  */
 public interface HeaderExpression extends Expression {
 	/**
-	 * Returns the value of the '<em><b>Content</b></em>' reference.
+	 * Returns the value of the '<em><b>Title</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Content</em>' reference isn't clear,
+	 * If the meaning of the '<em>Title</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Content</em>' reference.
-	 * @see #setContent(EmphasisExpression)
-	 * @see markdown.MarkdownPackage#getHeaderExpression_Content()
-	 * @model required="true"
+	 * @return the value of the '<em>Title</em>' containment reference.
+	 * @see #setTitle(EmphasisExpression)
+	 * @see markdown.MarkdownPackage#getHeaderExpression_Title()
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	EmphasisExpression getContent();
+	EmphasisExpression getTitle();
 
 	/**
-	 * Sets the value of the '{@link markdown.HeaderExpression#getContent <em>Content</em>}' reference.
+	 * Sets the value of the '{@link markdown.HeaderExpression#getTitle <em>Title</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Content</em>' reference.
-	 * @see #getContent()
+	 * @param value the new value of the '<em>Title</em>' containment reference.
+	 * @see #getTitle()
 	 * @generated
 	 */
-	void setContent(EmphasisExpression value);
+	void setTitle(EmphasisExpression value);
 
 } // HeaderExpression

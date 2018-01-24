@@ -7,10 +7,15 @@ import java.util.Collection;
 import markdown.EmphasisExpression;
 import markdown.ItalicExpression;
 import markdown.MarkdownPackage;
+
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,7 +32,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  */
 public class ItalicExpressionImpl extends EmphasisExpressionImpl implements ItalicExpression {
 	/**
-	 * The cached value of the '{@link #getContent() <em>Content</em>}' reference list.
+	 * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getContent()
@@ -62,10 +67,24 @@ public class ItalicExpressionImpl extends EmphasisExpressionImpl implements Ital
 	 */
 	public EList<EmphasisExpression> getContent() {
 		if (content == null) {
-			content = new EObjectResolvingEList<EmphasisExpression>(EmphasisExpression.class, this,
+			content = new EObjectContainmentEList<EmphasisExpression>(EmphasisExpression.class, this,
 					MarkdownPackage.ITALIC_EXPRESSION__CONTENT);
 		}
 		return content;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case MarkdownPackage.ITALIC_EXPRESSION__CONTENT:
+			return ((InternalEList<?>) getContent()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**

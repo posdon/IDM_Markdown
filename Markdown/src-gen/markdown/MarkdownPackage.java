@@ -132,13 +132,13 @@ public interface MarkdownPackage extends EPackage {
 	int HEADER_EXPRESSION = 2;
 
 	/**
-	 * The feature id for the '<em><b>Content</b></em>' reference.
+	 * The feature id for the '<em><b>Title</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HEADER_EXPRESSION__CONTENT = EXPRESSION_FEATURE_COUNT + 0;
+	int HEADER_EXPRESSION__TITLE = EXPRESSION_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Header Expression</em>' class.
@@ -438,7 +438,7 @@ public interface MarkdownPackage extends EPackage {
 	int ITALIC_EXPRESSION = 11;
 
 	/**
-	 * The feature id for the '<em><b>Content</b></em>' reference list.
+	 * The feature id for the '<em><b>Content</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -475,7 +475,7 @@ public interface MarkdownPackage extends EPackage {
 	int STRONG_EXPRESSION = 12;
 
 	/**
-	 * The feature id for the '<em><b>Content</b></em>' reference list.
+	 * The feature id for the '<em><b>Content</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -512,7 +512,7 @@ public interface MarkdownPackage extends EPackage {
 	int SCRATCH_EXPRESSION = 13;
 
 	/**
-	 * The feature id for the '<em><b>Content</b></em>' reference list.
+	 * The feature id for the '<em><b>Content</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -678,22 +678,13 @@ public interface MarkdownPackage extends EPackage {
 	int LINK_EXPRESSION__TEXT_URL = EXPRESSION_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Text Bloc</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK_EXPRESSION__TEXT_BLOC = EXPRESSION_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Is Referenced</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_EXPRESSION__IS_REFERENCED = EXPRESSION_FEATURE_COUNT + 2;
+	int LINK_EXPRESSION__IS_REFERENCED = EXPRESSION_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Link Expression</em>' class.
@@ -702,7 +693,7 @@ public interface MarkdownPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 3;
+	int LINK_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Link Expression</em>' class.
@@ -733,22 +724,13 @@ public interface MarkdownPackage extends EPackage {
 	int IMAGE_EXPRESSION__TEXT_URL = EXPRESSION_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Text Bloc</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMAGE_EXPRESSION__TEXT_BLOC = EXPRESSION_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Is Referenced</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_EXPRESSION__IS_REFERENCED = EXPRESSION_FEATURE_COUNT + 2;
+	int IMAGE_EXPRESSION__IS_REFERENCED = EXPRESSION_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Image Expression</em>' class.
@@ -757,7 +739,7 @@ public interface MarkdownPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 3;
+	int IMAGE_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Image Expression</em>' class.
@@ -797,22 +779,13 @@ public interface MarkdownPackage extends EPackage {
 	int VIDEO_EXPRESSION__TEXT_IMG = EXPRESSION_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Text Bloc</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VIDEO_EXPRESSION__TEXT_BLOC = EXPRESSION_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Is Referenced</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VIDEO_EXPRESSION__IS_REFERENCED = EXPRESSION_FEATURE_COUNT + 3;
+	int VIDEO_EXPRESSION__IS_REFERENCED = EXPRESSION_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Video Expression</em>' class.
@@ -821,7 +794,7 @@ public interface MarkdownPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIDEO_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 4;
+	int VIDEO_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Video Expression</em>' class.
@@ -843,13 +816,13 @@ public interface MarkdownPackage extends EPackage {
 	int HEADER_DEPTH1_EXPRESSION = 20;
 
 	/**
-	 * The feature id for the '<em><b>Content</b></em>' reference.
+	 * The feature id for the '<em><b>Title</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HEADER_DEPTH1_EXPRESSION__CONTENT = HEADER_EXPRESSION__CONTENT;
+	int HEADER_DEPTH1_EXPRESSION__TITLE = HEADER_EXPRESSION__TITLE;
 
 	/**
 	 * The number of structural features of the '<em>Header Depth1 Expression</em>' class.
@@ -880,13 +853,13 @@ public interface MarkdownPackage extends EPackage {
 	int HEADER_DEPTH2_EXPRESSION = 21;
 
 	/**
-	 * The feature id for the '<em><b>Content</b></em>' reference.
+	 * The feature id for the '<em><b>Title</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HEADER_DEPTH2_EXPRESSION__CONTENT = HEADER_EXPRESSION__CONTENT;
+	int HEADER_DEPTH2_EXPRESSION__TITLE = HEADER_EXPRESSION__TITLE;
 
 	/**
 	 * The number of structural features of the '<em>Header Depth2 Expression</em>' class.
@@ -917,13 +890,13 @@ public interface MarkdownPackage extends EPackage {
 	int HEADER_DEPTH3_EXPRESSION = 22;
 
 	/**
-	 * The feature id for the '<em><b>Content</b></em>' reference.
+	 * The feature id for the '<em><b>Title</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HEADER_DEPTH3_EXPRESSION__CONTENT = HEADER_EXPRESSION__CONTENT;
+	int HEADER_DEPTH3_EXPRESSION__TITLE = HEADER_EXPRESSION__TITLE;
 
 	/**
 	 * The number of structural features of the '<em>Header Depth3 Expression</em>' class.
@@ -954,13 +927,13 @@ public interface MarkdownPackage extends EPackage {
 	int HEADER_DEPTH5_EXPRESSION = 23;
 
 	/**
-	 * The feature id for the '<em><b>Content</b></em>' reference.
+	 * The feature id for the '<em><b>Title</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HEADER_DEPTH5_EXPRESSION__CONTENT = HEADER_EXPRESSION__CONTENT;
+	int HEADER_DEPTH5_EXPRESSION__TITLE = HEADER_EXPRESSION__TITLE;
 
 	/**
 	 * The number of structural features of the '<em>Header Depth5 Expression</em>' class.
@@ -991,13 +964,13 @@ public interface MarkdownPackage extends EPackage {
 	int HEADER_DEPTH6_EXPRESSION = 24;
 
 	/**
-	 * The feature id for the '<em><b>Content</b></em>' reference.
+	 * The feature id for the '<em><b>Title</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HEADER_DEPTH6_EXPRESSION__CONTENT = HEADER_EXPRESSION__CONTENT;
+	int HEADER_DEPTH6_EXPRESSION__TITLE = HEADER_EXPRESSION__TITLE;
 
 	/**
 	 * The number of structural features of the '<em>Header Depth6 Expression</em>' class.
@@ -1028,13 +1001,13 @@ public interface MarkdownPackage extends EPackage {
 	int HEADER_DEPTH4_EXPRESSION = 25;
 
 	/**
-	 * The feature id for the '<em><b>Content</b></em>' reference.
+	 * The feature id for the '<em><b>Title</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HEADER_DEPTH4_EXPRESSION__CONTENT = HEADER_EXPRESSION__CONTENT;
+	int HEADER_DEPTH4_EXPRESSION__TITLE = HEADER_EXPRESSION__TITLE;
 
 	/**
 	 * The number of structural features of the '<em>Header Depth4 Expression</em>' class.
@@ -1065,22 +1038,13 @@ public interface MarkdownPackage extends EPackage {
 	int TEXTUAL_EXPRESSION = 26;
 
 	/**
-	 * The feature id for the '<em><b>Content</b></em>' attribute.
+	 * The feature id for the '<em><b>Content String</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEXTUAL_EXPRESSION__CONTENT = EMPHASIS_EXPRESSION_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Following Expression</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEXTUAL_EXPRESSION__FOLLOWING_EXPRESSION = EMPHASIS_EXPRESSION_FEATURE_COUNT + 1;
+	int TEXTUAL_EXPRESSION__CONTENT_STRING = EMPHASIS_EXPRESSION_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Textual Expression</em>' class.
@@ -1089,7 +1053,7 @@ public interface MarkdownPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEXTUAL_EXPRESSION_FEATURE_COUNT = EMPHASIS_EXPRESSION_FEATURE_COUNT + 2;
+	int TEXTUAL_EXPRESSION_FEATURE_COUNT = EMPHASIS_EXPRESSION_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Textual Expression</em>' class.
@@ -1142,15 +1106,15 @@ public interface MarkdownPackage extends EPackage {
 	EClass getHeaderExpression();
 
 	/**
-	 * Returns the meta object for the reference '{@link markdown.HeaderExpression#getContent <em>Content</em>}'.
+	 * Returns the meta object for the containment reference '{@link markdown.HeaderExpression#getTitle <em>Title</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Content</em>'.
-	 * @see markdown.HeaderExpression#getContent()
+	 * @return the meta object for the containment reference '<em>Title</em>'.
+	 * @see markdown.HeaderExpression#getTitle()
 	 * @see #getHeaderExpression()
 	 * @generated
 	 */
-	EReference getHeaderExpression_Content();
+	EReference getHeaderExpression_Title();
 
 	/**
 	 * Returns the meta object for class '{@link markdown.TextExpression <em>Text Expression</em>}'.
@@ -1298,10 +1262,10 @@ public interface MarkdownPackage extends EPackage {
 	EClass getItalicExpression();
 
 	/**
-	 * Returns the meta object for the reference list '{@link markdown.ItalicExpression#getContent <em>Content</em>}'.
+	 * Returns the meta object for the containment reference list '{@link markdown.ItalicExpression#getContent <em>Content</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Content</em>'.
+	 * @return the meta object for the containment reference list '<em>Content</em>'.
 	 * @see markdown.ItalicExpression#getContent()
 	 * @see #getItalicExpression()
 	 * @generated
@@ -1319,10 +1283,10 @@ public interface MarkdownPackage extends EPackage {
 	EClass getStrongExpression();
 
 	/**
-	 * Returns the meta object for the reference list '{@link markdown.StrongExpression#getContent <em>Content</em>}'.
+	 * Returns the meta object for the containment reference list '{@link markdown.StrongExpression#getContent <em>Content</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Content</em>'.
+	 * @return the meta object for the containment reference list '<em>Content</em>'.
 	 * @see markdown.StrongExpression#getContent()
 	 * @see #getStrongExpression()
 	 * @generated
@@ -1340,10 +1304,10 @@ public interface MarkdownPackage extends EPackage {
 	EClass getScratchExpression();
 
 	/**
-	 * Returns the meta object for the reference list '{@link markdown.ScratchExpression#getContent <em>Content</em>}'.
+	 * Returns the meta object for the containment reference list '{@link markdown.ScratchExpression#getContent <em>Content</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Content</em>'.
+	 * @return the meta object for the containment reference list '<em>Content</em>'.
 	 * @see markdown.ScratchExpression#getContent()
 	 * @see #getScratchExpression()
 	 * @generated
@@ -1446,17 +1410,6 @@ public interface MarkdownPackage extends EPackage {
 	EAttribute getLinkExpression_TextURL();
 
 	/**
-	 * Returns the meta object for the reference '{@link markdown.LinkExpression#getTextBloc <em>Text Bloc</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Text Bloc</em>'.
-	 * @see markdown.LinkExpression#getTextBloc()
-	 * @see #getLinkExpression()
-	 * @generated
-	 */
-	EReference getLinkExpression_TextBloc();
-
-	/**
 	 * Returns the meta object for the attribute '{@link markdown.LinkExpression#getIsReferenced <em>Is Referenced</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1487,17 +1440,6 @@ public interface MarkdownPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getImageExpression_TextURL();
-
-	/**
-	 * Returns the meta object for the reference '{@link markdown.ImageExpression#getTextBloc <em>Text Bloc</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Text Bloc</em>'.
-	 * @see markdown.ImageExpression#getTextBloc()
-	 * @see #getImageExpression()
-	 * @generated
-	 */
-	EReference getImageExpression_TextBloc();
 
 	/**
 	 * Returns the meta object for the attribute '{@link markdown.ImageExpression#getIsReferenced <em>Is Referenced</em>}'.
@@ -1541,17 +1483,6 @@ public interface MarkdownPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getVideoExpression_TextIMG();
-
-	/**
-	 * Returns the meta object for the reference '{@link markdown.VideoExpression#getTextBloc <em>Text Bloc</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Text Bloc</em>'.
-	 * @see markdown.VideoExpression#getTextBloc()
-	 * @see #getVideoExpression()
-	 * @generated
-	 */
-	EReference getVideoExpression_TextBloc();
 
 	/**
 	 * Returns the meta object for the attribute '{@link markdown.VideoExpression#getIsReferenced <em>Is Referenced</em>}'.
@@ -1635,26 +1566,15 @@ public interface MarkdownPackage extends EPackage {
 	EClass getTextualExpression();
 
 	/**
-	 * Returns the meta object for the attribute '{@link markdown.TextualExpression#getContent <em>Content</em>}'.
+	 * Returns the meta object for the attribute '{@link markdown.TextualExpression#getContentString <em>Content String</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Content</em>'.
-	 * @see markdown.TextualExpression#getContent()
+	 * @return the meta object for the attribute '<em>Content String</em>'.
+	 * @see markdown.TextualExpression#getContentString()
 	 * @see #getTextualExpression()
 	 * @generated
 	 */
-	EAttribute getTextualExpression_Content();
-
-	/**
-	 * Returns the meta object for the reference '{@link markdown.TextualExpression#getFollowingExpression <em>Following Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Following Expression</em>'.
-	 * @see markdown.TextualExpression#getFollowingExpression()
-	 * @see #getTextualExpression()
-	 * @generated
-	 */
-	EReference getTextualExpression_FollowingExpression();
+	EAttribute getTextualExpression_ContentString();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1718,12 +1638,12 @@ public interface MarkdownPackage extends EPackage {
 		EClass HEADER_EXPRESSION = eINSTANCE.getHeaderExpression();
 
 		/**
-		 * The meta object literal for the '<em><b>Content</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Title</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference HEADER_EXPRESSION__CONTENT = eINSTANCE.getHeaderExpression_Content();
+		EReference HEADER_EXPRESSION__TITLE = eINSTANCE.getHeaderExpression_Title();
 
 		/**
 		 * The meta object literal for the '{@link markdown.impl.TextExpressionImpl <em>Text Expression</em>}' class.
@@ -1856,7 +1776,7 @@ public interface MarkdownPackage extends EPackage {
 		EClass ITALIC_EXPRESSION = eINSTANCE.getItalicExpression();
 
 		/**
-		 * The meta object literal for the '<em><b>Content</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Content</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1874,7 +1794,7 @@ public interface MarkdownPackage extends EPackage {
 		EClass STRONG_EXPRESSION = eINSTANCE.getStrongExpression();
 
 		/**
-		 * The meta object literal for the '<em><b>Content</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Content</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1892,7 +1812,7 @@ public interface MarkdownPackage extends EPackage {
 		EClass SCRATCH_EXPRESSION = eINSTANCE.getScratchExpression();
 
 		/**
-		 * The meta object literal for the '<em><b>Content</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Content</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1980,14 +1900,6 @@ public interface MarkdownPackage extends EPackage {
 		EAttribute LINK_EXPRESSION__TEXT_URL = eINSTANCE.getLinkExpression_TextURL();
 
 		/**
-		 * The meta object literal for the '<em><b>Text Bloc</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference LINK_EXPRESSION__TEXT_BLOC = eINSTANCE.getLinkExpression_TextBloc();
-
-		/**
 		 * The meta object literal for the '<em><b>Is Referenced</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2012,14 +1924,6 @@ public interface MarkdownPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute IMAGE_EXPRESSION__TEXT_URL = eINSTANCE.getImageExpression_TextURL();
-
-		/**
-		 * The meta object literal for the '<em><b>Text Bloc</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference IMAGE_EXPRESSION__TEXT_BLOC = eINSTANCE.getImageExpression_TextBloc();
 
 		/**
 		 * The meta object literal for the '<em><b>Is Referenced</b></em>' attribute feature.
@@ -2054,14 +1958,6 @@ public interface MarkdownPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute VIDEO_EXPRESSION__TEXT_IMG = eINSTANCE.getVideoExpression_TextIMG();
-
-		/**
-		 * The meta object literal for the '<em><b>Text Bloc</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference VIDEO_EXPRESSION__TEXT_BLOC = eINSTANCE.getVideoExpression_TextBloc();
 
 		/**
 		 * The meta object literal for the '<em><b>Is Referenced</b></em>' attribute feature.
@@ -2142,20 +2038,12 @@ public interface MarkdownPackage extends EPackage {
 		EClass TEXTUAL_EXPRESSION = eINSTANCE.getTextualExpression();
 
 		/**
-		 * The meta object literal for the '<em><b>Content</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Content String</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TEXTUAL_EXPRESSION__CONTENT = eINSTANCE.getTextualExpression_Content();
-
-		/**
-		 * The meta object literal for the '<em><b>Following Expression</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TEXTUAL_EXPRESSION__FOLLOWING_EXPRESSION = eINSTANCE.getTextualExpression_FollowingExpression();
+		EAttribute TEXTUAL_EXPRESSION__CONTENT_STRING = eINSTANCE.getTextualExpression_ContentString();
 
 	}
 

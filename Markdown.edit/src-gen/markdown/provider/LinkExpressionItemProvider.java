@@ -45,7 +45,6 @@ public class LinkExpressionItemProvider extends ExpressionItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addTextURLPropertyDescriptor(object);
-			addTextBlocPropertyDescriptor(object);
 			addIsReferencedPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -65,21 +64,6 @@ public class LinkExpressionItemProvider extends ExpressionItemProvider {
 								"_UI_LinkExpression_type"),
 						MarkdownPackage.Literals.LINK_EXPRESSION__TEXT_URL, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Text Bloc feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTextBlocPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_LinkExpression_textBloc_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_LinkExpression_textBloc_feature",
-								"_UI_LinkExpression_type"),
-						MarkdownPackage.Literals.LINK_EXPRESSION__TEXT_BLOC, true, false, true, null, null, null));
 	}
 
 	/**

@@ -14,7 +14,7 @@
     </genClasses>
     <genClasses ecoreClass="markdown.ecore#//Expression"/>
     <genClasses ecoreClass="markdown.ecore#//HeaderExpression">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference markdown.ecore#//HeaderExpression/content"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference markdown.ecore#//HeaderExpression/title"/>
     </genClasses>
     <genClasses ecoreClass="markdown.ecore#//TextExpression"/>
     <genClasses ecoreClass="markdown.ecore#//TableExpression">
@@ -34,13 +34,13 @@
     <genClasses ecoreClass="markdown.ecore#//LineBreakExpression"/>
     <genClasses ecoreClass="markdown.ecore#//EmphasisExpression"/>
     <genClasses ecoreClass="markdown.ecore#//ItalicExpression">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference markdown.ecore#//ItalicExpression/content"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference markdown.ecore#//ItalicExpression/content"/>
     </genClasses>
     <genClasses ecoreClass="markdown.ecore#//StrongExpression">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference markdown.ecore#//StrongExpression/content"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference markdown.ecore#//StrongExpression/content"/>
     </genClasses>
     <genClasses ecoreClass="markdown.ecore#//ScratchExpression">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference markdown.ecore#//ScratchExpression/content"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference markdown.ecore#//ScratchExpression/content"/>
     </genClasses>
     <genClasses ecoreClass="markdown.ecore#//HTMLExpression">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute markdown.ecore#//HTMLExpression/text"/>
@@ -54,18 +54,15 @@
     </genClasses>
     <genClasses ecoreClass="markdown.ecore#//LinkExpression">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute markdown.ecore#//LinkExpression/textURL"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference markdown.ecore#//LinkExpression/textBloc"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute markdown.ecore#//LinkExpression/isReferenced"/>
     </genClasses>
     <genClasses ecoreClass="markdown.ecore#//ImageExpression">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute markdown.ecore#//ImageExpression/textURL"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference markdown.ecore#//ImageExpression/textBloc"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute markdown.ecore#//ImageExpression/isReferenced"/>
     </genClasses>
     <genClasses ecoreClass="markdown.ecore#//VideoExpression">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute markdown.ecore#//VideoExpression/textURL"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute markdown.ecore#//VideoExpression/textIMG"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference markdown.ecore#//VideoExpression/textBloc"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute markdown.ecore#//VideoExpression/isReferenced"/>
     </genClasses>
     <genClasses ecoreClass="markdown.ecore#//HeaderDepth1Expression"/>
@@ -75,8 +72,7 @@
     <genClasses ecoreClass="markdown.ecore#//HeaderDepth6Expression"/>
     <genClasses ecoreClass="markdown.ecore#//HeaderDepth4Expression"/>
     <genClasses ecoreClass="markdown.ecore#//TextualExpression">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute markdown.ecore#//TextualExpression/content"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference markdown.ecore#//TextualExpression/followingExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute markdown.ecore#//TextualExpression/contentString"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -22,17 +22,17 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface ScratchExpression extends EmphasisExpression {
 	/**
-	 * Returns the value of the '<em><b>Content</b></em>' reference list.
+	 * Returns the value of the '<em><b>Content</b></em>' containment reference list.
 	 * The list contents are of type {@link markdown.EmphasisExpression}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Content</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Content</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Content</em>' reference list.
+	 * @return the value of the '<em>Content</em>' containment reference list.
 	 * @see markdown.MarkdownPackage#getScratchExpression_Content()
-	 * @model required="true" upper="2"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	EList<EmphasisExpression> getContent();
