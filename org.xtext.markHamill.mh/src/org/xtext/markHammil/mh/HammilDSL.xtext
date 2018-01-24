@@ -157,12 +157,14 @@ IntObject returns type::IntObject:
 */
 
 String0 returns ecore::EString :
-	 STRING
+	 TEXT
 	;
 
 BooleanObject returns type::BooleanObject:
 	'BooleanObject' /* TODO: implement this rule and an appropriate IValueConverter */;
 	
+terminal TEXT:
+	('a'..'z'|'A'..'Z'|'_')('a'..'z'|'A'..'Z'|'_'|'0'..'9')*	
 
 terminal STRING
 : 
