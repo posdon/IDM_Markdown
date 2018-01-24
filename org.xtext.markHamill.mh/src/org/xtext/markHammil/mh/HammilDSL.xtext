@@ -11,7 +11,7 @@ File returns md::File:
 	;
 
 Expression returns md::Expression:
-	/*TableExpression | HorizontalExpression | ListExpression | QuoteExpression | LineBreakExpression | ItalicExpression | StrongExpression | ScratchExpression | HTMLExpression | CodeExpression | ReferenceExpression | LinkExpression | ImageExpression | VideoExpression | */ 
+	/*TableExpression | HorizontalExpression | ListExpression |*/ QuoteExpression | /*LineBreakExpression | ItalicExpression | StrongExpression | ScratchExpression | HTMLExpression | CodeExpression | ReferenceExpression | LinkExpression | ImageExpression | VideoExpression | */ 
 	HeaderDepth1Expression | HeaderDepth2Expression | HeaderDepth3Expression | HeaderDepth4Expression | HeaderDepth5Expression | HeaderDepth6Expression
 	/*| HeaderDepth2Expression | HeaderDepth3Expression | HeaderDepth5Expression | HeaderDepth6Expression | HeaderDepth4Expression | TextualExpression */;
 
@@ -44,12 +44,13 @@ ListExpression returns ListExpression:
 		'listContent' '{' listContent+=TextExpression ( "," listContent+=TextExpression)* '}' 
 	'}';
 
-QuoteExpression returns QuoteExpression:
-	'QuoteExpression'
-	'{'
-		'textexpression' textexpression=TextExpression
-	'}';
 */
+QuoteExpression returns md::QuoteExpression hidden(S):
+
+		'>' textexpression= TextualExpression 
+;
+
+/*
 /*
 ItalicExpression returns ItalicExpression:
 	'ItalicExpression'
