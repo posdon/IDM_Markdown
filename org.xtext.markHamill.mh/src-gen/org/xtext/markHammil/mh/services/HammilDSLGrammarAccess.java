@@ -50,24 +50,41 @@ public class HammilDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.markHammil.mh.HammilDSL.Expression");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cHeaderDepth1ExpressionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cBLTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cHeaderDepth2ExpressionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cHeaderDepth3ExpressionParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cHeaderDepth4ExpressionParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cHeaderDepth5ExpressionParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cHeaderDepth6ExpressionParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
 		
 		//Expression md::Expression:
-		///*TableExpression | HorizontalExpression | ListExpression | QuoteExpression | LineBreakExpression | ItalicExpression | StrongExpression | ScratchExpression | HTMLExpression | CodeExpression | ReferenceExpression | LinkExpression | ImageExpression | VideoExpression | */
-		//	=> HeaderDepth1Expression | BL
+		//	HeaderDepth1Expression | HeaderDepth2Expression | HeaderDepth3Expression | HeaderDepth4Expression |
+		//	HeaderDepth5Expression | HeaderDepth6Expression
 		//	/*| HeaderDepth2Expression | HeaderDepth3Expression | HeaderDepth5Expression | HeaderDepth6Expression | HeaderDepth4Expression | TextualExpression */;
 		@Override public ParserRule getRule() { return rule; }
 		
 		///*TableExpression | HorizontalExpression | ListExpression | QuoteExpression | LineBreakExpression | ItalicExpression | StrongExpression | ScratchExpression | HTMLExpression | CodeExpression | ReferenceExpression | LinkExpression | ImageExpression | VideoExpression | */
-		//=> HeaderDepth1Expression | BL
+		//HeaderDepth1Expression | HeaderDepth2Expression | HeaderDepth3Expression | HeaderDepth4Expression |
+		//HeaderDepth5Expression | HeaderDepth6Expression
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		///*TableExpression | HorizontalExpression | ListExpression | QuoteExpression | LineBreakExpression | ItalicExpression | StrongExpression | ScratchExpression | HTMLExpression | CodeExpression | ReferenceExpression | LinkExpression | ImageExpression | VideoExpression | */
-		//=> HeaderDepth1Expression
+		//HeaderDepth1Expression
 		public RuleCall getHeaderDepth1ExpressionParserRuleCall_0() { return cHeaderDepth1ExpressionParserRuleCall_0; }
 		
-		//BL
-		public RuleCall getBLTerminalRuleCall_1() { return cBLTerminalRuleCall_1; }
+		//HeaderDepth2Expression
+		public RuleCall getHeaderDepth2ExpressionParserRuleCall_1() { return cHeaderDepth2ExpressionParserRuleCall_1; }
+		
+		//HeaderDepth3Expression
+		public RuleCall getHeaderDepth3ExpressionParserRuleCall_2() { return cHeaderDepth3ExpressionParserRuleCall_2; }
+		
+		//HeaderDepth4Expression
+		public RuleCall getHeaderDepth4ExpressionParserRuleCall_3() { return cHeaderDepth4ExpressionParserRuleCall_3; }
+		
+		//HeaderDepth5Expression
+		public RuleCall getHeaderDepth5ExpressionParserRuleCall_4() { return cHeaderDepth5ExpressionParserRuleCall_4; }
+		
+		//HeaderDepth6Expression
+		public RuleCall getHeaderDepth6ExpressionParserRuleCall_5() { return cHeaderDepth6ExpressionParserRuleCall_5; }
 	}
 	public class TextExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.markHammil.mh.HammilDSL.TextExpression");
@@ -95,7 +112,7 @@ public class HammilDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.markHammil.mh.HammilDSL.HeaderDepth1Expression");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Keyword cNumberSignSpaceKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
+		private final Keyword cNumberSignKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
 		private final Assignment cTitleAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
 		private final RuleCall cTitleEmphasisExpressionParserRuleCall_0_1_0 = (RuleCall)cTitleAssignment_0_1.eContents().get(0);
 		private final Keyword cNumberSignKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
@@ -131,12 +148,7 @@ public class HammilDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//	'{'
 		//		'textexpression' textexpression=TextExpression
 		//	'}';
-		//
-		//LineBreakExpression returns LineBreakExpression:
-		//	{LineBreakExpression}
-		//	'LineBreakExpression'
-		//	;
-		//
+		//*/ /*
 		//ItalicExpression returns ItalicExpression:
 		//	'ItalicExpression'
 		//	'{'
@@ -196,18 +208,18 @@ public class HammilDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//		'isReferenced' isReferenced=BooleanObject
 		//	'}';
 		//
-		//	*/ HeaderDepth1Expression md::HeaderDepth1Expression hidden(WS):
-		//	'# ' title=EmphasisExpression '#'* BL? | title=EmphasisExpression BL '='+ BL;
+		//	*/ HeaderDepth1Expression md::HeaderDepth1Expression hidden(S):
+		//	'#' title=EmphasisExpression '#'* BL? | title=EmphasisExpression BL '='+ BL?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'# ' title=EmphasisExpression '#'* BL? | title=EmphasisExpression BL '='+ BL
+		//'#' title=EmphasisExpression '#'* BL? | title=EmphasisExpression BL '='+ BL?
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//'# ' title=EmphasisExpression '#'* BL?
+		//'#' title=EmphasisExpression '#'* BL?
 		public Group getGroup_0() { return cGroup_0; }
 		
-		//'# '
-		public Keyword getNumberSignSpaceKeyword_0_0() { return cNumberSignSpaceKeyword_0_0; }
+		//'#'
+		public Keyword getNumberSignKeyword_0_0() { return cNumberSignKeyword_0_0; }
 		
 		//title=EmphasisExpression
 		public Assignment getTitleAssignment_0_1() { return cTitleAssignment_0_1; }
@@ -221,7 +233,7 @@ public class HammilDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//BL?
 		public RuleCall getBLTerminalRuleCall_0_3() { return cBLTerminalRuleCall_0_3; }
 		
-		//title=EmphasisExpression BL '='+ BL
+		//title=EmphasisExpression BL '='+ BL?
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//title=EmphasisExpression
@@ -236,47 +248,198 @@ public class HammilDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//'='+
 		public Keyword getEqualsSignKeyword_1_2() { return cEqualsSignKeyword_1_2; }
 		
-		//BL
+		//BL?
 		public RuleCall getBLTerminalRuleCall_1_3() { return cBLTerminalRuleCall_1_3; }
+	}
+	public class HeaderDepth2ExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.markHammil.mh.HammilDSL.HeaderDepth2Expression");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Keyword cNumberSignNumberSignKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
+		private final Assignment cTitleAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final RuleCall cTitleEmphasisExpressionParserRuleCall_0_1_0 = (RuleCall)cTitleAssignment_0_1.eContents().get(0);
+		private final Keyword cNumberSignKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
+		private final RuleCall cBLTerminalRuleCall_0_3 = (RuleCall)cGroup_0.eContents().get(3);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Assignment cTitleAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
+		private final RuleCall cTitleEmphasisExpressionParserRuleCall_1_0_0 = (RuleCall)cTitleAssignment_1_0.eContents().get(0);
+		private final RuleCall cBLTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
+		private final Keyword cHyphenMinusKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
+		private final RuleCall cBLTerminalRuleCall_1_3 = (RuleCall)cGroup_1.eContents().get(3);
+		
+		//HeaderDepth2Expression md::HeaderDepth2Expression hidden(S):
+		//	'##' title=EmphasisExpression '#'* BL? | title=EmphasisExpression BL '-'+ BL?;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'##' title=EmphasisExpression '#'* BL? | title=EmphasisExpression BL '-'+ BL?
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//'##' title=EmphasisExpression '#'* BL?
+		public Group getGroup_0() { return cGroup_0; }
+		
+		//'##'
+		public Keyword getNumberSignNumberSignKeyword_0_0() { return cNumberSignNumberSignKeyword_0_0; }
+		
+		//title=EmphasisExpression
+		public Assignment getTitleAssignment_0_1() { return cTitleAssignment_0_1; }
+		
+		//EmphasisExpression
+		public RuleCall getTitleEmphasisExpressionParserRuleCall_0_1_0() { return cTitleEmphasisExpressionParserRuleCall_0_1_0; }
+		
+		//'#'*
+		public Keyword getNumberSignKeyword_0_2() { return cNumberSignKeyword_0_2; }
+		
+		//BL?
+		public RuleCall getBLTerminalRuleCall_0_3() { return cBLTerminalRuleCall_0_3; }
+		
+		//title=EmphasisExpression BL '-'+ BL?
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//title=EmphasisExpression
+		public Assignment getTitleAssignment_1_0() { return cTitleAssignment_1_0; }
+		
+		//EmphasisExpression
+		public RuleCall getTitleEmphasisExpressionParserRuleCall_1_0_0() { return cTitleEmphasisExpressionParserRuleCall_1_0_0; }
+		
+		//BL
+		public RuleCall getBLTerminalRuleCall_1_1() { return cBLTerminalRuleCall_1_1; }
+		
+		//'-'+
+		public Keyword getHyphenMinusKeyword_1_2() { return cHyphenMinusKeyword_1_2; }
+		
+		//BL?
+		public RuleCall getBLTerminalRuleCall_1_3() { return cBLTerminalRuleCall_1_3; }
+	}
+	public class HeaderDepth3ExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.markHammil.mh.HammilDSL.HeaderDepth3Expression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cNumberSignNumberSignNumberSignKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cTitleAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cTitleEmphasisExpressionParserRuleCall_1_0 = (RuleCall)cTitleAssignment_1.eContents().get(0);
+		private final Keyword cNumberSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final RuleCall cBLTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
+		
+		//HeaderDepth3Expression md::HeaderDepth3Expression hidden(S):
+		//	'###' title=EmphasisExpression '#'* BL?;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'###' title=EmphasisExpression '#'* BL?
+		public Group getGroup() { return cGroup; }
+		
+		//'###'
+		public Keyword getNumberSignNumberSignNumberSignKeyword_0() { return cNumberSignNumberSignNumberSignKeyword_0; }
+		
+		//title=EmphasisExpression
+		public Assignment getTitleAssignment_1() { return cTitleAssignment_1; }
+		
+		//EmphasisExpression
+		public RuleCall getTitleEmphasisExpressionParserRuleCall_1_0() { return cTitleEmphasisExpressionParserRuleCall_1_0; }
+		
+		//'#'*
+		public Keyword getNumberSignKeyword_2() { return cNumberSignKeyword_2; }
+		
+		//BL?
+		public RuleCall getBLTerminalRuleCall_3() { return cBLTerminalRuleCall_3; }
+	}
+	public class HeaderDepth5ExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.markHammil.mh.HammilDSL.HeaderDepth5Expression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cNumberSignNumberSignNumberSignNumberSignNumberSignKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cTitleAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cTitleEmphasisExpressionParserRuleCall_1_0 = (RuleCall)cTitleAssignment_1.eContents().get(0);
+		private final Keyword cNumberSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final RuleCall cBLTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
+		
+		//HeaderDepth5Expression md::HeaderDepth5Expression hidden(S):
+		//	'#####' title=EmphasisExpression '#'* BL?;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'#####' title=EmphasisExpression '#'* BL?
+		public Group getGroup() { return cGroup; }
+		
+		//'#####'
+		public Keyword getNumberSignNumberSignNumberSignNumberSignNumberSignKeyword_0() { return cNumberSignNumberSignNumberSignNumberSignNumberSignKeyword_0; }
+		
+		//title=EmphasisExpression
+		public Assignment getTitleAssignment_1() { return cTitleAssignment_1; }
+		
+		//EmphasisExpression
+		public RuleCall getTitleEmphasisExpressionParserRuleCall_1_0() { return cTitleEmphasisExpressionParserRuleCall_1_0; }
+		
+		//'#'*
+		public Keyword getNumberSignKeyword_2() { return cNumberSignKeyword_2; }
+		
+		//BL?
+		public RuleCall getBLTerminalRuleCall_3() { return cBLTerminalRuleCall_3; }
+	}
+	public class HeaderDepth6ExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.markHammil.mh.HammilDSL.HeaderDepth6Expression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cNumberSignNumberSignNumberSignNumberSignNumberSignNumberSignKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cTitleAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cTitleEmphasisExpressionParserRuleCall_1_0 = (RuleCall)cTitleAssignment_1.eContents().get(0);
+		private final Keyword cNumberSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final RuleCall cBLTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
+		
+		//HeaderDepth6Expression md::HeaderDepth6Expression hidden(S):
+		//	'######' title=EmphasisExpression '#'* BL?;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'######' title=EmphasisExpression '#'* BL?
+		public Group getGroup() { return cGroup; }
+		
+		//'######'
+		public Keyword getNumberSignNumberSignNumberSignNumberSignNumberSignNumberSignKeyword_0() { return cNumberSignNumberSignNumberSignNumberSignNumberSignNumberSignKeyword_0; }
+		
+		//title=EmphasisExpression
+		public Assignment getTitleAssignment_1() { return cTitleAssignment_1; }
+		
+		//EmphasisExpression
+		public RuleCall getTitleEmphasisExpressionParserRuleCall_1_0() { return cTitleEmphasisExpressionParserRuleCall_1_0; }
+		
+		//'#'*
+		public Keyword getNumberSignKeyword_2() { return cNumberSignKeyword_2; }
+		
+		//BL?
+		public RuleCall getBLTerminalRuleCall_3() { return cBLTerminalRuleCall_3; }
+	}
+	public class HeaderDepth4ExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.markHammil.mh.HammilDSL.HeaderDepth4Expression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cNumberSignNumberSignNumberSignNumberSignKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cTitleAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cTitleEmphasisExpressionParserRuleCall_1_0 = (RuleCall)cTitleAssignment_1.eContents().get(0);
+		private final Keyword cNumberSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final RuleCall cBLTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
+		
+		//HeaderDepth4Expression md::HeaderDepth4Expression hidden(S):
+		//	'####' title=EmphasisExpression '#'* BL?;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'####' title=EmphasisExpression '#'* BL?
+		public Group getGroup() { return cGroup; }
+		
+		//'####'
+		public Keyword getNumberSignNumberSignNumberSignNumberSignKeyword_0() { return cNumberSignNumberSignNumberSignNumberSignKeyword_0; }
+		
+		//title=EmphasisExpression
+		public Assignment getTitleAssignment_1() { return cTitleAssignment_1; }
+		
+		//EmphasisExpression
+		public RuleCall getTitleEmphasisExpressionParserRuleCall_1_0() { return cTitleEmphasisExpressionParserRuleCall_1_0; }
+		
+		//'#'*
+		public Keyword getNumberSignKeyword_2() { return cNumberSignKeyword_2; }
+		
+		//BL?
+		public RuleCall getBLTerminalRuleCall_3() { return cBLTerminalRuleCall_3; }
 	}
 	public class TextualExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.markHammil.mh.HammilDSL.TextualExpression");
 		private final Assignment cContentStringAssignment = (Assignment)rule.eContents().get(1);
 		private final RuleCall cContentStringString0ParserRuleCall_0 = (RuleCall)cContentStringAssignment.eContents().get(0);
 		
-		///*
-		//HeaderDepth2Expression returns HeaderDepth2Expression:
-		//	'HeaderDepth2Expression'
-		//	'{'
-		//		'title' title=EmphasisExpression
-		//	'}';
-		//
-		//HeaderDepth3Expression returns HeaderDepth3Expression:
-		//	'HeaderDepth3Expression'
-		//	'{'
-		//		'title' title=EmphasisExpression
-		//	'}';
-		//
-		//HeaderDepth5Expression returns HeaderDepth5Expression:
-		//	'HeaderDepth5Expression'
-		//	'{'
-		//		'title' title=EmphasisExpression
-		//	'}';
-		//
-		//HeaderDepth6Expression returns HeaderDepth6Expression:
-		//	'HeaderDepth6Expression'
-		//	'{'
-		//		'title' title=EmphasisExpression
-		//	'}';
-		//
-		//HeaderDepth4Expression returns HeaderDepth4Expression:
-		//	'HeaderDepth4Expression'
-		//	'{'
-		//		'title' title=EmphasisExpression
-		//	'}';
-		//
-		//* 
-		//*/ TextualExpression md::TextualExpression:
+		//TextualExpression md::TextualExpression:
 		//	contentString=String0;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -326,6 +489,11 @@ public class HammilDSLGrammarAccess extends AbstractGrammarElementFinder {
 	private final TextExpressionElements pTextExpression;
 	private final EmphasisExpressionElements pEmphasisExpression;
 	private final HeaderDepth1ExpressionElements pHeaderDepth1Expression;
+	private final HeaderDepth2ExpressionElements pHeaderDepth2Expression;
+	private final HeaderDepth3ExpressionElements pHeaderDepth3Expression;
+	private final HeaderDepth5ExpressionElements pHeaderDepth5Expression;
+	private final HeaderDepth6ExpressionElements pHeaderDepth6Expression;
+	private final HeaderDepth4ExpressionElements pHeaderDepth4Expression;
 	private final TextualExpressionElements pTextualExpression;
 	private final String0Elements pString0;
 	private final BooleanObjectElements pBooleanObject;
@@ -333,7 +501,7 @@ public class HammilDSLGrammarAccess extends AbstractGrammarElementFinder {
 	private final TerminalRule tML_COMMENT;
 	private final TerminalRule tSL_COMMENT;
 	private final TerminalRule tBL;
-	private final TerminalRule tWS;
+	private final TerminalRule tS;
 	private final TerminalRule tDIGIT;
 	private final TerminalRule tDOUBLE;
 	private final TerminalRule tINT;
@@ -352,6 +520,11 @@ public class HammilDSLGrammarAccess extends AbstractGrammarElementFinder {
 		this.pTextExpression = new TextExpressionElements();
 		this.pEmphasisExpression = new EmphasisExpressionElements();
 		this.pHeaderDepth1Expression = new HeaderDepth1ExpressionElements();
+		this.pHeaderDepth2Expression = new HeaderDepth2ExpressionElements();
+		this.pHeaderDepth3Expression = new HeaderDepth3ExpressionElements();
+		this.pHeaderDepth5Expression = new HeaderDepth5ExpressionElements();
+		this.pHeaderDepth6Expression = new HeaderDepth6ExpressionElements();
+		this.pHeaderDepth4Expression = new HeaderDepth4ExpressionElements();
 		this.pTextualExpression = new TextualExpressionElements();
 		this.pString0 = new String0Elements();
 		this.pBooleanObject = new BooleanObjectElements();
@@ -359,7 +532,7 @@ public class HammilDSLGrammarAccess extends AbstractGrammarElementFinder {
 		this.tML_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.markHammil.mh.HammilDSL.ML_COMMENT");
 		this.tSL_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.markHammil.mh.HammilDSL.SL_COMMENT");
 		this.tBL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.markHammil.mh.HammilDSL.BL");
-		this.tWS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.markHammil.mh.HammilDSL.WS");
+		this.tS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.markHammil.mh.HammilDSL.S");
 		this.tDIGIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.markHammil.mh.HammilDSL.DIGIT");
 		this.tDOUBLE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.markHammil.mh.HammilDSL.DOUBLE");
 		this.tINT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.markHammil.mh.HammilDSL.INT");
@@ -403,8 +576,8 @@ public class HammilDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Expression md::Expression:
-	///*TableExpression | HorizontalExpression | ListExpression | QuoteExpression | LineBreakExpression | ItalicExpression | StrongExpression | ScratchExpression | HTMLExpression | CodeExpression | ReferenceExpression | LinkExpression | ImageExpression | VideoExpression | */
-	//	=> HeaderDepth1Expression | BL
+	//	HeaderDepth1Expression | HeaderDepth2Expression | HeaderDepth3Expression | HeaderDepth4Expression |
+	//	HeaderDepth5Expression | HeaderDepth6Expression
 	//	/*| HeaderDepth2Expression | HeaderDepth3Expression | HeaderDepth5Expression | HeaderDepth6Expression | HeaderDepth4Expression | TextualExpression */;
 	public ExpressionElements getExpressionAccess() {
 		return pExpression;
@@ -458,12 +631,7 @@ public class HammilDSLGrammarAccess extends AbstractGrammarElementFinder {
 	//	'{'
 	//		'textexpression' textexpression=TextExpression
 	//	'}';
-	//
-	//LineBreakExpression returns LineBreakExpression:
-	//	{LineBreakExpression}
-	//	'LineBreakExpression'
-	//	;
-	//
+	//*/ /*
 	//ItalicExpression returns ItalicExpression:
 	//	'ItalicExpression'
 	//	'{'
@@ -523,8 +691,8 @@ public class HammilDSLGrammarAccess extends AbstractGrammarElementFinder {
 	//		'isReferenced' isReferenced=BooleanObject
 	//	'}';
 	//
-	//	*/ HeaderDepth1Expression md::HeaderDepth1Expression hidden(WS):
-	//	'# ' title=EmphasisExpression '#'* BL? | title=EmphasisExpression BL '='+ BL;
+	//	*/ HeaderDepth1Expression md::HeaderDepth1Expression hidden(S):
+	//	'#' title=EmphasisExpression '#'* BL? | title=EmphasisExpression BL '='+ BL?;
 	public HeaderDepth1ExpressionElements getHeaderDepth1ExpressionAccess() {
 		return pHeaderDepth1Expression;
 	}
@@ -533,39 +701,57 @@ public class HammilDSLGrammarAccess extends AbstractGrammarElementFinder {
 		return getHeaderDepth1ExpressionAccess().getRule();
 	}
 	
-	///*
-	//HeaderDepth2Expression returns HeaderDepth2Expression:
-	//	'HeaderDepth2Expression'
-	//	'{'
-	//		'title' title=EmphasisExpression
-	//	'}';
-	//
-	//HeaderDepth3Expression returns HeaderDepth3Expression:
-	//	'HeaderDepth3Expression'
-	//	'{'
-	//		'title' title=EmphasisExpression
-	//	'}';
-	//
-	//HeaderDepth5Expression returns HeaderDepth5Expression:
-	//	'HeaderDepth5Expression'
-	//	'{'
-	//		'title' title=EmphasisExpression
-	//	'}';
-	//
-	//HeaderDepth6Expression returns HeaderDepth6Expression:
-	//	'HeaderDepth6Expression'
-	//	'{'
-	//		'title' title=EmphasisExpression
-	//	'}';
-	//
-	//HeaderDepth4Expression returns HeaderDepth4Expression:
-	//	'HeaderDepth4Expression'
-	//	'{'
-	//		'title' title=EmphasisExpression
-	//	'}';
-	//
-	//* 
-	//*/ TextualExpression md::TextualExpression:
+	//HeaderDepth2Expression md::HeaderDepth2Expression hidden(S):
+	//	'##' title=EmphasisExpression '#'* BL? | title=EmphasisExpression BL '-'+ BL?;
+	public HeaderDepth2ExpressionElements getHeaderDepth2ExpressionAccess() {
+		return pHeaderDepth2Expression;
+	}
+	
+	public ParserRule getHeaderDepth2ExpressionRule() {
+		return getHeaderDepth2ExpressionAccess().getRule();
+	}
+	
+	//HeaderDepth3Expression md::HeaderDepth3Expression hidden(S):
+	//	'###' title=EmphasisExpression '#'* BL?;
+	public HeaderDepth3ExpressionElements getHeaderDepth3ExpressionAccess() {
+		return pHeaderDepth3Expression;
+	}
+	
+	public ParserRule getHeaderDepth3ExpressionRule() {
+		return getHeaderDepth3ExpressionAccess().getRule();
+	}
+	
+	//HeaderDepth5Expression md::HeaderDepth5Expression hidden(S):
+	//	'#####' title=EmphasisExpression '#'* BL?;
+	public HeaderDepth5ExpressionElements getHeaderDepth5ExpressionAccess() {
+		return pHeaderDepth5Expression;
+	}
+	
+	public ParserRule getHeaderDepth5ExpressionRule() {
+		return getHeaderDepth5ExpressionAccess().getRule();
+	}
+	
+	//HeaderDepth6Expression md::HeaderDepth6Expression hidden(S):
+	//	'######' title=EmphasisExpression '#'* BL?;
+	public HeaderDepth6ExpressionElements getHeaderDepth6ExpressionAccess() {
+		return pHeaderDepth6Expression;
+	}
+	
+	public ParserRule getHeaderDepth6ExpressionRule() {
+		return getHeaderDepth6ExpressionAccess().getRule();
+	}
+	
+	//HeaderDepth4Expression md::HeaderDepth4Expression hidden(S):
+	//	'####' title=EmphasisExpression '#'* BL?;
+	public HeaderDepth4ExpressionElements getHeaderDepth4ExpressionAccess() {
+		return pHeaderDepth4Expression;
+	}
+	
+	public ParserRule getHeaderDepth4ExpressionRule() {
+		return getHeaderDepth4ExpressionAccess().getRule();
+	}
+	
+	//TextualExpression md::TextualExpression:
 	//	contentString=String0;
 	public TextualExpressionElements getTextualExpressionAccess() {
 		return pTextualExpression;
@@ -631,10 +817,10 @@ public class HammilDSLGrammarAccess extends AbstractGrammarElementFinder {
 		return tBL;
 	}
 	
-	//terminal WS:
-	//	' ' | '\t' | '\r' | '\n'+;
-	public TerminalRule getWSRule() {
-		return tWS;
+	//terminal S:
+	//	' ' | '\t';
+	public TerminalRule getSRule() {
+		return tS;
 	}
 	
 	//terminal fragment DIGIT:
@@ -659,6 +845,12 @@ public class HammilDSLGrammarAccess extends AbstractGrammarElementFinder {
 	//	'^'? ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;
 	public TerminalRule getIDRule() {
 		return gaTerminals.getIDRule();
+	}
+	
+	//terminal WS:
+	//	' ' | '\t' | '\r' | '\n'+;
+	public TerminalRule getWSRule() {
+		return gaTerminals.getWSRule();
 	}
 	
 	//terminal ANY_OTHER:

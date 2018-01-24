@@ -12,8 +12,9 @@ File returns md::File:
 
 Expression returns md::Expression:
 	/*TableExpression | HorizontalExpression | ListExpression | QuoteExpression | LineBreakExpression | ItalicExpression | StrongExpression | ScratchExpression | HTMLExpression | CodeExpression | ReferenceExpression | LinkExpression | ImageExpression | VideoExpression | */ 
-	=> HeaderDepth1Expression  | BL
+	HeaderDepth1Expression | HeaderDepth2Expression | HeaderDepth3Expression | HeaderDepth4Expression | HeaderDepth5Expression | HeaderDepth6Expression
 	/*| HeaderDepth2Expression | HeaderDepth3Expression | HeaderDepth5Expression | HeaderDepth6Expression | HeaderDepth4Expression | TextualExpression */;
+
 
 
 TextExpression returns md::TextExpression:
@@ -48,12 +49,8 @@ QuoteExpression returns QuoteExpression:
 	'{'
 		'textexpression' textexpression=TextExpression
 	'}';
-
-LineBreakExpression returns LineBreakExpression:
-	{LineBreakExpression}
-	'LineBreakExpression'
-	;
-
+*/
+/*
 ItalicExpression returns ItalicExpression:
 	'ItalicExpression'
 	'{'
@@ -115,44 +112,33 @@ VideoExpression returns VideoExpression:
 
 	*/
 
-HeaderDepth1Expression returns md::HeaderDepth1Expression hidden(WS):
-		'# ' title=EmphasisExpression ('#')* BL ? |
+HeaderDepth1Expression returns md::HeaderDepth1Expression hidden(S):
+		'#' title=EmphasisExpression ('#')* BL ? |
 		title=EmphasisExpression BL ('=')+ BL?
 	;
 
-/*
-HeaderDepth2Expression returns HeaderDepth2Expression:
-	'HeaderDepth2Expression'
-	'{'
-		'title' title=EmphasisExpression
-	'}';
 
-HeaderDepth3Expression returns HeaderDepth3Expression:
-	'HeaderDepth3Expression'
-	'{'
-		'title' title=EmphasisExpression
-	'}';
+HeaderDepth2Expression returns md::HeaderDepth2Expression hidden(S):
+		'##' title=EmphasisExpression ('#')* BL ? |
+		title=EmphasisExpression BL ('-')+ BL?
+	;
 
-HeaderDepth5Expression returns HeaderDepth5Expression:
-	'HeaderDepth5Expression'
-	'{'
-		'title' title=EmphasisExpression
-	'}';
+HeaderDepth3Expression returns md::HeaderDepth3Expression hidden(S):
+	'###' title=EmphasisExpression ('#')* BL ?
+	;
 
-HeaderDepth6Expression returns HeaderDepth6Expression:
-	'HeaderDepth6Expression'
-	'{'
-		'title' title=EmphasisExpression
-	'}';
+HeaderDepth5Expression returns md::HeaderDepth5Expression hidden(S):
+	'#####' title=EmphasisExpression ('#')* BL ?
+	;
 
-HeaderDepth4Expression returns HeaderDepth4Expression:
-	'HeaderDepth4Expression'
-	'{'
-		'title' title=EmphasisExpression
-	'}';
+HeaderDepth6Expression returns md::HeaderDepth6Expression hidden(S):
+	'######'  title=EmphasisExpression ('#')* BL ?
+	;
 
-* 
-*/
+HeaderDepth4Expression returns md::HeaderDepth4Expression hidden(S):
+	'####'  title=EmphasisExpression ('#')* BL ?
+	;
+
 TextualExpression returns md::TextualExpression:
 	contentString=String0
 	;
@@ -186,10 +172,8 @@ terminal ML_COMMENT
 : '/*' -> '*/';
 terminal SL_COMMENT 
 : '//' !('\n'|'\r')* ('\r'? '\n')?;
-terminal BL:
-	('\r'? '\n');
-terminal WS
-: (' '|'\t'|'\r'|'\n')+;
+terminal BL: ('\r'? '\n');
+terminal S: (' '|'\t');
 terminal fragment DIGIT: '0'..'9';
 terminal DOUBLE returns ecore::EDouble: INT ('.' DIGIT*);
 terminal INT returns ecore::EInt: '0' | ('1'..'9' DIGIT*);

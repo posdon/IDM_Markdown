@@ -33,12 +33,25 @@ public class HammilDSLParser extends AbstractContentAssistParser {
 				{
 					put(grammarAccess.getExpressionAccess().getAlternatives(), "rule__Expression__Alternatives");
 					put(grammarAccess.getHeaderDepth1ExpressionAccess().getAlternatives(), "rule__HeaderDepth1Expression__Alternatives");
+					put(grammarAccess.getHeaderDepth2ExpressionAccess().getAlternatives(), "rule__HeaderDepth2Expression__Alternatives");
 					put(grammarAccess.getFileAccess().getGroup(), "rule__File__Group__0");
 					put(grammarAccess.getHeaderDepth1ExpressionAccess().getGroup_0(), "rule__HeaderDepth1Expression__Group_0__0");
 					put(grammarAccess.getHeaderDepth1ExpressionAccess().getGroup_1(), "rule__HeaderDepth1Expression__Group_1__0");
+					put(grammarAccess.getHeaderDepth2ExpressionAccess().getGroup_0(), "rule__HeaderDepth2Expression__Group_0__0");
+					put(grammarAccess.getHeaderDepth2ExpressionAccess().getGroup_1(), "rule__HeaderDepth2Expression__Group_1__0");
+					put(grammarAccess.getHeaderDepth3ExpressionAccess().getGroup(), "rule__HeaderDepth3Expression__Group__0");
+					put(grammarAccess.getHeaderDepth5ExpressionAccess().getGroup(), "rule__HeaderDepth5Expression__Group__0");
+					put(grammarAccess.getHeaderDepth6ExpressionAccess().getGroup(), "rule__HeaderDepth6Expression__Group__0");
+					put(grammarAccess.getHeaderDepth4ExpressionAccess().getGroup(), "rule__HeaderDepth4Expression__Group__0");
 					put(grammarAccess.getFileAccess().getExpressionAssignment_1(), "rule__File__ExpressionAssignment_1");
 					put(grammarAccess.getHeaderDepth1ExpressionAccess().getTitleAssignment_0_1(), "rule__HeaderDepth1Expression__TitleAssignment_0_1");
 					put(grammarAccess.getHeaderDepth1ExpressionAccess().getTitleAssignment_1_0(), "rule__HeaderDepth1Expression__TitleAssignment_1_0");
+					put(grammarAccess.getHeaderDepth2ExpressionAccess().getTitleAssignment_0_1(), "rule__HeaderDepth2Expression__TitleAssignment_0_1");
+					put(grammarAccess.getHeaderDepth2ExpressionAccess().getTitleAssignment_1_0(), "rule__HeaderDepth2Expression__TitleAssignment_1_0");
+					put(grammarAccess.getHeaderDepth3ExpressionAccess().getTitleAssignment_1(), "rule__HeaderDepth3Expression__TitleAssignment_1");
+					put(grammarAccess.getHeaderDepth5ExpressionAccess().getTitleAssignment_1(), "rule__HeaderDepth5Expression__TitleAssignment_1");
+					put(grammarAccess.getHeaderDepth6ExpressionAccess().getTitleAssignment_1(), "rule__HeaderDepth6Expression__TitleAssignment_1");
+					put(grammarAccess.getHeaderDepth4ExpressionAccess().getTitleAssignment_1(), "rule__HeaderDepth4Expression__TitleAssignment_1");
 					put(grammarAccess.getTextualExpressionAccess().getContentStringAssignment(), "rule__TextualExpression__ContentStringAssignment");
 				}
 			};
