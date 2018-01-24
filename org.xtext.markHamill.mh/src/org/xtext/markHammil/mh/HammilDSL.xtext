@@ -11,15 +11,17 @@ File returns md::File:
 	;
 
 Expression returns md::Expression:
-	/*TableExpression | HorizontalExpression | ListExpression | QuoteExpression | LineBreakExpression | ItalicExpression | StrongExpression | ScratchExpression | HTMLExpression | CodeExpression | ReferenceExpression | LinkExpression | ImageExpression | VideoExpression | */ 
+	/*TableExpression | HorizontalExpression | ListExpression |*/ 
+	QuoteExpression | 
+	/*LineBreakExpression | ItalicExpression | StrongExpression | ScratchExpression | HTMLExpression | CodeExpression | ReferenceExpression | LinkExpression | ImageExpression | VideoExpression | */ 
 	HeaderDepth1Expression | HeaderDepth2Expression | HeaderDepth3Expression | HeaderDepth4Expression | HeaderDepth5Expression | HeaderDepth6Expression
 	/*| HeaderDepth2Expression | HeaderDepth3Expression | HeaderDepth5Expression | HeaderDepth6Expression | HeaderDepth4Expression | TextualExpression */;
 
 
 
 TextExpression returns md::TextExpression:
-	/*HorizontalExpression | QuoteExpression | ItalicExpression | StrongExpression | ScratchExpression |*/ 
-	TextualExpression;
+	/*HorizontalExpression | ItalicExpression | StrongExpression | ScratchExpression |*/ 
+	TextualExpression | QuoteExpression;
 
 EmphasisExpression returns md::EmphasisExpression:
 	/*ItalicExpression | StrongExpression | ScratchExpression |*/ 
@@ -43,13 +45,13 @@ ListExpression returns ListExpression:
 		'startingValue' startingValue=IntObject
 		'listContent' '{' listContent+=TextExpression ( "," listContent+=TextExpression)* '}' 
 	'}';
-
-QuoteExpression returns QuoteExpression:
-	'QuoteExpression'
-	'{'
-		'textexpression' textexpression=TextExpression
-	'}';
 */
+QuoteExpression returns md::QuoteExpression hidden(S):
+		'>' textexpression=TextExpression BL?
+	;
+
+
+
 /*
 ItalicExpression returns ItalicExpression:
 	'ItalicExpression'
@@ -167,7 +169,7 @@ BooleanObject returns type::BooleanObject:
 terminal STRING
 : 
 '"' ('\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|'"'))* '"' |
-"'" ('\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|'"'))* "'" ;
+"'" ('\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|'\''))* "'" ;
 terminal ML_COMMENT
 : '/*' -> '*/';
 terminal SL_COMMENT 

@@ -13,6 +13,7 @@ import markdown.HeaderDepth4Expression;
 import markdown.HeaderDepth5Expression;
 import markdown.HeaderDepth6Expression;
 import markdown.MarkdownPackage;
+import markdown.QuoteExpression;
 import markdown.TextualExpression;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -59,6 +60,9 @@ public class HammilDSLSemanticSequencer extends AbstractDelegatingSemanticSequen
 				return; 
 			case MarkdownPackage.HEADER_DEPTH6_EXPRESSION:
 				sequence_HeaderDepth6Expression(context, (HeaderDepth6Expression) semanticObject); 
+				return; 
+			case MarkdownPackage.QUOTE_EXPRESSION:
+				sequence_QuoteExpression(context, (QuoteExpression) semanticObject); 
 				return; 
 			case MarkdownPackage.TEXTUAL_EXPRESSION:
 				sequence_TextualExpression(context, (TextualExpression) semanticObject); 
@@ -178,6 +182,26 @@ public class HammilDSLSemanticSequencer extends AbstractDelegatingSemanticSequen
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getHeaderDepth6ExpressionAccess().getTitleEmphasisExpressionParserRuleCall_1_0(), semanticObject.getTitle());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Expression returns QuoteExpression
+	 *     TextExpression returns QuoteExpression
+	 *     QuoteExpression returns QuoteExpression
+	 *
+	 * Constraint:
+	 *     textexpression=TextExpression
+	 */
+	protected void sequence_QuoteExpression(ISerializationContext context, QuoteExpression semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, MarkdownPackage.Literals.QUOTE_EXPRESSION__TEXTEXPRESSION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MarkdownPackage.Literals.QUOTE_EXPRESSION__TEXTEXPRESSION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getQuoteExpressionAccess().getTextexpressionTextExpressionParserRuleCall_1_0(), semanticObject.getTextexpression());
 		feeder.finish();
 	}
 	

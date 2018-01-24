@@ -36,6 +36,7 @@ public class HammilDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_HeaderDepth5Expression_NumberSignKeyword_2_a;
 	protected AbstractElementAlias match_HeaderDepth6Expression_BLTerminalRuleCall_3_q;
 	protected AbstractElementAlias match_HeaderDepth6Expression_NumberSignKeyword_2_a;
+	protected AbstractElementAlias match_QuoteExpression_BLTerminalRuleCall_2_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
@@ -56,6 +57,7 @@ public class HammilDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_HeaderDepth5Expression_NumberSignKeyword_2_a = new TokenAlias(true, true, grammarAccess.getHeaderDepth5ExpressionAccess().getNumberSignKeyword_2());
 		match_HeaderDepth6Expression_BLTerminalRuleCall_3_q = new TokenAlias(false, true, grammarAccess.getHeaderDepth6ExpressionAccess().getBLTerminalRuleCall_3());
 		match_HeaderDepth6Expression_NumberSignKeyword_2_a = new TokenAlias(true, true, grammarAccess.getHeaderDepth6ExpressionAccess().getNumberSignKeyword_2());
+		match_QuoteExpression_BLTerminalRuleCall_2_q = new TokenAlias(false, true, grammarAccess.getQuoteExpressionAccess().getBLTerminalRuleCall_2());
 	}
 	
 	@Override
@@ -112,6 +114,8 @@ public class HammilDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_HeaderDepth6Expression_BLTerminalRuleCall_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_HeaderDepth6Expression_NumberSignKeyword_2_a.equals(syntax))
 				emit_HeaderDepth6Expression_NumberSignKeyword_2_a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_QuoteExpression_BLTerminalRuleCall_2_q.equals(syntax))
+				emit_QuoteExpression_BLTerminalRuleCall_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -289,6 +293,17 @@ public class HammilDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     title=EmphasisExpression (ambiguity) BL? (rule end)
 	 */
 	protected void emit_HeaderDepth6Expression_NumberSignKeyword_2_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     BL?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     textexpression=TextExpression (ambiguity) (rule end)
+	 */
+	protected void emit_QuoteExpression_BLTerminalRuleCall_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
