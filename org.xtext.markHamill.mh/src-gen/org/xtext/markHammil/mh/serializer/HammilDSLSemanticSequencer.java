@@ -5,6 +5,7 @@ package org.xtext.markHammil.mh.serializer;
 
 import com.google.inject.Inject;
 import java.util.Set;
+import markdown.CodeExpression;
 import markdown.File;
 import markdown.HeaderDepth1Expression;
 import markdown.HeaderDepth2Expression;
@@ -40,6 +41,9 @@ public class HammilDSLSemanticSequencer extends AbstractDelegatingSemanticSequen
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == MarkdownPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
+			case MarkdownPackage.CODE_EXPRESSION:
+				sequence_CodeExpression(context, (CodeExpression) semanticObject); 
+				return; 
 			case MarkdownPackage.FILE:
 				sequence_File(context, (File) semanticObject); 
 				return; 
@@ -71,6 +75,19 @@ public class HammilDSLSemanticSequencer extends AbstractDelegatingSemanticSequen
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
+	
+	/**
+	 * Contexts:
+	 *     Expression returns CodeExpression
+	 *     CodeExpression returns CodeExpression
+	 *
+	 * Constraint:
+	 *     (text=String0 | text=String0)
+	 */
+	protected void sequence_CodeExpression(ISerializationContext context, CodeExpression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
 	
 	/**
 	 * Contexts:
@@ -188,6 +205,8 @@ public class HammilDSLSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Contexts:
+	 *     Expression returns QuoteExpression
+	 *     TextExpression returns QuoteExpression
 	 *     QuoteExpression returns QuoteExpression
 	 *
 	 * Constraint:

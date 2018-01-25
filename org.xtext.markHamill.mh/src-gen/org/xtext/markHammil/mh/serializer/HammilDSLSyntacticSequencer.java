@@ -20,10 +20,13 @@ import org.xtext.markHammil.mh.services.HammilDSLGrammarAccess;
 public class HammilDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected HammilDSLGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_HeaderDepth1Expression_BLTerminalRuleCall_0_3_q;
+	protected AbstractElementAlias match_CodeExpression_BLTerminalRuleCall_1_4_q;
+	protected AbstractElementAlias match_HeaderDepth1Expression_BLTerminalRuleCall_0_5_q;
 	protected AbstractElementAlias match_HeaderDepth1Expression_BLTerminalRuleCall_1_3_q;
 	protected AbstractElementAlias match_HeaderDepth1Expression_EqualsSignKeyword_1_2_p;
-	protected AbstractElementAlias match_HeaderDepth1Expression_NumberSignKeyword_0_2_a;
+	protected AbstractElementAlias match_HeaderDepth1Expression_NumberSignKeyword_0_3_a;
+	protected AbstractElementAlias match_HeaderDepth1Expression_STerminalRuleCall_0_1_p;
+	protected AbstractElementAlias match_HeaderDepth1Expression_STerminalRuleCall_0_4_a;
 	protected AbstractElementAlias match_HeaderDepth2Expression_BLTerminalRuleCall_0_3_q;
 	protected AbstractElementAlias match_HeaderDepth2Expression_BLTerminalRuleCall_1_3_q;
 	protected AbstractElementAlias match_HeaderDepth2Expression_HyphenMinusKeyword_1_2_p;
@@ -36,15 +39,17 @@ public class HammilDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_HeaderDepth5Expression_NumberSignKeyword_2_a;
 	protected AbstractElementAlias match_HeaderDepth6Expression_BLTerminalRuleCall_3_q;
 	protected AbstractElementAlias match_HeaderDepth6Expression_NumberSignKeyword_2_a;
-	protected AbstractElementAlias match_QuoteExpression_BLTerminalRuleCall_2_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (HammilDSLGrammarAccess) access;
-		match_HeaderDepth1Expression_BLTerminalRuleCall_0_3_q = new TokenAlias(false, true, grammarAccess.getHeaderDepth1ExpressionAccess().getBLTerminalRuleCall_0_3());
+		match_CodeExpression_BLTerminalRuleCall_1_4_q = new TokenAlias(false, true, grammarAccess.getCodeExpressionAccess().getBLTerminalRuleCall_1_4());
+		match_HeaderDepth1Expression_BLTerminalRuleCall_0_5_q = new TokenAlias(false, true, grammarAccess.getHeaderDepth1ExpressionAccess().getBLTerminalRuleCall_0_5());
 		match_HeaderDepth1Expression_BLTerminalRuleCall_1_3_q = new TokenAlias(false, true, grammarAccess.getHeaderDepth1ExpressionAccess().getBLTerminalRuleCall_1_3());
 		match_HeaderDepth1Expression_EqualsSignKeyword_1_2_p = new TokenAlias(true, false, grammarAccess.getHeaderDepth1ExpressionAccess().getEqualsSignKeyword_1_2());
-		match_HeaderDepth1Expression_NumberSignKeyword_0_2_a = new TokenAlias(true, true, grammarAccess.getHeaderDepth1ExpressionAccess().getNumberSignKeyword_0_2());
+		match_HeaderDepth1Expression_NumberSignKeyword_0_3_a = new TokenAlias(true, true, grammarAccess.getHeaderDepth1ExpressionAccess().getNumberSignKeyword_0_3());
+		match_HeaderDepth1Expression_STerminalRuleCall_0_1_p = new TokenAlias(true, false, grammarAccess.getHeaderDepth1ExpressionAccess().getSTerminalRuleCall_0_1());
+		match_HeaderDepth1Expression_STerminalRuleCall_0_4_a = new TokenAlias(true, true, grammarAccess.getHeaderDepth1ExpressionAccess().getSTerminalRuleCall_0_4());
 		match_HeaderDepth2Expression_BLTerminalRuleCall_0_3_q = new TokenAlias(false, true, grammarAccess.getHeaderDepth2ExpressionAccess().getBLTerminalRuleCall_0_3());
 		match_HeaderDepth2Expression_BLTerminalRuleCall_1_3_q = new TokenAlias(false, true, grammarAccess.getHeaderDepth2ExpressionAccess().getBLTerminalRuleCall_1_3());
 		match_HeaderDepth2Expression_HyphenMinusKeyword_1_2_p = new TokenAlias(true, false, grammarAccess.getHeaderDepth2ExpressionAccess().getHyphenMinusKeyword_1_2());
@@ -57,23 +62,33 @@ public class HammilDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_HeaderDepth5Expression_NumberSignKeyword_2_a = new TokenAlias(true, true, grammarAccess.getHeaderDepth5ExpressionAccess().getNumberSignKeyword_2());
 		match_HeaderDepth6Expression_BLTerminalRuleCall_3_q = new TokenAlias(false, true, grammarAccess.getHeaderDepth6ExpressionAccess().getBLTerminalRuleCall_3());
 		match_HeaderDepth6Expression_NumberSignKeyword_2_a = new TokenAlias(true, true, grammarAccess.getHeaderDepth6ExpressionAccess().getNumberSignKeyword_2());
-		match_QuoteExpression_BLTerminalRuleCall_2_q = new TokenAlias(false, true, grammarAccess.getQuoteExpressionAccess().getBLTerminalRuleCall_2());
 	}
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (ruleCall.getRule() == grammarAccess.getBLRule())
 			return getBLToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getSRule())
+			return getSToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
 	/**
-	 * terminal BL: ('\r'? '\n');
+	 * terminal BL: '\n';
 	 */
 	protected String getBLToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)
 			return getTokenText(node);
 		return "\n";
+	}
+	
+	/**
+	 * terminal S: ' '| '\t';
+	 */
+	protected String getSToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return " ";
 	}
 	
 	@Override
@@ -82,14 +97,20 @@ public class HammilDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_HeaderDepth1Expression_BLTerminalRuleCall_0_3_q.equals(syntax))
-				emit_HeaderDepth1Expression_BLTerminalRuleCall_0_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			if (match_CodeExpression_BLTerminalRuleCall_1_4_q.equals(syntax))
+				emit_CodeExpression_BLTerminalRuleCall_1_4_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_HeaderDepth1Expression_BLTerminalRuleCall_0_5_q.equals(syntax))
+				emit_HeaderDepth1Expression_BLTerminalRuleCall_0_5_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_HeaderDepth1Expression_BLTerminalRuleCall_1_3_q.equals(syntax))
 				emit_HeaderDepth1Expression_BLTerminalRuleCall_1_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_HeaderDepth1Expression_EqualsSignKeyword_1_2_p.equals(syntax))
 				emit_HeaderDepth1Expression_EqualsSignKeyword_1_2_p(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_HeaderDepth1Expression_NumberSignKeyword_0_2_a.equals(syntax))
-				emit_HeaderDepth1Expression_NumberSignKeyword_0_2_a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_HeaderDepth1Expression_NumberSignKeyword_0_3_a.equals(syntax))
+				emit_HeaderDepth1Expression_NumberSignKeyword_0_3_a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_HeaderDepth1Expression_STerminalRuleCall_0_1_p.equals(syntax))
+				emit_HeaderDepth1Expression_STerminalRuleCall_0_1_p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_HeaderDepth1Expression_STerminalRuleCall_0_4_a.equals(syntax))
+				emit_HeaderDepth1Expression_STerminalRuleCall_0_4_a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_HeaderDepth2Expression_BLTerminalRuleCall_0_3_q.equals(syntax))
 				emit_HeaderDepth2Expression_BLTerminalRuleCall_0_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_HeaderDepth2Expression_BLTerminalRuleCall_1_3_q.equals(syntax))
@@ -114,8 +135,6 @@ public class HammilDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_HeaderDepth6Expression_BLTerminalRuleCall_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_HeaderDepth6Expression_NumberSignKeyword_2_a.equals(syntax))
 				emit_HeaderDepth6Expression_NumberSignKeyword_2_a(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_QuoteExpression_BLTerminalRuleCall_2_q.equals(syntax))
-				emit_QuoteExpression_BLTerminalRuleCall_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -125,9 +144,20 @@ public class HammilDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     BL?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     title=EmphasisExpression '#'* (ambiguity) (rule end)
+	 *     text=String0 '```' (ambiguity) (rule end)
 	 */
-	protected void emit_HeaderDepth1Expression_BLTerminalRuleCall_0_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_CodeExpression_BLTerminalRuleCall_1_4_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     BL?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     title=EmphasisExpression '#'* S* (ambiguity) (rule end)
+	 */
+	protected void emit_HeaderDepth1Expression_BLTerminalRuleCall_0_5_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -158,9 +188,31 @@ public class HammilDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     '#'*
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     title=EmphasisExpression (ambiguity) BL? (rule end)
+	 *     title=EmphasisExpression (ambiguity) S* BL? (rule end)
 	 */
-	protected void emit_HeaderDepth1Expression_NumberSignKeyword_0_2_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_HeaderDepth1Expression_NumberSignKeyword_0_3_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     S+
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) '#' (ambiguity) title=EmphasisExpression
+	 */
+	protected void emit_HeaderDepth1Expression_STerminalRuleCall_0_1_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     S*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     title=EmphasisExpression '#'* (ambiguity) BL? (rule end)
+	 */
+	protected void emit_HeaderDepth1Expression_STerminalRuleCall_0_4_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -293,17 +345,6 @@ public class HammilDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     title=EmphasisExpression (ambiguity) BL? (rule end)
 	 */
 	protected void emit_HeaderDepth6Expression_NumberSignKeyword_2_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     BL?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     textexpression=TextExpression (ambiguity) (rule end)
-	 */
-	protected void emit_QuoteExpression_BLTerminalRuleCall_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

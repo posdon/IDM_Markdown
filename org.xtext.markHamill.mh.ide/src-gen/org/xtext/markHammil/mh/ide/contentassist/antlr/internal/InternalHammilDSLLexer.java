@@ -13,25 +13,22 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalHammilDSLLexer extends Lexer {
     public static final int RULE_STRING=4;
-    public static final int RULE_SL_COMMENT=7;
+    public static final int RULE_SL_COMMENT=8;
     public static final int T__19=19;
     public static final int T__15=15;
-    public static final int RULE_DOUBLE=11;
     public static final int T__16=16;
     public static final int T__17=17;
     public static final int T__18=18;
+    public static final int T__11=11;
+    public static final int T__12=12;
+    public static final int T__13=13;
+    public static final int T__14=14;
     public static final int EOF=-1;
-    public static final int RULE_ID=12;
-    public static final int RULE_WS=13;
-    public static final int RULE_DIGIT=9;
-    public static final int RULE_ANY_OTHER=14;
-    public static final int RULE_S=8;
-    public static final int RULE_INT=10;
+    public static final int T__10=10;
+    public static final int T__9=9;
+    public static final int RULE_S=6;
     public static final int RULE_BL=5;
-    public static final int T__22=22;
-    public static final int RULE_ML_COMMENT=6;
-    public static final int T__20=20;
-    public static final int T__21=21;
+    public static final int RULE_ML_COMMENT=7;
 
     // delegates
     // delegators
@@ -46,15 +43,137 @@ public class InternalHammilDSLLexer extends Lexer {
     }
     public String getGrammarFileName() { return "InternalHammilDSL.g"; }
 
+    // $ANTLR start "T__9"
+    public final void mT__9() throws RecognitionException {
+        try {
+            int _type = T__9;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalHammilDSL.g:11:6: ( '>' )
+            // InternalHammilDSL.g:11:8: '>'
+            {
+            match('>'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__9"
+
+    // $ANTLR start "T__10"
+    public final void mT__10() throws RecognitionException {
+        try {
+            int _type = T__10;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalHammilDSL.g:12:7: ( '`' )
+            // InternalHammilDSL.g:12:9: '`'
+            {
+            match('`'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__10"
+
+    // $ANTLR start "T__11"
+    public final void mT__11() throws RecognitionException {
+        try {
+            int _type = T__11;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalHammilDSL.g:13:7: ( '```' )
+            // InternalHammilDSL.g:13:9: '```'
+            {
+            match("```"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__11"
+
+    // $ANTLR start "T__12"
+    public final void mT__12() throws RecognitionException {
+        try {
+            int _type = T__12;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalHammilDSL.g:14:7: ( '#' )
+            // InternalHammilDSL.g:14:9: '#'
+            {
+            match('#'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__12"
+
+    // $ANTLR start "T__13"
+    public final void mT__13() throws RecognitionException {
+        try {
+            int _type = T__13;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalHammilDSL.g:15:7: ( '=' )
+            // InternalHammilDSL.g:15:9: '='
+            {
+            match('='); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__13"
+
+    // $ANTLR start "T__14"
+    public final void mT__14() throws RecognitionException {
+        try {
+            int _type = T__14;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalHammilDSL.g:16:7: ( '##' )
+            // InternalHammilDSL.g:16:9: '##'
+            {
+            match("##"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__14"
+
     // $ANTLR start "T__15"
     public final void mT__15() throws RecognitionException {
         try {
             int _type = T__15;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalHammilDSL.g:11:7: ( '#' )
-            // InternalHammilDSL.g:11:9: '#'
+            // InternalHammilDSL.g:17:7: ( '-' )
+            // InternalHammilDSL.g:17:9: '-'
             {
-            match('#'); 
+            match('-'); 
 
             }
 
@@ -71,10 +190,11 @@ public class InternalHammilDSLLexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalHammilDSL.g:12:7: ( '=' )
-            // InternalHammilDSL.g:12:9: '='
+            // InternalHammilDSL.g:18:7: ( '###' )
+            // InternalHammilDSL.g:18:9: '###'
             {
-            match('='); 
+            match("###"); 
+
 
             }
 
@@ -91,10 +211,10 @@ public class InternalHammilDSLLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalHammilDSL.g:13:7: ( '##' )
-            // InternalHammilDSL.g:13:9: '##'
+            // InternalHammilDSL.g:19:7: ( '#####' )
+            // InternalHammilDSL.g:19:9: '#####'
             {
-            match("##"); 
+            match("#####"); 
 
 
             }
@@ -112,10 +232,11 @@ public class InternalHammilDSLLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalHammilDSL.g:14:7: ( '-' )
-            // InternalHammilDSL.g:14:9: '-'
+            // InternalHammilDSL.g:20:7: ( '######' )
+            // InternalHammilDSL.g:20:9: '######'
             {
-            match('-'); 
+            match("######"); 
+
 
             }
 
@@ -132,71 +253,8 @@ public class InternalHammilDSLLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalHammilDSL.g:15:7: ( '###' )
-            // InternalHammilDSL.g:15:9: '###'
-            {
-            match("###"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__19"
-
-    // $ANTLR start "T__20"
-    public final void mT__20() throws RecognitionException {
-        try {
-            int _type = T__20;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalHammilDSL.g:16:7: ( '#####' )
-            // InternalHammilDSL.g:16:9: '#####'
-            {
-            match("#####"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__20"
-
-    // $ANTLR start "T__21"
-    public final void mT__21() throws RecognitionException {
-        try {
-            int _type = T__21;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalHammilDSL.g:17:7: ( '######' )
-            // InternalHammilDSL.g:17:9: '######'
-            {
-            match("######"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__21"
-
-    // $ANTLR start "T__22"
-    public final void mT__22() throws RecognitionException {
-        try {
-            int _type = T__22;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalHammilDSL.g:18:7: ( '####' )
-            // InternalHammilDSL.g:18:9: '####'
+            // InternalHammilDSL.g:21:7: ( '####' )
+            // InternalHammilDSL.g:21:9: '####'
             {
             match("####"); 
 
@@ -209,17 +267,17 @@ public class InternalHammilDSLLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__22"
+    // $ANTLR end "T__19"
 
     // $ANTLR start "RULE_STRING"
     public final void mRULE_STRING() throws RecognitionException {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalHammilDSL.g:1618:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalHammilDSL.g:1618:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalHammilDSL.g:2060:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalHammilDSL.g:2060:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalHammilDSL.g:1618:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalHammilDSL.g:2060:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -237,10 +295,10 @@ public class InternalHammilDSLLexer extends Lexer {
             }
             switch (alt3) {
                 case 1 :
-                    // InternalHammilDSL.g:1618:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalHammilDSL.g:2060:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalHammilDSL.g:1618:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalHammilDSL.g:2060:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop1:
                     do {
                         int alt1=3;
@@ -256,7 +314,7 @@ public class InternalHammilDSLLexer extends Lexer {
 
                         switch (alt1) {
                     	case 1 :
-                    	    // InternalHammilDSL.g:1618:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // InternalHammilDSL.g:2060:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -272,7 +330,7 @@ public class InternalHammilDSLLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalHammilDSL.g:1618:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalHammilDSL.g:2060:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -297,10 +355,10 @@ public class InternalHammilDSLLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalHammilDSL.g:1618:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalHammilDSL.g:2060:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalHammilDSL.g:1618:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalHammilDSL.g:2060:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop2:
                     do {
                         int alt2=3;
@@ -316,7 +374,7 @@ public class InternalHammilDSLLexer extends Lexer {
 
                         switch (alt2) {
                     	case 1 :
-                    	    // InternalHammilDSL.g:1618:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // InternalHammilDSL.g:2060:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -332,7 +390,7 @@ public class InternalHammilDSLLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalHammilDSL.g:1618:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalHammilDSL.g:2060:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -375,12 +433,12 @@ public class InternalHammilDSLLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalHammilDSL.g:1620:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalHammilDSL.g:1620:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalHammilDSL.g:2062:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalHammilDSL.g:2062:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalHammilDSL.g:1620:24: ( options {greedy=false; } : . )*
+            // InternalHammilDSL.g:2062:24: ( options {greedy=false; } : . )*
             loop4:
             do {
                 int alt4=2;
@@ -405,7 +463,7 @@ public class InternalHammilDSLLexer extends Lexer {
 
                 switch (alt4) {
             	case 1 :
-            	    // InternalHammilDSL.g:1620:52: .
+            	    // InternalHammilDSL.g:2062:52: .
             	    {
             	    matchAny(); 
 
@@ -435,12 +493,12 @@ public class InternalHammilDSLLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalHammilDSL.g:1622:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalHammilDSL.g:1622:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalHammilDSL.g:2064:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalHammilDSL.g:2064:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalHammilDSL.g:1622:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalHammilDSL.g:2064:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop5:
             do {
                 int alt5=2;
@@ -453,7 +511,7 @@ public class InternalHammilDSLLexer extends Lexer {
 
                 switch (alt5) {
             	case 1 :
-            	    // InternalHammilDSL.g:1622:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalHammilDSL.g:2064:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -473,7 +531,7 @@ public class InternalHammilDSLLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalHammilDSL.g:1622:40: ( ( '\\r' )? '\\n' )?
+            // InternalHammilDSL.g:2064:40: ( ( '\\r' )? '\\n' )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -482,9 +540,9 @@ public class InternalHammilDSLLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // InternalHammilDSL.g:1622:41: ( '\\r' )? '\\n'
+                    // InternalHammilDSL.g:2064:41: ( '\\r' )? '\\n'
                     {
-                    // InternalHammilDSL.g:1622:41: ( '\\r' )?
+                    // InternalHammilDSL.g:2064:41: ( '\\r' )?
                     int alt6=2;
                     int LA6_0 = input.LA(1);
 
@@ -493,7 +551,7 @@ public class InternalHammilDSLLexer extends Lexer {
                     }
                     switch (alt6) {
                         case 1 :
-                            // InternalHammilDSL.g:1622:41: '\\r'
+                            // InternalHammilDSL.g:2064:41: '\\r'
                             {
                             match('\r'); 
 
@@ -525,27 +583,9 @@ public class InternalHammilDSLLexer extends Lexer {
         try {
             int _type = RULE_BL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalHammilDSL.g:1624:9: ( ( '\\r' )? '\\n' )
-            // InternalHammilDSL.g:1624:11: ( '\\r' )? '\\n'
+            // InternalHammilDSL.g:2066:9: ( '\\n' )
+            // InternalHammilDSL.g:2066:11: '\\n'
             {
-            // InternalHammilDSL.g:1624:11: ( '\\r' )?
-            int alt8=2;
-            int LA8_0 = input.LA(1);
-
-            if ( (LA8_0=='\r') ) {
-                alt8=1;
-            }
-            switch (alt8) {
-                case 1 :
-                    // InternalHammilDSL.g:1624:11: '\\r'
-                    {
-                    match('\r'); 
-
-                    }
-                    break;
-
-            }
-
             match('\n'); 
 
             }
@@ -563,8 +603,8 @@ public class InternalHammilDSLLexer extends Lexer {
         try {
             int _type = RULE_S;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalHammilDSL.g:1626:8: ( ( ' ' | '\\t' ) )
-            // InternalHammilDSL.g:1626:10: ( ' ' | '\\t' )
+            // InternalHammilDSL.g:2068:8: ( ( ' ' | '\\t' ) )
+            // InternalHammilDSL.g:2068:10: ( ' ' | '\\t' )
             {
             if ( input.LA(1)=='\t'||input.LA(1)==' ' ) {
                 input.consume();
@@ -586,575 +626,200 @@ public class InternalHammilDSLLexer extends Lexer {
     }
     // $ANTLR end "RULE_S"
 
-    // $ANTLR start "RULE_DIGIT"
-    public final void mRULE_DIGIT() throws RecognitionException {
-        try {
-            // InternalHammilDSL.g:1628:21: ( '0' .. '9' )
-            // InternalHammilDSL.g:1628:23: '0' .. '9'
-            {
-            matchRange('0','9'); 
-
-            }
-
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "RULE_DIGIT"
-
-    // $ANTLR start "RULE_DOUBLE"
-    public final void mRULE_DOUBLE() throws RecognitionException {
-        try {
-            int _type = RULE_DOUBLE;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalHammilDSL.g:1630:13: ( RULE_INT '.' ( RULE_DIGIT )* )
-            // InternalHammilDSL.g:1630:15: RULE_INT '.' ( RULE_DIGIT )*
-            {
-            mRULE_INT(); 
-            match('.'); 
-            // InternalHammilDSL.g:1630:28: ( RULE_DIGIT )*
-            loop9:
-            do {
-                int alt9=2;
-                int LA9_0 = input.LA(1);
-
-                if ( ((LA9_0>='0' && LA9_0<='9')) ) {
-                    alt9=1;
-                }
-
-
-                switch (alt9) {
-            	case 1 :
-            	    // InternalHammilDSL.g:1630:28: RULE_DIGIT
-            	    {
-            	    mRULE_DIGIT(); 
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop9;
-                }
-            } while (true);
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "RULE_DOUBLE"
-
-    // $ANTLR start "RULE_INT"
-    public final void mRULE_INT() throws RecognitionException {
-        try {
-            // InternalHammilDSL.g:1632:19: ( ( '0' | '1' .. '9' ( RULE_DIGIT )* ) )
-            // InternalHammilDSL.g:1632:21: ( '0' | '1' .. '9' ( RULE_DIGIT )* )
-            {
-            // InternalHammilDSL.g:1632:21: ( '0' | '1' .. '9' ( RULE_DIGIT )* )
-            int alt11=2;
-            int LA11_0 = input.LA(1);
-
-            if ( (LA11_0=='0') ) {
-                alt11=1;
-            }
-            else if ( ((LA11_0>='1' && LA11_0<='9')) ) {
-                alt11=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 11, 0, input);
-
-                throw nvae;
-            }
-            switch (alt11) {
-                case 1 :
-                    // InternalHammilDSL.g:1632:22: '0'
-                    {
-                    match('0'); 
-
-                    }
-                    break;
-                case 2 :
-                    // InternalHammilDSL.g:1632:26: '1' .. '9' ( RULE_DIGIT )*
-                    {
-                    matchRange('1','9'); 
-                    // InternalHammilDSL.g:1632:35: ( RULE_DIGIT )*
-                    loop10:
-                    do {
-                        int alt10=2;
-                        int LA10_0 = input.LA(1);
-
-                        if ( ((LA10_0>='0' && LA10_0<='9')) ) {
-                            alt10=1;
-                        }
-
-
-                        switch (alt10) {
-                    	case 1 :
-                    	    // InternalHammilDSL.g:1632:35: RULE_DIGIT
-                    	    {
-                    	    mRULE_DIGIT(); 
-
-                    	    }
-                    	    break;
-
-                    	default :
-                    	    break loop10;
-                        }
-                    } while (true);
-
-
-                    }
-                    break;
-
-            }
-
-
-            }
-
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "RULE_INT"
-
-    // $ANTLR start "RULE_ID"
-    public final void mRULE_ID() throws RecognitionException {
-        try {
-            int _type = RULE_ID;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalHammilDSL.g:1634:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalHammilDSL.g:1634:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
-            {
-            // InternalHammilDSL.g:1634:11: ( '^' )?
-            int alt12=2;
-            int LA12_0 = input.LA(1);
-
-            if ( (LA12_0=='^') ) {
-                alt12=1;
-            }
-            switch (alt12) {
-                case 1 :
-                    // InternalHammilDSL.g:1634:11: '^'
-                    {
-                    match('^'); 
-
-                    }
-                    break;
-
-            }
-
-            if ( (input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
-                input.consume();
-
-            }
-            else {
-                MismatchedSetException mse = new MismatchedSetException(null,input);
-                recover(mse);
-                throw mse;}
-
-            // InternalHammilDSL.g:1634:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
-            loop13:
-            do {
-                int alt13=2;
-                int LA13_0 = input.LA(1);
-
-                if ( ((LA13_0>='0' && LA13_0<='9')||(LA13_0>='A' && LA13_0<='Z')||LA13_0=='_'||(LA13_0>='a' && LA13_0<='z')) ) {
-                    alt13=1;
-                }
-
-
-                switch (alt13) {
-            	case 1 :
-            	    // InternalHammilDSL.g:
-            	    {
-            	    if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
-            	        input.consume();
-
-            	    }
-            	    else {
-            	        MismatchedSetException mse = new MismatchedSetException(null,input);
-            	        recover(mse);
-            	        throw mse;}
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop13;
-                }
-            } while (true);
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "RULE_ID"
-
-    // $ANTLR start "RULE_WS"
-    public final void mRULE_WS() throws RecognitionException {
-        try {
-            int _type = RULE_WS;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalHammilDSL.g:1636:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalHammilDSL.g:1636:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
-            {
-            // InternalHammilDSL.g:1636:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
-            int cnt14=0;
-            loop14:
-            do {
-                int alt14=2;
-                int LA14_0 = input.LA(1);
-
-                if ( ((LA14_0>='\t' && LA14_0<='\n')||LA14_0=='\r'||LA14_0==' ') ) {
-                    alt14=1;
-                }
-
-
-                switch (alt14) {
-            	case 1 :
-            	    // InternalHammilDSL.g:
-            	    {
-            	    if ( (input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
-            	        input.consume();
-
-            	    }
-            	    else {
-            	        MismatchedSetException mse = new MismatchedSetException(null,input);
-            	        recover(mse);
-            	        throw mse;}
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    if ( cnt14 >= 1 ) break loop14;
-                        EarlyExitException eee =
-                            new EarlyExitException(14, input);
-                        throw eee;
-                }
-                cnt14++;
-            } while (true);
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "RULE_WS"
-
-    // $ANTLR start "RULE_ANY_OTHER"
-    public final void mRULE_ANY_OTHER() throws RecognitionException {
-        try {
-            int _type = RULE_ANY_OTHER;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalHammilDSL.g:1638:16: ( . )
-            // InternalHammilDSL.g:1638:18: .
-            {
-            matchAny(); 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "RULE_ANY_OTHER"
-
     public void mTokens() throws RecognitionException {
-        // InternalHammilDSL.g:1:8: ( T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_BL | RULE_S | RULE_DOUBLE | RULE_ID | RULE_WS | RULE_ANY_OTHER )
-        int alt15=17;
-        alt15 = dfa15.predict(input);
-        switch (alt15) {
+        // InternalHammilDSL.g:1:8: ( T__9 | T__10 | T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_BL | RULE_S )
+        int alt8=16;
+        alt8 = dfa8.predict(input);
+        switch (alt8) {
             case 1 :
-                // InternalHammilDSL.g:1:10: T__15
+                // InternalHammilDSL.g:1:10: T__9
+                {
+                mT__9(); 
+
+                }
+                break;
+            case 2 :
+                // InternalHammilDSL.g:1:15: T__10
+                {
+                mT__10(); 
+
+                }
+                break;
+            case 3 :
+                // InternalHammilDSL.g:1:21: T__11
+                {
+                mT__11(); 
+
+                }
+                break;
+            case 4 :
+                // InternalHammilDSL.g:1:27: T__12
+                {
+                mT__12(); 
+
+                }
+                break;
+            case 5 :
+                // InternalHammilDSL.g:1:33: T__13
+                {
+                mT__13(); 
+
+                }
+                break;
+            case 6 :
+                // InternalHammilDSL.g:1:39: T__14
+                {
+                mT__14(); 
+
+                }
+                break;
+            case 7 :
+                // InternalHammilDSL.g:1:45: T__15
                 {
                 mT__15(); 
 
                 }
                 break;
-            case 2 :
-                // InternalHammilDSL.g:1:16: T__16
+            case 8 :
+                // InternalHammilDSL.g:1:51: T__16
                 {
                 mT__16(); 
 
                 }
                 break;
-            case 3 :
-                // InternalHammilDSL.g:1:22: T__17
+            case 9 :
+                // InternalHammilDSL.g:1:57: T__17
                 {
                 mT__17(); 
 
                 }
                 break;
-            case 4 :
-                // InternalHammilDSL.g:1:28: T__18
+            case 10 :
+                // InternalHammilDSL.g:1:63: T__18
                 {
                 mT__18(); 
 
                 }
                 break;
-            case 5 :
-                // InternalHammilDSL.g:1:34: T__19
+            case 11 :
+                // InternalHammilDSL.g:1:69: T__19
                 {
                 mT__19(); 
 
                 }
                 break;
-            case 6 :
-                // InternalHammilDSL.g:1:40: T__20
-                {
-                mT__20(); 
-
-                }
-                break;
-            case 7 :
-                // InternalHammilDSL.g:1:46: T__21
-                {
-                mT__21(); 
-
-                }
-                break;
-            case 8 :
-                // InternalHammilDSL.g:1:52: T__22
-                {
-                mT__22(); 
-
-                }
-                break;
-            case 9 :
-                // InternalHammilDSL.g:1:58: RULE_STRING
+            case 12 :
+                // InternalHammilDSL.g:1:75: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 10 :
-                // InternalHammilDSL.g:1:70: RULE_ML_COMMENT
+            case 13 :
+                // InternalHammilDSL.g:1:87: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 11 :
-                // InternalHammilDSL.g:1:86: RULE_SL_COMMENT
+            case 14 :
+                // InternalHammilDSL.g:1:103: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 12 :
-                // InternalHammilDSL.g:1:102: RULE_BL
+            case 15 :
+                // InternalHammilDSL.g:1:119: RULE_BL
                 {
                 mRULE_BL(); 
 
                 }
                 break;
-            case 13 :
-                // InternalHammilDSL.g:1:110: RULE_S
+            case 16 :
+                // InternalHammilDSL.g:1:127: RULE_S
                 {
                 mRULE_S(); 
 
                 }
                 break;
-            case 14 :
-                // InternalHammilDSL.g:1:117: RULE_DOUBLE
-                {
-                mRULE_DOUBLE(); 
-
-                }
-                break;
-            case 15 :
-                // InternalHammilDSL.g:1:129: RULE_ID
-                {
-                mRULE_ID(); 
-
-                }
-                break;
-            case 16 :
-                // InternalHammilDSL.g:1:137: RULE_WS
-                {
-                mRULE_WS(); 
-
-                }
-                break;
-            case 17 :
-                // InternalHammilDSL.g:1:145: RULE_ANY_OTHER
-                {
-                mRULE_ANY_OTHER(); 
-
-                }
-                break;
 
         }
 
     }
 
 
-    protected DFA15 dfa15 = new DFA15(this);
-    static final String DFA15_eotS =
-        "\1\uffff\1\20\2\uffff\3\16\1\27\1\30\1\31\3\16\2\uffff\1\35\6\uffff\1\30\5\uffff\1\37\1\uffff\1\41\1\uffff\1\43\3\uffff";
-    static final String DFA15_eofS =
-        "\44\uffff";
-    static final String DFA15_minS =
-        "\1\0\1\43\2\uffff\2\0\1\52\1\12\2\11\2\56\1\101\2\uffff\1\43\6\uffff\1\11\5\uffff\1\43\1\uffff\1\43\1\uffff\1\43\3\uffff";
-    static final String DFA15_maxS =
-        "\1\uffff\1\43\2\uffff\2\uffff\1\57\1\12\2\40\1\56\1\71\1\172\2\uffff\1\43\6\uffff\1\40\5\uffff\1\43\1\uffff\1\43\1\uffff\1\43\3\uffff";
-    static final String DFA15_acceptS =
-        "\2\uffff\1\2\1\4\11\uffff\1\17\1\21\1\uffff\1\1\1\2\1\4\1\11\1\12\1\13\1\uffff\1\20\1\14\1\15\1\16\1\17\1\uffff\1\3\1\uffff\1\5\1\uffff\1\10\1\7\1\6";
-    static final String DFA15_specialS =
-        "\1\0\3\uffff\1\1\1\2\36\uffff}>";
-    static final String[] DFA15_transitionS = {
-            "\11\16\1\11\1\10\2\16\1\7\22\16\1\11\1\16\1\4\1\1\3\16\1\5\5\16\1\3\1\16\1\6\1\12\11\13\3\16\1\2\3\16\32\15\3\16\1\14\1\15\1\16\32\15\uff85\16",
-            "\1\17",
+    protected DFA8 dfa8 = new DFA8(this);
+    static final String DFA8_eotS =
+        "\2\uffff\1\13\1\15\10\uffff\1\21\3\uffff\1\23\1\uffff\1\25\1\uffff\1\27\3\uffff";
+    static final String DFA8_eofS =
+        "\30\uffff";
+    static final String DFA8_minS =
+        "\1\11\1\uffff\1\140\1\43\3\uffff\1\52\4\uffff\1\43\3\uffff\1\43\1\uffff\1\43\1\uffff\1\43\3\uffff";
+    static final String DFA8_maxS =
+        "\1\140\1\uffff\1\140\1\43\3\uffff\1\57\4\uffff\1\43\3\uffff\1\43\1\uffff\1\43\1\uffff\1\43\3\uffff";
+    static final String DFA8_acceptS =
+        "\1\uffff\1\1\2\uffff\1\5\1\7\1\14\1\uffff\1\17\1\20\1\3\1\2\1\uffff\1\4\1\15\1\16\1\uffff\1\6\1\uffff\1\10\1\uffff\1\13\1\12\1\11";
+    static final String DFA8_specialS =
+        "\30\uffff}>";
+    static final String[] DFA8_transitionS = {
+            "\1\11\1\10\25\uffff\1\11\1\uffff\1\6\1\3\3\uffff\1\6\5\uffff\1\5\1\uffff\1\7\15\uffff\1\4\1\1\41\uffff\1\2",
+            "",
+            "\1\12",
+            "\1\14",
             "",
             "",
-            "\0\23",
-            "\0\23",
-            "\1\24\4\uffff\1\25",
+            "",
+            "\1\16\4\uffff\1\17",
+            "",
+            "",
+            "",
+            "",
+            "\1\20",
+            "",
+            "",
+            "",
+            "\1\22",
+            "",
+            "\1\24",
+            "",
             "\1\26",
-            "\2\27\2\uffff\1\27\22\uffff\1\27",
-            "\2\27\2\uffff\1\27\22\uffff\1\27",
-            "\1\32",
-            "\1\32\1\uffff\12\32",
-            "\32\33\4\uffff\1\33\1\uffff\32\33",
-            "",
-            "",
-            "\1\34",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\2\27\2\uffff\1\27\22\uffff\1\27",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\36",
-            "",
-            "\1\40",
-            "",
-            "\1\42",
             "",
             "",
             ""
     };
 
-    static final short[] DFA15_eot = DFA.unpackEncodedString(DFA15_eotS);
-    static final short[] DFA15_eof = DFA.unpackEncodedString(DFA15_eofS);
-    static final char[] DFA15_min = DFA.unpackEncodedStringToUnsignedChars(DFA15_minS);
-    static final char[] DFA15_max = DFA.unpackEncodedStringToUnsignedChars(DFA15_maxS);
-    static final short[] DFA15_accept = DFA.unpackEncodedString(DFA15_acceptS);
-    static final short[] DFA15_special = DFA.unpackEncodedString(DFA15_specialS);
-    static final short[][] DFA15_transition;
+    static final short[] DFA8_eot = DFA.unpackEncodedString(DFA8_eotS);
+    static final short[] DFA8_eof = DFA.unpackEncodedString(DFA8_eofS);
+    static final char[] DFA8_min = DFA.unpackEncodedStringToUnsignedChars(DFA8_minS);
+    static final char[] DFA8_max = DFA.unpackEncodedStringToUnsignedChars(DFA8_maxS);
+    static final short[] DFA8_accept = DFA.unpackEncodedString(DFA8_acceptS);
+    static final short[] DFA8_special = DFA.unpackEncodedString(DFA8_specialS);
+    static final short[][] DFA8_transition;
 
     static {
-        int numStates = DFA15_transitionS.length;
-        DFA15_transition = new short[numStates][];
+        int numStates = DFA8_transitionS.length;
+        DFA8_transition = new short[numStates][];
         for (int i=0; i<numStates; i++) {
-            DFA15_transition[i] = DFA.unpackEncodedString(DFA15_transitionS[i]);
+            DFA8_transition[i] = DFA.unpackEncodedString(DFA8_transitionS[i]);
         }
     }
 
-    class DFA15 extends DFA {
+    class DFA8 extends DFA {
 
-        public DFA15(BaseRecognizer recognizer) {
+        public DFA8(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 15;
-            this.eot = DFA15_eot;
-            this.eof = DFA15_eof;
-            this.min = DFA15_min;
-            this.max = DFA15_max;
-            this.accept = DFA15_accept;
-            this.special = DFA15_special;
-            this.transition = DFA15_transition;
+            this.decisionNumber = 8;
+            this.eot = DFA8_eot;
+            this.eof = DFA8_eof;
+            this.min = DFA8_min;
+            this.max = DFA8_max;
+            this.accept = DFA8_accept;
+            this.special = DFA8_special;
+            this.transition = DFA8_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_BL | RULE_S | RULE_DOUBLE | RULE_ID | RULE_WS | RULE_ANY_OTHER );";
-        }
-        public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
-            IntStream input = _input;
-        	int _s = s;
-            switch ( s ) {
-                    case 0 : 
-                        int LA15_0 = input.LA(1);
-
-                        s = -1;
-                        if ( (LA15_0=='#') ) {s = 1;}
-
-                        else if ( (LA15_0=='=') ) {s = 2;}
-
-                        else if ( (LA15_0=='-') ) {s = 3;}
-
-                        else if ( (LA15_0=='\"') ) {s = 4;}
-
-                        else if ( (LA15_0=='\'') ) {s = 5;}
-
-                        else if ( (LA15_0=='/') ) {s = 6;}
-
-                        else if ( (LA15_0=='\r') ) {s = 7;}
-
-                        else if ( (LA15_0=='\n') ) {s = 8;}
-
-                        else if ( (LA15_0=='\t'||LA15_0==' ') ) {s = 9;}
-
-                        else if ( (LA15_0=='0') ) {s = 10;}
-
-                        else if ( ((LA15_0>='1' && LA15_0<='9')) ) {s = 11;}
-
-                        else if ( (LA15_0=='^') ) {s = 12;}
-
-                        else if ( ((LA15_0>='A' && LA15_0<='Z')||LA15_0=='_'||(LA15_0>='a' && LA15_0<='z')) ) {s = 13;}
-
-                        else if ( ((LA15_0>='\u0000' && LA15_0<='\b')||(LA15_0>='\u000B' && LA15_0<='\f')||(LA15_0>='\u000E' && LA15_0<='\u001F')||LA15_0=='!'||(LA15_0>='$' && LA15_0<='&')||(LA15_0>='(' && LA15_0<=',')||LA15_0=='.'||(LA15_0>=':' && LA15_0<='<')||(LA15_0>='>' && LA15_0<='@')||(LA15_0>='[' && LA15_0<=']')||LA15_0=='`'||(LA15_0>='{' && LA15_0<='\uFFFF')) ) {s = 14;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
-                        int LA15_4 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA15_4>='\u0000' && LA15_4<='\uFFFF')) ) {s = 19;}
-
-                        else s = 14;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
-                        int LA15_5 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA15_5>='\u0000' && LA15_5<='\uFFFF')) ) {s = 19;}
-
-                        else s = 14;
-
-                        if ( s>=0 ) return s;
-                        break;
-            }
-            NoViableAltException nvae =
-                new NoViableAltException(getDescription(), 15, _s, input);
-            error(nvae);
-            throw nvae;
+            return "1:1: Tokens : ( T__9 | T__10 | T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_BL | RULE_S );";
         }
     }
  

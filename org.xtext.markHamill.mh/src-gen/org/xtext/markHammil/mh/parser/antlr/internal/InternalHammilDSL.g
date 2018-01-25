@@ -106,128 +106,153 @@ ruleFile returns [EObject current=null]
 ;
 
 // Entry rule entryRuleExpression
-entryRuleExpression returns [EObject current=null]:
+entryRuleExpression returns [EObject current=null]@init {
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT");
+}:
 	{ newCompositeNode(grammarAccess.getExpressionRule()); }
 	iv_ruleExpression=ruleExpression
 	{ $current=$iv_ruleExpression.current; }
 	EOF;
+finally {
+	myHiddenTokenState.restore();
+}
 
 // Rule Expression
 ruleExpression returns [EObject current=null]
 @init {
 	enterRule();
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT");
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				(ruleHeaderDepth1Expression)=>
+				{
+					newCompositeNode(grammarAccess.getExpressionAccess().getHeaderDepth1ExpressionParserRuleCall_0_0());
+				}
+				this_HeaderDepth1Expression_0=ruleHeaderDepth1Expression
+				{
+					$current = $this_HeaderDepth1Expression_0.current;
+					afterParserOrEnumRuleCall();
+				}
+			)
+			    |
+			{
+				newCompositeNode(grammarAccess.getExpressionAccess().getHeaderDepth2ExpressionParserRuleCall_0_1());
+			}
+			this_HeaderDepth2Expression_1=ruleHeaderDepth2Expression
+			{
+				$current = $this_HeaderDepth2Expression_1.current;
+				afterParserOrEnumRuleCall();
+			}
+			    |
+			{
+				newCompositeNode(grammarAccess.getExpressionAccess().getHeaderDepth3ExpressionParserRuleCall_0_2());
+			}
+			this_HeaderDepth3Expression_2=ruleHeaderDepth3Expression
+			{
+				$current = $this_HeaderDepth3Expression_2.current;
+				afterParserOrEnumRuleCall();
+			}
+			    |
+			{
+				newCompositeNode(grammarAccess.getExpressionAccess().getHeaderDepth4ExpressionParserRuleCall_0_3());
+			}
+			this_HeaderDepth4Expression_3=ruleHeaderDepth4Expression
+			{
+				$current = $this_HeaderDepth4Expression_3.current;
+				afterParserOrEnumRuleCall();
+			}
+			    |
+			{
+				newCompositeNode(grammarAccess.getExpressionAccess().getHeaderDepth5ExpressionParserRuleCall_0_4());
+			}
+			this_HeaderDepth5Expression_4=ruleHeaderDepth5Expression
+			{
+				$current = $this_HeaderDepth5Expression_4.current;
+				afterParserOrEnumRuleCall();
+			}
+			    |
+			{
+				newCompositeNode(grammarAccess.getExpressionAccess().getHeaderDepth6ExpressionParserRuleCall_0_5());
+			}
+			this_HeaderDepth6Expression_5=ruleHeaderDepth6Expression
+			{
+				$current = $this_HeaderDepth6Expression_5.current;
+				afterParserOrEnumRuleCall();
+			}
+		)
+		    |
+		{
+			newCompositeNode(grammarAccess.getExpressionAccess().getTextExpressionParserRuleCall_1());
+		}
+		this_TextExpression_6=ruleTextExpression
+		{
+			$current = $this_TextExpression_6.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getExpressionAccess().getCodeExpressionParserRuleCall_2());
+		}
+		this_CodeExpression_7=ruleCodeExpression
+		{
+			$current = $this_CodeExpression_7.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+finally {
+	myHiddenTokenState.restore();
+}
+
+// Entry rule entryRuleTextExpression
+entryRuleTextExpression returns [EObject current=null]@init {
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_S");
+}:
+	{ newCompositeNode(grammarAccess.getTextExpressionRule()); }
+	iv_ruleTextExpression=ruleTextExpression
+	{ $current=$iv_ruleTextExpression.current; }
+	EOF;
+finally {
+	myHiddenTokenState.restore();
+}
+
+// Rule TextExpression
+ruleTextExpression returns [EObject current=null]
+@init {
+	enterRule();
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_S");
 }
 @after {
 	leaveRule();
 }:
 	(
 		{
-			newCompositeNode(grammarAccess.getExpressionAccess().getTextualExpressionParserRuleCall_0());
+			newCompositeNode(grammarAccess.getTextExpressionAccess().getQuoteExpressionParserRuleCall_0());
 		}
-		this_TextualExpression_0=ruleTextualExpression
+		this_QuoteExpression_0=ruleQuoteExpression
 		{
-			$current = $this_TextualExpression_0.current;
+			$current = $this_QuoteExpression_0.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
-		(
-			((
-				ruleHeaderDepth1Expression
-				    |
-				ruleHeaderDepth2Expression
-				    |
-				ruleHeaderDepth3Expression
-				    |
-				ruleHeaderDepth4Expression
-				    |
-				ruleHeaderDepth5Expression
-				    |
-				ruleHeaderDepth6Expression
-			)
-			)=>
-			(
-				{
-					newCompositeNode(grammarAccess.getExpressionAccess().getHeaderDepth1ExpressionParserRuleCall_1_0_0());
-				}
-				this_HeaderDepth1Expression_1=ruleHeaderDepth1Expression
-				{
-					$current = $this_HeaderDepth1Expression_1.current;
-					afterParserOrEnumRuleCall();
-				}
-				    |
-				{
-					newCompositeNode(grammarAccess.getExpressionAccess().getHeaderDepth2ExpressionParserRuleCall_1_0_1());
-				}
-				this_HeaderDepth2Expression_2=ruleHeaderDepth2Expression
-				{
-					$current = $this_HeaderDepth2Expression_2.current;
-					afterParserOrEnumRuleCall();
-				}
-				    |
-				{
-					newCompositeNode(grammarAccess.getExpressionAccess().getHeaderDepth3ExpressionParserRuleCall_1_0_2());
-				}
-				this_HeaderDepth3Expression_3=ruleHeaderDepth3Expression
-				{
-					$current = $this_HeaderDepth3Expression_3.current;
-					afterParserOrEnumRuleCall();
-				}
-				    |
-				{
-					newCompositeNode(grammarAccess.getExpressionAccess().getHeaderDepth4ExpressionParserRuleCall_1_0_3());
-				}
-				this_HeaderDepth4Expression_4=ruleHeaderDepth4Expression
-				{
-					$current = $this_HeaderDepth4Expression_4.current;
-					afterParserOrEnumRuleCall();
-				}
-				    |
-				{
-					newCompositeNode(grammarAccess.getExpressionAccess().getHeaderDepth5ExpressionParserRuleCall_1_0_4());
-				}
-				this_HeaderDepth5Expression_5=ruleHeaderDepth5Expression
-				{
-					$current = $this_HeaderDepth5Expression_5.current;
-					afterParserOrEnumRuleCall();
-				}
-				    |
-				{
-					newCompositeNode(grammarAccess.getExpressionAccess().getHeaderDepth6ExpressionParserRuleCall_1_0_5());
-				}
-				this_HeaderDepth6Expression_6=ruleHeaderDepth6Expression
-				{
-					$current = $this_HeaderDepth6Expression_6.current;
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
+		{
+			newCompositeNode(grammarAccess.getTextExpressionAccess().getTextualExpressionParserRuleCall_1());
+		}
+		this_TextualExpression_1=ruleTextualExpression
+		{
+			$current = $this_TextualExpression_1.current;
+			afterParserOrEnumRuleCall();
+		}
 	)
 ;
-
-// Entry rule entryRuleTextExpression
-entryRuleTextExpression returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getTextExpressionRule()); }
-	iv_ruleTextExpression=ruleTextExpression
-	{ $current=$iv_ruleTextExpression.current; }
-	EOF;
-
-// Rule TextExpression
-ruleTextExpression returns [EObject current=null]
-@init {
-	enterRule();
+finally {
+	myHiddenTokenState.restore();
 }
-@after {
-	leaveRule();
-}:
-	{
-		newCompositeNode(grammarAccess.getTextExpressionAccess().getTextualExpressionParserRuleCall());
-	}
-	this_TextualExpression_0=ruleTextualExpression
-	{
-		$current = $this_TextualExpression_0.current;
-		afterParserOrEnumRuleCall();
-	}
-;
 
 // Entry rule entryRuleEmphasisExpression
 entryRuleEmphasisExpression returns [EObject current=null]:
@@ -254,23 +279,151 @@ ruleEmphasisExpression returns [EObject current=null]
 	}
 ;
 
-// Entry rule entryRuleHeaderDepth1Expression
-entryRuleHeaderDepth1Expression returns [EObject current=null]@init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_S");
+// Entry rule entryRuleQuoteExpression
+entryRuleQuoteExpression returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getQuoteExpressionRule()); }
+	iv_ruleQuoteExpression=ruleQuoteExpression
+	{ $current=$iv_ruleQuoteExpression.current; }
+	EOF;
+
+// Rule QuoteExpression
+ruleQuoteExpression returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
 }:
+	(
+		otherlv_0='>'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getQuoteExpressionAccess().getGreaterThanSignKeyword_0());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getQuoteExpressionAccess().getTextexpressionTextExpressionParserRuleCall_1_0());
+				}
+				lv_textexpression_1_0=ruleTextExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getQuoteExpressionRule());
+					}
+					set(
+						$current,
+						"textexpression",
+						lv_textexpression_1_0,
+						"org.xtext.markHammil.mh.HammilDSL.TextExpression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		this_BL_2=RULE_BL
+		{
+			newLeafNode(this_BL_2, grammarAccess.getQuoteExpressionAccess().getBLTerminalRuleCall_2());
+		}
+	)
+;
+
+// Entry rule entryRuleCodeExpression
+entryRuleCodeExpression returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getCodeExpressionRule()); }
+	iv_ruleCodeExpression=ruleCodeExpression
+	{ $current=$iv_ruleCodeExpression.current; }
+	EOF;
+
+// Rule CodeExpression
+ruleCodeExpression returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			otherlv_0='`'
+			{
+				newLeafNode(otherlv_0, grammarAccess.getCodeExpressionAccess().getGraveAccentKeyword_0_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getCodeExpressionAccess().getTextString0ParserRuleCall_0_1_0());
+					}
+					lv_text_1_0=ruleString0
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getCodeExpressionRule());
+						}
+						set(
+							$current,
+							"text",
+							lv_text_1_0,
+							"org.xtext.markHammil.mh.HammilDSL.String0");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			otherlv_2='`'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getCodeExpressionAccess().getGraveAccentKeyword_0_2());
+			}
+		)
+		    |
+		(
+			otherlv_3='```'
+			{
+				newLeafNode(otherlv_3, grammarAccess.getCodeExpressionAccess().getGraveAccentGraveAccentGraveAccentKeyword_1_0());
+			}
+			this_BL_4=RULE_BL
+			{
+				newLeafNode(this_BL_4, grammarAccess.getCodeExpressionAccess().getBLTerminalRuleCall_1_1());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getCodeExpressionAccess().getTextString0ParserRuleCall_1_2_0());
+					}
+					lv_text_5_0=ruleString0
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getCodeExpressionRule());
+						}
+						set(
+							$current,
+							"text",
+							lv_text_5_0,
+							"org.xtext.markHammil.mh.HammilDSL.String0");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			otherlv_6='```'
+			{
+				newLeafNode(otherlv_6, grammarAccess.getCodeExpressionAccess().getGraveAccentGraveAccentGraveAccentKeyword_1_3());
+			}
+			(
+				this_BL_7=RULE_BL
+				{
+					newLeafNode(this_BL_7, grammarAccess.getCodeExpressionAccess().getBLTerminalRuleCall_1_4());
+				}
+			)?
+		)
+	)
+;
+
+// Entry rule entryRuleHeaderDepth1Expression
+entryRuleHeaderDepth1Expression returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getHeaderDepth1ExpressionRule()); }
 	iv_ruleHeaderDepth1Expression=ruleHeaderDepth1Expression
 	{ $current=$iv_ruleHeaderDepth1Expression.current; }
 	EOF;
-finally {
-	myHiddenTokenState.restore();
-}
 
 // Rule HeaderDepth1Expression
 ruleHeaderDepth1Expression returns [EObject current=null]
 @init {
 	enterRule();
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_S");
 }
 @after {
 	leaveRule();
@@ -285,11 +438,17 @@ ruleHeaderDepth1Expression returns [EObject current=null]
 				}
 			)
 			(
+				this_S_1=RULE_S
+				{
+					newLeafNode(this_S_1, grammarAccess.getHeaderDepth1ExpressionAccess().getSTerminalRuleCall_0_1());
+				}
+			)+
+			(
 				(
 					{
-						newCompositeNode(grammarAccess.getHeaderDepth1ExpressionAccess().getTitleEmphasisExpressionParserRuleCall_0_1_0());
+						newCompositeNode(grammarAccess.getHeaderDepth1ExpressionAccess().getTitleEmphasisExpressionParserRuleCall_0_2_0());
 					}
-					lv_title_1_0=ruleEmphasisExpression
+					lv_title_2_0=ruleEmphasisExpression
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getHeaderDepth1ExpressionRule());
@@ -297,22 +456,28 @@ ruleHeaderDepth1Expression returns [EObject current=null]
 						set(
 							$current,
 							"title",
-							lv_title_1_0,
+							lv_title_2_0,
 							"org.xtext.markHammil.mh.HammilDSL.EmphasisExpression");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_2='#'
+				otherlv_3='#'
 				{
-					newLeafNode(otherlv_2, grammarAccess.getHeaderDepth1ExpressionAccess().getNumberSignKeyword_0_2());
+					newLeafNode(otherlv_3, grammarAccess.getHeaderDepth1ExpressionAccess().getNumberSignKeyword_0_3());
 				}
 			)*
 			(
-				this_BL_3=RULE_BL
+				this_S_4=RULE_S
 				{
-					newLeafNode(this_BL_3, grammarAccess.getHeaderDepth1ExpressionAccess().getBLTerminalRuleCall_0_3());
+					newLeafNode(this_S_4, grammarAccess.getHeaderDepth1ExpressionAccess().getSTerminalRuleCall_0_4());
+				}
+			)*
+			(
+				this_BL_5=RULE_BL
+				{
+					newLeafNode(this_BL_5, grammarAccess.getHeaderDepth1ExpressionAccess().getBLTerminalRuleCall_0_5());
 				}
 			)?
 		)
@@ -323,7 +488,7 @@ ruleHeaderDepth1Expression returns [EObject current=null]
 					{
 						newCompositeNode(grammarAccess.getHeaderDepth1ExpressionAccess().getTitleEmphasisExpressionParserRuleCall_1_0_0());
 					}
-					lv_title_4_0=ruleEmphasisExpression
+					lv_title_6_0=ruleEmphasisExpression
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getHeaderDepth1ExpressionRule());
@@ -331,52 +496,43 @@ ruleHeaderDepth1Expression returns [EObject current=null]
 						set(
 							$current,
 							"title",
-							lv_title_4_0,
+							lv_title_6_0,
 							"org.xtext.markHammil.mh.HammilDSL.EmphasisExpression");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
-			this_BL_5=RULE_BL
+			this_BL_7=RULE_BL
 			{
-				newLeafNode(this_BL_5, grammarAccess.getHeaderDepth1ExpressionAccess().getBLTerminalRuleCall_1_1());
+				newLeafNode(this_BL_7, grammarAccess.getHeaderDepth1ExpressionAccess().getBLTerminalRuleCall_1_1());
 			}
 			(
-				otherlv_6='='
+				otherlv_8='='
 				{
-					newLeafNode(otherlv_6, grammarAccess.getHeaderDepth1ExpressionAccess().getEqualsSignKeyword_1_2());
+					newLeafNode(otherlv_8, grammarAccess.getHeaderDepth1ExpressionAccess().getEqualsSignKeyword_1_2());
 				}
 			)+
 			(
-				this_BL_7=RULE_BL
+				this_BL_9=RULE_BL
 				{
-					newLeafNode(this_BL_7, grammarAccess.getHeaderDepth1ExpressionAccess().getBLTerminalRuleCall_1_3());
+					newLeafNode(this_BL_9, grammarAccess.getHeaderDepth1ExpressionAccess().getBLTerminalRuleCall_1_3());
 				}
 			)?
 		)
 	)
 ;
-finally {
-	myHiddenTokenState.restore();
-}
 
 // Entry rule entryRuleHeaderDepth2Expression
-entryRuleHeaderDepth2Expression returns [EObject current=null]@init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_S");
-}:
+entryRuleHeaderDepth2Expression returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getHeaderDepth2ExpressionRule()); }
 	iv_ruleHeaderDepth2Expression=ruleHeaderDepth2Expression
 	{ $current=$iv_ruleHeaderDepth2Expression.current; }
 	EOF;
-finally {
-	myHiddenTokenState.restore();
-}
 
 // Rule HeaderDepth2Expression
 ruleHeaderDepth2Expression returns [EObject current=null]
 @init {
 	enterRule();
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_S");
 }
 @after {
 	leaveRule();
@@ -462,27 +618,18 @@ ruleHeaderDepth2Expression returns [EObject current=null]
 		)
 	)
 ;
-finally {
-	myHiddenTokenState.restore();
-}
 
 // Entry rule entryRuleHeaderDepth3Expression
-entryRuleHeaderDepth3Expression returns [EObject current=null]@init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_S");
-}:
+entryRuleHeaderDepth3Expression returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getHeaderDepth3ExpressionRule()); }
 	iv_ruleHeaderDepth3Expression=ruleHeaderDepth3Expression
 	{ $current=$iv_ruleHeaderDepth3Expression.current; }
 	EOF;
-finally {
-	myHiddenTokenState.restore();
-}
 
 // Rule HeaderDepth3Expression
 ruleHeaderDepth3Expression returns [EObject current=null]
 @init {
 	enterRule();
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_S");
 }
 @after {
 	leaveRule();
@@ -525,27 +672,18 @@ ruleHeaderDepth3Expression returns [EObject current=null]
 		)?
 	)
 ;
-finally {
-	myHiddenTokenState.restore();
-}
 
 // Entry rule entryRuleHeaderDepth5Expression
-entryRuleHeaderDepth5Expression returns [EObject current=null]@init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_S");
-}:
+entryRuleHeaderDepth5Expression returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getHeaderDepth5ExpressionRule()); }
 	iv_ruleHeaderDepth5Expression=ruleHeaderDepth5Expression
 	{ $current=$iv_ruleHeaderDepth5Expression.current; }
 	EOF;
-finally {
-	myHiddenTokenState.restore();
-}
 
 // Rule HeaderDepth5Expression
 ruleHeaderDepth5Expression returns [EObject current=null]
 @init {
 	enterRule();
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_S");
 }
 @after {
 	leaveRule();
@@ -588,27 +726,18 @@ ruleHeaderDepth5Expression returns [EObject current=null]
 		)?
 	)
 ;
-finally {
-	myHiddenTokenState.restore();
-}
 
 // Entry rule entryRuleHeaderDepth6Expression
-entryRuleHeaderDepth6Expression returns [EObject current=null]@init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_S");
-}:
+entryRuleHeaderDepth6Expression returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getHeaderDepth6ExpressionRule()); }
 	iv_ruleHeaderDepth6Expression=ruleHeaderDepth6Expression
 	{ $current=$iv_ruleHeaderDepth6Expression.current; }
 	EOF;
-finally {
-	myHiddenTokenState.restore();
-}
 
 // Rule HeaderDepth6Expression
 ruleHeaderDepth6Expression returns [EObject current=null]
 @init {
 	enterRule();
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_S");
 }
 @after {
 	leaveRule();
@@ -651,27 +780,18 @@ ruleHeaderDepth6Expression returns [EObject current=null]
 		)?
 	)
 ;
-finally {
-	myHiddenTokenState.restore();
-}
 
 // Entry rule entryRuleHeaderDepth4Expression
-entryRuleHeaderDepth4Expression returns [EObject current=null]@init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_S");
-}:
+entryRuleHeaderDepth4Expression returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getHeaderDepth4ExpressionRule()); }
 	iv_ruleHeaderDepth4Expression=ruleHeaderDepth4Expression
 	{ $current=$iv_ruleHeaderDepth4Expression.current; }
 	EOF;
-finally {
-	myHiddenTokenState.restore();
-}
 
 // Rule HeaderDepth4Expression
 ruleHeaderDepth4Expression returns [EObject current=null]
 @init {
 	enterRule();
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_S");
 }
 @after {
 	leaveRule();
@@ -714,9 +834,6 @@ ruleHeaderDepth4Expression returns [EObject current=null]
 		)?
 	)
 ;
-finally {
-	myHiddenTokenState.restore();
-}
 
 // Entry rule entryRuleTextualExpression
 entryRuleTextualExpression returns [EObject current=null]:
@@ -784,18 +901,6 @@ RULE_ML_COMMENT : '/*' ( options {greedy=false;} : . )*'*/';
 
 RULE_SL_COMMENT : '//' ~(('\n'|'\r'))* ('\r'? '\n')?;
 
-RULE_BL : '\r'? '\n';
+RULE_BL : '\n';
 
 RULE_S : (' '|'\t');
-
-fragment RULE_DIGIT : '0'..'9';
-
-RULE_DOUBLE : RULE_INT '.' RULE_DIGIT*;
-
-fragment RULE_INT : ('0'|'1'..'9' RULE_DIGIT*);
-
-RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
-
-RULE_WS : (' '|'\t'|'\r'|'\n')+;
-
-RULE_ANY_OTHER : .;

@@ -32,12 +32,15 @@ public class HammilDSLParser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getExpressionAccess().getAlternatives(), "rule__Expression__Alternatives");
-					put(grammarAccess.getExpressionAccess().getAlternatives_1_0(), "rule__Expression__Alternatives_1_0");
+					put(grammarAccess.getExpressionAccess().getAlternatives_0(), "rule__Expression__Alternatives_0");
+					put(grammarAccess.getTextExpressionAccess().getAlternatives(), "rule__TextExpression__Alternatives");
+					put(grammarAccess.getCodeExpressionAccess().getAlternatives(), "rule__CodeExpression__Alternatives");
 					put(grammarAccess.getHeaderDepth1ExpressionAccess().getAlternatives(), "rule__HeaderDepth1Expression__Alternatives");
 					put(grammarAccess.getHeaderDepth2ExpressionAccess().getAlternatives(), "rule__HeaderDepth2Expression__Alternatives");
 					put(grammarAccess.getFileAccess().getGroup(), "rule__File__Group__0");
-					put(grammarAccess.getExpressionAccess().getGroup_1(), "rule__Expression__Group_1__0");
 					put(grammarAccess.getQuoteExpressionAccess().getGroup(), "rule__QuoteExpression__Group__0");
+					put(grammarAccess.getCodeExpressionAccess().getGroup_0(), "rule__CodeExpression__Group_0__0");
+					put(grammarAccess.getCodeExpressionAccess().getGroup_1(), "rule__CodeExpression__Group_1__0");
 					put(grammarAccess.getHeaderDepth1ExpressionAccess().getGroup_0(), "rule__HeaderDepth1Expression__Group_0__0");
 					put(grammarAccess.getHeaderDepth1ExpressionAccess().getGroup_1(), "rule__HeaderDepth1Expression__Group_1__0");
 					put(grammarAccess.getHeaderDepth2ExpressionAccess().getGroup_0(), "rule__HeaderDepth2Expression__Group_0__0");
@@ -48,7 +51,9 @@ public class HammilDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getHeaderDepth4ExpressionAccess().getGroup(), "rule__HeaderDepth4Expression__Group__0");
 					put(grammarAccess.getFileAccess().getExpressionAssignment_1(), "rule__File__ExpressionAssignment_1");
 					put(grammarAccess.getQuoteExpressionAccess().getTextexpressionAssignment_1(), "rule__QuoteExpression__TextexpressionAssignment_1");
-					put(grammarAccess.getHeaderDepth1ExpressionAccess().getTitleAssignment_0_1(), "rule__HeaderDepth1Expression__TitleAssignment_0_1");
+					put(grammarAccess.getCodeExpressionAccess().getTextAssignment_0_1(), "rule__CodeExpression__TextAssignment_0_1");
+					put(grammarAccess.getCodeExpressionAccess().getTextAssignment_1_2(), "rule__CodeExpression__TextAssignment_1_2");
+					put(grammarAccess.getHeaderDepth1ExpressionAccess().getTitleAssignment_0_2(), "rule__HeaderDepth1Expression__TitleAssignment_0_2");
 					put(grammarAccess.getHeaderDepth1ExpressionAccess().getTitleAssignment_1_0(), "rule__HeaderDepth1Expression__TitleAssignment_1_0");
 					put(grammarAccess.getHeaderDepth2ExpressionAccess().getTitleAssignment_0_1(), "rule__HeaderDepth2Expression__TitleAssignment_0_1");
 					put(grammarAccess.getHeaderDepth2ExpressionAccess().getTitleAssignment_1_0(), "rule__HeaderDepth2Expression__TitleAssignment_1_0");
@@ -65,7 +70,7 @@ public class HammilDSLParser extends AbstractContentAssistParser {
 			
 	@Override
 	protected String[] getInitialHiddenTokens() {
-		return new String[] { "RULE_WS", "RULE_ML_COMMENT", "RULE_SL_COMMENT" };
+		return new String[] {  };
 	}
 
 	public HammilDSLGrammarAccess getGrammarAccess() {
