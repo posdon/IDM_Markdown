@@ -122,67 +122,85 @@ ruleExpression returns [EObject current=null]
 }:
 	(
 		{
-			newCompositeNode(grammarAccess.getExpressionAccess().getQuoteExpressionParserRuleCall_0());
+			newCompositeNode(grammarAccess.getExpressionAccess().getTextualExpressionParserRuleCall_0());
 		}
-		this_QuoteExpression_0=ruleQuoteExpression
+		this_TextualExpression_0=ruleTextualExpression
 		{
-			$current = $this_QuoteExpression_0.current;
+			$current = $this_TextualExpression_0.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
-		{
-			newCompositeNode(grammarAccess.getExpressionAccess().getHeaderDepth1ExpressionParserRuleCall_1());
-		}
-		this_HeaderDepth1Expression_1=ruleHeaderDepth1Expression
-		{
-			$current = $this_HeaderDepth1Expression_1.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getExpressionAccess().getHeaderDepth2ExpressionParserRuleCall_2());
-		}
-		this_HeaderDepth2Expression_2=ruleHeaderDepth2Expression
-		{
-			$current = $this_HeaderDepth2Expression_2.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getExpressionAccess().getHeaderDepth3ExpressionParserRuleCall_3());
-		}
-		this_HeaderDepth3Expression_3=ruleHeaderDepth3Expression
-		{
-			$current = $this_HeaderDepth3Expression_3.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getExpressionAccess().getHeaderDepth4ExpressionParserRuleCall_4());
-		}
-		this_HeaderDepth4Expression_4=ruleHeaderDepth4Expression
-		{
-			$current = $this_HeaderDepth4Expression_4.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getExpressionAccess().getHeaderDepth5ExpressionParserRuleCall_5());
-		}
-		this_HeaderDepth5Expression_5=ruleHeaderDepth5Expression
-		{
-			$current = $this_HeaderDepth5Expression_5.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getExpressionAccess().getHeaderDepth6ExpressionParserRuleCall_6());
-		}
-		this_HeaderDepth6Expression_6=ruleHeaderDepth6Expression
-		{
-			$current = $this_HeaderDepth6Expression_6.current;
-			afterParserOrEnumRuleCall();
-		}
+		(
+			((
+				ruleHeaderDepth1Expression
+				    |
+				ruleHeaderDepth2Expression
+				    |
+				ruleHeaderDepth3Expression
+				    |
+				ruleHeaderDepth4Expression
+				    |
+				ruleHeaderDepth5Expression
+				    |
+				ruleHeaderDepth6Expression
+			)
+			)=>
+			(
+				{
+					newCompositeNode(grammarAccess.getExpressionAccess().getHeaderDepth1ExpressionParserRuleCall_1_0_0());
+				}
+				this_HeaderDepth1Expression_1=ruleHeaderDepth1Expression
+				{
+					$current = $this_HeaderDepth1Expression_1.current;
+					afterParserOrEnumRuleCall();
+				}
+				    |
+				{
+					newCompositeNode(grammarAccess.getExpressionAccess().getHeaderDepth2ExpressionParserRuleCall_1_0_1());
+				}
+				this_HeaderDepth2Expression_2=ruleHeaderDepth2Expression
+				{
+					$current = $this_HeaderDepth2Expression_2.current;
+					afterParserOrEnumRuleCall();
+				}
+				    |
+				{
+					newCompositeNode(grammarAccess.getExpressionAccess().getHeaderDepth3ExpressionParserRuleCall_1_0_2());
+				}
+				this_HeaderDepth3Expression_3=ruleHeaderDepth3Expression
+				{
+					$current = $this_HeaderDepth3Expression_3.current;
+					afterParserOrEnumRuleCall();
+				}
+				    |
+				{
+					newCompositeNode(grammarAccess.getExpressionAccess().getHeaderDepth4ExpressionParserRuleCall_1_0_3());
+				}
+				this_HeaderDepth4Expression_4=ruleHeaderDepth4Expression
+				{
+					$current = $this_HeaderDepth4Expression_4.current;
+					afterParserOrEnumRuleCall();
+				}
+				    |
+				{
+					newCompositeNode(grammarAccess.getExpressionAccess().getHeaderDepth5ExpressionParserRuleCall_1_0_4());
+				}
+				this_HeaderDepth5Expression_5=ruleHeaderDepth5Expression
+				{
+					$current = $this_HeaderDepth5Expression_5.current;
+					afterParserOrEnumRuleCall();
+				}
+				    |
+				{
+					newCompositeNode(grammarAccess.getExpressionAccess().getHeaderDepth6ExpressionParserRuleCall_1_0_5());
+				}
+				this_HeaderDepth6Expression_6=ruleHeaderDepth6Expression
+				{
+					$current = $this_HeaderDepth6Expression_6.current;
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 	)
 ;
 
@@ -201,25 +219,14 @@ ruleTextExpression returns [EObject current=null]
 @after {
 	leaveRule();
 }:
-	(
-		{
-			newCompositeNode(grammarAccess.getTextExpressionAccess().getTextualExpressionParserRuleCall_0());
-		}
-		this_TextualExpression_0=ruleTextualExpression
-		{
-			$current = $this_TextualExpression_0.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getTextExpressionAccess().getQuoteExpressionParserRuleCall_1());
-		}
-		this_QuoteExpression_1=ruleQuoteExpression
-		{
-			$current = $this_QuoteExpression_1.current;
-			afterParserOrEnumRuleCall();
-		}
-	)
+	{
+		newCompositeNode(grammarAccess.getTextExpressionAccess().getTextualExpressionParserRuleCall());
+	}
+	this_TextualExpression_0=ruleTextualExpression
+	{
+		$current = $this_TextualExpression_0.current;
+		afterParserOrEnumRuleCall();
+	}
 ;
 
 // Entry rule entryRuleEmphasisExpression
@@ -247,63 +254,6 @@ ruleEmphasisExpression returns [EObject current=null]
 	}
 ;
 
-// Entry rule entryRuleQuoteExpression
-entryRuleQuoteExpression returns [EObject current=null]@init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_S");
-}:
-	{ newCompositeNode(grammarAccess.getQuoteExpressionRule()); }
-	iv_ruleQuoteExpression=ruleQuoteExpression
-	{ $current=$iv_ruleQuoteExpression.current; }
-	EOF;
-finally {
-	myHiddenTokenState.restore();
-}
-
-// Rule QuoteExpression
-ruleQuoteExpression returns [EObject current=null]
-@init {
-	enterRule();
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_S");
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='>'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getQuoteExpressionAccess().getGreaterThanSignKeyword_0());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getQuoteExpressionAccess().getTextexpressionTextExpressionParserRuleCall_1_0());
-				}
-				lv_textexpression_1_0=ruleTextExpression
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getQuoteExpressionRule());
-					}
-					set(
-						$current,
-						"textexpression",
-						lv_textexpression_1_0,
-						"org.xtext.markHammil.mh.HammilDSL.TextExpression");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		(
-			this_BL_2=RULE_BL
-			{
-				newLeafNode(this_BL_2, grammarAccess.getQuoteExpressionAccess().getBLTerminalRuleCall_2());
-			}
-		)?
-	)
-;
-finally {
-	myHiddenTokenState.restore();
-}
-
 // Entry rule entryRuleHeaderDepth1Expression
 entryRuleHeaderDepth1Expression returns [EObject current=null]@init {
 	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_S");
@@ -327,10 +277,13 @@ ruleHeaderDepth1Expression returns [EObject current=null]
 }:
 	(
 		(
-			otherlv_0='#'
-			{
-				newLeafNode(otherlv_0, grammarAccess.getHeaderDepth1ExpressionAccess().getNumberSignKeyword_0_0());
-			}
+			(
+				('#')=>
+				otherlv_0='#'
+				{
+					newLeafNode(otherlv_0, grammarAccess.getHeaderDepth1ExpressionAccess().getNumberSignKeyword_0_0());
+				}
+			)
 			(
 				(
 					{
@@ -430,10 +383,13 @@ ruleHeaderDepth2Expression returns [EObject current=null]
 }:
 	(
 		(
-			otherlv_0='##'
-			{
-				newLeafNode(otherlv_0, grammarAccess.getHeaderDepth2ExpressionAccess().getNumberSignNumberSignKeyword_0_0());
-			}
+			(
+				('##')=>
+				otherlv_0='##'
+				{
+					newLeafNode(otherlv_0, grammarAccess.getHeaderDepth2ExpressionAccess().getNumberSignNumberSignKeyword_0_0());
+				}
+			)
 			(
 				(
 					{

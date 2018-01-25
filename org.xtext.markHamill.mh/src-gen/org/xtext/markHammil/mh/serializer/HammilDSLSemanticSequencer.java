@@ -188,8 +188,6 @@ public class HammilDSLSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Contexts:
-	 *     Expression returns QuoteExpression
-	 *     TextExpression returns QuoteExpression
 	 *     QuoteExpression returns QuoteExpression
 	 *
 	 * Constraint:
@@ -208,6 +206,7 @@ public class HammilDSLSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Contexts:
+	 *     Expression returns TextualExpression
 	 *     TextExpression returns TextualExpression
 	 *     EmphasisExpression returns TextualExpression
 	 *     TextualExpression returns TextualExpression

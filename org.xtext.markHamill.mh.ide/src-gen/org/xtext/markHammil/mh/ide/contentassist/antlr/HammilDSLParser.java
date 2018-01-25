@@ -32,10 +32,11 @@ public class HammilDSLParser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getExpressionAccess().getAlternatives(), "rule__Expression__Alternatives");
-					put(grammarAccess.getTextExpressionAccess().getAlternatives(), "rule__TextExpression__Alternatives");
+					put(grammarAccess.getExpressionAccess().getAlternatives_1_0(), "rule__Expression__Alternatives_1_0");
 					put(grammarAccess.getHeaderDepth1ExpressionAccess().getAlternatives(), "rule__HeaderDepth1Expression__Alternatives");
 					put(grammarAccess.getHeaderDepth2ExpressionAccess().getAlternatives(), "rule__HeaderDepth2Expression__Alternatives");
 					put(grammarAccess.getFileAccess().getGroup(), "rule__File__Group__0");
+					put(grammarAccess.getExpressionAccess().getGroup_1(), "rule__Expression__Group_1__0");
 					put(grammarAccess.getQuoteExpressionAccess().getGroup(), "rule__QuoteExpression__Group__0");
 					put(grammarAccess.getHeaderDepth1ExpressionAccess().getGroup_0(), "rule__HeaderDepth1Expression__Group_0__0");
 					put(grammarAccess.getHeaderDepth1ExpressionAccess().getGroup_1(), "rule__HeaderDepth1Expression__Group_1__0");

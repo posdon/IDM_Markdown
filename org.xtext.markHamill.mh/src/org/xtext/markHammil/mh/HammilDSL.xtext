@@ -5,9 +5,6 @@ import "platform:/resource/Markdown/model/markdown.ecore" as md
 import "http://www.eclipse.org/emf/2003/XMLType" as type
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
-//TODO : Catch the BL as BreakLineExpression
-//TODO : Make a String0 that is a String without quote and that doesn't consume the whole text
-
 File returns md::File:
 	{md::File}
 		(expression+=Expression)*
@@ -15,16 +12,17 @@ File returns md::File:
 
 Expression returns md::Expression:
 	/*TableExpression | HorizontalExpression | ListExpression |*/ 
-	QuoteExpression | 
+	 TextualExpression | 
 	/*LineBreakExpression | ItalicExpression | StrongExpression | ScratchExpression | HTMLExpression | CodeExpression | ReferenceExpression | LinkExpression | ImageExpression | VideoExpression | */ 
-	HeaderDepth1Expression | HeaderDepth2Expression | HeaderDepth3Expression | HeaderDepth4Expression | HeaderDepth5Expression | HeaderDepth6Expression
+	 => ( HeaderDepth1Expression | HeaderDepth2Expression | HeaderDepth3Expression | HeaderDepth4Expression | HeaderDepth5Expression | HeaderDepth6Expression )
 	/*| HeaderDepth2Expression | HeaderDepth3Expression | HeaderDepth5Expression | HeaderDepth6Expression | HeaderDepth4Expression | TextualExpression */;
 
 
 
 TextExpression returns md::TextExpression:
 	/*HorizontalExpression | ItalicExpression | StrongExpression | ScratchExpression |*/ 
-	TextualExpression | QuoteExpression;
+	//QuoteExpression | 
+	TextualExpression;
 
 EmphasisExpression returns md::EmphasisExpression:
 	/*ItalicExpression | StrongExpression | ScratchExpression |*/ 
@@ -52,7 +50,6 @@ ListExpression returns ListExpression:
 QuoteExpression returns md::QuoteExpression hidden(S):
 		'>' textexpression=TextExpression BL?
 	;
-
 
 
 /*
@@ -118,13 +115,13 @@ VideoExpression returns VideoExpression:
 	*/
 
 HeaderDepth1Expression returns md::HeaderDepth1Expression hidden(S):
-		'#' title=EmphasisExpression ('#')* BL ? |
+		=> '#' title=EmphasisExpression ('#')* BL ? |
 		title=EmphasisExpression BL ('=')+ BL?
 	;
 
 
 HeaderDepth2Expression returns md::HeaderDepth2Expression hidden(S):
-		'##' title=EmphasisExpression ('#')* BL ? |
+		=> '##' title=EmphasisExpression ('#')* BL ? |
 		title=EmphasisExpression BL ('-')+ BL?
 	;
 
