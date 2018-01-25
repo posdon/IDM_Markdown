@@ -11,22 +11,21 @@ File returns md::File:
 	;
 
 Expression returns md::Expression hidden(ML_COMMENT, SL_COMMENT):
-	/*TableExpression | HorizontalExpression | ListExpression |*/
-	/*LineBreakExpression | ItalicExpression | StrongExpression | ScratchExpression | HTMLExpression |
+	/*TableExpression | ListExpression |*/
+	/*LineBreakExpression |  HTMLExpression |
 	 */
 	  /* ReferenceExpression | LinkExpression | ImageExpression | VideoExpression |
 	 */ 
 	  ( => HeaderDepth1Expression | HeaderDepth2Expression | HeaderDepth3Expression | HeaderDepth4Expression | HeaderDepth5Expression | HeaderDepth6Expression ) 
-	  | TextExpression 
-	   | CodeExpression 
-	/*| HeaderDepth2Expression | HeaderDepth3Expression | HeaderDepth5Expression | HeaderDepth6Expression | HeaderDepth4Expression | TextualExpression */;
+	  | CodeExpression 
+	  | TextExpression ;
 
 
 
 TextExpression returns md::TextExpression hidden(S):
-	/*HorizontalExpression | ItalicExpression | StrongExpression | ScratchExpression |*/ 
+	HorizontalExpression |
 	QuoteExpression | 
-	TextualExpression;
+	EmphasisExpression;
 
 EmphasisExpression returns md::EmphasisExpression:
 	/*ItalicExpression | StrongExpression | ScratchExpression |*/ 
@@ -38,12 +37,13 @@ TableExpression returns TableExpression:
 	'{'
 		'tablelines' '{' tablelines+=TableLine ( "," tablelines+=TableLine)* '}' 
 	'}';
-
-HorizontalExpression returns HorizontalExpression:
-	{HorizontalExpression}
-	'HorizontalExpression'
+*/
+HorizontalExpression returns md::HorizontalExpression:
+	{md::HorizontalExpression}
+	'-''-''-'+ BL | '*''*''*'+ BL | '_''_''_'+ BL
 	;
-
+	
+/*
 ListExpression returns ListExpression:
 	'ListExpression'
 	'{'

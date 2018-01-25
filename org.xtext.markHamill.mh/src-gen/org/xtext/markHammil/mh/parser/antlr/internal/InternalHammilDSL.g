@@ -232,20 +232,29 @@ ruleTextExpression returns [EObject current=null]
 }:
 	(
 		{
-			newCompositeNode(grammarAccess.getTextExpressionAccess().getQuoteExpressionParserRuleCall_0());
+			newCompositeNode(grammarAccess.getTextExpressionAccess().getHorizontalExpressionParserRuleCall_0());
 		}
-		this_QuoteExpression_0=ruleQuoteExpression
+		this_HorizontalExpression_0=ruleHorizontalExpression
 		{
-			$current = $this_QuoteExpression_0.current;
+			$current = $this_HorizontalExpression_0.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getTextExpressionAccess().getTextualExpressionParserRuleCall_1());
+			newCompositeNode(grammarAccess.getTextExpressionAccess().getQuoteExpressionParserRuleCall_1());
 		}
-		this_TextualExpression_1=ruleTextualExpression
+		this_QuoteExpression_1=ruleQuoteExpression
 		{
-			$current = $this_TextualExpression_1.current;
+			$current = $this_QuoteExpression_1.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getTextExpressionAccess().getTextualExpressionParserRuleCall_2());
+		}
+		this_TextualExpression_2=ruleTextualExpression
+		{
+			$current = $this_TextualExpression_2.current;
 			afterParserOrEnumRuleCall();
 		}
 	)
@@ -277,6 +286,94 @@ ruleEmphasisExpression returns [EObject current=null]
 		$current = $this_TextualExpression_0.current;
 		afterParserOrEnumRuleCall();
 	}
+;
+
+// Entry rule entryRuleHorizontalExpression
+entryRuleHorizontalExpression returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getHorizontalExpressionRule()); }
+	iv_ruleHorizontalExpression=ruleHorizontalExpression
+	{ $current=$iv_ruleHorizontalExpression.current; }
+	EOF;
+
+// Rule HorizontalExpression
+ruleHorizontalExpression returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getHorizontalExpressionAccess().getHorizontalExpressionAction_0_0(),
+						$current);
+				}
+			)
+			otherlv_1='-'
+			{
+				newLeafNode(otherlv_1, grammarAccess.getHorizontalExpressionAccess().getHyphenMinusKeyword_0_1());
+			}
+			otherlv_2='-'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getHorizontalExpressionAccess().getHyphenMinusKeyword_0_2());
+			}
+			(
+				otherlv_3='-'
+				{
+					newLeafNode(otherlv_3, grammarAccess.getHorizontalExpressionAccess().getHyphenMinusKeyword_0_3());
+				}
+			)+
+			this_BL_4=RULE_BL
+			{
+				newLeafNode(this_BL_4, grammarAccess.getHorizontalExpressionAccess().getBLTerminalRuleCall_0_4());
+			}
+		)
+		    |
+		(
+			otherlv_5='*'
+			{
+				newLeafNode(otherlv_5, grammarAccess.getHorizontalExpressionAccess().getAsteriskKeyword_1_0());
+			}
+			otherlv_6='*'
+			{
+				newLeafNode(otherlv_6, grammarAccess.getHorizontalExpressionAccess().getAsteriskKeyword_1_1());
+			}
+			(
+				otherlv_7='*'
+				{
+					newLeafNode(otherlv_7, grammarAccess.getHorizontalExpressionAccess().getAsteriskKeyword_1_2());
+				}
+			)+
+			this_BL_8=RULE_BL
+			{
+				newLeafNode(this_BL_8, grammarAccess.getHorizontalExpressionAccess().getBLTerminalRuleCall_1_3());
+			}
+		)
+		    |
+		(
+			otherlv_9='_'
+			{
+				newLeafNode(otherlv_9, grammarAccess.getHorizontalExpressionAccess().get_Keyword_2_0());
+			}
+			otherlv_10='_'
+			{
+				newLeafNode(otherlv_10, grammarAccess.getHorizontalExpressionAccess().get_Keyword_2_1());
+			}
+			(
+				otherlv_11='_'
+				{
+					newLeafNode(otherlv_11, grammarAccess.getHorizontalExpressionAccess().get_Keyword_2_2());
+				}
+			)+
+			this_BL_12=RULE_BL
+			{
+				newLeafNode(this_BL_12, grammarAccess.getHorizontalExpressionAccess().getBLTerminalRuleCall_2_3());
+			}
+		)
+	)
 ;
 
 // Entry rule entryRuleQuoteExpression

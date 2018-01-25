@@ -29,6 +29,8 @@ public class InternalHammilDSLLexer extends Lexer {
     public static final int RULE_S=5;
     public static final int RULE_BL=4;
     public static final int RULE_ML_COMMENT=7;
+    public static final int T__20=20;
+    public static final int T__21=21;
 
     // delegates
     // delegators
@@ -48,10 +50,10 @@ public class InternalHammilDSLLexer extends Lexer {
         try {
             int _type = T__9;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalHammilDSL.g:11:6: ( '>' )
-            // InternalHammilDSL.g:11:8: '>'
+            // InternalHammilDSL.g:11:6: ( '-' )
+            // InternalHammilDSL.g:11:8: '-'
             {
-            match('>'); 
+            match('-'); 
 
             }
 
@@ -68,10 +70,10 @@ public class InternalHammilDSLLexer extends Lexer {
         try {
             int _type = T__10;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalHammilDSL.g:12:7: ( '`' )
-            // InternalHammilDSL.g:12:9: '`'
+            // InternalHammilDSL.g:12:7: ( '*' )
+            // InternalHammilDSL.g:12:9: '*'
             {
-            match('`'); 
+            match('*'); 
 
             }
 
@@ -88,11 +90,10 @@ public class InternalHammilDSLLexer extends Lexer {
         try {
             int _type = T__11;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalHammilDSL.g:13:7: ( '```' )
-            // InternalHammilDSL.g:13:9: '```'
+            // InternalHammilDSL.g:13:7: ( '_' )
+            // InternalHammilDSL.g:13:9: '_'
             {
-            match("```"); 
-
+            match('_'); 
 
             }
 
@@ -109,10 +110,10 @@ public class InternalHammilDSLLexer extends Lexer {
         try {
             int _type = T__12;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalHammilDSL.g:14:7: ( '#' )
-            // InternalHammilDSL.g:14:9: '#'
+            // InternalHammilDSL.g:14:7: ( '>' )
+            // InternalHammilDSL.g:14:9: '>'
             {
-            match('#'); 
+            match('>'); 
 
             }
 
@@ -129,10 +130,10 @@ public class InternalHammilDSLLexer extends Lexer {
         try {
             int _type = T__13;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalHammilDSL.g:15:7: ( '=' )
-            // InternalHammilDSL.g:15:9: '='
+            // InternalHammilDSL.g:15:7: ( '`' )
+            // InternalHammilDSL.g:15:9: '`'
             {
-            match('='); 
+            match('`'); 
 
             }
 
@@ -149,10 +150,10 @@ public class InternalHammilDSLLexer extends Lexer {
         try {
             int _type = T__14;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalHammilDSL.g:16:7: ( '##' )
-            // InternalHammilDSL.g:16:9: '##'
+            // InternalHammilDSL.g:16:7: ( '```' )
+            // InternalHammilDSL.g:16:9: '```'
             {
-            match("##"); 
+            match("```"); 
 
 
             }
@@ -170,10 +171,10 @@ public class InternalHammilDSLLexer extends Lexer {
         try {
             int _type = T__15;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalHammilDSL.g:17:7: ( '-' )
-            // InternalHammilDSL.g:17:9: '-'
+            // InternalHammilDSL.g:17:7: ( '#' )
+            // InternalHammilDSL.g:17:9: '#'
             {
-            match('-'); 
+            match('#'); 
 
             }
 
@@ -190,11 +191,10 @@ public class InternalHammilDSLLexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalHammilDSL.g:18:7: ( '###' )
-            // InternalHammilDSL.g:18:9: '###'
+            // InternalHammilDSL.g:18:7: ( '=' )
+            // InternalHammilDSL.g:18:9: '='
             {
-            match("###"); 
-
+            match('='); 
 
             }
 
@@ -211,10 +211,10 @@ public class InternalHammilDSLLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalHammilDSL.g:19:7: ( '#####' )
-            // InternalHammilDSL.g:19:9: '#####'
+            // InternalHammilDSL.g:19:7: ( '##' )
+            // InternalHammilDSL.g:19:9: '##'
             {
-            match("#####"); 
+            match("##"); 
 
 
             }
@@ -232,10 +232,10 @@ public class InternalHammilDSLLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalHammilDSL.g:20:7: ( '######' )
-            // InternalHammilDSL.g:20:9: '######'
+            // InternalHammilDSL.g:20:7: ( '###' )
+            // InternalHammilDSL.g:20:9: '###'
             {
-            match("######"); 
+            match("###"); 
 
 
             }
@@ -253,10 +253,10 @@ public class InternalHammilDSLLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalHammilDSL.g:21:7: ( '####' )
-            // InternalHammilDSL.g:21:9: '####'
+            // InternalHammilDSL.g:21:7: ( '#####' )
+            // InternalHammilDSL.g:21:9: '#####'
             {
-            match("####"); 
+            match("#####"); 
 
 
             }
@@ -269,15 +269,57 @@ public class InternalHammilDSLLexer extends Lexer {
     }
     // $ANTLR end "T__19"
 
+    // $ANTLR start "T__20"
+    public final void mT__20() throws RecognitionException {
+        try {
+            int _type = T__20;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalHammilDSL.g:22:7: ( '######' )
+            // InternalHammilDSL.g:22:9: '######'
+            {
+            match("######"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__20"
+
+    // $ANTLR start "T__21"
+    public final void mT__21() throws RecognitionException {
+        try {
+            int _type = T__21;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalHammilDSL.g:23:7: ( '####' )
+            // InternalHammilDSL.g:23:9: '####'
+            {
+            match("####"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__21"
+
     // $ANTLR start "RULE_STRING"
     public final void mRULE_STRING() throws RecognitionException {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalHammilDSL.g:898:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalHammilDSL.g:898:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalHammilDSL.g:995:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalHammilDSL.g:995:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalHammilDSL.g:898:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalHammilDSL.g:995:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -295,10 +337,10 @@ public class InternalHammilDSLLexer extends Lexer {
             }
             switch (alt3) {
                 case 1 :
-                    // InternalHammilDSL.g:898:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalHammilDSL.g:995:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalHammilDSL.g:898:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalHammilDSL.g:995:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop1:
                     do {
                         int alt1=3;
@@ -314,7 +356,7 @@ public class InternalHammilDSLLexer extends Lexer {
 
                         switch (alt1) {
                     	case 1 :
-                    	    // InternalHammilDSL.g:898:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // InternalHammilDSL.g:995:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -330,7 +372,7 @@ public class InternalHammilDSLLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalHammilDSL.g:898:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalHammilDSL.g:995:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -355,10 +397,10 @@ public class InternalHammilDSLLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalHammilDSL.g:898:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalHammilDSL.g:995:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalHammilDSL.g:898:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalHammilDSL.g:995:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop2:
                     do {
                         int alt2=3;
@@ -374,7 +416,7 @@ public class InternalHammilDSLLexer extends Lexer {
 
                         switch (alt2) {
                     	case 1 :
-                    	    // InternalHammilDSL.g:898:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // InternalHammilDSL.g:995:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -390,7 +432,7 @@ public class InternalHammilDSLLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalHammilDSL.g:898:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalHammilDSL.g:995:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -433,12 +475,12 @@ public class InternalHammilDSLLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalHammilDSL.g:900:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalHammilDSL.g:900:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalHammilDSL.g:997:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalHammilDSL.g:997:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalHammilDSL.g:900:24: ( options {greedy=false; } : . )*
+            // InternalHammilDSL.g:997:24: ( options {greedy=false; } : . )*
             loop4:
             do {
                 int alt4=2;
@@ -463,7 +505,7 @@ public class InternalHammilDSLLexer extends Lexer {
 
                 switch (alt4) {
             	case 1 :
-            	    // InternalHammilDSL.g:900:52: .
+            	    // InternalHammilDSL.g:997:52: .
             	    {
             	    matchAny(); 
 
@@ -493,12 +535,12 @@ public class InternalHammilDSLLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalHammilDSL.g:902:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalHammilDSL.g:902:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalHammilDSL.g:999:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalHammilDSL.g:999:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalHammilDSL.g:902:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalHammilDSL.g:999:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop5:
             do {
                 int alt5=2;
@@ -511,7 +553,7 @@ public class InternalHammilDSLLexer extends Lexer {
 
                 switch (alt5) {
             	case 1 :
-            	    // InternalHammilDSL.g:902:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalHammilDSL.g:999:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -531,7 +573,7 @@ public class InternalHammilDSLLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalHammilDSL.g:902:40: ( ( '\\r' )? '\\n' )?
+            // InternalHammilDSL.g:999:40: ( ( '\\r' )? '\\n' )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -540,9 +582,9 @@ public class InternalHammilDSLLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // InternalHammilDSL.g:902:41: ( '\\r' )? '\\n'
+                    // InternalHammilDSL.g:999:41: ( '\\r' )? '\\n'
                     {
-                    // InternalHammilDSL.g:902:41: ( '\\r' )?
+                    // InternalHammilDSL.g:999:41: ( '\\r' )?
                     int alt6=2;
                     int LA6_0 = input.LA(1);
 
@@ -551,7 +593,7 @@ public class InternalHammilDSLLexer extends Lexer {
                     }
                     switch (alt6) {
                         case 1 :
-                            // InternalHammilDSL.g:902:41: '\\r'
+                            // InternalHammilDSL.g:999:41: '\\r'
                             {
                             match('\r'); 
 
@@ -583,8 +625,8 @@ public class InternalHammilDSLLexer extends Lexer {
         try {
             int _type = RULE_BL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalHammilDSL.g:904:9: ( '\\n' )
-            // InternalHammilDSL.g:904:11: '\\n'
+            // InternalHammilDSL.g:1001:9: ( '\\n' )
+            // InternalHammilDSL.g:1001:11: '\\n'
             {
             match('\n'); 
 
@@ -603,8 +645,8 @@ public class InternalHammilDSLLexer extends Lexer {
         try {
             int _type = RULE_S;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalHammilDSL.g:906:8: ( ( ' ' | '\\t' ) )
-            // InternalHammilDSL.g:906:10: ( ' ' | '\\t' )
+            // InternalHammilDSL.g:1003:8: ( ( ' ' | '\\t' ) )
+            // InternalHammilDSL.g:1003:10: ( ' ' | '\\t' )
             {
             if ( input.LA(1)=='\t'||input.LA(1)==' ' ) {
                 input.consume();
@@ -627,8 +669,8 @@ public class InternalHammilDSLLexer extends Lexer {
     // $ANTLR end "RULE_S"
 
     public void mTokens() throws RecognitionException {
-        // InternalHammilDSL.g:1:8: ( T__9 | T__10 | T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_BL | RULE_S )
-        int alt8=16;
+        // InternalHammilDSL.g:1:8: ( T__9 | T__10 | T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_BL | RULE_S )
+        int alt8=18;
         alt8 = dfa8.predict(input);
         switch (alt8) {
             case 1 :
@@ -709,35 +751,49 @@ public class InternalHammilDSLLexer extends Lexer {
                 }
                 break;
             case 12 :
-                // InternalHammilDSL.g:1:75: RULE_STRING
+                // InternalHammilDSL.g:1:75: T__20
+                {
+                mT__20(); 
+
+                }
+                break;
+            case 13 :
+                // InternalHammilDSL.g:1:81: T__21
+                {
+                mT__21(); 
+
+                }
+                break;
+            case 14 :
+                // InternalHammilDSL.g:1:87: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 13 :
-                // InternalHammilDSL.g:1:87: RULE_ML_COMMENT
+            case 15 :
+                // InternalHammilDSL.g:1:99: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 14 :
-                // InternalHammilDSL.g:1:103: RULE_SL_COMMENT
+            case 16 :
+                // InternalHammilDSL.g:1:115: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 15 :
-                // InternalHammilDSL.g:1:119: RULE_BL
+            case 17 :
+                // InternalHammilDSL.g:1:131: RULE_BL
                 {
                 mRULE_BL(); 
 
                 }
                 break;
-            case 16 :
-                // InternalHammilDSL.g:1:127: RULE_S
+            case 18 :
+                // InternalHammilDSL.g:1:139: RULE_S
                 {
                 mRULE_S(); 
 
@@ -751,39 +807,41 @@ public class InternalHammilDSLLexer extends Lexer {
 
     protected DFA8 dfa8 = new DFA8(this);
     static final String DFA8_eotS =
-        "\2\uffff\1\13\1\15\10\uffff\1\21\3\uffff\1\23\1\uffff\1\25\1\uffff\1\27\3\uffff";
+        "\5\uffff\1\15\1\17\7\uffff\1\23\3\uffff\1\25\1\uffff\1\27\1\uffff\1\31\3\uffff";
     static final String DFA8_eofS =
-        "\30\uffff";
+        "\32\uffff";
     static final String DFA8_minS =
-        "\1\11\1\uffff\1\140\1\43\3\uffff\1\52\4\uffff\1\43\3\uffff\1\43\1\uffff\1\43\1\uffff\1\43\3\uffff";
+        "\1\11\4\uffff\1\140\1\43\2\uffff\1\52\4\uffff\1\43\3\uffff\1\43\1\uffff\1\43\1\uffff\1\43\3\uffff";
     static final String DFA8_maxS =
-        "\1\140\1\uffff\1\140\1\43\3\uffff\1\57\4\uffff\1\43\3\uffff\1\43\1\uffff\1\43\1\uffff\1\43\3\uffff";
+        "\1\140\4\uffff\1\140\1\43\2\uffff\1\57\4\uffff\1\43\3\uffff\1\43\1\uffff\1\43\1\uffff\1\43\3\uffff";
     static final String DFA8_acceptS =
-        "\1\uffff\1\1\2\uffff\1\5\1\7\1\14\1\uffff\1\17\1\20\1\3\1\2\1\uffff\1\4\1\15\1\16\1\uffff\1\6\1\uffff\1\10\1\uffff\1\13\1\12\1\11";
+        "\1\uffff\1\1\1\2\1\3\1\4\2\uffff\1\10\1\16\1\uffff\1\21\1\22\1\6\1\5\1\uffff\1\7\1\17\1\20\1\uffff\1\11\1\uffff\1\12\1\uffff\1\15\1\14\1\13";
     static final String DFA8_specialS =
-        "\30\uffff}>";
+        "\32\uffff}>";
     static final String[] DFA8_transitionS = {
-            "\1\11\1\10\25\uffff\1\11\1\uffff\1\6\1\3\3\uffff\1\6\5\uffff\1\5\1\uffff\1\7\15\uffff\1\4\1\1\41\uffff\1\2",
+            "\1\13\1\12\25\uffff\1\13\1\uffff\1\10\1\6\3\uffff\1\10\2\uffff\1\2\2\uffff\1\1\1\uffff\1\11\15\uffff\1\7\1\4\40\uffff\1\3\1\5",
             "",
-            "\1\12",
+            "",
+            "",
+            "",
             "\1\14",
+            "\1\16",
             "",
             "",
+            "\1\20\4\uffff\1\21",
             "",
-            "\1\16\4\uffff\1\17",
-            "",
-            "",
-            "",
-            "",
-            "\1\20",
             "",
             "",
             "",
             "\1\22",
             "",
+            "",
+            "",
             "\1\24",
             "",
             "\1\26",
+            "",
+            "\1\30",
             "",
             "",
             ""
@@ -819,7 +877,7 @@ public class InternalHammilDSLLexer extends Lexer {
             this.transition = DFA8_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__9 | T__10 | T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_BL | RULE_S );";
+            return "1:1: Tokens : ( T__9 | T__10 | T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_BL | RULE_S );";
         }
     }
  

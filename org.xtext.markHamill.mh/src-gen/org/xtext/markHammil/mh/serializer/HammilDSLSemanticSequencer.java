@@ -13,6 +13,7 @@ import markdown.HeaderDepth3Expression;
 import markdown.HeaderDepth4Expression;
 import markdown.HeaderDepth5Expression;
 import markdown.HeaderDepth6Expression;
+import markdown.HorizontalExpression;
 import markdown.MarkdownPackage;
 import markdown.QuoteExpression;
 import markdown.TextualExpression;
@@ -64,6 +65,9 @@ public class HammilDSLSemanticSequencer extends AbstractDelegatingSemanticSequen
 				return; 
 			case MarkdownPackage.HEADER_DEPTH6_EXPRESSION:
 				sequence_HeaderDepth6Expression(context, (HeaderDepth6Expression) semanticObject); 
+				return; 
+			case MarkdownPackage.HORIZONTAL_EXPRESSION:
+				sequence_HorizontalExpression(context, (HorizontalExpression) semanticObject); 
 				return; 
 			case MarkdownPackage.QUOTE_EXPRESSION:
 				sequence_QuoteExpression(context, (QuoteExpression) semanticObject); 
@@ -200,6 +204,20 @@ public class HammilDSLSemanticSequencer extends AbstractDelegatingSemanticSequen
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getHeaderDepth6ExpressionAccess().getTitleEmphasisExpressionParserRuleCall_1_0(), semanticObject.getTitle());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Expression returns HorizontalExpression
+	 *     TextExpression returns HorizontalExpression
+	 *     HorizontalExpression returns HorizontalExpression
+	 *
+	 * Constraint:
+	 *     {HorizontalExpression}
+	 */
+	protected void sequence_HorizontalExpression(ISerializationContext context, HorizontalExpression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

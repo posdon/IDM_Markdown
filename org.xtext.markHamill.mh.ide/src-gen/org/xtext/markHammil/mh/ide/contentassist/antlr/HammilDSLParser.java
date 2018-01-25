@@ -34,10 +34,14 @@ public class HammilDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getExpressionAccess().getAlternatives(), "rule__Expression__Alternatives");
 					put(grammarAccess.getExpressionAccess().getAlternatives_0(), "rule__Expression__Alternatives_0");
 					put(grammarAccess.getTextExpressionAccess().getAlternatives(), "rule__TextExpression__Alternatives");
+					put(grammarAccess.getHorizontalExpressionAccess().getAlternatives(), "rule__HorizontalExpression__Alternatives");
 					put(grammarAccess.getCodeExpressionAccess().getAlternatives(), "rule__CodeExpression__Alternatives");
 					put(grammarAccess.getHeaderDepth1ExpressionAccess().getAlternatives(), "rule__HeaderDepth1Expression__Alternatives");
 					put(grammarAccess.getHeaderDepth2ExpressionAccess().getAlternatives(), "rule__HeaderDepth2Expression__Alternatives");
 					put(grammarAccess.getFileAccess().getGroup(), "rule__File__Group__0");
+					put(grammarAccess.getHorizontalExpressionAccess().getGroup_0(), "rule__HorizontalExpression__Group_0__0");
+					put(grammarAccess.getHorizontalExpressionAccess().getGroup_1(), "rule__HorizontalExpression__Group_1__0");
+					put(grammarAccess.getHorizontalExpressionAccess().getGroup_2(), "rule__HorizontalExpression__Group_2__0");
 					put(grammarAccess.getQuoteExpressionAccess().getGroup(), "rule__QuoteExpression__Group__0");
 					put(grammarAccess.getCodeExpressionAccess().getGroup_0(), "rule__CodeExpression__Group_0__0");
 					put(grammarAccess.getCodeExpressionAccess().getGroup_1(), "rule__CodeExpression__Group_1__0");

@@ -22,7 +22,7 @@ import java.util.HashMap;
 @SuppressWarnings("all")
 public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_BL", "RULE_S", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "'>'", "'`'", "'```'", "'#'", "'='", "'##'", "'-'", "'###'", "'#####'", "'######'", "'####'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_BL", "RULE_S", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "'-'", "'*'", "'_'", "'>'", "'`'", "'```'", "'#'", "'='", "'##'", "'###'", "'#####'", "'######'", "'####'"
     };
     public static final int RULE_STRING=6;
     public static final int RULE_SL_COMMENT=8;
@@ -41,6 +41,8 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
     public static final int RULE_S=5;
     public static final int RULE_BL=4;
     public static final int RULE_ML_COMMENT=7;
+    public static final int T__20=20;
+    public static final int T__21=21;
 
     // delegates
     // delegators
@@ -158,7 +160,7 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( (LA1_0==RULE_STRING||(LA1_0>=9 && LA1_0<=12)||LA1_0==14||(LA1_0>=16 && LA1_0<=19)) ) {
+                if ( (LA1_0==RULE_STRING||(LA1_0>=9 && LA1_0<=15)||(LA1_0>=17 && LA1_0<=21)) ) {
                     alt1=1;
                 }
 
@@ -308,12 +310,12 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
             // InternalHammilDSL.g:129:2: ( ( ( ( ruleHeaderDepth1Expression )=>this_HeaderDepth1Expression_0= ruleHeaderDepth1Expression ) | this_HeaderDepth2Expression_1= ruleHeaderDepth2Expression | this_HeaderDepth3Expression_2= ruleHeaderDepth3Expression | this_HeaderDepth4Expression_3= ruleHeaderDepth4Expression | this_HeaderDepth5Expression_4= ruleHeaderDepth5Expression | this_HeaderDepth6Expression_5= ruleHeaderDepth6Expression ) | this_TextExpression_6= ruleTextExpression | this_CodeExpression_7= ruleCodeExpression )
             int alt3=3;
             switch ( input.LA(1) ) {
-            case 12:
-            case 14:
-            case 16:
+            case 15:
             case 17:
             case 18:
             case 19:
+            case 20:
+            case 21:
                 {
                 alt3=1;
                 }
@@ -325,7 +327,7 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
                 if ( (LA3_2==RULE_BL) ) {
                     alt3=1;
                 }
-                else if ( (LA3_2==EOF||LA3_2==RULE_STRING||(LA3_2>=9 && LA3_2<=12)||LA3_2==14||(LA3_2>=16 && LA3_2<=19)) ) {
+                else if ( (LA3_2==EOF||LA3_2==RULE_STRING||(LA3_2>=9 && LA3_2<=15)||(LA3_2>=17 && LA3_2<=21)) ) {
                     alt3=2;
                 }
                 else {
@@ -338,12 +340,15 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
                 }
                 break;
             case 9:
+            case 10:
+            case 11:
+            case 12:
                 {
                 alt3=2;
                 }
                 break;
-            case 10:
-            case 11:
+            case 13:
+            case 14:
                 {
                 alt3=3;
                 }
@@ -626,13 +631,15 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTextExpression"
-    // InternalHammilDSL.g:225:1: ruleTextExpression returns [EObject current=null] : (this_QuoteExpression_0= ruleQuoteExpression | this_TextualExpression_1= ruleTextualExpression ) ;
+    // InternalHammilDSL.g:225:1: ruleTextExpression returns [EObject current=null] : (this_HorizontalExpression_0= ruleHorizontalExpression | this_QuoteExpression_1= ruleQuoteExpression | this_TextualExpression_2= ruleTextualExpression ) ;
     public final EObject ruleTextExpression() throws RecognitionException {
         EObject current = null;
 
-        EObject this_QuoteExpression_0 = null;
+        EObject this_HorizontalExpression_0 = null;
 
-        EObject this_TextualExpression_1 = null;
+        EObject this_QuoteExpression_1 = null;
+
+        EObject this_TextualExpression_2 = null;
 
 
 
@@ -640,43 +647,54 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
         	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_S");
 
         try {
-            // InternalHammilDSL.g:232:2: ( (this_QuoteExpression_0= ruleQuoteExpression | this_TextualExpression_1= ruleTextualExpression ) )
-            // InternalHammilDSL.g:233:2: (this_QuoteExpression_0= ruleQuoteExpression | this_TextualExpression_1= ruleTextualExpression )
+            // InternalHammilDSL.g:232:2: ( (this_HorizontalExpression_0= ruleHorizontalExpression | this_QuoteExpression_1= ruleQuoteExpression | this_TextualExpression_2= ruleTextualExpression ) )
+            // InternalHammilDSL.g:233:2: (this_HorizontalExpression_0= ruleHorizontalExpression | this_QuoteExpression_1= ruleQuoteExpression | this_TextualExpression_2= ruleTextualExpression )
             {
-            // InternalHammilDSL.g:233:2: (this_QuoteExpression_0= ruleQuoteExpression | this_TextualExpression_1= ruleTextualExpression )
-            int alt4=2;
-            int LA4_0 = input.LA(1);
-
-            if ( (LA4_0==9) ) {
+            // InternalHammilDSL.g:233:2: (this_HorizontalExpression_0= ruleHorizontalExpression | this_QuoteExpression_1= ruleQuoteExpression | this_TextualExpression_2= ruleTextualExpression )
+            int alt4=3;
+            switch ( input.LA(1) ) {
+            case 9:
+            case 10:
+            case 11:
+                {
                 alt4=1;
-            }
-            else if ( (LA4_0==RULE_STRING) ) {
+                }
+                break;
+            case 12:
+                {
                 alt4=2;
-            }
-            else {
+                }
+                break;
+            case RULE_STRING:
+                {
+                alt4=3;
+                }
+                break;
+            default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
                     new NoViableAltException("", 4, 0, input);
 
                 throw nvae;
             }
+
             switch (alt4) {
                 case 1 :
-                    // InternalHammilDSL.g:234:3: this_QuoteExpression_0= ruleQuoteExpression
+                    // InternalHammilDSL.g:234:3: this_HorizontalExpression_0= ruleHorizontalExpression
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getTextExpressionAccess().getQuoteExpressionParserRuleCall_0());
+                      			newCompositeNode(grammarAccess.getTextExpressionAccess().getHorizontalExpressionParserRuleCall_0());
                       		
                     }
                     pushFollow(FOLLOW_2);
-                    this_QuoteExpression_0=ruleQuoteExpression();
+                    this_HorizontalExpression_0=ruleHorizontalExpression();
 
                     state._fsp--;
                     if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      			current = this_QuoteExpression_0;
+                      			current = this_HorizontalExpression_0;
                       			afterParserOrEnumRuleCall();
                       		
                     }
@@ -684,21 +702,43 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalHammilDSL.g:243:3: this_TextualExpression_1= ruleTextualExpression
+                    // InternalHammilDSL.g:243:3: this_QuoteExpression_1= ruleQuoteExpression
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getTextExpressionAccess().getTextualExpressionParserRuleCall_1());
+                      			newCompositeNode(grammarAccess.getTextExpressionAccess().getQuoteExpressionParserRuleCall_1());
                       		
                     }
                     pushFollow(FOLLOW_2);
-                    this_TextualExpression_1=ruleTextualExpression();
+                    this_QuoteExpression_1=ruleQuoteExpression();
 
                     state._fsp--;
                     if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      			current = this_TextualExpression_1;
+                      			current = this_QuoteExpression_1;
+                      			afterParserOrEnumRuleCall();
+                      		
+                    }
+
+                    }
+                    break;
+                case 3 :
+                    // InternalHammilDSL.g:252:3: this_TextualExpression_2= ruleTextualExpression
+                    {
+                    if ( state.backtracking==0 ) {
+
+                      			newCompositeNode(grammarAccess.getTextExpressionAccess().getTextualExpressionParserRuleCall_2());
+                      		
+                    }
+                    pushFollow(FOLLOW_2);
+                    this_TextualExpression_2=ruleTextualExpression();
+
+                    state._fsp--;
+                    if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      			current = this_TextualExpression_2;
                       			afterParserOrEnumRuleCall();
                       		
                     }
@@ -733,7 +773,7 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEmphasisExpression"
-    // InternalHammilDSL.g:258:1: entryRuleEmphasisExpression returns [EObject current=null] : iv_ruleEmphasisExpression= ruleEmphasisExpression EOF ;
+    // InternalHammilDSL.g:267:1: entryRuleEmphasisExpression returns [EObject current=null] : iv_ruleEmphasisExpression= ruleEmphasisExpression EOF ;
     public final EObject entryRuleEmphasisExpression() throws RecognitionException {
         EObject current = null;
 
@@ -741,8 +781,8 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalHammilDSL.g:258:59: (iv_ruleEmphasisExpression= ruleEmphasisExpression EOF )
-            // InternalHammilDSL.g:259:2: iv_ruleEmphasisExpression= ruleEmphasisExpression EOF
+            // InternalHammilDSL.g:267:59: (iv_ruleEmphasisExpression= ruleEmphasisExpression EOF )
+            // InternalHammilDSL.g:268:2: iv_ruleEmphasisExpression= ruleEmphasisExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getEmphasisExpressionRule()); 
@@ -773,7 +813,7 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEmphasisExpression"
-    // InternalHammilDSL.g:265:1: ruleEmphasisExpression returns [EObject current=null] : this_TextualExpression_0= ruleTextualExpression ;
+    // InternalHammilDSL.g:274:1: ruleEmphasisExpression returns [EObject current=null] : this_TextualExpression_0= ruleTextualExpression ;
     public final EObject ruleEmphasisExpression() throws RecognitionException {
         EObject current = null;
 
@@ -784,8 +824,8 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalHammilDSL.g:271:2: (this_TextualExpression_0= ruleTextualExpression )
-            // InternalHammilDSL.g:272:2: this_TextualExpression_0= ruleTextualExpression
+            // InternalHammilDSL.g:280:2: (this_TextualExpression_0= ruleTextualExpression )
+            // InternalHammilDSL.g:281:2: this_TextualExpression_0= ruleTextualExpression
             {
             if ( state.backtracking==0 ) {
 
@@ -824,8 +864,335 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleEmphasisExpression"
 
 
+    // $ANTLR start "entryRuleHorizontalExpression"
+    // InternalHammilDSL.g:292:1: entryRuleHorizontalExpression returns [EObject current=null] : iv_ruleHorizontalExpression= ruleHorizontalExpression EOF ;
+    public final EObject entryRuleHorizontalExpression() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleHorizontalExpression = null;
+
+
+        try {
+            // InternalHammilDSL.g:292:61: (iv_ruleHorizontalExpression= ruleHorizontalExpression EOF )
+            // InternalHammilDSL.g:293:2: iv_ruleHorizontalExpression= ruleHorizontalExpression EOF
+            {
+            if ( state.backtracking==0 ) {
+               newCompositeNode(grammarAccess.getHorizontalExpressionRule()); 
+            }
+            pushFollow(FOLLOW_1);
+            iv_ruleHorizontalExpression=ruleHorizontalExpression();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+               current =iv_ruleHorizontalExpression; 
+            }
+            match(input,EOF,FOLLOW_2); if (state.failed) return current;
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleHorizontalExpression"
+
+
+    // $ANTLR start "ruleHorizontalExpression"
+    // InternalHammilDSL.g:299:1: ruleHorizontalExpression returns [EObject current=null] : ( ( () otherlv_1= '-' otherlv_2= '-' (otherlv_3= '-' )+ this_BL_4= RULE_BL ) | (otherlv_5= '*' otherlv_6= '*' (otherlv_7= '*' )+ this_BL_8= RULE_BL ) | (otherlv_9= '_' otherlv_10= '_' (otherlv_11= '_' )+ this_BL_12= RULE_BL ) ) ;
+    public final EObject ruleHorizontalExpression() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_1=null;
+        Token otherlv_2=null;
+        Token otherlv_3=null;
+        Token this_BL_4=null;
+        Token otherlv_5=null;
+        Token otherlv_6=null;
+        Token otherlv_7=null;
+        Token this_BL_8=null;
+        Token otherlv_9=null;
+        Token otherlv_10=null;
+        Token otherlv_11=null;
+        Token this_BL_12=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalHammilDSL.g:305:2: ( ( ( () otherlv_1= '-' otherlv_2= '-' (otherlv_3= '-' )+ this_BL_4= RULE_BL ) | (otherlv_5= '*' otherlv_6= '*' (otherlv_7= '*' )+ this_BL_8= RULE_BL ) | (otherlv_9= '_' otherlv_10= '_' (otherlv_11= '_' )+ this_BL_12= RULE_BL ) ) )
+            // InternalHammilDSL.g:306:2: ( ( () otherlv_1= '-' otherlv_2= '-' (otherlv_3= '-' )+ this_BL_4= RULE_BL ) | (otherlv_5= '*' otherlv_6= '*' (otherlv_7= '*' )+ this_BL_8= RULE_BL ) | (otherlv_9= '_' otherlv_10= '_' (otherlv_11= '_' )+ this_BL_12= RULE_BL ) )
+            {
+            // InternalHammilDSL.g:306:2: ( ( () otherlv_1= '-' otherlv_2= '-' (otherlv_3= '-' )+ this_BL_4= RULE_BL ) | (otherlv_5= '*' otherlv_6= '*' (otherlv_7= '*' )+ this_BL_8= RULE_BL ) | (otherlv_9= '_' otherlv_10= '_' (otherlv_11= '_' )+ this_BL_12= RULE_BL ) )
+            int alt8=3;
+            switch ( input.LA(1) ) {
+            case 9:
+                {
+                alt8=1;
+                }
+                break;
+            case 10:
+                {
+                alt8=2;
+                }
+                break;
+            case 11:
+                {
+                alt8=3;
+                }
+                break;
+            default:
+                if (state.backtracking>0) {state.failed=true; return current;}
+                NoViableAltException nvae =
+                    new NoViableAltException("", 8, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt8) {
+                case 1 :
+                    // InternalHammilDSL.g:307:3: ( () otherlv_1= '-' otherlv_2= '-' (otherlv_3= '-' )+ this_BL_4= RULE_BL )
+                    {
+                    // InternalHammilDSL.g:307:3: ( () otherlv_1= '-' otherlv_2= '-' (otherlv_3= '-' )+ this_BL_4= RULE_BL )
+                    // InternalHammilDSL.g:308:4: () otherlv_1= '-' otherlv_2= '-' (otherlv_3= '-' )+ this_BL_4= RULE_BL
+                    {
+                    // InternalHammilDSL.g:308:4: ()
+                    // InternalHammilDSL.g:309:5: 
+                    {
+                    if ( state.backtracking==0 ) {
+
+                      					current = forceCreateModelElement(
+                      						grammarAccess.getHorizontalExpressionAccess().getHorizontalExpressionAction_0_0(),
+                      						current);
+                      				
+                    }
+
+                    }
+
+                    otherlv_1=(Token)match(input,9,FOLLOW_4); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      				newLeafNode(otherlv_1, grammarAccess.getHorizontalExpressionAccess().getHyphenMinusKeyword_0_1());
+                      			
+                    }
+                    otherlv_2=(Token)match(input,9,FOLLOW_4); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      				newLeafNode(otherlv_2, grammarAccess.getHorizontalExpressionAccess().getHyphenMinusKeyword_0_2());
+                      			
+                    }
+                    // InternalHammilDSL.g:323:4: (otherlv_3= '-' )+
+                    int cnt5=0;
+                    loop5:
+                    do {
+                        int alt5=2;
+                        int LA5_0 = input.LA(1);
+
+                        if ( (LA5_0==9) ) {
+                            alt5=1;
+                        }
+
+
+                        switch (alt5) {
+                    	case 1 :
+                    	    // InternalHammilDSL.g:324:5: otherlv_3= '-'
+                    	    {
+                    	    otherlv_3=(Token)match(input,9,FOLLOW_5); if (state.failed) return current;
+                    	    if ( state.backtracking==0 ) {
+
+                    	      					newLeafNode(otherlv_3, grammarAccess.getHorizontalExpressionAccess().getHyphenMinusKeyword_0_3());
+                    	      				
+                    	    }
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    if ( cnt5 >= 1 ) break loop5;
+                    	    if (state.backtracking>0) {state.failed=true; return current;}
+                                EarlyExitException eee =
+                                    new EarlyExitException(5, input);
+                                throw eee;
+                        }
+                        cnt5++;
+                    } while (true);
+
+                    this_BL_4=(Token)match(input,RULE_BL,FOLLOW_2); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      				newLeafNode(this_BL_4, grammarAccess.getHorizontalExpressionAccess().getBLTerminalRuleCall_0_4());
+                      			
+                    }
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalHammilDSL.g:335:3: (otherlv_5= '*' otherlv_6= '*' (otherlv_7= '*' )+ this_BL_8= RULE_BL )
+                    {
+                    // InternalHammilDSL.g:335:3: (otherlv_5= '*' otherlv_6= '*' (otherlv_7= '*' )+ this_BL_8= RULE_BL )
+                    // InternalHammilDSL.g:336:4: otherlv_5= '*' otherlv_6= '*' (otherlv_7= '*' )+ this_BL_8= RULE_BL
+                    {
+                    otherlv_5=(Token)match(input,10,FOLLOW_6); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      				newLeafNode(otherlv_5, grammarAccess.getHorizontalExpressionAccess().getAsteriskKeyword_1_0());
+                      			
+                    }
+                    otherlv_6=(Token)match(input,10,FOLLOW_6); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      				newLeafNode(otherlv_6, grammarAccess.getHorizontalExpressionAccess().getAsteriskKeyword_1_1());
+                      			
+                    }
+                    // InternalHammilDSL.g:344:4: (otherlv_7= '*' )+
+                    int cnt6=0;
+                    loop6:
+                    do {
+                        int alt6=2;
+                        int LA6_0 = input.LA(1);
+
+                        if ( (LA6_0==10) ) {
+                            alt6=1;
+                        }
+
+
+                        switch (alt6) {
+                    	case 1 :
+                    	    // InternalHammilDSL.g:345:5: otherlv_7= '*'
+                    	    {
+                    	    otherlv_7=(Token)match(input,10,FOLLOW_7); if (state.failed) return current;
+                    	    if ( state.backtracking==0 ) {
+
+                    	      					newLeafNode(otherlv_7, grammarAccess.getHorizontalExpressionAccess().getAsteriskKeyword_1_2());
+                    	      				
+                    	    }
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    if ( cnt6 >= 1 ) break loop6;
+                    	    if (state.backtracking>0) {state.failed=true; return current;}
+                                EarlyExitException eee =
+                                    new EarlyExitException(6, input);
+                                throw eee;
+                        }
+                        cnt6++;
+                    } while (true);
+
+                    this_BL_8=(Token)match(input,RULE_BL,FOLLOW_2); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      				newLeafNode(this_BL_8, grammarAccess.getHorizontalExpressionAccess().getBLTerminalRuleCall_1_3());
+                      			
+                    }
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // InternalHammilDSL.g:356:3: (otherlv_9= '_' otherlv_10= '_' (otherlv_11= '_' )+ this_BL_12= RULE_BL )
+                    {
+                    // InternalHammilDSL.g:356:3: (otherlv_9= '_' otherlv_10= '_' (otherlv_11= '_' )+ this_BL_12= RULE_BL )
+                    // InternalHammilDSL.g:357:4: otherlv_9= '_' otherlv_10= '_' (otherlv_11= '_' )+ this_BL_12= RULE_BL
+                    {
+                    otherlv_9=(Token)match(input,11,FOLLOW_8); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      				newLeafNode(otherlv_9, grammarAccess.getHorizontalExpressionAccess().get_Keyword_2_0());
+                      			
+                    }
+                    otherlv_10=(Token)match(input,11,FOLLOW_8); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      				newLeafNode(otherlv_10, grammarAccess.getHorizontalExpressionAccess().get_Keyword_2_1());
+                      			
+                    }
+                    // InternalHammilDSL.g:365:4: (otherlv_11= '_' )+
+                    int cnt7=0;
+                    loop7:
+                    do {
+                        int alt7=2;
+                        int LA7_0 = input.LA(1);
+
+                        if ( (LA7_0==11) ) {
+                            alt7=1;
+                        }
+
+
+                        switch (alt7) {
+                    	case 1 :
+                    	    // InternalHammilDSL.g:366:5: otherlv_11= '_'
+                    	    {
+                    	    otherlv_11=(Token)match(input,11,FOLLOW_9); if (state.failed) return current;
+                    	    if ( state.backtracking==0 ) {
+
+                    	      					newLeafNode(otherlv_11, grammarAccess.getHorizontalExpressionAccess().get_Keyword_2_2());
+                    	      				
+                    	    }
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    if ( cnt7 >= 1 ) break loop7;
+                    	    if (state.backtracking>0) {state.failed=true; return current;}
+                                EarlyExitException eee =
+                                    new EarlyExitException(7, input);
+                                throw eee;
+                        }
+                        cnt7++;
+                    } while (true);
+
+                    this_BL_12=(Token)match(input,RULE_BL,FOLLOW_2); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      				newLeafNode(this_BL_12, grammarAccess.getHorizontalExpressionAccess().getBLTerminalRuleCall_2_3());
+                      			
+                    }
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+            if ( state.backtracking==0 ) {
+
+              	leaveRule();
+
+            }
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleHorizontalExpression"
+
+
     // $ANTLR start "entryRuleQuoteExpression"
-    // InternalHammilDSL.g:283:1: entryRuleQuoteExpression returns [EObject current=null] : iv_ruleQuoteExpression= ruleQuoteExpression EOF ;
+    // InternalHammilDSL.g:380:1: entryRuleQuoteExpression returns [EObject current=null] : iv_ruleQuoteExpression= ruleQuoteExpression EOF ;
     public final EObject entryRuleQuoteExpression() throws RecognitionException {
         EObject current = null;
 
@@ -833,8 +1200,8 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalHammilDSL.g:283:56: (iv_ruleQuoteExpression= ruleQuoteExpression EOF )
-            // InternalHammilDSL.g:284:2: iv_ruleQuoteExpression= ruleQuoteExpression EOF
+            // InternalHammilDSL.g:380:56: (iv_ruleQuoteExpression= ruleQuoteExpression EOF )
+            // InternalHammilDSL.g:381:2: iv_ruleQuoteExpression= ruleQuoteExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getQuoteExpressionRule()); 
@@ -865,7 +1232,7 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleQuoteExpression"
-    // InternalHammilDSL.g:290:1: ruleQuoteExpression returns [EObject current=null] : (otherlv_0= '>' ( (lv_textexpression_1_0= ruleTextExpression ) ) this_BL_2= RULE_BL ) ;
+    // InternalHammilDSL.g:387:1: ruleQuoteExpression returns [EObject current=null] : (otherlv_0= '>' ( (lv_textexpression_1_0= ruleTextExpression ) ) this_BL_2= RULE_BL ) ;
     public final EObject ruleQuoteExpression() throws RecognitionException {
         EObject current = null;
 
@@ -878,30 +1245,30 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalHammilDSL.g:296:2: ( (otherlv_0= '>' ( (lv_textexpression_1_0= ruleTextExpression ) ) this_BL_2= RULE_BL ) )
-            // InternalHammilDSL.g:297:2: (otherlv_0= '>' ( (lv_textexpression_1_0= ruleTextExpression ) ) this_BL_2= RULE_BL )
+            // InternalHammilDSL.g:393:2: ( (otherlv_0= '>' ( (lv_textexpression_1_0= ruleTextExpression ) ) this_BL_2= RULE_BL ) )
+            // InternalHammilDSL.g:394:2: (otherlv_0= '>' ( (lv_textexpression_1_0= ruleTextExpression ) ) this_BL_2= RULE_BL )
             {
-            // InternalHammilDSL.g:297:2: (otherlv_0= '>' ( (lv_textexpression_1_0= ruleTextExpression ) ) this_BL_2= RULE_BL )
-            // InternalHammilDSL.g:298:3: otherlv_0= '>' ( (lv_textexpression_1_0= ruleTextExpression ) ) this_BL_2= RULE_BL
+            // InternalHammilDSL.g:394:2: (otherlv_0= '>' ( (lv_textexpression_1_0= ruleTextExpression ) ) this_BL_2= RULE_BL )
+            // InternalHammilDSL.g:395:3: otherlv_0= '>' ( (lv_textexpression_1_0= ruleTextExpression ) ) this_BL_2= RULE_BL
             {
-            otherlv_0=(Token)match(input,9,FOLLOW_4); if (state.failed) return current;
+            otherlv_0=(Token)match(input,12,FOLLOW_10); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_0, grammarAccess.getQuoteExpressionAccess().getGreaterThanSignKeyword_0());
               		
             }
-            // InternalHammilDSL.g:302:3: ( (lv_textexpression_1_0= ruleTextExpression ) )
-            // InternalHammilDSL.g:303:4: (lv_textexpression_1_0= ruleTextExpression )
+            // InternalHammilDSL.g:399:3: ( (lv_textexpression_1_0= ruleTextExpression ) )
+            // InternalHammilDSL.g:400:4: (lv_textexpression_1_0= ruleTextExpression )
             {
-            // InternalHammilDSL.g:303:4: (lv_textexpression_1_0= ruleTextExpression )
-            // InternalHammilDSL.g:304:5: lv_textexpression_1_0= ruleTextExpression
+            // InternalHammilDSL.g:400:4: (lv_textexpression_1_0= ruleTextExpression )
+            // InternalHammilDSL.g:401:5: lv_textexpression_1_0= ruleTextExpression
             {
             if ( state.backtracking==0 ) {
 
               					newCompositeNode(grammarAccess.getQuoteExpressionAccess().getTextexpressionTextExpressionParserRuleCall_1_0());
               				
             }
-            pushFollow(FOLLOW_5);
+            pushFollow(FOLLOW_11);
             lv_textexpression_1_0=ruleTextExpression();
 
             state._fsp--;
@@ -956,7 +1323,7 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCodeExpression"
-    // InternalHammilDSL.g:329:1: entryRuleCodeExpression returns [EObject current=null] : iv_ruleCodeExpression= ruleCodeExpression EOF ;
+    // InternalHammilDSL.g:426:1: entryRuleCodeExpression returns [EObject current=null] : iv_ruleCodeExpression= ruleCodeExpression EOF ;
     public final EObject entryRuleCodeExpression() throws RecognitionException {
         EObject current = null;
 
@@ -964,8 +1331,8 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalHammilDSL.g:329:55: (iv_ruleCodeExpression= ruleCodeExpression EOF )
-            // InternalHammilDSL.g:330:2: iv_ruleCodeExpression= ruleCodeExpression EOF
+            // InternalHammilDSL.g:426:55: (iv_ruleCodeExpression= ruleCodeExpression EOF )
+            // InternalHammilDSL.g:427:2: iv_ruleCodeExpression= ruleCodeExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getCodeExpressionRule()); 
@@ -996,7 +1363,7 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCodeExpression"
-    // InternalHammilDSL.g:336:1: ruleCodeExpression returns [EObject current=null] : ( (otherlv_0= '`' ( (lv_text_1_0= ruleString0 ) ) otherlv_2= '`' ) | (otherlv_3= '```' this_BL_4= RULE_BL ( (lv_text_5_0= ruleString0 ) ) otherlv_6= '```' (this_BL_7= RULE_BL )? ) ) ;
+    // InternalHammilDSL.g:433:1: ruleCodeExpression returns [EObject current=null] : ( (otherlv_0= '`' ( (lv_text_1_0= ruleString0 ) ) otherlv_2= '`' ) | (otherlv_3= '```' this_BL_4= RULE_BL ( (lv_text_5_0= ruleString0 ) ) otherlv_6= '```' (this_BL_7= RULE_BL )? ) ) ;
     public final EObject ruleCodeExpression() throws RecognitionException {
         EObject current = null;
 
@@ -1015,51 +1382,51 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalHammilDSL.g:342:2: ( ( (otherlv_0= '`' ( (lv_text_1_0= ruleString0 ) ) otherlv_2= '`' ) | (otherlv_3= '```' this_BL_4= RULE_BL ( (lv_text_5_0= ruleString0 ) ) otherlv_6= '```' (this_BL_7= RULE_BL )? ) ) )
-            // InternalHammilDSL.g:343:2: ( (otherlv_0= '`' ( (lv_text_1_0= ruleString0 ) ) otherlv_2= '`' ) | (otherlv_3= '```' this_BL_4= RULE_BL ( (lv_text_5_0= ruleString0 ) ) otherlv_6= '```' (this_BL_7= RULE_BL )? ) )
+            // InternalHammilDSL.g:439:2: ( ( (otherlv_0= '`' ( (lv_text_1_0= ruleString0 ) ) otherlv_2= '`' ) | (otherlv_3= '```' this_BL_4= RULE_BL ( (lv_text_5_0= ruleString0 ) ) otherlv_6= '```' (this_BL_7= RULE_BL )? ) ) )
+            // InternalHammilDSL.g:440:2: ( (otherlv_0= '`' ( (lv_text_1_0= ruleString0 ) ) otherlv_2= '`' ) | (otherlv_3= '```' this_BL_4= RULE_BL ( (lv_text_5_0= ruleString0 ) ) otherlv_6= '```' (this_BL_7= RULE_BL )? ) )
             {
-            // InternalHammilDSL.g:343:2: ( (otherlv_0= '`' ( (lv_text_1_0= ruleString0 ) ) otherlv_2= '`' ) | (otherlv_3= '```' this_BL_4= RULE_BL ( (lv_text_5_0= ruleString0 ) ) otherlv_6= '```' (this_BL_7= RULE_BL )? ) )
-            int alt6=2;
-            int LA6_0 = input.LA(1);
+            // InternalHammilDSL.g:440:2: ( (otherlv_0= '`' ( (lv_text_1_0= ruleString0 ) ) otherlv_2= '`' ) | (otherlv_3= '```' this_BL_4= RULE_BL ( (lv_text_5_0= ruleString0 ) ) otherlv_6= '```' (this_BL_7= RULE_BL )? ) )
+            int alt10=2;
+            int LA10_0 = input.LA(1);
 
-            if ( (LA6_0==10) ) {
-                alt6=1;
+            if ( (LA10_0==13) ) {
+                alt10=1;
             }
-            else if ( (LA6_0==11) ) {
-                alt6=2;
+            else if ( (LA10_0==14) ) {
+                alt10=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 6, 0, input);
+                    new NoViableAltException("", 10, 0, input);
 
                 throw nvae;
             }
-            switch (alt6) {
+            switch (alt10) {
                 case 1 :
-                    // InternalHammilDSL.g:344:3: (otherlv_0= '`' ( (lv_text_1_0= ruleString0 ) ) otherlv_2= '`' )
+                    // InternalHammilDSL.g:441:3: (otherlv_0= '`' ( (lv_text_1_0= ruleString0 ) ) otherlv_2= '`' )
                     {
-                    // InternalHammilDSL.g:344:3: (otherlv_0= '`' ( (lv_text_1_0= ruleString0 ) ) otherlv_2= '`' )
-                    // InternalHammilDSL.g:345:4: otherlv_0= '`' ( (lv_text_1_0= ruleString0 ) ) otherlv_2= '`'
+                    // InternalHammilDSL.g:441:3: (otherlv_0= '`' ( (lv_text_1_0= ruleString0 ) ) otherlv_2= '`' )
+                    // InternalHammilDSL.g:442:4: otherlv_0= '`' ( (lv_text_1_0= ruleString0 ) ) otherlv_2= '`'
                     {
-                    otherlv_0=(Token)match(input,10,FOLLOW_6); if (state.failed) return current;
+                    otherlv_0=(Token)match(input,13,FOLLOW_12); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(otherlv_0, grammarAccess.getCodeExpressionAccess().getGraveAccentKeyword_0_0());
                       			
                     }
-                    // InternalHammilDSL.g:349:4: ( (lv_text_1_0= ruleString0 ) )
-                    // InternalHammilDSL.g:350:5: (lv_text_1_0= ruleString0 )
+                    // InternalHammilDSL.g:446:4: ( (lv_text_1_0= ruleString0 ) )
+                    // InternalHammilDSL.g:447:5: (lv_text_1_0= ruleString0 )
                     {
-                    // InternalHammilDSL.g:350:5: (lv_text_1_0= ruleString0 )
-                    // InternalHammilDSL.g:351:6: lv_text_1_0= ruleString0
+                    // InternalHammilDSL.g:447:5: (lv_text_1_0= ruleString0 )
+                    // InternalHammilDSL.g:448:6: lv_text_1_0= ruleString0
                     {
                     if ( state.backtracking==0 ) {
 
                       						newCompositeNode(grammarAccess.getCodeExpressionAccess().getTextString0ParserRuleCall_0_1_0());
                       					
                     }
-                    pushFollow(FOLLOW_7);
+                    pushFollow(FOLLOW_13);
                     lv_text_1_0=ruleString0();
 
                     state._fsp--;
@@ -1083,7 +1450,7 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_2=(Token)match(input,10,FOLLOW_2); if (state.failed) return current;
+                    otherlv_2=(Token)match(input,13,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(otherlv_2, grammarAccess.getCodeExpressionAccess().getGraveAccentKeyword_0_2());
@@ -1096,35 +1463,35 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalHammilDSL.g:374:3: (otherlv_3= '```' this_BL_4= RULE_BL ( (lv_text_5_0= ruleString0 ) ) otherlv_6= '```' (this_BL_7= RULE_BL )? )
+                    // InternalHammilDSL.g:471:3: (otherlv_3= '```' this_BL_4= RULE_BL ( (lv_text_5_0= ruleString0 ) ) otherlv_6= '```' (this_BL_7= RULE_BL )? )
                     {
-                    // InternalHammilDSL.g:374:3: (otherlv_3= '```' this_BL_4= RULE_BL ( (lv_text_5_0= ruleString0 ) ) otherlv_6= '```' (this_BL_7= RULE_BL )? )
-                    // InternalHammilDSL.g:375:4: otherlv_3= '```' this_BL_4= RULE_BL ( (lv_text_5_0= ruleString0 ) ) otherlv_6= '```' (this_BL_7= RULE_BL )?
+                    // InternalHammilDSL.g:471:3: (otherlv_3= '```' this_BL_4= RULE_BL ( (lv_text_5_0= ruleString0 ) ) otherlv_6= '```' (this_BL_7= RULE_BL )? )
+                    // InternalHammilDSL.g:472:4: otherlv_3= '```' this_BL_4= RULE_BL ( (lv_text_5_0= ruleString0 ) ) otherlv_6= '```' (this_BL_7= RULE_BL )?
                     {
-                    otherlv_3=(Token)match(input,11,FOLLOW_5); if (state.failed) return current;
+                    otherlv_3=(Token)match(input,14,FOLLOW_11); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(otherlv_3, grammarAccess.getCodeExpressionAccess().getGraveAccentGraveAccentGraveAccentKeyword_1_0());
                       			
                     }
-                    this_BL_4=(Token)match(input,RULE_BL,FOLLOW_6); if (state.failed) return current;
+                    this_BL_4=(Token)match(input,RULE_BL,FOLLOW_12); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(this_BL_4, grammarAccess.getCodeExpressionAccess().getBLTerminalRuleCall_1_1());
                       			
                     }
-                    // InternalHammilDSL.g:383:4: ( (lv_text_5_0= ruleString0 ) )
-                    // InternalHammilDSL.g:384:5: (lv_text_5_0= ruleString0 )
+                    // InternalHammilDSL.g:480:4: ( (lv_text_5_0= ruleString0 ) )
+                    // InternalHammilDSL.g:481:5: (lv_text_5_0= ruleString0 )
                     {
-                    // InternalHammilDSL.g:384:5: (lv_text_5_0= ruleString0 )
-                    // InternalHammilDSL.g:385:6: lv_text_5_0= ruleString0
+                    // InternalHammilDSL.g:481:5: (lv_text_5_0= ruleString0 )
+                    // InternalHammilDSL.g:482:6: lv_text_5_0= ruleString0
                     {
                     if ( state.backtracking==0 ) {
 
                       						newCompositeNode(grammarAccess.getCodeExpressionAccess().getTextString0ParserRuleCall_1_2_0());
                       					
                     }
-                    pushFollow(FOLLOW_8);
+                    pushFollow(FOLLOW_14);
                     lv_text_5_0=ruleString0();
 
                     state._fsp--;
@@ -1148,22 +1515,22 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_6=(Token)match(input,11,FOLLOW_9); if (state.failed) return current;
+                    otherlv_6=(Token)match(input,14,FOLLOW_15); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(otherlv_6, grammarAccess.getCodeExpressionAccess().getGraveAccentGraveAccentGraveAccentKeyword_1_3());
                       			
                     }
-                    // InternalHammilDSL.g:406:4: (this_BL_7= RULE_BL )?
-                    int alt5=2;
-                    int LA5_0 = input.LA(1);
+                    // InternalHammilDSL.g:503:4: (this_BL_7= RULE_BL )?
+                    int alt9=2;
+                    int LA9_0 = input.LA(1);
 
-                    if ( (LA5_0==RULE_BL) ) {
-                        alt5=1;
+                    if ( (LA9_0==RULE_BL) ) {
+                        alt9=1;
                     }
-                    switch (alt5) {
+                    switch (alt9) {
                         case 1 :
-                            // InternalHammilDSL.g:407:5: this_BL_7= RULE_BL
+                            // InternalHammilDSL.g:504:5: this_BL_7= RULE_BL
                             {
                             this_BL_7=(Token)match(input,RULE_BL,FOLLOW_2); if (state.failed) return current;
                             if ( state.backtracking==0 ) {
@@ -1208,7 +1575,7 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleHeaderDepth1Expression"
-    // InternalHammilDSL.g:417:1: entryRuleHeaderDepth1Expression returns [EObject current=null] : iv_ruleHeaderDepth1Expression= ruleHeaderDepth1Expression EOF ;
+    // InternalHammilDSL.g:514:1: entryRuleHeaderDepth1Expression returns [EObject current=null] : iv_ruleHeaderDepth1Expression= ruleHeaderDepth1Expression EOF ;
     public final EObject entryRuleHeaderDepth1Expression() throws RecognitionException {
         EObject current = null;
 
@@ -1216,8 +1583,8 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalHammilDSL.g:417:63: (iv_ruleHeaderDepth1Expression= ruleHeaderDepth1Expression EOF )
-            // InternalHammilDSL.g:418:2: iv_ruleHeaderDepth1Expression= ruleHeaderDepth1Expression EOF
+            // InternalHammilDSL.g:514:63: (iv_ruleHeaderDepth1Expression= ruleHeaderDepth1Expression EOF )
+            // InternalHammilDSL.g:515:2: iv_ruleHeaderDepth1Expression= ruleHeaderDepth1Expression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getHeaderDepth1ExpressionRule()); 
@@ -1248,7 +1615,7 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleHeaderDepth1Expression"
-    // InternalHammilDSL.g:424:1: ruleHeaderDepth1Expression returns [EObject current=null] : ( ( ( ( '#' )=>otherlv_0= '#' ) (this_S_1= RULE_S )+ ( (lv_title_2_0= ruleEmphasisExpression ) ) (otherlv_3= '#' )* (this_S_4= RULE_S )* (this_BL_5= RULE_BL )? ) | ( ( (lv_title_6_0= ruleEmphasisExpression ) ) this_BL_7= RULE_BL (otherlv_8= '=' )+ (this_BL_9= RULE_BL )? ) ) ;
+    // InternalHammilDSL.g:521:1: ruleHeaderDepth1Expression returns [EObject current=null] : ( ( ( ( '#' )=>otherlv_0= '#' ) (this_S_1= RULE_S )+ ( (lv_title_2_0= ruleEmphasisExpression ) ) (otherlv_3= '#' )* (this_S_4= RULE_S )* (this_BL_5= RULE_BL )? ) | ( ( (lv_title_6_0= ruleEmphasisExpression ) ) this_BL_7= RULE_BL (otherlv_8= '=' )+ (this_BL_9= RULE_BL )? ) ) ;
     public final EObject ruleHeaderDepth1Expression() throws RecognitionException {
         EObject current = null;
 
@@ -1269,37 +1636,37 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalHammilDSL.g:430:2: ( ( ( ( ( '#' )=>otherlv_0= '#' ) (this_S_1= RULE_S )+ ( (lv_title_2_0= ruleEmphasisExpression ) ) (otherlv_3= '#' )* (this_S_4= RULE_S )* (this_BL_5= RULE_BL )? ) | ( ( (lv_title_6_0= ruleEmphasisExpression ) ) this_BL_7= RULE_BL (otherlv_8= '=' )+ (this_BL_9= RULE_BL )? ) ) )
-            // InternalHammilDSL.g:431:2: ( ( ( ( '#' )=>otherlv_0= '#' ) (this_S_1= RULE_S )+ ( (lv_title_2_0= ruleEmphasisExpression ) ) (otherlv_3= '#' )* (this_S_4= RULE_S )* (this_BL_5= RULE_BL )? ) | ( ( (lv_title_6_0= ruleEmphasisExpression ) ) this_BL_7= RULE_BL (otherlv_8= '=' )+ (this_BL_9= RULE_BL )? ) )
+            // InternalHammilDSL.g:527:2: ( ( ( ( ( '#' )=>otherlv_0= '#' ) (this_S_1= RULE_S )+ ( (lv_title_2_0= ruleEmphasisExpression ) ) (otherlv_3= '#' )* (this_S_4= RULE_S )* (this_BL_5= RULE_BL )? ) | ( ( (lv_title_6_0= ruleEmphasisExpression ) ) this_BL_7= RULE_BL (otherlv_8= '=' )+ (this_BL_9= RULE_BL )? ) ) )
+            // InternalHammilDSL.g:528:2: ( ( ( ( '#' )=>otherlv_0= '#' ) (this_S_1= RULE_S )+ ( (lv_title_2_0= ruleEmphasisExpression ) ) (otherlv_3= '#' )* (this_S_4= RULE_S )* (this_BL_5= RULE_BL )? ) | ( ( (lv_title_6_0= ruleEmphasisExpression ) ) this_BL_7= RULE_BL (otherlv_8= '=' )+ (this_BL_9= RULE_BL )? ) )
             {
-            // InternalHammilDSL.g:431:2: ( ( ( ( '#' )=>otherlv_0= '#' ) (this_S_1= RULE_S )+ ( (lv_title_2_0= ruleEmphasisExpression ) ) (otherlv_3= '#' )* (this_S_4= RULE_S )* (this_BL_5= RULE_BL )? ) | ( ( (lv_title_6_0= ruleEmphasisExpression ) ) this_BL_7= RULE_BL (otherlv_8= '=' )+ (this_BL_9= RULE_BL )? ) )
-            int alt13=2;
-            int LA13_0 = input.LA(1);
+            // InternalHammilDSL.g:528:2: ( ( ( ( '#' )=>otherlv_0= '#' ) (this_S_1= RULE_S )+ ( (lv_title_2_0= ruleEmphasisExpression ) ) (otherlv_3= '#' )* (this_S_4= RULE_S )* (this_BL_5= RULE_BL )? ) | ( ( (lv_title_6_0= ruleEmphasisExpression ) ) this_BL_7= RULE_BL (otherlv_8= '=' )+ (this_BL_9= RULE_BL )? ) )
+            int alt17=2;
+            int LA17_0 = input.LA(1);
 
-            if ( (LA13_0==12) && (synpred2_InternalHammilDSL())) {
-                alt13=1;
+            if ( (LA17_0==15) && (synpred2_InternalHammilDSL())) {
+                alt17=1;
             }
-            else if ( (LA13_0==RULE_STRING) ) {
-                alt13=2;
+            else if ( (LA17_0==RULE_STRING) ) {
+                alt17=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 13, 0, input);
+                    new NoViableAltException("", 17, 0, input);
 
                 throw nvae;
             }
-            switch (alt13) {
+            switch (alt17) {
                 case 1 :
-                    // InternalHammilDSL.g:432:3: ( ( ( '#' )=>otherlv_0= '#' ) (this_S_1= RULE_S )+ ( (lv_title_2_0= ruleEmphasisExpression ) ) (otherlv_3= '#' )* (this_S_4= RULE_S )* (this_BL_5= RULE_BL )? )
+                    // InternalHammilDSL.g:529:3: ( ( ( '#' )=>otherlv_0= '#' ) (this_S_1= RULE_S )+ ( (lv_title_2_0= ruleEmphasisExpression ) ) (otherlv_3= '#' )* (this_S_4= RULE_S )* (this_BL_5= RULE_BL )? )
                     {
-                    // InternalHammilDSL.g:432:3: ( ( ( '#' )=>otherlv_0= '#' ) (this_S_1= RULE_S )+ ( (lv_title_2_0= ruleEmphasisExpression ) ) (otherlv_3= '#' )* (this_S_4= RULE_S )* (this_BL_5= RULE_BL )? )
-                    // InternalHammilDSL.g:433:4: ( ( '#' )=>otherlv_0= '#' ) (this_S_1= RULE_S )+ ( (lv_title_2_0= ruleEmphasisExpression ) ) (otherlv_3= '#' )* (this_S_4= RULE_S )* (this_BL_5= RULE_BL )?
+                    // InternalHammilDSL.g:529:3: ( ( ( '#' )=>otherlv_0= '#' ) (this_S_1= RULE_S )+ ( (lv_title_2_0= ruleEmphasisExpression ) ) (otherlv_3= '#' )* (this_S_4= RULE_S )* (this_BL_5= RULE_BL )? )
+                    // InternalHammilDSL.g:530:4: ( ( '#' )=>otherlv_0= '#' ) (this_S_1= RULE_S )+ ( (lv_title_2_0= ruleEmphasisExpression ) ) (otherlv_3= '#' )* (this_S_4= RULE_S )* (this_BL_5= RULE_BL )?
                     {
-                    // InternalHammilDSL.g:433:4: ( ( '#' )=>otherlv_0= '#' )
-                    // InternalHammilDSL.g:434:5: ( '#' )=>otherlv_0= '#'
+                    // InternalHammilDSL.g:530:4: ( ( '#' )=>otherlv_0= '#' )
+                    // InternalHammilDSL.g:531:5: ( '#' )=>otherlv_0= '#'
                     {
-                    otherlv_0=(Token)match(input,12,FOLLOW_10); if (state.failed) return current;
+                    otherlv_0=(Token)match(input,15,FOLLOW_16); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       					newLeafNode(otherlv_0, grammarAccess.getHeaderDepth1ExpressionAccess().getNumberSignKeyword_0_0());
@@ -1308,23 +1675,23 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalHammilDSL.g:440:4: (this_S_1= RULE_S )+
-                    int cnt7=0;
-                    loop7:
+                    // InternalHammilDSL.g:537:4: (this_S_1= RULE_S )+
+                    int cnt11=0;
+                    loop11:
                     do {
-                        int alt7=2;
-                        int LA7_0 = input.LA(1);
+                        int alt11=2;
+                        int LA11_0 = input.LA(1);
 
-                        if ( (LA7_0==RULE_S) ) {
-                            alt7=1;
+                        if ( (LA11_0==RULE_S) ) {
+                            alt11=1;
                         }
 
 
-                        switch (alt7) {
+                        switch (alt11) {
                     	case 1 :
-                    	    // InternalHammilDSL.g:441:5: this_S_1= RULE_S
+                    	    // InternalHammilDSL.g:538:5: this_S_1= RULE_S
                     	    {
-                    	    this_S_1=(Token)match(input,RULE_S,FOLLOW_11); if (state.failed) return current;
+                    	    this_S_1=(Token)match(input,RULE_S,FOLLOW_17); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
                     	      					newLeafNode(this_S_1, grammarAccess.getHeaderDepth1ExpressionAccess().getSTerminalRuleCall_0_1());
@@ -1335,27 +1702,27 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    if ( cnt7 >= 1 ) break loop7;
+                    	    if ( cnt11 >= 1 ) break loop11;
                     	    if (state.backtracking>0) {state.failed=true; return current;}
                                 EarlyExitException eee =
-                                    new EarlyExitException(7, input);
+                                    new EarlyExitException(11, input);
                                 throw eee;
                         }
-                        cnt7++;
+                        cnt11++;
                     } while (true);
 
-                    // InternalHammilDSL.g:446:4: ( (lv_title_2_0= ruleEmphasisExpression ) )
-                    // InternalHammilDSL.g:447:5: (lv_title_2_0= ruleEmphasisExpression )
+                    // InternalHammilDSL.g:543:4: ( (lv_title_2_0= ruleEmphasisExpression ) )
+                    // InternalHammilDSL.g:544:5: (lv_title_2_0= ruleEmphasisExpression )
                     {
-                    // InternalHammilDSL.g:447:5: (lv_title_2_0= ruleEmphasisExpression )
-                    // InternalHammilDSL.g:448:6: lv_title_2_0= ruleEmphasisExpression
+                    // InternalHammilDSL.g:544:5: (lv_title_2_0= ruleEmphasisExpression )
+                    // InternalHammilDSL.g:545:6: lv_title_2_0= ruleEmphasisExpression
                     {
                     if ( state.backtracking==0 ) {
 
                       						newCompositeNode(grammarAccess.getHeaderDepth1ExpressionAccess().getTitleEmphasisExpressionParserRuleCall_0_2_0());
                       					
                     }
-                    pushFollow(FOLLOW_12);
+                    pushFollow(FOLLOW_18);
                     lv_title_2_0=ruleEmphasisExpression();
 
                     state._fsp--;
@@ -1379,16 +1746,16 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalHammilDSL.g:465:4: (otherlv_3= '#' )*
-                    loop8:
+                    // InternalHammilDSL.g:562:4: (otherlv_3= '#' )*
+                    loop12:
                     do {
-                        int alt8=2;
-                        alt8 = dfa8.predict(input);
-                        switch (alt8) {
+                        int alt12=2;
+                        alt12 = dfa12.predict(input);
+                        switch (alt12) {
                     	case 1 :
-                    	    // InternalHammilDSL.g:466:5: otherlv_3= '#'
+                    	    // InternalHammilDSL.g:563:5: otherlv_3= '#'
                     	    {
-                    	    otherlv_3=(Token)match(input,12,FOLLOW_12); if (state.failed) return current;
+                    	    otherlv_3=(Token)match(input,15,FOLLOW_18); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
                     	      					newLeafNode(otherlv_3, grammarAccess.getHeaderDepth1ExpressionAccess().getNumberSignKeyword_0_3());
@@ -1399,26 +1766,26 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop8;
+                    	    break loop12;
                         }
                     } while (true);
 
-                    // InternalHammilDSL.g:471:4: (this_S_4= RULE_S )*
-                    loop9:
+                    // InternalHammilDSL.g:568:4: (this_S_4= RULE_S )*
+                    loop13:
                     do {
-                        int alt9=2;
-                        int LA9_0 = input.LA(1);
+                        int alt13=2;
+                        int LA13_0 = input.LA(1);
 
-                        if ( (LA9_0==RULE_S) ) {
-                            alt9=1;
+                        if ( (LA13_0==RULE_S) ) {
+                            alt13=1;
                         }
 
 
-                        switch (alt9) {
+                        switch (alt13) {
                     	case 1 :
-                    	    // InternalHammilDSL.g:472:5: this_S_4= RULE_S
+                    	    // InternalHammilDSL.g:569:5: this_S_4= RULE_S
                     	    {
-                    	    this_S_4=(Token)match(input,RULE_S,FOLLOW_13); if (state.failed) return current;
+                    	    this_S_4=(Token)match(input,RULE_S,FOLLOW_19); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
                     	      					newLeafNode(this_S_4, grammarAccess.getHeaderDepth1ExpressionAccess().getSTerminalRuleCall_0_4());
@@ -1429,20 +1796,20 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop9;
+                    	    break loop13;
                         }
                     } while (true);
 
-                    // InternalHammilDSL.g:477:4: (this_BL_5= RULE_BL )?
-                    int alt10=2;
-                    int LA10_0 = input.LA(1);
+                    // InternalHammilDSL.g:574:4: (this_BL_5= RULE_BL )?
+                    int alt14=2;
+                    int LA14_0 = input.LA(1);
 
-                    if ( (LA10_0==RULE_BL) ) {
-                        alt10=1;
+                    if ( (LA14_0==RULE_BL) ) {
+                        alt14=1;
                     }
-                    switch (alt10) {
+                    switch (alt14) {
                         case 1 :
-                            // InternalHammilDSL.g:478:5: this_BL_5= RULE_BL
+                            // InternalHammilDSL.g:575:5: this_BL_5= RULE_BL
                             {
                             this_BL_5=(Token)match(input,RULE_BL,FOLLOW_2); if (state.failed) return current;
                             if ( state.backtracking==0 ) {
@@ -1463,23 +1830,23 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalHammilDSL.g:485:3: ( ( (lv_title_6_0= ruleEmphasisExpression ) ) this_BL_7= RULE_BL (otherlv_8= '=' )+ (this_BL_9= RULE_BL )? )
+                    // InternalHammilDSL.g:582:3: ( ( (lv_title_6_0= ruleEmphasisExpression ) ) this_BL_7= RULE_BL (otherlv_8= '=' )+ (this_BL_9= RULE_BL )? )
                     {
-                    // InternalHammilDSL.g:485:3: ( ( (lv_title_6_0= ruleEmphasisExpression ) ) this_BL_7= RULE_BL (otherlv_8= '=' )+ (this_BL_9= RULE_BL )? )
-                    // InternalHammilDSL.g:486:4: ( (lv_title_6_0= ruleEmphasisExpression ) ) this_BL_7= RULE_BL (otherlv_8= '=' )+ (this_BL_9= RULE_BL )?
+                    // InternalHammilDSL.g:582:3: ( ( (lv_title_6_0= ruleEmphasisExpression ) ) this_BL_7= RULE_BL (otherlv_8= '=' )+ (this_BL_9= RULE_BL )? )
+                    // InternalHammilDSL.g:583:4: ( (lv_title_6_0= ruleEmphasisExpression ) ) this_BL_7= RULE_BL (otherlv_8= '=' )+ (this_BL_9= RULE_BL )?
                     {
-                    // InternalHammilDSL.g:486:4: ( (lv_title_6_0= ruleEmphasisExpression ) )
-                    // InternalHammilDSL.g:487:5: (lv_title_6_0= ruleEmphasisExpression )
+                    // InternalHammilDSL.g:583:4: ( (lv_title_6_0= ruleEmphasisExpression ) )
+                    // InternalHammilDSL.g:584:5: (lv_title_6_0= ruleEmphasisExpression )
                     {
-                    // InternalHammilDSL.g:487:5: (lv_title_6_0= ruleEmphasisExpression )
-                    // InternalHammilDSL.g:488:6: lv_title_6_0= ruleEmphasisExpression
+                    // InternalHammilDSL.g:584:5: (lv_title_6_0= ruleEmphasisExpression )
+                    // InternalHammilDSL.g:585:6: lv_title_6_0= ruleEmphasisExpression
                     {
                     if ( state.backtracking==0 ) {
 
                       						newCompositeNode(grammarAccess.getHeaderDepth1ExpressionAccess().getTitleEmphasisExpressionParserRuleCall_1_0_0());
                       					
                     }
-                    pushFollow(FOLLOW_5);
+                    pushFollow(FOLLOW_11);
                     lv_title_6_0=ruleEmphasisExpression();
 
                     state._fsp--;
@@ -1503,29 +1870,29 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    this_BL_7=(Token)match(input,RULE_BL,FOLLOW_14); if (state.failed) return current;
+                    this_BL_7=(Token)match(input,RULE_BL,FOLLOW_20); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(this_BL_7, grammarAccess.getHeaderDepth1ExpressionAccess().getBLTerminalRuleCall_1_1());
                       			
                     }
-                    // InternalHammilDSL.g:509:4: (otherlv_8= '=' )+
-                    int cnt11=0;
-                    loop11:
+                    // InternalHammilDSL.g:606:4: (otherlv_8= '=' )+
+                    int cnt15=0;
+                    loop15:
                     do {
-                        int alt11=2;
-                        int LA11_0 = input.LA(1);
+                        int alt15=2;
+                        int LA15_0 = input.LA(1);
 
-                        if ( (LA11_0==13) ) {
-                            alt11=1;
+                        if ( (LA15_0==16) ) {
+                            alt15=1;
                         }
 
 
-                        switch (alt11) {
+                        switch (alt15) {
                     	case 1 :
-                    	    // InternalHammilDSL.g:510:5: otherlv_8= '='
+                    	    // InternalHammilDSL.g:607:5: otherlv_8= '='
                     	    {
-                    	    otherlv_8=(Token)match(input,13,FOLLOW_15); if (state.failed) return current;
+                    	    otherlv_8=(Token)match(input,16,FOLLOW_21); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
                     	      					newLeafNode(otherlv_8, grammarAccess.getHeaderDepth1ExpressionAccess().getEqualsSignKeyword_1_2());
@@ -1536,25 +1903,25 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    if ( cnt11 >= 1 ) break loop11;
+                    	    if ( cnt15 >= 1 ) break loop15;
                     	    if (state.backtracking>0) {state.failed=true; return current;}
                                 EarlyExitException eee =
-                                    new EarlyExitException(11, input);
+                                    new EarlyExitException(15, input);
                                 throw eee;
                         }
-                        cnt11++;
+                        cnt15++;
                     } while (true);
 
-                    // InternalHammilDSL.g:515:4: (this_BL_9= RULE_BL )?
-                    int alt12=2;
-                    int LA12_0 = input.LA(1);
+                    // InternalHammilDSL.g:612:4: (this_BL_9= RULE_BL )?
+                    int alt16=2;
+                    int LA16_0 = input.LA(1);
 
-                    if ( (LA12_0==RULE_BL) ) {
-                        alt12=1;
+                    if ( (LA16_0==RULE_BL) ) {
+                        alt16=1;
                     }
-                    switch (alt12) {
+                    switch (alt16) {
                         case 1 :
-                            // InternalHammilDSL.g:516:5: this_BL_9= RULE_BL
+                            // InternalHammilDSL.g:613:5: this_BL_9= RULE_BL
                             {
                             this_BL_9=(Token)match(input,RULE_BL,FOLLOW_2); if (state.failed) return current;
                             if ( state.backtracking==0 ) {
@@ -1599,7 +1966,7 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleHeaderDepth2Expression"
-    // InternalHammilDSL.g:526:1: entryRuleHeaderDepth2Expression returns [EObject current=null] : iv_ruleHeaderDepth2Expression= ruleHeaderDepth2Expression EOF ;
+    // InternalHammilDSL.g:623:1: entryRuleHeaderDepth2Expression returns [EObject current=null] : iv_ruleHeaderDepth2Expression= ruleHeaderDepth2Expression EOF ;
     public final EObject entryRuleHeaderDepth2Expression() throws RecognitionException {
         EObject current = null;
 
@@ -1607,8 +1974,8 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalHammilDSL.g:526:63: (iv_ruleHeaderDepth2Expression= ruleHeaderDepth2Expression EOF )
-            // InternalHammilDSL.g:527:2: iv_ruleHeaderDepth2Expression= ruleHeaderDepth2Expression EOF
+            // InternalHammilDSL.g:623:63: (iv_ruleHeaderDepth2Expression= ruleHeaderDepth2Expression EOF )
+            // InternalHammilDSL.g:624:2: iv_ruleHeaderDepth2Expression= ruleHeaderDepth2Expression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getHeaderDepth2ExpressionRule()); 
@@ -1639,7 +2006,7 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleHeaderDepth2Expression"
-    // InternalHammilDSL.g:533:1: ruleHeaderDepth2Expression returns [EObject current=null] : ( ( ( ( '##' )=>otherlv_0= '##' ) ( (lv_title_1_0= ruleEmphasisExpression ) ) (otherlv_2= '#' )* (this_BL_3= RULE_BL )? ) | ( ( (lv_title_4_0= ruleEmphasisExpression ) ) this_BL_5= RULE_BL (otherlv_6= '-' )+ (this_BL_7= RULE_BL )? ) ) ;
+    // InternalHammilDSL.g:630:1: ruleHeaderDepth2Expression returns [EObject current=null] : ( ( ( ( '##' )=>otherlv_0= '##' ) ( (lv_title_1_0= ruleEmphasisExpression ) ) (otherlv_2= '#' )* (this_BL_3= RULE_BL )? ) | ( ( (lv_title_4_0= ruleEmphasisExpression ) ) this_BL_5= RULE_BL (otherlv_6= '-' )+ (this_BL_7= RULE_BL )? ) ) ;
     public final EObject ruleHeaderDepth2Expression() throws RecognitionException {
         EObject current = null;
 
@@ -1658,37 +2025,37 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalHammilDSL.g:539:2: ( ( ( ( ( '##' )=>otherlv_0= '##' ) ( (lv_title_1_0= ruleEmphasisExpression ) ) (otherlv_2= '#' )* (this_BL_3= RULE_BL )? ) | ( ( (lv_title_4_0= ruleEmphasisExpression ) ) this_BL_5= RULE_BL (otherlv_6= '-' )+ (this_BL_7= RULE_BL )? ) ) )
-            // InternalHammilDSL.g:540:2: ( ( ( ( '##' )=>otherlv_0= '##' ) ( (lv_title_1_0= ruleEmphasisExpression ) ) (otherlv_2= '#' )* (this_BL_3= RULE_BL )? ) | ( ( (lv_title_4_0= ruleEmphasisExpression ) ) this_BL_5= RULE_BL (otherlv_6= '-' )+ (this_BL_7= RULE_BL )? ) )
+            // InternalHammilDSL.g:636:2: ( ( ( ( ( '##' )=>otherlv_0= '##' ) ( (lv_title_1_0= ruleEmphasisExpression ) ) (otherlv_2= '#' )* (this_BL_3= RULE_BL )? ) | ( ( (lv_title_4_0= ruleEmphasisExpression ) ) this_BL_5= RULE_BL (otherlv_6= '-' )+ (this_BL_7= RULE_BL )? ) ) )
+            // InternalHammilDSL.g:637:2: ( ( ( ( '##' )=>otherlv_0= '##' ) ( (lv_title_1_0= ruleEmphasisExpression ) ) (otherlv_2= '#' )* (this_BL_3= RULE_BL )? ) | ( ( (lv_title_4_0= ruleEmphasisExpression ) ) this_BL_5= RULE_BL (otherlv_6= '-' )+ (this_BL_7= RULE_BL )? ) )
             {
-            // InternalHammilDSL.g:540:2: ( ( ( ( '##' )=>otherlv_0= '##' ) ( (lv_title_1_0= ruleEmphasisExpression ) ) (otherlv_2= '#' )* (this_BL_3= RULE_BL )? ) | ( ( (lv_title_4_0= ruleEmphasisExpression ) ) this_BL_5= RULE_BL (otherlv_6= '-' )+ (this_BL_7= RULE_BL )? ) )
-            int alt18=2;
-            int LA18_0 = input.LA(1);
+            // InternalHammilDSL.g:637:2: ( ( ( ( '##' )=>otherlv_0= '##' ) ( (lv_title_1_0= ruleEmphasisExpression ) ) (otherlv_2= '#' )* (this_BL_3= RULE_BL )? ) | ( ( (lv_title_4_0= ruleEmphasisExpression ) ) this_BL_5= RULE_BL (otherlv_6= '-' )+ (this_BL_7= RULE_BL )? ) )
+            int alt22=2;
+            int LA22_0 = input.LA(1);
 
-            if ( (LA18_0==14) && (synpred3_InternalHammilDSL())) {
-                alt18=1;
+            if ( (LA22_0==17) && (synpred3_InternalHammilDSL())) {
+                alt22=1;
             }
-            else if ( (LA18_0==RULE_STRING) ) {
-                alt18=2;
+            else if ( (LA22_0==RULE_STRING) ) {
+                alt22=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 18, 0, input);
+                    new NoViableAltException("", 22, 0, input);
 
                 throw nvae;
             }
-            switch (alt18) {
+            switch (alt22) {
                 case 1 :
-                    // InternalHammilDSL.g:541:3: ( ( ( '##' )=>otherlv_0= '##' ) ( (lv_title_1_0= ruleEmphasisExpression ) ) (otherlv_2= '#' )* (this_BL_3= RULE_BL )? )
+                    // InternalHammilDSL.g:638:3: ( ( ( '##' )=>otherlv_0= '##' ) ( (lv_title_1_0= ruleEmphasisExpression ) ) (otherlv_2= '#' )* (this_BL_3= RULE_BL )? )
                     {
-                    // InternalHammilDSL.g:541:3: ( ( ( '##' )=>otherlv_0= '##' ) ( (lv_title_1_0= ruleEmphasisExpression ) ) (otherlv_2= '#' )* (this_BL_3= RULE_BL )? )
-                    // InternalHammilDSL.g:542:4: ( ( '##' )=>otherlv_0= '##' ) ( (lv_title_1_0= ruleEmphasisExpression ) ) (otherlv_2= '#' )* (this_BL_3= RULE_BL )?
+                    // InternalHammilDSL.g:638:3: ( ( ( '##' )=>otherlv_0= '##' ) ( (lv_title_1_0= ruleEmphasisExpression ) ) (otherlv_2= '#' )* (this_BL_3= RULE_BL )? )
+                    // InternalHammilDSL.g:639:4: ( ( '##' )=>otherlv_0= '##' ) ( (lv_title_1_0= ruleEmphasisExpression ) ) (otherlv_2= '#' )* (this_BL_3= RULE_BL )?
                     {
-                    // InternalHammilDSL.g:542:4: ( ( '##' )=>otherlv_0= '##' )
-                    // InternalHammilDSL.g:543:5: ( '##' )=>otherlv_0= '##'
+                    // InternalHammilDSL.g:639:4: ( ( '##' )=>otherlv_0= '##' )
+                    // InternalHammilDSL.g:640:5: ( '##' )=>otherlv_0= '##'
                     {
-                    otherlv_0=(Token)match(input,14,FOLLOW_6); if (state.failed) return current;
+                    otherlv_0=(Token)match(input,17,FOLLOW_12); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       					newLeafNode(otherlv_0, grammarAccess.getHeaderDepth2ExpressionAccess().getNumberSignNumberSignKeyword_0_0());
@@ -1697,18 +2064,18 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalHammilDSL.g:549:4: ( (lv_title_1_0= ruleEmphasisExpression ) )
-                    // InternalHammilDSL.g:550:5: (lv_title_1_0= ruleEmphasisExpression )
+                    // InternalHammilDSL.g:646:4: ( (lv_title_1_0= ruleEmphasisExpression ) )
+                    // InternalHammilDSL.g:647:5: (lv_title_1_0= ruleEmphasisExpression )
                     {
-                    // InternalHammilDSL.g:550:5: (lv_title_1_0= ruleEmphasisExpression )
-                    // InternalHammilDSL.g:551:6: lv_title_1_0= ruleEmphasisExpression
+                    // InternalHammilDSL.g:647:5: (lv_title_1_0= ruleEmphasisExpression )
+                    // InternalHammilDSL.g:648:6: lv_title_1_0= ruleEmphasisExpression
                     {
                     if ( state.backtracking==0 ) {
 
                       						newCompositeNode(grammarAccess.getHeaderDepth2ExpressionAccess().getTitleEmphasisExpressionParserRuleCall_0_1_0());
                       					
                     }
-                    pushFollow(FOLLOW_16);
+                    pushFollow(FOLLOW_22);
                     lv_title_1_0=ruleEmphasisExpression();
 
                     state._fsp--;
@@ -1732,28 +2099,28 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalHammilDSL.g:568:4: (otherlv_2= '#' )*
-                    loop14:
+                    // InternalHammilDSL.g:665:4: (otherlv_2= '#' )*
+                    loop18:
                     do {
-                        int alt14=2;
-                        int LA14_0 = input.LA(1);
+                        int alt18=2;
+                        int LA18_0 = input.LA(1);
 
-                        if ( (LA14_0==12) ) {
-                            int LA14_2 = input.LA(2);
+                        if ( (LA18_0==15) ) {
+                            int LA18_2 = input.LA(2);
 
-                            if ( (LA14_2==EOF||LA14_2==RULE_BL||LA14_2==RULE_STRING||(LA14_2>=9 && LA14_2<=12)||LA14_2==14||(LA14_2>=16 && LA14_2<=19)) ) {
-                                alt14=1;
+                            if ( (LA18_2==EOF||LA18_2==RULE_BL||LA18_2==RULE_STRING||(LA18_2>=9 && LA18_2<=15)||(LA18_2>=17 && LA18_2<=21)) ) {
+                                alt18=1;
                             }
 
 
                         }
 
 
-                        switch (alt14) {
+                        switch (alt18) {
                     	case 1 :
-                    	    // InternalHammilDSL.g:569:5: otherlv_2= '#'
+                    	    // InternalHammilDSL.g:666:5: otherlv_2= '#'
                     	    {
-                    	    otherlv_2=(Token)match(input,12,FOLLOW_16); if (state.failed) return current;
+                    	    otherlv_2=(Token)match(input,15,FOLLOW_22); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
                     	      					newLeafNode(otherlv_2, grammarAccess.getHeaderDepth2ExpressionAccess().getNumberSignKeyword_0_2());
@@ -1764,20 +2131,20 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop14;
+                    	    break loop18;
                         }
                     } while (true);
 
-                    // InternalHammilDSL.g:574:4: (this_BL_3= RULE_BL )?
-                    int alt15=2;
-                    int LA15_0 = input.LA(1);
+                    // InternalHammilDSL.g:671:4: (this_BL_3= RULE_BL )?
+                    int alt19=2;
+                    int LA19_0 = input.LA(1);
 
-                    if ( (LA15_0==RULE_BL) ) {
-                        alt15=1;
+                    if ( (LA19_0==RULE_BL) ) {
+                        alt19=1;
                     }
-                    switch (alt15) {
+                    switch (alt19) {
                         case 1 :
-                            // InternalHammilDSL.g:575:5: this_BL_3= RULE_BL
+                            // InternalHammilDSL.g:672:5: this_BL_3= RULE_BL
                             {
                             this_BL_3=(Token)match(input,RULE_BL,FOLLOW_2); if (state.failed) return current;
                             if ( state.backtracking==0 ) {
@@ -1798,23 +2165,23 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalHammilDSL.g:582:3: ( ( (lv_title_4_0= ruleEmphasisExpression ) ) this_BL_5= RULE_BL (otherlv_6= '-' )+ (this_BL_7= RULE_BL )? )
+                    // InternalHammilDSL.g:679:3: ( ( (lv_title_4_0= ruleEmphasisExpression ) ) this_BL_5= RULE_BL (otherlv_6= '-' )+ (this_BL_7= RULE_BL )? )
                     {
-                    // InternalHammilDSL.g:582:3: ( ( (lv_title_4_0= ruleEmphasisExpression ) ) this_BL_5= RULE_BL (otherlv_6= '-' )+ (this_BL_7= RULE_BL )? )
-                    // InternalHammilDSL.g:583:4: ( (lv_title_4_0= ruleEmphasisExpression ) ) this_BL_5= RULE_BL (otherlv_6= '-' )+ (this_BL_7= RULE_BL )?
+                    // InternalHammilDSL.g:679:3: ( ( (lv_title_4_0= ruleEmphasisExpression ) ) this_BL_5= RULE_BL (otherlv_6= '-' )+ (this_BL_7= RULE_BL )? )
+                    // InternalHammilDSL.g:680:4: ( (lv_title_4_0= ruleEmphasisExpression ) ) this_BL_5= RULE_BL (otherlv_6= '-' )+ (this_BL_7= RULE_BL )?
                     {
-                    // InternalHammilDSL.g:583:4: ( (lv_title_4_0= ruleEmphasisExpression ) )
-                    // InternalHammilDSL.g:584:5: (lv_title_4_0= ruleEmphasisExpression )
+                    // InternalHammilDSL.g:680:4: ( (lv_title_4_0= ruleEmphasisExpression ) )
+                    // InternalHammilDSL.g:681:5: (lv_title_4_0= ruleEmphasisExpression )
                     {
-                    // InternalHammilDSL.g:584:5: (lv_title_4_0= ruleEmphasisExpression )
-                    // InternalHammilDSL.g:585:6: lv_title_4_0= ruleEmphasisExpression
+                    // InternalHammilDSL.g:681:5: (lv_title_4_0= ruleEmphasisExpression )
+                    // InternalHammilDSL.g:682:6: lv_title_4_0= ruleEmphasisExpression
                     {
                     if ( state.backtracking==0 ) {
 
                       						newCompositeNode(grammarAccess.getHeaderDepth2ExpressionAccess().getTitleEmphasisExpressionParserRuleCall_1_0_0());
                       					
                     }
-                    pushFollow(FOLLOW_5);
+                    pushFollow(FOLLOW_11);
                     lv_title_4_0=ruleEmphasisExpression();
 
                     state._fsp--;
@@ -1838,29 +2205,47 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    this_BL_5=(Token)match(input,RULE_BL,FOLLOW_17); if (state.failed) return current;
+                    this_BL_5=(Token)match(input,RULE_BL,FOLLOW_4); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(this_BL_5, grammarAccess.getHeaderDepth2ExpressionAccess().getBLTerminalRuleCall_1_1());
                       			
                     }
-                    // InternalHammilDSL.g:606:4: (otherlv_6= '-' )+
-                    int cnt16=0;
-                    loop16:
+                    // InternalHammilDSL.g:703:4: (otherlv_6= '-' )+
+                    int cnt20=0;
+                    loop20:
                     do {
-                        int alt16=2;
-                        int LA16_0 = input.LA(1);
+                        int alt20=2;
+                        int LA20_0 = input.LA(1);
 
-                        if ( (LA16_0==15) ) {
-                            alt16=1;
+                        if ( (LA20_0==9) ) {
+                            int LA20_2 = input.LA(2);
+
+                            if ( (LA20_2==9) ) {
+                                int LA20_3 = input.LA(3);
+
+                                if ( (LA20_3==EOF||LA20_3==RULE_STRING||(LA20_3>=9 && LA20_3<=15)||(LA20_3>=17 && LA20_3<=21)) ) {
+                                    alt20=1;
+                                }
+                                else if ( (LA20_3==RULE_BL) ) {
+                                    alt20=1;
+                                }
+
+
+                            }
+                            else if ( (LA20_2==EOF||LA20_2==RULE_BL||LA20_2==RULE_STRING||(LA20_2>=10 && LA20_2<=15)||(LA20_2>=17 && LA20_2<=21)) ) {
+                                alt20=1;
+                            }
+
+
                         }
 
 
-                        switch (alt16) {
+                        switch (alt20) {
                     	case 1 :
-                    	    // InternalHammilDSL.g:607:5: otherlv_6= '-'
+                    	    // InternalHammilDSL.g:704:5: otherlv_6= '-'
                     	    {
-                    	    otherlv_6=(Token)match(input,15,FOLLOW_18); if (state.failed) return current;
+                    	    otherlv_6=(Token)match(input,9,FOLLOW_23); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
                     	      					newLeafNode(otherlv_6, grammarAccess.getHeaderDepth2ExpressionAccess().getHyphenMinusKeyword_1_2());
@@ -1871,25 +2256,25 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    if ( cnt16 >= 1 ) break loop16;
+                    	    if ( cnt20 >= 1 ) break loop20;
                     	    if (state.backtracking>0) {state.failed=true; return current;}
                                 EarlyExitException eee =
-                                    new EarlyExitException(16, input);
+                                    new EarlyExitException(20, input);
                                 throw eee;
                         }
-                        cnt16++;
+                        cnt20++;
                     } while (true);
 
-                    // InternalHammilDSL.g:612:4: (this_BL_7= RULE_BL )?
-                    int alt17=2;
-                    int LA17_0 = input.LA(1);
+                    // InternalHammilDSL.g:709:4: (this_BL_7= RULE_BL )?
+                    int alt21=2;
+                    int LA21_0 = input.LA(1);
 
-                    if ( (LA17_0==RULE_BL) ) {
-                        alt17=1;
+                    if ( (LA21_0==RULE_BL) ) {
+                        alt21=1;
                     }
-                    switch (alt17) {
+                    switch (alt21) {
                         case 1 :
-                            // InternalHammilDSL.g:613:5: this_BL_7= RULE_BL
+                            // InternalHammilDSL.g:710:5: this_BL_7= RULE_BL
                             {
                             this_BL_7=(Token)match(input,RULE_BL,FOLLOW_2); if (state.failed) return current;
                             if ( state.backtracking==0 ) {
@@ -1934,7 +2319,7 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleHeaderDepth3Expression"
-    // InternalHammilDSL.g:623:1: entryRuleHeaderDepth3Expression returns [EObject current=null] : iv_ruleHeaderDepth3Expression= ruleHeaderDepth3Expression EOF ;
+    // InternalHammilDSL.g:720:1: entryRuleHeaderDepth3Expression returns [EObject current=null] : iv_ruleHeaderDepth3Expression= ruleHeaderDepth3Expression EOF ;
     public final EObject entryRuleHeaderDepth3Expression() throws RecognitionException {
         EObject current = null;
 
@@ -1942,8 +2327,8 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalHammilDSL.g:623:63: (iv_ruleHeaderDepth3Expression= ruleHeaderDepth3Expression EOF )
-            // InternalHammilDSL.g:624:2: iv_ruleHeaderDepth3Expression= ruleHeaderDepth3Expression EOF
+            // InternalHammilDSL.g:720:63: (iv_ruleHeaderDepth3Expression= ruleHeaderDepth3Expression EOF )
+            // InternalHammilDSL.g:721:2: iv_ruleHeaderDepth3Expression= ruleHeaderDepth3Expression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getHeaderDepth3ExpressionRule()); 
@@ -1974,7 +2359,7 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleHeaderDepth3Expression"
-    // InternalHammilDSL.g:630:1: ruleHeaderDepth3Expression returns [EObject current=null] : (otherlv_0= '###' ( (lv_title_1_0= ruleEmphasisExpression ) ) (otherlv_2= '#' )* (this_BL_3= RULE_BL )? ) ;
+    // InternalHammilDSL.g:727:1: ruleHeaderDepth3Expression returns [EObject current=null] : (otherlv_0= '###' ( (lv_title_1_0= ruleEmphasisExpression ) ) (otherlv_2= '#' )* (this_BL_3= RULE_BL )? ) ;
     public final EObject ruleHeaderDepth3Expression() throws RecognitionException {
         EObject current = null;
 
@@ -1988,30 +2373,30 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalHammilDSL.g:636:2: ( (otherlv_0= '###' ( (lv_title_1_0= ruleEmphasisExpression ) ) (otherlv_2= '#' )* (this_BL_3= RULE_BL )? ) )
-            // InternalHammilDSL.g:637:2: (otherlv_0= '###' ( (lv_title_1_0= ruleEmphasisExpression ) ) (otherlv_2= '#' )* (this_BL_3= RULE_BL )? )
+            // InternalHammilDSL.g:733:2: ( (otherlv_0= '###' ( (lv_title_1_0= ruleEmphasisExpression ) ) (otherlv_2= '#' )* (this_BL_3= RULE_BL )? ) )
+            // InternalHammilDSL.g:734:2: (otherlv_0= '###' ( (lv_title_1_0= ruleEmphasisExpression ) ) (otherlv_2= '#' )* (this_BL_3= RULE_BL )? )
             {
-            // InternalHammilDSL.g:637:2: (otherlv_0= '###' ( (lv_title_1_0= ruleEmphasisExpression ) ) (otherlv_2= '#' )* (this_BL_3= RULE_BL )? )
-            // InternalHammilDSL.g:638:3: otherlv_0= '###' ( (lv_title_1_0= ruleEmphasisExpression ) ) (otherlv_2= '#' )* (this_BL_3= RULE_BL )?
+            // InternalHammilDSL.g:734:2: (otherlv_0= '###' ( (lv_title_1_0= ruleEmphasisExpression ) ) (otherlv_2= '#' )* (this_BL_3= RULE_BL )? )
+            // InternalHammilDSL.g:735:3: otherlv_0= '###' ( (lv_title_1_0= ruleEmphasisExpression ) ) (otherlv_2= '#' )* (this_BL_3= RULE_BL )?
             {
-            otherlv_0=(Token)match(input,16,FOLLOW_6); if (state.failed) return current;
+            otherlv_0=(Token)match(input,18,FOLLOW_12); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_0, grammarAccess.getHeaderDepth3ExpressionAccess().getNumberSignNumberSignNumberSignKeyword_0());
               		
             }
-            // InternalHammilDSL.g:642:3: ( (lv_title_1_0= ruleEmphasisExpression ) )
-            // InternalHammilDSL.g:643:4: (lv_title_1_0= ruleEmphasisExpression )
+            // InternalHammilDSL.g:739:3: ( (lv_title_1_0= ruleEmphasisExpression ) )
+            // InternalHammilDSL.g:740:4: (lv_title_1_0= ruleEmphasisExpression )
             {
-            // InternalHammilDSL.g:643:4: (lv_title_1_0= ruleEmphasisExpression )
-            // InternalHammilDSL.g:644:5: lv_title_1_0= ruleEmphasisExpression
+            // InternalHammilDSL.g:740:4: (lv_title_1_0= ruleEmphasisExpression )
+            // InternalHammilDSL.g:741:5: lv_title_1_0= ruleEmphasisExpression
             {
             if ( state.backtracking==0 ) {
 
               					newCompositeNode(grammarAccess.getHeaderDepth3ExpressionAccess().getTitleEmphasisExpressionParserRuleCall_1_0());
               				
             }
-            pushFollow(FOLLOW_16);
+            pushFollow(FOLLOW_22);
             lv_title_1_0=ruleEmphasisExpression();
 
             state._fsp--;
@@ -2035,28 +2420,28 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalHammilDSL.g:661:3: (otherlv_2= '#' )*
-            loop19:
+            // InternalHammilDSL.g:758:3: (otherlv_2= '#' )*
+            loop23:
             do {
-                int alt19=2;
-                int LA19_0 = input.LA(1);
+                int alt23=2;
+                int LA23_0 = input.LA(1);
 
-                if ( (LA19_0==12) ) {
-                    int LA19_2 = input.LA(2);
+                if ( (LA23_0==15) ) {
+                    int LA23_2 = input.LA(2);
 
-                    if ( (LA19_2==EOF||LA19_2==RULE_BL||LA19_2==RULE_STRING||(LA19_2>=9 && LA19_2<=12)||LA19_2==14||(LA19_2>=16 && LA19_2<=19)) ) {
-                        alt19=1;
+                    if ( (LA23_2==EOF||LA23_2==RULE_BL||LA23_2==RULE_STRING||(LA23_2>=9 && LA23_2<=15)||(LA23_2>=17 && LA23_2<=21)) ) {
+                        alt23=1;
                     }
 
 
                 }
 
 
-                switch (alt19) {
+                switch (alt23) {
             	case 1 :
-            	    // InternalHammilDSL.g:662:4: otherlv_2= '#'
+            	    // InternalHammilDSL.g:759:4: otherlv_2= '#'
             	    {
-            	    otherlv_2=(Token)match(input,12,FOLLOW_16); if (state.failed) return current;
+            	    otherlv_2=(Token)match(input,15,FOLLOW_22); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	      				newLeafNode(otherlv_2, grammarAccess.getHeaderDepth3ExpressionAccess().getNumberSignKeyword_2());
@@ -2067,20 +2452,20 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop19;
+            	    break loop23;
                 }
             } while (true);
 
-            // InternalHammilDSL.g:667:3: (this_BL_3= RULE_BL )?
-            int alt20=2;
-            int LA20_0 = input.LA(1);
+            // InternalHammilDSL.g:764:3: (this_BL_3= RULE_BL )?
+            int alt24=2;
+            int LA24_0 = input.LA(1);
 
-            if ( (LA20_0==RULE_BL) ) {
-                alt20=1;
+            if ( (LA24_0==RULE_BL) ) {
+                alt24=1;
             }
-            switch (alt20) {
+            switch (alt24) {
                 case 1 :
-                    // InternalHammilDSL.g:668:4: this_BL_3= RULE_BL
+                    // InternalHammilDSL.g:765:4: this_BL_3= RULE_BL
                     {
                     this_BL_3=(Token)match(input,RULE_BL,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -2119,7 +2504,7 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleHeaderDepth5Expression"
-    // InternalHammilDSL.g:677:1: entryRuleHeaderDepth5Expression returns [EObject current=null] : iv_ruleHeaderDepth5Expression= ruleHeaderDepth5Expression EOF ;
+    // InternalHammilDSL.g:774:1: entryRuleHeaderDepth5Expression returns [EObject current=null] : iv_ruleHeaderDepth5Expression= ruleHeaderDepth5Expression EOF ;
     public final EObject entryRuleHeaderDepth5Expression() throws RecognitionException {
         EObject current = null;
 
@@ -2127,8 +2512,8 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalHammilDSL.g:677:63: (iv_ruleHeaderDepth5Expression= ruleHeaderDepth5Expression EOF )
-            // InternalHammilDSL.g:678:2: iv_ruleHeaderDepth5Expression= ruleHeaderDepth5Expression EOF
+            // InternalHammilDSL.g:774:63: (iv_ruleHeaderDepth5Expression= ruleHeaderDepth5Expression EOF )
+            // InternalHammilDSL.g:775:2: iv_ruleHeaderDepth5Expression= ruleHeaderDepth5Expression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getHeaderDepth5ExpressionRule()); 
@@ -2159,7 +2544,7 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleHeaderDepth5Expression"
-    // InternalHammilDSL.g:684:1: ruleHeaderDepth5Expression returns [EObject current=null] : (otherlv_0= '#####' ( (lv_title_1_0= ruleEmphasisExpression ) ) (otherlv_2= '#' )* (this_BL_3= RULE_BL )? ) ;
+    // InternalHammilDSL.g:781:1: ruleHeaderDepth5Expression returns [EObject current=null] : (otherlv_0= '#####' ( (lv_title_1_0= ruleEmphasisExpression ) ) (otherlv_2= '#' )* (this_BL_3= RULE_BL )? ) ;
     public final EObject ruleHeaderDepth5Expression() throws RecognitionException {
         EObject current = null;
 
@@ -2173,30 +2558,30 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalHammilDSL.g:690:2: ( (otherlv_0= '#####' ( (lv_title_1_0= ruleEmphasisExpression ) ) (otherlv_2= '#' )* (this_BL_3= RULE_BL )? ) )
-            // InternalHammilDSL.g:691:2: (otherlv_0= '#####' ( (lv_title_1_0= ruleEmphasisExpression ) ) (otherlv_2= '#' )* (this_BL_3= RULE_BL )? )
+            // InternalHammilDSL.g:787:2: ( (otherlv_0= '#####' ( (lv_title_1_0= ruleEmphasisExpression ) ) (otherlv_2= '#' )* (this_BL_3= RULE_BL )? ) )
+            // InternalHammilDSL.g:788:2: (otherlv_0= '#####' ( (lv_title_1_0= ruleEmphasisExpression ) ) (otherlv_2= '#' )* (this_BL_3= RULE_BL )? )
             {
-            // InternalHammilDSL.g:691:2: (otherlv_0= '#####' ( (lv_title_1_0= ruleEmphasisExpression ) ) (otherlv_2= '#' )* (this_BL_3= RULE_BL )? )
-            // InternalHammilDSL.g:692:3: otherlv_0= '#####' ( (lv_title_1_0= ruleEmphasisExpression ) ) (otherlv_2= '#' )* (this_BL_3= RULE_BL )?
+            // InternalHammilDSL.g:788:2: (otherlv_0= '#####' ( (lv_title_1_0= ruleEmphasisExpression ) ) (otherlv_2= '#' )* (this_BL_3= RULE_BL )? )
+            // InternalHammilDSL.g:789:3: otherlv_0= '#####' ( (lv_title_1_0= ruleEmphasisExpression ) ) (otherlv_2= '#' )* (this_BL_3= RULE_BL )?
             {
-            otherlv_0=(Token)match(input,17,FOLLOW_6); if (state.failed) return current;
+            otherlv_0=(Token)match(input,19,FOLLOW_12); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_0, grammarAccess.getHeaderDepth5ExpressionAccess().getNumberSignNumberSignNumberSignNumberSignNumberSignKeyword_0());
               		
             }
-            // InternalHammilDSL.g:696:3: ( (lv_title_1_0= ruleEmphasisExpression ) )
-            // InternalHammilDSL.g:697:4: (lv_title_1_0= ruleEmphasisExpression )
+            // InternalHammilDSL.g:793:3: ( (lv_title_1_0= ruleEmphasisExpression ) )
+            // InternalHammilDSL.g:794:4: (lv_title_1_0= ruleEmphasisExpression )
             {
-            // InternalHammilDSL.g:697:4: (lv_title_1_0= ruleEmphasisExpression )
-            // InternalHammilDSL.g:698:5: lv_title_1_0= ruleEmphasisExpression
+            // InternalHammilDSL.g:794:4: (lv_title_1_0= ruleEmphasisExpression )
+            // InternalHammilDSL.g:795:5: lv_title_1_0= ruleEmphasisExpression
             {
             if ( state.backtracking==0 ) {
 
               					newCompositeNode(grammarAccess.getHeaderDepth5ExpressionAccess().getTitleEmphasisExpressionParserRuleCall_1_0());
               				
             }
-            pushFollow(FOLLOW_16);
+            pushFollow(FOLLOW_22);
             lv_title_1_0=ruleEmphasisExpression();
 
             state._fsp--;
@@ -2220,28 +2605,28 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalHammilDSL.g:715:3: (otherlv_2= '#' )*
-            loop21:
+            // InternalHammilDSL.g:812:3: (otherlv_2= '#' )*
+            loop25:
             do {
-                int alt21=2;
-                int LA21_0 = input.LA(1);
+                int alt25=2;
+                int LA25_0 = input.LA(1);
 
-                if ( (LA21_0==12) ) {
-                    int LA21_2 = input.LA(2);
+                if ( (LA25_0==15) ) {
+                    int LA25_2 = input.LA(2);
 
-                    if ( (LA21_2==EOF||LA21_2==RULE_BL||LA21_2==RULE_STRING||(LA21_2>=9 && LA21_2<=12)||LA21_2==14||(LA21_2>=16 && LA21_2<=19)) ) {
-                        alt21=1;
+                    if ( (LA25_2==EOF||LA25_2==RULE_BL||LA25_2==RULE_STRING||(LA25_2>=9 && LA25_2<=15)||(LA25_2>=17 && LA25_2<=21)) ) {
+                        alt25=1;
                     }
 
 
                 }
 
 
-                switch (alt21) {
+                switch (alt25) {
             	case 1 :
-            	    // InternalHammilDSL.g:716:4: otherlv_2= '#'
+            	    // InternalHammilDSL.g:813:4: otherlv_2= '#'
             	    {
-            	    otherlv_2=(Token)match(input,12,FOLLOW_16); if (state.failed) return current;
+            	    otherlv_2=(Token)match(input,15,FOLLOW_22); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	      				newLeafNode(otherlv_2, grammarAccess.getHeaderDepth5ExpressionAccess().getNumberSignKeyword_2());
@@ -2252,20 +2637,20 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop21;
+            	    break loop25;
                 }
             } while (true);
 
-            // InternalHammilDSL.g:721:3: (this_BL_3= RULE_BL )?
-            int alt22=2;
-            int LA22_0 = input.LA(1);
+            // InternalHammilDSL.g:818:3: (this_BL_3= RULE_BL )?
+            int alt26=2;
+            int LA26_0 = input.LA(1);
 
-            if ( (LA22_0==RULE_BL) ) {
-                alt22=1;
+            if ( (LA26_0==RULE_BL) ) {
+                alt26=1;
             }
-            switch (alt22) {
+            switch (alt26) {
                 case 1 :
-                    // InternalHammilDSL.g:722:4: this_BL_3= RULE_BL
+                    // InternalHammilDSL.g:819:4: this_BL_3= RULE_BL
                     {
                     this_BL_3=(Token)match(input,RULE_BL,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -2304,7 +2689,7 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleHeaderDepth6Expression"
-    // InternalHammilDSL.g:731:1: entryRuleHeaderDepth6Expression returns [EObject current=null] : iv_ruleHeaderDepth6Expression= ruleHeaderDepth6Expression EOF ;
+    // InternalHammilDSL.g:828:1: entryRuleHeaderDepth6Expression returns [EObject current=null] : iv_ruleHeaderDepth6Expression= ruleHeaderDepth6Expression EOF ;
     public final EObject entryRuleHeaderDepth6Expression() throws RecognitionException {
         EObject current = null;
 
@@ -2312,8 +2697,8 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalHammilDSL.g:731:63: (iv_ruleHeaderDepth6Expression= ruleHeaderDepth6Expression EOF )
-            // InternalHammilDSL.g:732:2: iv_ruleHeaderDepth6Expression= ruleHeaderDepth6Expression EOF
+            // InternalHammilDSL.g:828:63: (iv_ruleHeaderDepth6Expression= ruleHeaderDepth6Expression EOF )
+            // InternalHammilDSL.g:829:2: iv_ruleHeaderDepth6Expression= ruleHeaderDepth6Expression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getHeaderDepth6ExpressionRule()); 
@@ -2344,7 +2729,7 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleHeaderDepth6Expression"
-    // InternalHammilDSL.g:738:1: ruleHeaderDepth6Expression returns [EObject current=null] : (otherlv_0= '######' ( (lv_title_1_0= ruleEmphasisExpression ) ) (otherlv_2= '#' )* (this_BL_3= RULE_BL )? ) ;
+    // InternalHammilDSL.g:835:1: ruleHeaderDepth6Expression returns [EObject current=null] : (otherlv_0= '######' ( (lv_title_1_0= ruleEmphasisExpression ) ) (otherlv_2= '#' )* (this_BL_3= RULE_BL )? ) ;
     public final EObject ruleHeaderDepth6Expression() throws RecognitionException {
         EObject current = null;
 
@@ -2358,30 +2743,30 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalHammilDSL.g:744:2: ( (otherlv_0= '######' ( (lv_title_1_0= ruleEmphasisExpression ) ) (otherlv_2= '#' )* (this_BL_3= RULE_BL )? ) )
-            // InternalHammilDSL.g:745:2: (otherlv_0= '######' ( (lv_title_1_0= ruleEmphasisExpression ) ) (otherlv_2= '#' )* (this_BL_3= RULE_BL )? )
+            // InternalHammilDSL.g:841:2: ( (otherlv_0= '######' ( (lv_title_1_0= ruleEmphasisExpression ) ) (otherlv_2= '#' )* (this_BL_3= RULE_BL )? ) )
+            // InternalHammilDSL.g:842:2: (otherlv_0= '######' ( (lv_title_1_0= ruleEmphasisExpression ) ) (otherlv_2= '#' )* (this_BL_3= RULE_BL )? )
             {
-            // InternalHammilDSL.g:745:2: (otherlv_0= '######' ( (lv_title_1_0= ruleEmphasisExpression ) ) (otherlv_2= '#' )* (this_BL_3= RULE_BL )? )
-            // InternalHammilDSL.g:746:3: otherlv_0= '######' ( (lv_title_1_0= ruleEmphasisExpression ) ) (otherlv_2= '#' )* (this_BL_3= RULE_BL )?
+            // InternalHammilDSL.g:842:2: (otherlv_0= '######' ( (lv_title_1_0= ruleEmphasisExpression ) ) (otherlv_2= '#' )* (this_BL_3= RULE_BL )? )
+            // InternalHammilDSL.g:843:3: otherlv_0= '######' ( (lv_title_1_0= ruleEmphasisExpression ) ) (otherlv_2= '#' )* (this_BL_3= RULE_BL )?
             {
-            otherlv_0=(Token)match(input,18,FOLLOW_6); if (state.failed) return current;
+            otherlv_0=(Token)match(input,20,FOLLOW_12); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_0, grammarAccess.getHeaderDepth6ExpressionAccess().getNumberSignNumberSignNumberSignNumberSignNumberSignNumberSignKeyword_0());
               		
             }
-            // InternalHammilDSL.g:750:3: ( (lv_title_1_0= ruleEmphasisExpression ) )
-            // InternalHammilDSL.g:751:4: (lv_title_1_0= ruleEmphasisExpression )
+            // InternalHammilDSL.g:847:3: ( (lv_title_1_0= ruleEmphasisExpression ) )
+            // InternalHammilDSL.g:848:4: (lv_title_1_0= ruleEmphasisExpression )
             {
-            // InternalHammilDSL.g:751:4: (lv_title_1_0= ruleEmphasisExpression )
-            // InternalHammilDSL.g:752:5: lv_title_1_0= ruleEmphasisExpression
+            // InternalHammilDSL.g:848:4: (lv_title_1_0= ruleEmphasisExpression )
+            // InternalHammilDSL.g:849:5: lv_title_1_0= ruleEmphasisExpression
             {
             if ( state.backtracking==0 ) {
 
               					newCompositeNode(grammarAccess.getHeaderDepth6ExpressionAccess().getTitleEmphasisExpressionParserRuleCall_1_0());
               				
             }
-            pushFollow(FOLLOW_16);
+            pushFollow(FOLLOW_22);
             lv_title_1_0=ruleEmphasisExpression();
 
             state._fsp--;
@@ -2405,28 +2790,28 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalHammilDSL.g:769:3: (otherlv_2= '#' )*
-            loop23:
+            // InternalHammilDSL.g:866:3: (otherlv_2= '#' )*
+            loop27:
             do {
-                int alt23=2;
-                int LA23_0 = input.LA(1);
+                int alt27=2;
+                int LA27_0 = input.LA(1);
 
-                if ( (LA23_0==12) ) {
-                    int LA23_2 = input.LA(2);
+                if ( (LA27_0==15) ) {
+                    int LA27_2 = input.LA(2);
 
-                    if ( (LA23_2==EOF||LA23_2==RULE_BL||LA23_2==RULE_STRING||(LA23_2>=9 && LA23_2<=12)||LA23_2==14||(LA23_2>=16 && LA23_2<=19)) ) {
-                        alt23=1;
+                    if ( (LA27_2==EOF||LA27_2==RULE_BL||LA27_2==RULE_STRING||(LA27_2>=9 && LA27_2<=15)||(LA27_2>=17 && LA27_2<=21)) ) {
+                        alt27=1;
                     }
 
 
                 }
 
 
-                switch (alt23) {
+                switch (alt27) {
             	case 1 :
-            	    // InternalHammilDSL.g:770:4: otherlv_2= '#'
+            	    // InternalHammilDSL.g:867:4: otherlv_2= '#'
             	    {
-            	    otherlv_2=(Token)match(input,12,FOLLOW_16); if (state.failed) return current;
+            	    otherlv_2=(Token)match(input,15,FOLLOW_22); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	      				newLeafNode(otherlv_2, grammarAccess.getHeaderDepth6ExpressionAccess().getNumberSignKeyword_2());
@@ -2437,20 +2822,20 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop23;
+            	    break loop27;
                 }
             } while (true);
 
-            // InternalHammilDSL.g:775:3: (this_BL_3= RULE_BL )?
-            int alt24=2;
-            int LA24_0 = input.LA(1);
+            // InternalHammilDSL.g:872:3: (this_BL_3= RULE_BL )?
+            int alt28=2;
+            int LA28_0 = input.LA(1);
 
-            if ( (LA24_0==RULE_BL) ) {
-                alt24=1;
+            if ( (LA28_0==RULE_BL) ) {
+                alt28=1;
             }
-            switch (alt24) {
+            switch (alt28) {
                 case 1 :
-                    // InternalHammilDSL.g:776:4: this_BL_3= RULE_BL
+                    // InternalHammilDSL.g:873:4: this_BL_3= RULE_BL
                     {
                     this_BL_3=(Token)match(input,RULE_BL,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -2489,7 +2874,7 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleHeaderDepth4Expression"
-    // InternalHammilDSL.g:785:1: entryRuleHeaderDepth4Expression returns [EObject current=null] : iv_ruleHeaderDepth4Expression= ruleHeaderDepth4Expression EOF ;
+    // InternalHammilDSL.g:882:1: entryRuleHeaderDepth4Expression returns [EObject current=null] : iv_ruleHeaderDepth4Expression= ruleHeaderDepth4Expression EOF ;
     public final EObject entryRuleHeaderDepth4Expression() throws RecognitionException {
         EObject current = null;
 
@@ -2497,8 +2882,8 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalHammilDSL.g:785:63: (iv_ruleHeaderDepth4Expression= ruleHeaderDepth4Expression EOF )
-            // InternalHammilDSL.g:786:2: iv_ruleHeaderDepth4Expression= ruleHeaderDepth4Expression EOF
+            // InternalHammilDSL.g:882:63: (iv_ruleHeaderDepth4Expression= ruleHeaderDepth4Expression EOF )
+            // InternalHammilDSL.g:883:2: iv_ruleHeaderDepth4Expression= ruleHeaderDepth4Expression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getHeaderDepth4ExpressionRule()); 
@@ -2529,7 +2914,7 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleHeaderDepth4Expression"
-    // InternalHammilDSL.g:792:1: ruleHeaderDepth4Expression returns [EObject current=null] : (otherlv_0= '####' ( (lv_title_1_0= ruleEmphasisExpression ) ) (otherlv_2= '#' )* (this_BL_3= RULE_BL )? ) ;
+    // InternalHammilDSL.g:889:1: ruleHeaderDepth4Expression returns [EObject current=null] : (otherlv_0= '####' ( (lv_title_1_0= ruleEmphasisExpression ) ) (otherlv_2= '#' )* (this_BL_3= RULE_BL )? ) ;
     public final EObject ruleHeaderDepth4Expression() throws RecognitionException {
         EObject current = null;
 
@@ -2543,30 +2928,30 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalHammilDSL.g:798:2: ( (otherlv_0= '####' ( (lv_title_1_0= ruleEmphasisExpression ) ) (otherlv_2= '#' )* (this_BL_3= RULE_BL )? ) )
-            // InternalHammilDSL.g:799:2: (otherlv_0= '####' ( (lv_title_1_0= ruleEmphasisExpression ) ) (otherlv_2= '#' )* (this_BL_3= RULE_BL )? )
+            // InternalHammilDSL.g:895:2: ( (otherlv_0= '####' ( (lv_title_1_0= ruleEmphasisExpression ) ) (otherlv_2= '#' )* (this_BL_3= RULE_BL )? ) )
+            // InternalHammilDSL.g:896:2: (otherlv_0= '####' ( (lv_title_1_0= ruleEmphasisExpression ) ) (otherlv_2= '#' )* (this_BL_3= RULE_BL )? )
             {
-            // InternalHammilDSL.g:799:2: (otherlv_0= '####' ( (lv_title_1_0= ruleEmphasisExpression ) ) (otherlv_2= '#' )* (this_BL_3= RULE_BL )? )
-            // InternalHammilDSL.g:800:3: otherlv_0= '####' ( (lv_title_1_0= ruleEmphasisExpression ) ) (otherlv_2= '#' )* (this_BL_3= RULE_BL )?
+            // InternalHammilDSL.g:896:2: (otherlv_0= '####' ( (lv_title_1_0= ruleEmphasisExpression ) ) (otherlv_2= '#' )* (this_BL_3= RULE_BL )? )
+            // InternalHammilDSL.g:897:3: otherlv_0= '####' ( (lv_title_1_0= ruleEmphasisExpression ) ) (otherlv_2= '#' )* (this_BL_3= RULE_BL )?
             {
-            otherlv_0=(Token)match(input,19,FOLLOW_6); if (state.failed) return current;
+            otherlv_0=(Token)match(input,21,FOLLOW_12); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_0, grammarAccess.getHeaderDepth4ExpressionAccess().getNumberSignNumberSignNumberSignNumberSignKeyword_0());
               		
             }
-            // InternalHammilDSL.g:804:3: ( (lv_title_1_0= ruleEmphasisExpression ) )
-            // InternalHammilDSL.g:805:4: (lv_title_1_0= ruleEmphasisExpression )
+            // InternalHammilDSL.g:901:3: ( (lv_title_1_0= ruleEmphasisExpression ) )
+            // InternalHammilDSL.g:902:4: (lv_title_1_0= ruleEmphasisExpression )
             {
-            // InternalHammilDSL.g:805:4: (lv_title_1_0= ruleEmphasisExpression )
-            // InternalHammilDSL.g:806:5: lv_title_1_0= ruleEmphasisExpression
+            // InternalHammilDSL.g:902:4: (lv_title_1_0= ruleEmphasisExpression )
+            // InternalHammilDSL.g:903:5: lv_title_1_0= ruleEmphasisExpression
             {
             if ( state.backtracking==0 ) {
 
               					newCompositeNode(grammarAccess.getHeaderDepth4ExpressionAccess().getTitleEmphasisExpressionParserRuleCall_1_0());
               				
             }
-            pushFollow(FOLLOW_16);
+            pushFollow(FOLLOW_22);
             lv_title_1_0=ruleEmphasisExpression();
 
             state._fsp--;
@@ -2590,28 +2975,28 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalHammilDSL.g:823:3: (otherlv_2= '#' )*
-            loop25:
+            // InternalHammilDSL.g:920:3: (otherlv_2= '#' )*
+            loop29:
             do {
-                int alt25=2;
-                int LA25_0 = input.LA(1);
+                int alt29=2;
+                int LA29_0 = input.LA(1);
 
-                if ( (LA25_0==12) ) {
-                    int LA25_2 = input.LA(2);
+                if ( (LA29_0==15) ) {
+                    int LA29_2 = input.LA(2);
 
-                    if ( (LA25_2==EOF||LA25_2==RULE_BL||LA25_2==RULE_STRING||(LA25_2>=9 && LA25_2<=12)||LA25_2==14||(LA25_2>=16 && LA25_2<=19)) ) {
-                        alt25=1;
+                    if ( (LA29_2==EOF||LA29_2==RULE_BL||LA29_2==RULE_STRING||(LA29_2>=9 && LA29_2<=15)||(LA29_2>=17 && LA29_2<=21)) ) {
+                        alt29=1;
                     }
 
 
                 }
 
 
-                switch (alt25) {
+                switch (alt29) {
             	case 1 :
-            	    // InternalHammilDSL.g:824:4: otherlv_2= '#'
+            	    // InternalHammilDSL.g:921:4: otherlv_2= '#'
             	    {
-            	    otherlv_2=(Token)match(input,12,FOLLOW_16); if (state.failed) return current;
+            	    otherlv_2=(Token)match(input,15,FOLLOW_22); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	      				newLeafNode(otherlv_2, grammarAccess.getHeaderDepth4ExpressionAccess().getNumberSignKeyword_2());
@@ -2622,20 +3007,20 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop25;
+            	    break loop29;
                 }
             } while (true);
 
-            // InternalHammilDSL.g:829:3: (this_BL_3= RULE_BL )?
-            int alt26=2;
-            int LA26_0 = input.LA(1);
+            // InternalHammilDSL.g:926:3: (this_BL_3= RULE_BL )?
+            int alt30=2;
+            int LA30_0 = input.LA(1);
 
-            if ( (LA26_0==RULE_BL) ) {
-                alt26=1;
+            if ( (LA30_0==RULE_BL) ) {
+                alt30=1;
             }
-            switch (alt26) {
+            switch (alt30) {
                 case 1 :
-                    // InternalHammilDSL.g:830:4: this_BL_3= RULE_BL
+                    // InternalHammilDSL.g:927:4: this_BL_3= RULE_BL
                     {
                     this_BL_3=(Token)match(input,RULE_BL,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -2674,7 +3059,7 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTextualExpression"
-    // InternalHammilDSL.g:839:1: entryRuleTextualExpression returns [EObject current=null] : iv_ruleTextualExpression= ruleTextualExpression EOF ;
+    // InternalHammilDSL.g:936:1: entryRuleTextualExpression returns [EObject current=null] : iv_ruleTextualExpression= ruleTextualExpression EOF ;
     public final EObject entryRuleTextualExpression() throws RecognitionException {
         EObject current = null;
 
@@ -2682,8 +3067,8 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalHammilDSL.g:839:58: (iv_ruleTextualExpression= ruleTextualExpression EOF )
-            // InternalHammilDSL.g:840:2: iv_ruleTextualExpression= ruleTextualExpression EOF
+            // InternalHammilDSL.g:936:58: (iv_ruleTextualExpression= ruleTextualExpression EOF )
+            // InternalHammilDSL.g:937:2: iv_ruleTextualExpression= ruleTextualExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getTextualExpressionRule()); 
@@ -2714,7 +3099,7 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTextualExpression"
-    // InternalHammilDSL.g:846:1: ruleTextualExpression returns [EObject current=null] : ( (lv_contentString_0_0= ruleString0 ) ) ;
+    // InternalHammilDSL.g:943:1: ruleTextualExpression returns [EObject current=null] : ( (lv_contentString_0_0= ruleString0 ) ) ;
     public final EObject ruleTextualExpression() throws RecognitionException {
         EObject current = null;
 
@@ -2725,14 +3110,14 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalHammilDSL.g:852:2: ( ( (lv_contentString_0_0= ruleString0 ) ) )
-            // InternalHammilDSL.g:853:2: ( (lv_contentString_0_0= ruleString0 ) )
+            // InternalHammilDSL.g:949:2: ( ( (lv_contentString_0_0= ruleString0 ) ) )
+            // InternalHammilDSL.g:950:2: ( (lv_contentString_0_0= ruleString0 ) )
             {
-            // InternalHammilDSL.g:853:2: ( (lv_contentString_0_0= ruleString0 ) )
-            // InternalHammilDSL.g:854:3: (lv_contentString_0_0= ruleString0 )
+            // InternalHammilDSL.g:950:2: ( (lv_contentString_0_0= ruleString0 ) )
+            // InternalHammilDSL.g:951:3: (lv_contentString_0_0= ruleString0 )
             {
-            // InternalHammilDSL.g:854:3: (lv_contentString_0_0= ruleString0 )
-            // InternalHammilDSL.g:855:4: lv_contentString_0_0= ruleString0
+            // InternalHammilDSL.g:951:3: (lv_contentString_0_0= ruleString0 )
+            // InternalHammilDSL.g:952:4: lv_contentString_0_0= ruleString0
             {
             if ( state.backtracking==0 ) {
 
@@ -2785,7 +3170,7 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleString0"
-    // InternalHammilDSL.g:875:1: entryRuleString0 returns [String current=null] : iv_ruleString0= ruleString0 EOF ;
+    // InternalHammilDSL.g:972:1: entryRuleString0 returns [String current=null] : iv_ruleString0= ruleString0 EOF ;
     public final String entryRuleString0() throws RecognitionException {
         String current = null;
 
@@ -2793,8 +3178,8 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalHammilDSL.g:875:47: (iv_ruleString0= ruleString0 EOF )
-            // InternalHammilDSL.g:876:2: iv_ruleString0= ruleString0 EOF
+            // InternalHammilDSL.g:972:47: (iv_ruleString0= ruleString0 EOF )
+            // InternalHammilDSL.g:973:2: iv_ruleString0= ruleString0 EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getString0Rule()); 
@@ -2825,7 +3210,7 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleString0"
-    // InternalHammilDSL.g:882:1: ruleString0 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_STRING_0= RULE_STRING ;
+    // InternalHammilDSL.g:979:1: ruleString0 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_STRING_0= RULE_STRING ;
     public final AntlrDatatypeRuleToken ruleString0() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2835,8 +3220,8 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalHammilDSL.g:888:2: (this_STRING_0= RULE_STRING )
-            // InternalHammilDSL.g:889:2: this_STRING_0= RULE_STRING
+            // InternalHammilDSL.g:985:2: (this_STRING_0= RULE_STRING )
+            // InternalHammilDSL.g:986:2: this_STRING_0= RULE_STRING
             {
             this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_2); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -2886,10 +3271,10 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
 
     // $ANTLR start synpred2_InternalHammilDSL
     public final void synpred2_InternalHammilDSL_fragment() throws RecognitionException {   
-        // InternalHammilDSL.g:434:5: ( '#' )
-        // InternalHammilDSL.g:434:6: '#'
+        // InternalHammilDSL.g:531:5: ( '#' )
+        // InternalHammilDSL.g:531:6: '#'
         {
-        match(input,12,FOLLOW_2); if (state.failed) return ;
+        match(input,15,FOLLOW_2); if (state.failed) return ;
 
         }
     }
@@ -2897,10 +3282,10 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
 
     // $ANTLR start synpred3_InternalHammilDSL
     public final void synpred3_InternalHammilDSL_fragment() throws RecognitionException {   
-        // InternalHammilDSL.g:543:5: ( '##' )
-        // InternalHammilDSL.g:543:6: '##'
+        // InternalHammilDSL.g:640:5: ( '##' )
+        // InternalHammilDSL.g:640:6: '##'
         {
-        match(input,14,FOLLOW_2); if (state.failed) return ;
+        match(input,17,FOLLOW_2); if (state.failed) return ;
 
         }
     }
@@ -2953,14 +3338,14 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
 
 
     protected DFA2 dfa2 = new DFA2(this);
-    protected DFA8 dfa8 = new DFA8(this);
+    protected DFA12 dfa12 = new DFA12(this);
     static final String dfa_1s = "\12\uffff";
-    static final String dfa_2s = "\1\6\1\uffff\1\4\5\uffff\1\15\1\uffff";
-    static final String dfa_3s = "\1\23\1\uffff\1\4\5\uffff\1\17\1\uffff";
+    static final String dfa_2s = "\1\6\1\uffff\1\4\5\uffff\1\11\1\uffff";
+    static final String dfa_3s = "\1\25\1\uffff\1\4\5\uffff\1\20\1\uffff";
     static final String dfa_4s = "\1\uffff\1\1\1\uffff\1\2\1\3\1\4\1\5\1\6\1\uffff\1\1";
     static final String dfa_5s = "\1\1\7\uffff\1\0\1\uffff}>";
     static final String[] dfa_6s = {
-            "\1\2\5\uffff\1\1\1\uffff\1\3\1\uffff\1\4\1\6\1\7\1\5",
+            "\1\2\10\uffff\1\1\1\uffff\1\3\1\4\1\6\1\7\1\5",
             "",
             "\1\10",
             "",
@@ -2968,7 +3353,7 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
             "",
             "",
             "",
-            "\1\11\1\uffff\1\3",
+            "\1\3\6\uffff\1\11",
             ""
     };
 
@@ -3006,9 +3391,9 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
                         int index2_8 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (LA2_8==13) && (synpred1_InternalHammilDSL())) {s = 9;}
+                        if ( (LA2_8==16) && (synpred1_InternalHammilDSL())) {s = 9;}
 
-                        else if ( (LA2_8==15) ) {s = 3;}
+                        else if ( (LA2_8==9) ) {s = 3;}
 
                          
                         input.seek(index2_8);
@@ -3021,19 +3406,19 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
                         int index2_0 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (LA2_0==12) && (synpred1_InternalHammilDSL())) {s = 1;}
+                        if ( (LA2_0==15) && (synpred1_InternalHammilDSL())) {s = 1;}
 
                         else if ( (LA2_0==RULE_STRING) ) {s = 2;}
 
-                        else if ( (LA2_0==14) ) {s = 3;}
+                        else if ( (LA2_0==17) ) {s = 3;}
 
-                        else if ( (LA2_0==16) ) {s = 4;}
+                        else if ( (LA2_0==18) ) {s = 4;}
 
-                        else if ( (LA2_0==19) ) {s = 5;}
+                        else if ( (LA2_0==21) ) {s = 5;}
 
-                        else if ( (LA2_0==17) ) {s = 6;}
+                        else if ( (LA2_0==19) ) {s = 6;}
 
-                        else if ( (LA2_0==18) ) {s = 7;}
+                        else if ( (LA2_0==20) ) {s = 7;}
 
                          
                         input.seek(index2_0);
@@ -3048,16 +3433,16 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
         }
     }
     static final String dfa_7s = "\6\uffff";
-    static final String dfa_8s = "\1\1\1\uffff\1\4\1\5\2\uffff";
+    static final String dfa_8s = "\1\1\1\uffff\2\4\2\uffff";
     static final String dfa_9s = "\1\4\1\uffff\2\4\2\uffff";
-    static final String dfa_10s = "\1\23\1\uffff\2\23\2\uffff";
+    static final String dfa_10s = "\1\25\1\uffff\2\25\2\uffff";
     static final String dfa_11s = "\1\uffff\1\2\2\uffff\2\1";
     static final String dfa_12s = "\6\uffff}>";
     static final String[] dfa_13s = {
-            "\3\1\2\uffff\3\1\1\2\1\uffff\1\1\1\uffff\4\1",
+            "\3\1\2\uffff\6\1\1\2\1\uffff\5\1",
             "",
-            "\1\4\1\3\1\4\2\uffff\4\4\1\uffff\1\4\1\uffff\4\4",
-            "\1\4\1\3\1\5\2\uffff\4\5\1\uffff\1\5\1\uffff\4\5",
+            "\1\4\1\3\1\4\2\uffff\7\4\1\uffff\5\4",
+            "\1\4\1\3\1\5\2\uffff\6\5\1\4\1\uffff\5\5",
             "",
             ""
     };
@@ -3070,11 +3455,11 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
     static final short[] dfa_12 = DFA.unpackEncodedString(dfa_12s);
     static final short[][] dfa_13 = unpackEncodedStringArray(dfa_13s);
 
-    class DFA8 extends DFA {
+    class DFA12 extends DFA {
 
-        public DFA8(BaseRecognizer recognizer) {
+        public DFA12(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 8;
+            this.decisionNumber = 12;
             this.eot = dfa_7;
             this.eof = dfa_8;
             this.min = dfa_9;
@@ -3084,28 +3469,33 @@ public class InternalHammilDSLParser extends AbstractInternalAntlrParser {
             this.transition = dfa_13;
         }
         public String getDescription() {
-            return "()* loopback of 465:4: (otherlv_3= '#' )*";
+            return "()* loopback of 562:4: (otherlv_3= '#' )*";
         }
     }
  
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x00000000000F5E42L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000001240L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000001040L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x00000000003EFE42L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000000210L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000000410L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000001060L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000001032L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000000032L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000002012L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000001012L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000008012L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000000810L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000009E40L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000008040L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000008060L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000008032L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000000032L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000010012L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000000008012L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000000000212L});
 
 }

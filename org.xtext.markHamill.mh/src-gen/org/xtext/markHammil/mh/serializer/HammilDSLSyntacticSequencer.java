@@ -10,6 +10,8 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.AlternativeAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.GroupAlias;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
@@ -39,6 +41,8 @@ public class HammilDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_HeaderDepth5Expression_NumberSignKeyword_2_a;
 	protected AbstractElementAlias match_HeaderDepth6Expression_BLTerminalRuleCall_3_q;
 	protected AbstractElementAlias match_HeaderDepth6Expression_NumberSignKeyword_2_a;
+	protected AbstractElementAlias match_HorizontalExpression_HyphenMinusKeyword_0_3_p;
+	protected AbstractElementAlias match_HorizontalExpression___AsteriskKeyword_1_0_AsteriskKeyword_1_1_AsteriskKeyword_1_2_p_BLTerminalRuleCall_1_3___or____Keyword_2_0__Keyword_2_1__Keyword_2_2_p_BLTerminalRuleCall_2_3__;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
@@ -62,6 +66,8 @@ public class HammilDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_HeaderDepth5Expression_NumberSignKeyword_2_a = new TokenAlias(true, true, grammarAccess.getHeaderDepth5ExpressionAccess().getNumberSignKeyword_2());
 		match_HeaderDepth6Expression_BLTerminalRuleCall_3_q = new TokenAlias(false, true, grammarAccess.getHeaderDepth6ExpressionAccess().getBLTerminalRuleCall_3());
 		match_HeaderDepth6Expression_NumberSignKeyword_2_a = new TokenAlias(true, true, grammarAccess.getHeaderDepth6ExpressionAccess().getNumberSignKeyword_2());
+		match_HorizontalExpression_HyphenMinusKeyword_0_3_p = new TokenAlias(true, false, grammarAccess.getHorizontalExpressionAccess().getHyphenMinusKeyword_0_3());
+		match_HorizontalExpression___AsteriskKeyword_1_0_AsteriskKeyword_1_1_AsteriskKeyword_1_2_p_BLTerminalRuleCall_1_3___or____Keyword_2_0__Keyword_2_1__Keyword_2_2_p_BLTerminalRuleCall_2_3__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getHorizontalExpressionAccess().getAsteriskKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getHorizontalExpressionAccess().getAsteriskKeyword_1_1()), new TokenAlias(true, false, grammarAccess.getHorizontalExpressionAccess().getAsteriskKeyword_1_2()), new TokenAlias(false, false, grammarAccess.getHorizontalExpressionAccess().getBLTerminalRuleCall_1_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getHorizontalExpressionAccess().get_Keyword_2_0()), new TokenAlias(false, false, grammarAccess.getHorizontalExpressionAccess().get_Keyword_2_1()), new TokenAlias(true, false, grammarAccess.getHorizontalExpressionAccess().get_Keyword_2_2()), new TokenAlias(false, false, grammarAccess.getHorizontalExpressionAccess().getBLTerminalRuleCall_2_3())));
 	}
 	
 	@Override
@@ -135,6 +141,10 @@ public class HammilDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_HeaderDepth6Expression_BLTerminalRuleCall_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_HeaderDepth6Expression_NumberSignKeyword_2_a.equals(syntax))
 				emit_HeaderDepth6Expression_NumberSignKeyword_2_a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_HorizontalExpression_HyphenMinusKeyword_0_3_p.equals(syntax))
+				emit_HorizontalExpression_HyphenMinusKeyword_0_3_p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_HorizontalExpression___AsteriskKeyword_1_0_AsteriskKeyword_1_1_AsteriskKeyword_1_2_p_BLTerminalRuleCall_1_3___or____Keyword_2_0__Keyword_2_1__Keyword_2_2_p_BLTerminalRuleCall_2_3__.equals(syntax))
+				emit_HorizontalExpression___AsteriskKeyword_1_0_AsteriskKeyword_1_1_AsteriskKeyword_1_2_p_BLTerminalRuleCall_1_3___or____Keyword_2_0__Keyword_2_1__Keyword_2_2_p_BLTerminalRuleCall_2_3__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -345,6 +355,28 @@ public class HammilDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     title=EmphasisExpression (ambiguity) BL? (rule end)
 	 */
 	protected void emit_HeaderDepth6Expression_NumberSignKeyword_2_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     '-'+
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) '-' '-' (ambiguity) BL (rule start)
+	 */
+	protected void emit_HorizontalExpression_HyphenMinusKeyword_0_3_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ('_' '_' '_'+ BL) | ('*' '*' '*'+ BL)
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) (rule start)
+	 */
+	protected void emit_HorizontalExpression___AsteriskKeyword_1_0_AsteriskKeyword_1_1_AsteriskKeyword_1_2_p_BLTerminalRuleCall_1_3___or____Keyword_2_0__Keyword_2_1__Keyword_2_2_p_BLTerminalRuleCall_2_3__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
