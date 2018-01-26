@@ -10,12 +10,21 @@ File:
         ;
         
 Expression:
-	=> (=> c=HeaderExpression| c=EmphasisExpression =>BL?) | c=BreakLineExpression
+	=> (=> c=HeaderExpression| c=TextExpression =>BL?) | c=BreakLineExpression
 ;
 
 BreakLineExpression :
 	{BreakLineExpressionB}
 	BL
+;
+
+TextExpression:
+	c+= EmphasisExpression | c+= QuoteExpression
+;
+
+QuoteExpression returns QuoteExpression:
+	{TextExpression}
+	'>' (content+=TextExpression)+ =>BL?
 ;
 
 

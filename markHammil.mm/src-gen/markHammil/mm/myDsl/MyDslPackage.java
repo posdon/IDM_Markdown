@@ -133,6 +133,62 @@ public interface MyDslPackage extends EPackage
   int BREAK_LINE_EXPRESSION_FEATURE_COUNT = 0;
 
   /**
+   * The meta object id for the '{@link markHammil.mm.myDsl.impl.QuoteExpressionImpl <em>Quote Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see markHammil.mm.myDsl.impl.QuoteExpressionImpl
+   * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getQuoteExpression()
+   * @generated
+   */
+  int QUOTE_EXPRESSION = 4;
+
+  /**
+   * The number of structural features of the '<em>Quote Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QUOTE_EXPRESSION_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link markHammil.mm.myDsl.impl.TextExpressionImpl <em>Text Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see markHammil.mm.myDsl.impl.TextExpressionImpl
+   * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getTextExpression()
+   * @generated
+   */
+  int TEXT_EXPRESSION = 3;
+
+  /**
+   * The feature id for the '<em><b>C</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TEXT_EXPRESSION__C = QUOTE_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Content</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TEXT_EXPRESSION__CONTENT = QUOTE_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Text Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TEXT_EXPRESSION_FEATURE_COUNT = QUOTE_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
    * The meta object id for the '{@link markHammil.mm.myDsl.impl.HeaderExpressionImpl <em>Header Expression</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -140,7 +196,7 @@ public interface MyDslPackage extends EPackage
    * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getHeaderExpression()
    * @generated
    */
-  int HEADER_EXPRESSION = 3;
+  int HEADER_EXPRESSION = 5;
 
   /**
    * The feature id for the '<em><b>Title</b></em>' containment reference list.
@@ -168,7 +224,7 @@ public interface MyDslPackage extends EPackage
    * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getHeader1Expression()
    * @generated
    */
-  int HEADER1_EXPRESSION = 4;
+  int HEADER1_EXPRESSION = 6;
 
   /**
    * The feature id for the '<em><b>Title</b></em>' containment reference list.
@@ -196,7 +252,7 @@ public interface MyDslPackage extends EPackage
    * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getHeader2Expression()
    * @generated
    */
-  int HEADER2_EXPRESSION = 5;
+  int HEADER2_EXPRESSION = 7;
 
   /**
    * The feature id for the '<em><b>Title</b></em>' containment reference list.
@@ -224,7 +280,7 @@ public interface MyDslPackage extends EPackage
    * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getHeader3Expression()
    * @generated
    */
-  int HEADER3_EXPRESSION = 6;
+  int HEADER3_EXPRESSION = 8;
 
   /**
    * The feature id for the '<em><b>Title</b></em>' containment reference list.
@@ -252,7 +308,7 @@ public interface MyDslPackage extends EPackage
    * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getHeader4Expression()
    * @generated
    */
-  int HEADER4_EXPRESSION = 7;
+  int HEADER4_EXPRESSION = 9;
 
   /**
    * The feature id for the '<em><b>Title</b></em>' containment reference list.
@@ -280,7 +336,7 @@ public interface MyDslPackage extends EPackage
    * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getHeader5Expression()
    * @generated
    */
-  int HEADER5_EXPRESSION = 8;
+  int HEADER5_EXPRESSION = 10;
 
   /**
    * The feature id for the '<em><b>Title</b></em>' containment reference list.
@@ -308,7 +364,7 @@ public interface MyDslPackage extends EPackage
    * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getHeader6Expression()
    * @generated
    */
-  int HEADER6_EXPRESSION = 9;
+  int HEADER6_EXPRESSION = 11;
 
   /**
    * The feature id for the '<em><b>Title</b></em>' containment reference list.
@@ -336,7 +392,7 @@ public interface MyDslPackage extends EPackage
    * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getEmphasisExpression()
    * @generated
    */
-  int EMPHASIS_EXPRESSION = 10;
+  int EMPHASIS_EXPRESSION = 12;
 
   /**
    * The feature id for the '<em><b>C</b></em>' containment reference list.
@@ -382,7 +438,7 @@ public interface MyDslPackage extends EPackage
    * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getBreakLineExpressionB()
    * @generated
    */
-  int BREAK_LINE_EXPRESSION_B = 11;
+  int BREAK_LINE_EXPRESSION_B = 13;
 
   /**
    * The number of structural features of the '<em>Break Line Expression B</em>' class.
@@ -401,7 +457,7 @@ public interface MyDslPackage extends EPackage
    * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getStrongExpression()
    * @generated
    */
-  int STRONG_EXPRESSION = 12;
+  int STRONG_EXPRESSION = 14;
 
   /**
    * The feature id for the '<em><b>C</b></em>' containment reference list.
@@ -447,7 +503,7 @@ public interface MyDslPackage extends EPackage
    * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getItalicExpression()
    * @generated
    */
-  int ITALIC_EXPRESSION = 13;
+  int ITALIC_EXPRESSION = 15;
 
   /**
    * The feature id for the '<em><b>C</b></em>' containment reference list.
@@ -493,7 +549,7 @@ public interface MyDslPackage extends EPackage
    * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getScratchExpression()
    * @generated
    */
-  int SCRATCH_EXPRESSION = 14;
+  int SCRATCH_EXPRESSION = 16;
 
   /**
    * The feature id for the '<em><b>C</b></em>' containment reference list.
@@ -583,6 +639,48 @@ public interface MyDslPackage extends EPackage
    * @generated
    */
   EClass getBreakLineExpression();
+
+  /**
+   * Returns the meta object for class '{@link markHammil.mm.myDsl.TextExpression <em>Text Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Text Expression</em>'.
+   * @see markHammil.mm.myDsl.TextExpression
+   * @generated
+   */
+  EClass getTextExpression();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link markHammil.mm.myDsl.TextExpression#getC <em>C</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>C</em>'.
+   * @see markHammil.mm.myDsl.TextExpression#getC()
+   * @see #getTextExpression()
+   * @generated
+   */
+  EReference getTextExpression_C();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link markHammil.mm.myDsl.TextExpression#getContent <em>Content</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Content</em>'.
+   * @see markHammil.mm.myDsl.TextExpression#getContent()
+   * @see #getTextExpression()
+   * @generated
+   */
+  EReference getTextExpression_Content();
+
+  /**
+   * Returns the meta object for class '{@link markHammil.mm.myDsl.QuoteExpression <em>Quote Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Quote Expression</em>'.
+   * @see markHammil.mm.myDsl.QuoteExpression
+   * @generated
+   */
+  EClass getQuoteExpression();
 
   /**
    * Returns the meta object for class '{@link markHammil.mm.myDsl.HeaderExpression <em>Header Expression</em>}'.
@@ -816,6 +914,42 @@ public interface MyDslPackage extends EPackage
      * @generated
      */
     EClass BREAK_LINE_EXPRESSION = eINSTANCE.getBreakLineExpression();
+
+    /**
+     * The meta object literal for the '{@link markHammil.mm.myDsl.impl.TextExpressionImpl <em>Text Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see markHammil.mm.myDsl.impl.TextExpressionImpl
+     * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getTextExpression()
+     * @generated
+     */
+    EClass TEXT_EXPRESSION = eINSTANCE.getTextExpression();
+
+    /**
+     * The meta object literal for the '<em><b>C</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TEXT_EXPRESSION__C = eINSTANCE.getTextExpression_C();
+
+    /**
+     * The meta object literal for the '<em><b>Content</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TEXT_EXPRESSION__CONTENT = eINSTANCE.getTextExpression_Content();
+
+    /**
+     * The meta object literal for the '{@link markHammil.mm.myDsl.impl.QuoteExpressionImpl <em>Quote Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see markHammil.mm.myDsl.impl.QuoteExpressionImpl
+     * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getQuoteExpression()
+     * @generated
+     */
+    EClass QUOTE_EXPRESSION = eINSTANCE.getQuoteExpression();
 
     /**
      * The meta object literal for the '{@link markHammil.mm.myDsl.impl.HeaderExpressionImpl <em>Header Expression</em>}' class.

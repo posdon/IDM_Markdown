@@ -91,6 +91,16 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
         return createBreakLineExpressionAdapter();
       }
       @Override
+      public Adapter caseTextExpression(TextExpression object)
+      {
+        return createTextExpressionAdapter();
+      }
+      @Override
+      public Adapter caseQuoteExpression(QuoteExpression object)
+      {
+        return createQuoteExpressionAdapter();
+      }
+      @Override
       public Adapter caseHeaderExpression(HeaderExpression object)
       {
         return createHeaderExpressionAdapter();
@@ -213,6 +223,36 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createBreakLineExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.TextExpression <em>Text Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see markHammil.mm.myDsl.TextExpression
+   * @generated
+   */
+  public Adapter createTextExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.QuoteExpression <em>Quote Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see markHammil.mm.myDsl.QuoteExpression
+   * @generated
+   */
+  public Adapter createQuoteExpressionAdapter()
   {
     return null;
   }

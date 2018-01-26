@@ -33,6 +33,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_Header5Expression_NumberSignKeyword_3_0_a;
 	protected AbstractElementAlias match_Header6Expression_BLTerminalRuleCall_4_q;
 	protected AbstractElementAlias match_Header6Expression_NumberSignKeyword_3_0_a;
+	protected AbstractElementAlias match_QuoteExpression_BLTerminalRuleCall_3_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
@@ -50,6 +51,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_Header5Expression_NumberSignKeyword_3_0_a = new TokenAlias(true, true, grammarAccess.getHeader5ExpressionAccess().getNumberSignKeyword_3_0());
 		match_Header6Expression_BLTerminalRuleCall_4_q = new TokenAlias(false, true, grammarAccess.getHeader6ExpressionAccess().getBLTerminalRuleCall_4());
 		match_Header6Expression_NumberSignKeyword_3_0_a = new TokenAlias(true, true, grammarAccess.getHeader6ExpressionAccess().getNumberSignKeyword_3_0());
+		match_QuoteExpression_BLTerminalRuleCall_3_q = new TokenAlias(false, true, grammarAccess.getQuoteExpressionAccess().getBLTerminalRuleCall_3());
 	}
 	
 	@Override
@@ -100,6 +102,8 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Header6Expression_BLTerminalRuleCall_4_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Header6Expression_NumberSignKeyword_3_0_a.equals(syntax))
 				emit_Header6Expression_NumberSignKeyword_3_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_QuoteExpression_BLTerminalRuleCall_3_q.equals(syntax))
+				emit_QuoteExpression_BLTerminalRuleCall_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -109,7 +113,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     BL?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     c=EmphasisExpression (ambiguity) (rule end)
+	 *     c=TextExpression (ambiguity) (rule end)
 	 */
 	protected void emit_Expression_BLTerminalRuleCall_0_0_1_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -244,6 +248,17 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     title+=EmphasisExpression (ambiguity) BL? (rule end)
 	 */
 	protected void emit_Header6Expression_NumberSignKeyword_3_0_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     BL?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     content+=TextExpression (ambiguity) (rule end)
+	 */
+	protected void emit_QuoteExpression_BLTerminalRuleCall_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

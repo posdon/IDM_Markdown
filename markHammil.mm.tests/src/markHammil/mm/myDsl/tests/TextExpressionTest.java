@@ -7,16 +7,24 @@ import junit.framework.TestCase;
 
 import junit.textui.TestRunner;
 
-import markHammil.mm.myDsl.EmphasisExpression;
 import markHammil.mm.myDsl.MyDslFactory;
+import markHammil.mm.myDsl.TextExpression;
 
 /**
  * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Emphasis Expression</b></em>'.
+ * A test case for the model object '<em><b>Text Expression</b></em>'.
  * <!-- end-user-doc -->
  * @generated
  */
-public class EmphasisExpressionTest extends TextExpressionTest {
+public class TextExpressionTest extends TestCase {
+
+	/**
+	 * The fixture for this Text Expression test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TextExpression fixture = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -24,28 +32,37 @@ public class EmphasisExpressionTest extends TextExpressionTest {
 	 * @generated
 	 */
 	public static void main(String[] args) {
-		TestRunner.run(EmphasisExpressionTest.class);
+		TestRunner.run(TextExpressionTest.class);
 	}
 
 	/**
-	 * Constructs a new Emphasis Expression test case with the given name.
+	 * Constructs a new Text Expression test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EmphasisExpressionTest(String name) {
+	public TextExpressionTest(String name) {
 		super(name);
 	}
 
 	/**
-	 * Returns the fixture for this Emphasis Expression test case.
+	 * Sets the fixture for this Text Expression test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	protected EmphasisExpression getFixture() {
-		return (EmphasisExpression)fixture;
+	protected void setFixture(TextExpression fixture) {
+		this.fixture = fixture;
+	}
+
+	/**
+	 * Returns the fixture for this Text Expression test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TextExpression getFixture() {
+		return fixture;
 	}
 
 	/**
@@ -56,7 +73,7 @@ public class EmphasisExpressionTest extends TextExpressionTest {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(MyDslFactory.eINSTANCE.createEmphasisExpression());
+		setFixture(MyDslFactory.eINSTANCE.createTextExpression());
 	}
 
 	/**
@@ -70,4 +87,4 @@ public class EmphasisExpressionTest extends TextExpressionTest {
 		setFixture(null);
 	}
 
-} //EmphasisExpressionTest
+} //TextExpressionTest

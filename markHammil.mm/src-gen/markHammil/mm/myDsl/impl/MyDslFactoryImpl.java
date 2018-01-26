@@ -68,6 +68,8 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
       case MyDslPackage.FILE: return createFile();
       case MyDslPackage.EXPRESSION: return createExpression();
       case MyDslPackage.BREAK_LINE_EXPRESSION: return createBreakLineExpression();
+      case MyDslPackage.TEXT_EXPRESSION: return createTextExpression();
+      case MyDslPackage.QUOTE_EXPRESSION: return createQuoteExpression();
       case MyDslPackage.HEADER_EXPRESSION: return createHeaderExpression();
       case MyDslPackage.HEADER1_EXPRESSION: return createHeader1Expression();
       case MyDslPackage.HEADER2_EXPRESSION: return createHeader2Expression();
@@ -116,6 +118,28 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
   {
     BreakLineExpressionImpl breakLineExpression = new BreakLineExpressionImpl();
     return breakLineExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TextExpression createTextExpression()
+  {
+    TextExpressionImpl textExpression = new TextExpressionImpl();
+    return textExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public QuoteExpression createQuoteExpression()
+  {
+    QuoteExpressionImpl quoteExpression = new QuoteExpressionImpl();
+    return quoteExpression;
   }
 
   /**

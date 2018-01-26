@@ -51,6 +51,24 @@ public interface MyDslFactory extends EFactory
   BreakLineExpression createBreakLineExpression();
 
   /**
+   * Returns a new object of class '<em>Text Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Text Expression</em>'.
+   * @generated
+   */
+  TextExpression createTextExpression();
+
+  /**
+   * Returns a new object of class '<em>Quote Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Quote Expression</em>'.
+   * @generated
+   */
+  QuoteExpression createQuoteExpression();
+
+  /**
    * Returns a new object of class '<em>Header Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

@@ -142,6 +142,29 @@ public class MyDslItemProviderAdapterFactory extends MyDslAdapterFactory impleme
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link markHammil.mm.myDsl.TextExpression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TextExpressionItemProvider textExpressionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link markHammil.mm.myDsl.TextExpression}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createTextExpressionAdapter() {
+		if (textExpressionItemProvider == null) {
+			textExpressionItemProvider = new TextExpressionItemProvider(this);
+		}
+
+		return textExpressionItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link markHammil.mm.myDsl.HeaderExpression} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -519,6 +542,7 @@ public class MyDslItemProviderAdapterFactory extends MyDslAdapterFactory impleme
 		if (fileItemProvider != null) fileItemProvider.dispose();
 		if (expressionItemProvider != null) expressionItemProvider.dispose();
 		if (breakLineExpressionItemProvider != null) breakLineExpressionItemProvider.dispose();
+		if (textExpressionItemProvider != null) textExpressionItemProvider.dispose();
 		if (headerExpressionItemProvider != null) headerExpressionItemProvider.dispose();
 		if (header1ExpressionItemProvider != null) header1ExpressionItemProvider.dispose();
 		if (header2ExpressionItemProvider != null) header2ExpressionItemProvider.dispose();

@@ -55,22 +55,22 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cCHeaderExpressionParserRuleCall_0_0_0_0 = (RuleCall)cCAssignment_0_0_0.eContents().get(0);
 		private final Group cGroup_0_0_1 = (Group)cAlternatives_0_0.eContents().get(1);
 		private final Assignment cCAssignment_0_0_1_0 = (Assignment)cGroup_0_0_1.eContents().get(0);
-		private final RuleCall cCEmphasisExpressionParserRuleCall_0_0_1_0_0 = (RuleCall)cCAssignment_0_0_1_0.eContents().get(0);
+		private final RuleCall cCTextExpressionParserRuleCall_0_0_1_0_0 = (RuleCall)cCAssignment_0_0_1_0.eContents().get(0);
 		private final RuleCall cBLTerminalRuleCall_0_0_1_1 = (RuleCall)cGroup_0_0_1.eContents().get(1);
 		private final Assignment cCAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
 		private final RuleCall cCBreakLineExpressionParserRuleCall_1_0 = (RuleCall)cCAssignment_1.eContents().get(0);
 		
 		//Expression:
-		//	=> (=> c=HeaderExpression | c=EmphasisExpression => BL?) | c=BreakLineExpression;
+		//	=> (=> c=HeaderExpression | c=TextExpression => BL?) | c=BreakLineExpression;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//=> (=> c=HeaderExpression | c=EmphasisExpression => BL?) | c=BreakLineExpression
+		//=> (=> c=HeaderExpression | c=TextExpression => BL?) | c=BreakLineExpression
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//=> (=> c=HeaderExpression | c=EmphasisExpression => BL?)
+		//=> (=> c=HeaderExpression | c=TextExpression => BL?)
 		public Group getGroup_0() { return cGroup_0; }
 		
-		//=> c=HeaderExpression | c=EmphasisExpression => BL?
+		//=> c=HeaderExpression | c=TextExpression => BL?
 		public Alternatives getAlternatives_0_0() { return cAlternatives_0_0; }
 		
 		//=> c=HeaderExpression
@@ -79,14 +79,14 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//HeaderExpression
 		public RuleCall getCHeaderExpressionParserRuleCall_0_0_0_0() { return cCHeaderExpressionParserRuleCall_0_0_0_0; }
 		
-		//c=EmphasisExpression => BL?
+		//c=TextExpression => BL?
 		public Group getGroup_0_0_1() { return cGroup_0_0_1; }
 		
-		//c=EmphasisExpression
+		//c=TextExpression
 		public Assignment getCAssignment_0_0_1_0() { return cCAssignment_0_0_1_0; }
 		
-		//EmphasisExpression
-		public RuleCall getCEmphasisExpressionParserRuleCall_0_0_1_0_0() { return cCEmphasisExpressionParserRuleCall_0_0_1_0_0; }
+		//TextExpression
+		public RuleCall getCTextExpressionParserRuleCall_0_0_1_0_0() { return cCTextExpressionParserRuleCall_0_0_1_0_0; }
 		
 		//=> BL?
 		public RuleCall getBLTerminalRuleCall_0_0_1_1() { return cBLTerminalRuleCall_0_0_1_1; }
@@ -115,6 +115,65 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//BL
 		public RuleCall getBLTerminalRuleCall_1() { return cBLTerminalRuleCall_1; }
+	}
+	public class TextExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "markHammil.mm.MyDsl.TextExpression");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Assignment cCAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cCEmphasisExpressionParserRuleCall_0_0 = (RuleCall)cCAssignment_0.eContents().get(0);
+		private final Assignment cCAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cCQuoteExpressionParserRuleCall_1_0 = (RuleCall)cCAssignment_1.eContents().get(0);
+		
+		//TextExpression:
+		//	c+=EmphasisExpression | c+=QuoteExpression;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//c+=EmphasisExpression | c+=QuoteExpression
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//c+=EmphasisExpression
+		public Assignment getCAssignment_0() { return cCAssignment_0; }
+		
+		//EmphasisExpression
+		public RuleCall getCEmphasisExpressionParserRuleCall_0_0() { return cCEmphasisExpressionParserRuleCall_0_0; }
+		
+		//c+=QuoteExpression
+		public Assignment getCAssignment_1() { return cCAssignment_1; }
+		
+		//QuoteExpression
+		public RuleCall getCQuoteExpressionParserRuleCall_1_0() { return cCQuoteExpressionParserRuleCall_1_0; }
+	}
+	public class QuoteExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "markHammil.mm.MyDsl.QuoteExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cTextExpressionAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cGreaterThanSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cContentAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cContentTextExpressionParserRuleCall_2_0 = (RuleCall)cContentAssignment_2.eContents().get(0);
+		private final RuleCall cBLTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
+		
+		//QuoteExpression:
+		//	{TextExpression}
+		//	'>' content+=TextExpression+ => BL?;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{TextExpression} '>' content+=TextExpression+ => BL?
+		public Group getGroup() { return cGroup; }
+		
+		//{TextExpression}
+		public Action getTextExpressionAction_0() { return cTextExpressionAction_0; }
+		
+		//'>'
+		public Keyword getGreaterThanSignKeyword_1() { return cGreaterThanSignKeyword_1; }
+		
+		//content+=TextExpression+
+		public Assignment getContentAssignment_2() { return cContentAssignment_2; }
+		
+		//TextExpression
+		public RuleCall getContentTextExpressionParserRuleCall_2_0() { return cContentTextExpressionParserRuleCall_2_0; }
+		
+		//=> BL?
+		public RuleCall getBLTerminalRuleCall_3() { return cBLTerminalRuleCall_3; }
 	}
 	public class HeaderExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "markHammil.mm.MyDsl.HeaderExpression");
@@ -605,6 +664,8 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	private final FileElements pFile;
 	private final ExpressionElements pExpression;
 	private final BreakLineExpressionElements pBreakLineExpression;
+	private final TextExpressionElements pTextExpression;
+	private final QuoteExpressionElements pQuoteExpression;
 	private final HeaderExpressionElements pHeaderExpression;
 	private final Header1ExpressionElements pHeader1Expression;
 	private final Header2ExpressionElements pHeader2Expression;
@@ -637,6 +698,8 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.pFile = new FileElements();
 		this.pExpression = new ExpressionElements();
 		this.pBreakLineExpression = new BreakLineExpressionElements();
+		this.pTextExpression = new TextExpressionElements();
+		this.pQuoteExpression = new QuoteExpressionElements();
 		this.pHeaderExpression = new HeaderExpressionElements();
 		this.pHeader1Expression = new Header1ExpressionElements();
 		this.pHeader2Expression = new Header2ExpressionElements();
@@ -696,7 +759,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Expression:
-	//	=> (=> c=HeaderExpression | c=EmphasisExpression => BL?) | c=BreakLineExpression;
+	//	=> (=> c=HeaderExpression | c=TextExpression => BL?) | c=BreakLineExpression;
 	public ExpressionElements getExpressionAccess() {
 		return pExpression;
 	}
@@ -713,6 +776,27 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getBreakLineExpressionRule() {
 		return getBreakLineExpressionAccess().getRule();
+	}
+	
+	//TextExpression:
+	//	c+=EmphasisExpression | c+=QuoteExpression;
+	public TextExpressionElements getTextExpressionAccess() {
+		return pTextExpression;
+	}
+	
+	public ParserRule getTextExpressionRule() {
+		return getTextExpressionAccess().getRule();
+	}
+	
+	//QuoteExpression:
+	//	{TextExpression}
+	//	'>' content+=TextExpression+ => BL?;
+	public QuoteExpressionElements getQuoteExpressionAccess() {
+		return pQuoteExpression;
+	}
+	
+	public ParserRule getQuoteExpressionRule() {
+		return getQuoteExpressionAccess().getRule();
 	}
 	
 	//HeaderExpression:

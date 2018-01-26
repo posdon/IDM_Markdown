@@ -94,6 +94,21 @@ public class MyDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case MyDslPackage.TEXT_EXPRESSION:
+      {
+        TextExpression textExpression = (TextExpression)theEObject;
+        T result = caseTextExpression(textExpression);
+        if (result == null) result = caseQuoteExpression(textExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MyDslPackage.QUOTE_EXPRESSION:
+      {
+        QuoteExpression quoteExpression = (QuoteExpression)theEObject;
+        T result = caseQuoteExpression(quoteExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case MyDslPackage.HEADER_EXPRESSION:
       {
         HeaderExpression headerExpression = (HeaderExpression)theEObject;
@@ -236,6 +251,38 @@ public class MyDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseBreakLineExpression(BreakLineExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Text Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Text Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTextExpression(TextExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Quote Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Quote Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseQuoteExpression(QuoteExpression object)
   {
     return null;
   }

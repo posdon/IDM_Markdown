@@ -19,6 +19,7 @@ import markHammil.mm.myDsl.ItalicExpression;
 import markHammil.mm.myDsl.MyDslPackage;
 import markHammil.mm.myDsl.ScratchExpression;
 import markHammil.mm.myDsl.StrongExpression;
+import markHammil.mm.myDsl.TextExpression;
 import markHammil.mm.services.MyDslGrammarAccess;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -90,6 +91,16 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case MyDslPackage.STRONG_EXPRESSION:
 				sequence_StrongExpression(context, (StrongExpression) semanticObject); 
 				return; 
+			case MyDslPackage.TEXT_EXPRESSION:
+				if (rule == grammarAccess.getQuoteExpressionRule()) {
+					sequence_QuoteExpression(context, (TextExpression) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getTextExpressionRule()) {
+					sequence_TextExpression(context, (TextExpression) semanticObject); 
+					return; 
+				}
+				else break;
 			}
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
@@ -124,7 +135,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Expression returns Expression
 	 *
 	 * Constraint:
-	 *     (c=HeaderExpression | c=EmphasisExpression | c=BreakLineExpression)
+	 *     (c=HeaderExpression | c=TextExpression | c=BreakLineExpression)
 	 */
 	protected void sequence_Expression(ISerializationContext context, Expression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -253,6 +264,18 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
+	 *     QuoteExpression returns TextExpression
+	 *
+	 * Constraint:
+	 *     content+=TextExpression+
+	 */
+	protected void sequence_QuoteExpression(ISerializationContext context, TextExpression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     ScratchExpression returns ScratchExpression
 	 *
 	 * Constraint:
@@ -284,6 +307,18 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getStrongExpressionAccess().getContentEmphasisExpressionParserRuleCall_2_0(), semanticObject.getContent());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     TextExpression returns TextExpression
+	 *
+	 * Constraint:
+	 *     (c+=EmphasisExpression | c+=QuoteExpression)
+	 */
+	protected void sequence_TextExpression(ISerializationContext context, TextExpression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
