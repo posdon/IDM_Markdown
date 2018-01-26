@@ -120,14 +120,25 @@ ruleExpression returns [EObject current=null]
 @after {
 	leaveRule();
 }:
-	{
-		newCompositeNode(grammarAccess.getExpressionAccess().getHeaderExpressionParserRuleCall());
-	}
-	this_HeaderExpression_0=ruleHeaderExpression
-	{
-		$current = $this_HeaderExpression_0.current;
-		afterParserOrEnumRuleCall();
-	}
+	(
+		(
+			{
+				newCompositeNode(grammarAccess.getExpressionAccess().getCHeaderExpressionParserRuleCall_0());
+			}
+			lv_c_0_0=ruleHeaderExpression
+			{
+				if ($current==null) {
+					$current = createModelElementForParent(grammarAccess.getExpressionRule());
+				}
+				set(
+					$current,
+					"c",
+					lv_c_0_0,
+					"markHammil.mm.MyDsl.HeaderExpression");
+				afterParserOrEnumRuleCall();
+			}
+		)
+	)
 ;
 
 // Entry rule entryRuleHeaderExpression
@@ -146,24 +157,103 @@ ruleHeaderExpression returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='#'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getHeaderExpressionAccess().getNumberSignKeyword_0());
+			newCompositeNode(grammarAccess.getHeaderExpressionAccess().getHeader1ExpressionParserRuleCall_0());
+		}
+		this_Header1Expression_0=ruleHeader1Expression
+		{
+			$current = $this_Header1Expression_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getHeaderExpressionAccess().getHeader2ExpressionParserRuleCall_1());
+		}
+		this_Header2Expression_1=ruleHeader2Expression
+		{
+			$current = $this_Header2Expression_1.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getHeaderExpressionAccess().getHeader3ExpressionParserRuleCall_2());
+		}
+		this_Header3Expression_2=ruleHeader3Expression
+		{
+			$current = $this_Header3Expression_2.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getHeaderExpressionAccess().getHeader4ExpressionParserRuleCall_3());
+		}
+		this_Header4Expression_3=ruleHeader4Expression
+		{
+			$current = $this_Header4Expression_3.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getHeaderExpressionAccess().getHeader5ExpressionParserRuleCall_4());
+		}
+		this_Header5Expression_4=ruleHeader5Expression
+		{
+			$current = $this_Header5Expression_4.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getHeaderExpressionAccess().getHeader6ExpressionParserRuleCall_5());
+		}
+		this_Header6Expression_5=ruleHeader6Expression
+		{
+			$current = $this_Header6Expression_5.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleHeader1Expression
+entryRuleHeader1Expression returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getHeader1ExpressionRule()); }
+	iv_ruleHeader1Expression=ruleHeader1Expression
+	{ $current=$iv_ruleHeader1Expression.current; }
+	EOF;
+
+// Rule Header1Expression
+ruleHeader1Expression returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getHeader1ExpressionAccess().getHeader1ExpressionAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='#'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getHeader1ExpressionAccess().getNumberSignKeyword_1());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getHeaderExpressionAccess().getTitleEmphasisExpressionParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getHeader1ExpressionAccess().getTitleEmphasisExpressionParserRuleCall_2_0());
 				}
-				lv_title_1_0=ruleEmphasisExpression
+				lv_title_2_0=ruleEmphasisExpression
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getHeaderExpressionRule());
+						$current = createModelElementForParent(grammarAccess.getHeader1ExpressionRule());
 					}
-					set(
+					add(
 						$current,
 						"title",
-						lv_title_1_0,
+						lv_title_2_0,
 						"markHammil.mm.MyDsl.EmphasisExpression");
 					afterParserOrEnumRuleCall();
 				}
@@ -172,21 +262,330 @@ ruleHeaderExpression returns [EObject current=null]
 		(
 			('#'
 			)=>
-			otherlv_2='#'
+			otherlv_3='#'
 			{
-				newLeafNode(otherlv_2, grammarAccess.getHeaderExpressionAccess().getNumberSignKeyword_2_0());
-			}
-		)*
-		(
-			this_WS_3=RULE_WS
-			{
-				newLeafNode(this_WS_3, grammarAccess.getHeaderExpressionAccess().getWSTerminalRuleCall_3());
+				newLeafNode(otherlv_3, grammarAccess.getHeader1ExpressionAccess().getNumberSignKeyword_3_0());
 			}
 		)*
 		(
 			this_BL_4=RULE_BL
 			{
-				newLeafNode(this_BL_4, grammarAccess.getHeaderExpressionAccess().getBLTerminalRuleCall_4());
+				newLeafNode(this_BL_4, grammarAccess.getHeader1ExpressionAccess().getBLTerminalRuleCall_4());
+			}
+		)?
+	)
+;
+
+// Entry rule entryRuleHeader2Expression
+entryRuleHeader2Expression returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getHeader2ExpressionRule()); }
+	iv_ruleHeader2Expression=ruleHeader2Expression
+	{ $current=$iv_ruleHeader2Expression.current; }
+	EOF;
+
+// Rule Header2Expression
+ruleHeader2Expression returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getHeader2ExpressionAccess().getHeader2ExpressionAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='##'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getHeader2ExpressionAccess().getNumberSignNumberSignKeyword_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getHeader2ExpressionAccess().getTitleEmphasisExpressionParserRuleCall_2_0());
+				}
+				lv_title_2_0=ruleEmphasisExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getHeader2ExpressionRule());
+					}
+					add(
+						$current,
+						"title",
+						lv_title_2_0,
+						"markHammil.mm.MyDsl.EmphasisExpression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			('#'
+			)=>
+			otherlv_3='#'
+			{
+				newLeafNode(otherlv_3, grammarAccess.getHeader2ExpressionAccess().getNumberSignKeyword_3_0());
+			}
+		)*
+		(
+			this_BL_4=RULE_BL
+			{
+				newLeafNode(this_BL_4, grammarAccess.getHeader2ExpressionAccess().getBLTerminalRuleCall_4());
+			}
+		)?
+	)
+;
+
+// Entry rule entryRuleHeader3Expression
+entryRuleHeader3Expression returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getHeader3ExpressionRule()); }
+	iv_ruleHeader3Expression=ruleHeader3Expression
+	{ $current=$iv_ruleHeader3Expression.current; }
+	EOF;
+
+// Rule Header3Expression
+ruleHeader3Expression returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getHeader3ExpressionAccess().getHeader3ExpressionAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='###'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getHeader3ExpressionAccess().getNumberSignNumberSignNumberSignKeyword_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getHeader3ExpressionAccess().getTitleEmphasisExpressionParserRuleCall_2_0());
+				}
+				lv_title_2_0=ruleEmphasisExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getHeader3ExpressionRule());
+					}
+					add(
+						$current,
+						"title",
+						lv_title_2_0,
+						"markHammil.mm.MyDsl.EmphasisExpression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			('#'
+			)=>
+			otherlv_3='#'
+			{
+				newLeafNode(otherlv_3, grammarAccess.getHeader3ExpressionAccess().getNumberSignKeyword_3_0());
+			}
+		)*
+		(
+			this_BL_4=RULE_BL
+			{
+				newLeafNode(this_BL_4, grammarAccess.getHeader3ExpressionAccess().getBLTerminalRuleCall_4());
+			}
+		)?
+	)
+;
+
+// Entry rule entryRuleHeader4Expression
+entryRuleHeader4Expression returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getHeader4ExpressionRule()); }
+	iv_ruleHeader4Expression=ruleHeader4Expression
+	{ $current=$iv_ruleHeader4Expression.current; }
+	EOF;
+
+// Rule Header4Expression
+ruleHeader4Expression returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getHeader4ExpressionAccess().getHeader4ExpressionAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='####'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getHeader4ExpressionAccess().getNumberSignNumberSignNumberSignNumberSignKeyword_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getHeader4ExpressionAccess().getTitleEmphasisExpressionParserRuleCall_2_0());
+				}
+				lv_title_2_0=ruleEmphasisExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getHeader4ExpressionRule());
+					}
+					add(
+						$current,
+						"title",
+						lv_title_2_0,
+						"markHammil.mm.MyDsl.EmphasisExpression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			('#'
+			)=>
+			otherlv_3='#'
+			{
+				newLeafNode(otherlv_3, grammarAccess.getHeader4ExpressionAccess().getNumberSignKeyword_3_0());
+			}
+		)*
+		(
+			this_BL_4=RULE_BL
+			{
+				newLeafNode(this_BL_4, grammarAccess.getHeader4ExpressionAccess().getBLTerminalRuleCall_4());
+			}
+		)?
+	)
+;
+
+// Entry rule entryRuleHeader5Expression
+entryRuleHeader5Expression returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getHeader5ExpressionRule()); }
+	iv_ruleHeader5Expression=ruleHeader5Expression
+	{ $current=$iv_ruleHeader5Expression.current; }
+	EOF;
+
+// Rule Header5Expression
+ruleHeader5Expression returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getHeader5ExpressionAccess().getHeader5ExpressionAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='#####'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getHeader5ExpressionAccess().getNumberSignNumberSignNumberSignNumberSignNumberSignKeyword_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getHeader5ExpressionAccess().getTitleEmphasisExpressionParserRuleCall_2_0());
+				}
+				lv_title_2_0=ruleEmphasisExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getHeader5ExpressionRule());
+					}
+					add(
+						$current,
+						"title",
+						lv_title_2_0,
+						"markHammil.mm.MyDsl.EmphasisExpression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			('#'
+			)=>
+			otherlv_3='#'
+			{
+				newLeafNode(otherlv_3, grammarAccess.getHeader5ExpressionAccess().getNumberSignKeyword_3_0());
+			}
+		)*
+		(
+			this_BL_4=RULE_BL
+			{
+				newLeafNode(this_BL_4, grammarAccess.getHeader5ExpressionAccess().getBLTerminalRuleCall_4());
+			}
+		)?
+	)
+;
+
+// Entry rule entryRuleHeader6Expression
+entryRuleHeader6Expression returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getHeader6ExpressionRule()); }
+	iv_ruleHeader6Expression=ruleHeader6Expression
+	{ $current=$iv_ruleHeader6Expression.current; }
+	EOF;
+
+// Rule Header6Expression
+ruleHeader6Expression returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getHeader6ExpressionAccess().getHeader6ExpressionAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='######'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getHeader6ExpressionAccess().getNumberSignNumberSignNumberSignNumberSignNumberSignNumberSignKeyword_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getHeader6ExpressionAccess().getTitleEmphasisExpressionParserRuleCall_2_0());
+				}
+				lv_title_2_0=ruleEmphasisExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getHeader6ExpressionRule());
+					}
+					add(
+						$current,
+						"title",
+						lv_title_2_0,
+						"markHammil.mm.MyDsl.EmphasisExpression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			('#'
+			)=>
+			otherlv_3='#'
+			{
+				newLeafNode(otherlv_3, grammarAccess.getHeader6ExpressionAccess().getNumberSignKeyword_3_0());
+			}
+		)*
+		(
+			this_BL_4=RULE_BL
+			{
+				newLeafNode(this_BL_4, grammarAccess.getHeader6ExpressionAccess().getBLTerminalRuleCall_4());
 			}
 		)?
 	)
@@ -207,15 +606,306 @@ ruleEmphasisExpression returns [EObject current=null]
 @after {
 	leaveRule();
 }:
-	{
-		newCompositeNode(grammarAccess.getEmphasisExpressionAccess().getNaturalExpressionParserRuleCall());
-	}
-	this_NaturalExpression_0=ruleNaturalExpression
-	{
-		$current = $this_NaturalExpression_0.current;
-		afterParserOrEnumRuleCall();
-	}
+	(
+		(
+			((
+				(
+					((
+						ruleStrongExpression
+					)
+					)=>
+					(
+						ruleStrongExpression
+					)
+				)
+				    |
+				(
+					(
+						ruleItalicExpression
+					)
+				)
+				    |
+				(
+					(
+						ruleScratchExpression
+					)
+				)
+			)
+			)=>
+			(
+				(
+					((
+						ruleStrongExpression
+					)
+					)=>
+					(
+						{
+							newCompositeNode(grammarAccess.getEmphasisExpressionAccess().getCStrongExpressionParserRuleCall_0_0_0_0());
+						}
+						lv_c_0_0=ruleStrongExpression
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getEmphasisExpressionRule());
+							}
+							add(
+								$current,
+								"c",
+								lv_c_0_0,
+								"markHammil.mm.MyDsl.StrongExpression");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+				    |
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getEmphasisExpressionAccess().getCItalicExpressionParserRuleCall_0_0_1_0());
+						}
+						lv_c_1_0=ruleItalicExpression
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getEmphasisExpressionRule());
+							}
+							add(
+								$current,
+								"c",
+								lv_c_1_0,
+								"markHammil.mm.MyDsl.ItalicExpression");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+				    |
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getEmphasisExpressionAccess().getCScratchExpressionParserRuleCall_0_0_2_0());
+						}
+						lv_c_2_0=ruleScratchExpression
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getEmphasisExpressionRule());
+							}
+							add(
+								$current,
+								"c",
+								lv_c_2_0,
+								"markHammil.mm.MyDsl.ScratchExpression");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+			)
+		)
+		    |
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getEmphasisExpressionAccess().getCNaturalExpressionParserRuleCall_1_0());
+				}
+				lv_c_3_0=ruleNaturalExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getEmphasisExpressionRule());
+					}
+					add(
+						$current,
+						"c",
+						lv_c_3_0,
+						"markHammil.mm.MyDsl.NaturalExpression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)+
 ;
+
+// Entry rule entryRuleStrongExpression
+entryRuleStrongExpression returns [EObject current=null]@init {
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
+}:
+	{ newCompositeNode(grammarAccess.getStrongExpressionRule()); }
+	iv_ruleStrongExpression=ruleStrongExpression
+	{ $current=$iv_ruleStrongExpression.current; }
+	EOF;
+finally {
+	myHiddenTokenState.restore();
+}
+
+// Rule StrongExpression
+ruleStrongExpression returns [EObject current=null]
+@init {
+	enterRule();
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getStrongExpressionAccess().getStrongExpressionAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='**'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getStrongExpressionAccess().getAsteriskAsteriskKeyword_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getStrongExpressionAccess().getContentEmphasisExpressionParserRuleCall_2_0());
+				}
+				lv_content_2_0=ruleEmphasisExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getStrongExpressionRule());
+					}
+					set(
+						$current,
+						"content",
+						lv_content_2_0,
+						"markHammil.mm.MyDsl.EmphasisExpression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_3='**'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getStrongExpressionAccess().getAsteriskAsteriskKeyword_3());
+		}
+	)
+;
+finally {
+	myHiddenTokenState.restore();
+}
+
+// Entry rule entryRuleItalicExpression
+entryRuleItalicExpression returns [EObject current=null]@init {
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
+}:
+	{ newCompositeNode(grammarAccess.getItalicExpressionRule()); }
+	iv_ruleItalicExpression=ruleItalicExpression
+	{ $current=$iv_ruleItalicExpression.current; }
+	EOF;
+finally {
+	myHiddenTokenState.restore();
+}
+
+// Rule ItalicExpression
+ruleItalicExpression returns [EObject current=null]
+@init {
+	enterRule();
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getItalicExpressionAccess().getItalicExpressionAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='*'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getItalicExpressionAccess().getAsteriskKeyword_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getItalicExpressionAccess().getContentEmphasisExpressionParserRuleCall_2_0());
+				}
+				lv_content_2_0=ruleEmphasisExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getItalicExpressionRule());
+					}
+					set(
+						$current,
+						"content",
+						lv_content_2_0,
+						"markHammil.mm.MyDsl.EmphasisExpression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_3='*'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getItalicExpressionAccess().getAsteriskKeyword_3());
+		}
+	)
+;
+finally {
+	myHiddenTokenState.restore();
+}
+
+// Entry rule entryRuleScratchExpression
+entryRuleScratchExpression returns [EObject current=null]@init {
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
+}:
+	{ newCompositeNode(grammarAccess.getScratchExpressionRule()); }
+	iv_ruleScratchExpression=ruleScratchExpression
+	{ $current=$iv_ruleScratchExpression.current; }
+	EOF;
+finally {
+	myHiddenTokenState.restore();
+}
+
+// Rule ScratchExpression
+ruleScratchExpression returns [EObject current=null]
+@init {
+	enterRule();
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getScratchExpressionAccess().getScratchExpressionAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='~~'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getScratchExpressionAccess().getTildeTildeKeyword_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getScratchExpressionAccess().getContentEmphasisExpressionParserRuleCall_2_0());
+				}
+				lv_content_2_0=ruleEmphasisExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getScratchExpressionRule());
+					}
+					set(
+						$current,
+						"content",
+						lv_content_2_0,
+						"markHammil.mm.MyDsl.EmphasisExpression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_3='~~'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getScratchExpressionAccess().getTildeTildeKeyword_3());
+		}
+	)
+;
+finally {
+	myHiddenTokenState.restore();
+}
 
 // Entry rule entryRuleNaturalExpression
 entryRuleNaturalExpression returns [EObject current=null]:
@@ -250,7 +940,7 @@ ruleNaturalExpression returns [EObject current=null]
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getNaturalExpressionRule());
 					}
-					set(
+					add(
 						$current,
 						"value",
 						lv_value_1_0,
@@ -302,26 +992,30 @@ ruleContent returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()
 			newLeafNode(this_INT_2, grammarAccess.getContentAccess().getINTTerminalRuleCall_2());
 		}
 		    |
-		this_ANY_OTHER_3=RULE_ANY_OTHER
-		{
-			$current.merge(this_ANY_OTHER_3);
-		}
-		{
-			newLeafNode(this_ANY_OTHER_3, grammarAccess.getContentAccess().getANY_OTHERTerminalRuleCall_3());
-		}
-		    |
 		kw='\''
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getContentAccess().getApostropheKeyword_4());
+			newLeafNode(kw, grammarAccess.getContentAccess().getApostropheKeyword_3());
+		}
+		    |
+		kw='-'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getContentAccess().getHyphenMinusKeyword_4());
+		}
+		    |
+		kw='|'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getContentAccess().getVerticalLineKeyword_5());
 		}
 		    |
 		kw='"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getContentAccess().getQuotationMarkKeyword_5());
+			newLeafNode(kw, grammarAccess.getContentAccess().getQuotationMarkKeyword_6());
 		}
-	)*
+	)
 ;
 
 RULE_STRING : ('"' ('\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|'\''|'\\')|~(('\\'|'"')))* '"'|'\'' ('\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|'\''|'\\')|~(('\\'|'"')))* '\'');

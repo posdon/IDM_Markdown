@@ -8,24 +8,71 @@ File:
         {File}
                 expression+=Expression*
         ;
+        
 Expression:
-        HeaderExpression
+	c=HeaderExpression
 ;
 
-HeaderExpression returns HeaderExpression :
-                '#' title=EmphasisExpression =>('#')* BL ?
+HeaderExpression :
+	Header1Expression | Header2Expression | Header3Expression | Header4Expression | Header5Expression | Header6Expression
+;
+
+Header1Expression returns Header1Expression :
+	{Header1Expression}
+                '#' title+=EmphasisExpression =>('#')* BL ?
         ;
         
+Header2Expression returns Header2Expression :
+	{Header2Expression}
+                '##' title+=EmphasisExpression =>('#')* BL ?
+        ;
+        
+Header3Expression returns Header3Expression :
+	{Header3Expression}
+                '###' title+=EmphasisExpression =>('#')* BL ?
+        ; 
+        
+Header4Expression returns Header4Expression :
+	{Header4Expression}
+                '####' title+=EmphasisExpression =>('#')* BL ?
+        ;
+        
+Header5Expression returns Header5Expression :
+	{Header5Expression}
+                '#####' title+=EmphasisExpression =>('#')* BL ?
+        ;
+        
+Header6Expression returns Header6Expression :
+	{Header6Expression}
+                '######' title+=EmphasisExpression =>('#')* BL ?
+        ;      
+        
 EmphasisExpression returns EmphasisExpression:
-        NaturalExpression  ;
+      ( => ( => c+=StrongExpression | c+=ItalicExpression | c+=ScratchExpression ) | c+=NaturalExpression )+;
+
+StrongExpression returns EmphasisExpression hidden():
+	{StrongExpression}
+	'**' content=EmphasisExpression '**'
+;
+
+ItalicExpression returns EmphasisExpression hidden():
+	{ItalicExpression}
+	'*' content=EmphasisExpression '*'
+;
+
+ScratchExpression returns EmphasisExpression hidden():
+	{ScratchExpression}
+	'~~' content=EmphasisExpression '~~'
+;
 
 NaturalExpression returns EmphasisExpression:
         {EmphasisExpression}
-                value=Content ;
+                value+=Content ;
 
 Content returns ecore::EString:
-	(ID|STRING|INT|ANY_OTHER|"\'"|'\"')* 
+	(ID|STRING|INT|"\'"|"-"|"|"|'\"')
 ;
+
 
 terminal STRING
 :

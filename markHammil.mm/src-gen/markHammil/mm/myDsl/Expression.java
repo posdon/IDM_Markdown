@@ -10,6 +10,12 @@ import org.eclipse.emf.ecore.EObject;
  * A representation of the model object '<em><b>Expression</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link markHammil.mm.myDsl.Expression#getC <em>C</em>}</li>
+ * </ul>
  *
  * @see markHammil.mm.myDsl.MyDslPackage#getExpression()
  * @model
@@ -17,4 +23,30 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Expression extends EObject
 {
+  /**
+	 * Returns the value of the '<em><b>C</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>C</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+	 * @return the value of the '<em>C</em>' containment reference.
+	 * @see #setC(HeaderExpression)
+	 * @see markHammil.mm.myDsl.MyDslPackage#getExpression_C()
+	 * @model containment="true"
+	 * @generated
+	 */
+  HeaderExpression getC();
+
+  /**
+	 * Sets the value of the '{@link markHammil.mm.myDsl.Expression#getC <em>C</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>C</em>' containment reference.
+	 * @see #getC()
+	 * @generated
+	 */
+  void setC(HeaderExpression value);
+
 } // Expression

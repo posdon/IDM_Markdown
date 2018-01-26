@@ -5,12 +5,29 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="expression" upperBound="-1"
         eType="#//Expression" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Expression"/>
-  <eClassifiers xsi:type="ecore:EClass" name="HeaderExpression" eSuperTypes="#//Expression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="title" eType="#//EmphasisExpression"
+  <eClassifiers xsi:type="ecore:EClass" name="Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="c" eType="#//HeaderExpression"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EmphasisExpression">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HeaderExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="title" upperBound="-1"
+        eType="#//EmphasisExpression" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Header1Expression" eSuperTypes="#//HeaderExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Header2Expression" eSuperTypes="#//HeaderExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Header3Expression" eSuperTypes="#//HeaderExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Header4Expression" eSuperTypes="#//HeaderExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Header5Expression" eSuperTypes="#//HeaderExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Header6Expression" eSuperTypes="#//HeaderExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EmphasisExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="c" upperBound="-1" eType="#//EmphasisExpression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" unique="false" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="#//EmphasisExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StrongExpression" eSuperTypes="#//EmphasisExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ItalicExpression" eSuperTypes="#//EmphasisExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ScratchExpression" eSuperTypes="#//EmphasisExpression"/>
 </ecore:EPackage>

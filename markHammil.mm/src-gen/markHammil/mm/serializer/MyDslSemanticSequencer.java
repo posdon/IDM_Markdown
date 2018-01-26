@@ -6,9 +6,18 @@ package markHammil.mm.serializer;
 import com.google.inject.Inject;
 import java.util.Set;
 import markHammil.mm.myDsl.EmphasisExpression;
+import markHammil.mm.myDsl.Expression;
 import markHammil.mm.myDsl.File;
-import markHammil.mm.myDsl.HeaderExpression;
+import markHammil.mm.myDsl.Header1Expression;
+import markHammil.mm.myDsl.Header2Expression;
+import markHammil.mm.myDsl.Header3Expression;
+import markHammil.mm.myDsl.Header4Expression;
+import markHammil.mm.myDsl.Header5Expression;
+import markHammil.mm.myDsl.Header6Expression;
+import markHammil.mm.myDsl.ItalicExpression;
 import markHammil.mm.myDsl.MyDslPackage;
+import markHammil.mm.myDsl.ScratchExpression;
+import markHammil.mm.myDsl.StrongExpression;
 import markHammil.mm.services.MyDslGrammarAccess;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -35,18 +44,82 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		if (epackage == MyDslPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
 			case MyDslPackage.EMPHASIS_EXPRESSION:
-				sequence_NaturalExpression(context, (EmphasisExpression) semanticObject); 
+				if (rule == grammarAccess.getEmphasisExpressionRule()) {
+					sequence_EmphasisExpression(context, (EmphasisExpression) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getNaturalExpressionRule()) {
+					sequence_NaturalExpression(context, (EmphasisExpression) semanticObject); 
+					return; 
+				}
+				else break;
+			case MyDslPackage.EXPRESSION:
+				sequence_Expression(context, (Expression) semanticObject); 
 				return; 
 			case MyDslPackage.FILE:
 				sequence_File(context, (File) semanticObject); 
 				return; 
-			case MyDslPackage.HEADER_EXPRESSION:
-				sequence_HeaderExpression(context, (HeaderExpression) semanticObject); 
+			case MyDslPackage.HEADER1_EXPRESSION:
+				sequence_Header1Expression(context, (Header1Expression) semanticObject); 
+				return; 
+			case MyDslPackage.HEADER2_EXPRESSION:
+				sequence_Header2Expression(context, (Header2Expression) semanticObject); 
+				return; 
+			case MyDslPackage.HEADER3_EXPRESSION:
+				sequence_Header3Expression(context, (Header3Expression) semanticObject); 
+				return; 
+			case MyDslPackage.HEADER4_EXPRESSION:
+				sequence_Header4Expression(context, (Header4Expression) semanticObject); 
+				return; 
+			case MyDslPackage.HEADER5_EXPRESSION:
+				sequence_Header5Expression(context, (Header5Expression) semanticObject); 
+				return; 
+			case MyDslPackage.HEADER6_EXPRESSION:
+				sequence_Header6Expression(context, (Header6Expression) semanticObject); 
+				return; 
+			case MyDslPackage.ITALIC_EXPRESSION:
+				sequence_ItalicExpression(context, (ItalicExpression) semanticObject); 
+				return; 
+			case MyDslPackage.SCRATCH_EXPRESSION:
+				sequence_ScratchExpression(context, (ScratchExpression) semanticObject); 
+				return; 
+			case MyDslPackage.STRONG_EXPRESSION:
+				sequence_StrongExpression(context, (StrongExpression) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
+	
+	/**
+	 * Contexts:
+	 *     EmphasisExpression returns EmphasisExpression
+	 *
+	 * Constraint:
+	 *     (c+=StrongExpression | c+=ItalicExpression | c+=ScratchExpression | c+=NaturalExpression)+
+	 */
+	protected void sequence_EmphasisExpression(ISerializationContext context, EmphasisExpression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Expression returns Expression
+	 *
+	 * Constraint:
+	 *     c=HeaderExpression
+	 */
+	protected void sequence_Expression(ISerializationContext context, Expression semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.EXPRESSION__C) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.EXPRESSION__C));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getExpressionAccess().getCHeaderExpressionParserRuleCall_0(), semanticObject.getC());
+		feeder.finish();
+	}
+	
 	
 	/**
 	 * Contexts:
@@ -62,38 +135,144 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
-	 *     Expression returns HeaderExpression
-	 *     HeaderExpression returns HeaderExpression
+	 *     HeaderExpression returns Header1Expression
+	 *     Header1Expression returns Header1Expression
 	 *
 	 * Constraint:
-	 *     title=EmphasisExpression
+	 *     title+=EmphasisExpression
 	 */
-	protected void sequence_HeaderExpression(ISerializationContext context, HeaderExpression semanticObject) {
+	protected void sequence_Header1Expression(ISerializationContext context, Header1Expression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     HeaderExpression returns Header2Expression
+	 *     Header2Expression returns Header2Expression
+	 *
+	 * Constraint:
+	 *     title+=EmphasisExpression
+	 */
+	protected void sequence_Header2Expression(ISerializationContext context, Header2Expression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     HeaderExpression returns Header3Expression
+	 *     Header3Expression returns Header3Expression
+	 *
+	 * Constraint:
+	 *     title+=EmphasisExpression
+	 */
+	protected void sequence_Header3Expression(ISerializationContext context, Header3Expression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     HeaderExpression returns Header4Expression
+	 *     Header4Expression returns Header4Expression
+	 *
+	 * Constraint:
+	 *     title+=EmphasisExpression
+	 */
+	protected void sequence_Header4Expression(ISerializationContext context, Header4Expression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     HeaderExpression returns Header5Expression
+	 *     Header5Expression returns Header5Expression
+	 *
+	 * Constraint:
+	 *     title+=EmphasisExpression
+	 */
+	protected void sequence_Header5Expression(ISerializationContext context, Header5Expression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     HeaderExpression returns Header6Expression
+	 *     Header6Expression returns Header6Expression
+	 *
+	 * Constraint:
+	 *     title+=EmphasisExpression
+	 */
+	protected void sequence_Header6Expression(ISerializationContext context, Header6Expression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ItalicExpression returns ItalicExpression
+	 *
+	 * Constraint:
+	 *     content=EmphasisExpression
+	 */
+	protected void sequence_ItalicExpression(ISerializationContext context, ItalicExpression semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.HEADER_EXPRESSION__TITLE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.HEADER_EXPRESSION__TITLE));
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.EMPHASIS_EXPRESSION__CONTENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.EMPHASIS_EXPRESSION__CONTENT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getHeaderExpressionAccess().getTitleEmphasisExpressionParserRuleCall_1_0(), semanticObject.getTitle());
+		feeder.accept(grammarAccess.getItalicExpressionAccess().getContentEmphasisExpressionParserRuleCall_2_0(), semanticObject.getContent());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     EmphasisExpression returns EmphasisExpression
 	 *     NaturalExpression returns EmphasisExpression
 	 *
 	 * Constraint:
-	 *     value=Content
+	 *     value+=Content
 	 */
 	protected void sequence_NaturalExpression(ISerializationContext context, EmphasisExpression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ScratchExpression returns ScratchExpression
+	 *
+	 * Constraint:
+	 *     content=EmphasisExpression
+	 */
+	protected void sequence_ScratchExpression(ISerializationContext context, ScratchExpression semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.EMPHASIS_EXPRESSION__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.EMPHASIS_EXPRESSION__VALUE));
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.EMPHASIS_EXPRESSION__CONTENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.EMPHASIS_EXPRESSION__CONTENT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getNaturalExpressionAccess().getValueContentParserRuleCall_1_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getScratchExpressionAccess().getContentEmphasisExpressionParserRuleCall_2_0(), semanticObject.getContent());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     StrongExpression returns StrongExpression
+	 *
+	 * Constraint:
+	 *     content=EmphasisExpression
+	 */
+	protected void sequence_StrongExpression(ISerializationContext context, StrongExpression semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.EMPHASIS_EXPRESSION__CONTENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.EMPHASIS_EXPRESSION__CONTENT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getStrongExpressionAccess().getContentEmphasisExpressionParserRuleCall_2_0(), semanticObject.getContent());
 		feeder.finish();
 	}
 	

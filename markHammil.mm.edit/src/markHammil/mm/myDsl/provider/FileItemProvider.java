@@ -153,11 +153,6 @@ public class FileItemProvider
 			(createChildParameter
 				(MyDslPackage.Literals.FILE__EXPRESSION,
 				 MyDslFactory.eINSTANCE.createExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MyDslPackage.Literals.FILE__EXPRESSION,
-				 MyDslFactory.eINSTANCE.createHeader()));
 	}
 
 	/**

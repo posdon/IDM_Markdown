@@ -3,6 +3,9 @@
  */
 package markHammil.mm.myDsl;
 
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,32 +23,22 @@ package markHammil.mm.myDsl;
  * @model
  * @generated
  */
-public interface HeaderExpression extends Expression
+public interface HeaderExpression extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Title</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Title</b></em>' containment reference list.
+	 * The list contents are of type {@link markHammil.mm.myDsl.EmphasisExpression}.
+	 * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Title</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Title</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Title</em>' containment reference.
-   * @see #setTitle(EmphasisExpression)
-   * @see markHammil.mm.myDsl.MyDslPackage#getHeaderExpression_Title()
-   * @model containment="true"
-   * @generated
-   */
-  EmphasisExpression getTitle();
-
-  /**
-   * Sets the value of the '{@link markHammil.mm.myDsl.HeaderExpression#getTitle <em>Title</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Title</em>' containment reference.
-   * @see #getTitle()
-   * @generated
-   */
-  void setTitle(EmphasisExpression value);
+	 * @return the value of the '<em>Title</em>' containment reference list.
+	 * @see markHammil.mm.myDsl.MyDslPackage#getHeaderExpression_Title()
+	 * @model containment="true"
+	 * @generated
+	 */
+  EList<EmphasisExpression> getTitle();
 
 } // HeaderExpression

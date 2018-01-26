@@ -31,13 +31,43 @@ public class MyDslParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
+					put(grammarAccess.getHeaderExpressionAccess().getAlternatives(), "rule__HeaderExpression__Alternatives");
+					put(grammarAccess.getEmphasisExpressionAccess().getAlternatives(), "rule__EmphasisExpression__Alternatives");
+					put(grammarAccess.getEmphasisExpressionAccess().getAlternatives_0_0(), "rule__EmphasisExpression__Alternatives_0_0");
 					put(grammarAccess.getContentAccess().getAlternatives(), "rule__Content__Alternatives");
 					put(grammarAccess.getFileAccess().getGroup(), "rule__File__Group__0");
-					put(grammarAccess.getHeaderExpressionAccess().getGroup(), "rule__HeaderExpression__Group__0");
-					put(grammarAccess.getHeaderExpressionAccess().getGroup_2(), "rule__HeaderExpression__Group_2__0");
+					put(grammarAccess.getHeader1ExpressionAccess().getGroup(), "rule__Header1Expression__Group__0");
+					put(grammarAccess.getHeader1ExpressionAccess().getGroup_3(), "rule__Header1Expression__Group_3__0");
+					put(grammarAccess.getHeader2ExpressionAccess().getGroup(), "rule__Header2Expression__Group__0");
+					put(grammarAccess.getHeader2ExpressionAccess().getGroup_3(), "rule__Header2Expression__Group_3__0");
+					put(grammarAccess.getHeader3ExpressionAccess().getGroup(), "rule__Header3Expression__Group__0");
+					put(grammarAccess.getHeader3ExpressionAccess().getGroup_3(), "rule__Header3Expression__Group_3__0");
+					put(grammarAccess.getHeader4ExpressionAccess().getGroup(), "rule__Header4Expression__Group__0");
+					put(grammarAccess.getHeader4ExpressionAccess().getGroup_3(), "rule__Header4Expression__Group_3__0");
+					put(grammarAccess.getHeader5ExpressionAccess().getGroup(), "rule__Header5Expression__Group__0");
+					put(grammarAccess.getHeader5ExpressionAccess().getGroup_3(), "rule__Header5Expression__Group_3__0");
+					put(grammarAccess.getHeader6ExpressionAccess().getGroup(), "rule__Header6Expression__Group__0");
+					put(grammarAccess.getHeader6ExpressionAccess().getGroup_3(), "rule__Header6Expression__Group_3__0");
+					put(grammarAccess.getEmphasisExpressionAccess().getGroup_0(), "rule__EmphasisExpression__Group_0__0");
+					put(grammarAccess.getStrongExpressionAccess().getGroup(), "rule__StrongExpression__Group__0");
+					put(grammarAccess.getItalicExpressionAccess().getGroup(), "rule__ItalicExpression__Group__0");
+					put(grammarAccess.getScratchExpressionAccess().getGroup(), "rule__ScratchExpression__Group__0");
 					put(grammarAccess.getNaturalExpressionAccess().getGroup(), "rule__NaturalExpression__Group__0");
 					put(grammarAccess.getFileAccess().getExpressionAssignment_1(), "rule__File__ExpressionAssignment_1");
-					put(grammarAccess.getHeaderExpressionAccess().getTitleAssignment_1(), "rule__HeaderExpression__TitleAssignment_1");
+					put(grammarAccess.getExpressionAccess().getCAssignment(), "rule__Expression__CAssignment");
+					put(grammarAccess.getHeader1ExpressionAccess().getTitleAssignment_2(), "rule__Header1Expression__TitleAssignment_2");
+					put(grammarAccess.getHeader2ExpressionAccess().getTitleAssignment_2(), "rule__Header2Expression__TitleAssignment_2");
+					put(grammarAccess.getHeader3ExpressionAccess().getTitleAssignment_2(), "rule__Header3Expression__TitleAssignment_2");
+					put(grammarAccess.getHeader4ExpressionAccess().getTitleAssignment_2(), "rule__Header4Expression__TitleAssignment_2");
+					put(grammarAccess.getHeader5ExpressionAccess().getTitleAssignment_2(), "rule__Header5Expression__TitleAssignment_2");
+					put(grammarAccess.getHeader6ExpressionAccess().getTitleAssignment_2(), "rule__Header6Expression__TitleAssignment_2");
+					put(grammarAccess.getEmphasisExpressionAccess().getCAssignment_0_0_0(), "rule__EmphasisExpression__CAssignment_0_0_0");
+					put(grammarAccess.getEmphasisExpressionAccess().getCAssignment_0_0_1(), "rule__EmphasisExpression__CAssignment_0_0_1");
+					put(grammarAccess.getEmphasisExpressionAccess().getCAssignment_0_0_2(), "rule__EmphasisExpression__CAssignment_0_0_2");
+					put(grammarAccess.getEmphasisExpressionAccess().getCAssignment_1(), "rule__EmphasisExpression__CAssignment_1");
+					put(grammarAccess.getStrongExpressionAccess().getContentAssignment_2(), "rule__StrongExpression__ContentAssignment_2");
+					put(grammarAccess.getItalicExpressionAccess().getContentAssignment_2(), "rule__ItalicExpression__ContentAssignment_2");
+					put(grammarAccess.getScratchExpressionAccess().getContentAssignment_2(), "rule__ScratchExpression__ContentAssignment_2");
 					put(grammarAccess.getNaturalExpressionAccess().getValueAssignment_1(), "rule__NaturalExpression__ValueAssignment_1");
 				}
 			};

@@ -9,12 +9,25 @@
     <genClasses ecoreClass="MyDsl.ecore#//File">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//File/expression"/>
     </genClasses>
-    <genClasses ecoreClass="MyDsl.ecore#//Expression"/>
+    <genClasses ecoreClass="MyDsl.ecore#//Expression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Expression/c"/>
+    </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//HeaderExpression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//HeaderExpression/title"/>
     </genClasses>
+    <genClasses ecoreClass="MyDsl.ecore#//Header1Expression"/>
+    <genClasses ecoreClass="MyDsl.ecore#//Header2Expression"/>
+    <genClasses ecoreClass="MyDsl.ecore#//Header3Expression"/>
+    <genClasses ecoreClass="MyDsl.ecore#//Header4Expression"/>
+    <genClasses ecoreClass="MyDsl.ecore#//Header5Expression"/>
+    <genClasses ecoreClass="MyDsl.ecore#//Header6Expression"/>
     <genClasses ecoreClass="MyDsl.ecore#//EmphasisExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//EmphasisExpression/c"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//EmphasisExpression/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//EmphasisExpression/content"/>
     </genClasses>
+    <genClasses ecoreClass="MyDsl.ecore#//StrongExpression"/>
+    <genClasses ecoreClass="MyDsl.ecore#//ItalicExpression"/>
+    <genClasses ecoreClass="MyDsl.ecore#//ScratchExpression"/>
   </genPackages>
 </genmodel:GenModel>

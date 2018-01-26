@@ -119,26 +119,164 @@ public class MyDslItemProviderAdapterFactory extends MyDslAdapterFactory impleme
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link markHammil.mm.myDsl.Header} instances.
+	 * This keeps track of the one adapter used for all {@link markHammil.mm.myDsl.HeaderExpression} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected HeaderItemProvider headerItemProvider;
+	protected HeaderExpressionItemProvider headerExpressionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link markHammil.mm.myDsl.Header}.
+	 * This creates an adapter for a {@link markHammil.mm.myDsl.HeaderExpression}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createHeaderAdapter() {
-		if (headerItemProvider == null) {
-			headerItemProvider = new HeaderItemProvider(this);
+	public Adapter createHeaderExpressionAdapter() {
+		if (headerExpressionItemProvider == null) {
+			headerExpressionItemProvider = new HeaderExpressionItemProvider(this);
 		}
 
-		return headerItemProvider;
+		return headerExpressionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link markHammil.mm.myDsl.Header1Expression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected Header1ExpressionItemProvider header1ExpressionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link markHammil.mm.myDsl.Header1Expression}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createHeader1ExpressionAdapter() {
+		if (header1ExpressionItemProvider == null) {
+			header1ExpressionItemProvider = new Header1ExpressionItemProvider(this);
+		}
+
+		return header1ExpressionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link markHammil.mm.myDsl.Header2Expression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected Header2ExpressionItemProvider header2ExpressionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link markHammil.mm.myDsl.Header2Expression}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createHeader2ExpressionAdapter() {
+		if (header2ExpressionItemProvider == null) {
+			header2ExpressionItemProvider = new Header2ExpressionItemProvider(this);
+		}
+
+		return header2ExpressionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link markHammil.mm.myDsl.Header3Expression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected Header3ExpressionItemProvider header3ExpressionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link markHammil.mm.myDsl.Header3Expression}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createHeader3ExpressionAdapter() {
+		if (header3ExpressionItemProvider == null) {
+			header3ExpressionItemProvider = new Header3ExpressionItemProvider(this);
+		}
+
+		return header3ExpressionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link markHammil.mm.myDsl.Header4Expression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected Header4ExpressionItemProvider header4ExpressionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link markHammil.mm.myDsl.Header4Expression}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createHeader4ExpressionAdapter() {
+		if (header4ExpressionItemProvider == null) {
+			header4ExpressionItemProvider = new Header4ExpressionItemProvider(this);
+		}
+
+		return header4ExpressionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link markHammil.mm.myDsl.Header5Expression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected Header5ExpressionItemProvider header5ExpressionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link markHammil.mm.myDsl.Header5Expression}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createHeader5ExpressionAdapter() {
+		if (header5ExpressionItemProvider == null) {
+			header5ExpressionItemProvider = new Header5ExpressionItemProvider(this);
+		}
+
+		return header5ExpressionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link markHammil.mm.myDsl.Header6Expression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected Header6ExpressionItemProvider header6ExpressionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link markHammil.mm.myDsl.Header6Expression}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createHeader6ExpressionAdapter() {
+		if (header6ExpressionItemProvider == null) {
+			header6ExpressionItemProvider = new Header6ExpressionItemProvider(this);
+		}
+
+		return header6ExpressionItemProvider;
 	}
 
 	/**
@@ -162,6 +300,75 @@ public class MyDslItemProviderAdapterFactory extends MyDslAdapterFactory impleme
 		}
 
 		return emphasisExpressionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link markHammil.mm.myDsl.StrongExpression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected StrongExpressionItemProvider strongExpressionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link markHammil.mm.myDsl.StrongExpression}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createStrongExpressionAdapter() {
+		if (strongExpressionItemProvider == null) {
+			strongExpressionItemProvider = new StrongExpressionItemProvider(this);
+		}
+
+		return strongExpressionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link markHammil.mm.myDsl.ItalicExpression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ItalicExpressionItemProvider italicExpressionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link markHammil.mm.myDsl.ItalicExpression}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createItalicExpressionAdapter() {
+		if (italicExpressionItemProvider == null) {
+			italicExpressionItemProvider = new ItalicExpressionItemProvider(this);
+		}
+
+		return italicExpressionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link markHammil.mm.myDsl.ScratchExpression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ScratchExpressionItemProvider scratchExpressionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link markHammil.mm.myDsl.ScratchExpression}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createScratchExpressionAdapter() {
+		if (scratchExpressionItemProvider == null) {
+			scratchExpressionItemProvider = new ScratchExpressionItemProvider(this);
+		}
+
+		return scratchExpressionItemProvider;
 	}
 
 	/**
@@ -265,8 +472,17 @@ public class MyDslItemProviderAdapterFactory extends MyDslAdapterFactory impleme
 	public void dispose() {
 		if (fileItemProvider != null) fileItemProvider.dispose();
 		if (expressionItemProvider != null) expressionItemProvider.dispose();
-		if (headerItemProvider != null) headerItemProvider.dispose();
+		if (headerExpressionItemProvider != null) headerExpressionItemProvider.dispose();
+		if (header1ExpressionItemProvider != null) header1ExpressionItemProvider.dispose();
+		if (header2ExpressionItemProvider != null) header2ExpressionItemProvider.dispose();
+		if (header3ExpressionItemProvider != null) header3ExpressionItemProvider.dispose();
+		if (header4ExpressionItemProvider != null) header4ExpressionItemProvider.dispose();
+		if (header5ExpressionItemProvider != null) header5ExpressionItemProvider.dispose();
+		if (header6ExpressionItemProvider != null) header6ExpressionItemProvider.dispose();
 		if (emphasisExpressionItemProvider != null) emphasisExpressionItemProvider.dispose();
+		if (strongExpressionItemProvider != null) strongExpressionItemProvider.dispose();
+		if (italicExpressionItemProvider != null) italicExpressionItemProvider.dispose();
+		if (scratchExpressionItemProvider != null) scratchExpressionItemProvider.dispose();
 	}
 
 }
