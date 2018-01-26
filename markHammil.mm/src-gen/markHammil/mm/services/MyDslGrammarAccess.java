@@ -7,6 +7,7 @@ import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import java.util.List;
 import org.eclipse.xtext.Action;
+import org.eclipse.xtext.Alternatives;
 import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.Grammar;
 import org.eclipse.xtext.GrammarUtil;
@@ -62,14 +63,16 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cNumberSignKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cTitleAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cTitleEmphasisExpressionParserRuleCall_1_0 = (RuleCall)cTitleAssignment_1.eContents().get(0);
-		private final Keyword cNumberSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final RuleCall cBLTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cNumberSignKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final RuleCall cWSTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
+		private final RuleCall cBLTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
 		
-		//HeaderExpression Header:
-		//	'#' title=EmphasisExpression '#'* BL?;
+		//HeaderExpression:
+		//	'#' title=EmphasisExpression => ('#')* WS* BL?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'#' title=EmphasisExpression '#'* BL?
+		//'#' title=EmphasisExpression => ('#')* WS* BL?
 		public Group getGroup() { return cGroup; }
 		
 		//'#'
@@ -81,11 +84,17 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//EmphasisExpression
 		public RuleCall getTitleEmphasisExpressionParserRuleCall_1_0() { return cTitleEmphasisExpressionParserRuleCall_1_0; }
 		
-		//'#'*
-		public Keyword getNumberSignKeyword_2() { return cNumberSignKeyword_2; }
+		//=> ('#')*
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//'#'
+		public Keyword getNumberSignKeyword_2_0() { return cNumberSignKeyword_2_0; }
+		
+		//WS*
+		public RuleCall getWSTerminalRuleCall_3() { return cWSTerminalRuleCall_3; }
 		
 		//BL?
-		public RuleCall getBLTerminalRuleCall_3() { return cBLTerminalRuleCall_3; }
+		public RuleCall getBLTerminalRuleCall_4() { return cBLTerminalRuleCall_4; }
 	}
 	public class EmphasisExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "markHammil.mm.MyDsl.EmphasisExpression");
@@ -103,23 +112,58 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cEmphasisExpressionAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cValueIDTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
+		private final RuleCall cValueContentParserRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
 		
 		//NaturalExpression EmphasisExpression:
-		//	{EmphasisExpression} value=ID;
+		//	{EmphasisExpression} value=Content;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{EmphasisExpression} value=ID
+		//{EmphasisExpression} value=Content
 		public Group getGroup() { return cGroup; }
 		
 		//{EmphasisExpression}
 		public Action getEmphasisExpressionAction_0() { return cEmphasisExpressionAction_0; }
 		
-		//value=ID
+		//value=Content
 		public Assignment getValueAssignment_1() { return cValueAssignment_1; }
 		
+		//Content
+		public RuleCall getValueContentParserRuleCall_1_0() { return cValueContentParserRuleCall_1_0; }
+	}
+	public class ContentElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "markHammil.mm.MyDsl.Content");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cIDTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cSTRINGTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cINTTerminalRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cANY_OTHERTerminalRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final Keyword cApostropheKeyword_4 = (Keyword)cAlternatives.eContents().get(4);
+		private final Keyword cQuotationMarkKeyword_5 = (Keyword)cAlternatives.eContents().get(5);
+		
+		//Content:
+		//	(ID | STRING | INT | ANY_OTHER | "\'" | '\"')*;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//(ID | STRING | INT | ANY_OTHER | "\'" | '\"')*
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
 		//ID
-		public RuleCall getValueIDTerminalRuleCall_1_0() { return cValueIDTerminalRuleCall_1_0; }
+		public RuleCall getIDTerminalRuleCall_0() { return cIDTerminalRuleCall_0; }
+		
+		//STRING
+		public RuleCall getSTRINGTerminalRuleCall_1() { return cSTRINGTerminalRuleCall_1; }
+		
+		//INT
+		public RuleCall getINTTerminalRuleCall_2() { return cINTTerminalRuleCall_2; }
+		
+		//ANY_OTHER
+		public RuleCall getANY_OTHERTerminalRuleCall_3() { return cANY_OTHERTerminalRuleCall_3; }
+		
+		//"\'"
+		public Keyword getApostropheKeyword_4() { return cApostropheKeyword_4; }
+		
+		//'\"'
+		public Keyword getQuotationMarkKeyword_5() { return cQuotationMarkKeyword_5; }
 	}
 	
 	
@@ -128,6 +172,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	private final HeaderExpressionElements pHeaderExpression;
 	private final EmphasisExpressionElements pEmphasisExpression;
 	private final NaturalExpressionElements pNaturalExpression;
+	private final ContentElements pContent;
 	private final TerminalRule tSTRING;
 	private final TerminalRule tML_COMMENT;
 	private final TerminalRule tSL_COMMENT;
@@ -149,6 +194,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.pHeaderExpression = new HeaderExpressionElements();
 		this.pEmphasisExpression = new EmphasisExpressionElements();
 		this.pNaturalExpression = new NaturalExpressionElements();
+		this.pContent = new ContentElements();
 		this.tSTRING = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "markHammil.mm.MyDsl.STRING");
 		this.tML_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "markHammil.mm.MyDsl.ML_COMMENT");
 		this.tSL_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "markHammil.mm.MyDsl.SL_COMMENT");
@@ -204,8 +250,8 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getExpressionAccess().getRule();
 	}
 	
-	//HeaderExpression Header:
-	//	'#' title=EmphasisExpression '#'* BL?;
+	//HeaderExpression:
+	//	'#' title=EmphasisExpression => ('#')* WS* BL?;
 	public HeaderExpressionElements getHeaderExpressionAccess() {
 		return pHeaderExpression;
 	}
@@ -225,13 +271,23 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//NaturalExpression EmphasisExpression:
-	//	{EmphasisExpression} value=ID;
+	//	{EmphasisExpression} value=Content;
 	public NaturalExpressionElements getNaturalExpressionAccess() {
 		return pNaturalExpression;
 	}
 	
 	public ParserRule getNaturalExpressionRule() {
 		return getNaturalExpressionAccess().getRule();
+	}
+	
+	//Content:
+	//	(ID | STRING | INT | ANY_OTHER | "\'" | '\"')*;
+	public ContentElements getContentAccess() {
+		return pContent;
+	}
+	
+	public ParserRule getContentRule() {
+		return getContentAccess().getRule();
 	}
 	
 	//terminal STRING:

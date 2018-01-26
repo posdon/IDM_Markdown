@@ -20,20 +20,24 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected MyDslGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_HeaderExpression_BLTerminalRuleCall_3_q;
-	protected AbstractElementAlias match_HeaderExpression_NumberSignKeyword_2_a;
+	protected AbstractElementAlias match_HeaderExpression_BLTerminalRuleCall_4_q;
+	protected AbstractElementAlias match_HeaderExpression_NumberSignKeyword_2_0_a;
+	protected AbstractElementAlias match_HeaderExpression_WSTerminalRuleCall_3_a;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (MyDslGrammarAccess) access;
-		match_HeaderExpression_BLTerminalRuleCall_3_q = new TokenAlias(false, true, grammarAccess.getHeaderExpressionAccess().getBLTerminalRuleCall_3());
-		match_HeaderExpression_NumberSignKeyword_2_a = new TokenAlias(true, true, grammarAccess.getHeaderExpressionAccess().getNumberSignKeyword_2());
+		match_HeaderExpression_BLTerminalRuleCall_4_q = new TokenAlias(false, true, grammarAccess.getHeaderExpressionAccess().getBLTerminalRuleCall_4());
+		match_HeaderExpression_NumberSignKeyword_2_0_a = new TokenAlias(true, true, grammarAccess.getHeaderExpressionAccess().getNumberSignKeyword_2_0());
+		match_HeaderExpression_WSTerminalRuleCall_3_a = new TokenAlias(true, true, grammarAccess.getHeaderExpressionAccess().getWSTerminalRuleCall_3());
 	}
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (ruleCall.getRule() == grammarAccess.getBLRule())
 			return getBLToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getWSRule())
+			return getWSToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
@@ -46,16 +50,27 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 		return "\n";
 	}
 	
+	/**
+	 * terminal WS: (' '|'\t');
+	 */
+	protected String getWSToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return " ";
+	}
+	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
 		if (transition.getAmbiguousSyntaxes().isEmpty()) return;
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_HeaderExpression_BLTerminalRuleCall_3_q.equals(syntax))
-				emit_HeaderExpression_BLTerminalRuleCall_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_HeaderExpression_NumberSignKeyword_2_a.equals(syntax))
-				emit_HeaderExpression_NumberSignKeyword_2_a(semanticObject, getLastNavigableState(), syntaxNodes);
+			if (match_HeaderExpression_BLTerminalRuleCall_4_q.equals(syntax))
+				emit_HeaderExpression_BLTerminalRuleCall_4_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_HeaderExpression_NumberSignKeyword_2_0_a.equals(syntax))
+				emit_HeaderExpression_NumberSignKeyword_2_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_HeaderExpression_WSTerminalRuleCall_3_a.equals(syntax))
+				emit_HeaderExpression_WSTerminalRuleCall_3_a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -65,9 +80,9 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     BL?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     title=EmphasisExpression '#'* (ambiguity) (rule end)
+	 *     title=EmphasisExpression '#'* WS* (ambiguity) (rule end)
 	 */
-	protected void emit_HeaderExpression_BLTerminalRuleCall_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_HeaderExpression_BLTerminalRuleCall_4_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -76,9 +91,20 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     '#'*
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     title=EmphasisExpression (ambiguity) BL? (rule end)
+	 *     title=EmphasisExpression (ambiguity) WS* BL? (rule end)
 	 */
-	protected void emit_HeaderExpression_NumberSignKeyword_2_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_HeaderExpression_NumberSignKeyword_2_0_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     WS*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     title=EmphasisExpression '#'* (ambiguity) BL? (rule end)
+	 */
+	protected void emit_HeaderExpression_WSTerminalRuleCall_3_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

@@ -6,7 +6,7 @@ package markHammil.mm.myDsl.impl;
 import markHammil.mm.myDsl.EmphasisExpression;
 import markHammil.mm.myDsl.Expression;
 import markHammil.mm.myDsl.File;
-import markHammil.mm.myDsl.Header;
+import markHammil.mm.myDsl.HeaderExpression;
 import markHammil.mm.myDsl.MyDslFactory;
 import markHammil.mm.myDsl.MyDslPackage;
 
@@ -26,253 +26,253 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
 {
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private EClass fileEClass = null;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private EClass expressionEClass = null;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
-  private EClass headerEClass = null;
+   * @generated
+   */
+  private EClass headerExpressionEClass = null;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private EClass emphasisExpressionEClass = null;
 
   /**
-	 * Creates an instance of the model <b>Package</b>, registered with
-	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
-	 * package URI value.
-	 * <p>Note: the correct way to create the package is via the static
-	 * factory method {@link #init init()}, which also performs
-	 * initialization of the package, or returns the registered package,
-	 * if one already exists.
-	 * <!-- begin-user-doc -->
+   * Creates an instance of the model <b>Package</b>, registered with
+   * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+   * package URI value.
+   * <p>Note: the correct way to create the package is via the static
+   * factory method {@link #init init()}, which also performs
+   * initialization of the package, or returns the registered package,
+   * if one already exists.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see org.eclipse.emf.ecore.EPackage.Registry
-	 * @see markHammil.mm.myDsl.MyDslPackage#eNS_URI
-	 * @see #init()
-	 * @generated
-	 */
+   * @see org.eclipse.emf.ecore.EPackage.Registry
+   * @see markHammil.mm.myDsl.MyDslPackage#eNS_URI
+   * @see #init()
+   * @generated
+   */
   private MyDslPackageImpl()
   {
-		super(eNS_URI, MyDslFactory.eINSTANCE);
-	}
+    super(eNS_URI, MyDslFactory.eINSTANCE);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private static boolean isInited = false;
 
   /**
-	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
-	 * <p>This method is used to initialize {@link MyDslPackage#eINSTANCE} when that field is accessed.
-	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
-	 * <!-- begin-user-doc -->
+   * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
+   * 
+   * <p>This method is used to initialize {@link MyDslPackage#eINSTANCE} when that field is accessed.
+   * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #eNS_URI
-	 * @see #createPackageContents()
-	 * @see #initializePackageContents()
-	 * @generated
-	 */
+   * @see #eNS_URI
+   * @see #createPackageContents()
+   * @see #initializePackageContents()
+   * @generated
+   */
   public static MyDslPackage init()
   {
-		if (isInited) return (MyDslPackage)EPackage.Registry.INSTANCE.getEPackage(MyDslPackage.eNS_URI);
+    if (isInited) return (MyDslPackage)EPackage.Registry.INSTANCE.getEPackage(MyDslPackage.eNS_URI);
 
-		// Obtain or create and register package
-		MyDslPackageImpl theMyDslPackage = (MyDslPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof MyDslPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new MyDslPackageImpl());
+    // Obtain or create and register package
+    MyDslPackageImpl theMyDslPackage = (MyDslPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof MyDslPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new MyDslPackageImpl());
 
-		isInited = true;
+    isInited = true;
 
-		// Create package meta-data objects
-		theMyDslPackage.createPackageContents();
+    // Create package meta-data objects
+    theMyDslPackage.createPackageContents();
 
-		// Initialize created meta-data
-		theMyDslPackage.initializePackageContents();
+    // Initialize created meta-data
+    theMyDslPackage.initializePackageContents();
 
-		// Mark meta-data to indicate it can't be changed
-		theMyDslPackage.freeze();
+    // Mark meta-data to indicate it can't be changed
+    theMyDslPackage.freeze();
 
   
-		// Update the registry and return the package
-		EPackage.Registry.INSTANCE.put(MyDslPackage.eNS_URI, theMyDslPackage);
-		return theMyDslPackage;
-	}
+    // Update the registry and return the package
+    EPackage.Registry.INSTANCE.put(MyDslPackage.eNS_URI, theMyDslPackage);
+    return theMyDslPackage;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EClass getFile()
   {
-		return fileEClass;
-	}
+    return fileEClass;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EReference getFile_Expression()
   {
-		return (EReference)fileEClass.getEStructuralFeatures().get(0);
-	}
+    return (EReference)fileEClass.getEStructuralFeatures().get(0);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EClass getExpression()
   {
-		return expressionEClass;
-	}
+    return expressionEClass;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EClass getHeader()
+   * @generated
+   */
+  public EClass getHeaderExpression()
   {
-		return headerEClass;
-	}
+    return headerExpressionEClass;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EReference getHeader_Title()
+   * @generated
+   */
+  public EReference getHeaderExpression_Title()
   {
-		return (EReference)headerEClass.getEStructuralFeatures().get(0);
-	}
+    return (EReference)headerExpressionEClass.getEStructuralFeatures().get(0);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EClass getEmphasisExpression()
   {
-		return emphasisExpressionEClass;
-	}
+    return emphasisExpressionEClass;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EAttribute getEmphasisExpression_Value()
   {
-		return (EAttribute)emphasisExpressionEClass.getEStructuralFeatures().get(0);
-	}
+    return (EAttribute)emphasisExpressionEClass.getEStructuralFeatures().get(0);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public MyDslFactory getMyDslFactory()
   {
-		return (MyDslFactory)getEFactoryInstance();
-	}
+    return (MyDslFactory)getEFactoryInstance();
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private boolean isCreated = false;
 
   /**
-	 * Creates the meta-model objects for the package.  This method is
-	 * guarded to have no affect on any invocation but its first.
-	 * <!-- begin-user-doc -->
+   * Creates the meta-model objects for the package.  This method is
+   * guarded to have no affect on any invocation but its first.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public void createPackageContents()
   {
-		if (isCreated) return;
-		isCreated = true;
+    if (isCreated) return;
+    isCreated = true;
 
-		// Create classes and their features
-		fileEClass = createEClass(FILE);
-		createEReference(fileEClass, FILE__EXPRESSION);
+    // Create classes and their features
+    fileEClass = createEClass(FILE);
+    createEReference(fileEClass, FILE__EXPRESSION);
 
-		expressionEClass = createEClass(EXPRESSION);
+    expressionEClass = createEClass(EXPRESSION);
 
-		headerEClass = createEClass(HEADER);
-		createEReference(headerEClass, HEADER__TITLE);
+    headerExpressionEClass = createEClass(HEADER_EXPRESSION);
+    createEReference(headerExpressionEClass, HEADER_EXPRESSION__TITLE);
 
-		emphasisExpressionEClass = createEClass(EMPHASIS_EXPRESSION);
-		createEAttribute(emphasisExpressionEClass, EMPHASIS_EXPRESSION__VALUE);
-	}
+    emphasisExpressionEClass = createEClass(EMPHASIS_EXPRESSION);
+    createEAttribute(emphasisExpressionEClass, EMPHASIS_EXPRESSION__VALUE);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private boolean isInitialized = false;
 
   /**
-	 * Complete the initialization of the package and its meta-model.  This
-	 * method is guarded to have no affect on any invocation but its first.
-	 * <!-- begin-user-doc -->
+   * Complete the initialization of the package and its meta-model.  This
+   * method is guarded to have no affect on any invocation but its first.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public void initializePackageContents()
   {
-		if (isInitialized) return;
-		isInitialized = true;
+    if (isInitialized) return;
+    isInitialized = true;
 
-		// Initialize package
-		setName(eNAME);
-		setNsPrefix(eNS_PREFIX);
-		setNsURI(eNS_URI);
+    // Initialize package
+    setName(eNAME);
+    setNsPrefix(eNS_PREFIX);
+    setNsURI(eNS_URI);
 
-		// Create type parameters
+    // Create type parameters
 
-		// Set bounds for type parameters
+    // Set bounds for type parameters
 
-		// Add supertypes to classes
-		headerEClass.getESuperTypes().add(this.getExpression());
+    // Add supertypes to classes
+    headerExpressionEClass.getESuperTypes().add(this.getExpression());
 
-		// Initialize classes and features; add operations and parameters
-		initEClass(fileEClass, File.class, "File", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFile_Expression(), this.getExpression(), null, "expression", null, 0, -1, File.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    // Initialize classes and features; add operations and parameters
+    initEClass(fileEClass, File.class, "File", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getFile_Expression(), this.getExpression(), null, "expression", null, 0, -1, File.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(headerEClass, Header.class, "Header", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getHeader_Title(), this.getEmphasisExpression(), null, "title", null, 0, 1, Header.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(headerExpressionEClass, HeaderExpression.class, "HeaderExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getHeaderExpression_Title(), this.getEmphasisExpression(), null, "title", null, 0, 1, HeaderExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(emphasisExpressionEClass, EmphasisExpression.class, "EmphasisExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEmphasisExpression_Value(), ecorePackage.getEString(), "value", null, 0, 1, EmphasisExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(emphasisExpressionEClass, EmphasisExpression.class, "EmphasisExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getEmphasisExpression_Value(), ecorePackage.getEString(), "value", null, 0, 1, EmphasisExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		// Create resource
-		createResource(eNS_URI);
-	}
+    // Create resource
+    createResource(eNS_URI);
+  }
 
 } //MyDslPackageImpl

@@ -7,7 +7,7 @@ import com.google.inject.Inject;
 import java.util.Set;
 import markHammil.mm.myDsl.EmphasisExpression;
 import markHammil.mm.myDsl.File;
-import markHammil.mm.myDsl.Header;
+import markHammil.mm.myDsl.HeaderExpression;
 import markHammil.mm.myDsl.MyDslPackage;
 import markHammil.mm.services.MyDslGrammarAccess;
 import org.eclipse.emf.ecore.EObject;
@@ -40,8 +40,8 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case MyDslPackage.FILE:
 				sequence_File(context, (File) semanticObject); 
 				return; 
-			case MyDslPackage.HEADER:
-				sequence_HeaderExpression(context, (Header) semanticObject); 
+			case MyDslPackage.HEADER_EXPRESSION:
+				sequence_HeaderExpression(context, (HeaderExpression) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -62,16 +62,16 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
-	 *     Expression returns Header
-	 *     HeaderExpression returns Header
+	 *     Expression returns HeaderExpression
+	 *     HeaderExpression returns HeaderExpression
 	 *
 	 * Constraint:
 	 *     title=EmphasisExpression
 	 */
-	protected void sequence_HeaderExpression(ISerializationContext context, Header semanticObject) {
+	protected void sequence_HeaderExpression(ISerializationContext context, HeaderExpression semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.HEADER__TITLE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.HEADER__TITLE));
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.HEADER_EXPRESSION__TITLE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.HEADER_EXPRESSION__TITLE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getHeaderExpressionAccess().getTitleEmphasisExpressionParserRuleCall_1_0(), semanticObject.getTitle());
@@ -85,7 +85,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     NaturalExpression returns EmphasisExpression
 	 *
 	 * Constraint:
-	 *     value=ID
+	 *     value=Content
 	 */
 	protected void sequence_NaturalExpression(ISerializationContext context, EmphasisExpression semanticObject) {
 		if (errorAcceptor != null) {
@@ -93,7 +93,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.EMPHASIS_EXPRESSION__VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getNaturalExpressionAccess().getValueIDTerminalRuleCall_1_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getNaturalExpressionAccess().getValueContentParserRuleCall_1_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	

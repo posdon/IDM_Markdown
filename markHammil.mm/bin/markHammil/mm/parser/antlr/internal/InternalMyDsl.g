@@ -170,15 +170,23 @@ ruleHeaderExpression returns [EObject current=null]
 			)
 		)
 		(
+			('#'
+			)=>
 			otherlv_2='#'
 			{
-				newLeafNode(otherlv_2, grammarAccess.getHeaderExpressionAccess().getNumberSignKeyword_2());
+				newLeafNode(otherlv_2, grammarAccess.getHeaderExpressionAccess().getNumberSignKeyword_2_0());
 			}
 		)*
 		(
-			this_BL_3=RULE_BL
+			this_WS_3=RULE_WS
 			{
-				newLeafNode(this_BL_3, grammarAccess.getHeaderExpressionAccess().getBLTerminalRuleCall_3());
+				newLeafNode(this_WS_3, grammarAccess.getHeaderExpressionAccess().getWSTerminalRuleCall_3());
+			}
+		)*
+		(
+			this_BL_4=RULE_BL
+			{
+				newLeafNode(this_BL_4, grammarAccess.getHeaderExpressionAccess().getBLTerminalRuleCall_4());
 			}
 		)?
 	)
@@ -234,23 +242,86 @@ ruleNaturalExpression returns [EObject current=null]
 		)
 		(
 			(
-				lv_value_1_0=RULE_ID
 				{
-					newLeafNode(lv_value_1_0, grammarAccess.getNaturalExpressionAccess().getValueIDTerminalRuleCall_1_0());
+					newCompositeNode(grammarAccess.getNaturalExpressionAccess().getValueContentParserRuleCall_1_0());
 				}
+				lv_value_1_0=ruleContent
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getNaturalExpressionRule());
+						$current = createModelElementForParent(grammarAccess.getNaturalExpressionRule());
 					}
-					setWithLastConsumed(
+					set(
 						$current,
 						"value",
 						lv_value_1_0,
-						"org.eclipse.xtext.common.Terminals.ID");
+						"markHammil.mm.MyDsl.Content");
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
 	)
+;
+
+// Entry rule entryRuleContent
+entryRuleContent returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getContentRule()); }
+	iv_ruleContent=ruleContent
+	{ $current=$iv_ruleContent.current.getText(); }
+	EOF;
+
+// Rule Content
+ruleContent returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		this_ID_0=RULE_ID
+		{
+			$current.merge(this_ID_0);
+		}
+		{
+			newLeafNode(this_ID_0, grammarAccess.getContentAccess().getIDTerminalRuleCall_0());
+		}
+		    |
+		this_STRING_1=RULE_STRING
+		{
+			$current.merge(this_STRING_1);
+		}
+		{
+			newLeafNode(this_STRING_1, grammarAccess.getContentAccess().getSTRINGTerminalRuleCall_1());
+		}
+		    |
+		this_INT_2=RULE_INT
+		{
+			$current.merge(this_INT_2);
+		}
+		{
+			newLeafNode(this_INT_2, grammarAccess.getContentAccess().getINTTerminalRuleCall_2());
+		}
+		    |
+		this_ANY_OTHER_3=RULE_ANY_OTHER
+		{
+			$current.merge(this_ANY_OTHER_3);
+		}
+		{
+			newLeafNode(this_ANY_OTHER_3, grammarAccess.getContentAccess().getANY_OTHERTerminalRuleCall_3());
+		}
+		    |
+		kw='\''
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getContentAccess().getApostropheKeyword_4());
+		}
+		    |
+		kw='"'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getContentAccess().getQuotationMarkKeyword_5());
+		}
+	)*
 ;
 
 RULE_STRING : ('"' ('\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|'\''|'\\')|~(('\\'|'"')))* '"'|'\'' ('\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|'\''|'\\')|~(('\\'|'"')))* '\'');

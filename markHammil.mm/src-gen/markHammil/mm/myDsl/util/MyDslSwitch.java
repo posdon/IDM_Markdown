@@ -26,159 +26,165 @@ import org.eclipse.emf.ecore.util.Switch;
 public class MyDslSwitch<T> extends Switch<T>
 {
   /**
-	 * The cached model package
-	 * <!-- begin-user-doc -->
+   * The cached model package
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   protected static MyDslPackage modelPackage;
 
   /**
-	 * Creates an instance of the switch.
-	 * <!-- begin-user-doc -->
+   * Creates an instance of the switch.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public MyDslSwitch()
   {
-		if (modelPackage == null) {
-			modelPackage = MyDslPackage.eINSTANCE;
-		}
-	}
+    if (modelPackage == null)
+    {
+      modelPackage = MyDslPackage.eINSTANCE;
+    }
+  }
 
   /**
-	 * Checks whether this is a switch for the given package.
-	 * <!-- begin-user-doc -->
+   * Checks whether this is a switch for the given package.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param ePackage the package in question.
-	 * @return whether this is a switch for the given package.
-	 * @generated
-	 */
+   * @param ePackage the package in question.
+   * @return whether this is a switch for the given package.
+   * @generated
+   */
   @Override
   protected boolean isSwitchFor(EPackage ePackage)
   {
-		return ePackage == modelPackage;
-	}
+    return ePackage == modelPackage;
+  }
 
   /**
-	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
-	 * <!-- begin-user-doc -->
+   * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the first non-null result returned by a <code>caseXXX</code> call.
-	 * @generated
-	 */
+   * @return the first non-null result returned by a <code>caseXXX</code> call.
+   * @generated
+   */
   @Override
   protected T doSwitch(int classifierID, EObject theEObject)
   {
-		switch (classifierID) {
-			case MyDslPackage.FILE: {
-				File file = (File)theEObject;
-				T result = caseFile(file);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case MyDslPackage.EXPRESSION: {
-				Expression expression = (Expression)theEObject;
-				T result = caseExpression(expression);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case MyDslPackage.HEADER: {
-				Header header = (Header)theEObject;
-				T result = caseHeader(header);
-				if (result == null) result = caseExpression(header);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case MyDslPackage.EMPHASIS_EXPRESSION: {
-				EmphasisExpression emphasisExpression = (EmphasisExpression)theEObject;
-				T result = caseEmphasisExpression(emphasisExpression);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			default: return defaultCase(theEObject);
-		}
-	}
+    switch (classifierID)
+    {
+      case MyDslPackage.FILE:
+      {
+        File file = (File)theEObject;
+        T result = caseFile(file);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MyDslPackage.EXPRESSION:
+      {
+        Expression expression = (Expression)theEObject;
+        T result = caseExpression(expression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MyDslPackage.HEADER_EXPRESSION:
+      {
+        HeaderExpression headerExpression = (HeaderExpression)theEObject;
+        T result = caseHeaderExpression(headerExpression);
+        if (result == null) result = caseExpression(headerExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MyDslPackage.EMPHASIS_EXPRESSION:
+      {
+        EmphasisExpression emphasisExpression = (EmphasisExpression)theEObject;
+        T result = caseEmphasisExpression(emphasisExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      default: return defaultCase(theEObject);
+    }
+  }
 
   /**
-	 * Returns the result of interpreting the object as an instance of '<em>File</em>'.
-	 * <!-- begin-user-doc -->
+   * Returns the result of interpreting the object as an instance of '<em>File</em>'.
+   * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>File</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>File</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
   public T caseFile(File object)
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Returns the result of interpreting the object as an instance of '<em>Expression</em>'.
-	 * <!-- begin-user-doc -->
+   * Returns the result of interpreting the object as an instance of '<em>Expression</em>'.
+   * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Expression</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
   public T caseExpression(Expression object)
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Returns the result of interpreting the object as an instance of '<em>Header</em>'.
-	 * <!-- begin-user-doc -->
+   * Returns the result of interpreting the object as an instance of '<em>Header Expression</em>'.
+   * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Header</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-  public T caseHeader(Header object)
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Header Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseHeaderExpression(HeaderExpression object)
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Returns the result of interpreting the object as an instance of '<em>Emphasis Expression</em>'.
-	 * <!-- begin-user-doc -->
+   * Returns the result of interpreting the object as an instance of '<em>Emphasis Expression</em>'.
+   * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Emphasis Expression</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Emphasis Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
   public T caseEmphasisExpression(EmphasisExpression object)
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Returns the result of interpreting the object as an instance of '<em>EObject</em>'.
-	 * <!-- begin-user-doc -->
+   * Returns the result of interpreting the object as an instance of '<em>EObject</em>'.
+   * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch, but this is the last case anyway.
    * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
-	 * @generated
-	 */
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>EObject</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject)
+   * @generated
+   */
   @Override
   public T defaultCase(EObject object)
   {
-		return null;
-	}
+    return null;
+  }
 
 } //MyDslSwitch

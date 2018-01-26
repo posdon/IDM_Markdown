@@ -22,118 +22,122 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
 {
   /**
-	 * Creates the default factory implementation.
-	 * <!-- begin-user-doc -->
+   * Creates the default factory implementation.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public static MyDslFactory init()
   {
-		try {
-			MyDslFactory theMyDslFactory = (MyDslFactory)EPackage.Registry.INSTANCE.getEFactory(MyDslPackage.eNS_URI);
-			if (theMyDslFactory != null) {
-				return theMyDslFactory;
-			}
-		}
-		catch (Exception exception) {
-			EcorePlugin.INSTANCE.log(exception);
-		}
-		return new MyDslFactoryImpl();
-	}
+    try
+    {
+      MyDslFactory theMyDslFactory = (MyDslFactory)EPackage.Registry.INSTANCE.getEFactory(MyDslPackage.eNS_URI);
+      if (theMyDslFactory != null)
+      {
+        return theMyDslFactory;
+      }
+    }
+    catch (Exception exception)
+    {
+      EcorePlugin.INSTANCE.log(exception);
+    }
+    return new MyDslFactoryImpl();
+  }
 
   /**
-	 * Creates an instance of the factory.
-	 * <!-- begin-user-doc -->
+   * Creates an instance of the factory.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public MyDslFactoryImpl()
   {
-		super();
-	}
+    super();
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EObject create(EClass eClass)
   {
-		switch (eClass.getClassifierID()) {
-			case MyDslPackage.FILE: return createFile();
-			case MyDslPackage.EXPRESSION: return createExpression();
-			case MyDslPackage.HEADER: return createHeader();
-			case MyDslPackage.EMPHASIS_EXPRESSION: return createEmphasisExpression();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
-		}
-	}
+    switch (eClass.getClassifierID())
+    {
+      case MyDslPackage.FILE: return createFile();
+      case MyDslPackage.EXPRESSION: return createExpression();
+      case MyDslPackage.HEADER_EXPRESSION: return createHeaderExpression();
+      case MyDslPackage.EMPHASIS_EXPRESSION: return createEmphasisExpression();
+      default:
+        throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+    }
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public File createFile()
   {
-		FileImpl file = new FileImpl();
-		return file;
-	}
+    FileImpl file = new FileImpl();
+    return file;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public Expression createExpression()
   {
-		ExpressionImpl expression = new ExpressionImpl();
-		return expression;
-	}
+    ExpressionImpl expression = new ExpressionImpl();
+    return expression;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public Header createHeader()
+   * @generated
+   */
+  public HeaderExpression createHeaderExpression()
   {
-		HeaderImpl header = new HeaderImpl();
-		return header;
-	}
+    HeaderExpressionImpl headerExpression = new HeaderExpressionImpl();
+    return headerExpression;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EmphasisExpression createEmphasisExpression()
   {
-		EmphasisExpressionImpl emphasisExpression = new EmphasisExpressionImpl();
-		return emphasisExpression;
-	}
+    EmphasisExpressionImpl emphasisExpression = new EmphasisExpressionImpl();
+    return emphasisExpression;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public MyDslPackage getMyDslPackage()
   {
-		return (MyDslPackage)getEPackage();
-	}
+    return (MyDslPackage)getEPackage();
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @deprecated
-	 * @generated
-	 */
+   * @deprecated
+   * @generated
+   */
   @Deprecated
   public static MyDslPackage getPackage()
   {
-		return MyDslPackage.eINSTANCE;
-	}
+    return MyDslPackage.eINSTANCE;
+  }
 
 } //MyDslFactoryImpl

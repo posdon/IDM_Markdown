@@ -6,7 +6,7 @@
         eType="#//Expression" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Expression"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Header" eSuperTypes="#//Expression">
+  <eClassifiers xsi:type="ecore:EClass" name="HeaderExpression" eSuperTypes="#//Expression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="title" eType="#//EmphasisExpression"
         containment="true"/>
   </eClassifiers>

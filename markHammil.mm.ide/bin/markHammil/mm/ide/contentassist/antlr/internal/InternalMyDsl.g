@@ -5,6 +5,7 @@ grammar InternalMyDsl;
 
 options {
 	superClass=AbstractInternalContentAssistParser;
+	backtrack=true;
 }
 
 @lexer::header {
@@ -174,6 +175,76 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+// Entry rule entryRuleContent
+entryRuleContent
+:
+{ before(grammarAccess.getContentRule()); }
+	 ruleContent
+{ after(grammarAccess.getContentRule()); } 
+	 EOF 
+;
+
+// Rule Content
+ruleContent 
+	@init {
+		int stackSize = keepStackSize();
+	}
+	:
+	(
+		{ before(grammarAccess.getContentAccess().getAlternatives()); }
+		(rule__Content__Alternatives)*
+		{ after(grammarAccess.getContentAccess().getAlternatives()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Content__Alternatives
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getContentAccess().getIDTerminalRuleCall_0()); }
+		RULE_ID
+		{ after(grammarAccess.getContentAccess().getIDTerminalRuleCall_0()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getContentAccess().getSTRINGTerminalRuleCall_1()); }
+		RULE_STRING
+		{ after(grammarAccess.getContentAccess().getSTRINGTerminalRuleCall_1()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getContentAccess().getINTTerminalRuleCall_2()); }
+		RULE_INT
+		{ after(grammarAccess.getContentAccess().getINTTerminalRuleCall_2()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getContentAccess().getANY_OTHERTerminalRuleCall_3()); }
+		RULE_ANY_OTHER
+		{ after(grammarAccess.getContentAccess().getANY_OTHERTerminalRuleCall_3()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getContentAccess().getApostropheKeyword_4()); }
+		'\''
+		{ after(grammarAccess.getContentAccess().getApostropheKeyword_4()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getContentAccess().getQuotationMarkKeyword_5()); }
+		'"'
+		{ after(grammarAccess.getContentAccess().getQuotationMarkKeyword_5()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 rule__File__Group__0
 	@init {
 		int stackSize = keepStackSize();
@@ -300,9 +371,9 @@ rule__HeaderExpression__Group__2__Impl
 	}
 :
 (
-	{ before(grammarAccess.getHeaderExpressionAccess().getNumberSignKeyword_2()); }
-	('#')*
-	{ after(grammarAccess.getHeaderExpressionAccess().getNumberSignKeyword_2()); }
+	{ before(grammarAccess.getHeaderExpressionAccess().getGroup_2()); }
+	(rule__HeaderExpression__Group_2__0)*
+	{ after(grammarAccess.getHeaderExpressionAccess().getGroup_2()); }
 )
 ;
 finally {
@@ -315,6 +386,7 @@ rule__HeaderExpression__Group__3
 	}
 :
 	rule__HeaderExpression__Group__3__Impl
+	rule__HeaderExpression__Group__4
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -326,9 +398,62 @@ rule__HeaderExpression__Group__3__Impl
 	}
 :
 (
-	{ before(grammarAccess.getHeaderExpressionAccess().getBLTerminalRuleCall_3()); }
+	{ before(grammarAccess.getHeaderExpressionAccess().getWSTerminalRuleCall_3()); }
+	(RULE_WS)*
+	{ after(grammarAccess.getHeaderExpressionAccess().getWSTerminalRuleCall_3()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__HeaderExpression__Group__4
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__HeaderExpression__Group__4__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__HeaderExpression__Group__4__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getHeaderExpressionAccess().getBLTerminalRuleCall_4()); }
 	(RULE_BL)?
-	{ after(grammarAccess.getHeaderExpressionAccess().getBLTerminalRuleCall_3()); }
+	{ after(grammarAccess.getHeaderExpressionAccess().getBLTerminalRuleCall_4()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__HeaderExpression__Group_2__0
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__HeaderExpression__Group_2__0__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__HeaderExpression__Group_2__0__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getHeaderExpressionAccess().getNumberSignKeyword_2_0()); }
+	'#'
+	{ after(grammarAccess.getHeaderExpressionAccess().getNumberSignKeyword_2_0()); }
 )
 ;
 finally {
@@ -426,9 +551,9 @@ rule__NaturalExpression__ValueAssignment_1
 	}
 :
 	(
-		{ before(grammarAccess.getNaturalExpressionAccess().getValueIDTerminalRuleCall_1_0()); }
-		RULE_ID
-		{ after(grammarAccess.getNaturalExpressionAccess().getValueIDTerminalRuleCall_1_0()); }
+		{ before(grammarAccess.getNaturalExpressionAccess().getValueContentParserRuleCall_1_0()); }
+		ruleContent
+		{ after(grammarAccess.getNaturalExpressionAccess().getValueContentParserRuleCall_1_0()); }
 	)
 ;
 finally {

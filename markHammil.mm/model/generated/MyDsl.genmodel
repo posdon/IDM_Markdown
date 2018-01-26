@@ -10,8 +10,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//File/expression"/>
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//Expression"/>
-    <genClasses ecoreClass="MyDsl.ecore#//Header">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Header/title"/>
+    <genClasses ecoreClass="MyDsl.ecore#//HeaderExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//HeaderExpression/title"/>
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//EmphasisExpression">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//EmphasisExpression/value"/>
