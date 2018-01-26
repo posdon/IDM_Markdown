@@ -1,0 +1,35 @@
+grammar markHammil.mm.MyDsl with org.eclipse.xtext.common.Terminals
+
+generate myDsl "http://www.mm.markHammil/MyDsl"
+
+File:
+        {File}
+                expression+=Expression*
+        ;
+Expression:
+        HeaderExpression
+;
+
+HeaderExpression returns Header :
+                '#' title=EmphasisExpression ('#')* BL ?
+        ;
+        
+EmphasisExpression returns EmphasisExpression:
+        NaturalExpression  ;
+
+NaturalExpression returns EmphasisExpression:
+        {EmphasisExpression}
+                value=ID ;
+
+
+terminal STRING
+:
+'"' ('\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|'"'))* '"' |
+"'" ('\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|'"'))* "'" ;
+terminal ML_COMMENT
+: '/*' -> '*/';
+terminal SL_COMMENT
+: '//' !('\n'|'\r')* ('\r'? '\n')?;
+terminal BL: ('\r'? '\n');
+terminal WS: (' '|'\t');
+terminal fragment DIGIT: '0'..'9';

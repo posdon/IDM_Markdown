@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="robot" nsURI="http://robot.com" nsPrefix="robot">
+  <eClassifiers xsi:type="ecore:EClass" name="Program">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
+        eType="#//cflow/Expression" containment="true"/>
+  </eClassifiers>
+  <eSubpackages name="cflow" nsURI="http://cflow" nsPrefix="cflow">
+    <eClassifiers xsi:type="ecore:EClass" name="Expression" abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="LoopExp" eSuperTypes="#//cflow/Expression">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="body" upperBound="-1"
+          eType="#//cflow/Expression" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="condition" lowerBound="1"
+          eType="#//cflow/BooleanExp" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ConditionalExp" eSuperTypes="#//cflow/Expression">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="then" upperBound="-1"
+          eType="#//cflow/Expression" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="else" upperBound="-1"
+          eType="#//cflow/Expression" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="condition" lowerBound="1"
+          eType="#//cflow/BooleanExp" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BooleanExp" abstract="true" eSuperTypes="#//cflow/Expression"/>
+    <eClassifiers xsi:type="ecore:EClass" name="NotExp" eSuperTypes="#//cflow/BooleanExp">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="operande" lowerBound="1"
+          eType="#//cflow/BooleanExp" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AndExp" eSuperTypes="#//cflow/BooleanExp">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="leftOperande" lowerBound="1"
+          eType="#//cflow/BooleanExp" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="rightOperande" lowerBound="1"
+          eType="#//cflow/BooleanExp" containment="true"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="cmd" nsURI="http://cmd.com" nsPrefix="cmd">
+    <eClassifiers xsi:type="ecore:EClass" name="CommandExp" abstract="true" eSuperTypes="#//cflow/Expression"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ObstacleCmd" eSuperTypes="#//cmd/CommandExp">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="distance" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MoveCmd" eSuperTypes="#//cmd/CommandExp">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="power" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BipCmd" eSuperTypes="#//cmd/CommandExp">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="power" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="repeat" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="setTurnAngleCmd" eSuperTypes="#//cmd/CommandExp">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="angle" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="hasTurnedCmd" eSuperTypes="#//cmd/CommandExp">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="angle" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="stopEngineCmd" eSuperTypes="#//cmd/CommandExp"/>
+    <eClassifiers xsi:type="ecore:EClass" name="turnCmd" eSuperTypes="#//cmd/CommandExp">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="power" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="angle" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="stopProgramCmd" eSuperTypes="#//cmd/CommandExp"/>
+    <eClassifiers xsi:type="ecore:EClass" name="displayCmd" eSuperTypes="#//cmd/CommandExp">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="msg" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="line" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="col" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>

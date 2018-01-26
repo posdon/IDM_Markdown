@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.xtext.robot.perdu
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.xtext.robot.perdu; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: IDMProject,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.xtext.xbase.lib,
+ org.antlr.runtime,
+ org.eclipse.xtext.util,
+ org.eclipse.xtend.lib
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.xtext.robot.perdu.services,
+ org.xtext.robot.perdu.parser.antlr,
+ org.xtext.robot.perdu.generator,
+ org.xtext.robot.perdu.scoping,
+ org.xtext.robot.perdu.serializer,
+ org.xtext.robot.perdu,
+ org.xtext.robot.perdu.formatting2,
+ org.xtext.robot.perdu.validation,
+ org.xtext.robot.perdu.parser.antlr.internal
+Import-Package: org.apache.log4j
