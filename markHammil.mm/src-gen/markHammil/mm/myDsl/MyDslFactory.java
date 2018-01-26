@@ -16,137 +16,155 @@ import org.eclipse.emf.ecore.EFactory;
 public interface MyDslFactory extends EFactory
 {
   /**
-	 * The singleton instance of the factory.
-	 * <!-- begin-user-doc -->
+   * The singleton instance of the factory.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   MyDslFactory eINSTANCE = markHammil.mm.myDsl.impl.MyDslFactoryImpl.init();
 
   /**
-	 * Returns a new object of class '<em>File</em>'.
-	 * <!-- begin-user-doc -->
+   * Returns a new object of class '<em>File</em>'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return a new object of class '<em>File</em>'.
-	 * @generated
-	 */
+   * @return a new object of class '<em>File</em>'.
+   * @generated
+   */
   File createFile();
 
   /**
-	 * Returns a new object of class '<em>Expression</em>'.
-	 * <!-- begin-user-doc -->
+   * Returns a new object of class '<em>Expression</em>'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Expression</em>'.
-	 * @generated
-	 */
+   * @return a new object of class '<em>Expression</em>'.
+   * @generated
+   */
   Expression createExpression();
 
   /**
-	 * Returns a new object of class '<em>Header Expression</em>'.
-	 * <!-- begin-user-doc -->
+   * Returns a new object of class '<em>Break Line Expression</em>'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Header Expression</em>'.
-	 * @generated
-	 */
+   * @return a new object of class '<em>Break Line Expression</em>'.
+   * @generated
+   */
+  BreakLineExpression createBreakLineExpression();
+
+  /**
+   * Returns a new object of class '<em>Header Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Header Expression</em>'.
+   * @generated
+   */
   HeaderExpression createHeaderExpression();
 
   /**
-	 * Returns a new object of class '<em>Header1 Expression</em>'.
-	 * <!-- begin-user-doc -->
+   * Returns a new object of class '<em>Header1 Expression</em>'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Header1 Expression</em>'.
-	 * @generated
-	 */
+   * @return a new object of class '<em>Header1 Expression</em>'.
+   * @generated
+   */
   Header1Expression createHeader1Expression();
 
   /**
-	 * Returns a new object of class '<em>Header2 Expression</em>'.
-	 * <!-- begin-user-doc -->
+   * Returns a new object of class '<em>Header2 Expression</em>'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Header2 Expression</em>'.
-	 * @generated
-	 */
+   * @return a new object of class '<em>Header2 Expression</em>'.
+   * @generated
+   */
   Header2Expression createHeader2Expression();
 
   /**
-	 * Returns a new object of class '<em>Header3 Expression</em>'.
-	 * <!-- begin-user-doc -->
+   * Returns a new object of class '<em>Header3 Expression</em>'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Header3 Expression</em>'.
-	 * @generated
-	 */
+   * @return a new object of class '<em>Header3 Expression</em>'.
+   * @generated
+   */
   Header3Expression createHeader3Expression();
 
   /**
-	 * Returns a new object of class '<em>Header4 Expression</em>'.
-	 * <!-- begin-user-doc -->
+   * Returns a new object of class '<em>Header4 Expression</em>'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Header4 Expression</em>'.
-	 * @generated
-	 */
+   * @return a new object of class '<em>Header4 Expression</em>'.
+   * @generated
+   */
   Header4Expression createHeader4Expression();
 
   /**
-	 * Returns a new object of class '<em>Header5 Expression</em>'.
-	 * <!-- begin-user-doc -->
+   * Returns a new object of class '<em>Header5 Expression</em>'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Header5 Expression</em>'.
-	 * @generated
-	 */
+   * @return a new object of class '<em>Header5 Expression</em>'.
+   * @generated
+   */
   Header5Expression createHeader5Expression();
 
   /**
-	 * Returns a new object of class '<em>Header6 Expression</em>'.
-	 * <!-- begin-user-doc -->
+   * Returns a new object of class '<em>Header6 Expression</em>'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Header6 Expression</em>'.
-	 * @generated
-	 */
+   * @return a new object of class '<em>Header6 Expression</em>'.
+   * @generated
+   */
   Header6Expression createHeader6Expression();
 
   /**
-	 * Returns a new object of class '<em>Emphasis Expression</em>'.
-	 * <!-- begin-user-doc -->
+   * Returns a new object of class '<em>Emphasis Expression</em>'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Emphasis Expression</em>'.
-	 * @generated
-	 */
+   * @return a new object of class '<em>Emphasis Expression</em>'.
+   * @generated
+   */
   EmphasisExpression createEmphasisExpression();
 
   /**
-	 * Returns a new object of class '<em>Strong Expression</em>'.
-	 * <!-- begin-user-doc -->
+   * Returns a new object of class '<em>Break Line Expression B</em>'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Strong Expression</em>'.
-	 * @generated
-	 */
+   * @return a new object of class '<em>Break Line Expression B</em>'.
+   * @generated
+   */
+  BreakLineExpressionB createBreakLineExpressionB();
+
+  /**
+   * Returns a new object of class '<em>Strong Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Strong Expression</em>'.
+   * @generated
+   */
   StrongExpression createStrongExpression();
 
   /**
-	 * Returns a new object of class '<em>Italic Expression</em>'.
-	 * <!-- begin-user-doc -->
+   * Returns a new object of class '<em>Italic Expression</em>'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Italic Expression</em>'.
-	 * @generated
-	 */
+   * @return a new object of class '<em>Italic Expression</em>'.
+   * @generated
+   */
   ItalicExpression createItalicExpression();
 
   /**
-	 * Returns a new object of class '<em>Scratch Expression</em>'.
-	 * <!-- begin-user-doc -->
+   * Returns a new object of class '<em>Scratch Expression</em>'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Scratch Expression</em>'.
-	 * @generated
-	 */
+   * @return a new object of class '<em>Scratch Expression</em>'.
+   * @generated
+   */
   ScratchExpression createScratchExpression();
 
   /**
-	 * Returns the package supported by this factory.
-	 * <!-- begin-user-doc -->
+   * Returns the package supported by this factory.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the package supported by this factory.
-	 * @generated
-	 */
+   * @return the package supported by this factory.
+   * @generated
+   */
   MyDslPackage getMyDslPackage();
 
 } //MyDslFactory

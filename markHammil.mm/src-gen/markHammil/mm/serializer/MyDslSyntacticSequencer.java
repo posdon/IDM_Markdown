@@ -20,6 +20,7 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected MyDslGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_Expression_BLTerminalRuleCall_0_0_1_1_q;
 	protected AbstractElementAlias match_Header1Expression_BLTerminalRuleCall_4_q;
 	protected AbstractElementAlias match_Header1Expression_NumberSignKeyword_3_0_a;
 	protected AbstractElementAlias match_Header2Expression_BLTerminalRuleCall_4_q;
@@ -36,6 +37,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (MyDslGrammarAccess) access;
+		match_Expression_BLTerminalRuleCall_0_0_1_1_q = new TokenAlias(false, true, grammarAccess.getExpressionAccess().getBLTerminalRuleCall_0_0_1_1());
 		match_Header1Expression_BLTerminalRuleCall_4_q = new TokenAlias(false, true, grammarAccess.getHeader1ExpressionAccess().getBLTerminalRuleCall_4());
 		match_Header1Expression_NumberSignKeyword_3_0_a = new TokenAlias(true, true, grammarAccess.getHeader1ExpressionAccess().getNumberSignKeyword_3_0());
 		match_Header2Expression_BLTerminalRuleCall_4_q = new TokenAlias(false, true, grammarAccess.getHeader2ExpressionAccess().getBLTerminalRuleCall_4());
@@ -72,7 +74,9 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_Header1Expression_BLTerminalRuleCall_4_q.equals(syntax))
+			if (match_Expression_BLTerminalRuleCall_0_0_1_1_q.equals(syntax))
+				emit_Expression_BLTerminalRuleCall_0_0_1_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Header1Expression_BLTerminalRuleCall_4_q.equals(syntax))
 				emit_Header1Expression_BLTerminalRuleCall_4_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Header1Expression_NumberSignKeyword_3_0_a.equals(syntax))
 				emit_Header1Expression_NumberSignKeyword_3_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
@@ -100,6 +104,17 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 		}
 	}
 
+	/**
+	 * Ambiguous syntax:
+	 *     BL?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     c=EmphasisExpression (ambiguity) (rule end)
+	 */
+	protected void emit_Expression_BLTerminalRuleCall_0_0_1_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 	/**
 	 * Ambiguous syntax:
 	 *     BL?

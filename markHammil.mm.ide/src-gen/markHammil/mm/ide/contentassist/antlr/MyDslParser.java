@@ -31,11 +31,16 @@ public class MyDslParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
+					put(grammarAccess.getExpressionAccess().getAlternatives(), "rule__Expression__Alternatives");
+					put(grammarAccess.getExpressionAccess().getAlternatives_0_0(), "rule__Expression__Alternatives_0_0");
 					put(grammarAccess.getHeaderExpressionAccess().getAlternatives(), "rule__HeaderExpression__Alternatives");
 					put(grammarAccess.getEmphasisExpressionAccess().getAlternatives(), "rule__EmphasisExpression__Alternatives");
 					put(grammarAccess.getEmphasisExpressionAccess().getAlternatives_0_0(), "rule__EmphasisExpression__Alternatives_0_0");
 					put(grammarAccess.getContentAccess().getAlternatives(), "rule__Content__Alternatives");
 					put(grammarAccess.getFileAccess().getGroup(), "rule__File__Group__0");
+					put(grammarAccess.getExpressionAccess().getGroup_0(), "rule__Expression__Group_0__0");
+					put(grammarAccess.getExpressionAccess().getGroup_0_0_1(), "rule__Expression__Group_0_0_1__0");
+					put(grammarAccess.getBreakLineExpressionAccess().getGroup(), "rule__BreakLineExpression__Group__0");
 					put(grammarAccess.getHeader1ExpressionAccess().getGroup(), "rule__Header1Expression__Group__0");
 					put(grammarAccess.getHeader1ExpressionAccess().getGroup_3(), "rule__Header1Expression__Group_3__0");
 					put(grammarAccess.getHeader2ExpressionAccess().getGroup(), "rule__Header2Expression__Group__0");
@@ -54,7 +59,9 @@ public class MyDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getScratchExpressionAccess().getGroup(), "rule__ScratchExpression__Group__0");
 					put(grammarAccess.getNaturalExpressionAccess().getGroup(), "rule__NaturalExpression__Group__0");
 					put(grammarAccess.getFileAccess().getExpressionAssignment_1(), "rule__File__ExpressionAssignment_1");
-					put(grammarAccess.getExpressionAccess().getCAssignment(), "rule__Expression__CAssignment");
+					put(grammarAccess.getExpressionAccess().getCAssignment_0_0_0(), "rule__Expression__CAssignment_0_0_0");
+					put(grammarAccess.getExpressionAccess().getCAssignment_0_0_1_0(), "rule__Expression__CAssignment_0_0_1_0");
+					put(grammarAccess.getExpressionAccess().getCAssignment_1(), "rule__Expression__CAssignment_1");
 					put(grammarAccess.getHeader1ExpressionAccess().getTitleAssignment_2(), "rule__Header1Expression__TitleAssignment_2");
 					put(grammarAccess.getHeader2ExpressionAccess().getTitleAssignment_2(), "rule__Header2Expression__TitleAssignment_2");
 					put(grammarAccess.getHeader3ExpressionAccess().getTitleAssignment_2(), "rule__Header3Expression__TitleAssignment_2");

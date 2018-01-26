@@ -26,681 +26,739 @@ import org.eclipse.emf.ecore.EReference;
 public interface MyDslPackage extends EPackage
 {
   /**
-	 * The package name.
-	 * <!-- begin-user-doc -->
+   * The package name.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   String eNAME = "myDsl";
 
   /**
-	 * The package namespace URI.
-	 * <!-- begin-user-doc -->
+   * The package namespace URI.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   String eNS_URI = "http://www.mm.markHammil/MyDsl";
 
   /**
-	 * The package namespace name.
-	 * <!-- begin-user-doc -->
+   * The package namespace name.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   String eNS_PREFIX = "myDsl";
 
   /**
-	 * The singleton instance of the package.
-	 * <!-- begin-user-doc -->
+   * The singleton instance of the package.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   MyDslPackage eINSTANCE = markHammil.mm.myDsl.impl.MyDslPackageImpl.init();
 
   /**
-	 * The meta object id for the '{@link markHammil.mm.myDsl.impl.FileImpl <em>File</em>}' class.
-	 * <!-- begin-user-doc -->
+   * The meta object id for the '{@link markHammil.mm.myDsl.impl.FileImpl <em>File</em>}' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see markHammil.mm.myDsl.impl.FileImpl
-	 * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getFile()
-	 * @generated
-	 */
+   * @see markHammil.mm.myDsl.impl.FileImpl
+   * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getFile()
+   * @generated
+   */
   int FILE = 0;
 
   /**
-	 * The feature id for the '<em><b>Expression</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Expression</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int FILE__EXPRESSION = 0;
 
   /**
-	 * The number of structural features of the '<em>File</em>' class.
-	 * <!-- begin-user-doc -->
+   * The number of structural features of the '<em>File</em>' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int FILE_FEATURE_COUNT = 1;
 
   /**
-	 * The meta object id for the '{@link markHammil.mm.myDsl.impl.ExpressionImpl <em>Expression</em>}' class.
-	 * <!-- begin-user-doc -->
+   * The meta object id for the '{@link markHammil.mm.myDsl.impl.ExpressionImpl <em>Expression</em>}' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see markHammil.mm.myDsl.impl.ExpressionImpl
-	 * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getExpression()
-	 * @generated
-	 */
+   * @see markHammil.mm.myDsl.impl.ExpressionImpl
+   * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getExpression()
+   * @generated
+   */
   int EXPRESSION = 1;
 
   /**
-	 * The feature id for the '<em><b>C</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>C</b></em>' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int EXPRESSION__C = 0;
 
   /**
-	 * The number of structural features of the '<em>Expression</em>' class.
-	 * <!-- begin-user-doc -->
+   * The number of structural features of the '<em>Expression</em>' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int EXPRESSION_FEATURE_COUNT = 1;
 
   /**
-	 * The meta object id for the '{@link markHammil.mm.myDsl.impl.HeaderExpressionImpl <em>Header Expression</em>}' class.
-	 * <!-- begin-user-doc -->
+   * The meta object id for the '{@link markHammil.mm.myDsl.impl.BreakLineExpressionImpl <em>Break Line Expression</em>}' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see markHammil.mm.myDsl.impl.HeaderExpressionImpl
-	 * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getHeaderExpression()
-	 * @generated
-	 */
-  int HEADER_EXPRESSION = 2;
+   * @see markHammil.mm.myDsl.impl.BreakLineExpressionImpl
+   * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getBreakLineExpression()
+   * @generated
+   */
+  int BREAK_LINE_EXPRESSION = 2;
 
   /**
-	 * The feature id for the '<em><b>Title</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
+   * The number of structural features of the '<em>Break Line Expression</em>' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
+  int BREAK_LINE_EXPRESSION_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link markHammil.mm.myDsl.impl.HeaderExpressionImpl <em>Header Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see markHammil.mm.myDsl.impl.HeaderExpressionImpl
+   * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getHeaderExpression()
+   * @generated
+   */
+  int HEADER_EXPRESSION = 3;
+
+  /**
+   * The feature id for the '<em><b>Title</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
   int HEADER_EXPRESSION__TITLE = 0;
 
   /**
-	 * The number of structural features of the '<em>Header Expression</em>' class.
-	 * <!-- begin-user-doc -->
+   * The number of structural features of the '<em>Header Expression</em>' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int HEADER_EXPRESSION_FEATURE_COUNT = 1;
 
   /**
-	 * The meta object id for the '{@link markHammil.mm.myDsl.impl.Header1ExpressionImpl <em>Header1 Expression</em>}' class.
-	 * <!-- begin-user-doc -->
+   * The meta object id for the '{@link markHammil.mm.myDsl.impl.Header1ExpressionImpl <em>Header1 Expression</em>}' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see markHammil.mm.myDsl.impl.Header1ExpressionImpl
-	 * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getHeader1Expression()
-	 * @generated
-	 */
-  int HEADER1_EXPRESSION = 3;
+   * @see markHammil.mm.myDsl.impl.Header1ExpressionImpl
+   * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getHeader1Expression()
+   * @generated
+   */
+  int HEADER1_EXPRESSION = 4;
 
   /**
-	 * The feature id for the '<em><b>Title</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Title</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int HEADER1_EXPRESSION__TITLE = HEADER_EXPRESSION__TITLE;
 
   /**
-	 * The number of structural features of the '<em>Header1 Expression</em>' class.
-	 * <!-- begin-user-doc -->
+   * The number of structural features of the '<em>Header1 Expression</em>' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int HEADER1_EXPRESSION_FEATURE_COUNT = HEADER_EXPRESSION_FEATURE_COUNT + 0;
 
   /**
-	 * The meta object id for the '{@link markHammil.mm.myDsl.impl.Header2ExpressionImpl <em>Header2 Expression</em>}' class.
-	 * <!-- begin-user-doc -->
+   * The meta object id for the '{@link markHammil.mm.myDsl.impl.Header2ExpressionImpl <em>Header2 Expression</em>}' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see markHammil.mm.myDsl.impl.Header2ExpressionImpl
-	 * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getHeader2Expression()
-	 * @generated
-	 */
-  int HEADER2_EXPRESSION = 4;
+   * @see markHammil.mm.myDsl.impl.Header2ExpressionImpl
+   * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getHeader2Expression()
+   * @generated
+   */
+  int HEADER2_EXPRESSION = 5;
 
   /**
-	 * The feature id for the '<em><b>Title</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Title</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int HEADER2_EXPRESSION__TITLE = HEADER_EXPRESSION__TITLE;
 
   /**
-	 * The number of structural features of the '<em>Header2 Expression</em>' class.
-	 * <!-- begin-user-doc -->
+   * The number of structural features of the '<em>Header2 Expression</em>' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int HEADER2_EXPRESSION_FEATURE_COUNT = HEADER_EXPRESSION_FEATURE_COUNT + 0;
 
   /**
-	 * The meta object id for the '{@link markHammil.mm.myDsl.impl.Header3ExpressionImpl <em>Header3 Expression</em>}' class.
-	 * <!-- begin-user-doc -->
+   * The meta object id for the '{@link markHammil.mm.myDsl.impl.Header3ExpressionImpl <em>Header3 Expression</em>}' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see markHammil.mm.myDsl.impl.Header3ExpressionImpl
-	 * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getHeader3Expression()
-	 * @generated
-	 */
-  int HEADER3_EXPRESSION = 5;
+   * @see markHammil.mm.myDsl.impl.Header3ExpressionImpl
+   * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getHeader3Expression()
+   * @generated
+   */
+  int HEADER3_EXPRESSION = 6;
 
   /**
-	 * The feature id for the '<em><b>Title</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Title</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int HEADER3_EXPRESSION__TITLE = HEADER_EXPRESSION__TITLE;
 
   /**
-	 * The number of structural features of the '<em>Header3 Expression</em>' class.
-	 * <!-- begin-user-doc -->
+   * The number of structural features of the '<em>Header3 Expression</em>' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int HEADER3_EXPRESSION_FEATURE_COUNT = HEADER_EXPRESSION_FEATURE_COUNT + 0;
 
   /**
-	 * The meta object id for the '{@link markHammil.mm.myDsl.impl.Header4ExpressionImpl <em>Header4 Expression</em>}' class.
-	 * <!-- begin-user-doc -->
+   * The meta object id for the '{@link markHammil.mm.myDsl.impl.Header4ExpressionImpl <em>Header4 Expression</em>}' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see markHammil.mm.myDsl.impl.Header4ExpressionImpl
-	 * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getHeader4Expression()
-	 * @generated
-	 */
-  int HEADER4_EXPRESSION = 6;
+   * @see markHammil.mm.myDsl.impl.Header4ExpressionImpl
+   * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getHeader4Expression()
+   * @generated
+   */
+  int HEADER4_EXPRESSION = 7;
 
   /**
-	 * The feature id for the '<em><b>Title</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Title</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int HEADER4_EXPRESSION__TITLE = HEADER_EXPRESSION__TITLE;
 
   /**
-	 * The number of structural features of the '<em>Header4 Expression</em>' class.
-	 * <!-- begin-user-doc -->
+   * The number of structural features of the '<em>Header4 Expression</em>' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int HEADER4_EXPRESSION_FEATURE_COUNT = HEADER_EXPRESSION_FEATURE_COUNT + 0;
 
   /**
-	 * The meta object id for the '{@link markHammil.mm.myDsl.impl.Header5ExpressionImpl <em>Header5 Expression</em>}' class.
-	 * <!-- begin-user-doc -->
+   * The meta object id for the '{@link markHammil.mm.myDsl.impl.Header5ExpressionImpl <em>Header5 Expression</em>}' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see markHammil.mm.myDsl.impl.Header5ExpressionImpl
-	 * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getHeader5Expression()
-	 * @generated
-	 */
-  int HEADER5_EXPRESSION = 7;
+   * @see markHammil.mm.myDsl.impl.Header5ExpressionImpl
+   * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getHeader5Expression()
+   * @generated
+   */
+  int HEADER5_EXPRESSION = 8;
 
   /**
-	 * The feature id for the '<em><b>Title</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Title</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int HEADER5_EXPRESSION__TITLE = HEADER_EXPRESSION__TITLE;
 
   /**
-	 * The number of structural features of the '<em>Header5 Expression</em>' class.
-	 * <!-- begin-user-doc -->
+   * The number of structural features of the '<em>Header5 Expression</em>' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int HEADER5_EXPRESSION_FEATURE_COUNT = HEADER_EXPRESSION_FEATURE_COUNT + 0;
 
   /**
-	 * The meta object id for the '{@link markHammil.mm.myDsl.impl.Header6ExpressionImpl <em>Header6 Expression</em>}' class.
-	 * <!-- begin-user-doc -->
+   * The meta object id for the '{@link markHammil.mm.myDsl.impl.Header6ExpressionImpl <em>Header6 Expression</em>}' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see markHammil.mm.myDsl.impl.Header6ExpressionImpl
-	 * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getHeader6Expression()
-	 * @generated
-	 */
-  int HEADER6_EXPRESSION = 8;
+   * @see markHammil.mm.myDsl.impl.Header6ExpressionImpl
+   * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getHeader6Expression()
+   * @generated
+   */
+  int HEADER6_EXPRESSION = 9;
 
   /**
-	 * The feature id for the '<em><b>Title</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Title</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int HEADER6_EXPRESSION__TITLE = HEADER_EXPRESSION__TITLE;
 
   /**
-	 * The number of structural features of the '<em>Header6 Expression</em>' class.
-	 * <!-- begin-user-doc -->
+   * The number of structural features of the '<em>Header6 Expression</em>' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int HEADER6_EXPRESSION_FEATURE_COUNT = HEADER_EXPRESSION_FEATURE_COUNT + 0;
 
   /**
-	 * The meta object id for the '{@link markHammil.mm.myDsl.impl.EmphasisExpressionImpl <em>Emphasis Expression</em>}' class.
-	 * <!-- begin-user-doc -->
+   * The meta object id for the '{@link markHammil.mm.myDsl.impl.EmphasisExpressionImpl <em>Emphasis Expression</em>}' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see markHammil.mm.myDsl.impl.EmphasisExpressionImpl
-	 * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getEmphasisExpression()
-	 * @generated
-	 */
-  int EMPHASIS_EXPRESSION = 9;
+   * @see markHammil.mm.myDsl.impl.EmphasisExpressionImpl
+   * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getEmphasisExpression()
+   * @generated
+   */
+  int EMPHASIS_EXPRESSION = 10;
 
   /**
-	 * The feature id for the '<em><b>C</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>C</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int EMPHASIS_EXPRESSION__C = 0;
 
   /**
-	 * The feature id for the '<em><b>Value</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Value</b></em>' attribute list.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int EMPHASIS_EXPRESSION__VALUE = 1;
 
   /**
-	 * The feature id for the '<em><b>Content</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Content</b></em>' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int EMPHASIS_EXPRESSION__CONTENT = 2;
 
   /**
-	 * The number of structural features of the '<em>Emphasis Expression</em>' class.
-	 * <!-- begin-user-doc -->
+   * The number of structural features of the '<em>Emphasis Expression</em>' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int EMPHASIS_EXPRESSION_FEATURE_COUNT = 3;
 
   /**
-	 * The meta object id for the '{@link markHammil.mm.myDsl.impl.StrongExpressionImpl <em>Strong Expression</em>}' class.
-	 * <!-- begin-user-doc -->
+   * The meta object id for the '{@link markHammil.mm.myDsl.impl.BreakLineExpressionBImpl <em>Break Line Expression B</em>}' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see markHammil.mm.myDsl.impl.StrongExpressionImpl
-	 * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getStrongExpression()
-	 * @generated
-	 */
-  int STRONG_EXPRESSION = 10;
+   * @see markHammil.mm.myDsl.impl.BreakLineExpressionBImpl
+   * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getBreakLineExpressionB()
+   * @generated
+   */
+  int BREAK_LINE_EXPRESSION_B = 11;
 
   /**
-	 * The feature id for the '<em><b>C</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
+   * The number of structural features of the '<em>Break Line Expression B</em>' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
+  int BREAK_LINE_EXPRESSION_B_FEATURE_COUNT = BREAK_LINE_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link markHammil.mm.myDsl.impl.StrongExpressionImpl <em>Strong Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see markHammil.mm.myDsl.impl.StrongExpressionImpl
+   * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getStrongExpression()
+   * @generated
+   */
+  int STRONG_EXPRESSION = 12;
+
+  /**
+   * The feature id for the '<em><b>C</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
   int STRONG_EXPRESSION__C = EMPHASIS_EXPRESSION__C;
 
   /**
-	 * The feature id for the '<em><b>Value</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Value</b></em>' attribute list.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int STRONG_EXPRESSION__VALUE = EMPHASIS_EXPRESSION__VALUE;
 
   /**
-	 * The feature id for the '<em><b>Content</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Content</b></em>' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int STRONG_EXPRESSION__CONTENT = EMPHASIS_EXPRESSION__CONTENT;
 
   /**
-	 * The number of structural features of the '<em>Strong Expression</em>' class.
-	 * <!-- begin-user-doc -->
+   * The number of structural features of the '<em>Strong Expression</em>' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int STRONG_EXPRESSION_FEATURE_COUNT = EMPHASIS_EXPRESSION_FEATURE_COUNT + 0;
 
   /**
-	 * The meta object id for the '{@link markHammil.mm.myDsl.impl.ItalicExpressionImpl <em>Italic Expression</em>}' class.
-	 * <!-- begin-user-doc -->
+   * The meta object id for the '{@link markHammil.mm.myDsl.impl.ItalicExpressionImpl <em>Italic Expression</em>}' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see markHammil.mm.myDsl.impl.ItalicExpressionImpl
-	 * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getItalicExpression()
-	 * @generated
-	 */
-  int ITALIC_EXPRESSION = 11;
+   * @see markHammil.mm.myDsl.impl.ItalicExpressionImpl
+   * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getItalicExpression()
+   * @generated
+   */
+  int ITALIC_EXPRESSION = 13;
 
   /**
-	 * The feature id for the '<em><b>C</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>C</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int ITALIC_EXPRESSION__C = EMPHASIS_EXPRESSION__C;
 
   /**
-	 * The feature id for the '<em><b>Value</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Value</b></em>' attribute list.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int ITALIC_EXPRESSION__VALUE = EMPHASIS_EXPRESSION__VALUE;
 
   /**
-	 * The feature id for the '<em><b>Content</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Content</b></em>' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int ITALIC_EXPRESSION__CONTENT = EMPHASIS_EXPRESSION__CONTENT;
 
   /**
-	 * The number of structural features of the '<em>Italic Expression</em>' class.
-	 * <!-- begin-user-doc -->
+   * The number of structural features of the '<em>Italic Expression</em>' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int ITALIC_EXPRESSION_FEATURE_COUNT = EMPHASIS_EXPRESSION_FEATURE_COUNT + 0;
 
   /**
-	 * The meta object id for the '{@link markHammil.mm.myDsl.impl.ScratchExpressionImpl <em>Scratch Expression</em>}' class.
-	 * <!-- begin-user-doc -->
+   * The meta object id for the '{@link markHammil.mm.myDsl.impl.ScratchExpressionImpl <em>Scratch Expression</em>}' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see markHammil.mm.myDsl.impl.ScratchExpressionImpl
-	 * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getScratchExpression()
-	 * @generated
-	 */
-  int SCRATCH_EXPRESSION = 12;
+   * @see markHammil.mm.myDsl.impl.ScratchExpressionImpl
+   * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getScratchExpression()
+   * @generated
+   */
+  int SCRATCH_EXPRESSION = 14;
 
   /**
-	 * The feature id for the '<em><b>C</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>C</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int SCRATCH_EXPRESSION__C = EMPHASIS_EXPRESSION__C;
 
   /**
-	 * The feature id for the '<em><b>Value</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Value</b></em>' attribute list.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int SCRATCH_EXPRESSION__VALUE = EMPHASIS_EXPRESSION__VALUE;
 
   /**
-	 * The feature id for the '<em><b>Content</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Content</b></em>' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int SCRATCH_EXPRESSION__CONTENT = EMPHASIS_EXPRESSION__CONTENT;
 
   /**
-	 * The number of structural features of the '<em>Scratch Expression</em>' class.
-	 * <!-- begin-user-doc -->
+   * The number of structural features of the '<em>Scratch Expression</em>' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int SCRATCH_EXPRESSION_FEATURE_COUNT = EMPHASIS_EXPRESSION_FEATURE_COUNT + 0;
 
 
   /**
-	 * Returns the meta object for class '{@link markHammil.mm.myDsl.File <em>File</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for class '{@link markHammil.mm.myDsl.File <em>File</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>File</em>'.
-	 * @see markHammil.mm.myDsl.File
-	 * @generated
-	 */
+   * @return the meta object for class '<em>File</em>'.
+   * @see markHammil.mm.myDsl.File
+   * @generated
+   */
   EClass getFile();
 
   /**
-	 * Returns the meta object for the containment reference list '{@link markHammil.mm.myDsl.File#getExpression <em>Expression</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the containment reference list '{@link markHammil.mm.myDsl.File#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Expression</em>'.
-	 * @see markHammil.mm.myDsl.File#getExpression()
-	 * @see #getFile()
-	 * @generated
-	 */
+   * @return the meta object for the containment reference list '<em>Expression</em>'.
+   * @see markHammil.mm.myDsl.File#getExpression()
+   * @see #getFile()
+   * @generated
+   */
   EReference getFile_Expression();
 
   /**
-	 * Returns the meta object for class '{@link markHammil.mm.myDsl.Expression <em>Expression</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for class '{@link markHammil.mm.myDsl.Expression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Expression</em>'.
-	 * @see markHammil.mm.myDsl.Expression
-	 * @generated
-	 */
+   * @return the meta object for class '<em>Expression</em>'.
+   * @see markHammil.mm.myDsl.Expression
+   * @generated
+   */
   EClass getExpression();
 
   /**
-	 * Returns the meta object for the containment reference '{@link markHammil.mm.myDsl.Expression#getC <em>C</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the containment reference '{@link markHammil.mm.myDsl.Expression#getC <em>C</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>C</em>'.
-	 * @see markHammil.mm.myDsl.Expression#getC()
-	 * @see #getExpression()
-	 * @generated
-	 */
+   * @return the meta object for the containment reference '<em>C</em>'.
+   * @see markHammil.mm.myDsl.Expression#getC()
+   * @see #getExpression()
+   * @generated
+   */
   EReference getExpression_C();
 
   /**
-	 * Returns the meta object for class '{@link markHammil.mm.myDsl.HeaderExpression <em>Header Expression</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for class '{@link markHammil.mm.myDsl.BreakLineExpression <em>Break Line Expression</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Header Expression</em>'.
-	 * @see markHammil.mm.myDsl.HeaderExpression
-	 * @generated
-	 */
+   * @return the meta object for class '<em>Break Line Expression</em>'.
+   * @see markHammil.mm.myDsl.BreakLineExpression
+   * @generated
+   */
+  EClass getBreakLineExpression();
+
+  /**
+   * Returns the meta object for class '{@link markHammil.mm.myDsl.HeaderExpression <em>Header Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Header Expression</em>'.
+   * @see markHammil.mm.myDsl.HeaderExpression
+   * @generated
+   */
   EClass getHeaderExpression();
 
   /**
-	 * Returns the meta object for the containment reference list '{@link markHammil.mm.myDsl.HeaderExpression#getTitle <em>Title</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the containment reference list '{@link markHammil.mm.myDsl.HeaderExpression#getTitle <em>Title</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Title</em>'.
-	 * @see markHammil.mm.myDsl.HeaderExpression#getTitle()
-	 * @see #getHeaderExpression()
-	 * @generated
-	 */
+   * @return the meta object for the containment reference list '<em>Title</em>'.
+   * @see markHammil.mm.myDsl.HeaderExpression#getTitle()
+   * @see #getHeaderExpression()
+   * @generated
+   */
   EReference getHeaderExpression_Title();
 
   /**
-	 * Returns the meta object for class '{@link markHammil.mm.myDsl.Header1Expression <em>Header1 Expression</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for class '{@link markHammil.mm.myDsl.Header1Expression <em>Header1 Expression</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Header1 Expression</em>'.
-	 * @see markHammil.mm.myDsl.Header1Expression
-	 * @generated
-	 */
+   * @return the meta object for class '<em>Header1 Expression</em>'.
+   * @see markHammil.mm.myDsl.Header1Expression
+   * @generated
+   */
   EClass getHeader1Expression();
 
   /**
-	 * Returns the meta object for class '{@link markHammil.mm.myDsl.Header2Expression <em>Header2 Expression</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for class '{@link markHammil.mm.myDsl.Header2Expression <em>Header2 Expression</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Header2 Expression</em>'.
-	 * @see markHammil.mm.myDsl.Header2Expression
-	 * @generated
-	 */
+   * @return the meta object for class '<em>Header2 Expression</em>'.
+   * @see markHammil.mm.myDsl.Header2Expression
+   * @generated
+   */
   EClass getHeader2Expression();
 
   /**
-	 * Returns the meta object for class '{@link markHammil.mm.myDsl.Header3Expression <em>Header3 Expression</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for class '{@link markHammil.mm.myDsl.Header3Expression <em>Header3 Expression</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Header3 Expression</em>'.
-	 * @see markHammil.mm.myDsl.Header3Expression
-	 * @generated
-	 */
+   * @return the meta object for class '<em>Header3 Expression</em>'.
+   * @see markHammil.mm.myDsl.Header3Expression
+   * @generated
+   */
   EClass getHeader3Expression();
 
   /**
-	 * Returns the meta object for class '{@link markHammil.mm.myDsl.Header4Expression <em>Header4 Expression</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for class '{@link markHammil.mm.myDsl.Header4Expression <em>Header4 Expression</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Header4 Expression</em>'.
-	 * @see markHammil.mm.myDsl.Header4Expression
-	 * @generated
-	 */
+   * @return the meta object for class '<em>Header4 Expression</em>'.
+   * @see markHammil.mm.myDsl.Header4Expression
+   * @generated
+   */
   EClass getHeader4Expression();
 
   /**
-	 * Returns the meta object for class '{@link markHammil.mm.myDsl.Header5Expression <em>Header5 Expression</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for class '{@link markHammil.mm.myDsl.Header5Expression <em>Header5 Expression</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Header5 Expression</em>'.
-	 * @see markHammil.mm.myDsl.Header5Expression
-	 * @generated
-	 */
+   * @return the meta object for class '<em>Header5 Expression</em>'.
+   * @see markHammil.mm.myDsl.Header5Expression
+   * @generated
+   */
   EClass getHeader5Expression();
 
   /**
-	 * Returns the meta object for class '{@link markHammil.mm.myDsl.Header6Expression <em>Header6 Expression</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for class '{@link markHammil.mm.myDsl.Header6Expression <em>Header6 Expression</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Header6 Expression</em>'.
-	 * @see markHammil.mm.myDsl.Header6Expression
-	 * @generated
-	 */
+   * @return the meta object for class '<em>Header6 Expression</em>'.
+   * @see markHammil.mm.myDsl.Header6Expression
+   * @generated
+   */
   EClass getHeader6Expression();
 
   /**
-	 * Returns the meta object for class '{@link markHammil.mm.myDsl.EmphasisExpression <em>Emphasis Expression</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for class '{@link markHammil.mm.myDsl.EmphasisExpression <em>Emphasis Expression</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Emphasis Expression</em>'.
-	 * @see markHammil.mm.myDsl.EmphasisExpression
-	 * @generated
-	 */
+   * @return the meta object for class '<em>Emphasis Expression</em>'.
+   * @see markHammil.mm.myDsl.EmphasisExpression
+   * @generated
+   */
   EClass getEmphasisExpression();
 
   /**
-	 * Returns the meta object for the containment reference list '{@link markHammil.mm.myDsl.EmphasisExpression#getC <em>C</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the containment reference list '{@link markHammil.mm.myDsl.EmphasisExpression#getC <em>C</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>C</em>'.
-	 * @see markHammil.mm.myDsl.EmphasisExpression#getC()
-	 * @see #getEmphasisExpression()
-	 * @generated
-	 */
+   * @return the meta object for the containment reference list '<em>C</em>'.
+   * @see markHammil.mm.myDsl.EmphasisExpression#getC()
+   * @see #getEmphasisExpression()
+   * @generated
+   */
   EReference getEmphasisExpression_C();
 
   /**
-	 * Returns the meta object for the attribute list '{@link markHammil.mm.myDsl.EmphasisExpression#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the attribute list '{@link markHammil.mm.myDsl.EmphasisExpression#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Value</em>'.
-	 * @see markHammil.mm.myDsl.EmphasisExpression#getValue()
-	 * @see #getEmphasisExpression()
-	 * @generated
-	 */
+   * @return the meta object for the attribute list '<em>Value</em>'.
+   * @see markHammil.mm.myDsl.EmphasisExpression#getValue()
+   * @see #getEmphasisExpression()
+   * @generated
+   */
   EAttribute getEmphasisExpression_Value();
 
   /**
-	 * Returns the meta object for the containment reference '{@link markHammil.mm.myDsl.EmphasisExpression#getContent <em>Content</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the containment reference '{@link markHammil.mm.myDsl.EmphasisExpression#getContent <em>Content</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Content</em>'.
-	 * @see markHammil.mm.myDsl.EmphasisExpression#getContent()
-	 * @see #getEmphasisExpression()
-	 * @generated
-	 */
+   * @return the meta object for the containment reference '<em>Content</em>'.
+   * @see markHammil.mm.myDsl.EmphasisExpression#getContent()
+   * @see #getEmphasisExpression()
+   * @generated
+   */
   EReference getEmphasisExpression_Content();
 
   /**
-	 * Returns the meta object for class '{@link markHammil.mm.myDsl.StrongExpression <em>Strong Expression</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for class '{@link markHammil.mm.myDsl.BreakLineExpressionB <em>Break Line Expression B</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Strong Expression</em>'.
-	 * @see markHammil.mm.myDsl.StrongExpression
-	 * @generated
-	 */
+   * @return the meta object for class '<em>Break Line Expression B</em>'.
+   * @see markHammil.mm.myDsl.BreakLineExpressionB
+   * @generated
+   */
+  EClass getBreakLineExpressionB();
+
+  /**
+   * Returns the meta object for class '{@link markHammil.mm.myDsl.StrongExpression <em>Strong Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Strong Expression</em>'.
+   * @see markHammil.mm.myDsl.StrongExpression
+   * @generated
+   */
   EClass getStrongExpression();
 
   /**
-	 * Returns the meta object for class '{@link markHammil.mm.myDsl.ItalicExpression <em>Italic Expression</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for class '{@link markHammil.mm.myDsl.ItalicExpression <em>Italic Expression</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Italic Expression</em>'.
-	 * @see markHammil.mm.myDsl.ItalicExpression
-	 * @generated
-	 */
+   * @return the meta object for class '<em>Italic Expression</em>'.
+   * @see markHammil.mm.myDsl.ItalicExpression
+   * @generated
+   */
   EClass getItalicExpression();
 
   /**
-	 * Returns the meta object for class '{@link markHammil.mm.myDsl.ScratchExpression <em>Scratch Expression</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for class '{@link markHammil.mm.myDsl.ScratchExpression <em>Scratch Expression</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Scratch Expression</em>'.
-	 * @see markHammil.mm.myDsl.ScratchExpression
-	 * @generated
-	 */
+   * @return the meta object for class '<em>Scratch Expression</em>'.
+   * @see markHammil.mm.myDsl.ScratchExpression
+   * @generated
+   */
   EClass getScratchExpression();
 
   /**
-	 * Returns the factory that creates the instances of the model.
-	 * <!-- begin-user-doc -->
+   * Returns the factory that creates the instances of the model.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the factory that creates the instances of the model.
-	 * @generated
-	 */
+   * @return the factory that creates the instances of the model.
+   * @generated
+   */
   MyDslFactory getMyDslFactory();
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * Defines literals for the meta objects that represent
    * <ul>
    *   <li>each class,</li>
@@ -709,186 +767,206 @@ public interface MyDslPackage extends EPackage
    *   <li>and each data type</li>
    * </ul>
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   interface Literals
   {
     /**
-		 * The meta object literal for the '{@link markHammil.mm.myDsl.impl.FileImpl <em>File</em>}' class.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '{@link markHammil.mm.myDsl.impl.FileImpl <em>File</em>}' class.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @see markHammil.mm.myDsl.impl.FileImpl
-		 * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getFile()
-		 * @generated
-		 */
+     * @see markHammil.mm.myDsl.impl.FileImpl
+     * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getFile()
+     * @generated
+     */
     EClass FILE = eINSTANCE.getFile();
 
     /**
-		 * The meta object literal for the '<em><b>Expression</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EReference FILE__EXPRESSION = eINSTANCE.getFile_Expression();
 
     /**
-		 * The meta object literal for the '{@link markHammil.mm.myDsl.impl.ExpressionImpl <em>Expression</em>}' class.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '{@link markHammil.mm.myDsl.impl.ExpressionImpl <em>Expression</em>}' class.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @see markHammil.mm.myDsl.impl.ExpressionImpl
-		 * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getExpression()
-		 * @generated
-		 */
+     * @see markHammil.mm.myDsl.impl.ExpressionImpl
+     * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getExpression()
+     * @generated
+     */
     EClass EXPRESSION = eINSTANCE.getExpression();
 
     /**
-		 * The meta object literal for the '<em><b>C</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>C</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EReference EXPRESSION__C = eINSTANCE.getExpression_C();
 
     /**
-		 * The meta object literal for the '{@link markHammil.mm.myDsl.impl.HeaderExpressionImpl <em>Header Expression</em>}' class.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '{@link markHammil.mm.myDsl.impl.BreakLineExpressionImpl <em>Break Line Expression</em>}' class.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @see markHammil.mm.myDsl.impl.HeaderExpressionImpl
-		 * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getHeaderExpression()
-		 * @generated
-		 */
+     * @see markHammil.mm.myDsl.impl.BreakLineExpressionImpl
+     * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getBreakLineExpression()
+     * @generated
+     */
+    EClass BREAK_LINE_EXPRESSION = eINSTANCE.getBreakLineExpression();
+
+    /**
+     * The meta object literal for the '{@link markHammil.mm.myDsl.impl.HeaderExpressionImpl <em>Header Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see markHammil.mm.myDsl.impl.HeaderExpressionImpl
+     * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getHeaderExpression()
+     * @generated
+     */
     EClass HEADER_EXPRESSION = eINSTANCE.getHeaderExpression();
 
     /**
-		 * The meta object literal for the '<em><b>Title</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Title</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EReference HEADER_EXPRESSION__TITLE = eINSTANCE.getHeaderExpression_Title();
 
     /**
-		 * The meta object literal for the '{@link markHammil.mm.myDsl.impl.Header1ExpressionImpl <em>Header1 Expression</em>}' class.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '{@link markHammil.mm.myDsl.impl.Header1ExpressionImpl <em>Header1 Expression</em>}' class.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @see markHammil.mm.myDsl.impl.Header1ExpressionImpl
-		 * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getHeader1Expression()
-		 * @generated
-		 */
+     * @see markHammil.mm.myDsl.impl.Header1ExpressionImpl
+     * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getHeader1Expression()
+     * @generated
+     */
     EClass HEADER1_EXPRESSION = eINSTANCE.getHeader1Expression();
 
     /**
-		 * The meta object literal for the '{@link markHammil.mm.myDsl.impl.Header2ExpressionImpl <em>Header2 Expression</em>}' class.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '{@link markHammil.mm.myDsl.impl.Header2ExpressionImpl <em>Header2 Expression</em>}' class.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @see markHammil.mm.myDsl.impl.Header2ExpressionImpl
-		 * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getHeader2Expression()
-		 * @generated
-		 */
+     * @see markHammil.mm.myDsl.impl.Header2ExpressionImpl
+     * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getHeader2Expression()
+     * @generated
+     */
     EClass HEADER2_EXPRESSION = eINSTANCE.getHeader2Expression();
 
     /**
-		 * The meta object literal for the '{@link markHammil.mm.myDsl.impl.Header3ExpressionImpl <em>Header3 Expression</em>}' class.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '{@link markHammil.mm.myDsl.impl.Header3ExpressionImpl <em>Header3 Expression</em>}' class.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @see markHammil.mm.myDsl.impl.Header3ExpressionImpl
-		 * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getHeader3Expression()
-		 * @generated
-		 */
+     * @see markHammil.mm.myDsl.impl.Header3ExpressionImpl
+     * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getHeader3Expression()
+     * @generated
+     */
     EClass HEADER3_EXPRESSION = eINSTANCE.getHeader3Expression();
 
     /**
-		 * The meta object literal for the '{@link markHammil.mm.myDsl.impl.Header4ExpressionImpl <em>Header4 Expression</em>}' class.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '{@link markHammil.mm.myDsl.impl.Header4ExpressionImpl <em>Header4 Expression</em>}' class.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @see markHammil.mm.myDsl.impl.Header4ExpressionImpl
-		 * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getHeader4Expression()
-		 * @generated
-		 */
+     * @see markHammil.mm.myDsl.impl.Header4ExpressionImpl
+     * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getHeader4Expression()
+     * @generated
+     */
     EClass HEADER4_EXPRESSION = eINSTANCE.getHeader4Expression();
 
     /**
-		 * The meta object literal for the '{@link markHammil.mm.myDsl.impl.Header5ExpressionImpl <em>Header5 Expression</em>}' class.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '{@link markHammil.mm.myDsl.impl.Header5ExpressionImpl <em>Header5 Expression</em>}' class.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @see markHammil.mm.myDsl.impl.Header5ExpressionImpl
-		 * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getHeader5Expression()
-		 * @generated
-		 */
+     * @see markHammil.mm.myDsl.impl.Header5ExpressionImpl
+     * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getHeader5Expression()
+     * @generated
+     */
     EClass HEADER5_EXPRESSION = eINSTANCE.getHeader5Expression();
 
     /**
-		 * The meta object literal for the '{@link markHammil.mm.myDsl.impl.Header6ExpressionImpl <em>Header6 Expression</em>}' class.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '{@link markHammil.mm.myDsl.impl.Header6ExpressionImpl <em>Header6 Expression</em>}' class.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @see markHammil.mm.myDsl.impl.Header6ExpressionImpl
-		 * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getHeader6Expression()
-		 * @generated
-		 */
+     * @see markHammil.mm.myDsl.impl.Header6ExpressionImpl
+     * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getHeader6Expression()
+     * @generated
+     */
     EClass HEADER6_EXPRESSION = eINSTANCE.getHeader6Expression();
 
     /**
-		 * The meta object literal for the '{@link markHammil.mm.myDsl.impl.EmphasisExpressionImpl <em>Emphasis Expression</em>}' class.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '{@link markHammil.mm.myDsl.impl.EmphasisExpressionImpl <em>Emphasis Expression</em>}' class.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @see markHammil.mm.myDsl.impl.EmphasisExpressionImpl
-		 * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getEmphasisExpression()
-		 * @generated
-		 */
+     * @see markHammil.mm.myDsl.impl.EmphasisExpressionImpl
+     * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getEmphasisExpression()
+     * @generated
+     */
     EClass EMPHASIS_EXPRESSION = eINSTANCE.getEmphasisExpression();
 
     /**
-		 * The meta object literal for the '<em><b>C</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>C</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EReference EMPHASIS_EXPRESSION__C = eINSTANCE.getEmphasisExpression_C();
 
     /**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute list feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Value</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EAttribute EMPHASIS_EXPRESSION__VALUE = eINSTANCE.getEmphasisExpression_Value();
 
     /**
-		 * The meta object literal for the '<em><b>Content</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Content</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EReference EMPHASIS_EXPRESSION__CONTENT = eINSTANCE.getEmphasisExpression_Content();
 
     /**
-		 * The meta object literal for the '{@link markHammil.mm.myDsl.impl.StrongExpressionImpl <em>Strong Expression</em>}' class.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '{@link markHammil.mm.myDsl.impl.BreakLineExpressionBImpl <em>Break Line Expression B</em>}' class.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @see markHammil.mm.myDsl.impl.StrongExpressionImpl
-		 * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getStrongExpression()
-		 * @generated
-		 */
+     * @see markHammil.mm.myDsl.impl.BreakLineExpressionBImpl
+     * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getBreakLineExpressionB()
+     * @generated
+     */
+    EClass BREAK_LINE_EXPRESSION_B = eINSTANCE.getBreakLineExpressionB();
+
+    /**
+     * The meta object literal for the '{@link markHammil.mm.myDsl.impl.StrongExpressionImpl <em>Strong Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see markHammil.mm.myDsl.impl.StrongExpressionImpl
+     * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getStrongExpression()
+     * @generated
+     */
     EClass STRONG_EXPRESSION = eINSTANCE.getStrongExpression();
 
     /**
-		 * The meta object literal for the '{@link markHammil.mm.myDsl.impl.ItalicExpressionImpl <em>Italic Expression</em>}' class.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '{@link markHammil.mm.myDsl.impl.ItalicExpressionImpl <em>Italic Expression</em>}' class.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @see markHammil.mm.myDsl.impl.ItalicExpressionImpl
-		 * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getItalicExpression()
-		 * @generated
-		 */
+     * @see markHammil.mm.myDsl.impl.ItalicExpressionImpl
+     * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getItalicExpression()
+     * @generated
+     */
     EClass ITALIC_EXPRESSION = eINSTANCE.getItalicExpression();
 
     /**
-		 * The meta object literal for the '{@link markHammil.mm.myDsl.impl.ScratchExpressionImpl <em>Scratch Expression</em>}' class.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '{@link markHammil.mm.myDsl.impl.ScratchExpressionImpl <em>Scratch Expression</em>}' class.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @see markHammil.mm.myDsl.impl.ScratchExpressionImpl
-		 * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getScratchExpression()
-		 * @generated
-		 */
+     * @see markHammil.mm.myDsl.impl.ScratchExpressionImpl
+     * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getScratchExpression()
+     * @generated
+     */
     EClass SCRATCH_EXPRESSION = eINSTANCE.getScratchExpression();
 
   }

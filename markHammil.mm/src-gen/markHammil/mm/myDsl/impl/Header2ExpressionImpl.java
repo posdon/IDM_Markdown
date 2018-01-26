@@ -18,24 +18,24 @@ import org.eclipse.emf.ecore.EClass;
 public class Header2ExpressionImpl extends HeaderExpressionImpl implements Header2Expression
 {
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   protected Header2ExpressionImpl()
   {
-		super();
-	}
+    super();
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   protected EClass eStaticClass()
   {
-		return MyDslPackage.Literals.HEADER2_EXPRESSION;
-	}
+    return MyDslPackage.Literals.HEADER2_EXPRESSION;
+  }
 
 } //Header2ExpressionImpl

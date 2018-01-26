@@ -18,24 +18,24 @@ import org.eclipse.emf.ecore.EClass;
 public class ItalicExpressionImpl extends EmphasisExpressionImpl implements ItalicExpression
 {
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   protected ItalicExpressionImpl()
   {
-		super();
-	}
+    super();
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   protected EClass eStaticClass()
   {
-		return MyDslPackage.Literals.ITALIC_EXPRESSION;
-	}
+    return MyDslPackage.Literals.ITALIC_EXPRESSION;
+  }
 
 } //ItalicExpressionImpl

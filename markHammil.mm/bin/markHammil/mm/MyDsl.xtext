@@ -10,8 +10,14 @@ File:
         ;
         
 Expression:
-	c=HeaderExpression
+	=> (=> c=HeaderExpression| c=EmphasisExpression =>BL?) | c=BreakLineExpression
 ;
+
+BreakLineExpression :
+	{BreakLineExpressionB}
+	BL
+;
+
 
 HeaderExpression :
 	Header1Expression | Header2Expression | Header3Expression | Header4Expression | Header5Expression | Header6Expression
@@ -19,36 +25,36 @@ HeaderExpression :
 
 Header1Expression returns Header1Expression :
 	{Header1Expression}
-                '#' title+=EmphasisExpression =>('#')* BL ?
+                '#' title+=EmphasisExpression =>('#')* =>BL ?
         ;
         
 Header2Expression returns Header2Expression :
 	{Header2Expression}
-                '##' title+=EmphasisExpression =>('#')* BL ?
+                '##' title+=EmphasisExpression =>('#')* =>BL ?
         ;
         
 Header3Expression returns Header3Expression :
 	{Header3Expression}
-                '###' title+=EmphasisExpression =>('#')* BL ?
+                '###' title+=EmphasisExpression =>('#')* =>BL ?
         ; 
         
 Header4Expression returns Header4Expression :
 	{Header4Expression}
-                '####' title+=EmphasisExpression =>('#')* BL ?
+                '####' title+=EmphasisExpression =>('#')* =>BL ?
         ;
         
 Header5Expression returns Header5Expression :
 	{Header5Expression}
-                '#####' title+=EmphasisExpression =>('#')* BL ?
+                '#####' title+=EmphasisExpression =>('#')* =>BL ?
         ;
         
 Header6Expression returns Header6Expression :
 	{Header6Expression}
-                '######' title+=EmphasisExpression =>('#')* BL ?
+                '######' title+=EmphasisExpression =>('#')* =>BL ?
         ;      
         
 EmphasisExpression returns EmphasisExpression:
-      ( => ( => c+=StrongExpression | c+=ItalicExpression | c+=ScratchExpression ) | c+=NaturalExpression )+;
+      ( => ( => c+=StrongExpression | c+=ItalicExpression | c+=ScratchExpression ) | c+=NaturalExpression )+ ;
 
 StrongExpression returns EmphasisExpression hidden():
 	{StrongExpression}

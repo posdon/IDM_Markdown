@@ -5,6 +5,7 @@ package markHammil.mm.serializer;
 
 import com.google.inject.Inject;
 import java.util.Set;
+import markHammil.mm.myDsl.BreakLineExpressionB;
 import markHammil.mm.myDsl.EmphasisExpression;
 import markHammil.mm.myDsl.Expression;
 import markHammil.mm.myDsl.File;
@@ -43,6 +44,9 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == MyDslPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
+			case MyDslPackage.BREAK_LINE_EXPRESSION_B:
+				sequence_BreakLineExpression(context, (BreakLineExpressionB) semanticObject); 
+				return; 
 			case MyDslPackage.EMPHASIS_EXPRESSION:
 				if (rule == grammarAccess.getEmphasisExpressionRule()) {
 					sequence_EmphasisExpression(context, (EmphasisExpression) semanticObject); 
@@ -93,6 +97,18 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
+	 *     BreakLineExpression returns BreakLineExpressionB
+	 *
+	 * Constraint:
+	 *     {BreakLineExpressionB}
+	 */
+	protected void sequence_BreakLineExpression(ISerializationContext context, BreakLineExpressionB semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     EmphasisExpression returns EmphasisExpression
 	 *
 	 * Constraint:
@@ -108,16 +124,10 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Expression returns Expression
 	 *
 	 * Constraint:
-	 *     c=HeaderExpression
+	 *     (c=HeaderExpression | c=EmphasisExpression | c=BreakLineExpression)
 	 */
 	protected void sequence_Expression(ISerializationContext context, Expression semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.EXPRESSION__C) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.EXPRESSION__C));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getExpressionAccess().getCHeaderExpressionParserRuleCall_0(), semanticObject.getC());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

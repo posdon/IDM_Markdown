@@ -6,9 +6,10 @@
         eType="#//Expression" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Expression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="c" eType="#//HeaderExpression"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="c" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
         containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BreakLineExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="HeaderExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="title" upperBound="-1"
         eType="#//EmphasisExpression" containment="true"/>
@@ -27,6 +28,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="#//EmphasisExpression"
         containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BreakLineExpressionB" eSuperTypes="#//BreakLineExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="StrongExpression" eSuperTypes="#//EmphasisExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="ItalicExpression" eSuperTypes="#//EmphasisExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="ScratchExpression" eSuperTypes="#//EmphasisExpression"/>

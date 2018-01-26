@@ -119,6 +119,29 @@ public class MyDslItemProviderAdapterFactory extends MyDslAdapterFactory impleme
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link markHammil.mm.myDsl.BreakLineExpression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected BreakLineExpressionItemProvider breakLineExpressionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link markHammil.mm.myDsl.BreakLineExpression}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createBreakLineExpressionAdapter() {
+		if (breakLineExpressionItemProvider == null) {
+			breakLineExpressionItemProvider = new BreakLineExpressionItemProvider(this);
+		}
+
+		return breakLineExpressionItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link markHammil.mm.myDsl.HeaderExpression} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -303,6 +326,29 @@ public class MyDslItemProviderAdapterFactory extends MyDslAdapterFactory impleme
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link markHammil.mm.myDsl.BreakLineExpressionB} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected BreakLineExpressionBItemProvider breakLineExpressionBItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link markHammil.mm.myDsl.BreakLineExpressionB}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createBreakLineExpressionBAdapter() {
+		if (breakLineExpressionBItemProvider == null) {
+			breakLineExpressionBItemProvider = new BreakLineExpressionBItemProvider(this);
+		}
+
+		return breakLineExpressionBItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link markHammil.mm.myDsl.StrongExpression} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -472,6 +518,7 @@ public class MyDslItemProviderAdapterFactory extends MyDslAdapterFactory impleme
 	public void dispose() {
 		if (fileItemProvider != null) fileItemProvider.dispose();
 		if (expressionItemProvider != null) expressionItemProvider.dispose();
+		if (breakLineExpressionItemProvider != null) breakLineExpressionItemProvider.dispose();
 		if (headerExpressionItemProvider != null) headerExpressionItemProvider.dispose();
 		if (header1ExpressionItemProvider != null) header1ExpressionItemProvider.dispose();
 		if (header2ExpressionItemProvider != null) header2ExpressionItemProvider.dispose();
@@ -480,6 +527,7 @@ public class MyDslItemProviderAdapterFactory extends MyDslAdapterFactory impleme
 		if (header5ExpressionItemProvider != null) header5ExpressionItemProvider.dispose();
 		if (header6ExpressionItemProvider != null) header6ExpressionItemProvider.dispose();
 		if (emphasisExpressionItemProvider != null) emphasisExpressionItemProvider.dispose();
+		if (breakLineExpressionBItemProvider != null) breakLineExpressionBItemProvider.dispose();
 		if (strongExpressionItemProvider != null) strongExpressionItemProvider.dispose();
 		if (italicExpressionItemProvider != null) italicExpressionItemProvider.dispose();
 		if (scratchExpressionItemProvider != null) scratchExpressionItemProvider.dispose();

@@ -122,22 +122,135 @@ ruleExpression returns [EObject current=null]
 }:
 	(
 		(
-			{
-				newCompositeNode(grammarAccess.getExpressionAccess().getCHeaderExpressionParserRuleCall_0());
-			}
-			lv_c_0_0=ruleHeaderExpression
-			{
-				if ($current==null) {
-					$current = createModelElementForParent(grammarAccess.getExpressionRule());
+			((
+				(
+					((
+						ruleHeaderExpression
+					)
+					)=>
+					(
+						ruleHeaderExpression
+					)
+				)
+				    |
+				(
+					(
+						(
+							ruleEmphasisExpression
+						)
+					)
+					(
+						(RULE_BL)=>
+						RULE_BL
+					)?
+				)
+			)
+			)=>
+			(
+				(
+					((
+						ruleHeaderExpression
+					)
+					)=>
+					(
+						{
+							newCompositeNode(grammarAccess.getExpressionAccess().getCHeaderExpressionParserRuleCall_0_0_0_0());
+						}
+						lv_c_0_0=ruleHeaderExpression
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getExpressionRule());
+							}
+							set(
+								$current,
+								"c",
+								lv_c_0_0,
+								"markHammil.mm.MyDsl.HeaderExpression");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+				    |
+				(
+					(
+						(
+							{
+								newCompositeNode(grammarAccess.getExpressionAccess().getCEmphasisExpressionParserRuleCall_0_0_1_0_0());
+							}
+							lv_c_1_0=ruleEmphasisExpression
+							{
+								if ($current==null) {
+									$current = createModelElementForParent(grammarAccess.getExpressionRule());
+								}
+								set(
+									$current,
+									"c",
+									lv_c_1_0,
+									"markHammil.mm.MyDsl.EmphasisExpression");
+								afterParserOrEnumRuleCall();
+							}
+						)
+					)
+					(
+						(RULE_BL)=>
+						this_BL_2=RULE_BL
+						{
+							newLeafNode(this_BL_2, grammarAccess.getExpressionAccess().getBLTerminalRuleCall_0_0_1_1());
+						}
+					)?
+				)
+			)
+		)
+		    |
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getExpressionAccess().getCBreakLineExpressionParserRuleCall_1_0());
 				}
-				set(
-					$current,
-					"c",
-					lv_c_0_0,
-					"markHammil.mm.MyDsl.HeaderExpression");
-				afterParserOrEnumRuleCall();
+				lv_c_3_0=ruleBreakLineExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getExpressionRule());
+					}
+					set(
+						$current,
+						"c",
+						lv_c_3_0,
+						"markHammil.mm.MyDsl.BreakLineExpression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleBreakLineExpression
+entryRuleBreakLineExpression returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getBreakLineExpressionRule()); }
+	iv_ruleBreakLineExpression=ruleBreakLineExpression
+	{ $current=$iv_ruleBreakLineExpression.current; }
+	EOF;
+
+// Rule BreakLineExpression
+ruleBreakLineExpression returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getBreakLineExpressionAccess().getBreakLineExpressionBAction_0(),
+					$current);
 			}
 		)
+		this_BL_1=RULE_BL
+		{
+			newLeafNode(this_BL_1, grammarAccess.getBreakLineExpressionAccess().getBLTerminalRuleCall_1());
+		}
 	)
 ;
 
@@ -268,6 +381,7 @@ ruleHeader1Expression returns [EObject current=null]
 			}
 		)*
 		(
+			(RULE_BL)=>
 			this_BL_4=RULE_BL
 			{
 				newLeafNode(this_BL_4, grammarAccess.getHeader1ExpressionAccess().getBLTerminalRuleCall_4());
@@ -331,6 +445,7 @@ ruleHeader2Expression returns [EObject current=null]
 			}
 		)*
 		(
+			(RULE_BL)=>
 			this_BL_4=RULE_BL
 			{
 				newLeafNode(this_BL_4, grammarAccess.getHeader2ExpressionAccess().getBLTerminalRuleCall_4());
@@ -394,6 +509,7 @@ ruleHeader3Expression returns [EObject current=null]
 			}
 		)*
 		(
+			(RULE_BL)=>
 			this_BL_4=RULE_BL
 			{
 				newLeafNode(this_BL_4, grammarAccess.getHeader3ExpressionAccess().getBLTerminalRuleCall_4());
@@ -457,6 +573,7 @@ ruleHeader4Expression returns [EObject current=null]
 			}
 		)*
 		(
+			(RULE_BL)=>
 			this_BL_4=RULE_BL
 			{
 				newLeafNode(this_BL_4, grammarAccess.getHeader4ExpressionAccess().getBLTerminalRuleCall_4());
@@ -520,6 +637,7 @@ ruleHeader5Expression returns [EObject current=null]
 			}
 		)*
 		(
+			(RULE_BL)=>
 			this_BL_4=RULE_BL
 			{
 				newLeafNode(this_BL_4, grammarAccess.getHeader5ExpressionAccess().getBLTerminalRuleCall_4());
@@ -583,6 +701,7 @@ ruleHeader6Expression returns [EObject current=null]
 			}
 		)*
 		(
+			(RULE_BL)=>
 			this_BL_4=RULE_BL
 			{
 				newLeafNode(this_BL_4, grammarAccess.getHeader6ExpressionAccess().getBLTerminalRuleCall_4());

@@ -150,6 +150,21 @@ public class ExpressionItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(MyDslPackage.Literals.EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createFile()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createBreakLineExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.EXPRESSION__C,
 				 MyDslFactory.eINSTANCE.createHeaderExpression()));
 
 		newChildDescriptors.add
@@ -181,6 +196,31 @@ public class ExpressionItemProvider
 			(createChildParameter
 				(MyDslPackage.Literals.EXPRESSION__C,
 				 MyDslFactory.eINSTANCE.createHeader6Expression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createEmphasisExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createBreakLineExpressionB()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createStrongExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createItalicExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createScratchExpression()));
 	}
 
 	/**
