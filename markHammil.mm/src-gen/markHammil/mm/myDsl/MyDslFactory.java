@@ -69,6 +69,51 @@ public interface MyDslFactory extends EFactory
   QuoteExpression createQuoteExpression();
 
   /**
+   * Returns a new object of class '<em>Code Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Code Expression</em>'.
+   * @generated
+   */
+  CodeExpression createCodeExpression();
+
+  /**
+   * Returns a new object of class '<em>Ref Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Ref Expression</em>'.
+   * @generated
+   */
+  RefExpression createRefExpression();
+
+  /**
+   * Returns a new object of class '<em>Link Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Link Expression</em>'.
+   * @generated
+   */
+  LinkExpression createLinkExpression();
+
+  /**
+   * Returns a new object of class '<em>Image Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Image Expression</em>'.
+   * @generated
+   */
+  ImageExpression createImageExpression();
+
+  /**
+   * Returns a new object of class '<em>Video Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Video Expression</em>'.
+   * @generated
+   */
+  VideoExpression createVideoExpression();
+
+  /**
    * Returns a new object of class '<em>Header Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

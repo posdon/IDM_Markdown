@@ -165,7 +165,37 @@ public class ExpressionItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(MyDslPackage.Literals.EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createQuoteExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.EXPRESSION__C,
 				 MyDslFactory.eINSTANCE.createTextExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createCodeExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createRefExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createLinkExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createImageExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createVideoExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter

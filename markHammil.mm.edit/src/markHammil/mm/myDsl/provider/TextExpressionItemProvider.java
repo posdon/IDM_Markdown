@@ -7,11 +7,15 @@ package markHammil.mm.myDsl.provider;
 import java.util.Collection;
 import java.util.List;
 
+import markHammil.mm.myDsl.MyDslFactory;
+import markHammil.mm.myDsl.MyDslPackage;
+import markHammil.mm.myDsl.TextExpression;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -19,6 +23,7 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
  * This is the item provider adapter for a {@link markHammil.mm.myDsl.TextExpression} object.
@@ -27,13 +32,7 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
  * @generated
  */
 public class TextExpressionItemProvider 
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends QuoteExpressionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -57,6 +56,37 @@ public class TextExpressionItemProvider
 
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(MyDslPackage.Literals.TEXT_EXPRESSION__C);
+			childrenFeatures.add(MyDslPackage.Literals.TEXT_EXPRESSION__CONTENT);
+		}
+		return childrenFeatures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
 	}
 
 	/**
@@ -92,6 +122,13 @@ public class TextExpressionItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(TextExpression.class)) {
+			case MyDslPackage.TEXT_EXPRESSION__C:
+			case MyDslPackage.TEXT_EXPRESSION__CONTENT:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 
@@ -105,17 +142,144 @@ public class TextExpressionItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.TEXT_EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createFile()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.TEXT_EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.TEXT_EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createBreakLineExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.TEXT_EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createQuoteExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.TEXT_EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createTextExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.TEXT_EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createCodeExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.TEXT_EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createRefExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.TEXT_EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createLinkExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.TEXT_EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createImageExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.TEXT_EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createVideoExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.TEXT_EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createHeaderExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.TEXT_EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createHeader1Expression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.TEXT_EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createHeader2Expression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.TEXT_EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createHeader3Expression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.TEXT_EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createHeader4Expression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.TEXT_EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createHeader5Expression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.TEXT_EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createHeader6Expression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.TEXT_EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createEmphasisExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.TEXT_EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createBreakLineExpressionB()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.TEXT_EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createStrongExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.TEXT_EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createItalicExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.TEXT_EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createScratchExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.TEXT_EXPRESSION__CONTENT,
+				 MyDslFactory.eINSTANCE.createTextExpression()));
 	}
 
 	/**
-	 * Return the resource locator for this item provider's resources.
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public ResourceLocator getResourceLocator() {
-		return MyDslEditPlugin.INSTANCE;
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify =
+			childFeature == MyDslPackage.Literals.TEXT_EXPRESSION__C ||
+			childFeature == MyDslPackage.Literals.TEXT_EXPRESSION__CONTENT;
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }

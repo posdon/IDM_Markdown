@@ -165,6 +165,144 @@ public class MyDslItemProviderAdapterFactory extends MyDslAdapterFactory impleme
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link markHammil.mm.myDsl.QuoteExpression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected QuoteExpressionItemProvider quoteExpressionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link markHammil.mm.myDsl.QuoteExpression}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createQuoteExpressionAdapter() {
+		if (quoteExpressionItemProvider == null) {
+			quoteExpressionItemProvider = new QuoteExpressionItemProvider(this);
+		}
+
+		return quoteExpressionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link markHammil.mm.myDsl.CodeExpression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CodeExpressionItemProvider codeExpressionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link markHammil.mm.myDsl.CodeExpression}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCodeExpressionAdapter() {
+		if (codeExpressionItemProvider == null) {
+			codeExpressionItemProvider = new CodeExpressionItemProvider(this);
+		}
+
+		return codeExpressionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link markHammil.mm.myDsl.RefExpression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RefExpressionItemProvider refExpressionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link markHammil.mm.myDsl.RefExpression}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRefExpressionAdapter() {
+		if (refExpressionItemProvider == null) {
+			refExpressionItemProvider = new RefExpressionItemProvider(this);
+		}
+
+		return refExpressionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link markHammil.mm.myDsl.LinkExpression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected LinkExpressionItemProvider linkExpressionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link markHammil.mm.myDsl.LinkExpression}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createLinkExpressionAdapter() {
+		if (linkExpressionItemProvider == null) {
+			linkExpressionItemProvider = new LinkExpressionItemProvider(this);
+		}
+
+		return linkExpressionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link markHammil.mm.myDsl.ImageExpression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ImageExpressionItemProvider imageExpressionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link markHammil.mm.myDsl.ImageExpression}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createImageExpressionAdapter() {
+		if (imageExpressionItemProvider == null) {
+			imageExpressionItemProvider = new ImageExpressionItemProvider(this);
+		}
+
+		return imageExpressionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link markHammil.mm.myDsl.VideoExpression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected VideoExpressionItemProvider videoExpressionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link markHammil.mm.myDsl.VideoExpression}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createVideoExpressionAdapter() {
+		if (videoExpressionItemProvider == null) {
+			videoExpressionItemProvider = new VideoExpressionItemProvider(this);
+		}
+
+		return videoExpressionItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link markHammil.mm.myDsl.HeaderExpression} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -543,6 +681,12 @@ public class MyDslItemProviderAdapterFactory extends MyDslAdapterFactory impleme
 		if (expressionItemProvider != null) expressionItemProvider.dispose();
 		if (breakLineExpressionItemProvider != null) breakLineExpressionItemProvider.dispose();
 		if (textExpressionItemProvider != null) textExpressionItemProvider.dispose();
+		if (quoteExpressionItemProvider != null) quoteExpressionItemProvider.dispose();
+		if (codeExpressionItemProvider != null) codeExpressionItemProvider.dispose();
+		if (refExpressionItemProvider != null) refExpressionItemProvider.dispose();
+		if (linkExpressionItemProvider != null) linkExpressionItemProvider.dispose();
+		if (imageExpressionItemProvider != null) imageExpressionItemProvider.dispose();
+		if (videoExpressionItemProvider != null) videoExpressionItemProvider.dispose();
 		if (headerExpressionItemProvider != null) headerExpressionItemProvider.dispose();
 		if (header1ExpressionItemProvider != null) header1ExpressionItemProvider.dispose();
 		if (header2ExpressionItemProvider != null) header2ExpressionItemProvider.dispose();

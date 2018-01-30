@@ -16,7 +16,15 @@ import markHammil.mm.myDsl.MyDslFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class EmphasisExpressionTest extends TextExpressionTest {
+public class EmphasisExpressionTest extends TestCase {
+
+	/**
+	 * The fixture for this Emphasis Expression test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EmphasisExpression fixture = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -38,6 +46,16 @@ public class EmphasisExpressionTest extends TextExpressionTest {
 	}
 
 	/**
+	 * Sets the fixture for this Emphasis Expression test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void setFixture(EmphasisExpression fixture) {
+		this.fixture = fixture;
+	}
+
+	/**
 	 * Returns the fixture for this Emphasis Expression test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -45,7 +63,7 @@ public class EmphasisExpressionTest extends TextExpressionTest {
 	 */
 	@Override
 	protected EmphasisExpression getFixture() {
-		return (EmphasisExpression)fixture;
+		return fixture;
 	}
 
 	/**

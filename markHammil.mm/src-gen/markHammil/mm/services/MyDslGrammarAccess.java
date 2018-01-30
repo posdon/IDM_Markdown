@@ -59,12 +59,16 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cBLTerminalRuleCall_0_0_1_1 = (RuleCall)cGroup_0_0_1.eContents().get(1);
 		private final Assignment cCAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
 		private final RuleCall cCBreakLineExpressionParserRuleCall_1_0 = (RuleCall)cCAssignment_1.eContents().get(0);
+		private final Assignment cCAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
+		private final RuleCall cCRefExpressionParserRuleCall_2_0 = (RuleCall)cCAssignment_2.eContents().get(0);
 		
 		//Expression:
-		//	=> (=> c=HeaderExpression | c=TextExpression => BL?) | c=BreakLineExpression;
+		//	=> (=> c=HeaderExpression | c=TextExpression => BL?) | c=BreakLineExpression /*| c=TabExpression =>BL?*/ |
+		//	c=RefExpression;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//=> (=> c=HeaderExpression | c=TextExpression => BL?) | c=BreakLineExpression
+		//=> (=> c=HeaderExpression | c=TextExpression => BL?) | c=BreakLineExpression /*| c=TabExpression =>BL?*/ |
+		//c=RefExpression
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//=> (=> c=HeaderExpression | c=TextExpression => BL?)
@@ -96,6 +100,12 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//BreakLineExpression
 		public RuleCall getCBreakLineExpressionParserRuleCall_1_0() { return cCBreakLineExpressionParserRuleCall_1_0; }
+		
+		//c=RefExpression
+		public Assignment getCAssignment_2() { return cCAssignment_2; }
+		
+		//RefExpression
+		public RuleCall getCRefExpressionParserRuleCall_2_0() { return cCRefExpressionParserRuleCall_2_0; }
 	}
 	public class BreakLineExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "markHammil.mm.MyDsl.BreakLineExpression");
@@ -121,14 +131,23 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Assignment cCAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
 		private final RuleCall cCEmphasisExpressionParserRuleCall_0_0 = (RuleCall)cCAssignment_0.eContents().get(0);
-		private final Assignment cCAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final RuleCall cCQuoteExpressionParserRuleCall_1_0 = (RuleCall)cCAssignment_1.eContents().get(0);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Alternatives cAlternatives_1_0 = (Alternatives)cGroup_1.eContents().get(0);
+		private final Assignment cCAssignment_1_0_0 = (Assignment)cAlternatives_1_0.eContents().get(0);
+		private final RuleCall cCQuoteExpressionParserRuleCall_1_0_0_0 = (RuleCall)cCAssignment_1_0_0.eContents().get(0);
+		private final Alternatives cAlternatives_1_0_1 = (Alternatives)cAlternatives_1_0.eContents().get(1);
+		private final Assignment cCAssignment_1_0_1_0 = (Assignment)cAlternatives_1_0_1.eContents().get(0);
+		private final RuleCall cCLinkExpressionParserRuleCall_1_0_1_0_0 = (RuleCall)cCAssignment_1_0_1_0.eContents().get(0);
+		private final Assignment cCAssignment_1_0_1_1 = (Assignment)cAlternatives_1_0_1.eContents().get(1);
+		private final RuleCall cCImageExpressionParserRuleCall_1_0_1_1_0 = (RuleCall)cCAssignment_1_0_1_1.eContents().get(0);
+		private final Assignment cCAssignment_1_0_1_2 = (Assignment)cAlternatives_1_0_1.eContents().get(2);
+		private final RuleCall cCVideoExpressionParserRuleCall_1_0_1_2_0 = (RuleCall)cCAssignment_1_0_1_2.eContents().get(0);
 		
 		//TextExpression:
-		//	c+=EmphasisExpression | c+=QuoteExpression;
+		//	c+=EmphasisExpression | => (c+=QuoteExpression | (c+=LinkExpression | => c+=ImageExpression | => c+=VideoExpression));
 		@Override public ParserRule getRule() { return rule; }
 		
-		//c+=EmphasisExpression | c+=QuoteExpression
+		//c+=EmphasisExpression | => (c+=QuoteExpression | (c+=LinkExpression | => c+=ImageExpression | => c+=VideoExpression))
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//c+=EmphasisExpression
@@ -137,11 +156,38 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//EmphasisExpression
 		public RuleCall getCEmphasisExpressionParserRuleCall_0_0() { return cCEmphasisExpressionParserRuleCall_0_0; }
 		
+		//=> (c+=QuoteExpression | (c+=LinkExpression | => c+=ImageExpression | => c+=VideoExpression))
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//c+=QuoteExpression | (c+=LinkExpression | => c+=ImageExpression | => c+=VideoExpression)
+		public Alternatives getAlternatives_1_0() { return cAlternatives_1_0; }
+		
 		//c+=QuoteExpression
-		public Assignment getCAssignment_1() { return cCAssignment_1; }
+		public Assignment getCAssignment_1_0_0() { return cCAssignment_1_0_0; }
 		
 		//QuoteExpression
-		public RuleCall getCQuoteExpressionParserRuleCall_1_0() { return cCQuoteExpressionParserRuleCall_1_0; }
+		public RuleCall getCQuoteExpressionParserRuleCall_1_0_0_0() { return cCQuoteExpressionParserRuleCall_1_0_0_0; }
+		
+		//(c+=LinkExpression | => c+=ImageExpression | => c+=VideoExpression)
+		public Alternatives getAlternatives_1_0_1() { return cAlternatives_1_0_1; }
+		
+		//c+=LinkExpression
+		public Assignment getCAssignment_1_0_1_0() { return cCAssignment_1_0_1_0; }
+		
+		//LinkExpression
+		public RuleCall getCLinkExpressionParserRuleCall_1_0_1_0_0() { return cCLinkExpressionParserRuleCall_1_0_1_0_0; }
+		
+		//=> c+=ImageExpression
+		public Assignment getCAssignment_1_0_1_1() { return cCAssignment_1_0_1_1; }
+		
+		//ImageExpression
+		public RuleCall getCImageExpressionParserRuleCall_1_0_1_1_0() { return cCImageExpressionParserRuleCall_1_0_1_1_0; }
+		
+		//=> c+=VideoExpression
+		public Assignment getCAssignment_1_0_1_2() { return cCAssignment_1_0_1_2; }
+		
+		//VideoExpression
+		public RuleCall getCVideoExpressionParserRuleCall_1_0_1_2_0() { return cCVideoExpressionParserRuleCall_1_0_1_2_0; }
 	}
 	public class QuoteExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "markHammil.mm.MyDsl.QuoteExpression");
@@ -154,16 +200,16 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//QuoteExpression:
 		//	{TextExpression}
-		//	'>' content+=TextExpression+ => BL?;
+		//	=> '>' content+=TextExpression+ => BL?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{TextExpression} '>' content+=TextExpression+ => BL?
+		//{TextExpression} => '>' content+=TextExpression+ => BL?
 		public Group getGroup() { return cGroup; }
 		
 		//{TextExpression}
 		public Action getTextExpressionAction_0() { return cTextExpressionAction_0; }
 		
-		//'>'
+		//=> '>'
 		public Keyword getGreaterThanSignKeyword_1() { return cGreaterThanSignKeyword_1; }
 		
 		//content+=TextExpression+
@@ -175,6 +221,326 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//=> BL?
 		public RuleCall getBLTerminalRuleCall_3() { return cBLTerminalRuleCall_3; }
 	}
+	public class CodeExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "markHammil.mm.MyDsl.CodeExpression");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Action cCodeExpressionAction_0_0 = (Action)cGroup_0.eContents().get(0);
+		private final Keyword cGraveAccentGraveAccentGraveAccentKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
+		private final RuleCall cBLTerminalRuleCall_0_2 = (RuleCall)cGroup_0.eContents().get(2);
+		private final Group cGroup_0_3 = (Group)cGroup_0.eContents().get(3);
+		private final Assignment cContentAssignment_0_3_0 = (Assignment)cGroup_0_3.eContents().get(0);
+		private final RuleCall cContentTextExpressionParserRuleCall_0_3_0_0 = (RuleCall)cContentAssignment_0_3_0.eContents().get(0);
+		private final RuleCall cBLTerminalRuleCall_0_3_1 = (RuleCall)cGroup_0_3.eContents().get(1);
+		private final Keyword cGraveAccentGraveAccentGraveAccentKeyword_0_4 = (Keyword)cGroup_0.eContents().get(4);
+		private final RuleCall cBLTerminalRuleCall_0_5 = (RuleCall)cGroup_0.eContents().get(5);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Keyword cGraveAccentKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cContentAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cContentTextExpressionParserRuleCall_1_1_0 = (RuleCall)cContentAssignment_1_1.eContents().get(0);
+		private final Keyword cGraveAccentKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
+		
+		//CodeExpression:
+		//	{CodeExpression}
+		//	'```' BL (content+=TextExpression => BL?)+ '```' BL | '`' content+=TextExpression "`";
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{CodeExpression} '```' BL (content+=TextExpression => BL?)+ '```' BL | '`' content+=TextExpression "`"
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//{CodeExpression} '```' BL (content+=TextExpression => BL?)+ '```' BL
+		public Group getGroup_0() { return cGroup_0; }
+		
+		//{CodeExpression}
+		public Action getCodeExpressionAction_0_0() { return cCodeExpressionAction_0_0; }
+		
+		//'```'
+		public Keyword getGraveAccentGraveAccentGraveAccentKeyword_0_1() { return cGraveAccentGraveAccentGraveAccentKeyword_0_1; }
+		
+		//BL
+		public RuleCall getBLTerminalRuleCall_0_2() { return cBLTerminalRuleCall_0_2; }
+		
+		//(content+=TextExpression => BL?)+
+		public Group getGroup_0_3() { return cGroup_0_3; }
+		
+		//content+=TextExpression
+		public Assignment getContentAssignment_0_3_0() { return cContentAssignment_0_3_0; }
+		
+		//TextExpression
+		public RuleCall getContentTextExpressionParserRuleCall_0_3_0_0() { return cContentTextExpressionParserRuleCall_0_3_0_0; }
+		
+		//=> BL?
+		public RuleCall getBLTerminalRuleCall_0_3_1() { return cBLTerminalRuleCall_0_3_1; }
+		
+		//'```'
+		public Keyword getGraveAccentGraveAccentGraveAccentKeyword_0_4() { return cGraveAccentGraveAccentGraveAccentKeyword_0_4; }
+		
+		//BL
+		public RuleCall getBLTerminalRuleCall_0_5() { return cBLTerminalRuleCall_0_5; }
+		
+		//'`' content+=TextExpression "`"
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//'`'
+		public Keyword getGraveAccentKeyword_1_0() { return cGraveAccentKeyword_1_0; }
+		
+		//content+=TextExpression
+		public Assignment getContentAssignment_1_1() { return cContentAssignment_1_1; }
+		
+		//TextExpression
+		public RuleCall getContentTextExpressionParserRuleCall_1_1_0() { return cContentTextExpressionParserRuleCall_1_1_0; }
+		
+		//"`"
+		public Keyword getGraveAccentKeyword_1_2() { return cGraveAccentKeyword_1_2; }
+	}
+	public class RefExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "markHammil.mm.MyDsl.RefExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cRefExpressionAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cLeftSquareBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cRefNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cRefNameNaturalExpressionParserRuleCall_2_0 = (RuleCall)cRefNameAssignment_2.eContents().get(0);
+		private final Keyword cRightSquareBracketColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cRefContentAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cRefContentNaturalExpressionParserRuleCall_4_0 = (RuleCall)cRefContentAssignment_4.eContents().get(0);
+		private final RuleCall cBLTerminalRuleCall_5 = (RuleCall)cGroup.eContents().get(5);
+		
+		//// New
+		//RefExpression:
+		//	{RefExpression}
+		//	=> '[' refName=NaturalExpression => ']:' refContent=NaturalExpression? => BL?;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{RefExpression} => '[' refName=NaturalExpression => ']:' refContent=NaturalExpression? => BL?
+		public Group getGroup() { return cGroup; }
+		
+		//{RefExpression}
+		public Action getRefExpressionAction_0() { return cRefExpressionAction_0; }
+		
+		//=> '['
+		public Keyword getLeftSquareBracketKeyword_1() { return cLeftSquareBracketKeyword_1; }
+		
+		//refName=NaturalExpression
+		public Assignment getRefNameAssignment_2() { return cRefNameAssignment_2; }
+		
+		//NaturalExpression
+		public RuleCall getRefNameNaturalExpressionParserRuleCall_2_0() { return cRefNameNaturalExpressionParserRuleCall_2_0; }
+		
+		//=> ']:'
+		public Keyword getRightSquareBracketColonKeyword_3() { return cRightSquareBracketColonKeyword_3; }
+		
+		//refContent=NaturalExpression?
+		public Assignment getRefContentAssignment_4() { return cRefContentAssignment_4; }
+		
+		//NaturalExpression
+		public RuleCall getRefContentNaturalExpressionParserRuleCall_4_0() { return cRefContentNaturalExpressionParserRuleCall_4_0; }
+		
+		//=> BL?
+		public RuleCall getBLTerminalRuleCall_5() { return cBLTerminalRuleCall_5; }
+	}
+	public class LinkExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "markHammil.mm.MyDsl.LinkExpression");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Action cLinkExpressionAction_0_0 = (Action)cGroup_0.eContents().get(0);
+		private final Keyword cLeftSquareBracketKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
+		private final Assignment cAltTextAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
+		private final RuleCall cAltTextNaturalExpressionParserRuleCall_0_2_0 = (RuleCall)cAltTextAssignment_0_2.eContents().get(0);
+		private final Keyword cRightSquareBracketLeftParenthesisKeyword_0_3 = (Keyword)cGroup_0.eContents().get(3);
+		private final Assignment cLinkContentAssignment_0_4 = (Assignment)cGroup_0.eContents().get(4);
+		private final RuleCall cLinkContentNaturalExpressionParserRuleCall_0_4_0 = (RuleCall)cLinkContentAssignment_0_4.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_0_5 = (Keyword)cGroup_0.eContents().get(5);
+		private final RuleCall cBLTerminalRuleCall_0_6 = (RuleCall)cGroup_0.eContents().get(6);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Keyword cLeftSquareBracketKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cAltTextAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cAltTextNaturalExpressionParserRuleCall_1_1_0 = (RuleCall)cAltTextAssignment_1_1.eContents().get(0);
+		private final Keyword cRightSquareBracketLeftSquareBracketKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
+		private final Assignment cRefNameAssignment_1_3 = (Assignment)cGroup_1.eContents().get(3);
+		private final RuleCall cRefNameNaturalExpressionParserRuleCall_1_3_0 = (RuleCall)cRefNameAssignment_1_3.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_1_4 = (Keyword)cGroup_1.eContents().get(4);
+		private final RuleCall cBLTerminalRuleCall_1_5 = (RuleCall)cGroup_1.eContents().get(5);
+		
+		//// New
+		//LinkExpression:
+		//	{LinkExpression}
+		//	=> '[' altText=NaturalExpression => '](' linkContent=NaturalExpression? => ')' => BL? |
+		//	=> '[' altText=NaturalExpression => '][' refName=NaturalExpression? => ']' => BL?;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{LinkExpression} => '[' altText=NaturalExpression => '](' linkContent=NaturalExpression? => ')' => BL? | => '['
+		//altText=NaturalExpression => '][' refName=NaturalExpression? => ']' => BL?
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//{LinkExpression} => '[' altText=NaturalExpression => '](' linkContent=NaturalExpression? => ')' => BL?
+		public Group getGroup_0() { return cGroup_0; }
+		
+		//{LinkExpression}
+		public Action getLinkExpressionAction_0_0() { return cLinkExpressionAction_0_0; }
+		
+		//=> '['
+		public Keyword getLeftSquareBracketKeyword_0_1() { return cLeftSquareBracketKeyword_0_1; }
+		
+		//altText=NaturalExpression
+		public Assignment getAltTextAssignment_0_2() { return cAltTextAssignment_0_2; }
+		
+		//NaturalExpression
+		public RuleCall getAltTextNaturalExpressionParserRuleCall_0_2_0() { return cAltTextNaturalExpressionParserRuleCall_0_2_0; }
+		
+		//=> ']('
+		public Keyword getRightSquareBracketLeftParenthesisKeyword_0_3() { return cRightSquareBracketLeftParenthesisKeyword_0_3; }
+		
+		//linkContent=NaturalExpression?
+		public Assignment getLinkContentAssignment_0_4() { return cLinkContentAssignment_0_4; }
+		
+		//NaturalExpression
+		public RuleCall getLinkContentNaturalExpressionParserRuleCall_0_4_0() { return cLinkContentNaturalExpressionParserRuleCall_0_4_0; }
+		
+		//=> ')'
+		public Keyword getRightParenthesisKeyword_0_5() { return cRightParenthesisKeyword_0_5; }
+		
+		//=> BL?
+		public RuleCall getBLTerminalRuleCall_0_6() { return cBLTerminalRuleCall_0_6; }
+		
+		//=> '[' altText=NaturalExpression => '][' refName=NaturalExpression? => ']' => BL?
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//=> '['
+		public Keyword getLeftSquareBracketKeyword_1_0() { return cLeftSquareBracketKeyword_1_0; }
+		
+		//altText=NaturalExpression
+		public Assignment getAltTextAssignment_1_1() { return cAltTextAssignment_1_1; }
+		
+		//NaturalExpression
+		public RuleCall getAltTextNaturalExpressionParserRuleCall_1_1_0() { return cAltTextNaturalExpressionParserRuleCall_1_1_0; }
+		
+		//=> ']['
+		public Keyword getRightSquareBracketLeftSquareBracketKeyword_1_2() { return cRightSquareBracketLeftSquareBracketKeyword_1_2; }
+		
+		//refName=NaturalExpression?
+		public Assignment getRefNameAssignment_1_3() { return cRefNameAssignment_1_3; }
+		
+		//NaturalExpression
+		public RuleCall getRefNameNaturalExpressionParserRuleCall_1_3_0() { return cRefNameNaturalExpressionParserRuleCall_1_3_0; }
+		
+		//=> ']'
+		public Keyword getRightSquareBracketKeyword_1_4() { return cRightSquareBracketKeyword_1_4; }
+		
+		//=> BL?
+		public RuleCall getBLTerminalRuleCall_1_5() { return cBLTerminalRuleCall_1_5; }
+	}
+	public class ImageExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "markHammil.mm.MyDsl.ImageExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cImageExpressionAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cExclamationMarkLeftSquareBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cAltTextAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cAltTextNaturalExpressionParserRuleCall_2_0 = (RuleCall)cAltTextAssignment_2.eContents().get(0);
+		private final Keyword cRightSquareBracketLeftParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cLinkContentAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cLinkContentNaturalExpressionParserRuleCall_4_0 = (RuleCall)cLinkContentAssignment_4.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final RuleCall cBLTerminalRuleCall_6 = (RuleCall)cGroup.eContents().get(6);
+		
+		//// New
+		//ImageExpression:
+		//	{ImageExpression}
+		//	=> '![' altText=NaturalExpression => '](' linkContent=NaturalExpression? => ')' => BL?;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{ImageExpression} => '![' altText=NaturalExpression => '](' linkContent=NaturalExpression? => ')' => BL?
+		public Group getGroup() { return cGroup; }
+		
+		//{ImageExpression}
+		public Action getImageExpressionAction_0() { return cImageExpressionAction_0; }
+		
+		//=> '!['
+		public Keyword getExclamationMarkLeftSquareBracketKeyword_1() { return cExclamationMarkLeftSquareBracketKeyword_1; }
+		
+		//altText=NaturalExpression
+		public Assignment getAltTextAssignment_2() { return cAltTextAssignment_2; }
+		
+		//NaturalExpression
+		public RuleCall getAltTextNaturalExpressionParserRuleCall_2_0() { return cAltTextNaturalExpressionParserRuleCall_2_0; }
+		
+		//=> ']('
+		public Keyword getRightSquareBracketLeftParenthesisKeyword_3() { return cRightSquareBracketLeftParenthesisKeyword_3; }
+		
+		//linkContent=NaturalExpression?
+		public Assignment getLinkContentAssignment_4() { return cLinkContentAssignment_4; }
+		
+		//NaturalExpression
+		public RuleCall getLinkContentNaturalExpressionParserRuleCall_4_0() { return cLinkContentNaturalExpressionParserRuleCall_4_0; }
+		
+		//=> ')'
+		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
+		
+		//=> BL?
+		public RuleCall getBLTerminalRuleCall_6() { return cBLTerminalRuleCall_6; }
+	}
+	public class VideoExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "markHammil.mm.MyDsl.VideoExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cVideoExpressionAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cLeftSquareBracketExclamationMarkLeftSquareBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cAltTextAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cAltTextNaturalExpressionParserRuleCall_2_0 = (RuleCall)cAltTextAssignment_2.eContents().get(0);
+		private final Keyword cRightSquareBracketLeftParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cLinkImageAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cLinkImageNaturalExpressionParserRuleCall_4_0 = (RuleCall)cLinkImageAssignment_4.eContents().get(0);
+		private final Keyword cRightParenthesisRightSquareBracketLeftParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cLinkVideoAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cLinkVideoNaturalExpressionParserRuleCall_6_0 = (RuleCall)cLinkVideoAssignment_6.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final RuleCall cBLTerminalRuleCall_8 = (RuleCall)cGroup.eContents().get(8);
+		
+		//// New
+		//VideoExpression:
+		//	{VideoExpression}
+		//	=> '[![' altText=NaturalExpression => '](' linkImage=NaturalExpression? => ')](' linkVideo=NaturalExpression? => ')'
+		//	=> BL?;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{VideoExpression} => '[![' altText=NaturalExpression => '](' linkImage=NaturalExpression? => ')]('
+		//linkVideo=NaturalExpression? => ')' => BL?
+		public Group getGroup() { return cGroup; }
+		
+		//{VideoExpression}
+		public Action getVideoExpressionAction_0() { return cVideoExpressionAction_0; }
+		
+		//=> '[!['
+		public Keyword getLeftSquareBracketExclamationMarkLeftSquareBracketKeyword_1() { return cLeftSquareBracketExclamationMarkLeftSquareBracketKeyword_1; }
+		
+		//altText=NaturalExpression
+		public Assignment getAltTextAssignment_2() { return cAltTextAssignment_2; }
+		
+		//NaturalExpression
+		public RuleCall getAltTextNaturalExpressionParserRuleCall_2_0() { return cAltTextNaturalExpressionParserRuleCall_2_0; }
+		
+		//=> ']('
+		public Keyword getRightSquareBracketLeftParenthesisKeyword_3() { return cRightSquareBracketLeftParenthesisKeyword_3; }
+		
+		//linkImage=NaturalExpression?
+		public Assignment getLinkImageAssignment_4() { return cLinkImageAssignment_4; }
+		
+		//NaturalExpression
+		public RuleCall getLinkImageNaturalExpressionParserRuleCall_4_0() { return cLinkImageNaturalExpressionParserRuleCall_4_0; }
+		
+		//=> ')]('
+		public Keyword getRightParenthesisRightSquareBracketLeftParenthesisKeyword_5() { return cRightParenthesisRightSquareBracketLeftParenthesisKeyword_5; }
+		
+		//linkVideo=NaturalExpression?
+		public Assignment getLinkVideoAssignment_6() { return cLinkVideoAssignment_6; }
+		
+		//NaturalExpression
+		public RuleCall getLinkVideoNaturalExpressionParserRuleCall_6_0() { return cLinkVideoNaturalExpressionParserRuleCall_6_0; }
+		
+		//=> ')'
+		public Keyword getRightParenthesisKeyword_7() { return cRightParenthesisKeyword_7; }
+		
+		//=> BL?
+		public RuleCall getBLTerminalRuleCall_8() { return cBLTerminalRuleCall_8; }
+	}
 	public class HeaderExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "markHammil.mm.MyDsl.HeaderExpression");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -185,6 +551,22 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cHeader5ExpressionParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		private final RuleCall cHeader6ExpressionParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
 		
+		//// New
+		////TabExpression returns TabExpression :
+		////	{TabExpression}
+		////	=> ( header+=LineExpression BL TabSeparation (BL lines+=LineExpression)* )
+		////;
+		////
+		////// New
+		////TabSeparation :
+		////	'|'? '-' ('-')+ ( '|' '-' ('-')+ )+ '|'?
+		////;
+		////
+		////// New
+		////LineExpression returns LineExpression :
+		////	{LineExpression}
+		////	'|'? cells+=TextExpression ('|' cells+=TextExpression)* '|'?
+		////;
 		//HeaderExpression:
 		//	Header1Expression | Header2Expression | Header3Expression | Header4Expression | Header5Expression | Header6Expression;
 		@Override public ParserRule getRule() { return rule; }
@@ -223,16 +605,16 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Header1Expression:
 		//	{Header1Expression}
-		//	'#' title+=EmphasisExpression => ('#')* => BL?;
+		//	=> '#' title+=EmphasisExpression => ('#')* => BL?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Header1Expression} '#' title+=EmphasisExpression => ('#')* => BL?
+		//{Header1Expression} => '#' title+=EmphasisExpression => ('#')* => BL?
 		public Group getGroup() { return cGroup; }
 		
 		//{Header1Expression}
 		public Action getHeader1ExpressionAction_0() { return cHeader1ExpressionAction_0; }
 		
-		//'#'
+		//=> '#'
 		public Keyword getNumberSignKeyword_1() { return cNumberSignKeyword_1; }
 		
 		//title+=EmphasisExpression
@@ -263,16 +645,16 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Header2Expression:
 		//	{Header2Expression}
-		//	'##' title+=EmphasisExpression => ('#')* => BL?;
+		//	=> '##' title+=EmphasisExpression => ('#')* => BL?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Header2Expression} '##' title+=EmphasisExpression => ('#')* => BL?
+		//{Header2Expression} => '##' title+=EmphasisExpression => ('#')* => BL?
 		public Group getGroup() { return cGroup; }
 		
 		//{Header2Expression}
 		public Action getHeader2ExpressionAction_0() { return cHeader2ExpressionAction_0; }
 		
-		//'##'
+		//=> '##'
 		public Keyword getNumberSignNumberSignKeyword_1() { return cNumberSignNumberSignKeyword_1; }
 		
 		//title+=EmphasisExpression
@@ -303,16 +685,16 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Header3Expression:
 		//	{Header3Expression}
-		//	'###' title+=EmphasisExpression => ('#')* => BL?;
+		//	=> '###' title+=EmphasisExpression => ('#')* => BL?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Header3Expression} '###' title+=EmphasisExpression => ('#')* => BL?
+		//{Header3Expression} => '###' title+=EmphasisExpression => ('#')* => BL?
 		public Group getGroup() { return cGroup; }
 		
 		//{Header3Expression}
 		public Action getHeader3ExpressionAction_0() { return cHeader3ExpressionAction_0; }
 		
-		//'###'
+		//=> '###'
 		public Keyword getNumberSignNumberSignNumberSignKeyword_1() { return cNumberSignNumberSignNumberSignKeyword_1; }
 		
 		//title+=EmphasisExpression
@@ -343,16 +725,16 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Header4Expression:
 		//	{Header4Expression}
-		//	'####' title+=EmphasisExpression => ('#')* => BL?;
+		//	=> '####' title+=EmphasisExpression => ('#')* => BL?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Header4Expression} '####' title+=EmphasisExpression => ('#')* => BL?
+		//{Header4Expression} => '####' title+=EmphasisExpression => ('#')* => BL?
 		public Group getGroup() { return cGroup; }
 		
 		//{Header4Expression}
 		public Action getHeader4ExpressionAction_0() { return cHeader4ExpressionAction_0; }
 		
-		//'####'
+		//=> '####'
 		public Keyword getNumberSignNumberSignNumberSignNumberSignKeyword_1() { return cNumberSignNumberSignNumberSignNumberSignKeyword_1; }
 		
 		//title+=EmphasisExpression
@@ -383,16 +765,16 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Header5Expression:
 		//	{Header5Expression}
-		//	'#####' title+=EmphasisExpression => ('#')* => BL?;
+		//	=> '#####' title+=EmphasisExpression => ('#')* => BL?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Header5Expression} '#####' title+=EmphasisExpression => ('#')* => BL?
+		//{Header5Expression} => '#####' title+=EmphasisExpression => ('#')* => BL?
 		public Group getGroup() { return cGroup; }
 		
 		//{Header5Expression}
 		public Action getHeader5ExpressionAction_0() { return cHeader5ExpressionAction_0; }
 		
-		//'#####'
+		//=> '#####'
 		public Keyword getNumberSignNumberSignNumberSignNumberSignNumberSignKeyword_1() { return cNumberSignNumberSignNumberSignNumberSignNumberSignKeyword_1; }
 		
 		//title+=EmphasisExpression
@@ -423,16 +805,16 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Header6Expression:
 		//	{Header6Expression}
-		//	'######' title+=EmphasisExpression => ('#')* => BL?;
+		//	=> '######' title+=EmphasisExpression => ('#')* => BL?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Header6Expression} '######' title+=EmphasisExpression => ('#')* => BL?
+		//{Header6Expression} => '######' title+=EmphasisExpression => ('#')* => BL?
 		public Group getGroup() { return cGroup; }
 		
 		//{Header6Expression}
 		public Action getHeader6ExpressionAction_0() { return cHeader6ExpressionAction_0; }
 		
-		//'######'
+		//=> '######'
 		public Keyword getNumberSignNumberSignNumberSignNumberSignNumberSignNumberSignKeyword_1() { return cNumberSignNumberSignNumberSignNumberSignNumberSignNumberSignKeyword_1; }
 		
 		//title+=EmphasisExpression
@@ -512,16 +894,16 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//StrongExpression EmphasisExpression hidden():
 		//	{StrongExpression}
-		//	'**' content=EmphasisExpression '**';
+		//	=> '**' content=EmphasisExpression => '**';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{StrongExpression} '**' content=EmphasisExpression '**'
+		//{StrongExpression} => '**' content=EmphasisExpression => '**'
 		public Group getGroup() { return cGroup; }
 		
 		//{StrongExpression}
 		public Action getStrongExpressionAction_0() { return cStrongExpressionAction_0; }
 		
-		//'**'
+		//=> '**'
 		public Keyword getAsteriskAsteriskKeyword_1() { return cAsteriskAsteriskKeyword_1; }
 		
 		//content=EmphasisExpression
@@ -530,7 +912,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//EmphasisExpression
 		public RuleCall getContentEmphasisExpressionParserRuleCall_2_0() { return cContentEmphasisExpressionParserRuleCall_2_0; }
 		
-		//'**'
+		//=> '**'
 		public Keyword getAsteriskAsteriskKeyword_3() { return cAsteriskAsteriskKeyword_3; }
 	}
 	public class ItalicExpressionElements extends AbstractParserRuleElementFinder {
@@ -544,16 +926,16 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//ItalicExpression EmphasisExpression hidden():
 		//	{ItalicExpression}
-		//	'*' content=EmphasisExpression '*';
+		//	=> '*' content=EmphasisExpression => '*';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{ItalicExpression} '*' content=EmphasisExpression '*'
+		//{ItalicExpression} => '*' content=EmphasisExpression => '*'
 		public Group getGroup() { return cGroup; }
 		
 		//{ItalicExpression}
 		public Action getItalicExpressionAction_0() { return cItalicExpressionAction_0; }
 		
-		//'*'
+		//=> '*'
 		public Keyword getAsteriskKeyword_1() { return cAsteriskKeyword_1; }
 		
 		//content=EmphasisExpression
@@ -562,7 +944,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//EmphasisExpression
 		public RuleCall getContentEmphasisExpressionParserRuleCall_2_0() { return cContentEmphasisExpressionParserRuleCall_2_0; }
 		
-		//'*'
+		//=> '*'
 		public Keyword getAsteriskKeyword_3() { return cAsteriskKeyword_3; }
 	}
 	public class ScratchExpressionElements extends AbstractParserRuleElementFinder {
@@ -576,16 +958,16 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//ScratchExpression EmphasisExpression hidden():
 		//	{ScratchExpression}
-		//	'~~' content=EmphasisExpression '~~';
+		//	=> '~~' content=EmphasisExpression => '~~';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{ScratchExpression} '~~' content=EmphasisExpression '~~'
+		//{ScratchExpression} => '~~' content=EmphasisExpression => '~~'
 		public Group getGroup() { return cGroup; }
 		
 		//{ScratchExpression}
 		public Action getScratchExpressionAction_0() { return cScratchExpressionAction_0; }
 		
-		//'~~'
+		//=> '~~'
 		public Keyword getTildeTildeKeyword_1() { return cTildeTildeKeyword_1; }
 		
 		//content=EmphasisExpression
@@ -594,7 +976,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//EmphasisExpression
 		public RuleCall getContentEmphasisExpressionParserRuleCall_2_0() { return cContentEmphasisExpressionParserRuleCall_2_0; }
 		
-		//'~~'
+		//=> '~~'
 		public Keyword getTildeTildeKeyword_3() { return cTildeTildeKeyword_3; }
 	}
 	public class NaturalExpressionElements extends AbstractParserRuleElementFinder {
@@ -623,41 +1005,49 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	public class ContentElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "markHammil.mm.MyDsl.Content");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cIDTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cSTRINGTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cINTTerminalRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final Keyword cApostropheKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
-		private final Keyword cHyphenMinusKeyword_4 = (Keyword)cAlternatives.eContents().get(4);
-		private final Keyword cVerticalLineKeyword_5 = (Keyword)cAlternatives.eContents().get(5);
-		private final Keyword cQuotationMarkKeyword_6 = (Keyword)cAlternatives.eContents().get(6);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Alternatives cAlternatives_0_0 = (Alternatives)cGroup_0.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_0_0_0 = (RuleCall)cAlternatives_0_0.eContents().get(0);
+		private final RuleCall cSTRINGTerminalRuleCall_0_0_1 = (RuleCall)cAlternatives_0_0.eContents().get(1);
+		private final RuleCall cINTTerminalRuleCall_0_0_2 = (RuleCall)cAlternatives_0_0.eContents().get(2);
+		private final Keyword cApostropheKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		private final Keyword cHyphenMinusKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
+		private final Keyword cVerticalLineKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
+		private final Keyword cQuotationMarkKeyword_4 = (Keyword)cAlternatives.eContents().get(4);
 		
 		//Content:
-		//	ID | STRING | INT | "\'" | "-" | "|" | '\"';
+		//	=> (ID | STRING | INT) | "\'" | "-" | "|" | '\"';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//ID | STRING | INT | "\'" | "-" | "|" | '\"'
+		//=> (ID | STRING | INT) | "\'" | "-" | "|" | '\"'
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
+		//=> (ID | STRING | INT)
+		public Group getGroup_0() { return cGroup_0; }
+		
+		//ID | STRING | INT
+		public Alternatives getAlternatives_0_0() { return cAlternatives_0_0; }
+		
 		//ID
-		public RuleCall getIDTerminalRuleCall_0() { return cIDTerminalRuleCall_0; }
+		public RuleCall getIDTerminalRuleCall_0_0_0() { return cIDTerminalRuleCall_0_0_0; }
 		
 		//STRING
-		public RuleCall getSTRINGTerminalRuleCall_1() { return cSTRINGTerminalRuleCall_1; }
+		public RuleCall getSTRINGTerminalRuleCall_0_0_1() { return cSTRINGTerminalRuleCall_0_0_1; }
 		
 		//INT
-		public RuleCall getINTTerminalRuleCall_2() { return cINTTerminalRuleCall_2; }
+		public RuleCall getINTTerminalRuleCall_0_0_2() { return cINTTerminalRuleCall_0_0_2; }
 		
 		//"\'"
-		public Keyword getApostropheKeyword_3() { return cApostropheKeyword_3; }
+		public Keyword getApostropheKeyword_1() { return cApostropheKeyword_1; }
 		
 		//"-"
-		public Keyword getHyphenMinusKeyword_4() { return cHyphenMinusKeyword_4; }
+		public Keyword getHyphenMinusKeyword_2() { return cHyphenMinusKeyword_2; }
 		
 		//"|"
-		public Keyword getVerticalLineKeyword_5() { return cVerticalLineKeyword_5; }
+		public Keyword getVerticalLineKeyword_3() { return cVerticalLineKeyword_3; }
 		
 		//'\"'
-		public Keyword getQuotationMarkKeyword_6() { return cQuotationMarkKeyword_6; }
+		public Keyword getQuotationMarkKeyword_4() { return cQuotationMarkKeyword_4; }
 	}
 	
 	
@@ -666,6 +1056,11 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	private final BreakLineExpressionElements pBreakLineExpression;
 	private final TextExpressionElements pTextExpression;
 	private final QuoteExpressionElements pQuoteExpression;
+	private final CodeExpressionElements pCodeExpression;
+	private final RefExpressionElements pRefExpression;
+	private final LinkExpressionElements pLinkExpression;
+	private final ImageExpressionElements pImageExpression;
+	private final VideoExpressionElements pVideoExpression;
 	private final HeaderExpressionElements pHeaderExpression;
 	private final Header1ExpressionElements pHeader1Expression;
 	private final Header2ExpressionElements pHeader2Expression;
@@ -700,6 +1095,11 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.pBreakLineExpression = new BreakLineExpressionElements();
 		this.pTextExpression = new TextExpressionElements();
 		this.pQuoteExpression = new QuoteExpressionElements();
+		this.pCodeExpression = new CodeExpressionElements();
+		this.pRefExpression = new RefExpressionElements();
+		this.pLinkExpression = new LinkExpressionElements();
+		this.pImageExpression = new ImageExpressionElements();
+		this.pVideoExpression = new VideoExpressionElements();
 		this.pHeaderExpression = new HeaderExpressionElements();
 		this.pHeader1Expression = new Header1ExpressionElements();
 		this.pHeader2Expression = new Header2ExpressionElements();
@@ -759,7 +1159,8 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Expression:
-	//	=> (=> c=HeaderExpression | c=TextExpression => BL?) | c=BreakLineExpression;
+	//	=> (=> c=HeaderExpression | c=TextExpression => BL?) | c=BreakLineExpression /*| c=TabExpression =>BL?*/ |
+	//	c=RefExpression;
 	public ExpressionElements getExpressionAccess() {
 		return pExpression;
 	}
@@ -779,7 +1180,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//TextExpression:
-	//	c+=EmphasisExpression | c+=QuoteExpression;
+	//	c+=EmphasisExpression | => (c+=QuoteExpression | (c+=LinkExpression | => c+=ImageExpression | => c+=VideoExpression));
 	public TextExpressionElements getTextExpressionAccess() {
 		return pTextExpression;
 	}
@@ -790,7 +1191,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//QuoteExpression:
 	//	{TextExpression}
-	//	'>' content+=TextExpression+ => BL?;
+	//	=> '>' content+=TextExpression+ => BL?;
 	public QuoteExpressionElements getQuoteExpressionAccess() {
 		return pQuoteExpression;
 	}
@@ -799,6 +1200,83 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getQuoteExpressionAccess().getRule();
 	}
 	
+	//CodeExpression:
+	//	{CodeExpression}
+	//	'```' BL (content+=TextExpression => BL?)+ '```' BL | '`' content+=TextExpression "`";
+	public CodeExpressionElements getCodeExpressionAccess() {
+		return pCodeExpression;
+	}
+	
+	public ParserRule getCodeExpressionRule() {
+		return getCodeExpressionAccess().getRule();
+	}
+	
+	//// New
+	//RefExpression:
+	//	{RefExpression}
+	//	=> '[' refName=NaturalExpression => ']:' refContent=NaturalExpression? => BL?;
+	public RefExpressionElements getRefExpressionAccess() {
+		return pRefExpression;
+	}
+	
+	public ParserRule getRefExpressionRule() {
+		return getRefExpressionAccess().getRule();
+	}
+	
+	//// New
+	//LinkExpression:
+	//	{LinkExpression}
+	//	=> '[' altText=NaturalExpression => '](' linkContent=NaturalExpression? => ')' => BL? |
+	//	=> '[' altText=NaturalExpression => '][' refName=NaturalExpression? => ']' => BL?;
+	public LinkExpressionElements getLinkExpressionAccess() {
+		return pLinkExpression;
+	}
+	
+	public ParserRule getLinkExpressionRule() {
+		return getLinkExpressionAccess().getRule();
+	}
+	
+	//// New
+	//ImageExpression:
+	//	{ImageExpression}
+	//	=> '![' altText=NaturalExpression => '](' linkContent=NaturalExpression? => ')' => BL?;
+	public ImageExpressionElements getImageExpressionAccess() {
+		return pImageExpression;
+	}
+	
+	public ParserRule getImageExpressionRule() {
+		return getImageExpressionAccess().getRule();
+	}
+	
+	//// New
+	//VideoExpression:
+	//	{VideoExpression}
+	//	=> '[![' altText=NaturalExpression => '](' linkImage=NaturalExpression? => ')](' linkVideo=NaturalExpression? => ')'
+	//	=> BL?;
+	public VideoExpressionElements getVideoExpressionAccess() {
+		return pVideoExpression;
+	}
+	
+	public ParserRule getVideoExpressionRule() {
+		return getVideoExpressionAccess().getRule();
+	}
+	
+	//// New
+	////TabExpression returns TabExpression :
+	////	{TabExpression}
+	////	=> ( header+=LineExpression BL TabSeparation (BL lines+=LineExpression)* )
+	////;
+	////
+	////// New
+	////TabSeparation :
+	////	'|'? '-' ('-')+ ( '|' '-' ('-')+ )+ '|'?
+	////;
+	////
+	////// New
+	////LineExpression returns LineExpression :
+	////	{LineExpression}
+	////	'|'? cells+=TextExpression ('|' cells+=TextExpression)* '|'?
+	////;
 	//HeaderExpression:
 	//	Header1Expression | Header2Expression | Header3Expression | Header4Expression | Header5Expression | Header6Expression;
 	public HeaderExpressionElements getHeaderExpressionAccess() {
@@ -811,7 +1289,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Header1Expression:
 	//	{Header1Expression}
-	//	'#' title+=EmphasisExpression => ('#')* => BL?;
+	//	=> '#' title+=EmphasisExpression => ('#')* => BL?;
 	public Header1ExpressionElements getHeader1ExpressionAccess() {
 		return pHeader1Expression;
 	}
@@ -822,7 +1300,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Header2Expression:
 	//	{Header2Expression}
-	//	'##' title+=EmphasisExpression => ('#')* => BL?;
+	//	=> '##' title+=EmphasisExpression => ('#')* => BL?;
 	public Header2ExpressionElements getHeader2ExpressionAccess() {
 		return pHeader2Expression;
 	}
@@ -833,7 +1311,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Header3Expression:
 	//	{Header3Expression}
-	//	'###' title+=EmphasisExpression => ('#')* => BL?;
+	//	=> '###' title+=EmphasisExpression => ('#')* => BL?;
 	public Header3ExpressionElements getHeader3ExpressionAccess() {
 		return pHeader3Expression;
 	}
@@ -844,7 +1322,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Header4Expression:
 	//	{Header4Expression}
-	//	'####' title+=EmphasisExpression => ('#')* => BL?;
+	//	=> '####' title+=EmphasisExpression => ('#')* => BL?;
 	public Header4ExpressionElements getHeader4ExpressionAccess() {
 		return pHeader4Expression;
 	}
@@ -855,7 +1333,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Header5Expression:
 	//	{Header5Expression}
-	//	'#####' title+=EmphasisExpression => ('#')* => BL?;
+	//	=> '#####' title+=EmphasisExpression => ('#')* => BL?;
 	public Header5ExpressionElements getHeader5ExpressionAccess() {
 		return pHeader5Expression;
 	}
@@ -866,7 +1344,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Header6Expression:
 	//	{Header6Expression}
-	//	'######' title+=EmphasisExpression => ('#')* => BL?;
+	//	=> '######' title+=EmphasisExpression => ('#')* => BL?;
 	public Header6ExpressionElements getHeader6ExpressionAccess() {
 		return pHeader6Expression;
 	}
@@ -887,7 +1365,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//StrongExpression EmphasisExpression hidden():
 	//	{StrongExpression}
-	//	'**' content=EmphasisExpression '**';
+	//	=> '**' content=EmphasisExpression => '**';
 	public StrongExpressionElements getStrongExpressionAccess() {
 		return pStrongExpression;
 	}
@@ -898,7 +1376,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//ItalicExpression EmphasisExpression hidden():
 	//	{ItalicExpression}
-	//	'*' content=EmphasisExpression '*';
+	//	=> '*' content=EmphasisExpression => '*';
 	public ItalicExpressionElements getItalicExpressionAccess() {
 		return pItalicExpression;
 	}
@@ -909,7 +1387,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//ScratchExpression EmphasisExpression hidden():
 	//	{ScratchExpression}
-	//	'~~' content=EmphasisExpression '~~';
+	//	=> '~~' content=EmphasisExpression => '~~';
 	public ScratchExpressionElements getScratchExpressionAccess() {
 		return pScratchExpression;
 	}
@@ -929,7 +1407,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Content:
-	//	ID | STRING | INT | "\'" | "-" | "|" | '\"';
+	//	=> (ID | STRING | INT) | "\'" | "-" | "|" | '\"';
 	public ContentElements getContentAccess() {
 		return pContent;
 	}

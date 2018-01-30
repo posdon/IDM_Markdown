@@ -5,6 +5,7 @@ package markHammil.mm.myDsl.impl;
 
 import markHammil.mm.myDsl.BreakLineExpression;
 import markHammil.mm.myDsl.BreakLineExpressionB;
+import markHammil.mm.myDsl.CodeExpression;
 import markHammil.mm.myDsl.EmphasisExpression;
 import markHammil.mm.myDsl.Expression;
 import markHammil.mm.myDsl.File;
@@ -15,13 +16,17 @@ import markHammil.mm.myDsl.Header4Expression;
 import markHammil.mm.myDsl.Header5Expression;
 import markHammil.mm.myDsl.Header6Expression;
 import markHammil.mm.myDsl.HeaderExpression;
+import markHammil.mm.myDsl.ImageExpression;
 import markHammil.mm.myDsl.ItalicExpression;
+import markHammil.mm.myDsl.LinkExpression;
 import markHammil.mm.myDsl.MyDslFactory;
 import markHammil.mm.myDsl.MyDslPackage;
 import markHammil.mm.myDsl.QuoteExpression;
+import markHammil.mm.myDsl.RefExpression;
 import markHammil.mm.myDsl.ScratchExpression;
 import markHammil.mm.myDsl.StrongExpression;
 import markHammil.mm.myDsl.TextExpression;
+import markHammil.mm.myDsl.VideoExpression;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -72,6 +77,41 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * @generated
    */
   private EClass quoteExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass codeExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass refExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass linkExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass imageExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass videoExpressionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -315,6 +355,166 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getCodeExpression()
+  {
+    return codeExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCodeExpression_Content()
+  {
+    return (EReference)codeExpressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getRefExpression()
+  {
+    return refExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRefExpression_RefName()
+  {
+    return (EReference)refExpressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRefExpression_RefContent()
+  {
+    return (EReference)refExpressionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getLinkExpression()
+  {
+    return linkExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getLinkExpression_AltText()
+  {
+    return (EReference)linkExpressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getLinkExpression_LinkContent()
+  {
+    return (EReference)linkExpressionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getLinkExpression_RefName()
+  {
+    return (EReference)linkExpressionEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getImageExpression()
+  {
+    return imageExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getImageExpression_AltText()
+  {
+    return (EReference)imageExpressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getImageExpression_LinkContent()
+  {
+    return (EReference)imageExpressionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getVideoExpression()
+  {
+    return videoExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getVideoExpression_AltText()
+  {
+    return (EReference)videoExpressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getVideoExpression_LinkImage()
+  {
+    return (EReference)videoExpressionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getVideoExpression_LinkVideo()
+  {
+    return (EReference)videoExpressionEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getHeaderExpression()
   {
     return headerExpressionEClass;
@@ -514,6 +714,27 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
 
     quoteExpressionEClass = createEClass(QUOTE_EXPRESSION);
 
+    codeExpressionEClass = createEClass(CODE_EXPRESSION);
+    createEReference(codeExpressionEClass, CODE_EXPRESSION__CONTENT);
+
+    refExpressionEClass = createEClass(REF_EXPRESSION);
+    createEReference(refExpressionEClass, REF_EXPRESSION__REF_NAME);
+    createEReference(refExpressionEClass, REF_EXPRESSION__REF_CONTENT);
+
+    linkExpressionEClass = createEClass(LINK_EXPRESSION);
+    createEReference(linkExpressionEClass, LINK_EXPRESSION__ALT_TEXT);
+    createEReference(linkExpressionEClass, LINK_EXPRESSION__LINK_CONTENT);
+    createEReference(linkExpressionEClass, LINK_EXPRESSION__REF_NAME);
+
+    imageExpressionEClass = createEClass(IMAGE_EXPRESSION);
+    createEReference(imageExpressionEClass, IMAGE_EXPRESSION__ALT_TEXT);
+    createEReference(imageExpressionEClass, IMAGE_EXPRESSION__LINK_CONTENT);
+
+    videoExpressionEClass = createEClass(VIDEO_EXPRESSION);
+    createEReference(videoExpressionEClass, VIDEO_EXPRESSION__ALT_TEXT);
+    createEReference(videoExpressionEClass, VIDEO_EXPRESSION__LINK_IMAGE);
+    createEReference(videoExpressionEClass, VIDEO_EXPRESSION__LINK_VIDEO);
+
     headerExpressionEClass = createEClass(HEADER_EXPRESSION);
     createEReference(headerExpressionEClass, HEADER_EXPRESSION__TITLE);
 
@@ -598,6 +819,27 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     initEReference(getTextExpression_Content(), this.getTextExpression(), null, "content", null, 0, -1, TextExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(quoteExpressionEClass, QuoteExpression.class, "QuoteExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(codeExpressionEClass, CodeExpression.class, "CodeExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getCodeExpression_Content(), this.getTextExpression(), null, "content", null, 0, -1, CodeExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(refExpressionEClass, RefExpression.class, "RefExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getRefExpression_RefName(), this.getEmphasisExpression(), null, "refName", null, 0, 1, RefExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRefExpression_RefContent(), this.getEmphasisExpression(), null, "refContent", null, 0, 1, RefExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(linkExpressionEClass, LinkExpression.class, "LinkExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getLinkExpression_AltText(), this.getEmphasisExpression(), null, "altText", null, 0, 1, LinkExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLinkExpression_LinkContent(), this.getEmphasisExpression(), null, "linkContent", null, 0, 1, LinkExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLinkExpression_RefName(), this.getEmphasisExpression(), null, "refName", null, 0, 1, LinkExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(imageExpressionEClass, ImageExpression.class, "ImageExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getImageExpression_AltText(), this.getEmphasisExpression(), null, "altText", null, 0, 1, ImageExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getImageExpression_LinkContent(), this.getEmphasisExpression(), null, "linkContent", null, 0, 1, ImageExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(videoExpressionEClass, VideoExpression.class, "VideoExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getVideoExpression_AltText(), this.getEmphasisExpression(), null, "altText", null, 0, 1, VideoExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVideoExpression_LinkImage(), this.getEmphasisExpression(), null, "linkImage", null, 0, 1, VideoExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVideoExpression_LinkVideo(), this.getEmphasisExpression(), null, "linkVideo", null, 0, 1, VideoExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(headerExpressionEClass, HeaderExpression.class, "HeaderExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getHeaderExpression_Title(), this.getEmphasisExpression(), null, "title", null, 0, -1, HeaderExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

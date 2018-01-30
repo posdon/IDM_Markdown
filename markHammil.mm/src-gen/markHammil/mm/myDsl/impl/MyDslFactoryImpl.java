@@ -70,6 +70,11 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
       case MyDslPackage.BREAK_LINE_EXPRESSION: return createBreakLineExpression();
       case MyDslPackage.TEXT_EXPRESSION: return createTextExpression();
       case MyDslPackage.QUOTE_EXPRESSION: return createQuoteExpression();
+      case MyDslPackage.CODE_EXPRESSION: return createCodeExpression();
+      case MyDslPackage.REF_EXPRESSION: return createRefExpression();
+      case MyDslPackage.LINK_EXPRESSION: return createLinkExpression();
+      case MyDslPackage.IMAGE_EXPRESSION: return createImageExpression();
+      case MyDslPackage.VIDEO_EXPRESSION: return createVideoExpression();
       case MyDslPackage.HEADER_EXPRESSION: return createHeaderExpression();
       case MyDslPackage.HEADER1_EXPRESSION: return createHeader1Expression();
       case MyDslPackage.HEADER2_EXPRESSION: return createHeader2Expression();
@@ -140,6 +145,61 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
   {
     QuoteExpressionImpl quoteExpression = new QuoteExpressionImpl();
     return quoteExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public CodeExpression createCodeExpression()
+  {
+    CodeExpressionImpl codeExpression = new CodeExpressionImpl();
+    return codeExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public RefExpression createRefExpression()
+  {
+    RefExpressionImpl refExpression = new RefExpressionImpl();
+    return refExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public LinkExpression createLinkExpression()
+  {
+    LinkExpressionImpl linkExpression = new LinkExpressionImpl();
+    return linkExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ImageExpression createImageExpression()
+  {
+    ImageExpressionImpl imageExpression = new ImageExpressionImpl();
+    return imageExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public VideoExpression createVideoExpression()
+  {
+    VideoExpressionImpl videoExpression = new VideoExpressionImpl();
+    return videoExpression;
   }
 
   /**

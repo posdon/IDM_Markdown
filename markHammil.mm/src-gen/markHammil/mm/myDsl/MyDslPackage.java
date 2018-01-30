@@ -189,6 +189,200 @@ public interface MyDslPackage extends EPackage
   int TEXT_EXPRESSION_FEATURE_COUNT = QUOTE_EXPRESSION_FEATURE_COUNT + 2;
 
   /**
+   * The meta object id for the '{@link markHammil.mm.myDsl.impl.CodeExpressionImpl <em>Code Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see markHammil.mm.myDsl.impl.CodeExpressionImpl
+   * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getCodeExpression()
+   * @generated
+   */
+  int CODE_EXPRESSION = 5;
+
+  /**
+   * The feature id for the '<em><b>Content</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CODE_EXPRESSION__CONTENT = 0;
+
+  /**
+   * The number of structural features of the '<em>Code Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CODE_EXPRESSION_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link markHammil.mm.myDsl.impl.RefExpressionImpl <em>Ref Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see markHammil.mm.myDsl.impl.RefExpressionImpl
+   * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getRefExpression()
+   * @generated
+   */
+  int REF_EXPRESSION = 6;
+
+  /**
+   * The feature id for the '<em><b>Ref Name</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REF_EXPRESSION__REF_NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Ref Content</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REF_EXPRESSION__REF_CONTENT = 1;
+
+  /**
+   * The number of structural features of the '<em>Ref Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REF_EXPRESSION_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link markHammil.mm.myDsl.impl.LinkExpressionImpl <em>Link Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see markHammil.mm.myDsl.impl.LinkExpressionImpl
+   * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getLinkExpression()
+   * @generated
+   */
+  int LINK_EXPRESSION = 7;
+
+  /**
+   * The feature id for the '<em><b>Alt Text</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LINK_EXPRESSION__ALT_TEXT = 0;
+
+  /**
+   * The feature id for the '<em><b>Link Content</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LINK_EXPRESSION__LINK_CONTENT = 1;
+
+  /**
+   * The feature id for the '<em><b>Ref Name</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LINK_EXPRESSION__REF_NAME = 2;
+
+  /**
+   * The number of structural features of the '<em>Link Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LINK_EXPRESSION_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link markHammil.mm.myDsl.impl.ImageExpressionImpl <em>Image Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see markHammil.mm.myDsl.impl.ImageExpressionImpl
+   * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getImageExpression()
+   * @generated
+   */
+  int IMAGE_EXPRESSION = 8;
+
+  /**
+   * The feature id for the '<em><b>Alt Text</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMAGE_EXPRESSION__ALT_TEXT = 0;
+
+  /**
+   * The feature id for the '<em><b>Link Content</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMAGE_EXPRESSION__LINK_CONTENT = 1;
+
+  /**
+   * The number of structural features of the '<em>Image Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMAGE_EXPRESSION_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link markHammil.mm.myDsl.impl.VideoExpressionImpl <em>Video Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see markHammil.mm.myDsl.impl.VideoExpressionImpl
+   * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getVideoExpression()
+   * @generated
+   */
+  int VIDEO_EXPRESSION = 9;
+
+  /**
+   * The feature id for the '<em><b>Alt Text</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VIDEO_EXPRESSION__ALT_TEXT = 0;
+
+  /**
+   * The feature id for the '<em><b>Link Image</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VIDEO_EXPRESSION__LINK_IMAGE = 1;
+
+  /**
+   * The feature id for the '<em><b>Link Video</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VIDEO_EXPRESSION__LINK_VIDEO = 2;
+
+  /**
+   * The number of structural features of the '<em>Video Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VIDEO_EXPRESSION_FEATURE_COUNT = 3;
+
+  /**
    * The meta object id for the '{@link markHammil.mm.myDsl.impl.HeaderExpressionImpl <em>Header Expression</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -196,7 +390,7 @@ public interface MyDslPackage extends EPackage
    * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getHeaderExpression()
    * @generated
    */
-  int HEADER_EXPRESSION = 5;
+  int HEADER_EXPRESSION = 10;
 
   /**
    * The feature id for the '<em><b>Title</b></em>' containment reference list.
@@ -224,7 +418,7 @@ public interface MyDslPackage extends EPackage
    * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getHeader1Expression()
    * @generated
    */
-  int HEADER1_EXPRESSION = 6;
+  int HEADER1_EXPRESSION = 11;
 
   /**
    * The feature id for the '<em><b>Title</b></em>' containment reference list.
@@ -252,7 +446,7 @@ public interface MyDslPackage extends EPackage
    * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getHeader2Expression()
    * @generated
    */
-  int HEADER2_EXPRESSION = 7;
+  int HEADER2_EXPRESSION = 12;
 
   /**
    * The feature id for the '<em><b>Title</b></em>' containment reference list.
@@ -280,7 +474,7 @@ public interface MyDslPackage extends EPackage
    * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getHeader3Expression()
    * @generated
    */
-  int HEADER3_EXPRESSION = 8;
+  int HEADER3_EXPRESSION = 13;
 
   /**
    * The feature id for the '<em><b>Title</b></em>' containment reference list.
@@ -308,7 +502,7 @@ public interface MyDslPackage extends EPackage
    * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getHeader4Expression()
    * @generated
    */
-  int HEADER4_EXPRESSION = 9;
+  int HEADER4_EXPRESSION = 14;
 
   /**
    * The feature id for the '<em><b>Title</b></em>' containment reference list.
@@ -336,7 +530,7 @@ public interface MyDslPackage extends EPackage
    * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getHeader5Expression()
    * @generated
    */
-  int HEADER5_EXPRESSION = 10;
+  int HEADER5_EXPRESSION = 15;
 
   /**
    * The feature id for the '<em><b>Title</b></em>' containment reference list.
@@ -364,7 +558,7 @@ public interface MyDslPackage extends EPackage
    * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getHeader6Expression()
    * @generated
    */
-  int HEADER6_EXPRESSION = 11;
+  int HEADER6_EXPRESSION = 16;
 
   /**
    * The feature id for the '<em><b>Title</b></em>' containment reference list.
@@ -392,7 +586,7 @@ public interface MyDslPackage extends EPackage
    * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getEmphasisExpression()
    * @generated
    */
-  int EMPHASIS_EXPRESSION = 12;
+  int EMPHASIS_EXPRESSION = 17;
 
   /**
    * The feature id for the '<em><b>C</b></em>' containment reference list.
@@ -438,7 +632,7 @@ public interface MyDslPackage extends EPackage
    * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getBreakLineExpressionB()
    * @generated
    */
-  int BREAK_LINE_EXPRESSION_B = 13;
+  int BREAK_LINE_EXPRESSION_B = 18;
 
   /**
    * The number of structural features of the '<em>Break Line Expression B</em>' class.
@@ -457,7 +651,7 @@ public interface MyDslPackage extends EPackage
    * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getStrongExpression()
    * @generated
    */
-  int STRONG_EXPRESSION = 14;
+  int STRONG_EXPRESSION = 19;
 
   /**
    * The feature id for the '<em><b>C</b></em>' containment reference list.
@@ -503,7 +697,7 @@ public interface MyDslPackage extends EPackage
    * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getItalicExpression()
    * @generated
    */
-  int ITALIC_EXPRESSION = 15;
+  int ITALIC_EXPRESSION = 20;
 
   /**
    * The feature id for the '<em><b>C</b></em>' containment reference list.
@@ -549,7 +743,7 @@ public interface MyDslPackage extends EPackage
    * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getScratchExpression()
    * @generated
    */
-  int SCRATCH_EXPRESSION = 16;
+  int SCRATCH_EXPRESSION = 21;
 
   /**
    * The feature id for the '<em><b>C</b></em>' containment reference list.
@@ -681,6 +875,177 @@ public interface MyDslPackage extends EPackage
    * @generated
    */
   EClass getQuoteExpression();
+
+  /**
+   * Returns the meta object for class '{@link markHammil.mm.myDsl.CodeExpression <em>Code Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Code Expression</em>'.
+   * @see markHammil.mm.myDsl.CodeExpression
+   * @generated
+   */
+  EClass getCodeExpression();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link markHammil.mm.myDsl.CodeExpression#getContent <em>Content</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Content</em>'.
+   * @see markHammil.mm.myDsl.CodeExpression#getContent()
+   * @see #getCodeExpression()
+   * @generated
+   */
+  EReference getCodeExpression_Content();
+
+  /**
+   * Returns the meta object for class '{@link markHammil.mm.myDsl.RefExpression <em>Ref Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Ref Expression</em>'.
+   * @see markHammil.mm.myDsl.RefExpression
+   * @generated
+   */
+  EClass getRefExpression();
+
+  /**
+   * Returns the meta object for the containment reference '{@link markHammil.mm.myDsl.RefExpression#getRefName <em>Ref Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Ref Name</em>'.
+   * @see markHammil.mm.myDsl.RefExpression#getRefName()
+   * @see #getRefExpression()
+   * @generated
+   */
+  EReference getRefExpression_RefName();
+
+  /**
+   * Returns the meta object for the containment reference '{@link markHammil.mm.myDsl.RefExpression#getRefContent <em>Ref Content</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Ref Content</em>'.
+   * @see markHammil.mm.myDsl.RefExpression#getRefContent()
+   * @see #getRefExpression()
+   * @generated
+   */
+  EReference getRefExpression_RefContent();
+
+  /**
+   * Returns the meta object for class '{@link markHammil.mm.myDsl.LinkExpression <em>Link Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Link Expression</em>'.
+   * @see markHammil.mm.myDsl.LinkExpression
+   * @generated
+   */
+  EClass getLinkExpression();
+
+  /**
+   * Returns the meta object for the containment reference '{@link markHammil.mm.myDsl.LinkExpression#getAltText <em>Alt Text</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Alt Text</em>'.
+   * @see markHammil.mm.myDsl.LinkExpression#getAltText()
+   * @see #getLinkExpression()
+   * @generated
+   */
+  EReference getLinkExpression_AltText();
+
+  /**
+   * Returns the meta object for the containment reference '{@link markHammil.mm.myDsl.LinkExpression#getLinkContent <em>Link Content</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Link Content</em>'.
+   * @see markHammil.mm.myDsl.LinkExpression#getLinkContent()
+   * @see #getLinkExpression()
+   * @generated
+   */
+  EReference getLinkExpression_LinkContent();
+
+  /**
+   * Returns the meta object for the containment reference '{@link markHammil.mm.myDsl.LinkExpression#getRefName <em>Ref Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Ref Name</em>'.
+   * @see markHammil.mm.myDsl.LinkExpression#getRefName()
+   * @see #getLinkExpression()
+   * @generated
+   */
+  EReference getLinkExpression_RefName();
+
+  /**
+   * Returns the meta object for class '{@link markHammil.mm.myDsl.ImageExpression <em>Image Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Image Expression</em>'.
+   * @see markHammil.mm.myDsl.ImageExpression
+   * @generated
+   */
+  EClass getImageExpression();
+
+  /**
+   * Returns the meta object for the containment reference '{@link markHammil.mm.myDsl.ImageExpression#getAltText <em>Alt Text</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Alt Text</em>'.
+   * @see markHammil.mm.myDsl.ImageExpression#getAltText()
+   * @see #getImageExpression()
+   * @generated
+   */
+  EReference getImageExpression_AltText();
+
+  /**
+   * Returns the meta object for the containment reference '{@link markHammil.mm.myDsl.ImageExpression#getLinkContent <em>Link Content</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Link Content</em>'.
+   * @see markHammil.mm.myDsl.ImageExpression#getLinkContent()
+   * @see #getImageExpression()
+   * @generated
+   */
+  EReference getImageExpression_LinkContent();
+
+  /**
+   * Returns the meta object for class '{@link markHammil.mm.myDsl.VideoExpression <em>Video Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Video Expression</em>'.
+   * @see markHammil.mm.myDsl.VideoExpression
+   * @generated
+   */
+  EClass getVideoExpression();
+
+  /**
+   * Returns the meta object for the containment reference '{@link markHammil.mm.myDsl.VideoExpression#getAltText <em>Alt Text</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Alt Text</em>'.
+   * @see markHammil.mm.myDsl.VideoExpression#getAltText()
+   * @see #getVideoExpression()
+   * @generated
+   */
+  EReference getVideoExpression_AltText();
+
+  /**
+   * Returns the meta object for the containment reference '{@link markHammil.mm.myDsl.VideoExpression#getLinkImage <em>Link Image</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Link Image</em>'.
+   * @see markHammil.mm.myDsl.VideoExpression#getLinkImage()
+   * @see #getVideoExpression()
+   * @generated
+   */
+  EReference getVideoExpression_LinkImage();
+
+  /**
+   * Returns the meta object for the containment reference '{@link markHammil.mm.myDsl.VideoExpression#getLinkVideo <em>Link Video</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Link Video</em>'.
+   * @see markHammil.mm.myDsl.VideoExpression#getLinkVideo()
+   * @see #getVideoExpression()
+   * @generated
+   */
+  EReference getVideoExpression_LinkVideo();
 
   /**
    * Returns the meta object for class '{@link markHammil.mm.myDsl.HeaderExpression <em>Header Expression</em>}'.
@@ -950,6 +1315,144 @@ public interface MyDslPackage extends EPackage
      * @generated
      */
     EClass QUOTE_EXPRESSION = eINSTANCE.getQuoteExpression();
+
+    /**
+     * The meta object literal for the '{@link markHammil.mm.myDsl.impl.CodeExpressionImpl <em>Code Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see markHammil.mm.myDsl.impl.CodeExpressionImpl
+     * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getCodeExpression()
+     * @generated
+     */
+    EClass CODE_EXPRESSION = eINSTANCE.getCodeExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Content</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CODE_EXPRESSION__CONTENT = eINSTANCE.getCodeExpression_Content();
+
+    /**
+     * The meta object literal for the '{@link markHammil.mm.myDsl.impl.RefExpressionImpl <em>Ref Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see markHammil.mm.myDsl.impl.RefExpressionImpl
+     * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getRefExpression()
+     * @generated
+     */
+    EClass REF_EXPRESSION = eINSTANCE.getRefExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Ref Name</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference REF_EXPRESSION__REF_NAME = eINSTANCE.getRefExpression_RefName();
+
+    /**
+     * The meta object literal for the '<em><b>Ref Content</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference REF_EXPRESSION__REF_CONTENT = eINSTANCE.getRefExpression_RefContent();
+
+    /**
+     * The meta object literal for the '{@link markHammil.mm.myDsl.impl.LinkExpressionImpl <em>Link Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see markHammil.mm.myDsl.impl.LinkExpressionImpl
+     * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getLinkExpression()
+     * @generated
+     */
+    EClass LINK_EXPRESSION = eINSTANCE.getLinkExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Alt Text</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LINK_EXPRESSION__ALT_TEXT = eINSTANCE.getLinkExpression_AltText();
+
+    /**
+     * The meta object literal for the '<em><b>Link Content</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LINK_EXPRESSION__LINK_CONTENT = eINSTANCE.getLinkExpression_LinkContent();
+
+    /**
+     * The meta object literal for the '<em><b>Ref Name</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LINK_EXPRESSION__REF_NAME = eINSTANCE.getLinkExpression_RefName();
+
+    /**
+     * The meta object literal for the '{@link markHammil.mm.myDsl.impl.ImageExpressionImpl <em>Image Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see markHammil.mm.myDsl.impl.ImageExpressionImpl
+     * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getImageExpression()
+     * @generated
+     */
+    EClass IMAGE_EXPRESSION = eINSTANCE.getImageExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Alt Text</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IMAGE_EXPRESSION__ALT_TEXT = eINSTANCE.getImageExpression_AltText();
+
+    /**
+     * The meta object literal for the '<em><b>Link Content</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IMAGE_EXPRESSION__LINK_CONTENT = eINSTANCE.getImageExpression_LinkContent();
+
+    /**
+     * The meta object literal for the '{@link markHammil.mm.myDsl.impl.VideoExpressionImpl <em>Video Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see markHammil.mm.myDsl.impl.VideoExpressionImpl
+     * @see markHammil.mm.myDsl.impl.MyDslPackageImpl#getVideoExpression()
+     * @generated
+     */
+    EClass VIDEO_EXPRESSION = eINSTANCE.getVideoExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Alt Text</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VIDEO_EXPRESSION__ALT_TEXT = eINSTANCE.getVideoExpression_AltText();
+
+    /**
+     * The meta object literal for the '<em><b>Link Image</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VIDEO_EXPRESSION__LINK_IMAGE = eINSTANCE.getVideoExpression_LinkImage();
+
+    /**
+     * The meta object literal for the '<em><b>Link Video</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VIDEO_EXPRESSION__LINK_VIDEO = eINSTANCE.getVideoExpression_LinkVideo();
 
     /**
      * The meta object literal for the '{@link markHammil.mm.myDsl.impl.HeaderExpressionImpl <em>Header Expression</em>}' class.

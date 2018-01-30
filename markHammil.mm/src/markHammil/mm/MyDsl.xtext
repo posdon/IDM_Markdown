@@ -10,7 +10,7 @@ File:
         ;
         
 Expression:
-	=> (=> c=HeaderExpression| c=TextExpression =>BL?) | c=BreakLineExpression
+	=> (=> c=HeaderExpression| c=TextExpression =>BL?) | c=BreakLineExpression /*| c=TabExpression =>BL?*/ | c=RefExpression
 ;
 
 BreakLineExpression :
@@ -19,14 +19,62 @@ BreakLineExpression :
 ;
 
 TextExpression:
-	c+= EmphasisExpression | c+= QuoteExpression
+	c+= EmphasisExpression | => ( c+= QuoteExpression | ( c+=LinkExpression | => c+=ImageExpression | => c+=VideoExpression ) )
 ;
 
 QuoteExpression returns QuoteExpression:
 	{TextExpression}
-	'>' (content+=TextExpression)+ =>BL?
+	=>'>' (content+=TextExpression)+ =>BL?
 ;
 
+CodeExpression returns CodeExpression:
+	{CodeExpression}
+	'```' BL (content+=TextExpression =>BL ?)+ '```' BL | '`' content+=TextExpression "`"
+	
+;
+
+// New
+RefExpression returns RefExpression :
+	{RefExpression}
+	=>'[' refName=NaturalExpression =>']:' (refContent=NaturalExpression)? =>BL?
+;
+
+// New
+LinkExpression returns LinkExpression :
+	{LinkExpression}
+	=>'[' altText=NaturalExpression =>'](' (linkContent=NaturalExpression)? =>')' =>BL? |
+	=>'[' altText=NaturalExpression =>'][' (refName=NaturalExpression)? =>']' =>BL?
+;
+
+// New
+ImageExpression returns ImageExpression :
+	{ImageExpression}
+	=>'![' altText=NaturalExpression =>'](' (linkContent=NaturalExpression)? =>')' =>BL?
+;
+
+// New
+VideoExpression returns VideoExpression :
+	{VideoExpression}
+	=>'[![' altText=NaturalExpression =>'](' (linkImage=NaturalExpression)? =>')](' (linkVideo=NaturalExpression)? =>')' =>BL?
+;
+
+
+// New
+//TabExpression returns TabExpression :
+//	{TabExpression}
+//	=> ( header+=LineExpression BL TabSeparation (BL lines+=LineExpression)* )
+//;
+//
+//// New
+//TabSeparation :
+//	'|'? '-' ('-')+ ( '|' '-' ('-')+ )+ '|'?
+//;
+//
+//// New
+//LineExpression returns LineExpression :
+//	{LineExpression}
+//	'|'? cells+=TextExpression ('|' cells+=TextExpression)* '|'?
+//;
 
 HeaderExpression :
 	Header1Expression | Header2Expression | Header3Expression | Header4Expression | Header5Expression | Header6Expression
@@ -85,7 +133,7 @@ NaturalExpression returns EmphasisExpression:
                 value+=Content ;
 
 Content returns ecore::EString:
-	(ID|STRING|INT|"\'"|"-"|"|"|'\"')
+	(=>(ID|STRING|INT)|"\'"|"-"|"|"|'\"')
 ;
 
 
