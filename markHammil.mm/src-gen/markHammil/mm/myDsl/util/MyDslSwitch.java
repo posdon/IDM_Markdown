@@ -144,6 +144,20 @@ public class MyDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case MyDslPackage.TAB_EXPRESSION:
+      {
+        TabExpression tabExpression = (TabExpression)theEObject;
+        T result = caseTabExpression(tabExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MyDslPackage.LINE_EXPRESSION:
+      {
+        LineExpression lineExpression = (LineExpression)theEObject;
+        T result = caseLineExpression(lineExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case MyDslPackage.HEADER_EXPRESSION:
       {
         HeaderExpression headerExpression = (HeaderExpression)theEObject;
@@ -398,6 +412,38 @@ public class MyDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseVideoExpression(VideoExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Tab Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Tab Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTabExpression(TabExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Line Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Line Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLineExpression(LineExpression object)
   {
     return null;
   }

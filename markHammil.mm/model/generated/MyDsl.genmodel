@@ -39,6 +39,13 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//VideoExpression/linkImage"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//VideoExpression/linkVideo"/>
     </genClasses>
+    <genClasses ecoreClass="MyDsl.ecore#//TabExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//TabExpression/header"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//TabExpression/lines"/>
+    </genClasses>
+    <genClasses ecoreClass="MyDsl.ecore#//LineExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//LineExpression/cells"/>
+    </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//HeaderExpression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//HeaderExpression/title"/>
     </genClasses>

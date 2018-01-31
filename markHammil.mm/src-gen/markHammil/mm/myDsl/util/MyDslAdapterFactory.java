@@ -126,6 +126,16 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
         return createVideoExpressionAdapter();
       }
       @Override
+      public Adapter caseTabExpression(TabExpression object)
+      {
+        return createTabExpressionAdapter();
+      }
+      @Override
+      public Adapter caseLineExpression(LineExpression object)
+      {
+        return createLineExpressionAdapter();
+      }
+      @Override
       public Adapter caseHeaderExpression(HeaderExpression object)
       {
         return createHeaderExpressionAdapter();
@@ -353,6 +363,36 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createVideoExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.TabExpression <em>Tab Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see markHammil.mm.myDsl.TabExpression
+   * @generated
+   */
+  public Adapter createTabExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.LineExpression <em>Line Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see markHammil.mm.myDsl.LineExpression
+   * @generated
+   */
+  public Adapter createLineExpressionAdapter()
   {
     return null;
   }

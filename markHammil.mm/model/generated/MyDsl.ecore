@@ -49,6 +49,16 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="linkVideo" eType="#//EmphasisExpression"
         containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TabExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="header" eType="#//LineExpression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lines" upperBound="-1"
+        eType="#//LineExpression" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LineExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cells" upperBound="-1"
+        eType="#//EmphasisExpression" containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="HeaderExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="title" upperBound="-1"
         eType="#//EmphasisExpression" containment="true"/>

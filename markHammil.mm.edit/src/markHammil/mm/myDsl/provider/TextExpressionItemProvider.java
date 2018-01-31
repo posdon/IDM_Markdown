@@ -196,6 +196,16 @@ public class TextExpressionItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(MyDslPackage.Literals.TEXT_EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createTabExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.TEXT_EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createLineExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.TEXT_EXPRESSION__C,
 				 MyDslFactory.eINSTANCE.createHeaderExpression()));
 
 		newChildDescriptors.add

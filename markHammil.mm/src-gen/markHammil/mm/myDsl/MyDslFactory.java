@@ -114,6 +114,24 @@ public interface MyDslFactory extends EFactory
   VideoExpression createVideoExpression();
 
   /**
+   * Returns a new object of class '<em>Tab Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Tab Expression</em>'.
+   * @generated
+   */
+  TabExpression createTabExpression();
+
+  /**
+   * Returns a new object of class '<em>Line Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Line Expression</em>'.
+   * @generated
+   */
+  LineExpression createLineExpression();
+
+  /**
    * Returns a new object of class '<em>Header Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

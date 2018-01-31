@@ -75,6 +75,8 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
       case MyDslPackage.LINK_EXPRESSION: return createLinkExpression();
       case MyDslPackage.IMAGE_EXPRESSION: return createImageExpression();
       case MyDslPackage.VIDEO_EXPRESSION: return createVideoExpression();
+      case MyDslPackage.TAB_EXPRESSION: return createTabExpression();
+      case MyDslPackage.LINE_EXPRESSION: return createLineExpression();
       case MyDslPackage.HEADER_EXPRESSION: return createHeaderExpression();
       case MyDslPackage.HEADER1_EXPRESSION: return createHeader1Expression();
       case MyDslPackage.HEADER2_EXPRESSION: return createHeader2Expression();
@@ -200,6 +202,28 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
   {
     VideoExpressionImpl videoExpression = new VideoExpressionImpl();
     return videoExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TabExpression createTabExpression()
+  {
+    TabExpressionImpl tabExpression = new TabExpressionImpl();
+    return tabExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public LineExpression createLineExpression()
+  {
+    LineExpressionImpl lineExpression = new LineExpressionImpl();
+    return lineExpression;
   }
 
   /**

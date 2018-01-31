@@ -10,7 +10,7 @@ File:
         ;
         
 Expression:
-	=> (=> c=HeaderExpression| c=TextExpression =>BL?) | c=BreakLineExpression /*| c=TabExpression =>BL?*/ | c=RefExpression
+	(=> c=HeaderExpression | c=BreakLineExpression | c=TabExpression =>BL? | c=RefExpression) | c=TextExpression =>BL?
 ;
 
 BreakLineExpression :
@@ -33,26 +33,26 @@ CodeExpression returns CodeExpression:
 	
 ;
 
-// New
+
 RefExpression returns RefExpression :
 	{RefExpression}
 	=>'[' refName=NaturalExpression =>']:' (refContent=NaturalExpression)? =>BL?
 ;
 
-// New
+
 LinkExpression returns LinkExpression :
 	{LinkExpression}
 	=>'[' altText=NaturalExpression =>'](' (linkContent=NaturalExpression)? =>')' =>BL? |
 	=>'[' altText=NaturalExpression =>'][' (refName=NaturalExpression)? =>']' =>BL?
 ;
 
-// New
+
 ImageExpression returns ImageExpression :
 	{ImageExpression}
 	=>'![' altText=NaturalExpression =>'](' (linkContent=NaturalExpression)? =>')' =>BL?
 ;
 
-// New
+
 VideoExpression returns VideoExpression :
 	{VideoExpression}
 	=>'[![' altText=NaturalExpression =>'](' (linkImage=NaturalExpression)? =>')](' (linkVideo=NaturalExpression)? =>')' =>BL?
@@ -60,21 +60,20 @@ VideoExpression returns VideoExpression :
 
 
 // New
-//TabExpression returns TabExpression :
-//	{TabExpression}
-//	=> ( header+=LineExpression BL TabSeparation (BL lines+=LineExpression)* )
-//;
-//
-//// New
-//TabSeparation :
-//	'|'? '-' ('-')+ ( '|' '-' ('-')+ )+ '|'?
-//;
-//
-//// New
-//LineExpression returns LineExpression :
-//	{LineExpression}
-//	'|'? cells+=TextExpression ('|' cells+=TextExpression)* '|'?
-//;
+TabExpression returns TabExpression :
+	{TabExpression}
+	=> ( header=LineExpression BL TabSeparation =>(BL =>lines+=LineExpression)* )
+;
+
+// New
+TabSeparation :
+	'|'? '-' ('-')+ ( '|' '-' ('-')+ )+ '|'? 
+;
+
+// New
+LineExpression returns LineExpression :
+	=>'|'? cells+=NaturalExpression (=> '|' cells+=NaturalExpression)* =>'|'? 
+;
 
 HeaderExpression :
 	Header1Expression | Header2Expression | Header3Expression | Header4Expression | Header5Expression | Header6Expression

@@ -303,6 +303,52 @@ public class MyDslItemProviderAdapterFactory extends MyDslAdapterFactory impleme
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link markHammil.mm.myDsl.TabExpression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TabExpressionItemProvider tabExpressionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link markHammil.mm.myDsl.TabExpression}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createTabExpressionAdapter() {
+		if (tabExpressionItemProvider == null) {
+			tabExpressionItemProvider = new TabExpressionItemProvider(this);
+		}
+
+		return tabExpressionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link markHammil.mm.myDsl.LineExpression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected LineExpressionItemProvider lineExpressionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link markHammil.mm.myDsl.LineExpression}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createLineExpressionAdapter() {
+		if (lineExpressionItemProvider == null) {
+			lineExpressionItemProvider = new LineExpressionItemProvider(this);
+		}
+
+		return lineExpressionItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link markHammil.mm.myDsl.HeaderExpression} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -687,6 +733,8 @@ public class MyDslItemProviderAdapterFactory extends MyDslAdapterFactory impleme
 		if (linkExpressionItemProvider != null) linkExpressionItemProvider.dispose();
 		if (imageExpressionItemProvider != null) imageExpressionItemProvider.dispose();
 		if (videoExpressionItemProvider != null) videoExpressionItemProvider.dispose();
+		if (tabExpressionItemProvider != null) tabExpressionItemProvider.dispose();
+		if (lineExpressionItemProvider != null) lineExpressionItemProvider.dispose();
 		if (headerExpressionItemProvider != null) headerExpressionItemProvider.dispose();
 		if (header1ExpressionItemProvider != null) header1ExpressionItemProvider.dispose();
 		if (header2ExpressionItemProvider != null) header2ExpressionItemProvider.dispose();

@@ -7,15 +7,17 @@ package markHammil.mm.myDsl.provider;
 import java.util.Collection;
 import java.util.List;
 
-import markHammil.mm.myDsl.Expression;
 import markHammil.mm.myDsl.MyDslFactory;
 import markHammil.mm.myDsl.MyDslPackage;
+import markHammil.mm.myDsl.TabExpression;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -26,12 +28,12 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link markHammil.mm.myDsl.Expression} object.
+ * This is the item provider adapter for a {@link markHammil.mm.myDsl.TabExpression} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ExpressionItemProvider 
+public class TabExpressionItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -45,7 +47,7 @@ public class ExpressionItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ExpressionItemProvider(AdapterFactory adapterFactory) {
+	public TabExpressionItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -76,7 +78,7 @@ public class ExpressionItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(MyDslPackage.Literals.EXPRESSION__C);
+			childrenFeatures.add(MyDslPackage.Literals.TAB_EXPRESSION__LINES);
 		}
 		return childrenFeatures;
 	}
@@ -95,14 +97,14 @@ public class ExpressionItemProvider
 	}
 
 	/**
-	 * This returns Expression.gif.
+	 * This returns TabExpression.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Expression"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/TabExpression"));
 	}
 
 	/**
@@ -113,7 +115,7 @@ public class ExpressionItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Expression_type");
+		return getString("_UI_TabExpression_type");
 	}
 	
 
@@ -128,8 +130,8 @@ public class ExpressionItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Expression.class)) {
-			case MyDslPackage.EXPRESSION__C:
+		switch (notification.getFeatureID(TabExpression.class)) {
+			case MyDslPackage.TAB_EXPRESSION__LINES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -149,123 +151,8 @@ public class ExpressionItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(MyDslPackage.Literals.EXPRESSION__C,
-				 MyDslFactory.eINSTANCE.createFile()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MyDslPackage.Literals.EXPRESSION__C,
-				 MyDslFactory.eINSTANCE.createExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MyDslPackage.Literals.EXPRESSION__C,
-				 MyDslFactory.eINSTANCE.createBreakLineExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MyDslPackage.Literals.EXPRESSION__C,
-				 MyDslFactory.eINSTANCE.createQuoteExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MyDslPackage.Literals.EXPRESSION__C,
-				 MyDslFactory.eINSTANCE.createTextExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MyDslPackage.Literals.EXPRESSION__C,
-				 MyDslFactory.eINSTANCE.createCodeExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MyDslPackage.Literals.EXPRESSION__C,
-				 MyDslFactory.eINSTANCE.createRefExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MyDslPackage.Literals.EXPRESSION__C,
-				 MyDslFactory.eINSTANCE.createLinkExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MyDslPackage.Literals.EXPRESSION__C,
-				 MyDslFactory.eINSTANCE.createImageExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MyDslPackage.Literals.EXPRESSION__C,
-				 MyDslFactory.eINSTANCE.createVideoExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MyDslPackage.Literals.EXPRESSION__C,
-				 MyDslFactory.eINSTANCE.createTabExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MyDslPackage.Literals.EXPRESSION__C,
+				(MyDslPackage.Literals.TAB_EXPRESSION__LINES,
 				 MyDslFactory.eINSTANCE.createLineExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MyDslPackage.Literals.EXPRESSION__C,
-				 MyDslFactory.eINSTANCE.createHeaderExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MyDslPackage.Literals.EXPRESSION__C,
-				 MyDslFactory.eINSTANCE.createHeader1Expression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MyDslPackage.Literals.EXPRESSION__C,
-				 MyDslFactory.eINSTANCE.createHeader2Expression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MyDslPackage.Literals.EXPRESSION__C,
-				 MyDslFactory.eINSTANCE.createHeader3Expression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MyDslPackage.Literals.EXPRESSION__C,
-				 MyDslFactory.eINSTANCE.createHeader4Expression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MyDslPackage.Literals.EXPRESSION__C,
-				 MyDslFactory.eINSTANCE.createHeader5Expression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MyDslPackage.Literals.EXPRESSION__C,
-				 MyDslFactory.eINSTANCE.createHeader6Expression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MyDslPackage.Literals.EXPRESSION__C,
-				 MyDslFactory.eINSTANCE.createEmphasisExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MyDslPackage.Literals.EXPRESSION__C,
-				 MyDslFactory.eINSTANCE.createBreakLineExpressionB()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MyDslPackage.Literals.EXPRESSION__C,
-				 MyDslFactory.eINSTANCE.createStrongExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MyDslPackage.Literals.EXPRESSION__C,
-				 MyDslFactory.eINSTANCE.createItalicExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MyDslPackage.Literals.EXPRESSION__C,
-				 MyDslFactory.eINSTANCE.createScratchExpression()));
 	}
 
 	/**

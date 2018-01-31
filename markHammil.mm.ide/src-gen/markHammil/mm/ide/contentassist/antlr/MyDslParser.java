@@ -32,7 +32,7 @@ public class MyDslParser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getExpressionAccess().getAlternatives(), "rule__Expression__Alternatives");
-					put(grammarAccess.getExpressionAccess().getAlternatives_0_0(), "rule__Expression__Alternatives_0_0");
+					put(grammarAccess.getExpressionAccess().getAlternatives_0(), "rule__Expression__Alternatives_0");
 					put(grammarAccess.getTextExpressionAccess().getAlternatives(), "rule__TextExpression__Alternatives");
 					put(grammarAccess.getTextExpressionAccess().getAlternatives_1_0(), "rule__TextExpression__Alternatives_1_0");
 					put(grammarAccess.getTextExpressionAccess().getAlternatives_1_0_1(), "rule__TextExpression__Alternatives_1_0_1");
@@ -44,8 +44,8 @@ public class MyDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getContentAccess().getAlternatives(), "rule__Content__Alternatives");
 					put(grammarAccess.getContentAccess().getAlternatives_0_0(), "rule__Content__Alternatives_0_0");
 					put(grammarAccess.getFileAccess().getGroup(), "rule__File__Group__0");
-					put(grammarAccess.getExpressionAccess().getGroup_0(), "rule__Expression__Group_0__0");
-					put(grammarAccess.getExpressionAccess().getGroup_0_0_1(), "rule__Expression__Group_0_0_1__0");
+					put(grammarAccess.getExpressionAccess().getGroup_0_2(), "rule__Expression__Group_0_2__0");
+					put(grammarAccess.getExpressionAccess().getGroup_1(), "rule__Expression__Group_1__0");
 					put(grammarAccess.getBreakLineExpressionAccess().getGroup(), "rule__BreakLineExpression__Group__0");
 					put(grammarAccess.getTextExpressionAccess().getGroup_1(), "rule__TextExpression__Group_1__0");
 					put(grammarAccess.getQuoteExpressionAccess().getGroup(), "rule__QuoteExpression__Group__0");
@@ -57,6 +57,15 @@ public class MyDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getLinkExpressionAccess().getGroup_1(), "rule__LinkExpression__Group_1__0");
 					put(grammarAccess.getImageExpressionAccess().getGroup(), "rule__ImageExpression__Group__0");
 					put(grammarAccess.getVideoExpressionAccess().getGroup(), "rule__VideoExpression__Group__0");
+					put(grammarAccess.getTabExpressionAccess().getGroup(), "rule__TabExpression__Group__0");
+					put(grammarAccess.getTabExpressionAccess().getGroup_1(), "rule__TabExpression__Group_1__0");
+					put(grammarAccess.getTabExpressionAccess().getGroup_1_0(), "rule__TabExpression__Group_1_0__0");
+					put(grammarAccess.getTabExpressionAccess().getGroup_1_0_3(), "rule__TabExpression__Group_1_0_3__0");
+					put(grammarAccess.getTabExpressionAccess().getGroup_1_0_3_0(), "rule__TabExpression__Group_1_0_3_0__0");
+					put(grammarAccess.getTabSeparationAccess().getGroup(), "rule__TabSeparation__Group__0");
+					put(grammarAccess.getTabSeparationAccess().getGroup_3(), "rule__TabSeparation__Group_3__0");
+					put(grammarAccess.getLineExpressionAccess().getGroup(), "rule__LineExpression__Group__0");
+					put(grammarAccess.getLineExpressionAccess().getGroup_2(), "rule__LineExpression__Group_2__0");
 					put(grammarAccess.getHeader1ExpressionAccess().getGroup(), "rule__Header1Expression__Group__0");
 					put(grammarAccess.getHeader1ExpressionAccess().getGroup_3(), "rule__Header1Expression__Group_3__0");
 					put(grammarAccess.getHeader2ExpressionAccess().getGroup(), "rule__Header2Expression__Group__0");
@@ -76,10 +85,11 @@ public class MyDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getNaturalExpressionAccess().getGroup(), "rule__NaturalExpression__Group__0");
 					put(grammarAccess.getContentAccess().getGroup_0(), "rule__Content__Group_0__0");
 					put(grammarAccess.getFileAccess().getExpressionAssignment_1(), "rule__File__ExpressionAssignment_1");
-					put(grammarAccess.getExpressionAccess().getCAssignment_0_0_0(), "rule__Expression__CAssignment_0_0_0");
-					put(grammarAccess.getExpressionAccess().getCAssignment_0_0_1_0(), "rule__Expression__CAssignment_0_0_1_0");
-					put(grammarAccess.getExpressionAccess().getCAssignment_1(), "rule__Expression__CAssignment_1");
-					put(grammarAccess.getExpressionAccess().getCAssignment_2(), "rule__Expression__CAssignment_2");
+					put(grammarAccess.getExpressionAccess().getCAssignment_0_0(), "rule__Expression__CAssignment_0_0");
+					put(grammarAccess.getExpressionAccess().getCAssignment_0_1(), "rule__Expression__CAssignment_0_1");
+					put(grammarAccess.getExpressionAccess().getCAssignment_0_2_0(), "rule__Expression__CAssignment_0_2_0");
+					put(grammarAccess.getExpressionAccess().getCAssignment_0_3(), "rule__Expression__CAssignment_0_3");
+					put(grammarAccess.getExpressionAccess().getCAssignment_1_0(), "rule__Expression__CAssignment_1_0");
 					put(grammarAccess.getTextExpressionAccess().getCAssignment_0(), "rule__TextExpression__CAssignment_0");
 					put(grammarAccess.getTextExpressionAccess().getCAssignment_1_0_0(), "rule__TextExpression__CAssignment_1_0_0");
 					put(grammarAccess.getTextExpressionAccess().getCAssignment_1_0_1_0(), "rule__TextExpression__CAssignment_1_0_1_0");
@@ -99,6 +109,10 @@ public class MyDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getVideoExpressionAccess().getAltTextAssignment_2(), "rule__VideoExpression__AltTextAssignment_2");
 					put(grammarAccess.getVideoExpressionAccess().getLinkImageAssignment_4(), "rule__VideoExpression__LinkImageAssignment_4");
 					put(grammarAccess.getVideoExpressionAccess().getLinkVideoAssignment_6(), "rule__VideoExpression__LinkVideoAssignment_6");
+					put(grammarAccess.getTabExpressionAccess().getHeaderAssignment_1_0_0(), "rule__TabExpression__HeaderAssignment_1_0_0");
+					put(grammarAccess.getTabExpressionAccess().getLinesAssignment_1_0_3_0_1(), "rule__TabExpression__LinesAssignment_1_0_3_0_1");
+					put(grammarAccess.getLineExpressionAccess().getCellsAssignment_1(), "rule__LineExpression__CellsAssignment_1");
+					put(grammarAccess.getLineExpressionAccess().getCellsAssignment_2_1(), "rule__LineExpression__CellsAssignment_2_1");
 					put(grammarAccess.getHeader1ExpressionAccess().getTitleAssignment_2(), "rule__Header1Expression__TitleAssignment_2");
 					put(grammarAccess.getHeader2ExpressionAccess().getTitleAssignment_2(), "rule__Header2Expression__TitleAssignment_2");
 					put(grammarAccess.getHeader3ExpressionAccess().getTitleAssignment_2(), "rule__Header3Expression__TitleAssignment_2");

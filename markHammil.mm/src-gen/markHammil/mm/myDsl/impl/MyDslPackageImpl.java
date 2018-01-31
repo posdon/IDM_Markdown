@@ -18,6 +18,7 @@ import markHammil.mm.myDsl.Header6Expression;
 import markHammil.mm.myDsl.HeaderExpression;
 import markHammil.mm.myDsl.ImageExpression;
 import markHammil.mm.myDsl.ItalicExpression;
+import markHammil.mm.myDsl.LineExpression;
 import markHammil.mm.myDsl.LinkExpression;
 import markHammil.mm.myDsl.MyDslFactory;
 import markHammil.mm.myDsl.MyDslPackage;
@@ -25,6 +26,7 @@ import markHammil.mm.myDsl.QuoteExpression;
 import markHammil.mm.myDsl.RefExpression;
 import markHammil.mm.myDsl.ScratchExpression;
 import markHammil.mm.myDsl.StrongExpression;
+import markHammil.mm.myDsl.TabExpression;
 import markHammil.mm.myDsl.TextExpression;
 import markHammil.mm.myDsl.VideoExpression;
 
@@ -112,6 +114,20 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * @generated
    */
   private EClass videoExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass tabExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass lineExpressionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -515,6 +531,56 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getTabExpression()
+  {
+    return tabExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTabExpression_Header()
+  {
+    return (EReference)tabExpressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTabExpression_Lines()
+  {
+    return (EReference)tabExpressionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getLineExpression()
+  {
+    return lineExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getLineExpression_Cells()
+  {
+    return (EReference)lineExpressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getHeaderExpression()
   {
     return headerExpressionEClass;
@@ -735,6 +801,13 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     createEReference(videoExpressionEClass, VIDEO_EXPRESSION__LINK_IMAGE);
     createEReference(videoExpressionEClass, VIDEO_EXPRESSION__LINK_VIDEO);
 
+    tabExpressionEClass = createEClass(TAB_EXPRESSION);
+    createEReference(tabExpressionEClass, TAB_EXPRESSION__HEADER);
+    createEReference(tabExpressionEClass, TAB_EXPRESSION__LINES);
+
+    lineExpressionEClass = createEClass(LINE_EXPRESSION);
+    createEReference(lineExpressionEClass, LINE_EXPRESSION__CELLS);
+
     headerExpressionEClass = createEClass(HEADER_EXPRESSION);
     createEReference(headerExpressionEClass, HEADER_EXPRESSION__TITLE);
 
@@ -840,6 +913,13 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     initEReference(getVideoExpression_AltText(), this.getEmphasisExpression(), null, "altText", null, 0, 1, VideoExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getVideoExpression_LinkImage(), this.getEmphasisExpression(), null, "linkImage", null, 0, 1, VideoExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getVideoExpression_LinkVideo(), this.getEmphasisExpression(), null, "linkVideo", null, 0, 1, VideoExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(tabExpressionEClass, TabExpression.class, "TabExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getTabExpression_Header(), this.getLineExpression(), null, "header", null, 0, 1, TabExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTabExpression_Lines(), this.getLineExpression(), null, "lines", null, 0, -1, TabExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(lineExpressionEClass, LineExpression.class, "LineExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getLineExpression_Cells(), this.getEmphasisExpression(), null, "cells", null, 0, -1, LineExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(headerExpressionEClass, HeaderExpression.class, "HeaderExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getHeaderExpression_Title(), this.getEmphasisExpression(), null, "title", null, 0, -1, HeaderExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
