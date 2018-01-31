@@ -37,132 +37,126 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class HeaderExpressionImpl extends MinimalEObjectImpl.Container implements HeaderExpression
 {
   /**
-   * The cached value of the '{@link #getTitle() <em>Title</em>}' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getTitle() <em>Title</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTitle()
-   * @generated
-   * @ordered
-   */
+	 * @see #getTitle()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<EmphasisExpression> title;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected HeaderExpressionImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return MyDslPackage.Literals.HEADER_EXPRESSION;
-  }
+		return MyDslPackage.Literals.HEADER_EXPRESSION;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EList<EmphasisExpression> getTitle()
   {
-    if (title == null)
-    {
-      title = new EObjectContainmentEList<EmphasisExpression>(EmphasisExpression.class, this, MyDslPackage.HEADER_EXPRESSION__TITLE);
-    }
-    return title;
-  }
+		if (title == null) {
+			title = new EObjectContainmentEList<EmphasisExpression>(EmphasisExpression.class, this, MyDslPackage.HEADER_EXPRESSION__TITLE);
+		}
+		return title;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case MyDslPackage.HEADER_EXPRESSION__TITLE:
-        return ((InternalEList<?>)getTitle()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case MyDslPackage.HEADER_EXPRESSION__TITLE:
+				return ((InternalEList<?>)getTitle()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case MyDslPackage.HEADER_EXPRESSION__TITLE:
-        return getTitle();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case MyDslPackage.HEADER_EXPRESSION__TITLE:
+				return getTitle();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case MyDslPackage.HEADER_EXPRESSION__TITLE:
-        getTitle().clear();
-        getTitle().addAll((Collection<? extends EmphasisExpression>)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case MyDslPackage.HEADER_EXPRESSION__TITLE:
+				getTitle().clear();
+				getTitle().addAll((Collection<? extends EmphasisExpression>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case MyDslPackage.HEADER_EXPRESSION__TITLE:
-        getTitle().clear();
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case MyDslPackage.HEADER_EXPRESSION__TITLE:
+				getTitle().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case MyDslPackage.HEADER_EXPRESSION__TITLE:
-        return title != null && !title.isEmpty();
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case MyDslPackage.HEADER_EXPRESSION__TITLE:
+				return title != null && !title.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //HeaderExpressionImpl

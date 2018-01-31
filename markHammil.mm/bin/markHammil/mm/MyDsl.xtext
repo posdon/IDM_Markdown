@@ -10,7 +10,7 @@ File:
         ;
         
 Expression:
-	(=> c=HeaderExpression | c=BreakLineExpression | c=TabExpression =>BL? | c=RefExpression) | c=TextExpression =>BL?
+	(=> c=HeaderExpression | c=BreakLineExpression | c=RefExpression | c=ListExpression =>BL?) | c=TextExpression =>BL?
 ;
 
 BreakLineExpression :
@@ -18,20 +18,38 @@ BreakLineExpression :
 	BL
 ;
 
-TextExpression:
-	c+= EmphasisExpression | => ( c+= QuoteExpression | ( c+=LinkExpression | => c+=ImageExpression | => c+=VideoExpression ) )
+TextExpression hidden(WS):
+	c+= EmphasisExpression | => ( c+= QuoteExpression | c+= TabExpression | ( c+=LinkExpression | => c+=ImageExpression | => c+=VideoExpression ))
 ;
+
+
+ListExpression returns ListExpression hidden():
+	{TextExpression}
+	(('*'|'-'|'+') WS* contentUnordered+=TextExpression =>BL?)+ | (INT '.'WS* contentOrdered+=TextExpression =>BL?)+
+;
+
 
 QuoteExpression returns QuoteExpression:
 	{TextExpression}
 	=>'>' (content+=TextExpression)+ =>BL?
 ;
 
-CodeExpression returns CodeExpression:
-	{CodeExpression}
-	'```' BL (content+=TextExpression =>BL ?)+ '```' BL | '`' content+=TextExpression "`"
-	
-;
+
+
+//CodeExpression returns CodeExpression:
+//	{CodeExpression}
+//	'```' BL (content+=TextExpression =>BL ?)+ '```' BL | '`' content+=TextExpression "`"
+//	
+//;
+
+
+
+
+
+
+
+
+
 
 
 RefExpression returns RefExpression :
@@ -59,21 +77,32 @@ VideoExpression returns VideoExpression :
 ;
 
 
-// New
+
+
+
+
+
+
+
+
+
 TabExpression returns TabExpression :
 	{TabExpression}
 	=> ( header=LineExpression BL TabSeparation =>(BL =>lines+=LineExpression)* )
 ;
 
-// New
 TabSeparation :
 	'|'? '-' ('-')+ ( '|' '-' ('-')+ )+ '|'? 
 ;
 
-// New
+
 LineExpression returns LineExpression :
 	=>'|'? cells+=NaturalExpression (=> '|' cells+=NaturalExpression)* =>'|'? 
 ;
+
+
+
+
 
 HeaderExpression :
 	Header1Expression | Header2Expression | Header3Expression | Header4Expression | Header5Expression | Header6Expression
@@ -108,7 +137,10 @@ Header6Expression returns Header6Expression :
 	{Header6Expression}
                 '######' title+=EmphasisExpression =>('#')* =>BL ?
         ;      
-        
+    
+   
+   
+       
 EmphasisExpression returns EmphasisExpression:
       ( => ( => c+=StrongExpression | c+=ItalicExpression | c+=ScratchExpression ) | c+=NaturalExpression )+ ;
 

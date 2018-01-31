@@ -165,7 +165,7 @@ public class ExpressionItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(MyDslPackage.Literals.EXPRESSION__C,
-				 MyDslFactory.eINSTANCE.createQuoteExpression()));
+				 MyDslFactory.eINSTANCE.createListExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -175,7 +175,7 @@ public class ExpressionItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(MyDslPackage.Literals.EXPRESSION__C,
-				 MyDslFactory.eINSTANCE.createCodeExpression()));
+				 MyDslFactory.eINSTANCE.createQuoteExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter

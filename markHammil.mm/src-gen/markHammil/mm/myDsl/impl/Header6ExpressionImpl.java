@@ -18,24 +18,24 @@ import org.eclipse.emf.ecore.EClass;
 public class Header6ExpressionImpl extends HeaderExpressionImpl implements Header6Expression
 {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected Header6ExpressionImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return MyDslPackage.Literals.HEADER6_EXPRESSION;
-  }
+		return MyDslPackage.Literals.HEADER6_EXPRESSION;
+	}
 
 } //Header6ExpressionImpl

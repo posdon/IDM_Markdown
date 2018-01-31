@@ -168,39 +168,10 @@ ruleExpression returns [EObject current=null]
 			    |
 			(
 				(
-					(
-						{
-							newCompositeNode(grammarAccess.getExpressionAccess().getCTabExpressionParserRuleCall_0_2_0_0());
-						}
-						lv_c_2_0=ruleTabExpression
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getExpressionRule());
-							}
-							set(
-								$current,
-								"c",
-								lv_c_2_0,
-								"markHammil.mm.MyDsl.TabExpression");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-				(
-					(RULE_BL)=>
-					this_BL_3=RULE_BL
 					{
-						newLeafNode(this_BL_3, grammarAccess.getExpressionAccess().getBLTerminalRuleCall_0_2_1());
+						newCompositeNode(grammarAccess.getExpressionAccess().getCRefExpressionParserRuleCall_0_2_0());
 					}
-				)?
-			)
-			    |
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getExpressionAccess().getCRefExpressionParserRuleCall_0_3_0());
-					}
-					lv_c_4_0=ruleRefExpression
+					lv_c_2_0=ruleRefExpression
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getExpressionRule());
@@ -208,11 +179,40 @@ ruleExpression returns [EObject current=null]
 						set(
 							$current,
 							"c",
-							lv_c_4_0,
+							lv_c_2_0,
 							"markHammil.mm.MyDsl.RefExpression");
 						afterParserOrEnumRuleCall();
 					}
 				)
+			)
+			    |
+			(
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getExpressionAccess().getCListExpressionParserRuleCall_0_3_0_0());
+						}
+						lv_c_3_0=ruleListExpression
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getExpressionRule());
+							}
+							set(
+								$current,
+								"c",
+								lv_c_3_0,
+								"markHammil.mm.MyDsl.ListExpression");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+				(
+					(RULE_BL)=>
+					this_BL_4=RULE_BL
+					{
+						newLeafNode(this_BL_4, grammarAccess.getExpressionAccess().getBLTerminalRuleCall_0_3_1());
+					}
+				)?
 			)
 		)
 		    |
@@ -278,16 +278,22 @@ ruleBreakLineExpression returns [EObject current=null]
 ;
 
 // Entry rule entryRuleTextExpression
-entryRuleTextExpression returns [EObject current=null]:
+entryRuleTextExpression returns [EObject current=null]@init {
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+}:
 	{ newCompositeNode(grammarAccess.getTextExpressionRule()); }
 	iv_ruleTextExpression=ruleTextExpression
 	{ $current=$iv_ruleTextExpression.current; }
 	EOF;
+finally {
+	myHiddenTokenState.restore();
+}
 
 // Rule TextExpression
 ruleTextExpression returns [EObject current=null]
 @init {
 	enterRule();
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
 }
 @after {
 	leaveRule();
@@ -318,6 +324,12 @@ ruleTextExpression returns [EObject current=null]
 				(
 					(
 						ruleQuoteExpression
+					)
+				)
+				    |
+				(
+					(
+						ruleTabExpression
 					)
 				)
 				    |
@@ -373,11 +385,31 @@ ruleTextExpression returns [EObject current=null]
 				    |
 				(
 					(
+						{
+							newCompositeNode(grammarAccess.getTextExpressionAccess().getCTabExpressionParserRuleCall_1_0_1_0());
+						}
+						lv_c_2_0=ruleTabExpression
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getTextExpressionRule());
+							}
+							add(
+								$current,
+								"c",
+								lv_c_2_0,
+								"markHammil.mm.MyDsl.TabExpression");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+				    |
+				(
+					(
 						(
 							{
-								newCompositeNode(grammarAccess.getTextExpressionAccess().getCLinkExpressionParserRuleCall_1_0_1_0_0());
+								newCompositeNode(grammarAccess.getTextExpressionAccess().getCLinkExpressionParserRuleCall_1_0_2_0_0());
 							}
-							lv_c_2_0=ruleLinkExpression
+							lv_c_3_0=ruleLinkExpression
 							{
 								if ($current==null) {
 									$current = createModelElementForParent(grammarAccess.getTextExpressionRule());
@@ -385,7 +417,7 @@ ruleTextExpression returns [EObject current=null]
 								add(
 									$current,
 									"c",
-									lv_c_2_0,
+									lv_c_3_0,
 									"markHammil.mm.MyDsl.LinkExpression");
 								afterParserOrEnumRuleCall();
 							}
@@ -399,9 +431,9 @@ ruleTextExpression returns [EObject current=null]
 						)=>
 						(
 							{
-								newCompositeNode(grammarAccess.getTextExpressionAccess().getCImageExpressionParserRuleCall_1_0_1_1_0());
+								newCompositeNode(grammarAccess.getTextExpressionAccess().getCImageExpressionParserRuleCall_1_0_2_1_0());
 							}
-							lv_c_3_0=ruleImageExpression
+							lv_c_4_0=ruleImageExpression
 							{
 								if ($current==null) {
 									$current = createModelElementForParent(grammarAccess.getTextExpressionRule());
@@ -409,7 +441,7 @@ ruleTextExpression returns [EObject current=null]
 								add(
 									$current,
 									"c",
-									lv_c_3_0,
+									lv_c_4_0,
 									"markHammil.mm.MyDsl.ImageExpression");
 								afterParserOrEnumRuleCall();
 							}
@@ -423,9 +455,9 @@ ruleTextExpression returns [EObject current=null]
 						)=>
 						(
 							{
-								newCompositeNode(grammarAccess.getTextExpressionAccess().getCVideoExpressionParserRuleCall_1_0_1_2_0());
+								newCompositeNode(grammarAccess.getTextExpressionAccess().getCVideoExpressionParserRuleCall_1_0_2_2_0());
 							}
-							lv_c_4_0=ruleVideoExpression
+							lv_c_5_0=ruleVideoExpression
 							{
 								if ($current==null) {
 									$current = createModelElementForParent(grammarAccess.getTextExpressionRule());
@@ -433,7 +465,7 @@ ruleTextExpression returns [EObject current=null]
 								add(
 									$current,
 									"c",
-									lv_c_4_0,
+									lv_c_5_0,
 									"markHammil.mm.MyDsl.VideoExpression");
 								afterParserOrEnumRuleCall();
 							}
@@ -444,6 +476,139 @@ ruleTextExpression returns [EObject current=null]
 		)
 	)
 ;
+finally {
+	myHiddenTokenState.restore();
+}
+
+// Entry rule entryRuleListExpression
+entryRuleListExpression returns [EObject current=null]@init {
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
+}:
+	{ newCompositeNode(grammarAccess.getListExpressionRule()); }
+	iv_ruleListExpression=ruleListExpression
+	{ $current=$iv_ruleListExpression.current; }
+	EOF;
+finally {
+	myHiddenTokenState.restore();
+}
+
+// Rule ListExpression
+ruleListExpression returns [EObject current=null]
+@init {
+	enterRule();
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getListExpressionAccess().getTextExpressionAction_0_0(),
+						$current);
+				}
+			)
+			(
+				(
+					otherlv_1='*'
+					{
+						newLeafNode(otherlv_1, grammarAccess.getListExpressionAccess().getAsteriskKeyword_0_1_0_0());
+					}
+					    |
+					otherlv_2='-'
+					{
+						newLeafNode(otherlv_2, grammarAccess.getListExpressionAccess().getHyphenMinusKeyword_0_1_0_1());
+					}
+					    |
+					otherlv_3='+'
+					{
+						newLeafNode(otherlv_3, grammarAccess.getListExpressionAccess().getPlusSignKeyword_0_1_0_2());
+					}
+				)
+				(
+					this_WS_4=RULE_WS
+					{
+						newLeafNode(this_WS_4, grammarAccess.getListExpressionAccess().getWSTerminalRuleCall_0_1_1());
+					}
+				)*
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getListExpressionAccess().getContentUnorderedTextExpressionParserRuleCall_0_1_2_0());
+						}
+						lv_contentUnordered_5_0=ruleTextExpression
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getListExpressionRule());
+							}
+							add(
+								$current,
+								"contentUnordered",
+								lv_contentUnordered_5_0,
+								"markHammil.mm.MyDsl.TextExpression");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+				(
+					(RULE_BL)=>
+					this_BL_6=RULE_BL
+					{
+						newLeafNode(this_BL_6, grammarAccess.getListExpressionAccess().getBLTerminalRuleCall_0_1_3());
+					}
+				)?
+			)+
+		)
+		    |
+		(
+			this_INT_7=RULE_INT
+			{
+				newLeafNode(this_INT_7, grammarAccess.getListExpressionAccess().getINTTerminalRuleCall_1_0());
+			}
+			otherlv_8='.'
+			{
+				newLeafNode(otherlv_8, grammarAccess.getListExpressionAccess().getFullStopKeyword_1_1());
+			}
+			(
+				this_WS_9=RULE_WS
+				{
+					newLeafNode(this_WS_9, grammarAccess.getListExpressionAccess().getWSTerminalRuleCall_1_2());
+				}
+			)*
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getListExpressionAccess().getContentOrderedTextExpressionParserRuleCall_1_3_0());
+					}
+					lv_contentOrdered_10_0=ruleTextExpression
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getListExpressionRule());
+						}
+						add(
+							$current,
+							"contentOrdered",
+							lv_contentOrdered_10_0,
+							"markHammil.mm.MyDsl.TextExpression");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			(
+				(RULE_BL)=>
+				this_BL_11=RULE_BL
+				{
+					newLeafNode(this_BL_11, grammarAccess.getListExpressionAccess().getBLTerminalRuleCall_1_4());
+				}
+			)?
+		)+
+	)
+;
+finally {
+	myHiddenTokenState.restore();
+}
 
 // Entry rule entryRuleQuoteExpression
 entryRuleQuoteExpression returns [EObject current=null]:

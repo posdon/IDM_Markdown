@@ -10,17 +10,19 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BreakLineExpression"/>
-  <eClassifiers xsi:type="ecore:EClass" name="TextExpression" eSuperTypes="#//QuoteExpression">
+  <eClassifiers xsi:type="ecore:EClass" name="TextExpression" eSuperTypes="#//ListExpression #//QuoteExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="c" upperBound="-1" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contentUnordered" upperBound="-1"
+        eType="#//TextExpression" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" upperBound="-1"
+        eType="#//TextExpression" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ListExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contentOrdered" upperBound="-1"
         eType="#//TextExpression" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="QuoteExpression"/>
-  <eClassifiers xsi:type="ecore:EClass" name="CodeExpression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="content" upperBound="-1"
-        eType="#//TextExpression" containment="true"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RefExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="refName" eType="#//EmphasisExpression"
         containment="true"/>

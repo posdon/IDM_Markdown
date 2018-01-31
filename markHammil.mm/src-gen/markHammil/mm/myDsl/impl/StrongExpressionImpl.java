@@ -18,24 +18,24 @@ import org.eclipse.emf.ecore.EClass;
 public class StrongExpressionImpl extends EmphasisExpressionImpl implements StrongExpression
 {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected StrongExpressionImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return MyDslPackage.Literals.STRONG_EXPRESSION;
-  }
+		return MyDslPackage.Literals.STRONG_EXPRESSION;
+	}
 
 } //StrongExpressionImpl

@@ -23,571 +23,542 @@ import org.eclipse.emf.ecore.EObject;
 public class MyDslAdapterFactory extends AdapterFactoryImpl
 {
   /**
-   * The cached model package.
-   * <!-- begin-user-doc -->
+	 * The cached model package.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected static MyDslPackage modelPackage;
 
   /**
-   * Creates an instance of the adapter factory.
-   * <!-- begin-user-doc -->
+	 * Creates an instance of the adapter factory.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public MyDslAdapterFactory()
   {
-    if (modelPackage == null)
-    {
-      modelPackage = MyDslPackage.eINSTANCE;
-    }
-  }
+		if (modelPackage == null) {
+			modelPackage = MyDslPackage.eINSTANCE;
+		}
+	}
 
   /**
-   * Returns whether this factory is applicable for the type of the object.
-   * <!-- begin-user-doc -->
+	 * Returns whether this factory is applicable for the type of the object.
+	 * <!-- begin-user-doc -->
    * This implementation returns <code>true</code> if the object is either the model's package or is an instance object of the model.
    * <!-- end-user-doc -->
-   * @return whether this factory is applicable for the type of the object.
-   * @generated
-   */
+	 * @return whether this factory is applicable for the type of the object.
+	 * @generated
+	 */
   @Override
   public boolean isFactoryForType(Object object)
   {
-    if (object == modelPackage)
-    {
-      return true;
-    }
-    if (object instanceof EObject)
-    {
-      return ((EObject)object).eClass().getEPackage() == modelPackage;
-    }
-    return false;
-  }
+		if (object == modelPackage) {
+			return true;
+		}
+		if (object instanceof EObject) {
+			return ((EObject)object).eClass().getEPackage() == modelPackage;
+		}
+		return false;
+	}
 
   /**
-   * The switch that delegates to the <code>createXXX</code> methods.
-   * <!-- begin-user-doc -->
+	 * The switch that delegates to the <code>createXXX</code> methods.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected MyDslSwitch<Adapter> modelSwitch =
-    new MyDslSwitch<Adapter>()
-    {
-      @Override
-      public Adapter caseFile(File object)
-      {
-        return createFileAdapter();
-      }
-      @Override
-      public Adapter caseExpression(Expression object)
-      {
-        return createExpressionAdapter();
-      }
-      @Override
-      public Adapter caseBreakLineExpression(BreakLineExpression object)
-      {
-        return createBreakLineExpressionAdapter();
-      }
-      @Override
-      public Adapter caseTextExpression(TextExpression object)
-      {
-        return createTextExpressionAdapter();
-      }
-      @Override
-      public Adapter caseQuoteExpression(QuoteExpression object)
-      {
-        return createQuoteExpressionAdapter();
-      }
-      @Override
-      public Adapter caseCodeExpression(CodeExpression object)
-      {
-        return createCodeExpressionAdapter();
-      }
-      @Override
-      public Adapter caseRefExpression(RefExpression object)
-      {
-        return createRefExpressionAdapter();
-      }
-      @Override
-      public Adapter caseLinkExpression(LinkExpression object)
-      {
-        return createLinkExpressionAdapter();
-      }
-      @Override
-      public Adapter caseImageExpression(ImageExpression object)
-      {
-        return createImageExpressionAdapter();
-      }
-      @Override
-      public Adapter caseVideoExpression(VideoExpression object)
-      {
-        return createVideoExpressionAdapter();
-      }
-      @Override
-      public Adapter caseTabExpression(TabExpression object)
-      {
-        return createTabExpressionAdapter();
-      }
-      @Override
-      public Adapter caseLineExpression(LineExpression object)
-      {
-        return createLineExpressionAdapter();
-      }
-      @Override
-      public Adapter caseHeaderExpression(HeaderExpression object)
-      {
-        return createHeaderExpressionAdapter();
-      }
-      @Override
-      public Adapter caseHeader1Expression(Header1Expression object)
-      {
-        return createHeader1ExpressionAdapter();
-      }
-      @Override
-      public Adapter caseHeader2Expression(Header2Expression object)
-      {
-        return createHeader2ExpressionAdapter();
-      }
-      @Override
-      public Adapter caseHeader3Expression(Header3Expression object)
-      {
-        return createHeader3ExpressionAdapter();
-      }
-      @Override
-      public Adapter caseHeader4Expression(Header4Expression object)
-      {
-        return createHeader4ExpressionAdapter();
-      }
-      @Override
-      public Adapter caseHeader5Expression(Header5Expression object)
-      {
-        return createHeader5ExpressionAdapter();
-      }
-      @Override
-      public Adapter caseHeader6Expression(Header6Expression object)
-      {
-        return createHeader6ExpressionAdapter();
-      }
-      @Override
-      public Adapter caseEmphasisExpression(EmphasisExpression object)
-      {
-        return createEmphasisExpressionAdapter();
-      }
-      @Override
-      public Adapter caseBreakLineExpressionB(BreakLineExpressionB object)
-      {
-        return createBreakLineExpressionBAdapter();
-      }
-      @Override
-      public Adapter caseStrongExpression(StrongExpression object)
-      {
-        return createStrongExpressionAdapter();
-      }
-      @Override
-      public Adapter caseItalicExpression(ItalicExpression object)
-      {
-        return createItalicExpressionAdapter();
-      }
-      @Override
-      public Adapter caseScratchExpression(ScratchExpression object)
-      {
-        return createScratchExpressionAdapter();
-      }
-      @Override
-      public Adapter defaultCase(EObject object)
-      {
-        return createEObjectAdapter();
-      }
-    };
+    new MyDslSwitch<Adapter>() {
+			@Override
+			public Adapter caseFile(File object) {
+				return createFileAdapter();
+			}
+			@Override
+			public Adapter caseExpression(Expression object) {
+				return createExpressionAdapter();
+			}
+			@Override
+			public Adapter caseBreakLineExpression(BreakLineExpression object) {
+				return createBreakLineExpressionAdapter();
+			}
+			@Override
+			public Adapter caseTextExpression(TextExpression object) {
+				return createTextExpressionAdapter();
+			}
+			@Override
+			public Adapter caseListExpression(ListExpression object) {
+				return createListExpressionAdapter();
+			}
+			@Override
+			public Adapter caseQuoteExpression(QuoteExpression object) {
+				return createQuoteExpressionAdapter();
+			}
+			@Override
+			public Adapter caseRefExpression(RefExpression object) {
+				return createRefExpressionAdapter();
+			}
+			@Override
+			public Adapter caseLinkExpression(LinkExpression object) {
+				return createLinkExpressionAdapter();
+			}
+			@Override
+			public Adapter caseImageExpression(ImageExpression object) {
+				return createImageExpressionAdapter();
+			}
+			@Override
+			public Adapter caseVideoExpression(VideoExpression object) {
+				return createVideoExpressionAdapter();
+			}
+			@Override
+			public Adapter caseTabExpression(TabExpression object) {
+				return createTabExpressionAdapter();
+			}
+			@Override
+			public Adapter caseLineExpression(LineExpression object) {
+				return createLineExpressionAdapter();
+			}
+			@Override
+			public Adapter caseHeaderExpression(HeaderExpression object) {
+				return createHeaderExpressionAdapter();
+			}
+			@Override
+			public Adapter caseHeader1Expression(Header1Expression object) {
+				return createHeader1ExpressionAdapter();
+			}
+			@Override
+			public Adapter caseHeader2Expression(Header2Expression object) {
+				return createHeader2ExpressionAdapter();
+			}
+			@Override
+			public Adapter caseHeader3Expression(Header3Expression object) {
+				return createHeader3ExpressionAdapter();
+			}
+			@Override
+			public Adapter caseHeader4Expression(Header4Expression object) {
+				return createHeader4ExpressionAdapter();
+			}
+			@Override
+			public Adapter caseHeader5Expression(Header5Expression object) {
+				return createHeader5ExpressionAdapter();
+			}
+			@Override
+			public Adapter caseHeader6Expression(Header6Expression object) {
+				return createHeader6ExpressionAdapter();
+			}
+			@Override
+			public Adapter caseEmphasisExpression(EmphasisExpression object) {
+				return createEmphasisExpressionAdapter();
+			}
+			@Override
+			public Adapter caseBreakLineExpressionB(BreakLineExpressionB object) {
+				return createBreakLineExpressionBAdapter();
+			}
+			@Override
+			public Adapter caseStrongExpression(StrongExpression object) {
+				return createStrongExpressionAdapter();
+			}
+			@Override
+			public Adapter caseItalicExpression(ItalicExpression object) {
+				return createItalicExpressionAdapter();
+			}
+			@Override
+			public Adapter caseScratchExpression(ScratchExpression object) {
+				return createScratchExpressionAdapter();
+			}
+			@Override
+			public Adapter defaultCase(EObject object) {
+				return createEObjectAdapter();
+			}
+		};
 
   /**
-   * Creates an adapter for the <code>target</code>.
-   * <!-- begin-user-doc -->
+	 * Creates an adapter for the <code>target</code>.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param target the object to adapt.
-   * @return the adapter for the <code>target</code>.
-   * @generated
-   */
+	 * @param target the object to adapt.
+	 * @return the adapter for the <code>target</code>.
+	 * @generated
+	 */
   @Override
   public Adapter createAdapter(Notifier target)
   {
-    return modelSwitch.doSwitch((EObject)target);
-  }
+		return modelSwitch.doSwitch((EObject)target);
+	}
 
 
   /**
-   * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.File <em>File</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.File <em>File</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see markHammil.mm.myDsl.File
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see markHammil.mm.myDsl.File
+	 * @generated
+	 */
   public Adapter createFileAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.Expression <em>Expression</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.Expression <em>Expression</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see markHammil.mm.myDsl.Expression
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see markHammil.mm.myDsl.Expression
+	 * @generated
+	 */
   public Adapter createExpressionAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.BreakLineExpression <em>Break Line Expression</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.BreakLineExpression <em>Break Line Expression</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see markHammil.mm.myDsl.BreakLineExpression
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see markHammil.mm.myDsl.BreakLineExpression
+	 * @generated
+	 */
   public Adapter createBreakLineExpressionAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.TextExpression <em>Text Expression</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.TextExpression <em>Text Expression</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see markHammil.mm.myDsl.TextExpression
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see markHammil.mm.myDsl.TextExpression
+	 * @generated
+	 */
   public Adapter createTextExpressionAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.QuoteExpression <em>Quote Expression</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.ListExpression <em>List Expression</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see markHammil.mm.myDsl.QuoteExpression
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see markHammil.mm.myDsl.ListExpression
+	 * @generated
+	 */
+  public Adapter createListExpressionAdapter()
+  {
+		return null;
+	}
+
+  /**
+	 * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.QuoteExpression <em>Quote Expression</em>}'.
+	 * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see markHammil.mm.myDsl.QuoteExpression
+	 * @generated
+	 */
   public Adapter createQuoteExpressionAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.CodeExpression <em>Code Expression</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.RefExpression <em>Ref Expression</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see markHammil.mm.myDsl.CodeExpression
-   * @generated
-   */
-  public Adapter createCodeExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.RefExpression <em>Ref Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see markHammil.mm.myDsl.RefExpression
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see markHammil.mm.myDsl.RefExpression
+	 * @generated
+	 */
   public Adapter createRefExpressionAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.LinkExpression <em>Link Expression</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.LinkExpression <em>Link Expression</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see markHammil.mm.myDsl.LinkExpression
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see markHammil.mm.myDsl.LinkExpression
+	 * @generated
+	 */
   public Adapter createLinkExpressionAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.ImageExpression <em>Image Expression</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.ImageExpression <em>Image Expression</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see markHammil.mm.myDsl.ImageExpression
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see markHammil.mm.myDsl.ImageExpression
+	 * @generated
+	 */
   public Adapter createImageExpressionAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.VideoExpression <em>Video Expression</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.VideoExpression <em>Video Expression</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see markHammil.mm.myDsl.VideoExpression
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see markHammil.mm.myDsl.VideoExpression
+	 * @generated
+	 */
   public Adapter createVideoExpressionAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.TabExpression <em>Tab Expression</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.TabExpression <em>Tab Expression</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see markHammil.mm.myDsl.TabExpression
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see markHammil.mm.myDsl.TabExpression
+	 * @generated
+	 */
   public Adapter createTabExpressionAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.LineExpression <em>Line Expression</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.LineExpression <em>Line Expression</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see markHammil.mm.myDsl.LineExpression
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see markHammil.mm.myDsl.LineExpression
+	 * @generated
+	 */
   public Adapter createLineExpressionAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.HeaderExpression <em>Header Expression</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.HeaderExpression <em>Header Expression</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see markHammil.mm.myDsl.HeaderExpression
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see markHammil.mm.myDsl.HeaderExpression
+	 * @generated
+	 */
   public Adapter createHeaderExpressionAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.Header1Expression <em>Header1 Expression</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.Header1Expression <em>Header1 Expression</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see markHammil.mm.myDsl.Header1Expression
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see markHammil.mm.myDsl.Header1Expression
+	 * @generated
+	 */
   public Adapter createHeader1ExpressionAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.Header2Expression <em>Header2 Expression</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.Header2Expression <em>Header2 Expression</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see markHammil.mm.myDsl.Header2Expression
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see markHammil.mm.myDsl.Header2Expression
+	 * @generated
+	 */
   public Adapter createHeader2ExpressionAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.Header3Expression <em>Header3 Expression</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.Header3Expression <em>Header3 Expression</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see markHammil.mm.myDsl.Header3Expression
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see markHammil.mm.myDsl.Header3Expression
+	 * @generated
+	 */
   public Adapter createHeader3ExpressionAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.Header4Expression <em>Header4 Expression</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.Header4Expression <em>Header4 Expression</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see markHammil.mm.myDsl.Header4Expression
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see markHammil.mm.myDsl.Header4Expression
+	 * @generated
+	 */
   public Adapter createHeader4ExpressionAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.Header5Expression <em>Header5 Expression</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.Header5Expression <em>Header5 Expression</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see markHammil.mm.myDsl.Header5Expression
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see markHammil.mm.myDsl.Header5Expression
+	 * @generated
+	 */
   public Adapter createHeader5ExpressionAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.Header6Expression <em>Header6 Expression</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.Header6Expression <em>Header6 Expression</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see markHammil.mm.myDsl.Header6Expression
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see markHammil.mm.myDsl.Header6Expression
+	 * @generated
+	 */
   public Adapter createHeader6ExpressionAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.EmphasisExpression <em>Emphasis Expression</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.EmphasisExpression <em>Emphasis Expression</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see markHammil.mm.myDsl.EmphasisExpression
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see markHammil.mm.myDsl.EmphasisExpression
+	 * @generated
+	 */
   public Adapter createEmphasisExpressionAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.BreakLineExpressionB <em>Break Line Expression B</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.BreakLineExpressionB <em>Break Line Expression B</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see markHammil.mm.myDsl.BreakLineExpressionB
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see markHammil.mm.myDsl.BreakLineExpressionB
+	 * @generated
+	 */
   public Adapter createBreakLineExpressionBAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.StrongExpression <em>Strong Expression</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.StrongExpression <em>Strong Expression</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see markHammil.mm.myDsl.StrongExpression
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see markHammil.mm.myDsl.StrongExpression
+	 * @generated
+	 */
   public Adapter createStrongExpressionAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.ItalicExpression <em>Italic Expression</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.ItalicExpression <em>Italic Expression</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see markHammil.mm.myDsl.ItalicExpression
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see markHammil.mm.myDsl.ItalicExpression
+	 * @generated
+	 */
   public Adapter createItalicExpressionAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.ScratchExpression <em>Scratch Expression</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.ScratchExpression <em>Scratch Expression</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see markHammil.mm.myDsl.ScratchExpression
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see markHammil.mm.myDsl.ScratchExpression
+	 * @generated
+	 */
   public Adapter createScratchExpressionAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for the default case.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for the default case.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @generated
+	 */
   public Adapter createEObjectAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
 } //MyDslAdapterFactory

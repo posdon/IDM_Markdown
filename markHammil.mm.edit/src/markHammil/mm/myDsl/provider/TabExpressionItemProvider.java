@@ -78,6 +78,7 @@ public class TabExpressionItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(MyDslPackage.Literals.TAB_EXPRESSION__HEADER);
 			childrenFeatures.add(MyDslPackage.Literals.TAB_EXPRESSION__LINES);
 		}
 		return childrenFeatures;
@@ -131,6 +132,7 @@ public class TabExpressionItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(TabExpression.class)) {
+			case MyDslPackage.TAB_EXPRESSION__HEADER:
 			case MyDslPackage.TAB_EXPRESSION__LINES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -151,8 +153,36 @@ public class TabExpressionItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
+				(MyDslPackage.Literals.TAB_EXPRESSION__HEADER,
+				 MyDslFactory.eINSTANCE.createLineExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(MyDslPackage.Literals.TAB_EXPRESSION__LINES,
 				 MyDslFactory.eINSTANCE.createLineExpression()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify =
+			childFeature == MyDslPackage.Literals.TAB_EXPRESSION__HEADER ||
+			childFeature == MyDslPackage.Literals.TAB_EXPRESSION__LINES;
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 	/**

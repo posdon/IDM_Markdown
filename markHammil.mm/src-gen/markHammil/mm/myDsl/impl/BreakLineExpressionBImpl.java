@@ -18,24 +18,24 @@ import org.eclipse.emf.ecore.EClass;
 public class BreakLineExpressionBImpl extends BreakLineExpressionImpl implements BreakLineExpressionB
 {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected BreakLineExpressionBImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return MyDslPackage.Literals.BREAK_LINE_EXPRESSION_B;
-  }
+		return MyDslPackage.Literals.BREAK_LINE_EXPRESSION_B;
+	}
 
 } //BreakLineExpressionBImpl

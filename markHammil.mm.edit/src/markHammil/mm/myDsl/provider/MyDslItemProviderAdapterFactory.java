@@ -165,6 +165,29 @@ public class MyDslItemProviderAdapterFactory extends MyDslAdapterFactory impleme
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link markHammil.mm.myDsl.ListExpression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ListExpressionItemProvider listExpressionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link markHammil.mm.myDsl.ListExpression}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createListExpressionAdapter() {
+		if (listExpressionItemProvider == null) {
+			listExpressionItemProvider = new ListExpressionItemProvider(this);
+		}
+
+		return listExpressionItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link markHammil.mm.myDsl.QuoteExpression} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -185,29 +208,6 @@ public class MyDslItemProviderAdapterFactory extends MyDslAdapterFactory impleme
 		}
 
 		return quoteExpressionItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link markHammil.mm.myDsl.CodeExpression} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected CodeExpressionItemProvider codeExpressionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link markHammil.mm.myDsl.CodeExpression}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createCodeExpressionAdapter() {
-		if (codeExpressionItemProvider == null) {
-			codeExpressionItemProvider = new CodeExpressionItemProvider(this);
-		}
-
-		return codeExpressionItemProvider;
 	}
 
 	/**
@@ -727,8 +727,8 @@ public class MyDslItemProviderAdapterFactory extends MyDslAdapterFactory impleme
 		if (expressionItemProvider != null) expressionItemProvider.dispose();
 		if (breakLineExpressionItemProvider != null) breakLineExpressionItemProvider.dispose();
 		if (textExpressionItemProvider != null) textExpressionItemProvider.dispose();
+		if (listExpressionItemProvider != null) listExpressionItemProvider.dispose();
 		if (quoteExpressionItemProvider != null) quoteExpressionItemProvider.dispose();
-		if (codeExpressionItemProvider != null) codeExpressionItemProvider.dispose();
 		if (refExpressionItemProvider != null) refExpressionItemProvider.dispose();
 		if (linkExpressionItemProvider != null) linkExpressionItemProvider.dispose();
 		if (imageExpressionItemProvider != null) imageExpressionItemProvider.dispose();
