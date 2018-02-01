@@ -61,7 +61,6 @@ public class EmphasisExpressionTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	protected EmphasisExpression getFixture() {
 		return fixture;
 	}

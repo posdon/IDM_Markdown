@@ -60,7 +60,6 @@ public class HeaderExpressionTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	protected HeaderExpression getFixture() {
 		return fixture;
 	}
