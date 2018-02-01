@@ -3,8 +3,11 @@
  */
 package markHammil.mm.generator;
 
+import com.google.common.base.Objects;
 import com.google.common.collect.Iterators;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 import markHammil.mm.myDsl.BreakLineExpression;
 import markHammil.mm.myDsl.EmphasisExpression;
 import markHammil.mm.myDsl.Expression;
@@ -48,6 +51,8 @@ import org.eclipse.xtext.xbase.lib.IteratorExtensions;
  */
 @SuppressWarnings("all")
 public class MyDslGenerator extends AbstractGenerator {
+  public Map<String, String> references = new HashMap<String, String>();
+  
   @Override
   public void doGenerate(final Resource res, final IFileSystemAccess2 fsa, final IGeneratorContext ctx) {
     fsa.generateFile(res.getURI().trimFileExtension().appendFileExtension("html").lastSegment(), 
@@ -479,15 +484,39 @@ public class MyDslGenerator extends AbstractGenerator {
   }
   
   protected CharSequence _compile(final RefExpression refExpression) {
-    StringConcatenation _builder = new StringConcatenation();
-    return _builder;
+    return this.references.put(this.compile(refExpression.getRefName()).toString(), this.compile(refExpression.getRefContent()).toString());
   }
   
   protected CharSequence _compile(final LinkExpression linkExpression) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<a href=\"");
-    Object _compile = this.compile(linkExpression.getLinkContent());
-    _builder.append(_compile);
+    _builder.newLine();
+    {
+      EmphasisExpression _linkContent = linkExpression.getLinkContent();
+      boolean _notEquals = (!Objects.equal(_linkContent, null));
+      if (_notEquals) {
+        Object _compile = this.compile(linkExpression.getLinkContent());
+        _builder.append(_compile);
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    {
+      EmphasisExpression _refName = linkExpression.getRefName();
+      boolean _notEquals_1 = (!Objects.equal(_refName, null));
+      if (_notEquals_1) {
+        {
+          String _get = this.references.get(linkExpression.getRefName().toString());
+          boolean _notEquals_2 = (!Objects.equal(_get, null));
+          if (_notEquals_2) {
+            _builder.append("references.get(linkExpression.refName.toString)");
+            _builder.newLine();
+          } else {
+            _builder.append("linkExpression.refName.toString");
+            _builder.newLine();
+          }
+        }
+      }
+    }
     _builder.append("\">");
     Object _compile_1 = this.compile(linkExpression.getAltText());
     _builder.append(_compile_1);

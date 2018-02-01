@@ -394,13 +394,22 @@ public interface MyDslPackage extends EPackage
   int LINK_EXPRESSION__LINK_CONTENT = 1;
 
   /**
+	 * The feature id for the '<em><b>Ref Name</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int LINK_EXPRESSION__REF_NAME = 2;
+
+  /**
 	 * The number of structural features of the '<em>Link Expression</em>' class.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-  int LINK_EXPRESSION_FEATURE_COUNT = 2;
+  int LINK_EXPRESSION_FEATURE_COUNT = 3;
 
   /**
 	 * The meta object id for the '{@link markHammil.mm.myDsl.impl.ImageExpressionImpl <em>Image Expression</em>}' class.
@@ -1122,6 +1131,17 @@ public interface MyDslPackage extends EPackage
   EReference getLinkExpression_LinkContent();
 
   /**
+	 * Returns the meta object for the containment reference '{@link markHammil.mm.myDsl.LinkExpression#getRefName <em>Ref Name</em>}'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Ref Name</em>'.
+	 * @see markHammil.mm.myDsl.LinkExpression#getRefName()
+	 * @see #getLinkExpression()
+	 * @generated
+	 */
+  EReference getLinkExpression_RefName();
+
+  /**
 	 * Returns the meta object for class '{@link markHammil.mm.myDsl.ImageExpression <em>Image Expression</em>}'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1628,6 +1648,14 @@ public interface MyDslPackage extends EPackage
 		 * @generated
 		 */
     EReference LINK_EXPRESSION__LINK_CONTENT = eINSTANCE.getLinkExpression_LinkContent();
+
+    /**
+		 * The meta object literal for the '<em><b>Ref Name</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+		 * @generated
+		 */
+    EReference LINK_EXPRESSION__REF_NAME = eINSTANCE.getLinkExpression_RefName();
 
     /**
 		 * The meta object literal for the '{@link markHammil.mm.myDsl.impl.ImageExpressionImpl <em>Image Expression</em>}' class.

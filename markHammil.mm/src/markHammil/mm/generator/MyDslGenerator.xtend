@@ -3,6 +3,8 @@
  */
 package markHammil.mm.generator
 
+import java.util.HashMap
+import java.util.Map
 import markHammil.mm.myDsl.BreakLineExpression
 import markHammil.mm.myDsl.EmphasisExpression
 import markHammil.mm.myDsl.Expression
@@ -40,6 +42,9 @@ import org.eclipse.xtext.generator.IGeneratorContext
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#code-generation
  */
 class MyDslGenerator extends AbstractGenerator {
+
+	// Stock all the references
+	public Map<String,String> references = new HashMap<String,String>();
 
 	override void doGenerate(Resource res, IFileSystemAccess2 fsa, IGeneratorContext ctx){
 	 	fsa.generateFile(res.URI.trimFileExtension.appendFileExtension("html").lastSegment, 
@@ -262,11 +267,25 @@ class MyDslGenerator extends AbstractGenerator {
 		«urlExp.c.compile»
 	'''
 	
-	def dispatch compile(RefExpression refExpression) '''
-	'''
+	// Should add the reference into references map
+	def dispatch compile(RefExpression refExpression) {
+		references.put(refExpression.refName.compile.toString,refExpression.refContent.compile.toString);
+	}
 	
 	def dispatch compile(LinkExpression linkExpression) '''
-	<a href="«linkExpression.linkContent.compile»">«linkExpression.altText.compile»</a>
+	<a href="
+	«IF linkExpression.linkContent != null»
+	«linkExpression.linkContent.compile»
+	«ENDIF»
+	«««»»» Should replace the ref by the associated string
+	«IF linkExpression.refName != null»
+	«IF references.get(linkExpression.refName.toString) != null»
+	references.get(linkExpression.refName.toString)
+	«ELSE»
+	linkExpression.refName.toString
+	«ENDIF»
+	«ENDIF»
+	">«linkExpression.altText.compile»</a>
 	'''
 	
 	def dispatch compile(ImageExpression imageExpression) '''

@@ -86,8 +86,8 @@ RefExpression returns RefExpression :
 
 LinkExpression returns LinkExpression :
 	{LinkExpression}
-	=>'[' altText=NaturalExpression =>'](' (linkContent=NaturalExpression)? =>')' =>BL? //|
-	//=>'[' altText=NaturalExpression =>'][' (refName=NaturalExpression)? =>']' =>BL?
+	=>'[' altText=NaturalExpression =>'](' (linkContent=NaturalExpression)? =>')' =>BL? |
+	=>'[' altText=NaturalExpression =>'][' (refName=NaturalExpression)? =>']' =>BL?
 ;
 
 ImageExpression returns ImageExpression :

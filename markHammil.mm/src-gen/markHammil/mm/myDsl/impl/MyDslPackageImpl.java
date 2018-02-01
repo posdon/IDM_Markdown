@@ -547,6 +547,16 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
 	 * @generated
 	 */
+  public EReference getLinkExpression_RefName()
+  {
+		return (EReference)linkExpressionEClass.getEStructuralFeatures().get(2);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
   public EClass getImageExpression()
   {
 		return imageExpressionEClass;
@@ -858,6 +868,7 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
 		linkExpressionEClass = createEClass(LINK_EXPRESSION);
 		createEReference(linkExpressionEClass, LINK_EXPRESSION__ALT_TEXT);
 		createEReference(linkExpressionEClass, LINK_EXPRESSION__LINK_CONTENT);
+		createEReference(linkExpressionEClass, LINK_EXPRESSION__REF_NAME);
 
 		imageExpressionEClass = createEClass(IMAGE_EXPRESSION);
 		createEReference(imageExpressionEClass, IMAGE_EXPRESSION__ALT_TEXT);
@@ -980,6 +991,7 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
 		initEClass(linkExpressionEClass, LinkExpression.class, "LinkExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLinkExpression_AltText(), this.getEmphasisExpression(), null, "altText", null, 0, 1, LinkExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLinkExpression_LinkContent(), this.getEmphasisExpression(), null, "linkContent", null, 0, 1, LinkExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLinkExpression_RefName(), this.getEmphasisExpression(), null, "refName", null, 0, 1, LinkExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(imageExpressionEClass, ImageExpression.class, "ImageExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getImageExpression_AltText(), this.getEmphasisExpression(), null, "altText", null, 0, 1, ImageExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

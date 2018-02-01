@@ -39,6 +39,7 @@
     <genClasses ecoreClass="MyDsl.ecore#//LinkExpression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//LinkExpression/altText"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//LinkExpression/linkContent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//LinkExpression/refName"/>
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//ImageExpression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//ImageExpression/altText"/>

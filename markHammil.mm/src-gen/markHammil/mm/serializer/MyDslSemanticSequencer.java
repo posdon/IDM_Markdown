@@ -325,7 +325,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     LinkExpression returns LinkExpression
 	 *
 	 * Constraint:
-	 *     (altText=NaturalExpression linkContent=NaturalExpression?)
+	 *     ((altText=NaturalExpression linkContent=NaturalExpression?) | (altText=NaturalExpression refName=NaturalExpression?))
 	 */
 	protected void sequence_LinkExpression(ISerializationContext context, LinkExpression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

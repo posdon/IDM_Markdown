@@ -621,53 +621,93 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	public class LinkExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "markHammil.mm.MyDsl.LinkExpression");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cLinkExpressionAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cLeftSquareBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cAltTextAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cAltTextNaturalExpressionParserRuleCall_2_0 = (RuleCall)cAltTextAssignment_2.eContents().get(0);
-		private final Keyword cRightSquareBracketLeftParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cLinkContentAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cLinkContentNaturalExpressionParserRuleCall_4_0 = (RuleCall)cLinkContentAssignment_4.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final RuleCall cBLTerminalRuleCall_6 = (RuleCall)cGroup.eContents().get(6);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Action cLinkExpressionAction_0_0 = (Action)cGroup_0.eContents().get(0);
+		private final Keyword cLeftSquareBracketKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
+		private final Assignment cAltTextAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
+		private final RuleCall cAltTextNaturalExpressionParserRuleCall_0_2_0 = (RuleCall)cAltTextAssignment_0_2.eContents().get(0);
+		private final Keyword cRightSquareBracketLeftParenthesisKeyword_0_3 = (Keyword)cGroup_0.eContents().get(3);
+		private final Assignment cLinkContentAssignment_0_4 = (Assignment)cGroup_0.eContents().get(4);
+		private final RuleCall cLinkContentNaturalExpressionParserRuleCall_0_4_0 = (RuleCall)cLinkContentAssignment_0_4.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_0_5 = (Keyword)cGroup_0.eContents().get(5);
+		private final RuleCall cBLTerminalRuleCall_0_6 = (RuleCall)cGroup_0.eContents().get(6);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Keyword cLeftSquareBracketKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cAltTextAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cAltTextNaturalExpressionParserRuleCall_1_1_0 = (RuleCall)cAltTextAssignment_1_1.eContents().get(0);
+		private final Keyword cRightSquareBracketLeftSquareBracketKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
+		private final Assignment cRefNameAssignment_1_3 = (Assignment)cGroup_1.eContents().get(3);
+		private final RuleCall cRefNameNaturalExpressionParserRuleCall_1_3_0 = (RuleCall)cRefNameAssignment_1_3.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_1_4 = (Keyword)cGroup_1.eContents().get(4);
+		private final RuleCall cBLTerminalRuleCall_1_5 = (RuleCall)cGroup_1.eContents().get(5);
 		
 		//LinkExpression:
 		//	{LinkExpression}
-		//	=> '[' altText=NaturalExpression => '](' linkContent=NaturalExpression? => ')' => BL? //|
-		//	//=>'[' altText=NaturalExpression =>'][' (refName=NaturalExpression)? =>']' =>BL?
-		//;
+		//	=> '[' altText=NaturalExpression => '](' linkContent=NaturalExpression? => ')' => BL? |
+		//	=> '[' altText=NaturalExpression => '][' refName=NaturalExpression? => ']' => BL?;
 		@Override public ParserRule getRule() { return rule; }
 		
+		//{LinkExpression} => '[' altText=NaturalExpression => '](' linkContent=NaturalExpression? => ')' => BL? | => '['
+		//altText=NaturalExpression => '][' refName=NaturalExpression? => ']' => BL?
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
 		//{LinkExpression} => '[' altText=NaturalExpression => '](' linkContent=NaturalExpression? => ')' => BL?
-		public Group getGroup() { return cGroup; }
+		public Group getGroup_0() { return cGroup_0; }
 		
 		//{LinkExpression}
-		public Action getLinkExpressionAction_0() { return cLinkExpressionAction_0; }
+		public Action getLinkExpressionAction_0_0() { return cLinkExpressionAction_0_0; }
 		
 		//=> '['
-		public Keyword getLeftSquareBracketKeyword_1() { return cLeftSquareBracketKeyword_1; }
+		public Keyword getLeftSquareBracketKeyword_0_1() { return cLeftSquareBracketKeyword_0_1; }
 		
 		//altText=NaturalExpression
-		public Assignment getAltTextAssignment_2() { return cAltTextAssignment_2; }
+		public Assignment getAltTextAssignment_0_2() { return cAltTextAssignment_0_2; }
 		
 		//NaturalExpression
-		public RuleCall getAltTextNaturalExpressionParserRuleCall_2_0() { return cAltTextNaturalExpressionParserRuleCall_2_0; }
+		public RuleCall getAltTextNaturalExpressionParserRuleCall_0_2_0() { return cAltTextNaturalExpressionParserRuleCall_0_2_0; }
 		
 		//=> ']('
-		public Keyword getRightSquareBracketLeftParenthesisKeyword_3() { return cRightSquareBracketLeftParenthesisKeyword_3; }
+		public Keyword getRightSquareBracketLeftParenthesisKeyword_0_3() { return cRightSquareBracketLeftParenthesisKeyword_0_3; }
 		
 		//linkContent=NaturalExpression?
-		public Assignment getLinkContentAssignment_4() { return cLinkContentAssignment_4; }
+		public Assignment getLinkContentAssignment_0_4() { return cLinkContentAssignment_0_4; }
 		
 		//NaturalExpression
-		public RuleCall getLinkContentNaturalExpressionParserRuleCall_4_0() { return cLinkContentNaturalExpressionParserRuleCall_4_0; }
+		public RuleCall getLinkContentNaturalExpressionParserRuleCall_0_4_0() { return cLinkContentNaturalExpressionParserRuleCall_0_4_0; }
 		
 		//=> ')'
-		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
+		public Keyword getRightParenthesisKeyword_0_5() { return cRightParenthesisKeyword_0_5; }
 		
 		//=> BL?
-		public RuleCall getBLTerminalRuleCall_6() { return cBLTerminalRuleCall_6; }
+		public RuleCall getBLTerminalRuleCall_0_6() { return cBLTerminalRuleCall_0_6; }
+		
+		//=> '[' altText=NaturalExpression => '][' refName=NaturalExpression? => ']' => BL?
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//=> '['
+		public Keyword getLeftSquareBracketKeyword_1_0() { return cLeftSquareBracketKeyword_1_0; }
+		
+		//altText=NaturalExpression
+		public Assignment getAltTextAssignment_1_1() { return cAltTextAssignment_1_1; }
+		
+		//NaturalExpression
+		public RuleCall getAltTextNaturalExpressionParserRuleCall_1_1_0() { return cAltTextNaturalExpressionParserRuleCall_1_1_0; }
+		
+		//=> ']['
+		public Keyword getRightSquareBracketLeftSquareBracketKeyword_1_2() { return cRightSquareBracketLeftSquareBracketKeyword_1_2; }
+		
+		//refName=NaturalExpression?
+		public Assignment getRefNameAssignment_1_3() { return cRefNameAssignment_1_3; }
+		
+		//NaturalExpression
+		public RuleCall getRefNameNaturalExpressionParserRuleCall_1_3_0() { return cRefNameNaturalExpressionParserRuleCall_1_3_0; }
+		
+		//=> ']'
+		public Keyword getRightSquareBracketKeyword_1_4() { return cRightSquareBracketKeyword_1_4; }
+		
+		//=> BL?
+		public RuleCall getBLTerminalRuleCall_1_5() { return cBLTerminalRuleCall_1_5; }
 	}
 	public class ImageExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "markHammil.mm.MyDsl.ImageExpression");
@@ -1532,9 +1572,8 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//LinkExpression:
 	//	{LinkExpression}
-	//	=> '[' altText=NaturalExpression => '](' linkContent=NaturalExpression? => ')' => BL? //|
-	//	//=>'[' altText=NaturalExpression =>'][' (refName=NaturalExpression)? =>']' =>BL?
-	//;
+	//	=> '[' altText=NaturalExpression => '](' linkContent=NaturalExpression? => ')' => BL? |
+	//	=> '[' altText=NaturalExpression => '][' refName=NaturalExpression? => ']' => BL?;
 	public LinkExpressionElements getLinkExpressionAccess() {
 		return pLinkExpression;
 	}

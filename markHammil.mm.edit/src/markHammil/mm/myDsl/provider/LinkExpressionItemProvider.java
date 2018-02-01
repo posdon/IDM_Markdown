@@ -74,6 +74,7 @@ public class LinkExpressionItemProvider
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(MyDslPackage.Literals.LINK_EXPRESSION__ALT_TEXT);
 			childrenFeatures.add(MyDslPackage.Literals.LINK_EXPRESSION__LINK_CONTENT);
+			childrenFeatures.add(MyDslPackage.Literals.LINK_EXPRESSION__REF_NAME);
 		}
 		return childrenFeatures;
 	}
@@ -128,6 +129,7 @@ public class LinkExpressionItemProvider
 		switch (notification.getFeatureID(LinkExpression.class)) {
 			case MyDslPackage.LINK_EXPRESSION__ALT_TEXT:
 			case MyDslPackage.LINK_EXPRESSION__LINK_CONTENT:
+			case MyDslPackage.LINK_EXPRESSION__REF_NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -194,6 +196,31 @@ public class LinkExpressionItemProvider
 			(createChildParameter
 				(MyDslPackage.Literals.LINK_EXPRESSION__LINK_CONTENT,
 				 MyDslFactory.eINSTANCE.createNaturalExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.LINK_EXPRESSION__REF_NAME,
+				 MyDslFactory.eINSTANCE.createEmphasisExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.LINK_EXPRESSION__REF_NAME,
+				 MyDslFactory.eINSTANCE.createStrongExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.LINK_EXPRESSION__REF_NAME,
+				 MyDslFactory.eINSTANCE.createItalicExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.LINK_EXPRESSION__REF_NAME,
+				 MyDslFactory.eINSTANCE.createScratchExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.LINK_EXPRESSION__REF_NAME,
+				 MyDslFactory.eINSTANCE.createNaturalExpression()));
 	}
 
 	/**
@@ -209,7 +236,8 @@ public class LinkExpressionItemProvider
 
 		boolean qualify =
 			childFeature == MyDslPackage.Literals.LINK_EXPRESSION__ALT_TEXT ||
-			childFeature == MyDslPackage.Literals.LINK_EXPRESSION__LINK_CONTENT;
+			childFeature == MyDslPackage.Literals.LINK_EXPRESSION__LINK_CONTENT ||
+			childFeature == MyDslPackage.Literals.LINK_EXPRESSION__REF_NAME;
 
 		if (qualify) {
 			return getString

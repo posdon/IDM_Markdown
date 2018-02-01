@@ -40,6 +40,7 @@ public class MyDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getHorizontalExpressionAccess().getAlternatives(), "rule__HorizontalExpression__Alternatives");
 					put(grammarAccess.getURLedExpressionAccess().getAlternatives_1(), "rule__URLedExpression__Alternatives_1");
 					put(grammarAccess.getURLedExpressionAccess().getAlternatives_1_0_0(), "rule__URLedExpression__Alternatives_1_0_0");
+					put(grammarAccess.getLinkExpressionAccess().getAlternatives(), "rule__LinkExpression__Alternatives");
 					put(grammarAccess.getHeaderExpressionAccess().getAlternatives(), "rule__HeaderExpression__Alternatives");
 					put(grammarAccess.getEmphasisExpressionAccess().getAlternatives(), "rule__EmphasisExpression__Alternatives");
 					put(grammarAccess.getEmphasisExpressionAccess().getAlternatives_0_0(), "rule__EmphasisExpression__Alternatives_0_0");
@@ -71,7 +72,8 @@ public class MyDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getURLedExpressionAccess().getGroup(), "rule__URLedExpression__Group__0");
 					put(grammarAccess.getURLedExpressionAccess().getGroup_1_0(), "rule__URLedExpression__Group_1_0__0");
 					put(grammarAccess.getRefExpressionAccess().getGroup(), "rule__RefExpression__Group__0");
-					put(grammarAccess.getLinkExpressionAccess().getGroup(), "rule__LinkExpression__Group__0");
+					put(grammarAccess.getLinkExpressionAccess().getGroup_0(), "rule__LinkExpression__Group_0__0");
+					put(grammarAccess.getLinkExpressionAccess().getGroup_1(), "rule__LinkExpression__Group_1__0");
 					put(grammarAccess.getImageExpressionAccess().getGroup(), "rule__ImageExpression__Group__0");
 					put(grammarAccess.getVideoExpressionAccess().getGroup(), "rule__VideoExpression__Group__0");
 					put(grammarAccess.getHeader1ExpressionAccess().getGroup(), "rule__Header1Expression__Group__0");
@@ -111,8 +113,10 @@ public class MyDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getURLedExpressionAccess().getCAssignment_1_1(), "rule__URLedExpression__CAssignment_1_1");
 					put(grammarAccess.getRefExpressionAccess().getRefNameAssignment_2(), "rule__RefExpression__RefNameAssignment_2");
 					put(grammarAccess.getRefExpressionAccess().getRefContentAssignment_4(), "rule__RefExpression__RefContentAssignment_4");
-					put(grammarAccess.getLinkExpressionAccess().getAltTextAssignment_2(), "rule__LinkExpression__AltTextAssignment_2");
-					put(grammarAccess.getLinkExpressionAccess().getLinkContentAssignment_4(), "rule__LinkExpression__LinkContentAssignment_4");
+					put(grammarAccess.getLinkExpressionAccess().getAltTextAssignment_0_2(), "rule__LinkExpression__AltTextAssignment_0_2");
+					put(grammarAccess.getLinkExpressionAccess().getLinkContentAssignment_0_4(), "rule__LinkExpression__LinkContentAssignment_0_4");
+					put(grammarAccess.getLinkExpressionAccess().getAltTextAssignment_1_1(), "rule__LinkExpression__AltTextAssignment_1_1");
+					put(grammarAccess.getLinkExpressionAccess().getRefNameAssignment_1_3(), "rule__LinkExpression__RefNameAssignment_1_3");
 					put(grammarAccess.getImageExpressionAccess().getAltTextAssignment_2(), "rule__ImageExpression__AltTextAssignment_2");
 					put(grammarAccess.getImageExpressionAccess().getLinkContentAssignment_4(), "rule__ImageExpression__LinkContentAssignment_4");
 					put(grammarAccess.getVideoExpressionAccess().getAltTextAssignment_2(), "rule__VideoExpression__AltTextAssignment_2");
