@@ -96,10 +96,6 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
 				return createQuoteExpressionAdapter();
 			}
 			@Override
-			public Adapter caseRefExpression(RefExpression object) {
-				return createRefExpressionAdapter();
-			}
-			@Override
 			public Adapter caseLinkExpression(LinkExpression object) {
 				return createLinkExpressionAdapter();
 			}
@@ -274,21 +270,6 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
   public Adapter createQuoteExpressionAdapter()
-  {
-		return null;
-	}
-
-  /**
-	 * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.RefExpression <em>Ref Expression</em>}'.
-	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see markHammil.mm.myDsl.RefExpression
-	 * @generated
-	 */
-  public Adapter createRefExpressionAdapter()
   {
 		return null;
 	}

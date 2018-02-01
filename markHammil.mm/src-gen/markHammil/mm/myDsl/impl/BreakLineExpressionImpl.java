@@ -8,8 +8,6 @@ import markHammil.mm.myDsl.MyDslPackage;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Break Line Expression</b></em>'.
@@ -17,7 +15,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class BreakLineExpressionImpl extends MinimalEObjectImpl.Container implements BreakLineExpression
+public class BreakLineExpressionImpl extends ExpressionImpl implements BreakLineExpression
 {
   /**
 	 * <!-- begin-user-doc -->

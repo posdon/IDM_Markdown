@@ -3,10 +3,29 @@
  */
 package markHammil.mm.generator;
 
+import com.google.common.collect.Iterators;
+import java.util.Arrays;
+import markHammil.mm.myDsl.BreakLineExpression;
+import markHammil.mm.myDsl.EmphasisExpression;
+import markHammil.mm.myDsl.Expression;
+import markHammil.mm.myDsl.File;
+import markHammil.mm.myDsl.HeaderExpression;
+import markHammil.mm.myDsl.ImageExpression;
+import markHammil.mm.myDsl.LinkExpression;
+import markHammil.mm.myDsl.ListExpression;
+import markHammil.mm.myDsl.QuoteExpression;
+import markHammil.mm.myDsl.TabExpression;
+import markHammil.mm.myDsl.TextExpression;
+import markHammil.mm.myDsl.VideoExpression;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
+import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 
 /**
  * Generates code from your model files on save.
@@ -16,6 +35,163 @@ import org.eclipse.xtext.generator.IGeneratorContext;
 @SuppressWarnings("all")
 public class MyDslGenerator extends AbstractGenerator {
   @Override
-  public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
+  public void doGenerate(final Resource res, final IFileSystemAccess2 fsa, final IGeneratorContext ctx) {
+    fsa.generateFile(res.getURI().trimFileExtension().appendFileExtension("html").lastSegment(), 
+      this.compile(IterableExtensions.<File>head(IteratorExtensions.<File>toIterable(Iterators.<File>filter(res.getAllContents(), File.class)))).toString());
+  }
+  
+  protected CharSequence _compile(final File file) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("<!doctype html>");
+    _builder.newLine();
+    _builder.append("<html>");
+    _builder.newLine();
+    _builder.append("  ");
+    _builder.append("<head>");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("<meta charset=\"utf-8\">");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("<title>Auto generated markdown</title>");
+    _builder.newLine();
+    _builder.append("  ");
+    _builder.append("</head>");
+    _builder.newLine();
+    _builder.append("  ");
+    _builder.append("<body>");
+    _builder.newLine();
+    {
+      EList<Expression> _expression = file.getExpression();
+      for(final Expression exp : _expression) {
+        _builder.append("\t");
+        Object _compile = this.compile(exp);
+        _builder.append(_compile, "\t");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.append("  ");
+    _builder.append("</body>");
+    _builder.newLine();
+    _builder.append("</html>");
+    _builder.newLine();
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final Expression expression) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("this expression is not supported:");
+    _builder.append(expression);
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final BreakLineExpression br) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("<br>");
+    _builder.newLine();
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final HeaderExpression headerExpression) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("\t\t");
+    _builder.newLine();
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final TextExpression textExpression) {
+    StringConcatenation _builder = new StringConcatenation();
+    Object _compile = this.compile(textExpression.getC());
+    _builder.append(_compile);
+    _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final ListExpression listExpression) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("\t");
+    _builder.newLine();
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final EmphasisExpression emphasisExpression) {
+    StringConcatenation _builder = new StringConcatenation();
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final QuoteExpression quoteExpression) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("\t");
+    _builder.newLine();
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final TabExpression tabExpression) {
+    StringConcatenation _builder = new StringConcatenation();
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final LinkExpression linkExpression) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("<a href=\"");
+    Object _compile = this.compile(linkExpression.getLinkContent());
+    _builder.append(_compile);
+    _builder.append("\">");
+    Object _compile_1 = this.compile(linkExpression.getAltText());
+    _builder.append(_compile_1);
+    _builder.append("</a>");
+    _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final ImageExpression imageExpression) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("<img src=\"");
+    Object _compile = this.compile(imageExpression.getLinkContent());
+    _builder.append(_compile);
+    _builder.append("\">");
+    Object _compile_1 = this.compile(imageExpression.getAltText());
+    _builder.append(_compile_1);
+    _builder.append("</img>");
+    _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final VideoExpression videoExpression) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("\t");
+    _builder.newLine();
+    return _builder;
+  }
+  
+  public CharSequence compile(final EObject textExpression) {
+    if (textExpression instanceof TextExpression) {
+      return _compile((TextExpression)textExpression);
+    } else if (textExpression instanceof BreakLineExpression) {
+      return _compile((BreakLineExpression)textExpression);
+    } else if (textExpression instanceof HeaderExpression) {
+      return _compile((HeaderExpression)textExpression);
+    } else if (textExpression instanceof ListExpression) {
+      return _compile((ListExpression)textExpression);
+    } else if (textExpression instanceof EmphasisExpression) {
+      return _compile((EmphasisExpression)textExpression);
+    } else if (textExpression instanceof Expression) {
+      return _compile((Expression)textExpression);
+    } else if (textExpression instanceof File) {
+      return _compile((File)textExpression);
+    } else if (textExpression instanceof ImageExpression) {
+      return _compile((ImageExpression)textExpression);
+    } else if (textExpression instanceof LinkExpression) {
+      return _compile((LinkExpression)textExpression);
+    } else if (textExpression instanceof QuoteExpression) {
+      return _compile((QuoteExpression)textExpression);
+    } else if (textExpression instanceof TabExpression) {
+      return _compile((TabExpression)textExpression);
+    } else if (textExpression instanceof VideoExpression) {
+      return _compile((VideoExpression)textExpression);
+    } else {
+      throw new IllegalArgumentException("Unhandled parameter types: " +
+        Arrays.<Object>asList(textExpression).toString());
+    }
   }
 }

@@ -15,15 +15,7 @@ import markHammil.mm.myDsl.MyDslFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class HeaderExpressionTest extends TestCase {
-
-	/**
-	 * The fixture for this Header Expression test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected HeaderExpression fixture = null;
+public class HeaderExpressionTest extends ExpressionTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -45,23 +37,14 @@ public class HeaderExpressionTest extends TestCase {
 	}
 
 	/**
-	 * Sets the fixture for this Header Expression test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(HeaderExpression fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
 	 * Returns the fixture for this Header Expression test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected HeaderExpression getFixture() {
-		return fixture;
+		return (HeaderExpression)fixture;
 	}
 
 	/**

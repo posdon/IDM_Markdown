@@ -21,7 +21,7 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected MyDslGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_Expression_BLTerminalRuleCall_0_3_1_q;
+	protected AbstractElementAlias match_Expression_BLTerminalRuleCall_0_2_1_q;
 	protected AbstractElementAlias match_Expression_BLTerminalRuleCall_1_1_q;
 	protected AbstractElementAlias match_Header1Expression_BLTerminalRuleCall_4_q;
 	protected AbstractElementAlias match_Header1Expression_NumberSignKeyword_3_0_a;
@@ -38,21 +38,19 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_ImageExpression_BLTerminalRuleCall_6_q;
 	protected AbstractElementAlias match_LineExpression_VerticalLineKeyword_0_q;
 	protected AbstractElementAlias match_LineExpression_VerticalLineKeyword_3_q;
-	protected AbstractElementAlias match_LinkExpression_BLTerminalRuleCall_0_6_q;
-	protected AbstractElementAlias match_LinkExpression_BLTerminalRuleCall_1_5_q;
+	protected AbstractElementAlias match_LinkExpression_BLTerminalRuleCall_6_q;
 	protected AbstractElementAlias match_ListExpression_AsteriskKeyword_0_1_0_0_or_HyphenMinusKeyword_0_1_0_1_or_PlusSignKeyword_0_1_0_2;
 	protected AbstractElementAlias match_ListExpression_BLTerminalRuleCall_0_1_3_q;
 	protected AbstractElementAlias match_ListExpression_BLTerminalRuleCall_1_4_q;
 	protected AbstractElementAlias match_ListExpression_WSTerminalRuleCall_0_1_1_a;
 	protected AbstractElementAlias match_ListExpression_WSTerminalRuleCall_1_2_a;
 	protected AbstractElementAlias match_QuoteExpression_BLTerminalRuleCall_3_q;
-	protected AbstractElementAlias match_RefExpression_BLTerminalRuleCall_5_q;
 	protected AbstractElementAlias match_VideoExpression_BLTerminalRuleCall_8_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (MyDslGrammarAccess) access;
-		match_Expression_BLTerminalRuleCall_0_3_1_q = new TokenAlias(false, true, grammarAccess.getExpressionAccess().getBLTerminalRuleCall_0_3_1());
+		match_Expression_BLTerminalRuleCall_0_2_1_q = new TokenAlias(false, true, grammarAccess.getExpressionAccess().getBLTerminalRuleCall_0_2_1());
 		match_Expression_BLTerminalRuleCall_1_1_q = new TokenAlias(false, true, grammarAccess.getExpressionAccess().getBLTerminalRuleCall_1_1());
 		match_Header1Expression_BLTerminalRuleCall_4_q = new TokenAlias(false, true, grammarAccess.getHeader1ExpressionAccess().getBLTerminalRuleCall_4());
 		match_Header1Expression_NumberSignKeyword_3_0_a = new TokenAlias(true, true, grammarAccess.getHeader1ExpressionAccess().getNumberSignKeyword_3_0());
@@ -69,15 +67,13 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_ImageExpression_BLTerminalRuleCall_6_q = new TokenAlias(false, true, grammarAccess.getImageExpressionAccess().getBLTerminalRuleCall_6());
 		match_LineExpression_VerticalLineKeyword_0_q = new TokenAlias(false, true, grammarAccess.getLineExpressionAccess().getVerticalLineKeyword_0());
 		match_LineExpression_VerticalLineKeyword_3_q = new TokenAlias(false, true, grammarAccess.getLineExpressionAccess().getVerticalLineKeyword_3());
-		match_LinkExpression_BLTerminalRuleCall_0_6_q = new TokenAlias(false, true, grammarAccess.getLinkExpressionAccess().getBLTerminalRuleCall_0_6());
-		match_LinkExpression_BLTerminalRuleCall_1_5_q = new TokenAlias(false, true, grammarAccess.getLinkExpressionAccess().getBLTerminalRuleCall_1_5());
+		match_LinkExpression_BLTerminalRuleCall_6_q = new TokenAlias(false, true, grammarAccess.getLinkExpressionAccess().getBLTerminalRuleCall_6());
 		match_ListExpression_AsteriskKeyword_0_1_0_0_or_HyphenMinusKeyword_0_1_0_1_or_PlusSignKeyword_0_1_0_2 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getListExpressionAccess().getAsteriskKeyword_0_1_0_0()), new TokenAlias(false, false, grammarAccess.getListExpressionAccess().getHyphenMinusKeyword_0_1_0_1()), new TokenAlias(false, false, grammarAccess.getListExpressionAccess().getPlusSignKeyword_0_1_0_2()));
 		match_ListExpression_BLTerminalRuleCall_0_1_3_q = new TokenAlias(false, true, grammarAccess.getListExpressionAccess().getBLTerminalRuleCall_0_1_3());
 		match_ListExpression_BLTerminalRuleCall_1_4_q = new TokenAlias(false, true, grammarAccess.getListExpressionAccess().getBLTerminalRuleCall_1_4());
 		match_ListExpression_WSTerminalRuleCall_0_1_1_a = new TokenAlias(true, true, grammarAccess.getListExpressionAccess().getWSTerminalRuleCall_0_1_1());
 		match_ListExpression_WSTerminalRuleCall_1_2_a = new TokenAlias(true, true, grammarAccess.getListExpressionAccess().getWSTerminalRuleCall_1_2());
 		match_QuoteExpression_BLTerminalRuleCall_3_q = new TokenAlias(false, true, grammarAccess.getQuoteExpressionAccess().getBLTerminalRuleCall_3());
-		match_RefExpression_BLTerminalRuleCall_5_q = new TokenAlias(false, true, grammarAccess.getRefExpressionAccess().getBLTerminalRuleCall_5());
 		match_VideoExpression_BLTerminalRuleCall_8_q = new TokenAlias(false, true, grammarAccess.getVideoExpressionAccess().getBLTerminalRuleCall_8());
 	}
 	
@@ -138,8 +134,8 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_Expression_BLTerminalRuleCall_0_3_1_q.equals(syntax))
-				emit_Expression_BLTerminalRuleCall_0_3_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			if (match_Expression_BLTerminalRuleCall_0_2_1_q.equals(syntax))
+				emit_Expression_BLTerminalRuleCall_0_2_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Expression_BLTerminalRuleCall_1_1_q.equals(syntax))
 				emit_Expression_BLTerminalRuleCall_1_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Header1Expression_BLTerminalRuleCall_4_q.equals(syntax))
@@ -172,10 +168,8 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_LineExpression_VerticalLineKeyword_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_LineExpression_VerticalLineKeyword_3_q.equals(syntax))
 				emit_LineExpression_VerticalLineKeyword_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_LinkExpression_BLTerminalRuleCall_0_6_q.equals(syntax))
-				emit_LinkExpression_BLTerminalRuleCall_0_6_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_LinkExpression_BLTerminalRuleCall_1_5_q.equals(syntax))
-				emit_LinkExpression_BLTerminalRuleCall_1_5_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_LinkExpression_BLTerminalRuleCall_6_q.equals(syntax))
+				emit_LinkExpression_BLTerminalRuleCall_6_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_ListExpression_AsteriskKeyword_0_1_0_0_or_HyphenMinusKeyword_0_1_0_1_or_PlusSignKeyword_0_1_0_2.equals(syntax))
 				emit_ListExpression_AsteriskKeyword_0_1_0_0_or_HyphenMinusKeyword_0_1_0_1_or_PlusSignKeyword_0_1_0_2(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_ListExpression_BLTerminalRuleCall_0_1_3_q.equals(syntax))
@@ -188,8 +182,6 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_ListExpression_WSTerminalRuleCall_1_2_a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_QuoteExpression_BLTerminalRuleCall_3_q.equals(syntax))
 				emit_QuoteExpression_BLTerminalRuleCall_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_RefExpression_BLTerminalRuleCall_5_q.equals(syntax))
-				emit_RefExpression_BLTerminalRuleCall_5_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_VideoExpression_BLTerminalRuleCall_8_q.equals(syntax))
 				emit_VideoExpression_BLTerminalRuleCall_8_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
@@ -201,9 +193,10 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     BL?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     c=ListExpression (ambiguity) (rule end)
+	 *     contentOrdered+=TextExpression BL? (ambiguity) (rule end)
+	 *     contentUnordered+=TextExpression BL? (ambiguity) (rule end)
 	 */
-	protected void emit_Expression_BLTerminalRuleCall_0_3_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Expression_BLTerminalRuleCall_0_2_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -212,7 +205,12 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     BL?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     c=TextExpression (ambiguity) (rule end)
+	 *     c=EmphasisExpression (ambiguity) (rule end)
+	 *     c=ImageExpression (ambiguity) (rule end)
+	 *     c=LinkExpression (ambiguity) (rule end)
+	 *     c=QuoteExpression (ambiguity) (rule end)
+	 *     c=TabExpression (ambiguity) (rule end)
+	 *     c=VideoExpression (ambiguity) (rule end)
 	 */
 	protected void emit_Expression_BLTerminalRuleCall_1_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -392,19 +390,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     altText=NaturalExpression '](' ')' (ambiguity) (rule end)
 	 *     linkContent=NaturalExpression ')' (ambiguity) (rule end)
 	 */
-	protected void emit_LinkExpression_BLTerminalRuleCall_0_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     BL?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     altText=NaturalExpression '][' ']' (ambiguity) (rule end)
-	 *     refName=NaturalExpression ']' (ambiguity) (rule end)
-	 */
-	protected void emit_LinkExpression_BLTerminalRuleCall_1_5_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_LinkExpression_BLTerminalRuleCall_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -427,6 +413,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * This ambiguous syntax occurs at:
 	 *     contentUnordered+=TextExpression (ambiguity) ('*' | '-' | '+') WS* contentUnordered+=TextExpression
 	 *     contentUnordered+=TextExpression (ambiguity) (rule end)
+	 *     contentUnordered+=TextExpression (ambiguity) BL? (rule end)
 	 */
 	protected void emit_ListExpression_BLTerminalRuleCall_0_1_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -438,6 +425,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     contentOrdered+=TextExpression (ambiguity) (rule end)
+	 *     contentOrdered+=TextExpression (ambiguity) BL? (rule end)
 	 *     contentOrdered+=TextExpression (ambiguity) INT '.' WS* contentOrdered+=TextExpression
 	 */
 	protected void emit_ListExpression_BLTerminalRuleCall_1_4_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
@@ -476,18 +464,6 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     content+=TextExpression (ambiguity) (rule end)
 	 */
 	protected void emit_QuoteExpression_BLTerminalRuleCall_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     BL?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     refContent=NaturalExpression (ambiguity) (rule end)
-	 *     refName=NaturalExpression ']:' (ambiguity) (rule end)
-	 */
-	protected void emit_RefExpression_BLTerminalRuleCall_5_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

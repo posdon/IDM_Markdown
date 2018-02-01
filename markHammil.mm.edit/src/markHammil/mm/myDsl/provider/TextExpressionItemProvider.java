@@ -32,7 +32,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * @generated
  */
 public class TextExpressionItemProvider 
-	extends ListExpressionItemProvider {
+	extends ExpressionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -70,6 +70,7 @@ public class TextExpressionItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(MyDslPackage.Literals.LIST_EXPRESSION__CONTENT_ORDERED);
 			childrenFeatures.add(MyDslPackage.Literals.TEXT_EXPRESSION__C);
 			childrenFeatures.add(MyDslPackage.Literals.TEXT_EXPRESSION__CONTENT_UNORDERED);
 			childrenFeatures.add(MyDslPackage.Literals.TEXT_EXPRESSION__CONTENT);
@@ -125,6 +126,7 @@ public class TextExpressionItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(TextExpression.class)) {
+			case MyDslPackage.TEXT_EXPRESSION__CONTENT_ORDERED:
 			case MyDslPackage.TEXT_EXPRESSION__C:
 			case MyDslPackage.TEXT_EXPRESSION__CONTENT_UNORDERED:
 			case MyDslPackage.TEXT_EXPRESSION__CONTENT:
@@ -147,6 +149,11 @@ public class TextExpressionItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
+				(MyDslPackage.Literals.LIST_EXPRESSION__CONTENT_ORDERED,
+				 MyDslFactory.eINSTANCE.createTextExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(MyDslPackage.Literals.TEXT_EXPRESSION__C,
 				 MyDslFactory.eINSTANCE.createFile()));
 
@@ -163,22 +170,17 @@ public class TextExpressionItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(MyDslPackage.Literals.TEXT_EXPRESSION__C,
-				 MyDslFactory.eINSTANCE.createListExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MyDslPackage.Literals.TEXT_EXPRESSION__C,
 				 MyDslFactory.eINSTANCE.createTextExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(MyDslPackage.Literals.TEXT_EXPRESSION__C,
-				 MyDslFactory.eINSTANCE.createQuoteExpression()));
+				 MyDslFactory.eINSTANCE.createListExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(MyDslPackage.Literals.TEXT_EXPRESSION__C,
-				 MyDslFactory.eINSTANCE.createRefExpression()));
+				 MyDslFactory.eINSTANCE.createQuoteExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter

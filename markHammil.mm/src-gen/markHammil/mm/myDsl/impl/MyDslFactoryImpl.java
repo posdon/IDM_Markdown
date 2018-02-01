@@ -67,7 +67,6 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
 			case MyDslPackage.TEXT_EXPRESSION: return createTextExpression();
 			case MyDslPackage.LIST_EXPRESSION: return createListExpression();
 			case MyDslPackage.QUOTE_EXPRESSION: return createQuoteExpression();
-			case MyDslPackage.REF_EXPRESSION: return createRefExpression();
 			case MyDslPackage.LINK_EXPRESSION: return createLinkExpression();
 			case MyDslPackage.IMAGE_EXPRESSION: return createImageExpression();
 			case MyDslPackage.VIDEO_EXPRESSION: return createVideoExpression();
@@ -154,17 +153,6 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
   {
 		QuoteExpressionImpl quoteExpression = new QuoteExpressionImpl();
 		return quoteExpression;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public RefExpression createRefExpression()
-  {
-		RefExpressionImpl refExpression = new RefExpressionImpl();
-		return refExpression;
 	}
 
   /**

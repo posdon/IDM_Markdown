@@ -3,6 +3,18 @@
  */
 package markHammil.mm.generator
 
+import markHammil.mm.myDsl.BreakLineExpression
+import markHammil.mm.myDsl.EmphasisExpression
+import markHammil.mm.myDsl.Expression
+import markHammil.mm.myDsl.File
+import markHammil.mm.myDsl.HeaderExpression
+import markHammil.mm.myDsl.ImageExpression
+import markHammil.mm.myDsl.LinkExpression
+import markHammil.mm.myDsl.ListExpression
+import markHammil.mm.myDsl.QuoteExpression
+import markHammil.mm.myDsl.TabExpression
+import markHammil.mm.myDsl.TextExpression
+import markHammil.mm.myDsl.VideoExpression
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
@@ -15,11 +27,66 @@ import org.eclipse.xtext.generator.IGeneratorContext
  */
 class MyDslGenerator extends AbstractGenerator {
 
-	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-//		fsa.generateFile('greetings.txt', 'People to greet: ' + 
-//			resource.allContents
-//				.filter(Greeting)
-//				.map[name]
-//				.join(', '))
+	override void doGenerate(Resource res, IFileSystemAccess2 fsa, IGeneratorContext ctx){
+	 	fsa.generateFile(res.URI.trimFileExtension.appendFileExtension("html").lastSegment, 
+	 	res.allContents.filter(File).toIterable.head.compile.toString)	
 	}
+	
+	def dispatch compile(File file) '''
+	<!doctype html>
+	<html>
+	  <head>
+		<meta charset="utf-8">
+	    <title>Auto generated markdown</title>
+	  </head>
+	  <body>
+		«FOR exp : file.expression»
+		«exp.compile»
+		«ENDFOR»
+	  </body>
+	</html>
+	'''
+	
+	def dispatch compile(Expression expression) '''this expression is not supported:«expression»'''
+	
+	def dispatch compile(BreakLineExpression br) '''
+	<br>
+	'''
+	
+	def dispatch compile(HeaderExpression headerExpression) '''
+		
+	'''
+	
+	def dispatch compile(TextExpression textExpression) '''
+		«textExpression.c.compile»
+	'''
+	
+	
+	
+	def dispatch compile(ListExpression listExpression) '''
+	
+	'''
+	
+	def dispatch compile(EmphasisExpression emphasisExpression) '''
+	''' 
+	
+	def dispatch compile(QuoteExpression quoteExpression) '''
+	
+	'''
+	
+	def dispatch compile(TabExpression tabExpression) '''
+	'''
+	
+	def dispatch compile(LinkExpression linkExpression) '''
+	<a href="«linkExpression.linkContent.compile»">«linkExpression.altText.compile»</a>
+	'''
+	
+	def dispatch compile(ImageExpression imageExpression) '''
+	<img src="«imageExpression.linkContent.compile»">«imageExpression.altText.compile»</img>
+	'''
+	
+	def dispatch compile(VideoExpression videoExpression) '''
+	
+	'''
+	
 }

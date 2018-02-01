@@ -10,16 +10,16 @@ File:
         ;
         
 Expression:
-	(=> c=HeaderExpression | c=BreakLineExpression | c=RefExpression | c=ListExpression =>BL?) | c=TextExpression =>BL?
+	(=> HeaderExpression | BreakLineExpression | /* RefExpression | */ ListExpression =>BL?) | TextExpression =>BL?
 ;
 
 BreakLineExpression :
 	{BreakLineExpressionB}
-	BL
+	isBR?='true' BL
 ;
 
 TextExpression hidden(WS):
-	c+= EmphasisExpression | => ( c+= QuoteExpression | c+= TabExpression | ( c+=LinkExpression | => c+=ImageExpression | => c+=VideoExpression ))
+	c= EmphasisExpression | => ( c= QuoteExpression | c= TabExpression | ( c=LinkExpression | => c=ImageExpression | => c=VideoExpression ))
 ;
 
 
@@ -36,32 +36,16 @@ QuoteExpression returns QuoteExpression:
 
 
 
-//CodeExpression returns CodeExpression:
-//	{CodeExpression}
-//	'```' BL (content+=TextExpression =>BL ?)+ '```' BL | '`' content+=TextExpression "`"
-//	
+//RefExpression returns RefExpression :
+//	{RefExpression}
+//	=>'[' refName=NaturalExpression =>']:' (refContent=NaturalExpression)? =>BL?
 //;
-
-
-
-
-
-
-
-
-
-
-
-RefExpression returns RefExpression :
-	{RefExpression}
-	=>'[' refName=NaturalExpression =>']:' (refContent=NaturalExpression)? =>BL?
-;
 
 
 LinkExpression returns LinkExpression :
 	{LinkExpression}
-	=>'[' altText=NaturalExpression =>'](' (linkContent=NaturalExpression)? =>')' =>BL? |
-	=>'[' altText=NaturalExpression =>'][' (refName=NaturalExpression)? =>']' =>BL?
+	=>'[' altText=NaturalExpression =>'](' (linkContent=NaturalExpression)? =>')' =>BL? //|
+	//=>'[' altText=NaturalExpression =>'][' (refName=NaturalExpression)? =>']' =>BL?
 ;
 
 
@@ -80,12 +64,6 @@ VideoExpression returns VideoExpression :
 
 
 
-
-
-
-
-
-
 TabExpression returns TabExpression :
 	{TabExpression}
 	=> ( header=LineExpression BL TabSeparation =>(BL =>lines+=LineExpression)* )
@@ -94,7 +72,6 @@ TabExpression returns TabExpression :
 TabSeparation :
 	'|'? '-' ('-')+ ( '|' '-' ('-')+ )+ '|'? 
 ;
-
 
 LineExpression returns LineExpression :
 	=>'|'? cells+=NaturalExpression (=> '|' cells+=NaturalExpression)* =>'|'? 

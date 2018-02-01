@@ -5,8 +5,6 @@ package markHammil.mm.myDsl;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Header Expression</b></em>'.
@@ -23,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface HeaderExpression extends EObject
+public interface HeaderExpression extends Expression
 {
   /**
 	 * Returns the value of the '<em><b>Title</b></em>' containment reference list.

@@ -16,15 +16,7 @@ import markHammil.mm.myDsl.MyDslFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ListExpressionTest extends TestCase {
-
-	/**
-	 * The fixture for this List Expression test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ListExpression fixture = null;
+public class ListExpressionTest extends ExpressionTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -46,23 +38,14 @@ public class ListExpressionTest extends TestCase {
 	}
 
 	/**
-	 * Sets the fixture for this List Expression test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(ListExpression fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
 	 * Returns the fixture for this List Expression test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected ListExpression getFixture() {
-		return fixture;
+		return (ListExpression)fixture;
 	}
 
 	/**

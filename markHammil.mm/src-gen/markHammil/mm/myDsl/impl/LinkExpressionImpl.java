@@ -26,7 +26,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link markHammil.mm.myDsl.impl.LinkExpressionImpl#getAltText <em>Alt Text</em>}</li>
  *   <li>{@link markHammil.mm.myDsl.impl.LinkExpressionImpl#getLinkContent <em>Link Content</em>}</li>
- *   <li>{@link markHammil.mm.myDsl.impl.LinkExpressionImpl#getRefName <em>Ref Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -52,16 +51,6 @@ public class LinkExpressionImpl extends MinimalEObjectImpl.Container implements 
 	 * @ordered
 	 */
   protected EmphasisExpression linkContent;
-
-  /**
-	 * The cached value of the '{@link #getRefName() <em>Ref Name</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @see #getRefName()
-	 * @generated
-	 * @ordered
-	 */
-  protected EmphasisExpression refName;
 
   /**
 	 * <!-- begin-user-doc -->
@@ -181,52 +170,6 @@ public class LinkExpressionImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EmphasisExpression getRefName()
-  {
-		return refName;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public NotificationChain basicSetRefName(EmphasisExpression newRefName, NotificationChain msgs)
-  {
-		EmphasisExpression oldRefName = refName;
-		refName = newRefName;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyDslPackage.LINK_EXPRESSION__REF_NAME, oldRefName, newRefName);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public void setRefName(EmphasisExpression newRefName)
-  {
-		if (newRefName != refName) {
-			NotificationChain msgs = null;
-			if (refName != null)
-				msgs = ((InternalEObject)refName).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.LINK_EXPRESSION__REF_NAME, null, msgs);
-			if (newRefName != null)
-				msgs = ((InternalEObject)newRefName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.LINK_EXPRESSION__REF_NAME, null, msgs);
-			msgs = basicSetRefName(newRefName, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.LINK_EXPRESSION__REF_NAME, newRefName, newRefName));
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -235,8 +178,6 @@ public class LinkExpressionImpl extends MinimalEObjectImpl.Container implements 
 				return basicSetAltText(null, msgs);
 			case MyDslPackage.LINK_EXPRESSION__LINK_CONTENT:
 				return basicSetLinkContent(null, msgs);
-			case MyDslPackage.LINK_EXPRESSION__REF_NAME:
-				return basicSetRefName(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -254,8 +195,6 @@ public class LinkExpressionImpl extends MinimalEObjectImpl.Container implements 
 				return getAltText();
 			case MyDslPackage.LINK_EXPRESSION__LINK_CONTENT:
 				return getLinkContent();
-			case MyDslPackage.LINK_EXPRESSION__REF_NAME:
-				return getRefName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -274,9 +213,6 @@ public class LinkExpressionImpl extends MinimalEObjectImpl.Container implements 
 				return;
 			case MyDslPackage.LINK_EXPRESSION__LINK_CONTENT:
 				setLinkContent((EmphasisExpression)newValue);
-				return;
-			case MyDslPackage.LINK_EXPRESSION__REF_NAME:
-				setRefName((EmphasisExpression)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -297,9 +233,6 @@ public class LinkExpressionImpl extends MinimalEObjectImpl.Container implements 
 			case MyDslPackage.LINK_EXPRESSION__LINK_CONTENT:
 				setLinkContent((EmphasisExpression)null);
 				return;
-			case MyDslPackage.LINK_EXPRESSION__REF_NAME:
-				setRefName((EmphasisExpression)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -317,8 +250,6 @@ public class LinkExpressionImpl extends MinimalEObjectImpl.Container implements 
 				return altText != null;
 			case MyDslPackage.LINK_EXPRESSION__LINK_CONTENT:
 				return linkContent != null;
-			case MyDslPackage.LINK_EXPRESSION__REF_NAME:
-				return refName != null;
 		}
 		return super.eIsSet(featureID);
 	}

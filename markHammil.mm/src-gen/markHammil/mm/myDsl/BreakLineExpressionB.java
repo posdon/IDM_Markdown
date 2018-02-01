@@ -9,6 +9,12 @@ package markHammil.mm.myDsl;
  * A representation of the model object '<em><b>Break Line Expression B</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link markHammil.mm.myDsl.BreakLineExpressionB#isIsBR <em>Is BR</em>}</li>
+ * </ul>
  *
  * @see markHammil.mm.myDsl.MyDslPackage#getBreakLineExpressionB()
  * @model
@@ -16,4 +22,30 @@ package markHammil.mm.myDsl;
  */
 public interface BreakLineExpressionB extends BreakLineExpression
 {
+  /**
+	 * Returns the value of the '<em><b>Is BR</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Is BR</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+	 * @return the value of the '<em>Is BR</em>' attribute.
+	 * @see #setIsBR(boolean)
+	 * @see markHammil.mm.myDsl.MyDslPackage#getBreakLineExpressionB_IsBR()
+	 * @model
+	 * @generated
+	 */
+  boolean isIsBR();
+
+  /**
+	 * Sets the value of the '{@link markHammil.mm.myDsl.BreakLineExpressionB#isIsBR <em>Is BR</em>}' attribute.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is BR</em>' attribute.
+	 * @see #isIsBR()
+	 * @generated
+	 */
+  void setIsBR(boolean value);
+
 } // BreakLineExpressionB

@@ -25,23 +25,33 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface TextExpression extends ListExpression, QuoteExpression
+public interface TextExpression extends Expression, ListExpression, QuoteExpression
 {
   /**
-	 * Returns the value of the '<em><b>C</b></em>' containment reference list.
-	 * The list contents are of type {@link org.eclipse.emf.ecore.EObject}.
+	 * Returns the value of the '<em><b>C</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>C</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>C</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>C</em>' containment reference list.
+	 * @return the value of the '<em>C</em>' containment reference.
+	 * @see #setC(EObject)
 	 * @see markHammil.mm.myDsl.MyDslPackage#getTextExpression_C()
 	 * @model containment="true"
 	 * @generated
 	 */
-  EList<EObject> getC();
+  EObject getC();
+
+  /**
+	 * Sets the value of the '{@link markHammil.mm.myDsl.TextExpression#getC <em>C</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>C</em>' containment reference.
+	 * @see #getC()
+	 * @generated
+	 */
+  void setC(EObject value);
 
   /**
 	 * Returns the value of the '<em><b>Content Unordered</b></em>' containment reference list.

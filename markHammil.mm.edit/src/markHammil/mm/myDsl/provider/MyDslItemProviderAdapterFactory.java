@@ -211,29 +211,6 @@ public class MyDslItemProviderAdapterFactory extends MyDslAdapterFactory impleme
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link markHammil.mm.myDsl.RefExpression} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected RefExpressionItemProvider refExpressionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link markHammil.mm.myDsl.RefExpression}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createRefExpressionAdapter() {
-		if (refExpressionItemProvider == null) {
-			refExpressionItemProvider = new RefExpressionItemProvider(this);
-		}
-
-		return refExpressionItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link markHammil.mm.myDsl.LinkExpression} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -729,7 +706,6 @@ public class MyDslItemProviderAdapterFactory extends MyDslAdapterFactory impleme
 		if (textExpressionItemProvider != null) textExpressionItemProvider.dispose();
 		if (listExpressionItemProvider != null) listExpressionItemProvider.dispose();
 		if (quoteExpressionItemProvider != null) quoteExpressionItemProvider.dispose();
-		if (refExpressionItemProvider != null) refExpressionItemProvider.dispose();
 		if (linkExpressionItemProvider != null) linkExpressionItemProvider.dispose();
 		if (imageExpressionItemProvider != null) imageExpressionItemProvider.dispose();
 		if (videoExpressionItemProvider != null) videoExpressionItemProvider.dispose();

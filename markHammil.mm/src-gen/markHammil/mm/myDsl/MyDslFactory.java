@@ -78,15 +78,6 @@ public interface MyDslFactory extends EFactory
   QuoteExpression createQuoteExpression();
 
   /**
-	 * Returns a new object of class '<em>Ref Expression</em>'.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Ref Expression</em>'.
-	 * @generated
-	 */
-  RefExpression createRefExpression();
-
-  /**
 	 * Returns a new object of class '<em>Link Expression</em>'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

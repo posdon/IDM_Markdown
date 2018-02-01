@@ -16,7 +16,6 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link markHammil.mm.myDsl.LinkExpression#getAltText <em>Alt Text</em>}</li>
  *   <li>{@link markHammil.mm.myDsl.LinkExpression#getLinkContent <em>Link Content</em>}</li>
- *   <li>{@link markHammil.mm.myDsl.LinkExpression#getRefName <em>Ref Name</em>}</li>
  * </ul>
  *
  * @see markHammil.mm.myDsl.MyDslPackage#getLinkExpression()
@@ -76,31 +75,5 @@ public interface LinkExpression extends EObject
 	 * @generated
 	 */
   void setLinkContent(EmphasisExpression value);
-
-  /**
-	 * Returns the value of the '<em><b>Ref Name</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Ref Name</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-	 * @return the value of the '<em>Ref Name</em>' containment reference.
-	 * @see #setRefName(EmphasisExpression)
-	 * @see markHammil.mm.myDsl.MyDslPackage#getLinkExpression_RefName()
-	 * @model containment="true"
-	 * @generated
-	 */
-  EmphasisExpression getRefName();
-
-  /**
-	 * Sets the value of the '{@link markHammil.mm.myDsl.LinkExpression#getRefName <em>Ref Name</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Ref Name</em>' containment reference.
-	 * @see #getRefName()
-	 * @generated
-	 */
-  void setRefName(EmphasisExpression value);
 
 } // LinkExpression

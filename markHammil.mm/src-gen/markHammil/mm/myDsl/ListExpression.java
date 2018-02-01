@@ -5,8 +5,6 @@ package markHammil.mm.myDsl;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>List Expression</b></em>'.
@@ -23,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface ListExpression extends EObject
+public interface ListExpression extends Expression
 {
   /**
 	 * Returns the value of the '<em><b>Content Ordered</b></em>' containment reference list.

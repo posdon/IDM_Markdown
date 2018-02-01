@@ -6,17 +6,47 @@ package markHammil.mm.myDsl.impl;
 import markHammil.mm.myDsl.BreakLineExpressionB;
 import markHammil.mm.myDsl.MyDslPackage;
 
+import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Break Line Expression B</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link markHammil.mm.myDsl.impl.BreakLineExpressionBImpl#isIsBR <em>Is BR</em>}</li>
+ * </ul>
  *
  * @generated
  */
 public class BreakLineExpressionBImpl extends BreakLineExpressionImpl implements BreakLineExpressionB
 {
+  /**
+	 * The default value of the '{@link #isIsBR() <em>Is BR</em>}' attribute.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @see #isIsBR()
+	 * @generated
+	 * @ordered
+	 */
+  protected static final boolean IS_BR_EDEFAULT = false;
+
+  /**
+	 * The cached value of the '{@link #isIsBR() <em>Is BR</em>}' attribute.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @see #isIsBR()
+	 * @generated
+	 * @ordered
+	 */
+  protected boolean isBR = IS_BR_EDEFAULT;
+
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -36,6 +66,108 @@ public class BreakLineExpressionBImpl extends BreakLineExpressionImpl implements
   protected EClass eStaticClass()
   {
 		return MyDslPackage.Literals.BREAK_LINE_EXPRESSION_B;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public boolean isIsBR()
+  {
+		return isBR;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public void setIsBR(boolean newIsBR)
+  {
+		boolean oldIsBR = isBR;
+		isBR = newIsBR;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.BREAK_LINE_EXPRESSION_B__IS_BR, oldIsBR, isBR));
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  @Override
+  public Object eGet(int featureID, boolean resolve, boolean coreType)
+  {
+		switch (featureID) {
+			case MyDslPackage.BREAK_LINE_EXPRESSION_B__IS_BR:
+				return isIsBR();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  @Override
+  public void eSet(int featureID, Object newValue)
+  {
+		switch (featureID) {
+			case MyDslPackage.BREAK_LINE_EXPRESSION_B__IS_BR:
+				setIsBR((Boolean)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  @Override
+  public void eUnset(int featureID)
+  {
+		switch (featureID) {
+			case MyDslPackage.BREAK_LINE_EXPRESSION_B__IS_BR:
+				setIsBR(IS_BR_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  @Override
+  public boolean eIsSet(int featureID)
+  {
+		switch (featureID) {
+			case MyDslPackage.BREAK_LINE_EXPRESSION_B__IS_BR:
+				return isBR != IS_BR_EDEFAULT;
+		}
+		return super.eIsSet(featureID);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  @Override
+  public String toString()
+  {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (isBR: ");
+		result.append(isBR);
+		result.append(')');
+		return result.toString();
 	}
 
 } //BreakLineExpressionBImpl

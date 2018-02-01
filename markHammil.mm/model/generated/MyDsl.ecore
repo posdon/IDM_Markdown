@@ -5,36 +5,25 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="expression" upperBound="-1"
         eType="#//Expression" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Expression">
+  <eClassifiers xsi:type="ecore:EClass" name="Expression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BreakLineExpression" eSuperTypes="#//Expression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TextExpression" eSuperTypes="#//Expression #//ListExpression #//QuoteExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="c" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BreakLineExpression"/>
-  <eClassifiers xsi:type="ecore:EClass" name="TextExpression" eSuperTypes="#//ListExpression #//QuoteExpression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="c" upperBound="-1" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="contentUnordered" upperBound="-1"
         eType="#//TextExpression" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" upperBound="-1"
         eType="#//TextExpression" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ListExpression">
+  <eClassifiers xsi:type="ecore:EClass" name="ListExpression" eSuperTypes="#//Expression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="contentOrdered" upperBound="-1"
         eType="#//TextExpression" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="QuoteExpression"/>
-  <eClassifiers xsi:type="ecore:EClass" name="RefExpression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="refName" eType="#//EmphasisExpression"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="refContent" eType="#//EmphasisExpression"
-        containment="true"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LinkExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="altText" eType="#//EmphasisExpression"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="linkContent" eType="#//EmphasisExpression"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="refName" eType="#//EmphasisExpression"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ImageExpression">
@@ -61,7 +50,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="cells" upperBound="-1"
         eType="#//EmphasisExpression" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="HeaderExpression">
+  <eClassifiers xsi:type="ecore:EClass" name="HeaderExpression" eSuperTypes="#//Expression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="title" upperBound="-1"
         eType="#//EmphasisExpression" containment="true"/>
   </eClassifiers>
@@ -79,7 +68,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="#//EmphasisExpression"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BreakLineExpressionB" eSuperTypes="#//BreakLineExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BreakLineExpressionB" eSuperTypes="#//BreakLineExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isBR" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StrongExpression" eSuperTypes="#//EmphasisExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="ItalicExpression" eSuperTypes="#//EmphasisExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="ScratchExpression" eSuperTypes="#//EmphasisExpression"/>

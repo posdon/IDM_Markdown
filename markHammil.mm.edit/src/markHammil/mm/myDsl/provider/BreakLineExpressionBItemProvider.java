@@ -7,10 +7,15 @@ package markHammil.mm.myDsl.provider;
 import java.util.Collection;
 import java.util.List;
 
+import markHammil.mm.myDsl.BreakLineExpressionB;
+import markHammil.mm.myDsl.MyDslPackage;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
  * This is the item provider adapter for a {@link markHammil.mm.myDsl.BreakLineExpressionB} object.
@@ -40,8 +45,31 @@ public class BreakLineExpressionBItemProvider extends BreakLineExpressionItemPro
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addIsBRPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Is BR feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsBRPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_BreakLineExpressionB_isBR_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_BreakLineExpressionB_isBR_feature", "_UI_BreakLineExpressionB_type"),
+				 MyDslPackage.Literals.BREAK_LINE_EXPRESSION_B__IS_BR,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -63,7 +91,8 @@ public class BreakLineExpressionBItemProvider extends BreakLineExpressionItemPro
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_BreakLineExpressionB_type");
+		BreakLineExpressionB breakLineExpressionB = (BreakLineExpressionB)object;
+		return getString("_UI_BreakLineExpressionB_type") + " " + breakLineExpressionB.isIsBR();
 	}
 	
 
@@ -77,6 +106,12 @@ public class BreakLineExpressionBItemProvider extends BreakLineExpressionItemPro
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(BreakLineExpressionB.class)) {
+			case MyDslPackage.BREAK_LINE_EXPRESSION_B__IS_BR:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

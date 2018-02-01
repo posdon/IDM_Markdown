@@ -9,9 +9,7 @@
     <genClasses ecoreClass="MyDsl.ecore#//File">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//File/expression"/>
     </genClasses>
-    <genClasses ecoreClass="MyDsl.ecore#//Expression">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Expression/c"/>
-    </genClasses>
+    <genClasses ecoreClass="MyDsl.ecore#//Expression"/>
     <genClasses ecoreClass="MyDsl.ecore#//BreakLineExpression"/>
     <genClasses ecoreClass="MyDsl.ecore#//TextExpression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//TextExpression/c"/>
@@ -22,14 +20,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//ListExpression/contentOrdered"/>
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//QuoteExpression"/>
-    <genClasses ecoreClass="MyDsl.ecore#//RefExpression">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//RefExpression/refName"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//RefExpression/refContent"/>
-    </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//LinkExpression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//LinkExpression/altText"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//LinkExpression/linkContent"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//LinkExpression/refName"/>
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//ImageExpression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//ImageExpression/altText"/>
@@ -61,7 +54,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//EmphasisExpression/value"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//EmphasisExpression/content"/>
     </genClasses>
-    <genClasses ecoreClass="MyDsl.ecore#//BreakLineExpressionB"/>
+    <genClasses ecoreClass="MyDsl.ecore#//BreakLineExpressionB">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//BreakLineExpressionB/isBR"/>
+    </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//StrongExpression"/>
     <genClasses ecoreClass="MyDsl.ecore#//ItalicExpression"/>
     <genClasses ecoreClass="MyDsl.ecore#//ScratchExpression"/>

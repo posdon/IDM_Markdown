@@ -16,15 +16,7 @@ import markHammil.mm.myDsl.MyDslFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class BreakLineExpressionTest extends TestCase {
-
-	/**
-	 * The fixture for this Break Line Expression test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected BreakLineExpression fixture = null;
+public class BreakLineExpressionTest extends ExpressionTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -46,23 +38,14 @@ public class BreakLineExpressionTest extends TestCase {
 	}
 
 	/**
-	 * Sets the fixture for this Break Line Expression test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(BreakLineExpression fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
 	 * Returns the fixture for this Break Line Expression test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected BreakLineExpression getFixture() {
-		return fixture;
+		return (BreakLineExpression)fixture;
 	}
 
 	/**

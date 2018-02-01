@@ -7,7 +7,6 @@ import com.google.inject.Inject;
 import java.util.Set;
 import markHammil.mm.myDsl.BreakLineExpressionB;
 import markHammil.mm.myDsl.EmphasisExpression;
-import markHammil.mm.myDsl.Expression;
 import markHammil.mm.myDsl.File;
 import markHammil.mm.myDsl.Header1Expression;
 import markHammil.mm.myDsl.Header2Expression;
@@ -21,7 +20,6 @@ import markHammil.mm.myDsl.LineExpression;
 import markHammil.mm.myDsl.LinkExpression;
 import markHammil.mm.myDsl.ListExpression;
 import markHammil.mm.myDsl.MyDslPackage;
-import markHammil.mm.myDsl.RefExpression;
 import markHammil.mm.myDsl.ScratchExpression;
 import markHammil.mm.myDsl.StrongExpression;
 import markHammil.mm.myDsl.TabExpression;
@@ -65,9 +63,6 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 					return; 
 				}
 				else break;
-			case MyDslPackage.EXPRESSION:
-				sequence_Expression(context, (Expression) semanticObject); 
-				return; 
 			case MyDslPackage.FILE:
 				sequence_File(context, (File) semanticObject); 
 				return; 
@@ -104,9 +99,6 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case MyDslPackage.LIST_EXPRESSION:
 				sequence_ListExpression(context, (ListExpression) semanticObject); 
 				return; 
-			case MyDslPackage.REF_EXPRESSION:
-				sequence_RefExpression(context, (RefExpression) semanticObject); 
-				return; 
 			case MyDslPackage.SCRATCH_EXPRESSION:
 				sequence_ScratchExpression(context, (ScratchExpression) semanticObject); 
 				return; 
@@ -119,6 +111,10 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case MyDslPackage.TEXT_EXPRESSION:
 				if (rule == grammarAccess.getListExpressionRule()) {
 					sequence_ListExpression(context, (TextExpression) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getExpressionRule()) {
+					sequence_ListExpression_TextExpression(context, (TextExpression) semanticObject); 
 					return; 
 				}
 				else if (rule == grammarAccess.getQuoteExpressionRule()) {
@@ -140,13 +136,20 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
+	 *     Expression returns BreakLineExpressionB
 	 *     BreakLineExpression returns BreakLineExpressionB
 	 *
 	 * Constraint:
-	 *     {BreakLineExpressionB}
+	 *     isBR?='true'
 	 */
 	protected void sequence_BreakLineExpression(ISerializationContext context, BreakLineExpressionB semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.BREAK_LINE_EXPRESSION_B__IS_BR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.BREAK_LINE_EXPRESSION_B__IS_BR));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getBreakLineExpressionAccess().getIsBRTrueKeyword_1_0(), semanticObject.isIsBR());
+		feeder.finish();
 	}
 	
 	
@@ -158,18 +161,6 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     (c+=StrongExpression | c+=ItalicExpression | c+=ScratchExpression | c+=NaturalExpression)+
 	 */
 	protected void sequence_EmphasisExpression(ISerializationContext context, EmphasisExpression semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Expression returns Expression
-	 *
-	 * Constraint:
-	 *     (c=HeaderExpression | c=BreakLineExpression | c=RefExpression | c=ListExpression | c=TextExpression)
-	 */
-	protected void sequence_Expression(ISerializationContext context, Expression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -188,6 +179,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
+	 *     Expression returns Header1Expression
 	 *     HeaderExpression returns Header1Expression
 	 *     Header1Expression returns Header1Expression
 	 *
@@ -201,6 +193,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
+	 *     Expression returns Header2Expression
 	 *     HeaderExpression returns Header2Expression
 	 *     Header2Expression returns Header2Expression
 	 *
@@ -214,6 +207,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
+	 *     Expression returns Header3Expression
 	 *     HeaderExpression returns Header3Expression
 	 *     Header3Expression returns Header3Expression
 	 *
@@ -227,6 +221,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
+	 *     Expression returns Header4Expression
 	 *     HeaderExpression returns Header4Expression
 	 *     Header4Expression returns Header4Expression
 	 *
@@ -240,6 +235,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
+	 *     Expression returns Header5Expression
 	 *     HeaderExpression returns Header5Expression
 	 *     Header5Expression returns Header5Expression
 	 *
@@ -253,6 +249,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
+	 *     Expression returns Header6Expression
 	 *     HeaderExpression returns Header6Expression
 	 *     Header6Expression returns Header6Expression
 	 *
@@ -311,7 +308,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     LinkExpression returns LinkExpression
 	 *
 	 * Constraint:
-	 *     ((altText=NaturalExpression linkContent=NaturalExpression?) | (altText=NaturalExpression refName=NaturalExpression?))
+	 *     (altText=NaturalExpression linkContent=NaturalExpression?)
 	 */
 	protected void sequence_LinkExpression(ISerializationContext context, LinkExpression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -320,6 +317,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
+	 *     Expression returns ListExpression
 	 *     ListExpression returns ListExpression
 	 *
 	 * Constraint:
@@ -344,6 +342,26 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
+	 *     Expression returns TextExpression
+	 *
+	 * Constraint:
+	 *     (
+	 *         c=EmphasisExpression | 
+	 *         c=QuoteExpression | 
+	 *         c=TabExpression | 
+	 *         c=LinkExpression | 
+	 *         c=ImageExpression | 
+	 *         c=VideoExpression | 
+	 *         contentUnordered+=TextExpression+
+	 *     )
+	 */
+	protected void sequence_ListExpression_TextExpression(ISerializationContext context, TextExpression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     NaturalExpression returns EmphasisExpression
 	 *
 	 * Constraint:
@@ -362,18 +380,6 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     content+=TextExpression+
 	 */
 	protected void sequence_QuoteExpression(ISerializationContext context, TextExpression semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     RefExpression returns RefExpression
-	 *
-	 * Constraint:
-	 *     (refName=NaturalExpression refContent=NaturalExpression?)
-	 */
-	protected void sequence_RefExpression(ISerializationContext context, RefExpression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -432,12 +438,12 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *
 	 * Constraint:
 	 *     (
-	 *         c+=EmphasisExpression | 
-	 *         c+=QuoteExpression | 
-	 *         c+=TabExpression | 
-	 *         c+=LinkExpression | 
-	 *         c+=ImageExpression | 
-	 *         c+=VideoExpression
+	 *         c=EmphasisExpression | 
+	 *         c=QuoteExpression | 
+	 *         c=TabExpression | 
+	 *         c=LinkExpression | 
+	 *         c=ImageExpression | 
+	 *         c=VideoExpression
 	 *     )
 	 */
 	protected void sequence_TextExpression(ISerializationContext context, TextExpression semanticObject) {

@@ -153,6 +153,61 @@ public class FileItemProvider
 			(createChildParameter
 				(MyDslPackage.Literals.FILE__EXPRESSION,
 				 MyDslFactory.eINSTANCE.createExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.FILE__EXPRESSION,
+				 MyDslFactory.eINSTANCE.createBreakLineExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.FILE__EXPRESSION,
+				 MyDslFactory.eINSTANCE.createTextExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.FILE__EXPRESSION,
+				 MyDslFactory.eINSTANCE.createListExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.FILE__EXPRESSION,
+				 MyDslFactory.eINSTANCE.createHeaderExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.FILE__EXPRESSION,
+				 MyDslFactory.eINSTANCE.createHeader1Expression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.FILE__EXPRESSION,
+				 MyDslFactory.eINSTANCE.createHeader2Expression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.FILE__EXPRESSION,
+				 MyDslFactory.eINSTANCE.createHeader3Expression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.FILE__EXPRESSION,
+				 MyDslFactory.eINSTANCE.createHeader4Expression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.FILE__EXPRESSION,
+				 MyDslFactory.eINSTANCE.createHeader5Expression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.FILE__EXPRESSION,
+				 MyDslFactory.eINSTANCE.createHeader6Expression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.FILE__EXPRESSION,
+				 MyDslFactory.eINSTANCE.createBreakLineExpressionB()));
 	}
 
 	/**

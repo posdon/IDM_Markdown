@@ -34,13 +34,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * @generated
  */
 public class ListExpressionItemProvider 
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends ExpressionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -153,17 +147,6 @@ public class ListExpressionItemProvider
 			(createChildParameter
 				(MyDslPackage.Literals.LIST_EXPRESSION__CONTENT_ORDERED,
 				 MyDslFactory.eINSTANCE.createTextExpression()));
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return MyDslEditPlugin.INSTANCE;
 	}
 
 }
