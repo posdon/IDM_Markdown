@@ -33,225 +33,234 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class RefExpressionImpl extends MinimalEObjectImpl.Container implements RefExpression
 {
   /**
-	 * The cached value of the '{@link #getRefName() <em>Ref Name</em>}' containment reference.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getRefName() <em>Ref Name</em>}' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getRefName()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getRefName()
+   * @generated
+   * @ordered
+   */
   protected EmphasisExpression refName;
 
   /**
-	 * The cached value of the '{@link #getRefContent() <em>Ref Content</em>}' containment reference.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getRefContent() <em>Ref Content</em>}' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getRefContent()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getRefContent()
+   * @generated
+   * @ordered
+   */
   protected EmphasisExpression refContent;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   protected RefExpressionImpl()
   {
-		super();
-	}
+    super();
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   protected EClass eStaticClass()
   {
-		return MyDslPackage.Literals.REF_EXPRESSION;
-	}
+    return MyDslPackage.Literals.REF_EXPRESSION;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EmphasisExpression getRefName()
   {
-		return refName;
-	}
+    return refName;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public NotificationChain basicSetRefName(EmphasisExpression newRefName, NotificationChain msgs)
   {
-		EmphasisExpression oldRefName = refName;
-		refName = newRefName;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyDslPackage.REF_EXPRESSION__REF_NAME, oldRefName, newRefName);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
+    EmphasisExpression oldRefName = refName;
+    refName = newRefName;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyDslPackage.REF_EXPRESSION__REF_NAME, oldRefName, newRefName);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public void setRefName(EmphasisExpression newRefName)
   {
-		if (newRefName != refName) {
-			NotificationChain msgs = null;
-			if (refName != null)
-				msgs = ((InternalEObject)refName).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.REF_EXPRESSION__REF_NAME, null, msgs);
-			if (newRefName != null)
-				msgs = ((InternalEObject)newRefName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.REF_EXPRESSION__REF_NAME, null, msgs);
-			msgs = basicSetRefName(newRefName, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.REF_EXPRESSION__REF_NAME, newRefName, newRefName));
-	}
+    if (newRefName != refName)
+    {
+      NotificationChain msgs = null;
+      if (refName != null)
+        msgs = ((InternalEObject)refName).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.REF_EXPRESSION__REF_NAME, null, msgs);
+      if (newRefName != null)
+        msgs = ((InternalEObject)newRefName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.REF_EXPRESSION__REF_NAME, null, msgs);
+      msgs = basicSetRefName(newRefName, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.REF_EXPRESSION__REF_NAME, newRefName, newRefName));
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EmphasisExpression getRefContent()
   {
-		return refContent;
-	}
+    return refContent;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public NotificationChain basicSetRefContent(EmphasisExpression newRefContent, NotificationChain msgs)
   {
-		EmphasisExpression oldRefContent = refContent;
-		refContent = newRefContent;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyDslPackage.REF_EXPRESSION__REF_CONTENT, oldRefContent, newRefContent);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
+    EmphasisExpression oldRefContent = refContent;
+    refContent = newRefContent;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyDslPackage.REF_EXPRESSION__REF_CONTENT, oldRefContent, newRefContent);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public void setRefContent(EmphasisExpression newRefContent)
   {
-		if (newRefContent != refContent) {
-			NotificationChain msgs = null;
-			if (refContent != null)
-				msgs = ((InternalEObject)refContent).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.REF_EXPRESSION__REF_CONTENT, null, msgs);
-			if (newRefContent != null)
-				msgs = ((InternalEObject)newRefContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.REF_EXPRESSION__REF_CONTENT, null, msgs);
-			msgs = basicSetRefContent(newRefContent, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.REF_EXPRESSION__REF_CONTENT, newRefContent, newRefContent));
-	}
+    if (newRefContent != refContent)
+    {
+      NotificationChain msgs = null;
+      if (refContent != null)
+        msgs = ((InternalEObject)refContent).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.REF_EXPRESSION__REF_CONTENT, null, msgs);
+      if (newRefContent != null)
+        msgs = ((InternalEObject)newRefContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.REF_EXPRESSION__REF_CONTENT, null, msgs);
+      msgs = basicSetRefContent(newRefContent, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.REF_EXPRESSION__REF_CONTENT, newRefContent, newRefContent));
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-		switch (featureID) {
-			case MyDslPackage.REF_EXPRESSION__REF_NAME:
-				return basicSetRefName(null, msgs);
-			case MyDslPackage.REF_EXPRESSION__REF_CONTENT:
-				return basicSetRefContent(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
+    switch (featureID)
+    {
+      case MyDslPackage.REF_EXPRESSION__REF_NAME:
+        return basicSetRefName(null, msgs);
+      case MyDslPackage.REF_EXPRESSION__REF_CONTENT:
+        return basicSetRefContent(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-		switch (featureID) {
-			case MyDslPackage.REF_EXPRESSION__REF_NAME:
-				return getRefName();
-			case MyDslPackage.REF_EXPRESSION__REF_CONTENT:
-				return getRefContent();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+    switch (featureID)
+    {
+      case MyDslPackage.REF_EXPRESSION__REF_NAME:
+        return getRefName();
+      case MyDslPackage.REF_EXPRESSION__REF_CONTENT:
+        return getRefContent();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public void eSet(int featureID, Object newValue)
   {
-		switch (featureID) {
-			case MyDslPackage.REF_EXPRESSION__REF_NAME:
-				setRefName((EmphasisExpression)newValue);
-				return;
-			case MyDslPackage.REF_EXPRESSION__REF_CONTENT:
-				setRefContent((EmphasisExpression)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+    switch (featureID)
+    {
+      case MyDslPackage.REF_EXPRESSION__REF_NAME:
+        setRefName((EmphasisExpression)newValue);
+        return;
+      case MyDslPackage.REF_EXPRESSION__REF_CONTENT:
+        setRefContent((EmphasisExpression)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public void eUnset(int featureID)
   {
-		switch (featureID) {
-			case MyDslPackage.REF_EXPRESSION__REF_NAME:
-				setRefName((EmphasisExpression)null);
-				return;
-			case MyDslPackage.REF_EXPRESSION__REF_CONTENT:
-				setRefContent((EmphasisExpression)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
+    switch (featureID)
+    {
+      case MyDslPackage.REF_EXPRESSION__REF_NAME:
+        setRefName((EmphasisExpression)null);
+        return;
+      case MyDslPackage.REF_EXPRESSION__REF_CONTENT:
+        setRefContent((EmphasisExpression)null);
+        return;
+    }
+    super.eUnset(featureID);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public boolean eIsSet(int featureID)
   {
-		switch (featureID) {
-			case MyDslPackage.REF_EXPRESSION__REF_NAME:
-				return refName != null;
-			case MyDslPackage.REF_EXPRESSION__REF_CONTENT:
-				return refContent != null;
-		}
-		return super.eIsSet(featureID);
-	}
+    switch (featureID)
+    {
+      case MyDslPackage.REF_EXPRESSION__REF_NAME:
+        return refName != null;
+      case MyDslPackage.REF_EXPRESSION__REF_CONTENT:
+        return refContent != null;
+    }
+    return super.eIsSet(featureID);
+  }
 
 } //RefExpressionImpl

@@ -34,126 +34,132 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class EmphasisExpressionImpl extends TextExpressionImpl implements EmphasisExpression
 {
   /**
-	 * The cached value of the '{@link #getC() <em>C</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getC() <em>C</em>}' containment reference list.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getC()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getC()
+   * @generated
+   * @ordered
+   */
   protected EList<EmphasisExpression> c;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   protected EmphasisExpressionImpl()
   {
-		super();
-	}
+    super();
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   protected EClass eStaticClass()
   {
-		return MyDslPackage.Literals.EMPHASIS_EXPRESSION;
-	}
+    return MyDslPackage.Literals.EMPHASIS_EXPRESSION;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EList<EmphasisExpression> getC()
   {
-		if (c == null) {
-			c = new EObjectContainmentEList<EmphasisExpression>(EmphasisExpression.class, this, MyDslPackage.EMPHASIS_EXPRESSION__C);
-		}
-		return c;
-	}
+    if (c == null)
+    {
+      c = new EObjectContainmentEList<EmphasisExpression>(EmphasisExpression.class, this, MyDslPackage.EMPHASIS_EXPRESSION__C);
+    }
+    return c;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-		switch (featureID) {
-			case MyDslPackage.EMPHASIS_EXPRESSION__C:
-				return ((InternalEList<?>)getC()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
+    switch (featureID)
+    {
+      case MyDslPackage.EMPHASIS_EXPRESSION__C:
+        return ((InternalEList<?>)getC()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-		switch (featureID) {
-			case MyDslPackage.EMPHASIS_EXPRESSION__C:
-				return getC();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+    switch (featureID)
+    {
+      case MyDslPackage.EMPHASIS_EXPRESSION__C:
+        return getC();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-		switch (featureID) {
-			case MyDslPackage.EMPHASIS_EXPRESSION__C:
-				getC().clear();
-				getC().addAll((Collection<? extends EmphasisExpression>)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+    switch (featureID)
+    {
+      case MyDslPackage.EMPHASIS_EXPRESSION__C:
+        getC().clear();
+        getC().addAll((Collection<? extends EmphasisExpression>)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public void eUnset(int featureID)
   {
-		switch (featureID) {
-			case MyDslPackage.EMPHASIS_EXPRESSION__C:
-				getC().clear();
-				return;
-		}
-		super.eUnset(featureID);
-	}
+    switch (featureID)
+    {
+      case MyDslPackage.EMPHASIS_EXPRESSION__C:
+        getC().clear();
+        return;
+    }
+    super.eUnset(featureID);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public boolean eIsSet(int featureID)
   {
-		switch (featureID) {
-			case MyDslPackage.EMPHASIS_EXPRESSION__C:
-				return c != null && !c.isEmpty();
-		}
-		return super.eIsSet(featureID);
-	}
+    switch (featureID)
+    {
+      case MyDslPackage.EMPHASIS_EXPRESSION__C:
+        return c != null && !c.isEmpty();
+    }
+    return super.eIsSet(featureID);
+  }
 
 } //EmphasisExpressionImpl

@@ -12,6 +12,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="BreakLineExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="HorizontalExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="TextExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="URLedExpression" eSuperTypes="#//TextExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="c" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
+        containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ListExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="contentUnordered" upperBound="-1"
         eType="#//TextExpression" containment="true"/>
@@ -38,19 +42,19 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="refContent" eType="#//EmphasisExpression"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="LinkExpression" eSuperTypes="#//TextExpression">
+  <eClassifiers xsi:type="ecore:EClass" name="LinkExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="altText" eType="#//EmphasisExpression"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="linkContent" eType="#//EmphasisExpression"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ImageExpression" eSuperTypes="#//TextExpression">
+  <eClassifiers xsi:type="ecore:EClass" name="ImageExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="altText" eType="#//EmphasisExpression"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="linkContent" eType="#//EmphasisExpression"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="VideoExpression" eSuperTypes="#//TextExpression">
+  <eClassifiers xsi:type="ecore:EClass" name="VideoExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="altText" eType="#//EmphasisExpression"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="linkImage" eType="#//EmphasisExpression"

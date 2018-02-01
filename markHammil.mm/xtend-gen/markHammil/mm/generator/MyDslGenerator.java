@@ -24,10 +24,12 @@ import markHammil.mm.myDsl.LinkExpression;
 import markHammil.mm.myDsl.ListExpression;
 import markHammil.mm.myDsl.NaturalExpression;
 import markHammil.mm.myDsl.QuoteExpression;
+import markHammil.mm.myDsl.RefExpression;
 import markHammil.mm.myDsl.ScratchExpression;
 import markHammil.mm.myDsl.StrongExpression;
 import markHammil.mm.myDsl.TabExpression;
 import markHammil.mm.myDsl.TextExpression;
+import markHammil.mm.myDsl.URLedExpression;
 import markHammil.mm.myDsl.VideoExpression;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
@@ -124,6 +126,91 @@ public class MyDslGenerator extends AbstractGenerator {
     return _builder;
   }
   
+  protected CharSequence _compile(final HeaderExpression headerExpression) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("Should not be called : ");
+    _builder.append(headerExpression);
+    _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final TextExpression textExpression) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("Should not be call : ");
+    _builder.append(textExpression);
+    _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final ListExpression listExpression) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      boolean _isEmpty = listExpression.getContentOrdered().isEmpty();
+      boolean _not = (!_isEmpty);
+      if (_not) {
+        _builder.append("<ol>");
+        _builder.newLine();
+        {
+          EList<TextExpression> _contentOrdered = listExpression.getContentOrdered();
+          for(final TextExpression elem : _contentOrdered) {
+            _builder.append("\t");
+            _builder.append("<li>");
+            Object _compile = this.compile(elem);
+            _builder.append(_compile, "\t");
+            _builder.append("</li>");
+            _builder.newLineIfNotEmpty();
+          }
+        }
+        _builder.append("</ol>");
+        _builder.newLine();
+      }
+    }
+    {
+      boolean _isEmpty_1 = listExpression.getContentUnordered().isEmpty();
+      boolean _not_1 = (!_isEmpty_1);
+      if (_not_1) {
+        _builder.append("<ul>");
+        _builder.newLine();
+        {
+          EList<TextExpression> _contentUnordered = listExpression.getContentUnordered();
+          for(final TextExpression elem_1 : _contentUnordered) {
+            _builder.append("\t");
+            _builder.append("<li>");
+            Object _compile_1 = this.compile(elem_1);
+            _builder.append(_compile_1, "\t");
+            _builder.append("</li>");
+            _builder.newLineIfNotEmpty();
+          }
+        }
+        _builder.append("</ul>");
+        _builder.newLine();
+      }
+    }
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final QuoteExpression quoteExpression) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("<p id=\"quote\">");
+    _builder.newLine();
+    {
+      EList<TextExpression> _content = quoteExpression.getContent();
+      for(final TextExpression quote : _content) {
+        _builder.append("\t");
+        Object _compile = this.compile(quote);
+        _builder.append(_compile, "\t");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.append("</p>");
+    _builder.newLine();
+    return _builder;
+  }
+  
+  /**
+   * Singleton expressions
+   * 	 br, hr ...
+   */
   protected CharSequence _compile(final BreakLineExpression br) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<br>");
@@ -131,6 +218,17 @@ public class MyDslGenerator extends AbstractGenerator {
     return _builder;
   }
   
+  protected CharSequence _compile(final HorizontalExpression horizontalExpression) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("<hr>");
+    _builder.newLine();
+    return _builder;
+  }
+  
+  /**
+   * Emphasis expressions
+   * 	 strong, italic, scratch...
+   */
   protected CharSequence _compile(final EmphasisExpression emphasisExpression) {
     StringConcatenation _builder = new StringConcatenation();
     {
@@ -187,14 +285,10 @@ public class MyDslGenerator extends AbstractGenerator {
     return _builder;
   }
   
-  protected CharSequence _compile(final HeaderExpression headerExpression) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("Should not be called : ");
-    _builder.append(headerExpression);
-    _builder.newLineIfNotEmpty();
-    return _builder;
-  }
-  
+  /**
+   * Header expressions
+   * 	 From one to six
+   */
   protected CharSequence _compile(final Header1Expression headerExpression) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<h1>");
@@ -303,86 +397,10 @@ public class MyDslGenerator extends AbstractGenerator {
     return _builder;
   }
   
-  protected CharSequence _compile(final TextExpression textExpression) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("Should not be call : ");
-    _builder.append(textExpression);
-    _builder.newLineIfNotEmpty();
-    return _builder;
-  }
-  
-  protected CharSequence _compile(final ListExpression listExpression) {
-    StringConcatenation _builder = new StringConcatenation();
-    {
-      boolean _isEmpty = listExpression.getContentOrdered().isEmpty();
-      boolean _not = (!_isEmpty);
-      if (_not) {
-        _builder.append("<ol>");
-        _builder.newLine();
-        {
-          EList<TextExpression> _contentOrdered = listExpression.getContentOrdered();
-          for(final TextExpression elem : _contentOrdered) {
-            _builder.append("\t");
-            _builder.append("<li>");
-            Object _compile = this.compile(elem);
-            _builder.append(_compile, "\t");
-            _builder.append("</li>");
-            _builder.newLineIfNotEmpty();
-          }
-        }
-        _builder.append("</ol>");
-        _builder.newLine();
-      }
-    }
-    {
-      boolean _isEmpty_1 = listExpression.getContentUnordered().isEmpty();
-      boolean _not_1 = (!_isEmpty_1);
-      if (_not_1) {
-        _builder.append("<ul>");
-        _builder.newLine();
-        {
-          EList<TextExpression> _contentUnordered = listExpression.getContentUnordered();
-          for(final TextExpression elem_1 : _contentUnordered) {
-            _builder.append("\t");
-            _builder.append("<li>");
-            Object _compile_1 = this.compile(elem_1);
-            _builder.append(_compile_1, "\t");
-            _builder.append("</li>");
-            _builder.newLineIfNotEmpty();
-          }
-        }
-        _builder.append("</ul>");
-        _builder.newLine();
-      }
-    }
-    return _builder;
-  }
-  
-  protected CharSequence _compile(final HorizontalExpression horizontalExpression) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("<hr>");
-    _builder.newLine();
-    return _builder;
-  }
-  
-  protected CharSequence _compile(final QuoteExpression quoteExpression) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("<p id=\"quote\">");
-    _builder.newLine();
-    {
-      EList<TextExpression> _content = quoteExpression.getContent();
-      for(final TextExpression quote : _content) {
-        _builder.append("\t");
-        Object _compile = this.compile(quote);
-        _builder.append(_compile, "\t");
-        _builder.newLineIfNotEmpty();
-      }
-    }
-    _builder.append("</p>");
-    _builder.newLine();
-    return _builder;
-  }
-  
+  /**
+   * Tab expressions
+   * 	 Lines, Separation...
+   */
   protected CharSequence _compile(final TabExpression tabExpression) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<table>");
@@ -448,6 +466,23 @@ public class MyDslGenerator extends AbstractGenerator {
     return _builder;
   }
   
+  /**
+   * Links expressions
+   * 	 Image, Ref, Video...
+   */
+  protected CharSequence _compile(final URLedExpression urlExp) {
+    StringConcatenation _builder = new StringConcatenation();
+    Object _compile = this.compile(urlExp.getC());
+    _builder.append(_compile);
+    _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final RefExpression refExpression) {
+    StringConcatenation _builder = new StringConcatenation();
+    return _builder;
+  }
+  
   protected CharSequence _compile(final LinkExpression linkExpression) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<a href=\"");
@@ -504,16 +539,12 @@ public class MyDslGenerator extends AbstractGenerator {
       return _compile((Header5Expression)italicExpression);
     } else if (italicExpression instanceof Header6Expression) {
       return _compile((Header6Expression)italicExpression);
-    } else if (italicExpression instanceof ImageExpression) {
-      return _compile((ImageExpression)italicExpression);
-    } else if (italicExpression instanceof LinkExpression) {
-      return _compile((LinkExpression)italicExpression);
     } else if (italicExpression instanceof QuoteExpression) {
       return _compile((QuoteExpression)italicExpression);
     } else if (italicExpression instanceof TabExpression) {
       return _compile((TabExpression)italicExpression);
-    } else if (italicExpression instanceof VideoExpression) {
-      return _compile((VideoExpression)italicExpression);
+    } else if (italicExpression instanceof URLedExpression) {
+      return _compile((URLedExpression)italicExpression);
     } else if (italicExpression instanceof BreakLineExpression) {
       return _compile((BreakLineExpression)italicExpression);
     } else if (italicExpression instanceof Expression) {
@@ -524,12 +555,20 @@ public class MyDslGenerator extends AbstractGenerator {
       return _compile((HeaderExpression)italicExpression);
     } else if (italicExpression instanceof HorizontalExpression) {
       return _compile((HorizontalExpression)italicExpression);
+    } else if (italicExpression instanceof ImageExpression) {
+      return _compile((ImageExpression)italicExpression);
     } else if (italicExpression instanceof LineExpression) {
       return _compile((LineExpression)italicExpression);
+    } else if (italicExpression instanceof LinkExpression) {
+      return _compile((LinkExpression)italicExpression);
     } else if (italicExpression instanceof ListExpression) {
       return _compile((ListExpression)italicExpression);
+    } else if (italicExpression instanceof RefExpression) {
+      return _compile((RefExpression)italicExpression);
     } else if (italicExpression instanceof TextExpression) {
       return _compile((TextExpression)italicExpression);
+    } else if (italicExpression instanceof VideoExpression) {
+      return _compile((VideoExpression)italicExpression);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
         Arrays.<Object>asList(italicExpression).toString());

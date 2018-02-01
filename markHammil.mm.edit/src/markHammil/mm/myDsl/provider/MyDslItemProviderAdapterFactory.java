@@ -188,6 +188,29 @@ public class MyDslItemProviderAdapterFactory extends MyDslAdapterFactory impleme
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link markHammil.mm.myDsl.URLedExpression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected URLedExpressionItemProvider urLedExpressionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link markHammil.mm.myDsl.URLedExpression}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createURLedExpressionAdapter() {
+		if (urLedExpressionItemProvider == null) {
+			urLedExpressionItemProvider = new URLedExpressionItemProvider(this);
+		}
+
+		return urLedExpressionItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link markHammil.mm.myDsl.ListExpression} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -751,6 +774,7 @@ public class MyDslItemProviderAdapterFactory extends MyDslAdapterFactory impleme
 		if (breakLineExpressionItemProvider != null) breakLineExpressionItemProvider.dispose();
 		if (horizontalExpressionItemProvider != null) horizontalExpressionItemProvider.dispose();
 		if (textExpressionItemProvider != null) textExpressionItemProvider.dispose();
+		if (urLedExpressionItemProvider != null) urLedExpressionItemProvider.dispose();
 		if (listExpressionItemProvider != null) listExpressionItemProvider.dispose();
 		if (quoteExpressionItemProvider != null) quoteExpressionItemProvider.dispose();
 		if (tabExpressionItemProvider != null) tabExpressionItemProvider.dispose();

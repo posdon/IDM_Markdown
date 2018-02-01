@@ -14,23 +14,25 @@ import markHammil.mm.myDsl.Header4Expression
 import markHammil.mm.myDsl.Header5Expression
 import markHammil.mm.myDsl.Header6Expression
 import markHammil.mm.myDsl.HeaderExpression
+import markHammil.mm.myDsl.HorizontalExpression
 import markHammil.mm.myDsl.ImageExpression
 import markHammil.mm.myDsl.ItalicExpression
+import markHammil.mm.myDsl.LineExpression
 import markHammil.mm.myDsl.LinkExpression
 import markHammil.mm.myDsl.ListExpression
 import markHammil.mm.myDsl.NaturalExpression
 import markHammil.mm.myDsl.QuoteExpression
+import markHammil.mm.myDsl.RefExpression
 import markHammil.mm.myDsl.ScratchExpression
 import markHammil.mm.myDsl.StrongExpression
 import markHammil.mm.myDsl.TabExpression
 import markHammil.mm.myDsl.TextExpression
+import markHammil.mm.myDsl.URLedExpression
 import markHammil.mm.myDsl.VideoExpression
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
-import markHammil.mm.myDsl.LineExpression
-import markHammil.mm.myDsl.HorizontalExpression
 
 /**
  * Generates code from your model files on save.
@@ -72,12 +74,65 @@ class MyDslGenerator extends AbstractGenerator {
 		«expression.c.compile»
 	'''
 	
+	def dispatch compile(HeaderExpression headerExpression) '''
+		Should not be called : «headerExpression»
+	'''
+		
+	def dispatch compile(TextExpression textExpression) '''
+		Should not be call : «textExpression»
+	'''
+
+
+	
+	def dispatch compile(ListExpression listExpression) '''
+	«IF !listExpression.contentOrdered.isEmpty»
+	<ol>
+		«FOR elem : listExpression.contentOrdered»
+		<li>«elem.compile»</li>
+		«ENDFOR»
+	</ol>
+	«ENDIF»
+	«IF !listExpression.contentUnordered.isEmpty»
+	<ul>
+		«FOR elem : listExpression.contentUnordered»
+		<li>«elem.compile»</li>
+		«ENDFOR»
+	</ul>
+	«ENDIF»
+	'''
+
+	def dispatch compile(QuoteExpression quoteExpression) '''
+	<p id="quote">
+		«FOR quote : quoteExpression.content»
+		«quote.compile»
+		«ENDFOR»
+	</p>
+	'''
+	
+
+	
+	/***************************
+	 * 
+	 * 	Singleton expressions
+	 *	 br, hr ...
+	 *
+	 * *********************** */   
+	 
 	def dispatch compile(BreakLineExpression br) '''
 	<br>
 	'''
 	
+	def dispatch compile(HorizontalExpression horizontalExpression) '''
+	<hr>
+	'''
+		
 	
-	
+	/***************************
+	 * 
+	 * 	Emphasis expressions
+	 *	 strong, italic, scratch...
+	 *
+	 * *********************** */
 	
 	def dispatch compile(EmphasisExpression emphasisExpression) '''
 	«FOR exp : emphasisExpression.c»
@@ -104,11 +159,14 @@ class MyDslGenerator extends AbstractGenerator {
 	'''
 	
 	
-	
-	def dispatch compile(HeaderExpression headerExpression) '''
-		Should not be called : «headerExpression»
-	'''
-	
+
+	/***************************
+	 * 
+	 * 	Header expressions
+	 *	 From one to six
+	 *
+	 * *********************** */   
+ 	
 	def dispatch compile(Header1Expression headerExpression) '''
 		<h1>
 			«FOR head : headerExpression.title»
@@ -158,40 +216,13 @@ class MyDslGenerator extends AbstractGenerator {
 	'''
 	
 	
-	def dispatch compile(TextExpression textExpression) '''
-		Should not be call : «textExpression»
-	'''
 	
-	
-	
-	def dispatch compile(ListExpression listExpression) '''
-	«IF !listExpression.contentOrdered.isEmpty»
-	<ol>
-		«FOR elem : listExpression.contentOrdered»
-		<li>«elem.compile»</li>
-		«ENDFOR»
-	</ol>
-	«ENDIF»
-	«IF !listExpression.contentUnordered.isEmpty»
-	<ul>
-		«FOR elem : listExpression.contentUnordered»
-		<li>«elem.compile»</li>
-		«ENDFOR»
-	</ul>
-	«ENDIF»
-	'''
-	
-	def dispatch compile(HorizontalExpression horizontalExpression) '''
-		<hr>
-	'''
-	
-	def dispatch compile(QuoteExpression quoteExpression) '''
-	<p id="quote">
-		«FOR quote : quoteExpression.content»
-		«quote.compile»
-		«ENDFOR»
-	</p>
-	'''
+	/***************************
+ * 
+ * 	 Tab expressions
+ *	 Lines, Separation...
+ *
+ * *********************** */   
 	
 	def dispatch compile(TabExpression tabExpression) '''
 	<table>
@@ -216,6 +247,22 @@ class MyDslGenerator extends AbstractGenerator {
 		«cell.compile»
 	</td>
 	«ENDFOR»
+	'''
+
+
+
+	/***************************
+	 * 
+	 * 	Links expressions
+	 *	 Image, Ref, Video...
+	 *
+	 * *********************** */   
+
+	def dispatch compile(URLedExpression urlExp) '''
+		«urlExp.c.compile»
+	'''
+	
+	def dispatch compile(RefExpression refExpression) '''
 	'''
 	
 	def dispatch compile(LinkExpression linkExpression) '''

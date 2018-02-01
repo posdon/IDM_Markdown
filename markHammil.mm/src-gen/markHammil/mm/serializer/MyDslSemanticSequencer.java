@@ -28,6 +28,7 @@ import markHammil.mm.myDsl.RefExpression;
 import markHammil.mm.myDsl.ScratchExpression;
 import markHammil.mm.myDsl.StrongExpression;
 import markHammil.mm.myDsl.TabExpression;
+import markHammil.mm.myDsl.URLedExpression;
 import markHammil.mm.myDsl.VideoExpression;
 import markHammil.mm.services.MyDslGrammarAccess;
 import org.eclipse.emf.ecore.EObject;
@@ -119,6 +120,9 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				return; 
 			case MyDslPackage.TAB_EXPRESSION:
 				sequence_TabExpression(context, (TabExpression) semanticObject); 
+				return; 
+			case MyDslPackage.UR_LED_EXPRESSION:
+				sequence_URLedExpression(context, (URLedExpression) semanticObject); 
 				return; 
 			case MyDslPackage.VIDEO_EXPRESSION:
 				sequence_VideoExpression(context, (VideoExpression) semanticObject); 
@@ -276,7 +280,6 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
-	 *     TextExpression returns ImageExpression
 	 *     ImageExpression returns ImageExpression
 	 *
 	 * Constraint:
@@ -319,7 +322,6 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
-	 *     TextExpression returns LinkExpression
 	 *     LinkExpression returns LinkExpression
 	 *
 	 * Constraint:
@@ -430,7 +432,19 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
-	 *     TextExpression returns VideoExpression
+	 *     TextExpression returns URLedExpression
+	 *     URLedExpression returns URLedExpression
+	 *
+	 * Constraint:
+	 *     (c=ImageExpression | c=VideoExpression | c=LinkExpression)
+	 */
+	protected void sequence_URLedExpression(ISerializationContext context, URLedExpression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     VideoExpression returns VideoExpression
 	 *
 	 * Constraint:

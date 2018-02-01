@@ -175,6 +175,11 @@ public class ExpressionItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(MyDslPackage.Literals.EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createURLedExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.EXPRESSION__C,
 				 MyDslFactory.eINSTANCE.createListExpression()));
 
 		newChildDescriptors.add

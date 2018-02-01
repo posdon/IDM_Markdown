@@ -13,6 +13,28 @@ Expression:
 	=>(c=HeaderExpression | c=BreakLineExpression | c=RefExpression | =>c=HorizontalExpression =>BL? |  c=ListExpression =>BL?) | c=TextExpression =>BL?
 ;
 
+TextExpression hidden(WS):
+	=>( =>URLedExpression | TabExpression | QuoteExpression ) | EmphasisExpression 
+;
+
+ListExpression returns ListExpression hidden():
+	{ListExpression}
+	(('*'|'-'|'+') WS+ contentUnordered+=TextExpression =>BL?)+ | (INT '.'WS+ contentOrdered+=TextExpression =>BL?)+
+;
+
+QuoteExpression returns QuoteExpression:
+	{QuoteExpression}
+	=>'>' (content+=TextExpression)+ =>BL?
+;
+
+
+/***************************
+ * 
+ * 	Singleton expressions
+ *	 br, hr ...
+ *
+ * *********************** */
+
 BreakLineExpression :
 	{BreakLineExpression}
 	BL
@@ -21,22 +43,6 @@ BreakLineExpression :
 HorizontalExpression :
 	{HorizontalExpression}
 	('-'|'*'|'_')('-'|'*'|'_')('-'|'*'|'_')+
-;
-
-TextExpression hidden(WS):
-	=>( =>(=> (ImageExpression | => VideoExpression ) | LinkExpression) | TabExpression | QuoteExpression ) | EmphasisExpression 
-;
-
-
-ListExpression returns ListExpression hidden():
-	{ListExpression}
-	(('*'|'-'|'+') WS+ contentUnordered+=TextExpression =>BL?)+ | (INT '.'WS+ contentOrdered+=TextExpression =>BL?)+
-;
-
-
-QuoteExpression returns QuoteExpression:
-	{QuoteExpression}
-	=>'>' (content+=TextExpression)+ =>BL?
 ;
 
 
@@ -56,7 +62,6 @@ TabSeparation :
 	'|'? '-' ('-')+ ( '|' '-' ('-')+ )+ '|'? 
 ;
 
-
 LineExpression returns LineExpression :
 	=>'|'? cells+=NaturalExpression (=> '|' cells+=NaturalExpression)* =>'|'? 
 ;
@@ -69,11 +74,15 @@ LineExpression returns LineExpression :
  *
  * *********************** */   
 
+URLedExpression returns URLedExpression:
+	{URLedExpression}
+	(=> (c=ImageExpression | => c=VideoExpression ) | c=LinkExpression)
+;
+
 RefExpression returns RefExpression :
 	{RefExpression}
 	=>'[' refName=NaturalExpression =>']:' (refContent=NaturalExpression)? =>BL?
 ;
-
 
 LinkExpression returns LinkExpression :
 	{LinkExpression}
@@ -81,12 +90,10 @@ LinkExpression returns LinkExpression :
 	//=>'[' altText=NaturalExpression =>'][' (refName=NaturalExpression)? =>']' =>BL?
 ;
 
-
 ImageExpression returns ImageExpression :
 	{ImageExpression}
 	=>'![' altText=NaturalExpression =>'](' (linkContent=NaturalExpression)? =>')' =>BL?
 ;
-
 
 VideoExpression returns VideoExpression :
 	{VideoExpression}
@@ -146,7 +153,6 @@ Header6Expression returns Header6Expression :
 EmphasisExpression returns EmphasisExpression:
       ( => ( => c+=StrongExpression | c+=ItalicExpression | c+=ScratchExpression ) | c+=NaturalExpression )+ ;
       
-
 StrongExpression returns EmphasisExpression hidden():
 	{StrongExpression}
 	'**' content=EmphasisExpression '**'
@@ -165,6 +171,8 @@ ScratchExpression returns EmphasisExpression hidden():
 NaturalExpression returns EmphasisExpression:
         {NaturalExpression}
                 value+=Content ;
+
+
 
 Content returns ecore::EString:
 	(=>(ID|STRING|INT)|"\'"|"-"|"|"|'\"')

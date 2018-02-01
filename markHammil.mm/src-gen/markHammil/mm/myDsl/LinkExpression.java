@@ -3,6 +3,7 @@
  */
 package markHammil.mm.myDsl;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,58 +22,58 @@ package markHammil.mm.myDsl;
  * @model
  * @generated
  */
-public interface LinkExpression extends TextExpression
+public interface LinkExpression extends EObject
 {
   /**
-	 * Returns the value of the '<em><b>Alt Text</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Alt Text</b></em>' containment reference.
+   * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Alt Text</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Alt Text</em>' containment reference.
-	 * @see #setAltText(EmphasisExpression)
-	 * @see markHammil.mm.myDsl.MyDslPackage#getLinkExpression_AltText()
-	 * @model containment="true"
-	 * @generated
-	 */
+   * @return the value of the '<em>Alt Text</em>' containment reference.
+   * @see #setAltText(EmphasisExpression)
+   * @see markHammil.mm.myDsl.MyDslPackage#getLinkExpression_AltText()
+   * @model containment="true"
+   * @generated
+   */
   EmphasisExpression getAltText();
 
   /**
-	 * Sets the value of the '{@link markHammil.mm.myDsl.LinkExpression#getAltText <em>Alt Text</em>}' containment reference.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link markHammil.mm.myDsl.LinkExpression#getAltText <em>Alt Text</em>}' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Alt Text</em>' containment reference.
-	 * @see #getAltText()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Alt Text</em>' containment reference.
+   * @see #getAltText()
+   * @generated
+   */
   void setAltText(EmphasisExpression value);
 
   /**
-	 * Returns the value of the '<em><b>Link Content</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Link Content</b></em>' containment reference.
+   * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Link Content</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Link Content</em>' containment reference.
-	 * @see #setLinkContent(EmphasisExpression)
-	 * @see markHammil.mm.myDsl.MyDslPackage#getLinkExpression_LinkContent()
-	 * @model containment="true"
-	 * @generated
-	 */
+   * @return the value of the '<em>Link Content</em>' containment reference.
+   * @see #setLinkContent(EmphasisExpression)
+   * @see markHammil.mm.myDsl.MyDslPackage#getLinkExpression_LinkContent()
+   * @model containment="true"
+   * @generated
+   */
   EmphasisExpression getLinkContent();
 
   /**
-	 * Sets the value of the '{@link markHammil.mm.myDsl.LinkExpression#getLinkContent <em>Link Content</em>}' containment reference.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link markHammil.mm.myDsl.LinkExpression#getLinkContent <em>Link Content</em>}' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Link Content</em>' containment reference.
-	 * @see #getLinkContent()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Link Content</em>' containment reference.
+   * @see #getLinkContent()
+   * @generated
+   */
   void setLinkContent(EmphasisExpression value);
 
 } // LinkExpression

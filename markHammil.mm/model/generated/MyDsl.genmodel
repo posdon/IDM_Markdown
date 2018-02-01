@@ -15,6 +15,9 @@
     <genClasses ecoreClass="MyDsl.ecore#//BreakLineExpression"/>
     <genClasses ecoreClass="MyDsl.ecore#//HorizontalExpression"/>
     <genClasses ecoreClass="MyDsl.ecore#//TextExpression"/>
+    <genClasses ecoreClass="MyDsl.ecore#//URLedExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//URLedExpression/c"/>
+    </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//ListExpression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//ListExpression/contentUnordered"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//ListExpression/contentOrdered"/>

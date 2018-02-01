@@ -20,24 +20,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class HorizontalExpressionImpl extends MinimalEObjectImpl.Container implements HorizontalExpression
 {
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   protected HorizontalExpressionImpl()
   {
-		super();
-	}
+    super();
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   protected EClass eStaticClass()
   {
-		return MyDslPackage.Literals.HORIZONTAL_EXPRESSION;
-	}
+    return MyDslPackage.Literals.HORIZONTAL_EXPRESSION;
+  }
 
 } //HorizontalExpressionImpl

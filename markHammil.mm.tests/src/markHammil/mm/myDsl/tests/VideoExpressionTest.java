@@ -16,7 +16,15 @@ import markHammil.mm.myDsl.VideoExpression;
  * <!-- end-user-doc -->
  * @generated
  */
-public class VideoExpressionTest extends TextExpressionTest {
+public class VideoExpressionTest extends TestCase {
+
+	/**
+	 * The fixture for this Video Expression test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected VideoExpression fixture = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -38,6 +46,16 @@ public class VideoExpressionTest extends TextExpressionTest {
 	}
 
 	/**
+	 * Sets the fixture for this Video Expression test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void setFixture(VideoExpression fixture) {
+		this.fixture = fixture;
+	}
+
+	/**
 	 * Returns the fixture for this Video Expression test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -45,7 +63,7 @@ public class VideoExpressionTest extends TextExpressionTest {
 	 */
 	@Override
 	protected VideoExpression getFixture() {
-		return (VideoExpression)fixture;
+		return fixture;
 	}
 
 	/**

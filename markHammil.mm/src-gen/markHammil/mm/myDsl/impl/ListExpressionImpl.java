@@ -38,162 +38,169 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class ListExpressionImpl extends MinimalEObjectImpl.Container implements ListExpression
 {
   /**
-	 * The cached value of the '{@link #getContentUnordered() <em>Content Unordered</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getContentUnordered() <em>Content Unordered</em>}' containment reference list.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getContentUnordered()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getContentUnordered()
+   * @generated
+   * @ordered
+   */
   protected EList<TextExpression> contentUnordered;
 
   /**
-	 * The cached value of the '{@link #getContentOrdered() <em>Content Ordered</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getContentOrdered() <em>Content Ordered</em>}' containment reference list.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getContentOrdered()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getContentOrdered()
+   * @generated
+   * @ordered
+   */
   protected EList<TextExpression> contentOrdered;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   protected ListExpressionImpl()
   {
-		super();
-	}
+    super();
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   protected EClass eStaticClass()
   {
-		return MyDslPackage.Literals.LIST_EXPRESSION;
-	}
+    return MyDslPackage.Literals.LIST_EXPRESSION;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EList<TextExpression> getContentUnordered()
   {
-		if (contentUnordered == null) {
-			contentUnordered = new EObjectContainmentEList<TextExpression>(TextExpression.class, this, MyDslPackage.LIST_EXPRESSION__CONTENT_UNORDERED);
-		}
-		return contentUnordered;
-	}
+    if (contentUnordered == null)
+    {
+      contentUnordered = new EObjectContainmentEList<TextExpression>(TextExpression.class, this, MyDslPackage.LIST_EXPRESSION__CONTENT_UNORDERED);
+    }
+    return contentUnordered;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EList<TextExpression> getContentOrdered()
   {
-		if (contentOrdered == null) {
-			contentOrdered = new EObjectContainmentEList<TextExpression>(TextExpression.class, this, MyDslPackage.LIST_EXPRESSION__CONTENT_ORDERED);
-		}
-		return contentOrdered;
-	}
+    if (contentOrdered == null)
+    {
+      contentOrdered = new EObjectContainmentEList<TextExpression>(TextExpression.class, this, MyDslPackage.LIST_EXPRESSION__CONTENT_ORDERED);
+    }
+    return contentOrdered;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-		switch (featureID) {
-			case MyDslPackage.LIST_EXPRESSION__CONTENT_UNORDERED:
-				return ((InternalEList<?>)getContentUnordered()).basicRemove(otherEnd, msgs);
-			case MyDslPackage.LIST_EXPRESSION__CONTENT_ORDERED:
-				return ((InternalEList<?>)getContentOrdered()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
+    switch (featureID)
+    {
+      case MyDslPackage.LIST_EXPRESSION__CONTENT_UNORDERED:
+        return ((InternalEList<?>)getContentUnordered()).basicRemove(otherEnd, msgs);
+      case MyDslPackage.LIST_EXPRESSION__CONTENT_ORDERED:
+        return ((InternalEList<?>)getContentOrdered()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-		switch (featureID) {
-			case MyDslPackage.LIST_EXPRESSION__CONTENT_UNORDERED:
-				return getContentUnordered();
-			case MyDslPackage.LIST_EXPRESSION__CONTENT_ORDERED:
-				return getContentOrdered();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+    switch (featureID)
+    {
+      case MyDslPackage.LIST_EXPRESSION__CONTENT_UNORDERED:
+        return getContentUnordered();
+      case MyDslPackage.LIST_EXPRESSION__CONTENT_ORDERED:
+        return getContentOrdered();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-		switch (featureID) {
-			case MyDslPackage.LIST_EXPRESSION__CONTENT_UNORDERED:
-				getContentUnordered().clear();
-				getContentUnordered().addAll((Collection<? extends TextExpression>)newValue);
-				return;
-			case MyDslPackage.LIST_EXPRESSION__CONTENT_ORDERED:
-				getContentOrdered().clear();
-				getContentOrdered().addAll((Collection<? extends TextExpression>)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+    switch (featureID)
+    {
+      case MyDslPackage.LIST_EXPRESSION__CONTENT_UNORDERED:
+        getContentUnordered().clear();
+        getContentUnordered().addAll((Collection<? extends TextExpression>)newValue);
+        return;
+      case MyDslPackage.LIST_EXPRESSION__CONTENT_ORDERED:
+        getContentOrdered().clear();
+        getContentOrdered().addAll((Collection<? extends TextExpression>)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public void eUnset(int featureID)
   {
-		switch (featureID) {
-			case MyDslPackage.LIST_EXPRESSION__CONTENT_UNORDERED:
-				getContentUnordered().clear();
-				return;
-			case MyDslPackage.LIST_EXPRESSION__CONTENT_ORDERED:
-				getContentOrdered().clear();
-				return;
-		}
-		super.eUnset(featureID);
-	}
+    switch (featureID)
+    {
+      case MyDslPackage.LIST_EXPRESSION__CONTENT_UNORDERED:
+        getContentUnordered().clear();
+        return;
+      case MyDslPackage.LIST_EXPRESSION__CONTENT_ORDERED:
+        getContentOrdered().clear();
+        return;
+    }
+    super.eUnset(featureID);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public boolean eIsSet(int featureID)
   {
-		switch (featureID) {
-			case MyDslPackage.LIST_EXPRESSION__CONTENT_UNORDERED:
-				return contentUnordered != null && !contentUnordered.isEmpty();
-			case MyDslPackage.LIST_EXPRESSION__CONTENT_ORDERED:
-				return contentOrdered != null && !contentOrdered.isEmpty();
-		}
-		return super.eIsSet(featureID);
-	}
+    switch (featureID)
+    {
+      case MyDslPackage.LIST_EXPRESSION__CONTENT_UNORDERED:
+        return contentUnordered != null && !contentUnordered.isEmpty();
+      case MyDslPackage.LIST_EXPRESSION__CONTENT_ORDERED:
+        return contentOrdered != null && !contentOrdered.isEmpty();
+    }
+    return super.eIsSet(featureID);
+  }
 
 } //ListExpressionImpl
