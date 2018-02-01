@@ -143,6 +143,22 @@ ruleExpression returns [EObject current=null]
 				    |
 				(
 					(
+						((
+							ruleHorizontalExpression
+						)
+						)=>
+						(
+							ruleHorizontalExpression
+						)
+					)
+					(
+						(RULE_BL)=>
+						RULE_BL
+					)?
+				)
+				    |
+				(
+					(
 						(
 							ruleListExpression
 						)
@@ -217,11 +233,15 @@ ruleExpression returns [EObject current=null]
 				    |
 				(
 					(
+						((
+							ruleHorizontalExpression
+						)
+						)=>
 						(
 							{
-								newCompositeNode(grammarAccess.getExpressionAccess().getCListExpressionParserRuleCall_0_0_3_0_0());
+								newCompositeNode(grammarAccess.getExpressionAccess().getCHorizontalExpressionParserRuleCall_0_0_3_0_0());
 							}
-							lv_c_3_0=ruleListExpression
+							lv_c_3_0=ruleHorizontalExpression
 							{
 								if ($current==null) {
 									$current = createModelElementForParent(grammarAccess.getExpressionRule());
@@ -230,7 +250,7 @@ ruleExpression returns [EObject current=null]
 									$current,
 									"c",
 									lv_c_3_0,
-									"markHammil.mm.MyDsl.ListExpression");
+									"markHammil.mm.MyDsl.HorizontalExpression");
 								afterParserOrEnumRuleCall();
 							}
 						)
@@ -243,6 +263,35 @@ ruleExpression returns [EObject current=null]
 						}
 					)?
 				)
+				    |
+				(
+					(
+						(
+							{
+								newCompositeNode(grammarAccess.getExpressionAccess().getCListExpressionParserRuleCall_0_0_4_0_0());
+							}
+							lv_c_5_0=ruleListExpression
+							{
+								if ($current==null) {
+									$current = createModelElementForParent(grammarAccess.getExpressionRule());
+								}
+								set(
+									$current,
+									"c",
+									lv_c_5_0,
+									"markHammil.mm.MyDsl.ListExpression");
+								afterParserOrEnumRuleCall();
+							}
+						)
+					)
+					(
+						(RULE_BL)=>
+						this_BL_6=RULE_BL
+						{
+							newLeafNode(this_BL_6, grammarAccess.getExpressionAccess().getBLTerminalRuleCall_0_0_4_1());
+						}
+					)?
+				)
 			)
 		)
 		    |
@@ -252,7 +301,7 @@ ruleExpression returns [EObject current=null]
 					{
 						newCompositeNode(grammarAccess.getExpressionAccess().getCTextExpressionParserRuleCall_1_0_0());
 					}
-					lv_c_5_0=ruleTextExpression
+					lv_c_7_0=ruleTextExpression
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getExpressionRule());
@@ -260,7 +309,7 @@ ruleExpression returns [EObject current=null]
 						set(
 							$current,
 							"c",
-							lv_c_5_0,
+							lv_c_7_0,
 							"markHammil.mm.MyDsl.TextExpression");
 						afterParserOrEnumRuleCall();
 					}
@@ -268,9 +317,9 @@ ruleExpression returns [EObject current=null]
 			)
 			(
 				(RULE_BL)=>
-				this_BL_6=RULE_BL
+				this_BL_8=RULE_BL
 				{
-					newLeafNode(this_BL_6, grammarAccess.getExpressionAccess().getBLTerminalRuleCall_1_1());
+					newLeafNode(this_BL_8, grammarAccess.getExpressionAccess().getBLTerminalRuleCall_1_1());
 				}
 			)?
 		)
@@ -304,6 +353,80 @@ ruleBreakLineExpression returns [EObject current=null]
 		{
 			newLeafNode(this_BL_1, grammarAccess.getBreakLineExpressionAccess().getBLTerminalRuleCall_1());
 		}
+	)
+;
+
+// Entry rule entryRuleHorizontalExpression
+entryRuleHorizontalExpression returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getHorizontalExpressionRule()); }
+	iv_ruleHorizontalExpression=ruleHorizontalExpression
+	{ $current=$iv_ruleHorizontalExpression.current; }
+	EOF;
+
+// Rule HorizontalExpression
+ruleHorizontalExpression returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getHorizontalExpressionAccess().getHorizontalExpressionAction_0(),
+					$current);
+			}
+		)
+		(
+			otherlv_1='-'
+			{
+				newLeafNode(otherlv_1, grammarAccess.getHorizontalExpressionAccess().getHyphenMinusKeyword_1_0());
+			}
+			    |
+			otherlv_2='*'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getHorizontalExpressionAccess().getAsteriskKeyword_1_1());
+			}
+			    |
+			otherlv_3='_'
+			{
+				newLeafNode(otherlv_3, grammarAccess.getHorizontalExpressionAccess().get_Keyword_1_2());
+			}
+		)
+		(
+			otherlv_4='-'
+			{
+				newLeafNode(otherlv_4, grammarAccess.getHorizontalExpressionAccess().getHyphenMinusKeyword_2_0());
+			}
+			    |
+			otherlv_5='*'
+			{
+				newLeafNode(otherlv_5, grammarAccess.getHorizontalExpressionAccess().getAsteriskKeyword_2_1());
+			}
+			    |
+			otherlv_6='_'
+			{
+				newLeafNode(otherlv_6, grammarAccess.getHorizontalExpressionAccess().get_Keyword_2_2());
+			}
+		)
+		(
+			otherlv_7='-'
+			{
+				newLeafNode(otherlv_7, grammarAccess.getHorizontalExpressionAccess().getHyphenMinusKeyword_3_0());
+			}
+			    |
+			otherlv_8='*'
+			{
+				newLeafNode(otherlv_8, grammarAccess.getHorizontalExpressionAccess().getAsteriskKeyword_3_1());
+			}
+			    |
+			otherlv_9='_'
+			{
+				newLeafNode(otherlv_9, grammarAccess.getHorizontalExpressionAccess().get_Keyword_3_2());
+			}
+		)+
 	)
 ;
 

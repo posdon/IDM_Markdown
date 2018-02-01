@@ -35,132 +35,126 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class QuoteExpressionImpl extends TextExpressionImpl implements QuoteExpression
 {
   /**
-   * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getContent()
-   * @generated
-   * @ordered
-   */
+	 * @see #getContent()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<TextExpression> content;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected QuoteExpressionImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return MyDslPackage.Literals.QUOTE_EXPRESSION;
-  }
+		return MyDslPackage.Literals.QUOTE_EXPRESSION;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EList<TextExpression> getContent()
   {
-    if (content == null)
-    {
-      content = new EObjectContainmentEList<TextExpression>(TextExpression.class, this, MyDslPackage.QUOTE_EXPRESSION__CONTENT);
-    }
-    return content;
-  }
+		if (content == null) {
+			content = new EObjectContainmentEList<TextExpression>(TextExpression.class, this, MyDslPackage.QUOTE_EXPRESSION__CONTENT);
+		}
+		return content;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case MyDslPackage.QUOTE_EXPRESSION__CONTENT:
-        return ((InternalEList<?>)getContent()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case MyDslPackage.QUOTE_EXPRESSION__CONTENT:
+				return ((InternalEList<?>)getContent()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case MyDslPackage.QUOTE_EXPRESSION__CONTENT:
-        return getContent();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case MyDslPackage.QUOTE_EXPRESSION__CONTENT:
+				return getContent();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case MyDslPackage.QUOTE_EXPRESSION__CONTENT:
-        getContent().clear();
-        getContent().addAll((Collection<? extends TextExpression>)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case MyDslPackage.QUOTE_EXPRESSION__CONTENT:
+				getContent().clear();
+				getContent().addAll((Collection<? extends TextExpression>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case MyDslPackage.QUOTE_EXPRESSION__CONTENT:
-        getContent().clear();
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case MyDslPackage.QUOTE_EXPRESSION__CONTENT:
+				getContent().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case MyDslPackage.QUOTE_EXPRESSION__CONTENT:
-        return content != null && !content.isEmpty();
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case MyDslPackage.QUOTE_EXPRESSION__CONTENT:
+				return content != null && !content.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //QuoteExpressionImpl

@@ -10,12 +10,17 @@ File:
         ;
         
 Expression:
-	=>(c=HeaderExpression | c=BreakLineExpression | c=RefExpression | c=ListExpression =>BL?) | c=TextExpression =>BL?
+	=>(c=HeaderExpression | c=BreakLineExpression | c=RefExpression | =>c=HorizontalExpression =>BL? |  c=ListExpression =>BL?) | c=TextExpression =>BL?
 ;
 
 BreakLineExpression :
 	{BreakLineExpression}
 	BL
+;
+
+HorizontalExpression :
+	{HorizontalExpression}
+	('-'|'*'|'_')('-'|'*'|'_')('-'|'*'|'_')+
 ;
 
 TextExpression hidden(WS):

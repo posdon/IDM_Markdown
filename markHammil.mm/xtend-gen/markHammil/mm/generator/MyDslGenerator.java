@@ -16,6 +16,7 @@ import markHammil.mm.myDsl.Header4Expression;
 import markHammil.mm.myDsl.Header5Expression;
 import markHammil.mm.myDsl.Header6Expression;
 import markHammil.mm.myDsl.HeaderExpression;
+import markHammil.mm.myDsl.HorizontalExpression;
 import markHammil.mm.myDsl.ImageExpression;
 import markHammil.mm.myDsl.ItalicExpression;
 import markHammil.mm.myDsl.LineExpression;
@@ -65,6 +66,32 @@ public class MyDslGenerator extends AbstractGenerator {
     _builder.newLine();
     _builder.append("    ");
     _builder.append("<title>Auto generated markdown</title>");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("<style>");
+    _builder.newLine();
+    _builder.append("     ");
+    _builder.append("table {");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("border-collapse: collapse;");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("table, th, td {");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("border: 1px solid black;");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("</style>");
     _builder.newLine();
     _builder.append("  ");
     _builder.append("</head>");
@@ -175,8 +202,9 @@ public class MyDslGenerator extends AbstractGenerator {
     {
       EList<EmphasisExpression> _title = headerExpression.getTitle();
       for(final EmphasisExpression head : _title) {
+        _builder.append("\t");
         Object _compile = this.compile(head);
-        _builder.append(_compile);
+        _builder.append(_compile, "\t");
         _builder.newLineIfNotEmpty();
       }
     }
@@ -192,8 +220,9 @@ public class MyDslGenerator extends AbstractGenerator {
     {
       EList<EmphasisExpression> _title = headerExpression.getTitle();
       for(final EmphasisExpression head : _title) {
+        _builder.append("\t");
         Object _compile = this.compile(head);
-        _builder.append(_compile);
+        _builder.append(_compile, "\t");
         _builder.newLineIfNotEmpty();
       }
     }
@@ -209,8 +238,9 @@ public class MyDslGenerator extends AbstractGenerator {
     {
       EList<EmphasisExpression> _title = headerExpression.getTitle();
       for(final EmphasisExpression head : _title) {
+        _builder.append("\t");
         Object _compile = this.compile(head);
-        _builder.append(_compile);
+        _builder.append(_compile, "\t");
         _builder.newLineIfNotEmpty();
       }
     }
@@ -226,8 +256,9 @@ public class MyDslGenerator extends AbstractGenerator {
     {
       EList<EmphasisExpression> _title = headerExpression.getTitle();
       for(final EmphasisExpression head : _title) {
+        _builder.append("\t");
         Object _compile = this.compile(head);
-        _builder.append(_compile);
+        _builder.append(_compile, "\t");
         _builder.newLineIfNotEmpty();
       }
     }
@@ -243,8 +274,9 @@ public class MyDslGenerator extends AbstractGenerator {
     {
       EList<EmphasisExpression> _title = headerExpression.getTitle();
       for(final EmphasisExpression head : _title) {
+        _builder.append("\t");
         Object _compile = this.compile(head);
-        _builder.append(_compile);
+        _builder.append(_compile, "\t");
         _builder.newLineIfNotEmpty();
       }
     }
@@ -260,8 +292,9 @@ public class MyDslGenerator extends AbstractGenerator {
     {
       EList<EmphasisExpression> _title = headerExpression.getTitle();
       for(final EmphasisExpression head : _title) {
+        _builder.append("\t");
         Object _compile = this.compile(head);
-        _builder.append(_compile);
+        _builder.append(_compile, "\t");
         _builder.newLineIfNotEmpty();
       }
     }
@@ -289,9 +322,10 @@ public class MyDslGenerator extends AbstractGenerator {
         {
           EList<TextExpression> _contentOrdered = listExpression.getContentOrdered();
           for(final TextExpression elem : _contentOrdered) {
+            _builder.append("\t");
             _builder.append("<li>");
             Object _compile = this.compile(elem);
-            _builder.append(_compile);
+            _builder.append(_compile, "\t");
             _builder.append("</li>");
             _builder.newLineIfNotEmpty();
           }
@@ -309,9 +343,10 @@ public class MyDslGenerator extends AbstractGenerator {
         {
           EList<TextExpression> _contentUnordered = listExpression.getContentUnordered();
           for(final TextExpression elem_1 : _contentUnordered) {
+            _builder.append("\t");
             _builder.append("<li>");
             Object _compile_1 = this.compile(elem_1);
-            _builder.append(_compile_1);
+            _builder.append(_compile_1, "\t");
             _builder.append("</li>");
             _builder.newLineIfNotEmpty();
           }
@@ -323,6 +358,13 @@ public class MyDslGenerator extends AbstractGenerator {
     return _builder;
   }
   
+  protected CharSequence _compile(final HorizontalExpression horizontalExpression) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("<hr>");
+    _builder.newLine();
+    return _builder;
+  }
+  
   protected CharSequence _compile(final QuoteExpression quoteExpression) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<p id=\"quote\">");
@@ -330,8 +372,9 @@ public class MyDslGenerator extends AbstractGenerator {
     {
       EList<TextExpression> _content = quoteExpression.getContent();
       for(final TextExpression quote : _content) {
+        _builder.append("\t");
         Object _compile = this.compile(quote);
-        _builder.append(_compile);
+        _builder.append(_compile, "\t");
         _builder.newLineIfNotEmpty();
       }
     }
@@ -342,24 +385,47 @@ public class MyDslGenerator extends AbstractGenerator {
   
   protected CharSequence _compile(final TabExpression tabExpression) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("<table><thead><tr>");
+    _builder.append("<table>");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("<thead>");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("<tr>");
+    _builder.newLine();
+    _builder.append("\t\t\t");
     Object _compile = this.compile(tabExpression.getHeader());
-    _builder.append(_compile);
-    _builder.append("</tr></thead>");
+    _builder.append(_compile, "\t\t\t");
     _builder.newLineIfNotEmpty();
+    _builder.append("\t\t");
+    _builder.append("</tr>");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("</thead>");
+    _builder.newLine();
+    _builder.append("\t");
     _builder.append("<tbody>");
+    _builder.newLine();
     {
       EList<LineExpression> _lines = tabExpression.getLines();
       for(final LineExpression line : _lines) {
-        _builder.newLineIfNotEmpty();
+        _builder.append("\t\t");
         _builder.append("<tr>");
+        _builder.newLine();
+        _builder.append("\t\t");
+        _builder.append("\t");
         Object _compile_1 = this.compile(line);
-        _builder.append(_compile_1);
-        _builder.append("</tr>");
+        _builder.append(_compile_1, "\t\t\t");
         _builder.newLineIfNotEmpty();
+        _builder.append("\t\t");
+        _builder.append("</tr>");
+        _builder.newLine();
       }
     }
-    _builder.append("</tbody></table>");
+    _builder.append("\t");
+    _builder.append("</tbody>");
+    _builder.newLine();
+    _builder.append("</table>");
     _builder.newLine();
     return _builder;
   }
@@ -370,10 +436,13 @@ public class MyDslGenerator extends AbstractGenerator {
       EList<EmphasisExpression> _cells = lineExpression.getCells();
       for(final EmphasisExpression cell : _cells) {
         _builder.append("<td>");
+        _builder.newLine();
+        _builder.append("\t");
         Object _compile = this.compile(cell);
-        _builder.append(_compile);
-        _builder.append("</td>");
+        _builder.append(_compile, "\t");
         _builder.newLineIfNotEmpty();
+        _builder.append("</td>");
+        _builder.newLine();
       }
     }
     return _builder;
@@ -453,6 +522,8 @@ public class MyDslGenerator extends AbstractGenerator {
       return _compile((File)italicExpression);
     } else if (italicExpression instanceof HeaderExpression) {
       return _compile((HeaderExpression)italicExpression);
+    } else if (italicExpression instanceof HorizontalExpression) {
+      return _compile((HorizontalExpression)italicExpression);
     } else if (italicExpression instanceof LineExpression) {
       return _compile((LineExpression)italicExpression);
     } else if (italicExpression instanceof ListExpression) {

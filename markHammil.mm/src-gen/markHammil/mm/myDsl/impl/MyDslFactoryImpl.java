@@ -22,362 +22,370 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
 {
   /**
-   * Creates the default factory implementation.
-   * <!-- begin-user-doc -->
+	 * Creates the default factory implementation.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public static MyDslFactory init()
   {
-    try
-    {
-      MyDslFactory theMyDslFactory = (MyDslFactory)EPackage.Registry.INSTANCE.getEFactory(MyDslPackage.eNS_URI);
-      if (theMyDslFactory != null)
-      {
-        return theMyDslFactory;
-      }
-    }
-    catch (Exception exception)
-    {
-      EcorePlugin.INSTANCE.log(exception);
-    }
-    return new MyDslFactoryImpl();
-  }
+		try {
+			MyDslFactory theMyDslFactory = (MyDslFactory)EPackage.Registry.INSTANCE.getEFactory(MyDslPackage.eNS_URI);
+			if (theMyDslFactory != null) {
+				return theMyDslFactory;
+			}
+		}
+		catch (Exception exception) {
+			EcorePlugin.INSTANCE.log(exception);
+		}
+		return new MyDslFactoryImpl();
+	}
 
   /**
-   * Creates an instance of the factory.
-   * <!-- begin-user-doc -->
+	 * Creates an instance of the factory.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public MyDslFactoryImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public EObject create(EClass eClass)
   {
-    switch (eClass.getClassifierID())
-    {
-      case MyDslPackage.FILE: return createFile();
-      case MyDslPackage.EXPRESSION: return createExpression();
-      case MyDslPackage.BREAK_LINE_EXPRESSION: return createBreakLineExpression();
-      case MyDslPackage.TEXT_EXPRESSION: return createTextExpression();
-      case MyDslPackage.LIST_EXPRESSION: return createListExpression();
-      case MyDslPackage.QUOTE_EXPRESSION: return createQuoteExpression();
-      case MyDslPackage.TAB_EXPRESSION: return createTabExpression();
-      case MyDslPackage.LINE_EXPRESSION: return createLineExpression();
-      case MyDslPackage.REF_EXPRESSION: return createRefExpression();
-      case MyDslPackage.LINK_EXPRESSION: return createLinkExpression();
-      case MyDslPackage.IMAGE_EXPRESSION: return createImageExpression();
-      case MyDslPackage.VIDEO_EXPRESSION: return createVideoExpression();
-      case MyDslPackage.HEADER_EXPRESSION: return createHeaderExpression();
-      case MyDslPackage.HEADER1_EXPRESSION: return createHeader1Expression();
-      case MyDslPackage.HEADER2_EXPRESSION: return createHeader2Expression();
-      case MyDslPackage.HEADER3_EXPRESSION: return createHeader3Expression();
-      case MyDslPackage.HEADER4_EXPRESSION: return createHeader4Expression();
-      case MyDslPackage.HEADER5_EXPRESSION: return createHeader5Expression();
-      case MyDslPackage.HEADER6_EXPRESSION: return createHeader6Expression();
-      case MyDslPackage.EMPHASIS_EXPRESSION: return createEmphasisExpression();
-      case MyDslPackage.STRONG_EXPRESSION: return createStrongExpression();
-      case MyDslPackage.ITALIC_EXPRESSION: return createItalicExpression();
-      case MyDslPackage.SCRATCH_EXPRESSION: return createScratchExpression();
-      case MyDslPackage.NATURAL_EXPRESSION: return createNaturalExpression();
-      default:
-        throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
-    }
-  }
+		switch (eClass.getClassifierID()) {
+			case MyDslPackage.FILE: return createFile();
+			case MyDslPackage.EXPRESSION: return createExpression();
+			case MyDslPackage.BREAK_LINE_EXPRESSION: return createBreakLineExpression();
+			case MyDslPackage.HORIZONTAL_EXPRESSION: return createHorizontalExpression();
+			case MyDslPackage.TEXT_EXPRESSION: return createTextExpression();
+			case MyDslPackage.LIST_EXPRESSION: return createListExpression();
+			case MyDslPackage.QUOTE_EXPRESSION: return createQuoteExpression();
+			case MyDslPackage.TAB_EXPRESSION: return createTabExpression();
+			case MyDslPackage.LINE_EXPRESSION: return createLineExpression();
+			case MyDslPackage.REF_EXPRESSION: return createRefExpression();
+			case MyDslPackage.LINK_EXPRESSION: return createLinkExpression();
+			case MyDslPackage.IMAGE_EXPRESSION: return createImageExpression();
+			case MyDslPackage.VIDEO_EXPRESSION: return createVideoExpression();
+			case MyDslPackage.HEADER_EXPRESSION: return createHeaderExpression();
+			case MyDslPackage.HEADER1_EXPRESSION: return createHeader1Expression();
+			case MyDslPackage.HEADER2_EXPRESSION: return createHeader2Expression();
+			case MyDslPackage.HEADER3_EXPRESSION: return createHeader3Expression();
+			case MyDslPackage.HEADER4_EXPRESSION: return createHeader4Expression();
+			case MyDslPackage.HEADER5_EXPRESSION: return createHeader5Expression();
+			case MyDslPackage.HEADER6_EXPRESSION: return createHeader6Expression();
+			case MyDslPackage.EMPHASIS_EXPRESSION: return createEmphasisExpression();
+			case MyDslPackage.STRONG_EXPRESSION: return createStrongExpression();
+			case MyDslPackage.ITALIC_EXPRESSION: return createItalicExpression();
+			case MyDslPackage.SCRATCH_EXPRESSION: return createScratchExpression();
+			case MyDslPackage.NATURAL_EXPRESSION: return createNaturalExpression();
+			default:
+				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public File createFile()
   {
-    FileImpl file = new FileImpl();
-    return file;
-  }
+		FileImpl file = new FileImpl();
+		return file;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Expression createExpression()
   {
-    ExpressionImpl expression = new ExpressionImpl();
-    return expression;
-  }
+		ExpressionImpl expression = new ExpressionImpl();
+		return expression;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public BreakLineExpression createBreakLineExpression()
   {
-    BreakLineExpressionImpl breakLineExpression = new BreakLineExpressionImpl();
-    return breakLineExpression;
-  }
+		BreakLineExpressionImpl breakLineExpression = new BreakLineExpressionImpl();
+		return breakLineExpression;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
+  public HorizontalExpression createHorizontalExpression()
+  {
+		HorizontalExpressionImpl horizontalExpression = new HorizontalExpressionImpl();
+		return horizontalExpression;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
   public TextExpression createTextExpression()
   {
-    TextExpressionImpl textExpression = new TextExpressionImpl();
-    return textExpression;
-  }
+		TextExpressionImpl textExpression = new TextExpressionImpl();
+		return textExpression;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public ListExpression createListExpression()
   {
-    ListExpressionImpl listExpression = new ListExpressionImpl();
-    return listExpression;
-  }
+		ListExpressionImpl listExpression = new ListExpressionImpl();
+		return listExpression;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public QuoteExpression createQuoteExpression()
   {
-    QuoteExpressionImpl quoteExpression = new QuoteExpressionImpl();
-    return quoteExpression;
-  }
+		QuoteExpressionImpl quoteExpression = new QuoteExpressionImpl();
+		return quoteExpression;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public TabExpression createTabExpression()
   {
-    TabExpressionImpl tabExpression = new TabExpressionImpl();
-    return tabExpression;
-  }
+		TabExpressionImpl tabExpression = new TabExpressionImpl();
+		return tabExpression;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public LineExpression createLineExpression()
   {
-    LineExpressionImpl lineExpression = new LineExpressionImpl();
-    return lineExpression;
-  }
+		LineExpressionImpl lineExpression = new LineExpressionImpl();
+		return lineExpression;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public RefExpression createRefExpression()
   {
-    RefExpressionImpl refExpression = new RefExpressionImpl();
-    return refExpression;
-  }
+		RefExpressionImpl refExpression = new RefExpressionImpl();
+		return refExpression;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public LinkExpression createLinkExpression()
   {
-    LinkExpressionImpl linkExpression = new LinkExpressionImpl();
-    return linkExpression;
-  }
+		LinkExpressionImpl linkExpression = new LinkExpressionImpl();
+		return linkExpression;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public ImageExpression createImageExpression()
   {
-    ImageExpressionImpl imageExpression = new ImageExpressionImpl();
-    return imageExpression;
-  }
+		ImageExpressionImpl imageExpression = new ImageExpressionImpl();
+		return imageExpression;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public VideoExpression createVideoExpression()
   {
-    VideoExpressionImpl videoExpression = new VideoExpressionImpl();
-    return videoExpression;
-  }
+		VideoExpressionImpl videoExpression = new VideoExpressionImpl();
+		return videoExpression;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public HeaderExpression createHeaderExpression()
   {
-    HeaderExpressionImpl headerExpression = new HeaderExpressionImpl();
-    return headerExpression;
-  }
+		HeaderExpressionImpl headerExpression = new HeaderExpressionImpl();
+		return headerExpression;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Header1Expression createHeader1Expression()
   {
-    Header1ExpressionImpl header1Expression = new Header1ExpressionImpl();
-    return header1Expression;
-  }
+		Header1ExpressionImpl header1Expression = new Header1ExpressionImpl();
+		return header1Expression;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Header2Expression createHeader2Expression()
   {
-    Header2ExpressionImpl header2Expression = new Header2ExpressionImpl();
-    return header2Expression;
-  }
+		Header2ExpressionImpl header2Expression = new Header2ExpressionImpl();
+		return header2Expression;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Header3Expression createHeader3Expression()
   {
-    Header3ExpressionImpl header3Expression = new Header3ExpressionImpl();
-    return header3Expression;
-  }
+		Header3ExpressionImpl header3Expression = new Header3ExpressionImpl();
+		return header3Expression;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Header4Expression createHeader4Expression()
   {
-    Header4ExpressionImpl header4Expression = new Header4ExpressionImpl();
-    return header4Expression;
-  }
+		Header4ExpressionImpl header4Expression = new Header4ExpressionImpl();
+		return header4Expression;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Header5Expression createHeader5Expression()
   {
-    Header5ExpressionImpl header5Expression = new Header5ExpressionImpl();
-    return header5Expression;
-  }
+		Header5ExpressionImpl header5Expression = new Header5ExpressionImpl();
+		return header5Expression;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Header6Expression createHeader6Expression()
   {
-    Header6ExpressionImpl header6Expression = new Header6ExpressionImpl();
-    return header6Expression;
-  }
+		Header6ExpressionImpl header6Expression = new Header6ExpressionImpl();
+		return header6Expression;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EmphasisExpression createEmphasisExpression()
   {
-    EmphasisExpressionImpl emphasisExpression = new EmphasisExpressionImpl();
-    return emphasisExpression;
-  }
+		EmphasisExpressionImpl emphasisExpression = new EmphasisExpressionImpl();
+		return emphasisExpression;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public StrongExpression createStrongExpression()
   {
-    StrongExpressionImpl strongExpression = new StrongExpressionImpl();
-    return strongExpression;
-  }
+		StrongExpressionImpl strongExpression = new StrongExpressionImpl();
+		return strongExpression;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public ItalicExpression createItalicExpression()
   {
-    ItalicExpressionImpl italicExpression = new ItalicExpressionImpl();
-    return italicExpression;
-  }
+		ItalicExpressionImpl italicExpression = new ItalicExpressionImpl();
+		return italicExpression;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public ScratchExpression createScratchExpression()
   {
-    ScratchExpressionImpl scratchExpression = new ScratchExpressionImpl();
-    return scratchExpression;
-  }
+		ScratchExpressionImpl scratchExpression = new ScratchExpressionImpl();
+		return scratchExpression;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NaturalExpression createNaturalExpression()
   {
-    NaturalExpressionImpl naturalExpression = new NaturalExpressionImpl();
-    return naturalExpression;
-  }
+		NaturalExpressionImpl naturalExpression = new NaturalExpressionImpl();
+		return naturalExpression;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public MyDslPackage getMyDslPackage()
   {
-    return (MyDslPackage)getEPackage();
-  }
+		return (MyDslPackage)getEPackage();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @deprecated
-   * @generated
-   */
+	 * @deprecated
+	 * @generated
+	 */
   @Deprecated
   public static MyDslPackage getPackage()
   {
-    return MyDslPackage.eINSTANCE;
-  }
+		return MyDslPackage.eINSTANCE;
+	}
 
 } //MyDslFactoryImpl

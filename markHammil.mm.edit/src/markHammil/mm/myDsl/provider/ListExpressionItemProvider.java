@@ -158,6 +158,11 @@ public class ListExpressionItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(MyDslPackage.Literals.LIST_EXPRESSION__CONTENT_UNORDERED,
+				 MyDslFactory.eINSTANCE.createTabExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.LIST_EXPRESSION__CONTENT_UNORDERED,
 				 MyDslFactory.eINSTANCE.createLinkExpression()));
 
 		newChildDescriptors.add
@@ -169,11 +174,6 @@ public class ListExpressionItemProvider
 			(createChildParameter
 				(MyDslPackage.Literals.LIST_EXPRESSION__CONTENT_UNORDERED,
 				 MyDslFactory.eINSTANCE.createVideoExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MyDslPackage.Literals.LIST_EXPRESSION__CONTENT_UNORDERED,
-				 MyDslFactory.eINSTANCE.createTabExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -213,6 +213,11 @@ public class ListExpressionItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(MyDslPackage.Literals.LIST_EXPRESSION__CONTENT_ORDERED,
+				 MyDslFactory.eINSTANCE.createTabExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.LIST_EXPRESSION__CONTENT_ORDERED,
 				 MyDslFactory.eINSTANCE.createLinkExpression()));
 
 		newChildDescriptors.add
@@ -224,11 +229,6 @@ public class ListExpressionItemProvider
 			(createChildParameter
 				(MyDslPackage.Literals.LIST_EXPRESSION__CONTENT_ORDERED,
 				 MyDslFactory.eINSTANCE.createVideoExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MyDslPackage.Literals.LIST_EXPRESSION__CONTENT_ORDERED,
-				 MyDslFactory.eINSTANCE.createTabExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter

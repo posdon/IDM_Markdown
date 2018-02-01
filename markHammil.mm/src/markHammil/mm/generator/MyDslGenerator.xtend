@@ -30,6 +30,7 @@ import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 import markHammil.mm.myDsl.LineExpression
+import markHammil.mm.myDsl.HorizontalExpression
 
 /**
  * Generates code from your model files on save.
@@ -49,6 +50,15 @@ class MyDslGenerator extends AbstractGenerator {
 	  <head>
 		<meta charset="utf-8">
 	    <title>Auto generated markdown</title>
+	    <style>
+	     table {
+	        border-collapse: collapse;
+	    }
+	    
+	    table, th, td {
+	        border: 1px solid black;
+	    }
+	    </style>
 	  </head>
 	  <body>
 		«FOR exp : file.expression»
@@ -101,49 +111,49 @@ class MyDslGenerator extends AbstractGenerator {
 	
 	def dispatch compile(Header1Expression headerExpression) '''
 		<h1>
-		«FOR head : headerExpression.title»
-		«head.compile»
-		«ENDFOR»
+			«FOR head : headerExpression.title»
+			«head.compile»
+			«ENDFOR»
 		</h1>
 	'''
 	
 	def dispatch compile(Header2Expression headerExpression) '''
 		<h2>
-		«FOR head : headerExpression.title»
-		«head.compile»
-		«ENDFOR»
+			«FOR head : headerExpression.title»
+			«head.compile»
+			«ENDFOR»
 		</h2>
 	'''
 	
 	def dispatch compile(Header3Expression headerExpression) '''
 		<h3>
-		«FOR head : headerExpression.title»
-		«head.compile»
-		«ENDFOR»
+			«FOR head : headerExpression.title»
+			«head.compile»
+			«ENDFOR»
 		</h3>
 	'''
 	
 	def dispatch compile(Header4Expression headerExpression) '''
 		<h4>
-		«FOR head : headerExpression.title»
-		«head.compile»
-		«ENDFOR»
+			«FOR head : headerExpression.title»
+			«head.compile»
+			«ENDFOR»
 		</h4>
 	'''
 	
 	def dispatch compile(Header5Expression headerExpression) '''
 		<h5>
-		«FOR head : headerExpression.title»
-		«head.compile»
-		«ENDFOR»
+			«FOR head : headerExpression.title»
+			«head.compile»
+			«ENDFOR»
 		</h5>
 	'''
 	
 	def dispatch compile(Header6Expression headerExpression) '''
 		<h6>
-		«FOR head : headerExpression.title»
-		«head.compile»
-		«ENDFOR»
+			«FOR head : headerExpression.title»
+			«head.compile»
+			«ENDFOR»
 		</h6>
 	'''
 	
@@ -157,41 +167,54 @@ class MyDslGenerator extends AbstractGenerator {
 	def dispatch compile(ListExpression listExpression) '''
 	«IF !listExpression.contentOrdered.isEmpty»
 	<ol>
-	«FOR elem : listExpression.contentOrdered»
-	<li>«elem.compile»</li>
-	«ENDFOR»
+		«FOR elem : listExpression.contentOrdered»
+		<li>«elem.compile»</li>
+		«ENDFOR»
 	</ol>
 	«ENDIF»
 	«IF !listExpression.contentUnordered.isEmpty»
 	<ul>
-	«FOR elem : listExpression.contentUnordered»
-	<li>«elem.compile»</li>
-	«ENDFOR»
+		«FOR elem : listExpression.contentUnordered»
+		<li>«elem.compile»</li>
+		«ENDFOR»
 	</ul>
 	«ENDIF»
 	'''
 	
-
+	def dispatch compile(HorizontalExpression horizontalExpression) '''
+		<hr>
+	'''
 	
 	def dispatch compile(QuoteExpression quoteExpression) '''
 	<p id="quote">
-	«FOR quote : quoteExpression.content»
-	«quote.compile»
-	«ENDFOR»
+		«FOR quote : quoteExpression.content»
+		«quote.compile»
+		«ENDFOR»
 	</p>
 	'''
 	
 	def dispatch compile(TabExpression tabExpression) '''
-	<table><thead><tr>«tabExpression.header.compile»</tr></thead>
-	<tbody>«FOR line : tabExpression.lines»
-	<tr>«line.compile»</tr>
-	«ENDFOR»
-	</tbody></table>
+	<table>
+		<thead>
+			<tr>
+				«tabExpression.header.compile»
+			</tr>
+		</thead>
+		<tbody>
+			«FOR line : tabExpression.lines»
+			<tr>
+				«line.compile»
+			</tr>
+			«ENDFOR»
+		</tbody>
+	</table>
 	'''
 	
 	def dispatch compile(LineExpression lineExpression) '''
 	«FOR cell : lineExpression.cells»
-	<td>«cell.compile»</td>
+	<td>
+		«cell.compile»
+	</td>
 	«ENDFOR»
 	'''
 	

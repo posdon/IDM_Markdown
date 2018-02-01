@@ -3,26 +3,28 @@
  */
 package markHammil.mm.myDsl.impl;
 
-import markHammil.mm.myDsl.Header5Expression;
+import markHammil.mm.myDsl.HorizontalExpression;
 import markHammil.mm.myDsl.MyDslPackage;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Header5 Expression</b></em>'.
+ * An implementation of the model object '<em><b>Horizontal Expression</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class Header5ExpressionImpl extends HeaderExpressionImpl implements Header5Expression
+public class HorizontalExpressionImpl extends MinimalEObjectImpl.Container implements HorizontalExpression
 {
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected Header5ExpressionImpl()
+  protected HorizontalExpressionImpl()
   {
 		super();
 	}
@@ -35,7 +37,7 @@ public class Header5ExpressionImpl extends HeaderExpressionImpl implements Heade
   @Override
   protected EClass eStaticClass()
   {
-		return MyDslPackage.Literals.HEADER5_EXPRESSION;
+		return MyDslPackage.Literals.HORIZONTAL_EXPRESSION;
 	}
 
-} //Header5ExpressionImpl
+} //HorizontalExpressionImpl

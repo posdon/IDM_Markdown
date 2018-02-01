@@ -15,6 +15,7 @@ import markHammil.mm.myDsl.Header3Expression;
 import markHammil.mm.myDsl.Header4Expression;
 import markHammil.mm.myDsl.Header5Expression;
 import markHammil.mm.myDsl.Header6Expression;
+import markHammil.mm.myDsl.HorizontalExpression;
 import markHammil.mm.myDsl.ImageExpression;
 import markHammil.mm.myDsl.ItalicExpression;
 import markHammil.mm.myDsl.LineExpression;
@@ -82,6 +83,9 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				return; 
 			case MyDslPackage.HEADER6_EXPRESSION:
 				sequence_Header6Expression(context, (Header6Expression) semanticObject); 
+				return; 
+			case MyDslPackage.HORIZONTAL_EXPRESSION:
+				sequence_HorizontalExpression(context, (HorizontalExpression) semanticObject); 
 				return; 
 			case MyDslPackage.IMAGE_EXPRESSION:
 				sequence_ImageExpression(context, (ImageExpression) semanticObject); 
@@ -154,7 +158,14 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Expression returns Expression
 	 *
 	 * Constraint:
-	 *     (c=HeaderExpression | c=BreakLineExpression | c=RefExpression | c=ListExpression | c=TextExpression)
+	 *     (
+	 *         c=HeaderExpression | 
+	 *         c=BreakLineExpression | 
+	 *         c=RefExpression | 
+	 *         c=HorizontalExpression | 
+	 *         c=ListExpression | 
+	 *         c=TextExpression
+	 *     )
 	 */
 	protected void sequence_Expression(ISerializationContext context, Expression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -247,6 +258,18 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     title+=EmphasisExpression
 	 */
 	protected void sequence_Header6Expression(ISerializationContext context, Header6Expression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     HorizontalExpression returns HorizontalExpression
+	 *
+	 * Constraint:
+	 *     {HorizontalExpression}
+	 */
+	protected void sequence_HorizontalExpression(ISerializationContext context, HorizontalExpression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

@@ -154,6 +154,11 @@ public class QuoteExpressionItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(MyDslPackage.Literals.QUOTE_EXPRESSION__CONTENT,
+				 MyDslFactory.eINSTANCE.createTabExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.QUOTE_EXPRESSION__CONTENT,
 				 MyDslFactory.eINSTANCE.createLinkExpression()));
 
 		newChildDescriptors.add
@@ -165,11 +170,6 @@ public class QuoteExpressionItemProvider
 			(createChildParameter
 				(MyDslPackage.Literals.QUOTE_EXPRESSION__CONTENT,
 				 MyDslFactory.eINSTANCE.createVideoExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MyDslPackage.Literals.QUOTE_EXPRESSION__CONTENT,
-				 MyDslFactory.eINSTANCE.createTabExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter

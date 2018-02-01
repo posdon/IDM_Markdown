@@ -165,6 +165,11 @@ public class ExpressionItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(MyDslPackage.Literals.EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createHorizontalExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.EXPRESSION__C,
 				 MyDslFactory.eINSTANCE.createTextExpression()));
 
 		newChildDescriptors.add
@@ -176,6 +181,16 @@ public class ExpressionItemProvider
 			(createChildParameter
 				(MyDslPackage.Literals.EXPRESSION__C,
 				 MyDslFactory.eINSTANCE.createQuoteExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createTabExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createLineExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -196,16 +211,6 @@ public class ExpressionItemProvider
 			(createChildParameter
 				(MyDslPackage.Literals.EXPRESSION__C,
 				 MyDslFactory.eINSTANCE.createVideoExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MyDslPackage.Literals.EXPRESSION__C,
-				 MyDslFactory.eINSTANCE.createTabExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MyDslPackage.Literals.EXPRESSION__C,
-				 MyDslFactory.eINSTANCE.createLineExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter

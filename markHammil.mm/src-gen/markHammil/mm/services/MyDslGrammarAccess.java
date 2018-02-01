@@ -59,24 +59,32 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cCRefExpressionParserRuleCall_0_0_2_0 = (RuleCall)cCAssignment_0_0_2.eContents().get(0);
 		private final Group cGroup_0_0_3 = (Group)cAlternatives_0_0.eContents().get(3);
 		private final Assignment cCAssignment_0_0_3_0 = (Assignment)cGroup_0_0_3.eContents().get(0);
-		private final RuleCall cCListExpressionParserRuleCall_0_0_3_0_0 = (RuleCall)cCAssignment_0_0_3_0.eContents().get(0);
+		private final RuleCall cCHorizontalExpressionParserRuleCall_0_0_3_0_0 = (RuleCall)cCAssignment_0_0_3_0.eContents().get(0);
 		private final RuleCall cBLTerminalRuleCall_0_0_3_1 = (RuleCall)cGroup_0_0_3.eContents().get(1);
+		private final Group cGroup_0_0_4 = (Group)cAlternatives_0_0.eContents().get(4);
+		private final Assignment cCAssignment_0_0_4_0 = (Assignment)cGroup_0_0_4.eContents().get(0);
+		private final RuleCall cCListExpressionParserRuleCall_0_0_4_0_0 = (RuleCall)cCAssignment_0_0_4_0.eContents().get(0);
+		private final RuleCall cBLTerminalRuleCall_0_0_4_1 = (RuleCall)cGroup_0_0_4.eContents().get(1);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
 		private final Assignment cCAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
 		private final RuleCall cCTextExpressionParserRuleCall_1_0_0 = (RuleCall)cCAssignment_1_0.eContents().get(0);
 		private final RuleCall cBLTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
 		
 		//Expression:
-		//	=> (c=HeaderExpression | c=BreakLineExpression | c=RefExpression | c=ListExpression => BL?) | c=TextExpression => BL?;
+		//	=> (c=HeaderExpression | c=BreakLineExpression | c=RefExpression | => c=HorizontalExpression => BL? | c=ListExpression
+		//	=> BL?) | c=TextExpression => BL?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//=> (c=HeaderExpression | c=BreakLineExpression | c=RefExpression | c=ListExpression => BL?) | c=TextExpression => BL?
+		//=> (c=HeaderExpression | c=BreakLineExpression | c=RefExpression | => c=HorizontalExpression => BL? | c=ListExpression
+		//=> BL?) | c=TextExpression => BL?
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//=> (c=HeaderExpression | c=BreakLineExpression | c=RefExpression | c=ListExpression => BL?)
+		//=> (c=HeaderExpression | c=BreakLineExpression | c=RefExpression | => c=HorizontalExpression => BL? | c=ListExpression
+		//=> BL?)
 		public Group getGroup_0() { return cGroup_0; }
 		
-		//c=HeaderExpression | c=BreakLineExpression | c=RefExpression | c=ListExpression => BL?
+		//c=HeaderExpression | c=BreakLineExpression | c=RefExpression | => c=HorizontalExpression => BL? | c=ListExpression =>
+		//BL?
 		public Alternatives getAlternatives_0_0() { return cAlternatives_0_0; }
 		
 		//c=HeaderExpression
@@ -97,17 +105,29 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//RefExpression
 		public RuleCall getCRefExpressionParserRuleCall_0_0_2_0() { return cCRefExpressionParserRuleCall_0_0_2_0; }
 		
-		//c=ListExpression => BL?
+		//=> c=HorizontalExpression => BL?
 		public Group getGroup_0_0_3() { return cGroup_0_0_3; }
 		
-		//c=ListExpression
+		//=> c=HorizontalExpression
 		public Assignment getCAssignment_0_0_3_0() { return cCAssignment_0_0_3_0; }
 		
-		//ListExpression
-		public RuleCall getCListExpressionParserRuleCall_0_0_3_0_0() { return cCListExpressionParserRuleCall_0_0_3_0_0; }
+		//HorizontalExpression
+		public RuleCall getCHorizontalExpressionParserRuleCall_0_0_3_0_0() { return cCHorizontalExpressionParserRuleCall_0_0_3_0_0; }
 		
 		//=> BL?
 		public RuleCall getBLTerminalRuleCall_0_0_3_1() { return cBLTerminalRuleCall_0_0_3_1; }
+		
+		//c=ListExpression => BL?
+		public Group getGroup_0_0_4() { return cGroup_0_0_4; }
+		
+		//c=ListExpression
+		public Assignment getCAssignment_0_0_4_0() { return cCAssignment_0_0_4_0; }
+		
+		//ListExpression
+		public RuleCall getCListExpressionParserRuleCall_0_0_4_0_0() { return cCListExpressionParserRuleCall_0_0_4_0_0; }
+		
+		//=> BL?
+		public RuleCall getBLTerminalRuleCall_0_0_4_1() { return cBLTerminalRuleCall_0_0_4_1; }
 		
 		//c=TextExpression => BL?
 		public Group getGroup_1() { return cGroup_1; }
@@ -139,6 +159,69 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//BL
 		public RuleCall getBLTerminalRuleCall_1() { return cBLTerminalRuleCall_1; }
+	}
+	public class HorizontalExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "markHammil.mm.MyDsl.HorizontalExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cHorizontalExpressionAction_0 = (Action)cGroup.eContents().get(0);
+		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
+		private final Keyword cHyphenMinusKeyword_1_0 = (Keyword)cAlternatives_1.eContents().get(0);
+		private final Keyword cAsteriskKeyword_1_1 = (Keyword)cAlternatives_1.eContents().get(1);
+		private final Keyword c_Keyword_1_2 = (Keyword)cAlternatives_1.eContents().get(2);
+		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
+		private final Keyword cHyphenMinusKeyword_2_0 = (Keyword)cAlternatives_2.eContents().get(0);
+		private final Keyword cAsteriskKeyword_2_1 = (Keyword)cAlternatives_2.eContents().get(1);
+		private final Keyword c_Keyword_2_2 = (Keyword)cAlternatives_2.eContents().get(2);
+		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
+		private final Keyword cHyphenMinusKeyword_3_0 = (Keyword)cAlternatives_3.eContents().get(0);
+		private final Keyword cAsteriskKeyword_3_1 = (Keyword)cAlternatives_3.eContents().get(1);
+		private final Keyword c_Keyword_3_2 = (Keyword)cAlternatives_3.eContents().get(2);
+		
+		//HorizontalExpression:
+		//	{HorizontalExpression} ('-' | '*' | '_') ('-' | '*' | '_') ('-' | '*' | '_')+;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{HorizontalExpression} ('-' | '*' | '_') ('-' | '*' | '_') ('-' | '*' | '_')+
+		public Group getGroup() { return cGroup; }
+		
+		//{HorizontalExpression}
+		public Action getHorizontalExpressionAction_0() { return cHorizontalExpressionAction_0; }
+		
+		//'-' | '*' | '_'
+		public Alternatives getAlternatives_1() { return cAlternatives_1; }
+		
+		//'-'
+		public Keyword getHyphenMinusKeyword_1_0() { return cHyphenMinusKeyword_1_0; }
+		
+		//'*'
+		public Keyword getAsteriskKeyword_1_1() { return cAsteriskKeyword_1_1; }
+		
+		//'_'
+		public Keyword get_Keyword_1_2() { return c_Keyword_1_2; }
+		
+		//'-' | '*' | '_'
+		public Alternatives getAlternatives_2() { return cAlternatives_2; }
+		
+		//'-'
+		public Keyword getHyphenMinusKeyword_2_0() { return cHyphenMinusKeyword_2_0; }
+		
+		//'*'
+		public Keyword getAsteriskKeyword_2_1() { return cAsteriskKeyword_2_1; }
+		
+		//'_'
+		public Keyword get_Keyword_2_2() { return c_Keyword_2_2; }
+		
+		//('-' | '*' | '_')+
+		public Alternatives getAlternatives_3() { return cAlternatives_3; }
+		
+		//'-'
+		public Keyword getHyphenMinusKeyword_3_0() { return cHyphenMinusKeyword_3_0; }
+		
+		//'*'
+		public Keyword getAsteriskKeyword_3_1() { return cAsteriskKeyword_3_1; }
+		
+		//'_'
+		public Keyword get_Keyword_3_2() { return c_Keyword_3_2; }
 	}
 	public class TextExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "markHammil.mm.MyDsl.TextExpression");
@@ -1185,6 +1268,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	private final FileElements pFile;
 	private final ExpressionElements pExpression;
 	private final BreakLineExpressionElements pBreakLineExpression;
+	private final HorizontalExpressionElements pHorizontalExpression;
 	private final TextExpressionElements pTextExpression;
 	private final ListExpressionElements pListExpression;
 	private final QuoteExpressionElements pQuoteExpression;
@@ -1227,6 +1311,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.pFile = new FileElements();
 		this.pExpression = new ExpressionElements();
 		this.pBreakLineExpression = new BreakLineExpressionElements();
+		this.pHorizontalExpression = new HorizontalExpressionElements();
 		this.pTextExpression = new TextExpressionElements();
 		this.pListExpression = new ListExpressionElements();
 		this.pQuoteExpression = new QuoteExpressionElements();
@@ -1296,7 +1381,8 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Expression:
-	//	=> (c=HeaderExpression | c=BreakLineExpression | c=RefExpression | c=ListExpression => BL?) | c=TextExpression => BL?;
+	//	=> (c=HeaderExpression | c=BreakLineExpression | c=RefExpression | => c=HorizontalExpression => BL? | c=ListExpression
+	//	=> BL?) | c=TextExpression => BL?;
 	public ExpressionElements getExpressionAccess() {
 		return pExpression;
 	}
@@ -1313,6 +1399,16 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getBreakLineExpressionRule() {
 		return getBreakLineExpressionAccess().getRule();
+	}
+	
+	//HorizontalExpression:
+	//	{HorizontalExpression} ('-' | '*' | '_') ('-' | '*' | '_') ('-' | '*' | '_')+;
+	public HorizontalExpressionElements getHorizontalExpressionAccess() {
+		return pHorizontalExpression;
+	}
+	
+	public ParserRule getHorizontalExpressionRule() {
+		return getHorizontalExpressionAccess().getRule();
 	}
 	
 	//TextExpression hidden(WS):

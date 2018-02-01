@@ -10,6 +10,7 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BreakLineExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HorizontalExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="TextExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="ListExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="contentUnordered" upperBound="-1"

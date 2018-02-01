@@ -142,6 +142,29 @@ public class MyDslItemProviderAdapterFactory extends MyDslAdapterFactory impleme
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link markHammil.mm.myDsl.HorizontalExpression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected HorizontalExpressionItemProvider horizontalExpressionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link markHammil.mm.myDsl.HorizontalExpression}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createHorizontalExpressionAdapter() {
+		if (horizontalExpressionItemProvider == null) {
+			horizontalExpressionItemProvider = new HorizontalExpressionItemProvider(this);
+		}
+
+		return horizontalExpressionItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link markHammil.mm.myDsl.TextExpression} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -726,15 +749,16 @@ public class MyDslItemProviderAdapterFactory extends MyDslAdapterFactory impleme
 		if (fileItemProvider != null) fileItemProvider.dispose();
 		if (expressionItemProvider != null) expressionItemProvider.dispose();
 		if (breakLineExpressionItemProvider != null) breakLineExpressionItemProvider.dispose();
+		if (horizontalExpressionItemProvider != null) horizontalExpressionItemProvider.dispose();
 		if (textExpressionItemProvider != null) textExpressionItemProvider.dispose();
 		if (listExpressionItemProvider != null) listExpressionItemProvider.dispose();
 		if (quoteExpressionItemProvider != null) quoteExpressionItemProvider.dispose();
+		if (tabExpressionItemProvider != null) tabExpressionItemProvider.dispose();
+		if (lineExpressionItemProvider != null) lineExpressionItemProvider.dispose();
 		if (refExpressionItemProvider != null) refExpressionItemProvider.dispose();
 		if (linkExpressionItemProvider != null) linkExpressionItemProvider.dispose();
 		if (imageExpressionItemProvider != null) imageExpressionItemProvider.dispose();
 		if (videoExpressionItemProvider != null) videoExpressionItemProvider.dispose();
-		if (tabExpressionItemProvider != null) tabExpressionItemProvider.dispose();
-		if (lineExpressionItemProvider != null) lineExpressionItemProvider.dispose();
 		if (headerExpressionItemProvider != null) headerExpressionItemProvider.dispose();
 		if (header1ExpressionItemProvider != null) header1ExpressionItemProvider.dispose();
 		if (header2ExpressionItemProvider != null) header2ExpressionItemProvider.dispose();

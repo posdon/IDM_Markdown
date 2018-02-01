@@ -25,55 +25,55 @@ import org.eclipse.emf.ecore.EObject;
 public interface RefExpression extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Ref Name</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Ref Name</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Ref Name</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Ref Name</em>' containment reference.
-   * @see #setRefName(EmphasisExpression)
-   * @see markHammil.mm.myDsl.MyDslPackage#getRefExpression_RefName()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Ref Name</em>' containment reference.
+	 * @see #setRefName(EmphasisExpression)
+	 * @see markHammil.mm.myDsl.MyDslPackage#getRefExpression_RefName()
+	 * @model containment="true"
+	 * @generated
+	 */
   EmphasisExpression getRefName();
 
   /**
-   * Sets the value of the '{@link markHammil.mm.myDsl.RefExpression#getRefName <em>Ref Name</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link markHammil.mm.myDsl.RefExpression#getRefName <em>Ref Name</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Ref Name</em>' containment reference.
-   * @see #getRefName()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Ref Name</em>' containment reference.
+	 * @see #getRefName()
+	 * @generated
+	 */
   void setRefName(EmphasisExpression value);
 
   /**
-   * Returns the value of the '<em><b>Ref Content</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Ref Content</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Ref Content</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Ref Content</em>' containment reference.
-   * @see #setRefContent(EmphasisExpression)
-   * @see markHammil.mm.myDsl.MyDslPackage#getRefExpression_RefContent()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Ref Content</em>' containment reference.
+	 * @see #setRefContent(EmphasisExpression)
+	 * @see markHammil.mm.myDsl.MyDslPackage#getRefExpression_RefContent()
+	 * @model containment="true"
+	 * @generated
+	 */
   EmphasisExpression getRefContent();
 
   /**
-   * Sets the value of the '{@link markHammil.mm.myDsl.RefExpression#getRefContent <em>Ref Content</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link markHammil.mm.myDsl.RefExpression#getRefContent <em>Ref Content</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Ref Content</em>' containment reference.
-   * @see #getRefContent()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Ref Content</em>' containment reference.
+	 * @see #getRefContent()
+	 * @generated
+	 */
   void setRefContent(EmphasisExpression value);
 
 } // RefExpression

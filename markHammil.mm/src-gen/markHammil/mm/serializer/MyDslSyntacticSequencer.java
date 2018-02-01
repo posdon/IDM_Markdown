@@ -22,6 +22,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected MyDslGrammarAccess grammarAccess;
 	protected AbstractElementAlias match_Expression_BLTerminalRuleCall_0_0_3_1_q;
+	protected AbstractElementAlias match_Expression_BLTerminalRuleCall_0_0_4_1_q;
 	protected AbstractElementAlias match_Expression_BLTerminalRuleCall_1_1_q;
 	protected AbstractElementAlias match_Header1Expression_BLTerminalRuleCall_4_q;
 	protected AbstractElementAlias match_Header1Expression_NumberSignKeyword_3_0_a;
@@ -35,6 +36,9 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_Header5Expression_NumberSignKeyword_3_0_a;
 	protected AbstractElementAlias match_Header6Expression_BLTerminalRuleCall_4_q;
 	protected AbstractElementAlias match_Header6Expression_NumberSignKeyword_3_0_a;
+	protected AbstractElementAlias match_HorizontalExpression_AsteriskKeyword_1_1_or_HyphenMinusKeyword_1_0_or__Keyword_1_2;
+	protected AbstractElementAlias match_HorizontalExpression_AsteriskKeyword_2_1_or_HyphenMinusKeyword_2_0_or__Keyword_2_2;
+	protected AbstractElementAlias match_HorizontalExpression___AsteriskKeyword_3_1_or_HyphenMinusKeyword_3_0_or__Keyword_3_2__p;
 	protected AbstractElementAlias match_ImageExpression_BLTerminalRuleCall_6_q;
 	protected AbstractElementAlias match_LineExpression_VerticalLineKeyword_0_q;
 	protected AbstractElementAlias match_LineExpression_VerticalLineKeyword_3_q;
@@ -52,6 +56,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (MyDslGrammarAccess) access;
 		match_Expression_BLTerminalRuleCall_0_0_3_1_q = new TokenAlias(false, true, grammarAccess.getExpressionAccess().getBLTerminalRuleCall_0_0_3_1());
+		match_Expression_BLTerminalRuleCall_0_0_4_1_q = new TokenAlias(false, true, grammarAccess.getExpressionAccess().getBLTerminalRuleCall_0_0_4_1());
 		match_Expression_BLTerminalRuleCall_1_1_q = new TokenAlias(false, true, grammarAccess.getExpressionAccess().getBLTerminalRuleCall_1_1());
 		match_Header1Expression_BLTerminalRuleCall_4_q = new TokenAlias(false, true, grammarAccess.getHeader1ExpressionAccess().getBLTerminalRuleCall_4());
 		match_Header1Expression_NumberSignKeyword_3_0_a = new TokenAlias(true, true, grammarAccess.getHeader1ExpressionAccess().getNumberSignKeyword_3_0());
@@ -65,6 +70,9 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_Header5Expression_NumberSignKeyword_3_0_a = new TokenAlias(true, true, grammarAccess.getHeader5ExpressionAccess().getNumberSignKeyword_3_0());
 		match_Header6Expression_BLTerminalRuleCall_4_q = new TokenAlias(false, true, grammarAccess.getHeader6ExpressionAccess().getBLTerminalRuleCall_4());
 		match_Header6Expression_NumberSignKeyword_3_0_a = new TokenAlias(true, true, grammarAccess.getHeader6ExpressionAccess().getNumberSignKeyword_3_0());
+		match_HorizontalExpression_AsteriskKeyword_1_1_or_HyphenMinusKeyword_1_0_or__Keyword_1_2 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getHorizontalExpressionAccess().getAsteriskKeyword_1_1()), new TokenAlias(false, false, grammarAccess.getHorizontalExpressionAccess().getHyphenMinusKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getHorizontalExpressionAccess().get_Keyword_1_2()));
+		match_HorizontalExpression_AsteriskKeyword_2_1_or_HyphenMinusKeyword_2_0_or__Keyword_2_2 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getHorizontalExpressionAccess().getAsteriskKeyword_2_1()), new TokenAlias(false, false, grammarAccess.getHorizontalExpressionAccess().getHyphenMinusKeyword_2_0()), new TokenAlias(false, false, grammarAccess.getHorizontalExpressionAccess().get_Keyword_2_2()));
+		match_HorizontalExpression___AsteriskKeyword_3_1_or_HyphenMinusKeyword_3_0_or__Keyword_3_2__p = new AlternativeAlias(true, false, new TokenAlias(false, false, grammarAccess.getHorizontalExpressionAccess().getAsteriskKeyword_3_1()), new TokenAlias(false, false, grammarAccess.getHorizontalExpressionAccess().getHyphenMinusKeyword_3_0()), new TokenAlias(false, false, grammarAccess.getHorizontalExpressionAccess().get_Keyword_3_2()));
 		match_ImageExpression_BLTerminalRuleCall_6_q = new TokenAlias(false, true, grammarAccess.getImageExpressionAccess().getBLTerminalRuleCall_6());
 		match_LineExpression_VerticalLineKeyword_0_q = new TokenAlias(false, true, grammarAccess.getLineExpressionAccess().getVerticalLineKeyword_0());
 		match_LineExpression_VerticalLineKeyword_3_q = new TokenAlias(false, true, grammarAccess.getLineExpressionAccess().getVerticalLineKeyword_3());
@@ -138,6 +146,8 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
 			if (match_Expression_BLTerminalRuleCall_0_0_3_1_q.equals(syntax))
 				emit_Expression_BLTerminalRuleCall_0_0_3_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Expression_BLTerminalRuleCall_0_0_4_1_q.equals(syntax))
+				emit_Expression_BLTerminalRuleCall_0_0_4_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Expression_BLTerminalRuleCall_1_1_q.equals(syntax))
 				emit_Expression_BLTerminalRuleCall_1_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Header1Expression_BLTerminalRuleCall_4_q.equals(syntax))
@@ -164,6 +174,12 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Header6Expression_BLTerminalRuleCall_4_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Header6Expression_NumberSignKeyword_3_0_a.equals(syntax))
 				emit_Header6Expression_NumberSignKeyword_3_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_HorizontalExpression_AsteriskKeyword_1_1_or_HyphenMinusKeyword_1_0_or__Keyword_1_2.equals(syntax))
+				emit_HorizontalExpression_AsteriskKeyword_1_1_or_HyphenMinusKeyword_1_0_or__Keyword_1_2(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_HorizontalExpression_AsteriskKeyword_2_1_or_HyphenMinusKeyword_2_0_or__Keyword_2_2.equals(syntax))
+				emit_HorizontalExpression_AsteriskKeyword_2_1_or_HyphenMinusKeyword_2_0_or__Keyword_2_2(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_HorizontalExpression___AsteriskKeyword_3_1_or_HyphenMinusKeyword_3_0_or__Keyword_3_2__p.equals(syntax))
+				emit_HorizontalExpression___AsteriskKeyword_3_1_or_HyphenMinusKeyword_3_0_or__Keyword_3_2__p(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_ImageExpression_BLTerminalRuleCall_6_q.equals(syntax))
 				emit_ImageExpression_BLTerminalRuleCall_6_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_LineExpression_VerticalLineKeyword_0_q.equals(syntax))
@@ -197,9 +213,20 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     BL?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     c=ListExpression (ambiguity) (rule end)
+	 *     c=HorizontalExpression (ambiguity) (rule end)
 	 */
 	protected void emit_Expression_BLTerminalRuleCall_0_0_3_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     BL?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     c=ListExpression (ambiguity) (rule end)
+	 */
+	protected void emit_Expression_BLTerminalRuleCall_0_0_4_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -343,6 +370,39 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     title+=EmphasisExpression (ambiguity) BL? (rule end)
 	 */
 	protected void emit_Header6Expression_NumberSignKeyword_3_0_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     '-' | '*' | '_'
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) ('-' | '*' | '_') ('-' | '*' | '_')+ (rule start)
+	 */
+	protected void emit_HorizontalExpression_AsteriskKeyword_1_1_or_HyphenMinusKeyword_1_0_or__Keyword_1_2(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     '-' | '*' | '_'
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) ('-' | '*' | '_') (ambiguity) ('-' | '*' | '_')+ (rule start)
+	 */
+	protected void emit_HorizontalExpression_AsteriskKeyword_2_1_or_HyphenMinusKeyword_2_0_or__Keyword_2_2(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ('-' | '*' | '_')+
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) ('-' | '*' | '_') ('-' | '*' | '_') (ambiguity) (rule start)
+	 */
+	protected void emit_HorizontalExpression___AsteriskKeyword_3_1_or_HyphenMinusKeyword_3_0_or__Keyword_3_2__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
