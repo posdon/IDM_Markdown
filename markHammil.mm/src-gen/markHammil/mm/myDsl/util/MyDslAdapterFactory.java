@@ -96,6 +96,10 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
 				return createQuoteExpressionAdapter();
 			}
 			@Override
+			public Adapter caseRefExpression(RefExpression object) {
+				return createRefExpressionAdapter();
+			}
+			@Override
 			public Adapter caseLinkExpression(LinkExpression object) {
 				return createLinkExpressionAdapter();
 			}
@@ -148,10 +152,6 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
 				return createEmphasisExpressionAdapter();
 			}
 			@Override
-			public Adapter caseBreakLineExpressionB(BreakLineExpressionB object) {
-				return createBreakLineExpressionBAdapter();
-			}
-			@Override
 			public Adapter caseStrongExpression(StrongExpression object) {
 				return createStrongExpressionAdapter();
 			}
@@ -162,6 +162,10 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
 			@Override
 			public Adapter caseScratchExpression(ScratchExpression object) {
 				return createScratchExpressionAdapter();
+			}
+			@Override
+			public Adapter caseNaturalExpression(NaturalExpression object) {
+				return createNaturalExpressionAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -270,6 +274,21 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
   public Adapter createQuoteExpressionAdapter()
+  {
+		return null;
+	}
+
+  /**
+	 * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.RefExpression <em>Ref Expression</em>}'.
+	 * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see markHammil.mm.myDsl.RefExpression
+	 * @generated
+	 */
+  public Adapter createRefExpressionAdapter()
   {
 		return null;
 	}
@@ -470,21 +489,6 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
 	}
 
   /**
-	 * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.BreakLineExpressionB <em>Break Line Expression B</em>}'.
-	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see markHammil.mm.myDsl.BreakLineExpressionB
-	 * @generated
-	 */
-  public Adapter createBreakLineExpressionBAdapter()
-  {
-		return null;
-	}
-
-  /**
 	 * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.StrongExpression <em>Strong Expression</em>}'.
 	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -525,6 +529,21 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
   public Adapter createScratchExpressionAdapter()
+  {
+		return null;
+	}
+
+  /**
+	 * Creates a new adapter for an object of class '{@link markHammil.mm.myDsl.NaturalExpression <em>Natural Expression</em>}'.
+	 * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see markHammil.mm.myDsl.NaturalExpression
+	 * @generated
+	 */
+  public Adapter createNaturalExpressionAdapter()
   {
 		return null;
 	}

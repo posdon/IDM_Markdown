@@ -5,9 +5,7 @@ package markHammil.mm.myDsl.impl;
 
 import java.util.Collection;
 
-import markHammil.mm.myDsl.ListExpression;
 import markHammil.mm.myDsl.MyDslPackage;
-import markHammil.mm.myDsl.QuoteExpression;
 import markHammil.mm.myDsl.TextExpression;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -32,26 +30,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link markHammil.mm.myDsl.impl.TextExpressionImpl#getContentOrdered <em>Content Ordered</em>}</li>
  *   <li>{@link markHammil.mm.myDsl.impl.TextExpressionImpl#getC <em>C</em>}</li>
- *   <li>{@link markHammil.mm.myDsl.impl.TextExpressionImpl#getContentUnordered <em>Content Unordered</em>}</li>
  *   <li>{@link markHammil.mm.myDsl.impl.TextExpressionImpl#getContent <em>Content</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class TextExpressionImpl extends ExpressionImpl implements TextExpression
+public class TextExpressionImpl extends QuoteExpressionImpl implements TextExpression
 {
-  /**
-	 * The cached value of the '{@link #getContentOrdered() <em>Content Ordered</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @see #getContentOrdered()
-	 * @generated
-	 * @ordered
-	 */
-  protected EList<TextExpression> contentOrdered;
-
   /**
 	 * The cached value of the '{@link #getC() <em>C</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -61,16 +47,6 @@ public class TextExpressionImpl extends ExpressionImpl implements TextExpression
 	 * @ordered
 	 */
   protected EObject c;
-
-  /**
-	 * The cached value of the '{@link #getContentUnordered() <em>Content Unordered</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @see #getContentUnordered()
-	 * @generated
-	 * @ordered
-	 */
-  protected EList<TextExpression> contentUnordered;
 
   /**
 	 * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference list.
@@ -101,19 +77,6 @@ public class TextExpressionImpl extends ExpressionImpl implements TextExpression
   protected EClass eStaticClass()
   {
 		return MyDslPackage.Literals.TEXT_EXPRESSION;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EList<TextExpression> getContentOrdered()
-  {
-		if (contentOrdered == null) {
-			contentOrdered = new EObjectContainmentEList<TextExpression>(TextExpression.class, this, MyDslPackage.TEXT_EXPRESSION__CONTENT_ORDERED);
-		}
-		return contentOrdered;
 	}
 
   /**
@@ -167,19 +130,6 @@ public class TextExpressionImpl extends ExpressionImpl implements TextExpression
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EList<TextExpression> getContentUnordered()
-  {
-		if (contentUnordered == null) {
-			contentUnordered = new EObjectContainmentEList<TextExpression>(TextExpression.class, this, MyDslPackage.TEXT_EXPRESSION__CONTENT_UNORDERED);
-		}
-		return contentUnordered;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
   public EList<TextExpression> getContent()
   {
 		if (content == null) {
@@ -197,12 +147,8 @@ public class TextExpressionImpl extends ExpressionImpl implements TextExpression
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
 		switch (featureID) {
-			case MyDslPackage.TEXT_EXPRESSION__CONTENT_ORDERED:
-				return ((InternalEList<?>)getContentOrdered()).basicRemove(otherEnd, msgs);
 			case MyDslPackage.TEXT_EXPRESSION__C:
 				return basicSetC(null, msgs);
-			case MyDslPackage.TEXT_EXPRESSION__CONTENT_UNORDERED:
-				return ((InternalEList<?>)getContentUnordered()).basicRemove(otherEnd, msgs);
 			case MyDslPackage.TEXT_EXPRESSION__CONTENT:
 				return ((InternalEList<?>)getContent()).basicRemove(otherEnd, msgs);
 		}
@@ -218,12 +164,8 @@ public class TextExpressionImpl extends ExpressionImpl implements TextExpression
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
 		switch (featureID) {
-			case MyDslPackage.TEXT_EXPRESSION__CONTENT_ORDERED:
-				return getContentOrdered();
 			case MyDslPackage.TEXT_EXPRESSION__C:
 				return getC();
-			case MyDslPackage.TEXT_EXPRESSION__CONTENT_UNORDERED:
-				return getContentUnordered();
 			case MyDslPackage.TEXT_EXPRESSION__CONTENT:
 				return getContent();
 		}
@@ -240,16 +182,8 @@ public class TextExpressionImpl extends ExpressionImpl implements TextExpression
   public void eSet(int featureID, Object newValue)
   {
 		switch (featureID) {
-			case MyDslPackage.TEXT_EXPRESSION__CONTENT_ORDERED:
-				getContentOrdered().clear();
-				getContentOrdered().addAll((Collection<? extends TextExpression>)newValue);
-				return;
 			case MyDslPackage.TEXT_EXPRESSION__C:
 				setC((EObject)newValue);
-				return;
-			case MyDslPackage.TEXT_EXPRESSION__CONTENT_UNORDERED:
-				getContentUnordered().clear();
-				getContentUnordered().addAll((Collection<? extends TextExpression>)newValue);
 				return;
 			case MyDslPackage.TEXT_EXPRESSION__CONTENT:
 				getContent().clear();
@@ -268,14 +202,8 @@ public class TextExpressionImpl extends ExpressionImpl implements TextExpression
   public void eUnset(int featureID)
   {
 		switch (featureID) {
-			case MyDslPackage.TEXT_EXPRESSION__CONTENT_ORDERED:
-				getContentOrdered().clear();
-				return;
 			case MyDslPackage.TEXT_EXPRESSION__C:
 				setC((EObject)null);
-				return;
-			case MyDslPackage.TEXT_EXPRESSION__CONTENT_UNORDERED:
-				getContentUnordered().clear();
 				return;
 			case MyDslPackage.TEXT_EXPRESSION__CONTENT:
 				getContent().clear();
@@ -293,60 +221,12 @@ public class TextExpressionImpl extends ExpressionImpl implements TextExpression
   public boolean eIsSet(int featureID)
   {
 		switch (featureID) {
-			case MyDslPackage.TEXT_EXPRESSION__CONTENT_ORDERED:
-				return contentOrdered != null && !contentOrdered.isEmpty();
 			case MyDslPackage.TEXT_EXPRESSION__C:
 				return c != null;
-			case MyDslPackage.TEXT_EXPRESSION__CONTENT_UNORDERED:
-				return contentUnordered != null && !contentUnordered.isEmpty();
 			case MyDslPackage.TEXT_EXPRESSION__CONTENT:
 				return content != null && !content.isEmpty();
 		}
 		return super.eIsSet(featureID);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  @Override
-  public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
-  {
-		if (baseClass == ListExpression.class) {
-			switch (derivedFeatureID) {
-				case MyDslPackage.TEXT_EXPRESSION__CONTENT_ORDERED: return MyDslPackage.LIST_EXPRESSION__CONTENT_ORDERED;
-				default: return -1;
-			}
-		}
-		if (baseClass == QuoteExpression.class) {
-			switch (derivedFeatureID) {
-				default: return -1;
-			}
-		}
-		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  @Override
-  public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
-  {
-		if (baseClass == ListExpression.class) {
-			switch (baseFeatureID) {
-				case MyDslPackage.LIST_EXPRESSION__CONTENT_ORDERED: return MyDslPackage.TEXT_EXPRESSION__CONTENT_ORDERED;
-				default: return -1;
-			}
-		}
-		if (baseClass == QuoteExpression.class) {
-			switch (baseFeatureID) {
-				default: return -1;
-			}
-		}
-		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 } //TextExpressionImpl

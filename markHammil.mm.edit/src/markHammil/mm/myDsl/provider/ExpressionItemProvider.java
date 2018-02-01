@@ -65,6 +65,36 @@ public class ExpressionItemProvider
 	}
 
 	/**
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(MyDslPackage.Literals.EXPRESSION__C);
+		}
+		return childrenFeatures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
+	}
+
+	/**
 	 * This returns Expression.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -97,6 +127,12 @@ public class ExpressionItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(Expression.class)) {
+			case MyDslPackage.EXPRESSION__C:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 
@@ -110,6 +146,126 @@ public class ExpressionItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createFile()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createBreakLineExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createQuoteExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createTextExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createListExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createRefExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createLinkExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createImageExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createVideoExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createTabExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createLineExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createHeaderExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createHeader1Expression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createHeader2Expression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createHeader3Expression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createHeader4Expression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createHeader5Expression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createHeader6Expression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createEmphasisExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createStrongExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createItalicExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createScratchExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createNaturalExpression()));
 	}
 
 	/**

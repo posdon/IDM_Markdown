@@ -175,6 +175,11 @@ public class VideoExpressionItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
+				(MyDslPackage.Literals.VIDEO_EXPRESSION__ALT_TEXT,
+				 MyDslFactory.eINSTANCE.createNaturalExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(MyDslPackage.Literals.VIDEO_EXPRESSION__LINK_IMAGE,
 				 MyDslFactory.eINSTANCE.createEmphasisExpression()));
 
@@ -195,6 +200,11 @@ public class VideoExpressionItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
+				(MyDslPackage.Literals.VIDEO_EXPRESSION__LINK_IMAGE,
+				 MyDslFactory.eINSTANCE.createNaturalExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(MyDslPackage.Literals.VIDEO_EXPRESSION__LINK_VIDEO,
 				 MyDslFactory.eINSTANCE.createEmphasisExpression()));
 
@@ -212,6 +222,11 @@ public class VideoExpressionItemProvider
 			(createChildParameter
 				(MyDslPackage.Literals.VIDEO_EXPRESSION__LINK_VIDEO,
 				 MyDslFactory.eINSTANCE.createScratchExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.VIDEO_EXPRESSION__LINK_VIDEO,
+				 MyDslFactory.eINSTANCE.createNaturalExpression()));
 	}
 
 	/**

@@ -5,16 +5,16 @@ package markHammil.mm.myDsl.tests;
 
 import junit.textui.TestRunner;
 
-import markHammil.mm.myDsl.BreakLineExpressionB;
 import markHammil.mm.myDsl.MyDslFactory;
+import markHammil.mm.myDsl.NaturalExpression;
 
 /**
  * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Break Line Expression B</b></em>'.
+ * A test case for the model object '<em><b>Natural Expression</b></em>'.
  * <!-- end-user-doc -->
  * @generated
  */
-public class BreakLineExpressionBTest extends BreakLineExpressionTest {
+public class NaturalExpressionTest extends EmphasisExpressionTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -22,28 +22,28 @@ public class BreakLineExpressionBTest extends BreakLineExpressionTest {
 	 * @generated
 	 */
 	public static void main(String[] args) {
-		TestRunner.run(BreakLineExpressionBTest.class);
+		TestRunner.run(NaturalExpressionTest.class);
 	}
 
 	/**
-	 * Constructs a new Break Line Expression B test case with the given name.
+	 * Constructs a new Natural Expression test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public BreakLineExpressionBTest(String name) {
+	public NaturalExpressionTest(String name) {
 		super(name);
 	}
 
 	/**
-	 * Returns the fixture for this Break Line Expression B test case.
+	 * Returns the fixture for this Natural Expression test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	protected BreakLineExpressionB getFixture() {
-		return (BreakLineExpressionB)fixture;
+	protected NaturalExpression getFixture() {
+		return (NaturalExpression)fixture;
 	}
 
 	/**
@@ -54,7 +54,7 @@ public class BreakLineExpressionBTest extends BreakLineExpressionTest {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(MyDslFactory.eINSTANCE.createBreakLineExpressionB());
+		setFixture(MyDslFactory.eINSTANCE.createNaturalExpression());
 	}
 
 	/**
@@ -68,4 +68,4 @@ public class BreakLineExpressionBTest extends BreakLineExpressionTest {
 		setFixture(null);
 	}
 
-} //BreakLineExpressionBTest
+} //NaturalExpressionTest

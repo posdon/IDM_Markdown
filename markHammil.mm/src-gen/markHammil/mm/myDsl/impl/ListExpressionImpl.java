@@ -16,6 +16,8 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -27,13 +29,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link markHammil.mm.myDsl.impl.ListExpressionImpl#getContentUnordered <em>Content Unordered</em>}</li>
  *   <li>{@link markHammil.mm.myDsl.impl.ListExpressionImpl#getContentOrdered <em>Content Ordered</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ListExpressionImpl extends ExpressionImpl implements ListExpression
+public class ListExpressionImpl extends MinimalEObjectImpl.Container implements ListExpression
 {
+  /**
+	 * The cached value of the '{@link #getContentUnordered() <em>Content Unordered</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @see #getContentUnordered()
+	 * @generated
+	 * @ordered
+	 */
+  protected EList<TextExpression> contentUnordered;
+
   /**
 	 * The cached value of the '{@link #getContentOrdered() <em>Content Ordered</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -70,6 +83,19 @@ public class ListExpressionImpl extends ExpressionImpl implements ListExpression
    * <!-- end-user-doc -->
 	 * @generated
 	 */
+  public EList<TextExpression> getContentUnordered()
+  {
+		if (contentUnordered == null) {
+			contentUnordered = new EObjectContainmentEList<TextExpression>(TextExpression.class, this, MyDslPackage.LIST_EXPRESSION__CONTENT_UNORDERED);
+		}
+		return contentUnordered;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
   public EList<TextExpression> getContentOrdered()
   {
 		if (contentOrdered == null) {
@@ -87,6 +113,8 @@ public class ListExpressionImpl extends ExpressionImpl implements ListExpression
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
 		switch (featureID) {
+			case MyDslPackage.LIST_EXPRESSION__CONTENT_UNORDERED:
+				return ((InternalEList<?>)getContentUnordered()).basicRemove(otherEnd, msgs);
 			case MyDslPackage.LIST_EXPRESSION__CONTENT_ORDERED:
 				return ((InternalEList<?>)getContentOrdered()).basicRemove(otherEnd, msgs);
 		}
@@ -102,6 +130,8 @@ public class ListExpressionImpl extends ExpressionImpl implements ListExpression
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
 		switch (featureID) {
+			case MyDslPackage.LIST_EXPRESSION__CONTENT_UNORDERED:
+				return getContentUnordered();
 			case MyDslPackage.LIST_EXPRESSION__CONTENT_ORDERED:
 				return getContentOrdered();
 		}
@@ -118,6 +148,10 @@ public class ListExpressionImpl extends ExpressionImpl implements ListExpression
   public void eSet(int featureID, Object newValue)
   {
 		switch (featureID) {
+			case MyDslPackage.LIST_EXPRESSION__CONTENT_UNORDERED:
+				getContentUnordered().clear();
+				getContentUnordered().addAll((Collection<? extends TextExpression>)newValue);
+				return;
 			case MyDslPackage.LIST_EXPRESSION__CONTENT_ORDERED:
 				getContentOrdered().clear();
 				getContentOrdered().addAll((Collection<? extends TextExpression>)newValue);
@@ -135,6 +169,9 @@ public class ListExpressionImpl extends ExpressionImpl implements ListExpression
   public void eUnset(int featureID)
   {
 		switch (featureID) {
+			case MyDslPackage.LIST_EXPRESSION__CONTENT_UNORDERED:
+				getContentUnordered().clear();
+				return;
 			case MyDslPackage.LIST_EXPRESSION__CONTENT_ORDERED:
 				getContentOrdered().clear();
 				return;
@@ -151,6 +188,8 @@ public class ListExpressionImpl extends ExpressionImpl implements ListExpression
   public boolean eIsSet(int featureID)
   {
 		switch (featureID) {
+			case MyDslPackage.LIST_EXPRESSION__CONTENT_UNORDERED:
+				return contentUnordered != null && !contentUnordered.isEmpty();
 			case MyDslPackage.LIST_EXPRESSION__CONTENT_ORDERED:
 				return contentOrdered != null && !contentOrdered.isEmpty();
 		}

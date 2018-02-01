@@ -7,8 +7,9 @@ package markHammil.mm.myDsl.provider;
 import java.util.Collection;
 import java.util.List;
 
-import markHammil.mm.myDsl.BreakLineExpressionB;
 import markHammil.mm.myDsl.MyDslPackage;
+import markHammil.mm.myDsl.NaturalExpression;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -18,19 +19,19 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link markHammil.mm.myDsl.BreakLineExpressionB} object.
+ * This is the item provider adapter for a {@link markHammil.mm.myDsl.NaturalExpression} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class BreakLineExpressionBItemProvider extends BreakLineExpressionItemProvider {
+public class NaturalExpressionItemProvider extends EmphasisExpressionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public BreakLineExpressionBItemProvider(AdapterFactory adapterFactory) {
+	public NaturalExpressionItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -45,42 +46,42 @@ public class BreakLineExpressionBItemProvider extends BreakLineExpressionItemPro
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addIsBRPropertyDescriptor(object);
+			addValuePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Is BR feature.
+	 * This adds a property descriptor for the Value feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addIsBRPropertyDescriptor(Object object) {
+	protected void addValuePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_BreakLineExpressionB_isBR_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_BreakLineExpressionB_isBR_feature", "_UI_BreakLineExpressionB_type"),
-				 MyDslPackage.Literals.BREAK_LINE_EXPRESSION_B__IS_BR,
+				 getString("_UI_NaturalExpression_value_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_NaturalExpression_value_feature", "_UI_NaturalExpression_type"),
+				 MyDslPackage.Literals.NATURAL_EXPRESSION__VALUE,
 				 true,
 				 false,
 				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
 
 	/**
-	 * This returns BreakLineExpressionB.gif.
+	 * This returns NaturalExpression.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/BreakLineExpressionB"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/NaturalExpression"));
 	}
 
 	/**
@@ -91,8 +92,7 @@ public class BreakLineExpressionBItemProvider extends BreakLineExpressionItemPro
 	 */
 	@Override
 	public String getText(Object object) {
-		BreakLineExpressionB breakLineExpressionB = (BreakLineExpressionB)object;
-		return getString("_UI_BreakLineExpressionB_type") + " " + breakLineExpressionB.isIsBR();
+		return getString("_UI_NaturalExpression_type");
 	}
 	
 
@@ -107,8 +107,8 @@ public class BreakLineExpressionBItemProvider extends BreakLineExpressionItemPro
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(BreakLineExpressionB.class)) {
-			case MyDslPackage.BREAK_LINE_EXPRESSION_B__IS_BR:
+		switch (notification.getFeatureID(NaturalExpression.class)) {
+			case MyDslPackage.NATURAL_EXPRESSION__VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

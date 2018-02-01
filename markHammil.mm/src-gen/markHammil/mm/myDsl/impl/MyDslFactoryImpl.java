@@ -67,6 +67,7 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
 			case MyDslPackage.TEXT_EXPRESSION: return createTextExpression();
 			case MyDslPackage.LIST_EXPRESSION: return createListExpression();
 			case MyDslPackage.QUOTE_EXPRESSION: return createQuoteExpression();
+			case MyDslPackage.REF_EXPRESSION: return createRefExpression();
 			case MyDslPackage.LINK_EXPRESSION: return createLinkExpression();
 			case MyDslPackage.IMAGE_EXPRESSION: return createImageExpression();
 			case MyDslPackage.VIDEO_EXPRESSION: return createVideoExpression();
@@ -80,10 +81,10 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
 			case MyDslPackage.HEADER5_EXPRESSION: return createHeader5Expression();
 			case MyDslPackage.HEADER6_EXPRESSION: return createHeader6Expression();
 			case MyDslPackage.EMPHASIS_EXPRESSION: return createEmphasisExpression();
-			case MyDslPackage.BREAK_LINE_EXPRESSION_B: return createBreakLineExpressionB();
 			case MyDslPackage.STRONG_EXPRESSION: return createStrongExpression();
 			case MyDslPackage.ITALIC_EXPRESSION: return createItalicExpression();
 			case MyDslPackage.SCRATCH_EXPRESSION: return createScratchExpression();
+			case MyDslPackage.NATURAL_EXPRESSION: return createNaturalExpression();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -153,6 +154,17 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
   {
 		QuoteExpressionImpl quoteExpression = new QuoteExpressionImpl();
 		return quoteExpression;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public RefExpression createRefExpression()
+  {
+		RefExpressionImpl refExpression = new RefExpressionImpl();
+		return refExpression;
 	}
 
   /**
@@ -303,17 +315,6 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public BreakLineExpressionB createBreakLineExpressionB()
-  {
-		BreakLineExpressionBImpl breakLineExpressionB = new BreakLineExpressionBImpl();
-		return breakLineExpressionB;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
   public StrongExpression createStrongExpression()
   {
 		StrongExpressionImpl strongExpression = new StrongExpressionImpl();
@@ -340,6 +341,17 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
   {
 		ScratchExpressionImpl scratchExpression = new ScratchExpressionImpl();
 		return scratchExpression;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public NaturalExpression createNaturalExpression()
+  {
+		NaturalExpressionImpl naturalExpression = new NaturalExpressionImpl();
+		return naturalExpression;
 	}
 
   /**

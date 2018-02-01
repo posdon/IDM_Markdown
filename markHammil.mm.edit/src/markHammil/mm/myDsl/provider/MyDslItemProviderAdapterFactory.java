@@ -211,6 +211,29 @@ public class MyDslItemProviderAdapterFactory extends MyDslAdapterFactory impleme
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link markHammil.mm.myDsl.RefExpression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RefExpressionItemProvider refExpressionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link markHammil.mm.myDsl.RefExpression}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRefExpressionAdapter() {
+		if (refExpressionItemProvider == null) {
+			refExpressionItemProvider = new RefExpressionItemProvider(this);
+		}
+
+		return refExpressionItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link markHammil.mm.myDsl.LinkExpression} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -510,29 +533,6 @@ public class MyDslItemProviderAdapterFactory extends MyDslAdapterFactory impleme
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link markHammil.mm.myDsl.BreakLineExpressionB} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected BreakLineExpressionBItemProvider breakLineExpressionBItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link markHammil.mm.myDsl.BreakLineExpressionB}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createBreakLineExpressionBAdapter() {
-		if (breakLineExpressionBItemProvider == null) {
-			breakLineExpressionBItemProvider = new BreakLineExpressionBItemProvider(this);
-		}
-
-		return breakLineExpressionBItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link markHammil.mm.myDsl.StrongExpression} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -599,6 +599,29 @@ public class MyDslItemProviderAdapterFactory extends MyDslAdapterFactory impleme
 		}
 
 		return scratchExpressionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link markHammil.mm.myDsl.NaturalExpression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected NaturalExpressionItemProvider naturalExpressionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link markHammil.mm.myDsl.NaturalExpression}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createNaturalExpressionAdapter() {
+		if (naturalExpressionItemProvider == null) {
+			naturalExpressionItemProvider = new NaturalExpressionItemProvider(this);
+		}
+
+		return naturalExpressionItemProvider;
 	}
 
 	/**
@@ -706,6 +729,7 @@ public class MyDslItemProviderAdapterFactory extends MyDslAdapterFactory impleme
 		if (textExpressionItemProvider != null) textExpressionItemProvider.dispose();
 		if (listExpressionItemProvider != null) listExpressionItemProvider.dispose();
 		if (quoteExpressionItemProvider != null) quoteExpressionItemProvider.dispose();
+		if (refExpressionItemProvider != null) refExpressionItemProvider.dispose();
 		if (linkExpressionItemProvider != null) linkExpressionItemProvider.dispose();
 		if (imageExpressionItemProvider != null) imageExpressionItemProvider.dispose();
 		if (videoExpressionItemProvider != null) videoExpressionItemProvider.dispose();
@@ -719,10 +743,10 @@ public class MyDslItemProviderAdapterFactory extends MyDslAdapterFactory impleme
 		if (header5ExpressionItemProvider != null) header5ExpressionItemProvider.dispose();
 		if (header6ExpressionItemProvider != null) header6ExpressionItemProvider.dispose();
 		if (emphasisExpressionItemProvider != null) emphasisExpressionItemProvider.dispose();
-		if (breakLineExpressionBItemProvider != null) breakLineExpressionBItemProvider.dispose();
 		if (strongExpressionItemProvider != null) strongExpressionItemProvider.dispose();
 		if (italicExpressionItemProvider != null) italicExpressionItemProvider.dispose();
 		if (scratchExpressionItemProvider != null) scratchExpressionItemProvider.dispose();
+		if (naturalExpressionItemProvider != null) naturalExpressionItemProvider.dispose();
 	}
 
 }

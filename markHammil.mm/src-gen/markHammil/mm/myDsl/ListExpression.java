@@ -5,6 +5,8 @@ package markHammil.mm.myDsl;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.ecore.EObject;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>List Expression</b></em>'.
@@ -14,6 +16,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link markHammil.mm.myDsl.ListExpression#getContentUnordered <em>Content Unordered</em>}</li>
  *   <li>{@link markHammil.mm.myDsl.ListExpression#getContentOrdered <em>Content Ordered</em>}</li>
  * </ul>
  *
@@ -21,8 +24,24 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface ListExpression extends Expression
+public interface ListExpression extends EObject
 {
+  /**
+	 * Returns the value of the '<em><b>Content Unordered</b></em>' containment reference list.
+	 * The list contents are of type {@link markHammil.mm.myDsl.TextExpression}.
+	 * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Content Unordered</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+	 * @return the value of the '<em>Content Unordered</em>' containment reference list.
+	 * @see markHammil.mm.myDsl.MyDslPackage#getListExpression_ContentUnordered()
+	 * @model containment="true"
+	 * @generated
+	 */
+  EList<TextExpression> getContentUnordered();
+
   /**
 	 * Returns the value of the '<em><b>Content Ordered</b></em>' containment reference list.
 	 * The list contents are of type {@link markHammil.mm.myDsl.TextExpression}.

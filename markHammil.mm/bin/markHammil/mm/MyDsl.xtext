@@ -10,22 +10,22 @@ File:
         ;
         
 Expression:
-	(=> HeaderExpression | BreakLineExpression | /* RefExpression | */ ListExpression =>BL?) | TextExpression =>BL?
+	(=> c=HeaderExpression | c=BreakLineExpression | c=RefExpression | c=ListExpression =>BL?) | c=TextExpression =>BL?
 ;
 
 BreakLineExpression :
-	{BreakLineExpressionB}
-	isBR?='true' BL
+	{BreakLineExpression}
+	BL
 ;
 
 TextExpression hidden(WS):
-	c= EmphasisExpression | => ( c= QuoteExpression | c= TabExpression | ( c=LinkExpression | => c=ImageExpression | => c=VideoExpression ))
+	c= EmphasisExpression | => ( c= QuoteExpression | c= TabExpression | =>( c=LinkExpression | => (c=ImageExpression | => c=VideoExpression )))
 ;
 
 
 ListExpression returns ListExpression hidden():
-	{TextExpression}
-	(('*'|'-'|'+') WS* contentUnordered+=TextExpression =>BL?)+ | (INT '.'WS* contentOrdered+=TextExpression =>BL?)+
+	{ListExpression}
+	(('*'|'-'|'+') WS+ contentUnordered+=TextExpression =>BL?)+ | (INT '.'WS* contentOrdered+=TextExpression =>BL?)+
 ;
 
 
@@ -36,16 +36,17 @@ QuoteExpression returns QuoteExpression:
 
 
 
-//RefExpression returns RefExpression :
-//	{RefExpression}
-//	=>'[' refName=NaturalExpression =>']:' (refContent=NaturalExpression)? =>BL?
-//;
+
+RefExpression returns RefExpression :
+	{RefExpression}
+	=>'[' refName=NaturalExpression =>']:' (refContent=NaturalExpression)? =>BL?
+;
 
 
 LinkExpression returns LinkExpression :
 	{LinkExpression}
-	=>'[' altText=NaturalExpression =>'](' (linkContent=NaturalExpression)? =>')' =>BL? //|
-	//=>'[' altText=NaturalExpression =>'][' (refName=NaturalExpression)? =>']' =>BL?
+	=>'[' altText=NaturalExpression =>'](' (linkContent=NaturalExpression)? =>')' =>BL? |
+	=>'[' altText=NaturalExpression =>'][' (refName=NaturalExpression)? =>']' =>BL?
 ;
 
 
@@ -64,6 +65,12 @@ VideoExpression returns VideoExpression :
 
 
 
+
+
+
+
+
+
 TabExpression returns TabExpression :
 	{TabExpression}
 	=> ( header=LineExpression BL TabSeparation =>(BL =>lines+=LineExpression)* )
@@ -72,6 +79,7 @@ TabExpression returns TabExpression :
 TabSeparation :
 	'|'? '-' ('-')+ ( '|' '-' ('-')+ )+ '|'? 
 ;
+
 
 LineExpression returns LineExpression :
 	=>'|'? cells+=NaturalExpression (=> '|' cells+=NaturalExpression)* =>'|'? 
@@ -120,6 +128,7 @@ Header6Expression returns Header6Expression :
        
 EmphasisExpression returns EmphasisExpression:
       ( => ( => c+=StrongExpression | c+=ItalicExpression | c+=ScratchExpression ) | c+=NaturalExpression )+ ;
+      
 
 StrongExpression returns EmphasisExpression hidden():
 	{StrongExpression}
@@ -137,7 +146,7 @@ ScratchExpression returns EmphasisExpression hidden():
 ;
 
 NaturalExpression returns EmphasisExpression:
-        {EmphasisExpression}
+        {NaturalExpression}
                 value+=Content ;
 
 Content returns ecore::EString:

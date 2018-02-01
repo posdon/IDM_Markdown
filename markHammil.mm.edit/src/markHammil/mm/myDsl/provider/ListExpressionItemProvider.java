@@ -34,7 +34,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * @generated
  */
 public class ListExpressionItemProvider 
-	extends ExpressionItemProvider {
+	extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -72,6 +72,7 @@ public class ListExpressionItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(MyDslPackage.Literals.LIST_EXPRESSION__CONTENT_UNORDERED);
 			childrenFeatures.add(MyDslPackage.Literals.LIST_EXPRESSION__CONTENT_ORDERED);
 		}
 		return childrenFeatures;
@@ -125,6 +126,7 @@ public class ListExpressionItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ListExpression.class)) {
+			case MyDslPackage.LIST_EXPRESSION__CONTENT_UNORDERED:
 			case MyDslPackage.LIST_EXPRESSION__CONTENT_ORDERED:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -145,8 +147,47 @@ public class ListExpressionItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
+				(MyDslPackage.Literals.LIST_EXPRESSION__CONTENT_UNORDERED,
+				 MyDslFactory.eINSTANCE.createTextExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(MyDslPackage.Literals.LIST_EXPRESSION__CONTENT_ORDERED,
 				 MyDslFactory.eINSTANCE.createTextExpression()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify =
+			childFeature == MyDslPackage.Literals.LIST_EXPRESSION__CONTENT_UNORDERED ||
+			childFeature == MyDslPackage.Literals.LIST_EXPRESSION__CONTENT_ORDERED;
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return MyDslEditPlugin.INSTANCE;
 	}
 
 }

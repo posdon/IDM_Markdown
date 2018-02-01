@@ -173,6 +173,11 @@ public class ImageExpressionItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
+				(MyDslPackage.Literals.IMAGE_EXPRESSION__ALT_TEXT,
+				 MyDslFactory.eINSTANCE.createNaturalExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(MyDslPackage.Literals.IMAGE_EXPRESSION__LINK_CONTENT,
 				 MyDslFactory.eINSTANCE.createEmphasisExpression()));
 
@@ -190,6 +195,11 @@ public class ImageExpressionItemProvider
 			(createChildParameter
 				(MyDslPackage.Literals.IMAGE_EXPRESSION__LINK_CONTENT,
 				 MyDslFactory.eINSTANCE.createScratchExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.IMAGE_EXPRESSION__LINK_CONTENT,
+				 MyDslFactory.eINSTANCE.createNaturalExpression()));
 	}
 
 	/**

@@ -8,7 +8,6 @@ import java.util.Collection;
 import markHammil.mm.myDsl.EmphasisExpression;
 import markHammil.mm.myDsl.MyDslPackage;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -16,10 +15,8 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -32,8 +29,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link markHammil.mm.myDsl.impl.EmphasisExpressionImpl#getC <em>C</em>}</li>
- *   <li>{@link markHammil.mm.myDsl.impl.EmphasisExpressionImpl#getValue <em>Value</em>}</li>
- *   <li>{@link markHammil.mm.myDsl.impl.EmphasisExpressionImpl#getContent <em>Content</em>}</li>
  * </ul>
  *
  * @generated
@@ -49,26 +44,6 @@ public class EmphasisExpressionImpl extends MinimalEObjectImpl.Container impleme
 	 * @ordered
 	 */
   protected EList<EmphasisExpression> c;
-
-  /**
-	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute list.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @see #getValue()
-	 * @generated
-	 * @ordered
-	 */
-  protected EList<String> value;
-
-  /**
-	 * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @see #getContent()
-	 * @generated
-	 * @ordered
-	 */
-  protected EmphasisExpression content;
 
   /**
 	 * <!-- begin-user-doc -->
@@ -109,73 +84,12 @@ public class EmphasisExpressionImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EList<String> getValue()
-  {
-		if (value == null) {
-			value = new EDataTypeEList<String>(String.class, this, MyDslPackage.EMPHASIS_EXPRESSION__VALUE);
-		}
-		return value;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EmphasisExpression getContent()
-  {
-		return content;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public NotificationChain basicSetContent(EmphasisExpression newContent, NotificationChain msgs)
-  {
-		EmphasisExpression oldContent = content;
-		content = newContent;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyDslPackage.EMPHASIS_EXPRESSION__CONTENT, oldContent, newContent);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public void setContent(EmphasisExpression newContent)
-  {
-		if (newContent != content) {
-			NotificationChain msgs = null;
-			if (content != null)
-				msgs = ((InternalEObject)content).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.EMPHASIS_EXPRESSION__CONTENT, null, msgs);
-			if (newContent != null)
-				msgs = ((InternalEObject)newContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.EMPHASIS_EXPRESSION__CONTENT, null, msgs);
-			msgs = basicSetContent(newContent, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.EMPHASIS_EXPRESSION__CONTENT, newContent, newContent));
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
 		switch (featureID) {
 			case MyDslPackage.EMPHASIS_EXPRESSION__C:
 				return ((InternalEList<?>)getC()).basicRemove(otherEnd, msgs);
-			case MyDslPackage.EMPHASIS_EXPRESSION__CONTENT:
-				return basicSetContent(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -191,10 +105,6 @@ public class EmphasisExpressionImpl extends MinimalEObjectImpl.Container impleme
 		switch (featureID) {
 			case MyDslPackage.EMPHASIS_EXPRESSION__C:
 				return getC();
-			case MyDslPackage.EMPHASIS_EXPRESSION__VALUE:
-				return getValue();
-			case MyDslPackage.EMPHASIS_EXPRESSION__CONTENT:
-				return getContent();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -213,13 +123,6 @@ public class EmphasisExpressionImpl extends MinimalEObjectImpl.Container impleme
 				getC().clear();
 				getC().addAll((Collection<? extends EmphasisExpression>)newValue);
 				return;
-			case MyDslPackage.EMPHASIS_EXPRESSION__VALUE:
-				getValue().clear();
-				getValue().addAll((Collection<? extends String>)newValue);
-				return;
-			case MyDslPackage.EMPHASIS_EXPRESSION__CONTENT:
-				setContent((EmphasisExpression)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -236,12 +139,6 @@ public class EmphasisExpressionImpl extends MinimalEObjectImpl.Container impleme
 			case MyDslPackage.EMPHASIS_EXPRESSION__C:
 				getC().clear();
 				return;
-			case MyDslPackage.EMPHASIS_EXPRESSION__VALUE:
-				getValue().clear();
-				return;
-			case MyDslPackage.EMPHASIS_EXPRESSION__CONTENT:
-				setContent((EmphasisExpression)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -257,29 +154,8 @@ public class EmphasisExpressionImpl extends MinimalEObjectImpl.Container impleme
 		switch (featureID) {
 			case MyDslPackage.EMPHASIS_EXPRESSION__C:
 				return c != null && !c.isEmpty();
-			case MyDslPackage.EMPHASIS_EXPRESSION__VALUE:
-				return value != null && !value.isEmpty();
-			case MyDslPackage.EMPHASIS_EXPRESSION__CONTENT:
-				return content != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  @Override
-  public String toString()
-  {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (value: ");
-		result.append(value);
-		result.append(')');
-		return result.toString();
 	}
 
 } //EmphasisExpressionImpl

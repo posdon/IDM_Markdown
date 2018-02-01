@@ -3,56 +3,48 @@
  */
 package markHammil.mm.myDsl.impl;
 
-import markHammil.mm.myDsl.BreakLineExpressionB;
-import markHammil.mm.myDsl.MyDslPackage;
+import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
+import markHammil.mm.myDsl.MyDslPackage;
+import markHammil.mm.myDsl.NaturalExpression;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Break Line Expression B</b></em>'.
+ * An implementation of the model object '<em><b>Natural Expression</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link markHammil.mm.myDsl.impl.BreakLineExpressionBImpl#isIsBR <em>Is BR</em>}</li>
+ *   <li>{@link markHammil.mm.myDsl.impl.NaturalExpressionImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class BreakLineExpressionBImpl extends BreakLineExpressionImpl implements BreakLineExpressionB
+public class NaturalExpressionImpl extends EmphasisExpressionImpl implements NaturalExpression
 {
   /**
-	 * The default value of the '{@link #isIsBR() <em>Is BR</em>}' attribute.
+	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute list.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #isIsBR()
+	 * @see #getValue()
 	 * @generated
 	 * @ordered
 	 */
-  protected static final boolean IS_BR_EDEFAULT = false;
-
-  /**
-	 * The cached value of the '{@link #isIsBR() <em>Is BR</em>}' attribute.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @see #isIsBR()
-	 * @generated
-	 * @ordered
-	 */
-  protected boolean isBR = IS_BR_EDEFAULT;
+  protected EList<String> value;
 
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected BreakLineExpressionBImpl()
+  protected NaturalExpressionImpl()
   {
 		super();
 	}
@@ -65,7 +57,7 @@ public class BreakLineExpressionBImpl extends BreakLineExpressionImpl implements
   @Override
   protected EClass eStaticClass()
   {
-		return MyDslPackage.Literals.BREAK_LINE_EXPRESSION_B;
+		return MyDslPackage.Literals.NATURAL_EXPRESSION;
 	}
 
   /**
@@ -73,22 +65,12 @@ public class BreakLineExpressionBImpl extends BreakLineExpressionImpl implements
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public boolean isIsBR()
+  public EList<String> getValue()
   {
-		return isBR;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public void setIsBR(boolean newIsBR)
-  {
-		boolean oldIsBR = isBR;
-		isBR = newIsBR;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.BREAK_LINE_EXPRESSION_B__IS_BR, oldIsBR, isBR));
+		if (value == null) {
+			value = new EDataTypeEList<String>(String.class, this, MyDslPackage.NATURAL_EXPRESSION__VALUE);
+		}
+		return value;
 	}
 
   /**
@@ -100,8 +82,8 @@ public class BreakLineExpressionBImpl extends BreakLineExpressionImpl implements
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
 		switch (featureID) {
-			case MyDslPackage.BREAK_LINE_EXPRESSION_B__IS_BR:
-				return isIsBR();
+			case MyDslPackage.NATURAL_EXPRESSION__VALUE:
+				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -111,12 +93,14 @@ public class BreakLineExpressionBImpl extends BreakLineExpressionImpl implements
    * <!-- end-user-doc -->
 	 * @generated
 	 */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
 		switch (featureID) {
-			case MyDslPackage.BREAK_LINE_EXPRESSION_B__IS_BR:
-				setIsBR((Boolean)newValue);
+			case MyDslPackage.NATURAL_EXPRESSION__VALUE:
+				getValue().clear();
+				getValue().addAll((Collection<? extends String>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -131,8 +115,8 @@ public class BreakLineExpressionBImpl extends BreakLineExpressionImpl implements
   public void eUnset(int featureID)
   {
 		switch (featureID) {
-			case MyDslPackage.BREAK_LINE_EXPRESSION_B__IS_BR:
-				setIsBR(IS_BR_EDEFAULT);
+			case MyDslPackage.NATURAL_EXPRESSION__VALUE:
+				getValue().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -147,8 +131,8 @@ public class BreakLineExpressionBImpl extends BreakLineExpressionImpl implements
   public boolean eIsSet(int featureID)
   {
 		switch (featureID) {
-			case MyDslPackage.BREAK_LINE_EXPRESSION_B__IS_BR:
-				return isBR != IS_BR_EDEFAULT;
+			case MyDslPackage.NATURAL_EXPRESSION__VALUE:
+				return value != null && !value.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -164,10 +148,10 @@ public class BreakLineExpressionBImpl extends BreakLineExpressionImpl implements
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (isBR: ");
-		result.append(isBR);
+		result.append(" (value: ");
+		result.append(value);
 		result.append(')');
 		return result.toString();
 	}
 
-} //BreakLineExpressionBImpl
+} //NaturalExpressionImpl

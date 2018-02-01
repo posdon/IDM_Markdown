@@ -9,9 +9,13 @@ import markHammil.mm.myDsl.Expression
 import markHammil.mm.myDsl.File
 import markHammil.mm.myDsl.HeaderExpression
 import markHammil.mm.myDsl.ImageExpression
+import markHammil.mm.myDsl.ItalicExpression
 import markHammil.mm.myDsl.LinkExpression
 import markHammil.mm.myDsl.ListExpression
+import markHammil.mm.myDsl.NaturalExpression
 import markHammil.mm.myDsl.QuoteExpression
+import markHammil.mm.myDsl.ScratchExpression
+import markHammil.mm.myDsl.StrongExpression
 import markHammil.mm.myDsl.TabExpression
 import markHammil.mm.myDsl.TextExpression
 import markHammil.mm.myDsl.VideoExpression
@@ -47,7 +51,9 @@ class MyDslGenerator extends AbstractGenerator {
 	</html>
 	'''
 	
-	def dispatch compile(Expression expression) '''this expression is not supported:«expression»'''
+	def dispatch compile(Expression expression) '''
+	«expression.c.compile»
+	'''
 	
 	def dispatch compile(BreakLineExpression br) '''
 	<br>
@@ -58,7 +64,7 @@ class MyDslGenerator extends AbstractGenerator {
 	'''
 	
 	def dispatch compile(TextExpression textExpression) '''
-		«textExpression.c.compile»
+		<p>«textExpression.c.compile»</p>
 	'''
 	
 	
@@ -68,7 +74,28 @@ class MyDslGenerator extends AbstractGenerator {
 	'''
 	
 	def dispatch compile(EmphasisExpression emphasisExpression) '''
+	«FOR exp : emphasisExpression.c»
+	«exp.compile»
+	«ENDFOR»
 	''' 
+	
+	def dispatch compile(StrongExpression stringExpression) '''
+	<strong>«stringExpression.content.compile»</strong>
+	'''
+	
+	def dispatch compile(ItalicExpression italicExpression) '''
+	<em>«italicExpression.content.compile»</em>
+	'''
+	
+	def dispatch compile(ScratchExpression scratchExpression) '''
+	<strike>«scratchExpression.content.compile»</strike>
+	'''
+	
+	def dispatch compile(NaturalExpression naturalExpression)'''
+	«FOR value : naturalExpression.value»
+	«value.toString»
+	«ENDFOR»
+	'''
 	
 	def dispatch compile(QuoteExpression quoteExpression) '''
 	

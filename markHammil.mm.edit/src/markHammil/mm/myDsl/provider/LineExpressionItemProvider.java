@@ -168,6 +168,11 @@ public class LineExpressionItemProvider
 			(createChildParameter
 				(MyDslPackage.Literals.LINE_EXPRESSION__CELLS,
 				 MyDslFactory.eINSTANCE.createScratchExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.LINE_EXPRESSION__CELLS,
+				 MyDslFactory.eINSTANCE.createNaturalExpression()));
 	}
 
 	/**

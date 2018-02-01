@@ -11,9 +11,13 @@ import markHammil.mm.myDsl.Expression;
 import markHammil.mm.myDsl.File;
 import markHammil.mm.myDsl.HeaderExpression;
 import markHammil.mm.myDsl.ImageExpression;
+import markHammil.mm.myDsl.ItalicExpression;
 import markHammil.mm.myDsl.LinkExpression;
 import markHammil.mm.myDsl.ListExpression;
+import markHammil.mm.myDsl.NaturalExpression;
 import markHammil.mm.myDsl.QuoteExpression;
+import markHammil.mm.myDsl.ScratchExpression;
+import markHammil.mm.myDsl.StrongExpression;
 import markHammil.mm.myDsl.TabExpression;
 import markHammil.mm.myDsl.TextExpression;
 import markHammil.mm.myDsl.VideoExpression;
@@ -80,8 +84,9 @@ public class MyDslGenerator extends AbstractGenerator {
   
   protected CharSequence _compile(final Expression expression) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("this expression is not supported:");
-    _builder.append(expression);
+    Object _compile = this.compile(expression.getC());
+    _builder.append(_compile);
+    _builder.newLineIfNotEmpty();
     return _builder;
   }
   
@@ -101,8 +106,10 @@ public class MyDslGenerator extends AbstractGenerator {
   
   protected CharSequence _compile(final TextExpression textExpression) {
     StringConcatenation _builder = new StringConcatenation();
+    _builder.append("<p>");
     Object _compile = this.compile(textExpression.getC());
     _builder.append(_compile);
+    _builder.append("</p>");
     _builder.newLineIfNotEmpty();
     return _builder;
   }
@@ -116,6 +123,57 @@ public class MyDslGenerator extends AbstractGenerator {
   
   protected CharSequence _compile(final EmphasisExpression emphasisExpression) {
     StringConcatenation _builder = new StringConcatenation();
+    {
+      EList<EmphasisExpression> _c = emphasisExpression.getC();
+      for(final EmphasisExpression exp : _c) {
+        Object _compile = this.compile(exp);
+        _builder.append(_compile);
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final StrongExpression stringExpression) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("<strong>");
+    Object _compile = this.compile(stringExpression.getContent());
+    _builder.append(_compile);
+    _builder.append("</strong>");
+    _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final ItalicExpression italicExpression) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("<em>");
+    Object _compile = this.compile(italicExpression.getContent());
+    _builder.append(_compile);
+    _builder.append("</em>");
+    _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final ScratchExpression scratchExpression) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("<strike>");
+    Object _compile = this.compile(scratchExpression.getContent());
+    _builder.append(_compile);
+    _builder.append("</strike>");
+    _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final NaturalExpression naturalExpression) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      EList<String> _value = naturalExpression.getValue();
+      for(final String value : _value) {
+        String _string = value.toString();
+        _builder.append(_string);
+        _builder.newLineIfNotEmpty();
+      }
+    }
     return _builder;
   }
   
@@ -164,34 +222,42 @@ public class MyDslGenerator extends AbstractGenerator {
     return _builder;
   }
   
-  public CharSequence compile(final EObject textExpression) {
-    if (textExpression instanceof TextExpression) {
-      return _compile((TextExpression)textExpression);
-    } else if (textExpression instanceof BreakLineExpression) {
-      return _compile((BreakLineExpression)textExpression);
-    } else if (textExpression instanceof HeaderExpression) {
-      return _compile((HeaderExpression)textExpression);
-    } else if (textExpression instanceof ListExpression) {
-      return _compile((ListExpression)textExpression);
-    } else if (textExpression instanceof EmphasisExpression) {
-      return _compile((EmphasisExpression)textExpression);
-    } else if (textExpression instanceof Expression) {
-      return _compile((Expression)textExpression);
-    } else if (textExpression instanceof File) {
-      return _compile((File)textExpression);
-    } else if (textExpression instanceof ImageExpression) {
-      return _compile((ImageExpression)textExpression);
-    } else if (textExpression instanceof LinkExpression) {
-      return _compile((LinkExpression)textExpression);
-    } else if (textExpression instanceof QuoteExpression) {
-      return _compile((QuoteExpression)textExpression);
-    } else if (textExpression instanceof TabExpression) {
-      return _compile((TabExpression)textExpression);
-    } else if (textExpression instanceof VideoExpression) {
-      return _compile((VideoExpression)textExpression);
+  public CharSequence compile(final EObject italicExpression) {
+    if (italicExpression instanceof ItalicExpression) {
+      return _compile((ItalicExpression)italicExpression);
+    } else if (italicExpression instanceof NaturalExpression) {
+      return _compile((NaturalExpression)italicExpression);
+    } else if (italicExpression instanceof ScratchExpression) {
+      return _compile((ScratchExpression)italicExpression);
+    } else if (italicExpression instanceof StrongExpression) {
+      return _compile((StrongExpression)italicExpression);
+    } else if (italicExpression instanceof TextExpression) {
+      return _compile((TextExpression)italicExpression);
+    } else if (italicExpression instanceof BreakLineExpression) {
+      return _compile((BreakLineExpression)italicExpression);
+    } else if (italicExpression instanceof EmphasisExpression) {
+      return _compile((EmphasisExpression)italicExpression);
+    } else if (italicExpression instanceof Expression) {
+      return _compile((Expression)italicExpression);
+    } else if (italicExpression instanceof File) {
+      return _compile((File)italicExpression);
+    } else if (italicExpression instanceof HeaderExpression) {
+      return _compile((HeaderExpression)italicExpression);
+    } else if (italicExpression instanceof ImageExpression) {
+      return _compile((ImageExpression)italicExpression);
+    } else if (italicExpression instanceof LinkExpression) {
+      return _compile((LinkExpression)italicExpression);
+    } else if (italicExpression instanceof ListExpression) {
+      return _compile((ListExpression)italicExpression);
+    } else if (italicExpression instanceof QuoteExpression) {
+      return _compile((QuoteExpression)italicExpression);
+    } else if (italicExpression instanceof TabExpression) {
+      return _compile((TabExpression)italicExpression);
+    } else if (italicExpression instanceof VideoExpression) {
+      return _compile((VideoExpression)italicExpression);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(textExpression).toString());
+        Arrays.<Object>asList(italicExpression).toString());
     }
   }
 }

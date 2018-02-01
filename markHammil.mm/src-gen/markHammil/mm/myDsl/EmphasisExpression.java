@@ -17,8 +17,6 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link markHammil.mm.myDsl.EmphasisExpression#getC <em>C</em>}</li>
- *   <li>{@link markHammil.mm.myDsl.EmphasisExpression#getValue <em>Value</em>}</li>
- *   <li>{@link markHammil.mm.myDsl.EmphasisExpression#getContent <em>Content</em>}</li>
  * </ul>
  *
  * @see markHammil.mm.myDsl.MyDslPackage#getEmphasisExpression()
@@ -42,47 +40,5 @@ public interface EmphasisExpression extends EObject
 	 * @generated
 	 */
   EList<EmphasisExpression> getC();
-
-  /**
-	 * Returns the value of the '<em><b>Value</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
-	 * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Value</em>' attribute list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-	 * @return the value of the '<em>Value</em>' attribute list.
-	 * @see markHammil.mm.myDsl.MyDslPackage#getEmphasisExpression_Value()
-	 * @model unique="false"
-	 * @generated
-	 */
-  EList<String> getValue();
-
-  /**
-	 * Returns the value of the '<em><b>Content</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Content</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-	 * @return the value of the '<em>Content</em>' containment reference.
-	 * @see #setContent(EmphasisExpression)
-	 * @see markHammil.mm.myDsl.MyDslPackage#getEmphasisExpression_Content()
-	 * @model containment="true"
-	 * @generated
-	 */
-  EmphasisExpression getContent();
-
-  /**
-	 * Sets the value of the '{@link markHammil.mm.myDsl.EmphasisExpression#getContent <em>Content</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Content</em>' containment reference.
-	 * @see #getContent()
-	 * @generated
-	 */
-  void setContent(EmphasisExpression value);
 
 } // EmphasisExpression

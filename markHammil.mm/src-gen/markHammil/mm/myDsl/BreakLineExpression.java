@@ -3,6 +3,7 @@
  */
 package markHammil.mm.myDsl;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,6 +15,6 @@ package markHammil.mm.myDsl;
  * @model
  * @generated
  */
-public interface BreakLineExpression extends Expression
+public interface BreakLineExpression extends EObject
 {
 } // BreakLineExpression

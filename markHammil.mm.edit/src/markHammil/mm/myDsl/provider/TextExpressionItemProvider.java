@@ -32,7 +32,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * @generated
  */
 public class TextExpressionItemProvider 
-	extends ExpressionItemProvider {
+	extends QuoteExpressionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -70,9 +70,7 @@ public class TextExpressionItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(MyDslPackage.Literals.LIST_EXPRESSION__CONTENT_ORDERED);
 			childrenFeatures.add(MyDslPackage.Literals.TEXT_EXPRESSION__C);
-			childrenFeatures.add(MyDslPackage.Literals.TEXT_EXPRESSION__CONTENT_UNORDERED);
 			childrenFeatures.add(MyDslPackage.Literals.TEXT_EXPRESSION__CONTENT);
 		}
 		return childrenFeatures;
@@ -126,9 +124,7 @@ public class TextExpressionItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(TextExpression.class)) {
-			case MyDslPackage.TEXT_EXPRESSION__CONTENT_ORDERED:
 			case MyDslPackage.TEXT_EXPRESSION__C:
-			case MyDslPackage.TEXT_EXPRESSION__CONTENT_UNORDERED:
 			case MyDslPackage.TEXT_EXPRESSION__CONTENT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -149,11 +145,6 @@ public class TextExpressionItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(MyDslPackage.Literals.LIST_EXPRESSION__CONTENT_ORDERED,
-				 MyDslFactory.eINSTANCE.createTextExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(MyDslPackage.Literals.TEXT_EXPRESSION__C,
 				 MyDslFactory.eINSTANCE.createFile()));
 
@@ -170,6 +161,11 @@ public class TextExpressionItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(MyDslPackage.Literals.TEXT_EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createQuoteExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.TEXT_EXPRESSION__C,
 				 MyDslFactory.eINSTANCE.createTextExpression()));
 
 		newChildDescriptors.add
@@ -180,7 +176,7 @@ public class TextExpressionItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(MyDslPackage.Literals.TEXT_EXPRESSION__C,
-				 MyDslFactory.eINSTANCE.createQuoteExpression()));
+				 MyDslFactory.eINSTANCE.createRefExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -250,11 +246,6 @@ public class TextExpressionItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(MyDslPackage.Literals.TEXT_EXPRESSION__C,
-				 MyDslFactory.eINSTANCE.createBreakLineExpressionB()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MyDslPackage.Literals.TEXT_EXPRESSION__C,
 				 MyDslFactory.eINSTANCE.createStrongExpression()));
 
 		newChildDescriptors.add
@@ -269,8 +260,8 @@ public class TextExpressionItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(MyDslPackage.Literals.TEXT_EXPRESSION__CONTENT_UNORDERED,
-				 MyDslFactory.eINSTANCE.createTextExpression()));
+				(MyDslPackage.Literals.TEXT_EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createNaturalExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -290,9 +281,7 @@ public class TextExpressionItemProvider
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == MyDslPackage.Literals.LIST_EXPRESSION__CONTENT_ORDERED ||
 			childFeature == MyDslPackage.Literals.TEXT_EXPRESSION__C ||
-			childFeature == MyDslPackage.Literals.TEXT_EXPRESSION__CONTENT_UNORDERED ||
 			childFeature == MyDslPackage.Literals.TEXT_EXPRESSION__CONTENT;
 
 		if (qualify) {

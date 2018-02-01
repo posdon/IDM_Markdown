@@ -78,6 +78,15 @@ public interface MyDslFactory extends EFactory
   QuoteExpression createQuoteExpression();
 
   /**
+	 * Returns a new object of class '<em>Ref Expression</em>'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Ref Expression</em>'.
+	 * @generated
+	 */
+  RefExpression createRefExpression();
+
+  /**
 	 * Returns a new object of class '<em>Link Expression</em>'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -195,15 +204,6 @@ public interface MyDslFactory extends EFactory
   EmphasisExpression createEmphasisExpression();
 
   /**
-	 * Returns a new object of class '<em>Break Line Expression B</em>'.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Break Line Expression B</em>'.
-	 * @generated
-	 */
-  BreakLineExpressionB createBreakLineExpressionB();
-
-  /**
 	 * Returns a new object of class '<em>Strong Expression</em>'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -229,6 +229,15 @@ public interface MyDslFactory extends EFactory
 	 * @generated
 	 */
   ScratchExpression createScratchExpression();
+
+  /**
+	 * Returns a new object of class '<em>Natural Expression</em>'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Natural Expression</em>'.
+	 * @generated
+	 */
+  NaturalExpression createNaturalExpression();
 
   /**
 	 * Returns the package supported by this factory.

@@ -5,8 +5,9 @@ package markHammil.mm.serializer;
 
 import com.google.inject.Inject;
 import java.util.Set;
-import markHammil.mm.myDsl.BreakLineExpressionB;
+import markHammil.mm.myDsl.BreakLineExpression;
 import markHammil.mm.myDsl.EmphasisExpression;
+import markHammil.mm.myDsl.Expression;
 import markHammil.mm.myDsl.File;
 import markHammil.mm.myDsl.Header1Expression;
 import markHammil.mm.myDsl.Header2Expression;
@@ -20,6 +21,8 @@ import markHammil.mm.myDsl.LineExpression;
 import markHammil.mm.myDsl.LinkExpression;
 import markHammil.mm.myDsl.ListExpression;
 import markHammil.mm.myDsl.MyDslPackage;
+import markHammil.mm.myDsl.NaturalExpression;
+import markHammil.mm.myDsl.RefExpression;
 import markHammil.mm.myDsl.ScratchExpression;
 import markHammil.mm.myDsl.StrongExpression;
 import markHammil.mm.myDsl.TabExpression;
@@ -50,19 +53,15 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == MyDslPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case MyDslPackage.BREAK_LINE_EXPRESSION_B:
-				sequence_BreakLineExpression(context, (BreakLineExpressionB) semanticObject); 
+			case MyDslPackage.BREAK_LINE_EXPRESSION:
+				sequence_BreakLineExpression(context, (BreakLineExpression) semanticObject); 
 				return; 
 			case MyDslPackage.EMPHASIS_EXPRESSION:
-				if (rule == grammarAccess.getEmphasisExpressionRule()) {
-					sequence_EmphasisExpression(context, (EmphasisExpression) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getNaturalExpressionRule()) {
-					sequence_NaturalExpression(context, (EmphasisExpression) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_EmphasisExpression(context, (EmphasisExpression) semanticObject); 
+				return; 
+			case MyDslPackage.EXPRESSION:
+				sequence_Expression(context, (Expression) semanticObject); 
+				return; 
 			case MyDslPackage.FILE:
 				sequence_File(context, (File) semanticObject); 
 				return; 
@@ -99,6 +98,12 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case MyDslPackage.LIST_EXPRESSION:
 				sequence_ListExpression(context, (ListExpression) semanticObject); 
 				return; 
+			case MyDslPackage.NATURAL_EXPRESSION:
+				sequence_NaturalExpression(context, (NaturalExpression) semanticObject); 
+				return; 
+			case MyDslPackage.REF_EXPRESSION:
+				sequence_RefExpression(context, (RefExpression) semanticObject); 
+				return; 
 			case MyDslPackage.SCRATCH_EXPRESSION:
 				sequence_ScratchExpression(context, (ScratchExpression) semanticObject); 
 				return; 
@@ -109,15 +114,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				sequence_TabExpression(context, (TabExpression) semanticObject); 
 				return; 
 			case MyDslPackage.TEXT_EXPRESSION:
-				if (rule == grammarAccess.getListExpressionRule()) {
-					sequence_ListExpression(context, (TextExpression) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getExpressionRule()) {
-					sequence_ListExpression_TextExpression(context, (TextExpression) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getQuoteExpressionRule()) {
+				if (rule == grammarAccess.getQuoteExpressionRule()) {
 					sequence_QuoteExpression(context, (TextExpression) semanticObject); 
 					return; 
 				}
@@ -136,20 +133,13 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
-	 *     Expression returns BreakLineExpressionB
-	 *     BreakLineExpression returns BreakLineExpressionB
+	 *     BreakLineExpression returns BreakLineExpression
 	 *
 	 * Constraint:
-	 *     isBR?='true'
+	 *     {BreakLineExpression}
 	 */
-	protected void sequence_BreakLineExpression(ISerializationContext context, BreakLineExpressionB semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.BREAK_LINE_EXPRESSION_B__IS_BR) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.BREAK_LINE_EXPRESSION_B__IS_BR));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getBreakLineExpressionAccess().getIsBRTrueKeyword_1_0(), semanticObject.isIsBR());
-		feeder.finish();
+	protected void sequence_BreakLineExpression(ISerializationContext context, BreakLineExpression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -161,6 +151,18 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     (c+=StrongExpression | c+=ItalicExpression | c+=ScratchExpression | c+=NaturalExpression)+
 	 */
 	protected void sequence_EmphasisExpression(ISerializationContext context, EmphasisExpression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Expression returns Expression
+	 *
+	 * Constraint:
+	 *     (c=HeaderExpression | c=BreakLineExpression | c=RefExpression | c=ListExpression | c=TextExpression)
+	 */
+	protected void sequence_Expression(ISerializationContext context, Expression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -179,7 +181,6 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
-	 *     Expression returns Header1Expression
 	 *     HeaderExpression returns Header1Expression
 	 *     Header1Expression returns Header1Expression
 	 *
@@ -193,7 +194,6 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
-	 *     Expression returns Header2Expression
 	 *     HeaderExpression returns Header2Expression
 	 *     Header2Expression returns Header2Expression
 	 *
@@ -207,7 +207,6 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
-	 *     Expression returns Header3Expression
 	 *     HeaderExpression returns Header3Expression
 	 *     Header3Expression returns Header3Expression
 	 *
@@ -221,7 +220,6 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
-	 *     Expression returns Header4Expression
 	 *     HeaderExpression returns Header4Expression
 	 *     Header4Expression returns Header4Expression
 	 *
@@ -235,7 +233,6 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
-	 *     Expression returns Header5Expression
 	 *     HeaderExpression returns Header5Expression
 	 *     Header5Expression returns Header5Expression
 	 *
@@ -249,7 +246,6 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
-	 *     Expression returns Header6Expression
 	 *     HeaderExpression returns Header6Expression
 	 *     Header6Expression returns Header6Expression
 	 *
@@ -282,8 +278,8 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 */
 	protected void sequence_ItalicExpression(ISerializationContext context, ItalicExpression semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.EMPHASIS_EXPRESSION__CONTENT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.EMPHASIS_EXPRESSION__CONTENT));
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.ITALIC_EXPRESSION__CONTENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.ITALIC_EXPRESSION__CONTENT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getItalicExpressionAccess().getContentEmphasisExpressionParserRuleCall_2_0(), semanticObject.getContent());
@@ -308,7 +304,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     LinkExpression returns LinkExpression
 	 *
 	 * Constraint:
-	 *     (altText=NaturalExpression linkContent=NaturalExpression?)
+	 *     ((altText=NaturalExpression linkContent=NaturalExpression?) | (altText=NaturalExpression refName=NaturalExpression?))
 	 */
 	protected void sequence_LinkExpression(ISerializationContext context, LinkExpression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -317,11 +313,10 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
-	 *     Expression returns ListExpression
 	 *     ListExpression returns ListExpression
 	 *
 	 * Constraint:
-	 *     contentOrdered+=TextExpression+
+	 *     (contentUnordered+=TextExpression+ | contentOrdered+=TextExpression+)
 	 */
 	protected void sequence_ListExpression(ISerializationContext context, ListExpression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -330,44 +325,12 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
-	 *     ListExpression returns TextExpression
-	 *
-	 * Constraint:
-	 *     contentUnordered+=TextExpression+
-	 */
-	protected void sequence_ListExpression(ISerializationContext context, TextExpression semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Expression returns TextExpression
-	 *
-	 * Constraint:
-	 *     (
-	 *         c=EmphasisExpression | 
-	 *         c=QuoteExpression | 
-	 *         c=TabExpression | 
-	 *         c=LinkExpression | 
-	 *         c=ImageExpression | 
-	 *         c=VideoExpression | 
-	 *         contentUnordered+=TextExpression+
-	 *     )
-	 */
-	protected void sequence_ListExpression_TextExpression(ISerializationContext context, TextExpression semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     NaturalExpression returns EmphasisExpression
+	 *     NaturalExpression returns NaturalExpression
 	 *
 	 * Constraint:
 	 *     value+=Content
 	 */
-	protected void sequence_NaturalExpression(ISerializationContext context, EmphasisExpression semanticObject) {
+	protected void sequence_NaturalExpression(ISerializationContext context, NaturalExpression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -386,6 +349,18 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
+	 *     RefExpression returns RefExpression
+	 *
+	 * Constraint:
+	 *     (refName=NaturalExpression refContent=NaturalExpression?)
+	 */
+	protected void sequence_RefExpression(ISerializationContext context, RefExpression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     ScratchExpression returns ScratchExpression
 	 *
 	 * Constraint:
@@ -393,8 +368,8 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 */
 	protected void sequence_ScratchExpression(ISerializationContext context, ScratchExpression semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.EMPHASIS_EXPRESSION__CONTENT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.EMPHASIS_EXPRESSION__CONTENT));
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.SCRATCH_EXPRESSION__CONTENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.SCRATCH_EXPRESSION__CONTENT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getScratchExpressionAccess().getContentEmphasisExpressionParserRuleCall_2_0(), semanticObject.getContent());
@@ -411,8 +386,8 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 */
 	protected void sequence_StrongExpression(ISerializationContext context, StrongExpression semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.EMPHASIS_EXPRESSION__CONTENT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.EMPHASIS_EXPRESSION__CONTENT));
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.STRONG_EXPRESSION__CONTENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.STRONG_EXPRESSION__CONTENT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getStrongExpressionAccess().getContentEmphasisExpressionParserRuleCall_2_0(), semanticObject.getContent());

@@ -86,29 +86,31 @@ public class MyDslSwitch<T> extends Switch<T>
 			case MyDslPackage.BREAK_LINE_EXPRESSION: {
 				BreakLineExpression breakLineExpression = (BreakLineExpression)theEObject;
 				T result = caseBreakLineExpression(breakLineExpression);
-				if (result == null) result = caseExpression(breakLineExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case MyDslPackage.TEXT_EXPRESSION: {
 				TextExpression textExpression = (TextExpression)theEObject;
 				T result = caseTextExpression(textExpression);
-				if (result == null) result = caseListExpression(textExpression);
 				if (result == null) result = caseQuoteExpression(textExpression);
-				if (result == null) result = caseExpression(textExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case MyDslPackage.LIST_EXPRESSION: {
 				ListExpression listExpression = (ListExpression)theEObject;
 				T result = caseListExpression(listExpression);
-				if (result == null) result = caseExpression(listExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case MyDslPackage.QUOTE_EXPRESSION: {
 				QuoteExpression quoteExpression = (QuoteExpression)theEObject;
 				T result = caseQuoteExpression(quoteExpression);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MyDslPackage.REF_EXPRESSION: {
+				RefExpression refExpression = (RefExpression)theEObject;
+				T result = caseRefExpression(refExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -145,7 +147,6 @@ public class MyDslSwitch<T> extends Switch<T>
 			case MyDslPackage.HEADER_EXPRESSION: {
 				HeaderExpression headerExpression = (HeaderExpression)theEObject;
 				T result = caseHeaderExpression(headerExpression);
-				if (result == null) result = caseExpression(headerExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -153,7 +154,6 @@ public class MyDslSwitch<T> extends Switch<T>
 				Header1Expression header1Expression = (Header1Expression)theEObject;
 				T result = caseHeader1Expression(header1Expression);
 				if (result == null) result = caseHeaderExpression(header1Expression);
-				if (result == null) result = caseExpression(header1Expression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -161,7 +161,6 @@ public class MyDslSwitch<T> extends Switch<T>
 				Header2Expression header2Expression = (Header2Expression)theEObject;
 				T result = caseHeader2Expression(header2Expression);
 				if (result == null) result = caseHeaderExpression(header2Expression);
-				if (result == null) result = caseExpression(header2Expression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -169,7 +168,6 @@ public class MyDslSwitch<T> extends Switch<T>
 				Header3Expression header3Expression = (Header3Expression)theEObject;
 				T result = caseHeader3Expression(header3Expression);
 				if (result == null) result = caseHeaderExpression(header3Expression);
-				if (result == null) result = caseExpression(header3Expression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -177,7 +175,6 @@ public class MyDslSwitch<T> extends Switch<T>
 				Header4Expression header4Expression = (Header4Expression)theEObject;
 				T result = caseHeader4Expression(header4Expression);
 				if (result == null) result = caseHeaderExpression(header4Expression);
-				if (result == null) result = caseExpression(header4Expression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -185,7 +182,6 @@ public class MyDslSwitch<T> extends Switch<T>
 				Header5Expression header5Expression = (Header5Expression)theEObject;
 				T result = caseHeader5Expression(header5Expression);
 				if (result == null) result = caseHeaderExpression(header5Expression);
-				if (result == null) result = caseExpression(header5Expression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -193,21 +189,12 @@ public class MyDslSwitch<T> extends Switch<T>
 				Header6Expression header6Expression = (Header6Expression)theEObject;
 				T result = caseHeader6Expression(header6Expression);
 				if (result == null) result = caseHeaderExpression(header6Expression);
-				if (result == null) result = caseExpression(header6Expression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case MyDslPackage.EMPHASIS_EXPRESSION: {
 				EmphasisExpression emphasisExpression = (EmphasisExpression)theEObject;
 				T result = caseEmphasisExpression(emphasisExpression);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case MyDslPackage.BREAK_LINE_EXPRESSION_B: {
-				BreakLineExpressionB breakLineExpressionB = (BreakLineExpressionB)theEObject;
-				T result = caseBreakLineExpressionB(breakLineExpressionB);
-				if (result == null) result = caseBreakLineExpression(breakLineExpressionB);
-				if (result == null) result = caseExpression(breakLineExpressionB);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -229,6 +216,13 @@ public class MyDslSwitch<T> extends Switch<T>
 				ScratchExpression scratchExpression = (ScratchExpression)theEObject;
 				T result = caseScratchExpression(scratchExpression);
 				if (result == null) result = caseEmphasisExpression(scratchExpression);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MyDslPackage.NATURAL_EXPRESSION: {
+				NaturalExpression naturalExpression = (NaturalExpression)theEObject;
+				T result = caseNaturalExpression(naturalExpression);
+				if (result == null) result = caseEmphasisExpression(naturalExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -328,6 +322,22 @@ public class MyDslSwitch<T> extends Switch<T>
 	 * @generated
 	 */
   public T caseQuoteExpression(QuoteExpression object)
+  {
+		return null;
+	}
+
+  /**
+	 * Returns the result of interpreting the object as an instance of '<em>Ref Expression</em>'.
+	 * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Ref Expression</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+  public T caseRefExpression(RefExpression object)
   {
 		return null;
 	}
@@ -541,22 +551,6 @@ public class MyDslSwitch<T> extends Switch<T>
 	}
 
   /**
-	 * Returns the result of interpreting the object as an instance of '<em>Break Line Expression B</em>'.
-	 * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Break Line Expression B</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-  public T caseBreakLineExpressionB(BreakLineExpressionB object)
-  {
-		return null;
-	}
-
-  /**
 	 * Returns the result of interpreting the object as an instance of '<em>Strong Expression</em>'.
 	 * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -600,6 +594,22 @@ public class MyDslSwitch<T> extends Switch<T>
 	 * @generated
 	 */
   public T caseScratchExpression(ScratchExpression object)
+  {
+		return null;
+	}
+
+  /**
+	 * Returns the result of interpreting the object as an instance of '<em>Natural Expression</em>'.
+	 * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Natural Expression</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+  public T caseNaturalExpression(NaturalExpression object)
   {
 		return null;
 	}

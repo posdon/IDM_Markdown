@@ -16,7 +16,7 @@ import markHammil.mm.myDsl.TextExpression;
  * <!-- end-user-doc -->
  * @generated
  */
-public class TextExpressionTest extends ExpressionTest {
+public class TextExpressionTest extends QuoteExpressionTest {
 
 	/**
 	 * <!-- begin-user-doc -->

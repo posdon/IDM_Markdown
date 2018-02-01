@@ -7,12 +7,16 @@ package markHammil.mm.myDsl.provider;
 import java.util.Collection;
 import java.util.List;
 
+import markHammil.mm.myDsl.MyDslFactory;
 import markHammil.mm.myDsl.MyDslPackage;
 
+import markHammil.mm.myDsl.ScratchExpression;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
  * This is the item provider adapter for a {@link markHammil.mm.myDsl.ScratchExpression} object.
@@ -44,6 +48,36 @@ public class ScratchExpressionItemProvider extends EmphasisExpressionItemProvide
 
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(MyDslPackage.Literals.SCRATCH_EXPRESSION__CONTENT);
+		}
+		return childrenFeatures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
 	}
 
 	/**
@@ -79,6 +113,12 @@ public class ScratchExpressionItemProvider extends EmphasisExpressionItemProvide
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(ScratchExpression.class)) {
+			case MyDslPackage.SCRATCH_EXPRESSION__CONTENT:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 
@@ -92,6 +132,31 @@ public class ScratchExpressionItemProvider extends EmphasisExpressionItemProvide
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.SCRATCH_EXPRESSION__CONTENT,
+				 MyDslFactory.eINSTANCE.createEmphasisExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.SCRATCH_EXPRESSION__CONTENT,
+				 MyDslFactory.eINSTANCE.createStrongExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.SCRATCH_EXPRESSION__CONTENT,
+				 MyDslFactory.eINSTANCE.createItalicExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.SCRATCH_EXPRESSION__CONTENT,
+				 MyDslFactory.eINSTANCE.createScratchExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.SCRATCH_EXPRESSION__CONTENT,
+				 MyDslFactory.eINSTANCE.createNaturalExpression()));
 	}
 
 	/**
@@ -107,7 +172,7 @@ public class ScratchExpressionItemProvider extends EmphasisExpressionItemProvide
 
 		boolean qualify =
 			childFeature == MyDslPackage.Literals.EMPHASIS_EXPRESSION__C ||
-			childFeature == MyDslPackage.Literals.EMPHASIS_EXPRESSION__CONTENT;
+			childFeature == MyDslPackage.Literals.SCRATCH_EXPRESSION__CONTENT;
 
 		if (qualify) {
 			return getString
