@@ -153,17 +153,17 @@ public class ListExpressionItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(MyDslPackage.Literals.LIST_EXPRESSION__CONTENT_UNORDERED,
-				 MyDslFactory.eINSTANCE.createURLedExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MyDslPackage.Literals.LIST_EXPRESSION__CONTENT_UNORDERED,
 				 MyDslFactory.eINSTANCE.createQuoteExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(MyDslPackage.Literals.LIST_EXPRESSION__CONTENT_UNORDERED,
 				 MyDslFactory.eINSTANCE.createTabExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.LIST_EXPRESSION__CONTENT_UNORDERED,
+				 MyDslFactory.eINSTANCE.createURLedExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -198,17 +198,17 @@ public class ListExpressionItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(MyDslPackage.Literals.LIST_EXPRESSION__CONTENT_ORDERED,
-				 MyDslFactory.eINSTANCE.createURLedExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MyDslPackage.Literals.LIST_EXPRESSION__CONTENT_ORDERED,
 				 MyDslFactory.eINSTANCE.createQuoteExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(MyDslPackage.Literals.LIST_EXPRESSION__CONTENT_ORDERED,
 				 MyDslFactory.eINSTANCE.createTabExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.LIST_EXPRESSION__CONTENT_ORDERED,
+				 MyDslFactory.eINSTANCE.createURLedExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter

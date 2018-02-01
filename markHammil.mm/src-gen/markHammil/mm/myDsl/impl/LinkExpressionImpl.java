@@ -33,234 +33,225 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class LinkExpressionImpl extends MinimalEObjectImpl.Container implements LinkExpression
 {
   /**
-   * The cached value of the '{@link #getAltText() <em>Alt Text</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getAltText() <em>Alt Text</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAltText()
-   * @generated
-   * @ordered
-   */
+	 * @see #getAltText()
+	 * @generated
+	 * @ordered
+	 */
   protected EmphasisExpression altText;
 
   /**
-   * The cached value of the '{@link #getLinkContent() <em>Link Content</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getLinkContent() <em>Link Content</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getLinkContent()
-   * @generated
-   * @ordered
-   */
+	 * @see #getLinkContent()
+	 * @generated
+	 * @ordered
+	 */
   protected EmphasisExpression linkContent;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected LinkExpressionImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return MyDslPackage.Literals.LINK_EXPRESSION;
-  }
+		return MyDslPackage.Literals.LINK_EXPRESSION;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EmphasisExpression getAltText()
   {
-    return altText;
-  }
+		return altText;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetAltText(EmphasisExpression newAltText, NotificationChain msgs)
   {
-    EmphasisExpression oldAltText = altText;
-    altText = newAltText;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyDslPackage.LINK_EXPRESSION__ALT_TEXT, oldAltText, newAltText);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		EmphasisExpression oldAltText = altText;
+		altText = newAltText;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyDslPackage.LINK_EXPRESSION__ALT_TEXT, oldAltText, newAltText);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setAltText(EmphasisExpression newAltText)
   {
-    if (newAltText != altText)
-    {
-      NotificationChain msgs = null;
-      if (altText != null)
-        msgs = ((InternalEObject)altText).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.LINK_EXPRESSION__ALT_TEXT, null, msgs);
-      if (newAltText != null)
-        msgs = ((InternalEObject)newAltText).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.LINK_EXPRESSION__ALT_TEXT, null, msgs);
-      msgs = basicSetAltText(newAltText, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.LINK_EXPRESSION__ALT_TEXT, newAltText, newAltText));
-  }
+		if (newAltText != altText) {
+			NotificationChain msgs = null;
+			if (altText != null)
+				msgs = ((InternalEObject)altText).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.LINK_EXPRESSION__ALT_TEXT, null, msgs);
+			if (newAltText != null)
+				msgs = ((InternalEObject)newAltText).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.LINK_EXPRESSION__ALT_TEXT, null, msgs);
+			msgs = basicSetAltText(newAltText, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.LINK_EXPRESSION__ALT_TEXT, newAltText, newAltText));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EmphasisExpression getLinkContent()
   {
-    return linkContent;
-  }
+		return linkContent;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetLinkContent(EmphasisExpression newLinkContent, NotificationChain msgs)
   {
-    EmphasisExpression oldLinkContent = linkContent;
-    linkContent = newLinkContent;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyDslPackage.LINK_EXPRESSION__LINK_CONTENT, oldLinkContent, newLinkContent);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		EmphasisExpression oldLinkContent = linkContent;
+		linkContent = newLinkContent;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyDslPackage.LINK_EXPRESSION__LINK_CONTENT, oldLinkContent, newLinkContent);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setLinkContent(EmphasisExpression newLinkContent)
   {
-    if (newLinkContent != linkContent)
-    {
-      NotificationChain msgs = null;
-      if (linkContent != null)
-        msgs = ((InternalEObject)linkContent).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.LINK_EXPRESSION__LINK_CONTENT, null, msgs);
-      if (newLinkContent != null)
-        msgs = ((InternalEObject)newLinkContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.LINK_EXPRESSION__LINK_CONTENT, null, msgs);
-      msgs = basicSetLinkContent(newLinkContent, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.LINK_EXPRESSION__LINK_CONTENT, newLinkContent, newLinkContent));
-  }
+		if (newLinkContent != linkContent) {
+			NotificationChain msgs = null;
+			if (linkContent != null)
+				msgs = ((InternalEObject)linkContent).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.LINK_EXPRESSION__LINK_CONTENT, null, msgs);
+			if (newLinkContent != null)
+				msgs = ((InternalEObject)newLinkContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.LINK_EXPRESSION__LINK_CONTENT, null, msgs);
+			msgs = basicSetLinkContent(newLinkContent, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.LINK_EXPRESSION__LINK_CONTENT, newLinkContent, newLinkContent));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case MyDslPackage.LINK_EXPRESSION__ALT_TEXT:
-        return basicSetAltText(null, msgs);
-      case MyDslPackage.LINK_EXPRESSION__LINK_CONTENT:
-        return basicSetLinkContent(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case MyDslPackage.LINK_EXPRESSION__ALT_TEXT:
+				return basicSetAltText(null, msgs);
+			case MyDslPackage.LINK_EXPRESSION__LINK_CONTENT:
+				return basicSetLinkContent(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case MyDslPackage.LINK_EXPRESSION__ALT_TEXT:
-        return getAltText();
-      case MyDslPackage.LINK_EXPRESSION__LINK_CONTENT:
-        return getLinkContent();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case MyDslPackage.LINK_EXPRESSION__ALT_TEXT:
+				return getAltText();
+			case MyDslPackage.LINK_EXPRESSION__LINK_CONTENT:
+				return getLinkContent();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case MyDslPackage.LINK_EXPRESSION__ALT_TEXT:
-        setAltText((EmphasisExpression)newValue);
-        return;
-      case MyDslPackage.LINK_EXPRESSION__LINK_CONTENT:
-        setLinkContent((EmphasisExpression)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case MyDslPackage.LINK_EXPRESSION__ALT_TEXT:
+				setAltText((EmphasisExpression)newValue);
+				return;
+			case MyDslPackage.LINK_EXPRESSION__LINK_CONTENT:
+				setLinkContent((EmphasisExpression)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case MyDslPackage.LINK_EXPRESSION__ALT_TEXT:
-        setAltText((EmphasisExpression)null);
-        return;
-      case MyDslPackage.LINK_EXPRESSION__LINK_CONTENT:
-        setLinkContent((EmphasisExpression)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case MyDslPackage.LINK_EXPRESSION__ALT_TEXT:
+				setAltText((EmphasisExpression)null);
+				return;
+			case MyDslPackage.LINK_EXPRESSION__LINK_CONTENT:
+				setLinkContent((EmphasisExpression)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case MyDslPackage.LINK_EXPRESSION__ALT_TEXT:
-        return altText != null;
-      case MyDslPackage.LINK_EXPRESSION__LINK_CONTENT:
-        return linkContent != null;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case MyDslPackage.LINK_EXPRESSION__ALT_TEXT:
+				return altText != null;
+			case MyDslPackage.LINK_EXPRESSION__LINK_CONTENT:
+				return linkContent != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //LinkExpressionImpl

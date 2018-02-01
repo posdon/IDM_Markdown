@@ -42,7 +42,7 @@ BreakLineExpression :
 
 HorizontalExpression :
 	{HorizontalExpression}
-	('-'|'*'|'_')('-'|'*'|'_')('-'|'*'|'_')+
+	('-''-''-'+)|('_''_''_'+)
 ;
 
 

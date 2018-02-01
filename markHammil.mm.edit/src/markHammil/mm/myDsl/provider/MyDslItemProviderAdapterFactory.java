@@ -771,14 +771,14 @@ public class MyDslItemProviderAdapterFactory extends MyDslAdapterFactory impleme
 	public void dispose() {
 		if (fileItemProvider != null) fileItemProvider.dispose();
 		if (expressionItemProvider != null) expressionItemProvider.dispose();
-		if (breakLineExpressionItemProvider != null) breakLineExpressionItemProvider.dispose();
-		if (horizontalExpressionItemProvider != null) horizontalExpressionItemProvider.dispose();
 		if (textExpressionItemProvider != null) textExpressionItemProvider.dispose();
-		if (urLedExpressionItemProvider != null) urLedExpressionItemProvider.dispose();
 		if (listExpressionItemProvider != null) listExpressionItemProvider.dispose();
 		if (quoteExpressionItemProvider != null) quoteExpressionItemProvider.dispose();
+		if (breakLineExpressionItemProvider != null) breakLineExpressionItemProvider.dispose();
+		if (horizontalExpressionItemProvider != null) horizontalExpressionItemProvider.dispose();
 		if (tabExpressionItemProvider != null) tabExpressionItemProvider.dispose();
 		if (lineExpressionItemProvider != null) lineExpressionItemProvider.dispose();
+		if (urLedExpressionItemProvider != null) urLedExpressionItemProvider.dispose();
 		if (refExpressionItemProvider != null) refExpressionItemProvider.dispose();
 		if (linkExpressionItemProvider != null) linkExpressionItemProvider.dispose();
 		if (imageExpressionItemProvider != null) imageExpressionItemProvider.dispose();

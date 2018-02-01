@@ -147,22 +147,7 @@ public class URLedExpressionItemProvider extends TextExpressionItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(MyDslPackage.Literals.UR_LED_EXPRESSION__C,
-				 MyDslFactory.eINSTANCE.createBreakLineExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MyDslPackage.Literals.UR_LED_EXPRESSION__C,
-				 MyDslFactory.eINSTANCE.createHorizontalExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MyDslPackage.Literals.UR_LED_EXPRESSION__C,
 				 MyDslFactory.eINSTANCE.createTextExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MyDslPackage.Literals.UR_LED_EXPRESSION__C,
-				 MyDslFactory.eINSTANCE.createURLedExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -177,12 +162,27 @@ public class URLedExpressionItemProvider extends TextExpressionItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(MyDslPackage.Literals.UR_LED_EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createBreakLineExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.UR_LED_EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createHorizontalExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.UR_LED_EXPRESSION__C,
 				 MyDslFactory.eINSTANCE.createTabExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(MyDslPackage.Literals.UR_LED_EXPRESSION__C,
 				 MyDslFactory.eINSTANCE.createLineExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.UR_LED_EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createURLedExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter

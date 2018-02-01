@@ -9,13 +9,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="c" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BreakLineExpression"/>
-  <eClassifiers xsi:type="ecore:EClass" name="HorizontalExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="TextExpression"/>
-  <eClassifiers xsi:type="ecore:EClass" name="URLedExpression" eSuperTypes="#//TextExpression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="c" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
-        containment="true"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ListExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="contentUnordered" upperBound="-1"
         eType="#//TextExpression" containment="true"/>
@@ -26,6 +20,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" upperBound="-1"
         eType="#//TextExpression" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BreakLineExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HorizontalExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="TabExpression" eSuperTypes="#//TextExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="header" eType="#//LineExpression"
         containment="true"/>
@@ -35,6 +31,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="LineExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="cells" upperBound="-1"
         eType="#//EmphasisExpression" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="URLedExpression" eSuperTypes="#//TextExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="c" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RefExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="refName" eType="#//EmphasisExpression"

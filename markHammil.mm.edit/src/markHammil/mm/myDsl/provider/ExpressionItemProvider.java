@@ -160,22 +160,7 @@ public class ExpressionItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(MyDslPackage.Literals.EXPRESSION__C,
-				 MyDslFactory.eINSTANCE.createBreakLineExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MyDslPackage.Literals.EXPRESSION__C,
-				 MyDslFactory.eINSTANCE.createHorizontalExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MyDslPackage.Literals.EXPRESSION__C,
 				 MyDslFactory.eINSTANCE.createTextExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MyDslPackage.Literals.EXPRESSION__C,
-				 MyDslFactory.eINSTANCE.createURLedExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -190,12 +175,27 @@ public class ExpressionItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(MyDslPackage.Literals.EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createBreakLineExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createHorizontalExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.EXPRESSION__C,
 				 MyDslFactory.eINSTANCE.createTabExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(MyDslPackage.Literals.EXPRESSION__C,
 				 MyDslFactory.eINSTANCE.createLineExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.EXPRESSION__C,
+				 MyDslFactory.eINSTANCE.createURLedExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter

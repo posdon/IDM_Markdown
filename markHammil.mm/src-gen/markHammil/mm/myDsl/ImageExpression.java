@@ -25,55 +25,55 @@ import org.eclipse.emf.ecore.EObject;
 public interface ImageExpression extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Alt Text</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Alt Text</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Alt Text</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Alt Text</em>' containment reference.
-   * @see #setAltText(EmphasisExpression)
-   * @see markHammil.mm.myDsl.MyDslPackage#getImageExpression_AltText()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Alt Text</em>' containment reference.
+	 * @see #setAltText(EmphasisExpression)
+	 * @see markHammil.mm.myDsl.MyDslPackage#getImageExpression_AltText()
+	 * @model containment="true"
+	 * @generated
+	 */
   EmphasisExpression getAltText();
 
   /**
-   * Sets the value of the '{@link markHammil.mm.myDsl.ImageExpression#getAltText <em>Alt Text</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link markHammil.mm.myDsl.ImageExpression#getAltText <em>Alt Text</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Alt Text</em>' containment reference.
-   * @see #getAltText()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Alt Text</em>' containment reference.
+	 * @see #getAltText()
+	 * @generated
+	 */
   void setAltText(EmphasisExpression value);
 
   /**
-   * Returns the value of the '<em><b>Link Content</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Link Content</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Link Content</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Link Content</em>' containment reference.
-   * @see #setLinkContent(EmphasisExpression)
-   * @see markHammil.mm.myDsl.MyDslPackage#getImageExpression_LinkContent()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Link Content</em>' containment reference.
+	 * @see #setLinkContent(EmphasisExpression)
+	 * @see markHammil.mm.myDsl.MyDslPackage#getImageExpression_LinkContent()
+	 * @model containment="true"
+	 * @generated
+	 */
   EmphasisExpression getLinkContent();
 
   /**
-   * Sets the value of the '{@link markHammil.mm.myDsl.ImageExpression#getLinkContent <em>Link Content</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link markHammil.mm.myDsl.ImageExpression#getLinkContent <em>Link Content</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Link Content</em>' containment reference.
-   * @see #getLinkContent()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Link Content</em>' containment reference.
+	 * @see #getLinkContent()
+	 * @generated
+	 */
   void setLinkContent(EmphasisExpression value);
 
 } // ImageExpression

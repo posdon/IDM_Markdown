@@ -18,24 +18,24 @@ import org.eclipse.emf.ecore.EClass;
 public class Header3ExpressionImpl extends HeaderExpressionImpl implements Header3Expression
 {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected Header3ExpressionImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return MyDslPackage.Literals.HEADER3_EXPRESSION;
-  }
+		return MyDslPackage.Literals.HEADER3_EXPRESSION;
+	}
 
 } //Header3ExpressionImpl
