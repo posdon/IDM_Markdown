@@ -10,26 +10,24 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BreakLineExpression"/>
-  <eClassifiers xsi:type="ecore:EClass" name="TextExpression" eSuperTypes="#//QuoteExpression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="c" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="content" upperBound="-1"
-        eType="#//TextExpression" containment="true"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TextExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="ListExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="contentUnordered" upperBound="-1"
         eType="#//TextExpression" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="contentOrdered" upperBound="-1"
         eType="#//TextExpression" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="QuoteExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="QuoteExpression" eSuperTypes="#//TextExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="content" upperBound="-1"
+        eType="#//TextExpression" containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RefExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="refName" eType="#//EmphasisExpression"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="refContent" eType="#//EmphasisExpression"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="LinkExpression">
+  <eClassifiers xsi:type="ecore:EClass" name="LinkExpression" eSuperTypes="#//TextExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="altText" eType="#//EmphasisExpression"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="linkContent" eType="#//EmphasisExpression"
@@ -37,13 +35,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="refName" eType="#//EmphasisExpression"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ImageExpression">
+  <eClassifiers xsi:type="ecore:EClass" name="ImageExpression" eSuperTypes="#//TextExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="altText" eType="#//EmphasisExpression"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="linkContent" eType="#//EmphasisExpression"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="VideoExpression">
+  <eClassifiers xsi:type="ecore:EClass" name="VideoExpression" eSuperTypes="#//TextExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="altText" eType="#//EmphasisExpression"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="linkImage" eType="#//EmphasisExpression"
@@ -51,7 +49,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="linkVideo" eType="#//EmphasisExpression"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TabExpression">
+  <eClassifiers xsi:type="ecore:EClass" name="TabExpression" eSuperTypes="#//TextExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="header" eType="#//LineExpression"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="lines" upperBound="-1"
@@ -71,7 +69,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Header4Expression" eSuperTypes="#//HeaderExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="Header5Expression" eSuperTypes="#//HeaderExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="Header6Expression" eSuperTypes="#//HeaderExpression"/>
-  <eClassifiers xsi:type="ecore:EClass" name="EmphasisExpression">
+  <eClassifiers xsi:type="ecore:EClass" name="EmphasisExpression" eSuperTypes="#//TextExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="c" upperBound="-1" eType="#//EmphasisExpression"
         containment="true"/>
   </eClassifiers>

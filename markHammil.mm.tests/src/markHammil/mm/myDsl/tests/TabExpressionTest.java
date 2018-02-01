@@ -16,15 +16,7 @@ import markHammil.mm.myDsl.TabExpression;
  * <!-- end-user-doc -->
  * @generated
  */
-public class TabExpressionTest extends TestCase {
-
-	/**
-	 * The fixture for this Tab Expression test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected TabExpression fixture = null;
+public class TabExpressionTest extends TextExpressionTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -46,23 +38,14 @@ public class TabExpressionTest extends TestCase {
 	}
 
 	/**
-	 * Sets the fixture for this Tab Expression test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(TabExpression fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
 	 * Returns the fixture for this Tab Expression test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected TabExpression getFixture() {
-		return fixture;
+		return (TabExpression)fixture;
 	}
 
 	/**

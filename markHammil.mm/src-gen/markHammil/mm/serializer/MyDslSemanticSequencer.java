@@ -22,11 +22,11 @@ import markHammil.mm.myDsl.LinkExpression;
 import markHammil.mm.myDsl.ListExpression;
 import markHammil.mm.myDsl.MyDslPackage;
 import markHammil.mm.myDsl.NaturalExpression;
+import markHammil.mm.myDsl.QuoteExpression;
 import markHammil.mm.myDsl.RefExpression;
 import markHammil.mm.myDsl.ScratchExpression;
 import markHammil.mm.myDsl.StrongExpression;
 import markHammil.mm.myDsl.TabExpression;
-import markHammil.mm.myDsl.TextExpression;
 import markHammil.mm.myDsl.VideoExpression;
 import markHammil.mm.services.MyDslGrammarAccess;
 import org.eclipse.emf.ecore.EObject;
@@ -101,6 +101,9 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case MyDslPackage.NATURAL_EXPRESSION:
 				sequence_NaturalExpression(context, (NaturalExpression) semanticObject); 
 				return; 
+			case MyDslPackage.QUOTE_EXPRESSION:
+				sequence_QuoteExpression(context, (QuoteExpression) semanticObject); 
+				return; 
 			case MyDslPackage.REF_EXPRESSION:
 				sequence_RefExpression(context, (RefExpression) semanticObject); 
 				return; 
@@ -113,16 +116,6 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case MyDslPackage.TAB_EXPRESSION:
 				sequence_TabExpression(context, (TabExpression) semanticObject); 
 				return; 
-			case MyDslPackage.TEXT_EXPRESSION:
-				if (rule == grammarAccess.getQuoteExpressionRule()) {
-					sequence_QuoteExpression(context, (TextExpression) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getTextExpressionRule()) {
-					sequence_TextExpression(context, (TextExpression) semanticObject); 
-					return; 
-				}
-				else break;
 			case MyDslPackage.VIDEO_EXPRESSION:
 				sequence_VideoExpression(context, (VideoExpression) semanticObject); 
 				return; 
@@ -145,6 +138,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
+	 *     TextExpression returns EmphasisExpression
 	 *     EmphasisExpression returns EmphasisExpression
 	 *
 	 * Constraint:
@@ -259,6 +253,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
+	 *     TextExpression returns ImageExpression
 	 *     ImageExpression returns ImageExpression
 	 *
 	 * Constraint:
@@ -301,6 +296,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
+	 *     TextExpression returns LinkExpression
 	 *     LinkExpression returns LinkExpression
 	 *
 	 * Constraint:
@@ -337,12 +333,13 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
-	 *     QuoteExpression returns TextExpression
+	 *     TextExpression returns QuoteExpression
+	 *     QuoteExpression returns QuoteExpression
 	 *
 	 * Constraint:
 	 *     content+=TextExpression+
 	 */
-	protected void sequence_QuoteExpression(ISerializationContext context, TextExpression semanticObject) {
+	protected void sequence_QuoteExpression(ISerializationContext context, QuoteExpression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -397,6 +394,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
+	 *     TextExpression returns TabExpression
 	 *     TabExpression returns TabExpression
 	 *
 	 * Constraint:
@@ -409,25 +407,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
-	 *     TextExpression returns TextExpression
-	 *
-	 * Constraint:
-	 *     (
-	 *         c=EmphasisExpression | 
-	 *         c=QuoteExpression | 
-	 *         c=TabExpression | 
-	 *         c=LinkExpression | 
-	 *         c=ImageExpression | 
-	 *         c=VideoExpression
-	 *     )
-	 */
-	protected void sequence_TextExpression(ISerializationContext context, TextExpression semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
+	 *     TextExpression returns VideoExpression
 	 *     VideoExpression returns VideoExpression
 	 *
 	 * Constraint:

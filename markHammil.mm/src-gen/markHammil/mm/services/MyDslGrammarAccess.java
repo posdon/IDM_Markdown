@@ -139,75 +139,63 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	public class TextExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "markHammil.mm.MyDsl.TextExpression");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Assignment cCAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final RuleCall cCEmphasisExpressionParserRuleCall_0_0 = (RuleCall)cCAssignment_0.eContents().get(0);
+		private final RuleCall cEmphasisExpressionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
 		private final Alternatives cAlternatives_1_0 = (Alternatives)cGroup_1.eContents().get(0);
-		private final Assignment cCAssignment_1_0_0 = (Assignment)cAlternatives_1_0.eContents().get(0);
-		private final RuleCall cCQuoteExpressionParserRuleCall_1_0_0_0 = (RuleCall)cCAssignment_1_0_0.eContents().get(0);
-		private final Assignment cCAssignment_1_0_1 = (Assignment)cAlternatives_1_0.eContents().get(1);
-		private final RuleCall cCTabExpressionParserRuleCall_1_0_1_0 = (RuleCall)cCAssignment_1_0_1.eContents().get(0);
-		private final Alternatives cAlternatives_1_0_2 = (Alternatives)cAlternatives_1_0.eContents().get(2);
-		private final Assignment cCAssignment_1_0_2_0 = (Assignment)cAlternatives_1_0_2.eContents().get(0);
-		private final RuleCall cCLinkExpressionParserRuleCall_1_0_2_0_0 = (RuleCall)cCAssignment_1_0_2_0.eContents().get(0);
-		private final Assignment cCAssignment_1_0_2_1 = (Assignment)cAlternatives_1_0_2.eContents().get(1);
-		private final RuleCall cCImageExpressionParserRuleCall_1_0_2_1_0 = (RuleCall)cCAssignment_1_0_2_1.eContents().get(0);
-		private final Assignment cCAssignment_1_0_2_2 = (Assignment)cAlternatives_1_0_2.eContents().get(2);
-		private final RuleCall cCVideoExpressionParserRuleCall_1_0_2_2_0 = (RuleCall)cCAssignment_1_0_2_2.eContents().get(0);
+		private final RuleCall cQuoteExpressionParserRuleCall_1_0_0 = (RuleCall)cAlternatives_1_0.eContents().get(0);
+		private final RuleCall cTabExpressionParserRuleCall_1_0_1 = (RuleCall)cAlternatives_1_0.eContents().get(1);
+		private final Group cGroup_1_0_2 = (Group)cAlternatives_1_0.eContents().get(2);
+		private final Alternatives cAlternatives_1_0_2_0 = (Alternatives)cGroup_1_0_2.eContents().get(0);
+		private final RuleCall cLinkExpressionParserRuleCall_1_0_2_0_0 = (RuleCall)cAlternatives_1_0_2_0.eContents().get(0);
+		private final Group cGroup_1_0_2_0_1 = (Group)cAlternatives_1_0_2_0.eContents().get(1);
+		private final Alternatives cAlternatives_1_0_2_0_1_0 = (Alternatives)cGroup_1_0_2_0_1.eContents().get(0);
+		private final RuleCall cImageExpressionParserRuleCall_1_0_2_0_1_0_0 = (RuleCall)cAlternatives_1_0_2_0_1_0.eContents().get(0);
+		private final RuleCall cVideoExpressionParserRuleCall_1_0_2_0_1_0_1 = (RuleCall)cAlternatives_1_0_2_0_1_0.eContents().get(1);
 		
 		//TextExpression hidden(WS):
-		//	c=EmphasisExpression | => (c=QuoteExpression | c=TabExpression | (c=LinkExpression | => c=ImageExpression | =>
-		//	c=VideoExpression));
+		//	EmphasisExpression | => (QuoteExpression | TabExpression | => (LinkExpression | => (ImageExpression | =>
+		//	VideoExpression)));
 		@Override public ParserRule getRule() { return rule; }
 		
-		//c=EmphasisExpression | => (c=QuoteExpression | c=TabExpression | (c=LinkExpression | => c=ImageExpression | =>
-		//c=VideoExpression))
+		//EmphasisExpression | => (QuoteExpression | TabExpression | => (LinkExpression | => (ImageExpression | =>
+		//VideoExpression)))
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//c=EmphasisExpression
-		public Assignment getCAssignment_0() { return cCAssignment_0; }
-		
 		//EmphasisExpression
-		public RuleCall getCEmphasisExpressionParserRuleCall_0_0() { return cCEmphasisExpressionParserRuleCall_0_0; }
+		public RuleCall getEmphasisExpressionParserRuleCall_0() { return cEmphasisExpressionParserRuleCall_0; }
 		
-		//=> (c=QuoteExpression | c=TabExpression | (c=LinkExpression | => c=ImageExpression | => c=VideoExpression))
+		//=> (QuoteExpression | TabExpression | => (LinkExpression | => (ImageExpression | => VideoExpression)))
 		public Group getGroup_1() { return cGroup_1; }
 		
-		//c=QuoteExpression | c=TabExpression | (c=LinkExpression | => c=ImageExpression | => c=VideoExpression)
+		//QuoteExpression | TabExpression | => (LinkExpression | => (ImageExpression | => VideoExpression))
 		public Alternatives getAlternatives_1_0() { return cAlternatives_1_0; }
 		
-		//c=QuoteExpression
-		public Assignment getCAssignment_1_0_0() { return cCAssignment_1_0_0; }
-		
 		//QuoteExpression
-		public RuleCall getCQuoteExpressionParserRuleCall_1_0_0_0() { return cCQuoteExpressionParserRuleCall_1_0_0_0; }
-		
-		//c=TabExpression
-		public Assignment getCAssignment_1_0_1() { return cCAssignment_1_0_1; }
+		public RuleCall getQuoteExpressionParserRuleCall_1_0_0() { return cQuoteExpressionParserRuleCall_1_0_0; }
 		
 		//TabExpression
-		public RuleCall getCTabExpressionParserRuleCall_1_0_1_0() { return cCTabExpressionParserRuleCall_1_0_1_0; }
+		public RuleCall getTabExpressionParserRuleCall_1_0_1() { return cTabExpressionParserRuleCall_1_0_1; }
 		
-		//(c=LinkExpression | => c=ImageExpression | => c=VideoExpression)
-		public Alternatives getAlternatives_1_0_2() { return cAlternatives_1_0_2; }
+		//=> (LinkExpression | => (ImageExpression | => VideoExpression))
+		public Group getGroup_1_0_2() { return cGroup_1_0_2; }
 		
-		//c=LinkExpression
-		public Assignment getCAssignment_1_0_2_0() { return cCAssignment_1_0_2_0; }
+		//LinkExpression | => (ImageExpression | => VideoExpression)
+		public Alternatives getAlternatives_1_0_2_0() { return cAlternatives_1_0_2_0; }
 		
 		//LinkExpression
-		public RuleCall getCLinkExpressionParserRuleCall_1_0_2_0_0() { return cCLinkExpressionParserRuleCall_1_0_2_0_0; }
+		public RuleCall getLinkExpressionParserRuleCall_1_0_2_0_0() { return cLinkExpressionParserRuleCall_1_0_2_0_0; }
 		
-		//=> c=ImageExpression
-		public Assignment getCAssignment_1_0_2_1() { return cCAssignment_1_0_2_1; }
+		//=> (ImageExpression | => VideoExpression)
+		public Group getGroup_1_0_2_0_1() { return cGroup_1_0_2_0_1; }
+		
+		//ImageExpression | => VideoExpression
+		public Alternatives getAlternatives_1_0_2_0_1_0() { return cAlternatives_1_0_2_0_1_0; }
 		
 		//ImageExpression
-		public RuleCall getCImageExpressionParserRuleCall_1_0_2_1_0() { return cCImageExpressionParserRuleCall_1_0_2_1_0; }
+		public RuleCall getImageExpressionParserRuleCall_1_0_2_0_1_0_0() { return cImageExpressionParserRuleCall_1_0_2_0_1_0_0; }
 		
-		//=> c=VideoExpression
-		public Assignment getCAssignment_1_0_2_2() { return cCAssignment_1_0_2_2; }
-		
-		//VideoExpression
-		public RuleCall getCVideoExpressionParserRuleCall_1_0_2_2_0() { return cCVideoExpressionParserRuleCall_1_0_2_2_0; }
+		//=> VideoExpression
+		public RuleCall getVideoExpressionParserRuleCall_1_0_2_0_1_0_1() { return cVideoExpressionParserRuleCall_1_0_2_0_1_0_1; }
 	}
 	public class ListExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "markHammil.mm.MyDsl.ListExpression");
@@ -297,22 +285,22 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	public class QuoteExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "markHammil.mm.MyDsl.QuoteExpression");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cTextExpressionAction_0 = (Action)cGroup.eContents().get(0);
+		private final Action cQuoteExpressionAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cGreaterThanSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cContentAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cContentTextExpressionParserRuleCall_2_0 = (RuleCall)cContentAssignment_2.eContents().get(0);
 		private final RuleCall cBLTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
 		
 		//QuoteExpression:
-		//	{TextExpression}
+		//	{QuoteExpression}
 		//	=> '>' content+=TextExpression+ => BL?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{TextExpression} => '>' content+=TextExpression+ => BL?
+		//{QuoteExpression} => '>' content+=TextExpression+ => BL?
 		public Group getGroup() { return cGroup; }
 		
-		//{TextExpression}
-		public Action getTextExpressionAction_0() { return cTextExpressionAction_0; }
+		//{QuoteExpression}
+		public Action getQuoteExpressionAction_0() { return cQuoteExpressionAction_0; }
 		
 		//=> '>'
 		public Keyword getGreaterThanSignKeyword_1() { return cGreaterThanSignKeyword_1; }
@@ -1344,8 +1332,8 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//TextExpression hidden(WS):
-	//	c=EmphasisExpression | => (c=QuoteExpression | c=TabExpression | (c=LinkExpression | => c=ImageExpression | =>
-	//	c=VideoExpression));
+	//	EmphasisExpression | => (QuoteExpression | TabExpression | => (LinkExpression | => (ImageExpression | =>
+	//	VideoExpression)));
 	public TextExpressionElements getTextExpressionAccess() {
 		return pTextExpression;
 	}
@@ -1366,7 +1354,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//QuoteExpression:
-	//	{TextExpression}
+	//	{QuoteExpression}
 	//	=> '>' content+=TextExpression+ => BL?;
 	public QuoteExpressionElements getQuoteExpressionAccess() {
 		return pQuoteExpression;

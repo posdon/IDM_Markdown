@@ -7,6 +7,12 @@ import markHammil.mm.myDsl.BreakLineExpression
 import markHammil.mm.myDsl.EmphasisExpression
 import markHammil.mm.myDsl.Expression
 import markHammil.mm.myDsl.File
+import markHammil.mm.myDsl.Header1Expression
+import markHammil.mm.myDsl.Header2Expression
+import markHammil.mm.myDsl.Header3Expression
+import markHammil.mm.myDsl.Header4Expression
+import markHammil.mm.myDsl.Header5Expression
+import markHammil.mm.myDsl.Header6Expression
 import markHammil.mm.myDsl.HeaderExpression
 import markHammil.mm.myDsl.ImageExpression
 import markHammil.mm.myDsl.ItalicExpression
@@ -52,26 +58,15 @@ class MyDslGenerator extends AbstractGenerator {
 	'''
 	
 	def dispatch compile(Expression expression) '''
-	«expression.c.compile»
+		«expression.c.compile»
 	'''
 	
 	def dispatch compile(BreakLineExpression br) '''
 	<br>
 	'''
 	
-	def dispatch compile(HeaderExpression headerExpression) '''
-		
-	'''
-	
-	def dispatch compile(TextExpression textExpression) '''
-		<p>«textExpression.c.compile»</p>
-	'''
 	
 	
-	
-	def dispatch compile(ListExpression listExpression) '''
-	
-	'''
 	
 	def dispatch compile(EmphasisExpression emphasisExpression) '''
 	«FOR exp : emphasisExpression.c»
@@ -96,6 +91,73 @@ class MyDslGenerator extends AbstractGenerator {
 	«value.toString»
 	«ENDFOR»
 	'''
+	
+	
+	
+	def dispatch compile(HeaderExpression headerExpression) '''
+		Should not be called : «headerExpression»
+	'''
+	
+	def dispatch compile(Header1Expression headerExpression) '''
+		<h1>
+		«FOR head : headerExpression.title»
+		«head.compile»
+		«ENDFOR»
+		</h1>
+	'''
+	
+	def dispatch compile(Header2Expression headerExpression) '''
+		<h2>
+		«FOR head : headerExpression.title»
+		«head.compile»
+		«ENDFOR»
+		</h2>
+	'''
+	
+	def dispatch compile(Header3Expression headerExpression) '''
+		<h3>
+		«FOR head : headerExpression.title»
+		«head.compile»
+		«ENDFOR»
+		</h3>
+	'''
+	
+	def dispatch compile(Header4Expression headerExpression) '''
+		<h4>
+		«FOR head : headerExpression.title»
+		«head.compile»
+		«ENDFOR»
+		</h4>
+	'''
+	
+	def dispatch compile(Header5Expression headerExpression) '''
+		<h5>
+		«FOR head : headerExpression.title»
+		«head.compile»
+		«ENDFOR»
+		</h5>
+	'''
+	
+	def dispatch compile(Header6Expression headerExpression) '''
+		<h6>
+		«FOR head : headerExpression.title»
+		«head.compile»
+		«ENDFOR»
+		</h6>
+	'''
+	
+	
+	def dispatch compile(TextExpression textExpression) '''
+		Should not be call : «textExpression»
+	'''
+	
+	
+	
+	def dispatch compile(ListExpression listExpression) '''
+	
+	'''
+	
+
 	
 	def dispatch compile(QuoteExpression quoteExpression) '''
 	

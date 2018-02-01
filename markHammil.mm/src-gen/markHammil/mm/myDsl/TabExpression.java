@@ -5,8 +5,6 @@ package markHammil.mm.myDsl;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Tab Expression</b></em>'.
@@ -24,7 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface TabExpression extends EObject
+public interface TabExpression extends TextExpression
 {
   /**
 	 * Returns the value of the '<em><b>Header</b></em>' containment reference.

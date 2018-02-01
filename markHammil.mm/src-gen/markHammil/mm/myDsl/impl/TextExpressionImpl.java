@@ -3,61 +3,22 @@
  */
 package markHammil.mm.myDsl.impl;
 
-import java.util.Collection;
-
 import markHammil.mm.myDsl.MyDslPackage;
 import markHammil.mm.myDsl.TextExpression;
 
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Text Expression</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * The following features are implemented:
- * </p>
- * <ul>
- *   <li>{@link markHammil.mm.myDsl.impl.TextExpressionImpl#getC <em>C</em>}</li>
- *   <li>{@link markHammil.mm.myDsl.impl.TextExpressionImpl#getContent <em>Content</em>}</li>
- * </ul>
  *
  * @generated
  */
-public class TextExpressionImpl extends QuoteExpressionImpl implements TextExpression
+public class TextExpressionImpl extends MinimalEObjectImpl.Container implements TextExpression
 {
-  /**
-	 * The cached value of the '{@link #getC() <em>C</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @see #getC()
-	 * @generated
-	 * @ordered
-	 */
-  protected EObject c;
-
-  /**
-	 * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @see #getContent()
-	 * @generated
-	 * @ordered
-	 */
-  protected EList<TextExpression> content;
-
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -77,156 +38,6 @@ public class TextExpressionImpl extends QuoteExpressionImpl implements TextExpre
   protected EClass eStaticClass()
   {
 		return MyDslPackage.Literals.TEXT_EXPRESSION;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EObject getC()
-  {
-		return c;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public NotificationChain basicSetC(EObject newC, NotificationChain msgs)
-  {
-		EObject oldC = c;
-		c = newC;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyDslPackage.TEXT_EXPRESSION__C, oldC, newC);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public void setC(EObject newC)
-  {
-		if (newC != c) {
-			NotificationChain msgs = null;
-			if (c != null)
-				msgs = ((InternalEObject)c).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.TEXT_EXPRESSION__C, null, msgs);
-			if (newC != null)
-				msgs = ((InternalEObject)newC).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.TEXT_EXPRESSION__C, null, msgs);
-			msgs = basicSetC(newC, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.TEXT_EXPRESSION__C, newC, newC));
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EList<TextExpression> getContent()
-  {
-		if (content == null) {
-			content = new EObjectContainmentEList<TextExpression>(TextExpression.class, this, MyDslPackage.TEXT_EXPRESSION__CONTENT);
-		}
-		return content;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-		switch (featureID) {
-			case MyDslPackage.TEXT_EXPRESSION__C:
-				return basicSetC(null, msgs);
-			case MyDslPackage.TEXT_EXPRESSION__CONTENT:
-				return ((InternalEList<?>)getContent()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  @Override
-  public Object eGet(int featureID, boolean resolve, boolean coreType)
-  {
-		switch (featureID) {
-			case MyDslPackage.TEXT_EXPRESSION__C:
-				return getC();
-			case MyDslPackage.TEXT_EXPRESSION__CONTENT:
-				return getContent();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  @SuppressWarnings("unchecked")
-  @Override
-  public void eSet(int featureID, Object newValue)
-  {
-		switch (featureID) {
-			case MyDslPackage.TEXT_EXPRESSION__C:
-				setC((EObject)newValue);
-				return;
-			case MyDslPackage.TEXT_EXPRESSION__CONTENT:
-				getContent().clear();
-				getContent().addAll((Collection<? extends TextExpression>)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  @Override
-  public void eUnset(int featureID)
-  {
-		switch (featureID) {
-			case MyDslPackage.TEXT_EXPRESSION__C:
-				setC((EObject)null);
-				return;
-			case MyDslPackage.TEXT_EXPRESSION__CONTENT:
-				getContent().clear();
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  @Override
-  public boolean eIsSet(int featureID)
-  {
-		switch (featureID) {
-			case MyDslPackage.TEXT_EXPRESSION__C:
-				return c != null;
-			case MyDslPackage.TEXT_EXPRESSION__CONTENT:
-				return content != null && !content.isEmpty();
-		}
-		return super.eIsSet(featureID);
 	}
 
 } //TextExpressionImpl

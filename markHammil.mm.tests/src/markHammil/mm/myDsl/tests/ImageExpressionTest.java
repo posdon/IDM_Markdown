@@ -16,15 +16,7 @@ import markHammil.mm.myDsl.MyDslFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ImageExpressionTest extends TestCase {
-
-	/**
-	 * The fixture for this Image Expression test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ImageExpression fixture = null;
+public class ImageExpressionTest extends TextExpressionTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -46,23 +38,14 @@ public class ImageExpressionTest extends TestCase {
 	}
 
 	/**
-	 * Sets the fixture for this Image Expression test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(ImageExpression fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
 	 * Returns the fixture for this Image Expression test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected ImageExpression getFixture() {
-		return fixture;
+		return (ImageExpression)fixture;
 	}
 
 	/**

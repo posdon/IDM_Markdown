@@ -92,7 +92,6 @@ public class MyDslSwitch<T> extends Switch<T>
 			case MyDslPackage.TEXT_EXPRESSION: {
 				TextExpression textExpression = (TextExpression)theEObject;
 				T result = caseTextExpression(textExpression);
-				if (result == null) result = caseQuoteExpression(textExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -105,6 +104,7 @@ public class MyDslSwitch<T> extends Switch<T>
 			case MyDslPackage.QUOTE_EXPRESSION: {
 				QuoteExpression quoteExpression = (QuoteExpression)theEObject;
 				T result = caseQuoteExpression(quoteExpression);
+				if (result == null) result = caseTextExpression(quoteExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -117,24 +117,28 @@ public class MyDslSwitch<T> extends Switch<T>
 			case MyDslPackage.LINK_EXPRESSION: {
 				LinkExpression linkExpression = (LinkExpression)theEObject;
 				T result = caseLinkExpression(linkExpression);
+				if (result == null) result = caseTextExpression(linkExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case MyDslPackage.IMAGE_EXPRESSION: {
 				ImageExpression imageExpression = (ImageExpression)theEObject;
 				T result = caseImageExpression(imageExpression);
+				if (result == null) result = caseTextExpression(imageExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case MyDslPackage.VIDEO_EXPRESSION: {
 				VideoExpression videoExpression = (VideoExpression)theEObject;
 				T result = caseVideoExpression(videoExpression);
+				if (result == null) result = caseTextExpression(videoExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case MyDslPackage.TAB_EXPRESSION: {
 				TabExpression tabExpression = (TabExpression)theEObject;
 				T result = caseTabExpression(tabExpression);
+				if (result == null) result = caseTextExpression(tabExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -195,6 +199,7 @@ public class MyDslSwitch<T> extends Switch<T>
 			case MyDslPackage.EMPHASIS_EXPRESSION: {
 				EmphasisExpression emphasisExpression = (EmphasisExpression)theEObject;
 				T result = caseEmphasisExpression(emphasisExpression);
+				if (result == null) result = caseTextExpression(emphasisExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -202,6 +207,7 @@ public class MyDslSwitch<T> extends Switch<T>
 				StrongExpression strongExpression = (StrongExpression)theEObject;
 				T result = caseStrongExpression(strongExpression);
 				if (result == null) result = caseEmphasisExpression(strongExpression);
+				if (result == null) result = caseTextExpression(strongExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -209,6 +215,7 @@ public class MyDslSwitch<T> extends Switch<T>
 				ItalicExpression italicExpression = (ItalicExpression)theEObject;
 				T result = caseItalicExpression(italicExpression);
 				if (result == null) result = caseEmphasisExpression(italicExpression);
+				if (result == null) result = caseTextExpression(italicExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -216,6 +223,7 @@ public class MyDslSwitch<T> extends Switch<T>
 				ScratchExpression scratchExpression = (ScratchExpression)theEObject;
 				T result = caseScratchExpression(scratchExpression);
 				if (result == null) result = caseEmphasisExpression(scratchExpression);
+				if (result == null) result = caseTextExpression(scratchExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -223,6 +231,7 @@ public class MyDslSwitch<T> extends Switch<T>
 				NaturalExpression naturalExpression = (NaturalExpression)theEObject;
 				T result = caseNaturalExpression(naturalExpression);
 				if (result == null) result = caseEmphasisExpression(naturalExpression);
+				if (result == null) result = caseTextExpression(naturalExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

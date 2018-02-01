@@ -152,8 +152,108 @@ public class ListExpressionItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
+				(MyDslPackage.Literals.LIST_EXPRESSION__CONTENT_UNORDERED,
+				 MyDslFactory.eINSTANCE.createQuoteExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.LIST_EXPRESSION__CONTENT_UNORDERED,
+				 MyDslFactory.eINSTANCE.createLinkExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.LIST_EXPRESSION__CONTENT_UNORDERED,
+				 MyDslFactory.eINSTANCE.createImageExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.LIST_EXPRESSION__CONTENT_UNORDERED,
+				 MyDslFactory.eINSTANCE.createVideoExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.LIST_EXPRESSION__CONTENT_UNORDERED,
+				 MyDslFactory.eINSTANCE.createTabExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.LIST_EXPRESSION__CONTENT_UNORDERED,
+				 MyDslFactory.eINSTANCE.createEmphasisExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.LIST_EXPRESSION__CONTENT_UNORDERED,
+				 MyDslFactory.eINSTANCE.createStrongExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.LIST_EXPRESSION__CONTENT_UNORDERED,
+				 MyDslFactory.eINSTANCE.createItalicExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.LIST_EXPRESSION__CONTENT_UNORDERED,
+				 MyDslFactory.eINSTANCE.createScratchExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.LIST_EXPRESSION__CONTENT_UNORDERED,
+				 MyDslFactory.eINSTANCE.createNaturalExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(MyDslPackage.Literals.LIST_EXPRESSION__CONTENT_ORDERED,
 				 MyDslFactory.eINSTANCE.createTextExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.LIST_EXPRESSION__CONTENT_ORDERED,
+				 MyDslFactory.eINSTANCE.createQuoteExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.LIST_EXPRESSION__CONTENT_ORDERED,
+				 MyDslFactory.eINSTANCE.createLinkExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.LIST_EXPRESSION__CONTENT_ORDERED,
+				 MyDslFactory.eINSTANCE.createImageExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.LIST_EXPRESSION__CONTENT_ORDERED,
+				 MyDslFactory.eINSTANCE.createVideoExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.LIST_EXPRESSION__CONTENT_ORDERED,
+				 MyDslFactory.eINSTANCE.createTabExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.LIST_EXPRESSION__CONTENT_ORDERED,
+				 MyDslFactory.eINSTANCE.createEmphasisExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.LIST_EXPRESSION__CONTENT_ORDERED,
+				 MyDslFactory.eINSTANCE.createStrongExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.LIST_EXPRESSION__CONTENT_ORDERED,
+				 MyDslFactory.eINSTANCE.createItalicExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.LIST_EXPRESSION__CONTENT_ORDERED,
+				 MyDslFactory.eINSTANCE.createScratchExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MyDslPackage.Literals.LIST_EXPRESSION__CONTENT_ORDERED,
+				 MyDslFactory.eINSTANCE.createNaturalExpression()));
 	}
 
 	/**

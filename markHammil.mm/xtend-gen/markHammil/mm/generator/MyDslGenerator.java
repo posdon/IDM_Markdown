@@ -9,6 +9,12 @@ import markHammil.mm.myDsl.BreakLineExpression;
 import markHammil.mm.myDsl.EmphasisExpression;
 import markHammil.mm.myDsl.Expression;
 import markHammil.mm.myDsl.File;
+import markHammil.mm.myDsl.Header1Expression;
+import markHammil.mm.myDsl.Header2Expression;
+import markHammil.mm.myDsl.Header3Expression;
+import markHammil.mm.myDsl.Header4Expression;
+import markHammil.mm.myDsl.Header5Expression;
+import markHammil.mm.myDsl.Header6Expression;
 import markHammil.mm.myDsl.HeaderExpression;
 import markHammil.mm.myDsl.ImageExpression;
 import markHammil.mm.myDsl.ItalicExpression;
@@ -97,30 +103,6 @@ public class MyDslGenerator extends AbstractGenerator {
     return _builder;
   }
   
-  protected CharSequence _compile(final HeaderExpression headerExpression) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("\t\t");
-    _builder.newLine();
-    return _builder;
-  }
-  
-  protected CharSequence _compile(final TextExpression textExpression) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("<p>");
-    Object _compile = this.compile(textExpression.getC());
-    _builder.append(_compile);
-    _builder.append("</p>");
-    _builder.newLineIfNotEmpty();
-    return _builder;
-  }
-  
-  protected CharSequence _compile(final ListExpression listExpression) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("\t");
-    _builder.newLine();
-    return _builder;
-  }
-  
   protected CharSequence _compile(final EmphasisExpression emphasisExpression) {
     StringConcatenation _builder = new StringConcatenation();
     {
@@ -174,6 +156,131 @@ public class MyDslGenerator extends AbstractGenerator {
         _builder.newLineIfNotEmpty();
       }
     }
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final HeaderExpression headerExpression) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("Should not be called : ");
+    _builder.append(headerExpression);
+    _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final Header1Expression headerExpression) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("<h1>");
+    _builder.newLine();
+    {
+      EList<EmphasisExpression> _title = headerExpression.getTitle();
+      for(final EmphasisExpression head : _title) {
+        Object _compile = this.compile(head);
+        _builder.append(_compile);
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.append("</h1>");
+    _builder.newLine();
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final Header2Expression headerExpression) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("<h2>");
+    _builder.newLine();
+    {
+      EList<EmphasisExpression> _title = headerExpression.getTitle();
+      for(final EmphasisExpression head : _title) {
+        Object _compile = this.compile(head);
+        _builder.append(_compile);
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.append("</h2>");
+    _builder.newLine();
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final Header3Expression headerExpression) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("<h3>");
+    _builder.newLine();
+    {
+      EList<EmphasisExpression> _title = headerExpression.getTitle();
+      for(final EmphasisExpression head : _title) {
+        Object _compile = this.compile(head);
+        _builder.append(_compile);
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.append("</h3>");
+    _builder.newLine();
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final Header4Expression headerExpression) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("<h4>");
+    _builder.newLine();
+    {
+      EList<EmphasisExpression> _title = headerExpression.getTitle();
+      for(final EmphasisExpression head : _title) {
+        Object _compile = this.compile(head);
+        _builder.append(_compile);
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.append("</h4>");
+    _builder.newLine();
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final Header5Expression headerExpression) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("<h5>");
+    _builder.newLine();
+    {
+      EList<EmphasisExpression> _title = headerExpression.getTitle();
+      for(final EmphasisExpression head : _title) {
+        Object _compile = this.compile(head);
+        _builder.append(_compile);
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.append("</h5>");
+    _builder.newLine();
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final Header6Expression headerExpression) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("<h6>");
+    _builder.newLine();
+    {
+      EList<EmphasisExpression> _title = headerExpression.getTitle();
+      for(final EmphasisExpression head : _title) {
+        Object _compile = this.compile(head);
+        _builder.append(_compile);
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.append("</h6>");
+    _builder.newLine();
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final TextExpression textExpression) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("Should not be call : ");
+    _builder.append(textExpression);
+    _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final ListExpression listExpression) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("\t");
+    _builder.newLine();
     return _builder;
   }
   
@@ -231,30 +338,42 @@ public class MyDslGenerator extends AbstractGenerator {
       return _compile((ScratchExpression)italicExpression);
     } else if (italicExpression instanceof StrongExpression) {
       return _compile((StrongExpression)italicExpression);
-    } else if (italicExpression instanceof TextExpression) {
-      return _compile((TextExpression)italicExpression);
-    } else if (italicExpression instanceof BreakLineExpression) {
-      return _compile((BreakLineExpression)italicExpression);
     } else if (italicExpression instanceof EmphasisExpression) {
       return _compile((EmphasisExpression)italicExpression);
-    } else if (italicExpression instanceof Expression) {
-      return _compile((Expression)italicExpression);
-    } else if (italicExpression instanceof File) {
-      return _compile((File)italicExpression);
-    } else if (italicExpression instanceof HeaderExpression) {
-      return _compile((HeaderExpression)italicExpression);
+    } else if (italicExpression instanceof Header1Expression) {
+      return _compile((Header1Expression)italicExpression);
+    } else if (italicExpression instanceof Header2Expression) {
+      return _compile((Header2Expression)italicExpression);
+    } else if (italicExpression instanceof Header3Expression) {
+      return _compile((Header3Expression)italicExpression);
+    } else if (italicExpression instanceof Header4Expression) {
+      return _compile((Header4Expression)italicExpression);
+    } else if (italicExpression instanceof Header5Expression) {
+      return _compile((Header5Expression)italicExpression);
+    } else if (italicExpression instanceof Header6Expression) {
+      return _compile((Header6Expression)italicExpression);
     } else if (italicExpression instanceof ImageExpression) {
       return _compile((ImageExpression)italicExpression);
     } else if (italicExpression instanceof LinkExpression) {
       return _compile((LinkExpression)italicExpression);
-    } else if (italicExpression instanceof ListExpression) {
-      return _compile((ListExpression)italicExpression);
     } else if (italicExpression instanceof QuoteExpression) {
       return _compile((QuoteExpression)italicExpression);
     } else if (italicExpression instanceof TabExpression) {
       return _compile((TabExpression)italicExpression);
     } else if (italicExpression instanceof VideoExpression) {
       return _compile((VideoExpression)italicExpression);
+    } else if (italicExpression instanceof BreakLineExpression) {
+      return _compile((BreakLineExpression)italicExpression);
+    } else if (italicExpression instanceof Expression) {
+      return _compile((Expression)italicExpression);
+    } else if (italicExpression instanceof File) {
+      return _compile((File)italicExpression);
+    } else if (italicExpression instanceof HeaderExpression) {
+      return _compile((HeaderExpression)italicExpression);
+    } else if (italicExpression instanceof ListExpression) {
+      return _compile((ListExpression)italicExpression);
+    } else if (italicExpression instanceof TextExpression) {
+      return _compile((TextExpression)italicExpression);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
         Arrays.<Object>asList(italicExpression).toString());

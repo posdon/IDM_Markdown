@@ -3,7 +3,6 @@
  */
 package markHammil.mm.myDsl;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface ImageExpression extends EObject
+public interface ImageExpression extends TextExpression
 {
   /**
 	 * Returns the value of the '<em><b>Alt Text</b></em>' containment reference.

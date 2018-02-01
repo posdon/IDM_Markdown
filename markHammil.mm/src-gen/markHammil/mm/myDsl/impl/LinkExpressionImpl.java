@@ -14,7 +14,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +30,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class LinkExpressionImpl extends MinimalEObjectImpl.Container implements LinkExpression
+public class LinkExpressionImpl extends TextExpressionImpl implements LinkExpression
 {
   /**
 	 * The cached value of the '{@link #getAltText() <em>Alt Text</em>}' containment reference.

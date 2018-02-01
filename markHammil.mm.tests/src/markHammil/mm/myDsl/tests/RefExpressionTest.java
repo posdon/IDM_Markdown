@@ -61,6 +61,7 @@ public class RefExpressionTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected RefExpression getFixture() {
 		return fixture;
 	}

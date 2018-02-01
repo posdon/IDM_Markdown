@@ -341,26 +341,6 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EReference getTextExpression_C()
-  {
-		return (EReference)textExpressionEClass.getEStructuralFeatures().get(0);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EReference getTextExpression_Content()
-  {
-		return (EReference)textExpressionEClass.getEStructuralFeatures().get(1);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
   public EClass getListExpression()
   {
 		return listExpressionEClass;
@@ -394,6 +374,16 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
   public EClass getQuoteExpression()
   {
 		return quoteExpressionEClass;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EReference getQuoteExpression_Content()
+  {
+		return (EReference)quoteExpressionEClass.getEStructuralFeatures().get(0);
 	}
 
   /**
@@ -805,14 +795,13 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
 		breakLineExpressionEClass = createEClass(BREAK_LINE_EXPRESSION);
 
 		textExpressionEClass = createEClass(TEXT_EXPRESSION);
-		createEReference(textExpressionEClass, TEXT_EXPRESSION__C);
-		createEReference(textExpressionEClass, TEXT_EXPRESSION__CONTENT);
 
 		listExpressionEClass = createEClass(LIST_EXPRESSION);
 		createEReference(listExpressionEClass, LIST_EXPRESSION__CONTENT_UNORDERED);
 		createEReference(listExpressionEClass, LIST_EXPRESSION__CONTENT_ORDERED);
 
 		quoteExpressionEClass = createEClass(QUOTE_EXPRESSION);
+		createEReference(quoteExpressionEClass, QUOTE_EXPRESSION__CONTENT);
 
 		refExpressionEClass = createEClass(REF_EXPRESSION);
 		createEReference(refExpressionEClass, REF_EXPRESSION__REF_NAME);
@@ -899,13 +888,18 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		textExpressionEClass.getESuperTypes().add(this.getQuoteExpression());
+		quoteExpressionEClass.getESuperTypes().add(this.getTextExpression());
+		linkExpressionEClass.getESuperTypes().add(this.getTextExpression());
+		imageExpressionEClass.getESuperTypes().add(this.getTextExpression());
+		videoExpressionEClass.getESuperTypes().add(this.getTextExpression());
+		tabExpressionEClass.getESuperTypes().add(this.getTextExpression());
 		header1ExpressionEClass.getESuperTypes().add(this.getHeaderExpression());
 		header2ExpressionEClass.getESuperTypes().add(this.getHeaderExpression());
 		header3ExpressionEClass.getESuperTypes().add(this.getHeaderExpression());
 		header4ExpressionEClass.getESuperTypes().add(this.getHeaderExpression());
 		header5ExpressionEClass.getESuperTypes().add(this.getHeaderExpression());
 		header6ExpressionEClass.getESuperTypes().add(this.getHeaderExpression());
+		emphasisExpressionEClass.getESuperTypes().add(this.getTextExpression());
 		strongExpressionEClass.getESuperTypes().add(this.getEmphasisExpression());
 		italicExpressionEClass.getESuperTypes().add(this.getEmphasisExpression());
 		scratchExpressionEClass.getESuperTypes().add(this.getEmphasisExpression());
@@ -921,14 +915,13 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
 		initEClass(breakLineExpressionEClass, BreakLineExpression.class, "BreakLineExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(textExpressionEClass, TextExpression.class, "TextExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTextExpression_C(), ecorePackage.getEObject(), null, "c", null, 0, 1, TextExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTextExpression_Content(), this.getTextExpression(), null, "content", null, 0, -1, TextExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(listExpressionEClass, ListExpression.class, "ListExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getListExpression_ContentUnordered(), this.getTextExpression(), null, "contentUnordered", null, 0, -1, ListExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getListExpression_ContentOrdered(), this.getTextExpression(), null, "contentOrdered", null, 0, -1, ListExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(quoteExpressionEClass, QuoteExpression.class, "QuoteExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getQuoteExpression_Content(), this.getTextExpression(), null, "content", null, 0, -1, QuoteExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(refExpressionEClass, RefExpression.class, "RefExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRefExpression_RefName(), this.getEmphasisExpression(), null, "refName", null, 0, 1, RefExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

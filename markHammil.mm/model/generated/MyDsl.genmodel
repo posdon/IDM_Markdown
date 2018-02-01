@@ -13,15 +13,14 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Expression/c"/>
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//BreakLineExpression"/>
-    <genClasses ecoreClass="MyDsl.ecore#//TextExpression">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//TextExpression/c"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//TextExpression/content"/>
-    </genClasses>
+    <genClasses ecoreClass="MyDsl.ecore#//TextExpression"/>
     <genClasses ecoreClass="MyDsl.ecore#//ListExpression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//ListExpression/contentUnordered"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//ListExpression/contentOrdered"/>
     </genClasses>
-    <genClasses ecoreClass="MyDsl.ecore#//QuoteExpression"/>
+    <genClasses ecoreClass="MyDsl.ecore#//QuoteExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//QuoteExpression/content"/>
+    </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//RefExpression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//RefExpression/refName"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//RefExpression/refContent"/>

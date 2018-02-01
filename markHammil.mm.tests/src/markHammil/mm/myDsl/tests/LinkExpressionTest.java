@@ -16,15 +16,7 @@ import markHammil.mm.myDsl.MyDslFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class LinkExpressionTest extends TestCase {
-
-	/**
-	 * The fixture for this Link Expression test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected LinkExpression fixture = null;
+public class LinkExpressionTest extends TextExpressionTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -46,23 +38,14 @@ public class LinkExpressionTest extends TestCase {
 	}
 
 	/**
-	 * Sets the fixture for this Link Expression test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(LinkExpression fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
 	 * Returns the fixture for this Link Expression test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected LinkExpression getFixture() {
-		return fixture;
+		return (LinkExpression)fixture;
 	}
 
 	/**

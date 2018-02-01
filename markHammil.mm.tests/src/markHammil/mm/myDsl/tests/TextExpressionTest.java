@@ -16,7 +16,15 @@ import markHammil.mm.myDsl.TextExpression;
  * <!-- end-user-doc -->
  * @generated
  */
-public class TextExpressionTest extends QuoteExpressionTest {
+public class TextExpressionTest extends TestCase {
+
+	/**
+	 * The fixture for this Text Expression test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TextExpression fixture = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -38,6 +46,16 @@ public class TextExpressionTest extends QuoteExpressionTest {
 	}
 
 	/**
+	 * Sets the fixture for this Text Expression test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void setFixture(TextExpression fixture) {
+		this.fixture = fixture;
+	}
+
+	/**
 	 * Returns the fixture for this Text Expression test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -45,7 +63,7 @@ public class TextExpressionTest extends QuoteExpressionTest {
 	 */
 	@Override
 	protected TextExpression getFixture() {
-		return (TextExpression)fixture;
+		return fixture;
 	}
 
 	/**

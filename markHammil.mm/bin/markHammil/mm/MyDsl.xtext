@@ -19,7 +19,7 @@ BreakLineExpression :
 ;
 
 TextExpression hidden(WS):
-	c= EmphasisExpression | => ( c= QuoteExpression | c= TabExpression | =>( c=LinkExpression | => (c=ImageExpression | => c=VideoExpression )))
+	EmphasisExpression | => ( QuoteExpression | TabExpression | =>( LinkExpression | => (ImageExpression | => VideoExpression )))
 ;
 
 
@@ -30,7 +30,7 @@ ListExpression returns ListExpression hidden():
 
 
 QuoteExpression returns QuoteExpression:
-	{TextExpression}
+	{QuoteExpression}
 	=>'>' (content+=TextExpression)+ =>BL?
 ;
 
