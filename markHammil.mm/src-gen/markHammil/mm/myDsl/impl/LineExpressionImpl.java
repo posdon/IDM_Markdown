@@ -37,126 +37,132 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class LineExpressionImpl extends MinimalEObjectImpl.Container implements LineExpression
 {
   /**
-	 * The cached value of the '{@link #getCells() <em>Cells</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getCells() <em>Cells</em>}' containment reference list.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getCells()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getCells()
+   * @generated
+   * @ordered
+   */
   protected EList<EmphasisExpression> cells;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   protected LineExpressionImpl()
   {
-		super();
-	}
+    super();
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   protected EClass eStaticClass()
   {
-		return MyDslPackage.Literals.LINE_EXPRESSION;
-	}
+    return MyDslPackage.Literals.LINE_EXPRESSION;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EList<EmphasisExpression> getCells()
   {
-		if (cells == null) {
-			cells = new EObjectContainmentEList<EmphasisExpression>(EmphasisExpression.class, this, MyDslPackage.LINE_EXPRESSION__CELLS);
-		}
-		return cells;
-	}
+    if (cells == null)
+    {
+      cells = new EObjectContainmentEList<EmphasisExpression>(EmphasisExpression.class, this, MyDslPackage.LINE_EXPRESSION__CELLS);
+    }
+    return cells;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-		switch (featureID) {
-			case MyDslPackage.LINE_EXPRESSION__CELLS:
-				return ((InternalEList<?>)getCells()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
+    switch (featureID)
+    {
+      case MyDslPackage.LINE_EXPRESSION__CELLS:
+        return ((InternalEList<?>)getCells()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-		switch (featureID) {
-			case MyDslPackage.LINE_EXPRESSION__CELLS:
-				return getCells();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+    switch (featureID)
+    {
+      case MyDslPackage.LINE_EXPRESSION__CELLS:
+        return getCells();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-		switch (featureID) {
-			case MyDslPackage.LINE_EXPRESSION__CELLS:
-				getCells().clear();
-				getCells().addAll((Collection<? extends EmphasisExpression>)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+    switch (featureID)
+    {
+      case MyDslPackage.LINE_EXPRESSION__CELLS:
+        getCells().clear();
+        getCells().addAll((Collection<? extends EmphasisExpression>)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public void eUnset(int featureID)
   {
-		switch (featureID) {
-			case MyDslPackage.LINE_EXPRESSION__CELLS:
-				getCells().clear();
-				return;
-		}
-		super.eUnset(featureID);
-	}
+    switch (featureID)
+    {
+      case MyDslPackage.LINE_EXPRESSION__CELLS:
+        getCells().clear();
+        return;
+    }
+    super.eUnset(featureID);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public boolean eIsSet(int featureID)
   {
-		switch (featureID) {
-			case MyDslPackage.LINE_EXPRESSION__CELLS:
-				return cells != null && !cells.isEmpty();
-		}
-		return super.eIsSet(featureID);
-	}
+    switch (featureID)
+    {
+      case MyDslPackage.LINE_EXPRESSION__CELLS:
+        return cells != null && !cells.isEmpty();
+    }
+    return super.eIsSet(featureID);
+  }
 
 } //LineExpressionImpl

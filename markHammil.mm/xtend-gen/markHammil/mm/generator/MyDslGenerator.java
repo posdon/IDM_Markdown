@@ -18,6 +18,7 @@ import markHammil.mm.myDsl.Header6Expression;
 import markHammil.mm.myDsl.HeaderExpression;
 import markHammil.mm.myDsl.ImageExpression;
 import markHammil.mm.myDsl.ItalicExpression;
+import markHammil.mm.myDsl.LineExpression;
 import markHammil.mm.myDsl.LinkExpression;
 import markHammil.mm.myDsl.ListExpression;
 import markHammil.mm.myDsl.NaturalExpression;
@@ -279,20 +280,102 @@ public class MyDslGenerator extends AbstractGenerator {
   
   protected CharSequence _compile(final ListExpression listExpression) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("\t");
-    _builder.newLine();
+    {
+      boolean _isEmpty = listExpression.getContentOrdered().isEmpty();
+      boolean _not = (!_isEmpty);
+      if (_not) {
+        _builder.append("<ol>");
+        _builder.newLine();
+        {
+          EList<TextExpression> _contentOrdered = listExpression.getContentOrdered();
+          for(final TextExpression elem : _contentOrdered) {
+            _builder.append("<li>");
+            Object _compile = this.compile(elem);
+            _builder.append(_compile);
+            _builder.append("</li>");
+            _builder.newLineIfNotEmpty();
+          }
+        }
+        _builder.append("</ol>");
+        _builder.newLine();
+      }
+    }
+    {
+      boolean _isEmpty_1 = listExpression.getContentUnordered().isEmpty();
+      boolean _not_1 = (!_isEmpty_1);
+      if (_not_1) {
+        _builder.append("<ul>");
+        _builder.newLine();
+        {
+          EList<TextExpression> _contentUnordered = listExpression.getContentUnordered();
+          for(final TextExpression elem_1 : _contentUnordered) {
+            _builder.append("<li>");
+            Object _compile_1 = this.compile(elem_1);
+            _builder.append(_compile_1);
+            _builder.append("</li>");
+            _builder.newLineIfNotEmpty();
+          }
+        }
+        _builder.append("</ul>");
+        _builder.newLine();
+      }
+    }
     return _builder;
   }
   
   protected CharSequence _compile(final QuoteExpression quoteExpression) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("\t");
+    _builder.append("<p id=\"quote\">");
+    _builder.newLine();
+    {
+      EList<TextExpression> _content = quoteExpression.getContent();
+      for(final TextExpression quote : _content) {
+        Object _compile = this.compile(quote);
+        _builder.append(_compile);
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.append("</p>");
     _builder.newLine();
     return _builder;
   }
   
   protected CharSequence _compile(final TabExpression tabExpression) {
     StringConcatenation _builder = new StringConcatenation();
+    _builder.append("<table><thead><tr>");
+    Object _compile = this.compile(tabExpression.getHeader());
+    _builder.append(_compile);
+    _builder.append("</tr></thead>");
+    _builder.newLineIfNotEmpty();
+    _builder.append("<tbody>");
+    {
+      EList<LineExpression> _lines = tabExpression.getLines();
+      for(final LineExpression line : _lines) {
+        _builder.newLineIfNotEmpty();
+        _builder.append("<tr>");
+        Object _compile_1 = this.compile(line);
+        _builder.append(_compile_1);
+        _builder.append("</tr>");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.append("</tbody></table>");
+    _builder.newLine();
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final LineExpression lineExpression) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      EList<EmphasisExpression> _cells = lineExpression.getCells();
+      for(final EmphasisExpression cell : _cells) {
+        _builder.append("<td>");
+        Object _compile = this.compile(cell);
+        _builder.append(_compile);
+        _builder.append("</td>");
+        _builder.newLineIfNotEmpty();
+      }
+    }
     return _builder;
   }
   
@@ -370,6 +453,8 @@ public class MyDslGenerator extends AbstractGenerator {
       return _compile((File)italicExpression);
     } else if (italicExpression instanceof HeaderExpression) {
       return _compile((HeaderExpression)italicExpression);
+    } else if (italicExpression instanceof LineExpression) {
+      return _compile((LineExpression)italicExpression);
     } else if (italicExpression instanceof ListExpression) {
       return _compile((ListExpression)italicExpression);
     } else if (italicExpression instanceof TextExpression) {

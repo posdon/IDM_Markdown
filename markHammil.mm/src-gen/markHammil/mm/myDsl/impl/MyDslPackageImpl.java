@@ -46,940 +46,928 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
 {
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private EClass fileEClass = null;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private EClass expressionEClass = null;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private EClass breakLineExpressionEClass = null;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private EClass textExpressionEClass = null;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private EClass listExpressionEClass = null;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private EClass quoteExpressionEClass = null;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
-  private EClass refExpressionEClass = null;
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  private EClass linkExpressionEClass = null;
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  private EClass imageExpressionEClass = null;
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  private EClass videoExpressionEClass = null;
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private EClass tabExpressionEClass = null;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private EClass lineExpressionEClass = null;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
+  private EClass refExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass linkExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass imageExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass videoExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass headerExpressionEClass = null;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private EClass header1ExpressionEClass = null;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private EClass header2ExpressionEClass = null;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private EClass header3ExpressionEClass = null;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private EClass header4ExpressionEClass = null;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private EClass header5ExpressionEClass = null;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private EClass header6ExpressionEClass = null;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private EClass emphasisExpressionEClass = null;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private EClass strongExpressionEClass = null;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private EClass italicExpressionEClass = null;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private EClass scratchExpressionEClass = null;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private EClass naturalExpressionEClass = null;
 
   /**
-	 * Creates an instance of the model <b>Package</b>, registered with
-	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
-	 * package URI value.
-	 * <p>Note: the correct way to create the package is via the static
-	 * factory method {@link #init init()}, which also performs
-	 * initialization of the package, or returns the registered package,
-	 * if one already exists.
-	 * <!-- begin-user-doc -->
+   * Creates an instance of the model <b>Package</b>, registered with
+   * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+   * package URI value.
+   * <p>Note: the correct way to create the package is via the static
+   * factory method {@link #init init()}, which also performs
+   * initialization of the package, or returns the registered package,
+   * if one already exists.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see org.eclipse.emf.ecore.EPackage.Registry
-	 * @see markHammil.mm.myDsl.MyDslPackage#eNS_URI
-	 * @see #init()
-	 * @generated
-	 */
+   * @see org.eclipse.emf.ecore.EPackage.Registry
+   * @see markHammil.mm.myDsl.MyDslPackage#eNS_URI
+   * @see #init()
+   * @generated
+   */
   private MyDslPackageImpl()
   {
-		super(eNS_URI, MyDslFactory.eINSTANCE);
-	}
+    super(eNS_URI, MyDslFactory.eINSTANCE);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private static boolean isInited = false;
 
   /**
-	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
-	 * <p>This method is used to initialize {@link MyDslPackage#eINSTANCE} when that field is accessed.
-	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
-	 * <!-- begin-user-doc -->
+   * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
+   * 
+   * <p>This method is used to initialize {@link MyDslPackage#eINSTANCE} when that field is accessed.
+   * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #eNS_URI
-	 * @see #createPackageContents()
-	 * @see #initializePackageContents()
-	 * @generated
-	 */
+   * @see #eNS_URI
+   * @see #createPackageContents()
+   * @see #initializePackageContents()
+   * @generated
+   */
   public static MyDslPackage init()
   {
-		if (isInited) return (MyDslPackage)EPackage.Registry.INSTANCE.getEPackage(MyDslPackage.eNS_URI);
+    if (isInited) return (MyDslPackage)EPackage.Registry.INSTANCE.getEPackage(MyDslPackage.eNS_URI);
 
-		// Obtain or create and register package
-		MyDslPackageImpl theMyDslPackage = (MyDslPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof MyDslPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new MyDslPackageImpl());
+    // Obtain or create and register package
+    MyDslPackageImpl theMyDslPackage = (MyDslPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof MyDslPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new MyDslPackageImpl());
 
-		isInited = true;
+    isInited = true;
 
-		// Create package meta-data objects
-		theMyDslPackage.createPackageContents();
+    // Create package meta-data objects
+    theMyDslPackage.createPackageContents();
 
-		// Initialize created meta-data
-		theMyDslPackage.initializePackageContents();
+    // Initialize created meta-data
+    theMyDslPackage.initializePackageContents();
 
-		// Mark meta-data to indicate it can't be changed
-		theMyDslPackage.freeze();
+    // Mark meta-data to indicate it can't be changed
+    theMyDslPackage.freeze();
 
   
-		// Update the registry and return the package
-		EPackage.Registry.INSTANCE.put(MyDslPackage.eNS_URI, theMyDslPackage);
-		return theMyDslPackage;
-	}
+    // Update the registry and return the package
+    EPackage.Registry.INSTANCE.put(MyDslPackage.eNS_URI, theMyDslPackage);
+    return theMyDslPackage;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EClass getFile()
   {
-		return fileEClass;
-	}
+    return fileEClass;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EReference getFile_Expression()
   {
-		return (EReference)fileEClass.getEStructuralFeatures().get(0);
-	}
+    return (EReference)fileEClass.getEStructuralFeatures().get(0);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EClass getExpression()
   {
-		return expressionEClass;
-	}
+    return expressionEClass;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EReference getExpression_C()
   {
-		return (EReference)expressionEClass.getEStructuralFeatures().get(0);
-	}
+    return (EReference)expressionEClass.getEStructuralFeatures().get(0);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EClass getBreakLineExpression()
   {
-		return breakLineExpressionEClass;
-	}
+    return breakLineExpressionEClass;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EClass getTextExpression()
   {
-		return textExpressionEClass;
-	}
+    return textExpressionEClass;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EClass getListExpression()
   {
-		return listExpressionEClass;
-	}
+    return listExpressionEClass;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EReference getListExpression_ContentUnordered()
   {
-		return (EReference)listExpressionEClass.getEStructuralFeatures().get(0);
-	}
+    return (EReference)listExpressionEClass.getEStructuralFeatures().get(0);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EReference getListExpression_ContentOrdered()
   {
-		return (EReference)listExpressionEClass.getEStructuralFeatures().get(1);
-	}
+    return (EReference)listExpressionEClass.getEStructuralFeatures().get(1);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EClass getQuoteExpression()
   {
-		return quoteExpressionEClass;
-	}
+    return quoteExpressionEClass;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EReference getQuoteExpression_Content()
   {
-		return (EReference)quoteExpressionEClass.getEStructuralFeatures().get(0);
-	}
+    return (EReference)quoteExpressionEClass.getEStructuralFeatures().get(0);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EClass getRefExpression()
-  {
-		return refExpressionEClass;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EReference getRefExpression_RefName()
-  {
-		return (EReference)refExpressionEClass.getEStructuralFeatures().get(0);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EReference getRefExpression_RefContent()
-  {
-		return (EReference)refExpressionEClass.getEStructuralFeatures().get(1);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EClass getLinkExpression()
-  {
-		return linkExpressionEClass;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EReference getLinkExpression_AltText()
-  {
-		return (EReference)linkExpressionEClass.getEStructuralFeatures().get(0);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EReference getLinkExpression_LinkContent()
-  {
-		return (EReference)linkExpressionEClass.getEStructuralFeatures().get(1);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EReference getLinkExpression_RefName()
-  {
-		return (EReference)linkExpressionEClass.getEStructuralFeatures().get(2);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EClass getImageExpression()
-  {
-		return imageExpressionEClass;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EReference getImageExpression_AltText()
-  {
-		return (EReference)imageExpressionEClass.getEStructuralFeatures().get(0);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EReference getImageExpression_LinkContent()
-  {
-		return (EReference)imageExpressionEClass.getEStructuralFeatures().get(1);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EClass getVideoExpression()
-  {
-		return videoExpressionEClass;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EReference getVideoExpression_AltText()
-  {
-		return (EReference)videoExpressionEClass.getEStructuralFeatures().get(0);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EReference getVideoExpression_LinkImage()
-  {
-		return (EReference)videoExpressionEClass.getEStructuralFeatures().get(1);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EReference getVideoExpression_LinkVideo()
-  {
-		return (EReference)videoExpressionEClass.getEStructuralFeatures().get(2);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EClass getTabExpression()
   {
-		return tabExpressionEClass;
-	}
+    return tabExpressionEClass;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EReference getTabExpression_Header()
   {
-		return (EReference)tabExpressionEClass.getEStructuralFeatures().get(0);
-	}
+    return (EReference)tabExpressionEClass.getEStructuralFeatures().get(0);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EReference getTabExpression_Lines()
   {
-		return (EReference)tabExpressionEClass.getEStructuralFeatures().get(1);
-	}
+    return (EReference)tabExpressionEClass.getEStructuralFeatures().get(1);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EClass getLineExpression()
   {
-		return lineExpressionEClass;
-	}
+    return lineExpressionEClass;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EReference getLineExpression_Cells()
   {
-		return (EReference)lineExpressionEClass.getEStructuralFeatures().get(0);
-	}
+    return (EReference)lineExpressionEClass.getEStructuralFeatures().get(0);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
+  public EClass getRefExpression()
+  {
+    return refExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRefExpression_RefName()
+  {
+    return (EReference)refExpressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRefExpression_RefContent()
+  {
+    return (EReference)refExpressionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getLinkExpression()
+  {
+    return linkExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getLinkExpression_AltText()
+  {
+    return (EReference)linkExpressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getLinkExpression_LinkContent()
+  {
+    return (EReference)linkExpressionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getImageExpression()
+  {
+    return imageExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getImageExpression_AltText()
+  {
+    return (EReference)imageExpressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getImageExpression_LinkContent()
+  {
+    return (EReference)imageExpressionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getVideoExpression()
+  {
+    return videoExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getVideoExpression_AltText()
+  {
+    return (EReference)videoExpressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getVideoExpression_LinkImage()
+  {
+    return (EReference)videoExpressionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getVideoExpression_LinkVideo()
+  {
+    return (EReference)videoExpressionEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getHeaderExpression()
   {
-		return headerExpressionEClass;
-	}
+    return headerExpressionEClass;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EReference getHeaderExpression_Title()
   {
-		return (EReference)headerExpressionEClass.getEStructuralFeatures().get(0);
-	}
+    return (EReference)headerExpressionEClass.getEStructuralFeatures().get(0);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EClass getHeader1Expression()
   {
-		return header1ExpressionEClass;
-	}
+    return header1ExpressionEClass;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EClass getHeader2Expression()
   {
-		return header2ExpressionEClass;
-	}
+    return header2ExpressionEClass;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EClass getHeader3Expression()
   {
-		return header3ExpressionEClass;
-	}
+    return header3ExpressionEClass;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EClass getHeader4Expression()
   {
-		return header4ExpressionEClass;
-	}
+    return header4ExpressionEClass;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EClass getHeader5Expression()
   {
-		return header5ExpressionEClass;
-	}
+    return header5ExpressionEClass;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EClass getHeader6Expression()
   {
-		return header6ExpressionEClass;
-	}
+    return header6ExpressionEClass;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EClass getEmphasisExpression()
   {
-		return emphasisExpressionEClass;
-	}
+    return emphasisExpressionEClass;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EReference getEmphasisExpression_C()
   {
-		return (EReference)emphasisExpressionEClass.getEStructuralFeatures().get(0);
-	}
+    return (EReference)emphasisExpressionEClass.getEStructuralFeatures().get(0);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EClass getStrongExpression()
   {
-		return strongExpressionEClass;
-	}
+    return strongExpressionEClass;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EReference getStrongExpression_Content()
   {
-		return (EReference)strongExpressionEClass.getEStructuralFeatures().get(0);
-	}
+    return (EReference)strongExpressionEClass.getEStructuralFeatures().get(0);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EClass getItalicExpression()
   {
-		return italicExpressionEClass;
-	}
+    return italicExpressionEClass;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EReference getItalicExpression_Content()
   {
-		return (EReference)italicExpressionEClass.getEStructuralFeatures().get(0);
-	}
+    return (EReference)italicExpressionEClass.getEStructuralFeatures().get(0);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EClass getScratchExpression()
   {
-		return scratchExpressionEClass;
-	}
+    return scratchExpressionEClass;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EReference getScratchExpression_Content()
   {
-		return (EReference)scratchExpressionEClass.getEStructuralFeatures().get(0);
-	}
+    return (EReference)scratchExpressionEClass.getEStructuralFeatures().get(0);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EClass getNaturalExpression()
   {
-		return naturalExpressionEClass;
-	}
+    return naturalExpressionEClass;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EAttribute getNaturalExpression_Value()
   {
-		return (EAttribute)naturalExpressionEClass.getEStructuralFeatures().get(0);
-	}
+    return (EAttribute)naturalExpressionEClass.getEStructuralFeatures().get(0);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public MyDslFactory getMyDslFactory()
   {
-		return (MyDslFactory)getEFactoryInstance();
-	}
+    return (MyDslFactory)getEFactoryInstance();
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private boolean isCreated = false;
 
   /**
-	 * Creates the meta-model objects for the package.  This method is
-	 * guarded to have no affect on any invocation but its first.
-	 * <!-- begin-user-doc -->
+   * Creates the meta-model objects for the package.  This method is
+   * guarded to have no affect on any invocation but its first.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public void createPackageContents()
   {
-		if (isCreated) return;
-		isCreated = true;
+    if (isCreated) return;
+    isCreated = true;
 
-		// Create classes and their features
-		fileEClass = createEClass(FILE);
-		createEReference(fileEClass, FILE__EXPRESSION);
+    // Create classes and their features
+    fileEClass = createEClass(FILE);
+    createEReference(fileEClass, FILE__EXPRESSION);
 
-		expressionEClass = createEClass(EXPRESSION);
-		createEReference(expressionEClass, EXPRESSION__C);
+    expressionEClass = createEClass(EXPRESSION);
+    createEReference(expressionEClass, EXPRESSION__C);
 
-		breakLineExpressionEClass = createEClass(BREAK_LINE_EXPRESSION);
+    breakLineExpressionEClass = createEClass(BREAK_LINE_EXPRESSION);
 
-		textExpressionEClass = createEClass(TEXT_EXPRESSION);
+    textExpressionEClass = createEClass(TEXT_EXPRESSION);
 
-		listExpressionEClass = createEClass(LIST_EXPRESSION);
-		createEReference(listExpressionEClass, LIST_EXPRESSION__CONTENT_UNORDERED);
-		createEReference(listExpressionEClass, LIST_EXPRESSION__CONTENT_ORDERED);
+    listExpressionEClass = createEClass(LIST_EXPRESSION);
+    createEReference(listExpressionEClass, LIST_EXPRESSION__CONTENT_UNORDERED);
+    createEReference(listExpressionEClass, LIST_EXPRESSION__CONTENT_ORDERED);
 
-		quoteExpressionEClass = createEClass(QUOTE_EXPRESSION);
-		createEReference(quoteExpressionEClass, QUOTE_EXPRESSION__CONTENT);
+    quoteExpressionEClass = createEClass(QUOTE_EXPRESSION);
+    createEReference(quoteExpressionEClass, QUOTE_EXPRESSION__CONTENT);
 
-		refExpressionEClass = createEClass(REF_EXPRESSION);
-		createEReference(refExpressionEClass, REF_EXPRESSION__REF_NAME);
-		createEReference(refExpressionEClass, REF_EXPRESSION__REF_CONTENT);
+    tabExpressionEClass = createEClass(TAB_EXPRESSION);
+    createEReference(tabExpressionEClass, TAB_EXPRESSION__HEADER);
+    createEReference(tabExpressionEClass, TAB_EXPRESSION__LINES);
 
-		linkExpressionEClass = createEClass(LINK_EXPRESSION);
-		createEReference(linkExpressionEClass, LINK_EXPRESSION__ALT_TEXT);
-		createEReference(linkExpressionEClass, LINK_EXPRESSION__LINK_CONTENT);
-		createEReference(linkExpressionEClass, LINK_EXPRESSION__REF_NAME);
+    lineExpressionEClass = createEClass(LINE_EXPRESSION);
+    createEReference(lineExpressionEClass, LINE_EXPRESSION__CELLS);
 
-		imageExpressionEClass = createEClass(IMAGE_EXPRESSION);
-		createEReference(imageExpressionEClass, IMAGE_EXPRESSION__ALT_TEXT);
-		createEReference(imageExpressionEClass, IMAGE_EXPRESSION__LINK_CONTENT);
+    refExpressionEClass = createEClass(REF_EXPRESSION);
+    createEReference(refExpressionEClass, REF_EXPRESSION__REF_NAME);
+    createEReference(refExpressionEClass, REF_EXPRESSION__REF_CONTENT);
 
-		videoExpressionEClass = createEClass(VIDEO_EXPRESSION);
-		createEReference(videoExpressionEClass, VIDEO_EXPRESSION__ALT_TEXT);
-		createEReference(videoExpressionEClass, VIDEO_EXPRESSION__LINK_IMAGE);
-		createEReference(videoExpressionEClass, VIDEO_EXPRESSION__LINK_VIDEO);
+    linkExpressionEClass = createEClass(LINK_EXPRESSION);
+    createEReference(linkExpressionEClass, LINK_EXPRESSION__ALT_TEXT);
+    createEReference(linkExpressionEClass, LINK_EXPRESSION__LINK_CONTENT);
 
-		tabExpressionEClass = createEClass(TAB_EXPRESSION);
-		createEReference(tabExpressionEClass, TAB_EXPRESSION__HEADER);
-		createEReference(tabExpressionEClass, TAB_EXPRESSION__LINES);
+    imageExpressionEClass = createEClass(IMAGE_EXPRESSION);
+    createEReference(imageExpressionEClass, IMAGE_EXPRESSION__ALT_TEXT);
+    createEReference(imageExpressionEClass, IMAGE_EXPRESSION__LINK_CONTENT);
 
-		lineExpressionEClass = createEClass(LINE_EXPRESSION);
-		createEReference(lineExpressionEClass, LINE_EXPRESSION__CELLS);
+    videoExpressionEClass = createEClass(VIDEO_EXPRESSION);
+    createEReference(videoExpressionEClass, VIDEO_EXPRESSION__ALT_TEXT);
+    createEReference(videoExpressionEClass, VIDEO_EXPRESSION__LINK_IMAGE);
+    createEReference(videoExpressionEClass, VIDEO_EXPRESSION__LINK_VIDEO);
 
-		headerExpressionEClass = createEClass(HEADER_EXPRESSION);
-		createEReference(headerExpressionEClass, HEADER_EXPRESSION__TITLE);
+    headerExpressionEClass = createEClass(HEADER_EXPRESSION);
+    createEReference(headerExpressionEClass, HEADER_EXPRESSION__TITLE);
 
-		header1ExpressionEClass = createEClass(HEADER1_EXPRESSION);
+    header1ExpressionEClass = createEClass(HEADER1_EXPRESSION);
 
-		header2ExpressionEClass = createEClass(HEADER2_EXPRESSION);
+    header2ExpressionEClass = createEClass(HEADER2_EXPRESSION);
 
-		header3ExpressionEClass = createEClass(HEADER3_EXPRESSION);
+    header3ExpressionEClass = createEClass(HEADER3_EXPRESSION);
 
-		header4ExpressionEClass = createEClass(HEADER4_EXPRESSION);
+    header4ExpressionEClass = createEClass(HEADER4_EXPRESSION);
 
-		header5ExpressionEClass = createEClass(HEADER5_EXPRESSION);
+    header5ExpressionEClass = createEClass(HEADER5_EXPRESSION);
 
-		header6ExpressionEClass = createEClass(HEADER6_EXPRESSION);
+    header6ExpressionEClass = createEClass(HEADER6_EXPRESSION);
 
-		emphasisExpressionEClass = createEClass(EMPHASIS_EXPRESSION);
-		createEReference(emphasisExpressionEClass, EMPHASIS_EXPRESSION__C);
+    emphasisExpressionEClass = createEClass(EMPHASIS_EXPRESSION);
+    createEReference(emphasisExpressionEClass, EMPHASIS_EXPRESSION__C);
 
-		strongExpressionEClass = createEClass(STRONG_EXPRESSION);
-		createEReference(strongExpressionEClass, STRONG_EXPRESSION__CONTENT);
+    strongExpressionEClass = createEClass(STRONG_EXPRESSION);
+    createEReference(strongExpressionEClass, STRONG_EXPRESSION__CONTENT);
 
-		italicExpressionEClass = createEClass(ITALIC_EXPRESSION);
-		createEReference(italicExpressionEClass, ITALIC_EXPRESSION__CONTENT);
+    italicExpressionEClass = createEClass(ITALIC_EXPRESSION);
+    createEReference(italicExpressionEClass, ITALIC_EXPRESSION__CONTENT);
 
-		scratchExpressionEClass = createEClass(SCRATCH_EXPRESSION);
-		createEReference(scratchExpressionEClass, SCRATCH_EXPRESSION__CONTENT);
+    scratchExpressionEClass = createEClass(SCRATCH_EXPRESSION);
+    createEReference(scratchExpressionEClass, SCRATCH_EXPRESSION__CONTENT);
 
-		naturalExpressionEClass = createEClass(NATURAL_EXPRESSION);
-		createEAttribute(naturalExpressionEClass, NATURAL_EXPRESSION__VALUE);
-	}
+    naturalExpressionEClass = createEClass(NATURAL_EXPRESSION);
+    createEAttribute(naturalExpressionEClass, NATURAL_EXPRESSION__VALUE);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private boolean isInitialized = false;
 
   /**
-	 * Complete the initialization of the package and its meta-model.  This
-	 * method is guarded to have no affect on any invocation but its first.
-	 * <!-- begin-user-doc -->
+   * Complete the initialization of the package and its meta-model.  This
+   * method is guarded to have no affect on any invocation but its first.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public void initializePackageContents()
   {
-		if (isInitialized) return;
-		isInitialized = true;
+    if (isInitialized) return;
+    isInitialized = true;
 
-		// Initialize package
-		setName(eNAME);
-		setNsPrefix(eNS_PREFIX);
-		setNsURI(eNS_URI);
+    // Initialize package
+    setName(eNAME);
+    setNsPrefix(eNS_PREFIX);
+    setNsURI(eNS_URI);
 
-		// Create type parameters
+    // Create type parameters
 
-		// Set bounds for type parameters
+    // Set bounds for type parameters
 
-		// Add supertypes to classes
-		quoteExpressionEClass.getESuperTypes().add(this.getTextExpression());
-		linkExpressionEClass.getESuperTypes().add(this.getTextExpression());
-		imageExpressionEClass.getESuperTypes().add(this.getTextExpression());
-		videoExpressionEClass.getESuperTypes().add(this.getTextExpression());
-		tabExpressionEClass.getESuperTypes().add(this.getTextExpression());
-		header1ExpressionEClass.getESuperTypes().add(this.getHeaderExpression());
-		header2ExpressionEClass.getESuperTypes().add(this.getHeaderExpression());
-		header3ExpressionEClass.getESuperTypes().add(this.getHeaderExpression());
-		header4ExpressionEClass.getESuperTypes().add(this.getHeaderExpression());
-		header5ExpressionEClass.getESuperTypes().add(this.getHeaderExpression());
-		header6ExpressionEClass.getESuperTypes().add(this.getHeaderExpression());
-		emphasisExpressionEClass.getESuperTypes().add(this.getTextExpression());
-		strongExpressionEClass.getESuperTypes().add(this.getEmphasisExpression());
-		italicExpressionEClass.getESuperTypes().add(this.getEmphasisExpression());
-		scratchExpressionEClass.getESuperTypes().add(this.getEmphasisExpression());
-		naturalExpressionEClass.getESuperTypes().add(this.getEmphasisExpression());
+    // Add supertypes to classes
+    quoteExpressionEClass.getESuperTypes().add(this.getTextExpression());
+    tabExpressionEClass.getESuperTypes().add(this.getTextExpression());
+    linkExpressionEClass.getESuperTypes().add(this.getTextExpression());
+    imageExpressionEClass.getESuperTypes().add(this.getTextExpression());
+    videoExpressionEClass.getESuperTypes().add(this.getTextExpression());
+    header1ExpressionEClass.getESuperTypes().add(this.getHeaderExpression());
+    header2ExpressionEClass.getESuperTypes().add(this.getHeaderExpression());
+    header3ExpressionEClass.getESuperTypes().add(this.getHeaderExpression());
+    header4ExpressionEClass.getESuperTypes().add(this.getHeaderExpression());
+    header5ExpressionEClass.getESuperTypes().add(this.getHeaderExpression());
+    header6ExpressionEClass.getESuperTypes().add(this.getHeaderExpression());
+    emphasisExpressionEClass.getESuperTypes().add(this.getTextExpression());
+    strongExpressionEClass.getESuperTypes().add(this.getEmphasisExpression());
+    italicExpressionEClass.getESuperTypes().add(this.getEmphasisExpression());
+    scratchExpressionEClass.getESuperTypes().add(this.getEmphasisExpression());
+    naturalExpressionEClass.getESuperTypes().add(this.getEmphasisExpression());
 
-		// Initialize classes and features; add operations and parameters
-		initEClass(fileEClass, File.class, "File", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFile_Expression(), this.getExpression(), null, "expression", null, 0, -1, File.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    // Initialize classes and features; add operations and parameters
+    initEClass(fileEClass, File.class, "File", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getFile_Expression(), this.getExpression(), null, "expression", null, 0, -1, File.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getExpression_C(), ecorePackage.getEObject(), null, "c", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getExpression_C(), ecorePackage.getEObject(), null, "c", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(breakLineExpressionEClass, BreakLineExpression.class, "BreakLineExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(breakLineExpressionEClass, BreakLineExpression.class, "BreakLineExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(textExpressionEClass, TextExpression.class, "TextExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(textExpressionEClass, TextExpression.class, "TextExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(listExpressionEClass, ListExpression.class, "ListExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getListExpression_ContentUnordered(), this.getTextExpression(), null, "contentUnordered", null, 0, -1, ListExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getListExpression_ContentOrdered(), this.getTextExpression(), null, "contentOrdered", null, 0, -1, ListExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(listExpressionEClass, ListExpression.class, "ListExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getListExpression_ContentUnordered(), this.getTextExpression(), null, "contentUnordered", null, 0, -1, ListExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getListExpression_ContentOrdered(), this.getTextExpression(), null, "contentOrdered", null, 0, -1, ListExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(quoteExpressionEClass, QuoteExpression.class, "QuoteExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getQuoteExpression_Content(), this.getTextExpression(), null, "content", null, 0, -1, QuoteExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(quoteExpressionEClass, QuoteExpression.class, "QuoteExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getQuoteExpression_Content(), this.getTextExpression(), null, "content", null, 0, -1, QuoteExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(refExpressionEClass, RefExpression.class, "RefExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRefExpression_RefName(), this.getEmphasisExpression(), null, "refName", null, 0, 1, RefExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRefExpression_RefContent(), this.getEmphasisExpression(), null, "refContent", null, 0, 1, RefExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(tabExpressionEClass, TabExpression.class, "TabExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getTabExpression_Header(), this.getLineExpression(), null, "header", null, 0, 1, TabExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTabExpression_Lines(), this.getLineExpression(), null, "lines", null, 0, -1, TabExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(linkExpressionEClass, LinkExpression.class, "LinkExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getLinkExpression_AltText(), this.getEmphasisExpression(), null, "altText", null, 0, 1, LinkExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getLinkExpression_LinkContent(), this.getEmphasisExpression(), null, "linkContent", null, 0, 1, LinkExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getLinkExpression_RefName(), this.getEmphasisExpression(), null, "refName", null, 0, 1, LinkExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(lineExpressionEClass, LineExpression.class, "LineExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getLineExpression_Cells(), this.getEmphasisExpression(), null, "cells", null, 0, -1, LineExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(imageExpressionEClass, ImageExpression.class, "ImageExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getImageExpression_AltText(), this.getEmphasisExpression(), null, "altText", null, 0, 1, ImageExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getImageExpression_LinkContent(), this.getEmphasisExpression(), null, "linkContent", null, 0, 1, ImageExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(refExpressionEClass, RefExpression.class, "RefExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getRefExpression_RefName(), this.getEmphasisExpression(), null, "refName", null, 0, 1, RefExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRefExpression_RefContent(), this.getEmphasisExpression(), null, "refContent", null, 0, 1, RefExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(videoExpressionEClass, VideoExpression.class, "VideoExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getVideoExpression_AltText(), this.getEmphasisExpression(), null, "altText", null, 0, 1, VideoExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getVideoExpression_LinkImage(), this.getEmphasisExpression(), null, "linkImage", null, 0, 1, VideoExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getVideoExpression_LinkVideo(), this.getEmphasisExpression(), null, "linkVideo", null, 0, 1, VideoExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(linkExpressionEClass, LinkExpression.class, "LinkExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getLinkExpression_AltText(), this.getEmphasisExpression(), null, "altText", null, 0, 1, LinkExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLinkExpression_LinkContent(), this.getEmphasisExpression(), null, "linkContent", null, 0, 1, LinkExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(tabExpressionEClass, TabExpression.class, "TabExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTabExpression_Header(), this.getLineExpression(), null, "header", null, 0, 1, TabExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTabExpression_Lines(), this.getLineExpression(), null, "lines", null, 0, -1, TabExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(imageExpressionEClass, ImageExpression.class, "ImageExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getImageExpression_AltText(), this.getEmphasisExpression(), null, "altText", null, 0, 1, ImageExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getImageExpression_LinkContent(), this.getEmphasisExpression(), null, "linkContent", null, 0, 1, ImageExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(lineExpressionEClass, LineExpression.class, "LineExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getLineExpression_Cells(), this.getEmphasisExpression(), null, "cells", null, 0, -1, LineExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(videoExpressionEClass, VideoExpression.class, "VideoExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getVideoExpression_AltText(), this.getEmphasisExpression(), null, "altText", null, 0, 1, VideoExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVideoExpression_LinkImage(), this.getEmphasisExpression(), null, "linkImage", null, 0, 1, VideoExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVideoExpression_LinkVideo(), this.getEmphasisExpression(), null, "linkVideo", null, 0, 1, VideoExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(headerExpressionEClass, HeaderExpression.class, "HeaderExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getHeaderExpression_Title(), this.getEmphasisExpression(), null, "title", null, 0, -1, HeaderExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(headerExpressionEClass, HeaderExpression.class, "HeaderExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getHeaderExpression_Title(), this.getEmphasisExpression(), null, "title", null, 0, -1, HeaderExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(header1ExpressionEClass, Header1Expression.class, "Header1Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(header1ExpressionEClass, Header1Expression.class, "Header1Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(header2ExpressionEClass, Header2Expression.class, "Header2Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(header2ExpressionEClass, Header2Expression.class, "Header2Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(header3ExpressionEClass, Header3Expression.class, "Header3Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(header3ExpressionEClass, Header3Expression.class, "Header3Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(header4ExpressionEClass, Header4Expression.class, "Header4Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(header4ExpressionEClass, Header4Expression.class, "Header4Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(header5ExpressionEClass, Header5Expression.class, "Header5Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(header5ExpressionEClass, Header5Expression.class, "Header5Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(header6ExpressionEClass, Header6Expression.class, "Header6Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(header6ExpressionEClass, Header6Expression.class, "Header6Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(emphasisExpressionEClass, EmphasisExpression.class, "EmphasisExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEmphasisExpression_C(), this.getEmphasisExpression(), null, "c", null, 0, -1, EmphasisExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(emphasisExpressionEClass, EmphasisExpression.class, "EmphasisExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getEmphasisExpression_C(), this.getEmphasisExpression(), null, "c", null, 0, -1, EmphasisExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(strongExpressionEClass, StrongExpression.class, "StrongExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getStrongExpression_Content(), this.getEmphasisExpression(), null, "content", null, 0, 1, StrongExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(strongExpressionEClass, StrongExpression.class, "StrongExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getStrongExpression_Content(), this.getEmphasisExpression(), null, "content", null, 0, 1, StrongExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(italicExpressionEClass, ItalicExpression.class, "ItalicExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getItalicExpression_Content(), this.getEmphasisExpression(), null, "content", null, 0, 1, ItalicExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(italicExpressionEClass, ItalicExpression.class, "ItalicExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getItalicExpression_Content(), this.getEmphasisExpression(), null, "content", null, 0, 1, ItalicExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(scratchExpressionEClass, ScratchExpression.class, "ScratchExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getScratchExpression_Content(), this.getEmphasisExpression(), null, "content", null, 0, 1, ScratchExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(scratchExpressionEClass, ScratchExpression.class, "ScratchExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getScratchExpression_Content(), this.getEmphasisExpression(), null, "content", null, 0, 1, ScratchExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(naturalExpressionEClass, NaturalExpression.class, "NaturalExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getNaturalExpression_Value(), ecorePackage.getEString(), "value", null, 0, -1, NaturalExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(naturalExpressionEClass, NaturalExpression.class, "NaturalExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getNaturalExpression_Value(), ecorePackage.getEString(), "value", null, 0, -1, NaturalExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		// Create resource
-		createResource(eNS_URI);
-	}
+    // Create resource
+    createResource(eNS_URI);
+  }
 
 } //MyDslPackageImpl

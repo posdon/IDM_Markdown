@@ -26,19 +26,19 @@ import org.eclipse.emf.ecore.EObject;
 public interface HeaderExpression extends EObject
 {
   /**
-	 * Returns the value of the '<em><b>Title</b></em>' containment reference list.
-	 * The list contents are of type {@link markHammil.mm.myDsl.EmphasisExpression}.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Title</b></em>' containment reference list.
+   * The list contents are of type {@link markHammil.mm.myDsl.EmphasisExpression}.
+   * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Title</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Title</em>' containment reference list.
-	 * @see markHammil.mm.myDsl.MyDslPackage#getHeaderExpression_Title()
-	 * @model containment="true"
-	 * @generated
-	 */
+   * @return the value of the '<em>Title</em>' containment reference list.
+   * @see markHammil.mm.myDsl.MyDslPackage#getHeaderExpression_Title()
+   * @model containment="true"
+   * @generated
+   */
   EList<EmphasisExpression> getTitle();
 
 } // HeaderExpression

@@ -23,29 +23,29 @@ package markHammil.mm.myDsl;
 public interface ScratchExpression extends EmphasisExpression
 {
   /**
-	 * Returns the value of the '<em><b>Content</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Content</b></em>' containment reference.
+   * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Content</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Content</em>' containment reference.
-	 * @see #setContent(EmphasisExpression)
-	 * @see markHammil.mm.myDsl.MyDslPackage#getScratchExpression_Content()
-	 * @model containment="true"
-	 * @generated
-	 */
+   * @return the value of the '<em>Content</em>' containment reference.
+   * @see #setContent(EmphasisExpression)
+   * @see markHammil.mm.myDsl.MyDslPackage#getScratchExpression_Content()
+   * @model containment="true"
+   * @generated
+   */
   EmphasisExpression getContent();
 
   /**
-	 * Sets the value of the '{@link markHammil.mm.myDsl.ScratchExpression#getContent <em>Content</em>}' containment reference.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link markHammil.mm.myDsl.ScratchExpression#getContent <em>Content</em>}' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Content</em>' containment reference.
-	 * @see #getContent()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Content</em>' containment reference.
+   * @see #getContent()
+   * @generated
+   */
   void setContent(EmphasisExpression value);
 
 } // ScratchExpression

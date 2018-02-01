@@ -10,7 +10,7 @@ File:
         ;
         
 Expression:
-	(=> c=HeaderExpression | c=BreakLineExpression | c=RefExpression | c=ListExpression =>BL?) | c=TextExpression =>BL?
+	=>(c=HeaderExpression | c=BreakLineExpression | c=RefExpression | c=ListExpression =>BL?) | c=TextExpression =>BL?
 ;
 
 BreakLineExpression :
@@ -19,13 +19,13 @@ BreakLineExpression :
 ;
 
 TextExpression hidden(WS):
-	EmphasisExpression | => ( QuoteExpression | TabExpression | =>( LinkExpression | => (ImageExpression | => VideoExpression )))
+	=>( =>(=> (ImageExpression | => VideoExpression ) | LinkExpression) | TabExpression | QuoteExpression ) | EmphasisExpression 
 ;
 
 
 ListExpression returns ListExpression hidden():
 	{ListExpression}
-	(('*'|'-'|'+') WS+ contentUnordered+=TextExpression =>BL?)+ | (INT '.'WS* contentOrdered+=TextExpression =>BL?)+
+	(('*'|'-'|'+') WS+ contentUnordered+=TextExpression =>BL?)+ | (INT '.'WS+ contentOrdered+=TextExpression =>BL?)+
 ;
 
 
@@ -35,41 +35,12 @@ QuoteExpression returns QuoteExpression:
 ;
 
 
-
-
-RefExpression returns RefExpression :
-	{RefExpression}
-	=>'[' refName=NaturalExpression =>']:' (refContent=NaturalExpression)? =>BL?
-;
-
-
-LinkExpression returns LinkExpression :
-	{LinkExpression}
-	=>'[' altText=NaturalExpression =>'](' (linkContent=NaturalExpression)? =>')' =>BL? |
-	=>'[' altText=NaturalExpression =>'][' (refName=NaturalExpression)? =>']' =>BL?
-;
-
-
-ImageExpression returns ImageExpression :
-	{ImageExpression}
-	=>'![' altText=NaturalExpression =>'](' (linkContent=NaturalExpression)? =>')' =>BL?
-;
-
-
-VideoExpression returns VideoExpression :
-	{VideoExpression}
-	=>'[![' altText=NaturalExpression =>'](' (linkImage=NaturalExpression)? =>')](' (linkVideo=NaturalExpression)? =>')' =>BL?
-;
-
-
-
-
-
-
-
-
-
-
+/***************************
+ * 
+ * 	 Tab expressions
+ *	 Lines, Separation...
+ *
+ * *********************** */   
 
 TabExpression returns TabExpression :
 	{TabExpression}
@@ -86,8 +57,44 @@ LineExpression returns LineExpression :
 ;
 
 
+/***************************
+ * 
+ * 	Links expressions
+ *	 Image, Ref, Video...
+ *
+ * *********************** */   
+
+RefExpression returns RefExpression :
+	{RefExpression}
+	=>'[' refName=NaturalExpression =>']:' (refContent=NaturalExpression)? =>BL?
+;
 
 
+LinkExpression returns LinkExpression :
+	{LinkExpression}
+	=>'[' altText=NaturalExpression =>'](' (linkContent=NaturalExpression)? =>')' =>BL? //|
+	//=>'[' altText=NaturalExpression =>'][' (refName=NaturalExpression)? =>']' =>BL?
+;
+
+
+ImageExpression returns ImageExpression :
+	{ImageExpression}
+	=>'![' altText=NaturalExpression =>'](' (linkContent=NaturalExpression)? =>')' =>BL?
+;
+
+
+VideoExpression returns VideoExpression :
+	{VideoExpression}
+	=>'[![' altText=NaturalExpression =>'](' (linkImage=NaturalExpression)? =>')](' (linkVideo=NaturalExpression)? =>')' =>BL?
+;
+
+
+/***************************
+ * 
+ * 	Header expressions
+ *	 From one to six
+ *
+ * *********************** */   
 
 HeaderExpression :
 	Header1Expression | Header2Expression | Header3Expression | Header4Expression | Header5Expression | Header6Expression
@@ -124,7 +131,12 @@ Header6Expression returns Header6Expression :
         ;      
     
    
-   
+/***************************
+ * 
+ * 	Emphasis expressions
+ *	 Strong, Italic ...
+ *
+ * *********************** */   
        
 EmphasisExpression returns EmphasisExpression:
       ( => ( => c+=StrongExpression | c+=ItalicExpression | c+=ScratchExpression ) | c+=NaturalExpression )+ ;

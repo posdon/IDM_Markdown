@@ -20,24 +20,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class BreakLineExpressionImpl extends MinimalEObjectImpl.Container implements BreakLineExpression
 {
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   protected BreakLineExpressionImpl()
   {
-		super();
-	}
+    super();
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   protected EClass eStaticClass()
   {
-		return MyDslPackage.Literals.BREAK_LINE_EXPRESSION;
-	}
+    return MyDslPackage.Literals.BREAK_LINE_EXPRESSION;
+  }
 
 } //BreakLineExpressionImpl

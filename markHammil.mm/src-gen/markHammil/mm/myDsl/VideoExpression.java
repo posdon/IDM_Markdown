@@ -25,81 +25,81 @@ package markHammil.mm.myDsl;
 public interface VideoExpression extends TextExpression
 {
   /**
-	 * Returns the value of the '<em><b>Alt Text</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Alt Text</b></em>' containment reference.
+   * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Alt Text</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Alt Text</em>' containment reference.
-	 * @see #setAltText(EmphasisExpression)
-	 * @see markHammil.mm.myDsl.MyDslPackage#getVideoExpression_AltText()
-	 * @model containment="true"
-	 * @generated
-	 */
+   * @return the value of the '<em>Alt Text</em>' containment reference.
+   * @see #setAltText(EmphasisExpression)
+   * @see markHammil.mm.myDsl.MyDslPackage#getVideoExpression_AltText()
+   * @model containment="true"
+   * @generated
+   */
   EmphasisExpression getAltText();
 
   /**
-	 * Sets the value of the '{@link markHammil.mm.myDsl.VideoExpression#getAltText <em>Alt Text</em>}' containment reference.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link markHammil.mm.myDsl.VideoExpression#getAltText <em>Alt Text</em>}' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Alt Text</em>' containment reference.
-	 * @see #getAltText()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Alt Text</em>' containment reference.
+   * @see #getAltText()
+   * @generated
+   */
   void setAltText(EmphasisExpression value);
 
   /**
-	 * Returns the value of the '<em><b>Link Image</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Link Image</b></em>' containment reference.
+   * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Link Image</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Link Image</em>' containment reference.
-	 * @see #setLinkImage(EmphasisExpression)
-	 * @see markHammil.mm.myDsl.MyDslPackage#getVideoExpression_LinkImage()
-	 * @model containment="true"
-	 * @generated
-	 */
+   * @return the value of the '<em>Link Image</em>' containment reference.
+   * @see #setLinkImage(EmphasisExpression)
+   * @see markHammil.mm.myDsl.MyDslPackage#getVideoExpression_LinkImage()
+   * @model containment="true"
+   * @generated
+   */
   EmphasisExpression getLinkImage();
 
   /**
-	 * Sets the value of the '{@link markHammil.mm.myDsl.VideoExpression#getLinkImage <em>Link Image</em>}' containment reference.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link markHammil.mm.myDsl.VideoExpression#getLinkImage <em>Link Image</em>}' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Link Image</em>' containment reference.
-	 * @see #getLinkImage()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Link Image</em>' containment reference.
+   * @see #getLinkImage()
+   * @generated
+   */
   void setLinkImage(EmphasisExpression value);
 
   /**
-	 * Returns the value of the '<em><b>Link Video</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Link Video</b></em>' containment reference.
+   * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Link Video</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Link Video</em>' containment reference.
-	 * @see #setLinkVideo(EmphasisExpression)
-	 * @see markHammil.mm.myDsl.MyDslPackage#getVideoExpression_LinkVideo()
-	 * @model containment="true"
-	 * @generated
-	 */
+   * @return the value of the '<em>Link Video</em>' containment reference.
+   * @see #setLinkVideo(EmphasisExpression)
+   * @see markHammil.mm.myDsl.MyDslPackage#getVideoExpression_LinkVideo()
+   * @model containment="true"
+   * @generated
+   */
   EmphasisExpression getLinkVideo();
 
   /**
-	 * Sets the value of the '{@link markHammil.mm.myDsl.VideoExpression#getLinkVideo <em>Link Video</em>}' containment reference.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link markHammil.mm.myDsl.VideoExpression#getLinkVideo <em>Link Video</em>}' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Link Video</em>' containment reference.
-	 * @see #getLinkVideo()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Link Video</em>' containment reference.
+   * @see #getLinkVideo()
+   * @generated
+   */
   void setLinkVideo(EmphasisExpression value);
 
 } // VideoExpression

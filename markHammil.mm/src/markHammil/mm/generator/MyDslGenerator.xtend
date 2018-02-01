@@ -29,6 +29,7 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import markHammil.mm.myDsl.LineExpression
 
 /**
  * Generates code from your model files on save.
@@ -154,16 +155,44 @@ class MyDslGenerator extends AbstractGenerator {
 	
 	
 	def dispatch compile(ListExpression listExpression) '''
-	
+	«IF !listExpression.contentOrdered.isEmpty»
+	<ol>
+	«FOR elem : listExpression.contentOrdered»
+	<li>«elem.compile»</li>
+	«ENDFOR»
+	</ol>
+	«ENDIF»
+	«IF !listExpression.contentUnordered.isEmpty»
+	<ul>
+	«FOR elem : listExpression.contentUnordered»
+	<li>«elem.compile»</li>
+	«ENDFOR»
+	</ul>
+	«ENDIF»
 	'''
 	
 
 	
 	def dispatch compile(QuoteExpression quoteExpression) '''
-	
+	<p id="quote">
+	«FOR quote : quoteExpression.content»
+	«quote.compile»
+	«ENDFOR»
+	</p>
 	'''
 	
 	def dispatch compile(TabExpression tabExpression) '''
+	<table><thead><tr>«tabExpression.header.compile»</tr></thead>
+	<tbody>«FOR line : tabExpression.lines»
+	<tr>«line.compile»</tr>
+	«ENDFOR»
+	</tbody></table>
+	'''
+	
+	def dispatch compile(LineExpression lineExpression) '''
+	«FOR cell : lineExpression.cells»
+	<td>«cell.compile»</td>
+	«ENDFOR»
 	'''
 	
 	def dispatch compile(LinkExpression linkExpression) '''

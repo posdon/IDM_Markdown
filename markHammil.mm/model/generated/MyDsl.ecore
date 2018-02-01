@@ -21,6 +21,16 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" upperBound="-1"
         eType="#//TextExpression" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TabExpression" eSuperTypes="#//TextExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="header" eType="#//LineExpression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lines" upperBound="-1"
+        eType="#//LineExpression" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LineExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cells" upperBound="-1"
+        eType="#//EmphasisExpression" containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RefExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="refName" eType="#//EmphasisExpression"
         containment="true"/>
@@ -31,8 +41,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="altText" eType="#//EmphasisExpression"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="linkContent" eType="#//EmphasisExpression"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="refName" eType="#//EmphasisExpression"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ImageExpression" eSuperTypes="#//TextExpression">
@@ -48,16 +56,6 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="linkVideo" eType="#//EmphasisExpression"
         containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TabExpression" eSuperTypes="#//TextExpression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="header" eType="#//LineExpression"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="lines" upperBound="-1"
-        eType="#//LineExpression" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="LineExpression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="cells" upperBound="-1"
-        eType="#//EmphasisExpression" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="HeaderExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="title" upperBound="-1"

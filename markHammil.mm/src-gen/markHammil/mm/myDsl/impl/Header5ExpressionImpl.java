@@ -18,24 +18,24 @@ import org.eclipse.emf.ecore.EClass;
 public class Header5ExpressionImpl extends HeaderExpressionImpl implements Header5Expression
 {
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   protected Header5ExpressionImpl()
   {
-		super();
-	}
+    super();
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   protected EClass eStaticClass()
   {
-		return MyDslPackage.Literals.HEADER5_EXPRESSION;
-	}
+    return MyDslPackage.Literals.HEADER5_EXPRESSION;
+  }
 
 } //Header5ExpressionImpl
