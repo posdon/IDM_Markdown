@@ -490,16 +490,15 @@ public class MyDslGenerator extends AbstractGenerator {
   protected CharSequence _compile(final LinkExpression linkExpression) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<a href=\"");
-    _builder.newLine();
     {
       EmphasisExpression _linkContent = linkExpression.getLinkContent();
       boolean _notEquals = (!Objects.equal(_linkContent, null));
       if (_notEquals) {
         Object _compile = this.compile(linkExpression.getLinkContent());
         _builder.append(_compile);
-        _builder.newLineIfNotEmpty();
       }
     }
+    _builder.newLineIfNotEmpty();
     {
       EmphasisExpression _refName = linkExpression.getRefName();
       boolean _notEquals_1 = (!Objects.equal(_refName, null));
@@ -540,8 +539,17 @@ public class MyDslGenerator extends AbstractGenerator {
   
   protected CharSequence _compile(final VideoExpression videoExpression) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("\t");
-    _builder.newLine();
+    _builder.append("<a href=\"");
+    Object _compile = this.compile(videoExpression.getLinkVideo());
+    _builder.append(_compile);
+    _builder.append("\" target=\"_blank\"><img src=\"");
+    Object _compile_1 = this.compile(videoExpression.getLinkImage());
+    _builder.append(_compile_1);
+    _builder.append("\" alt=\"");
+    Object _compile_2 = this.compile(videoExpression.getAltText());
+    _builder.append(_compile_2);
+    _builder.append("\" width=\"240\" height=\"180\" border=\"10\" /></a>");
+    _builder.newLineIfNotEmpty();
     return _builder;
   }
   

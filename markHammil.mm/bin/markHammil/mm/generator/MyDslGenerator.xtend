@@ -273,17 +273,14 @@ class MyDslGenerator extends AbstractGenerator {
 	}
 	
 	def dispatch compile(LinkExpression linkExpression) '''
-	<a href="
-	«IF linkExpression.linkContent != null»
-	«linkExpression.linkContent.compile»
-	«ENDIF»
+	<a href="«IF linkExpression.linkContent != null»«linkExpression.linkContent.compile»«ENDIF»
 	«««»»» Should replace the ref by the associated string
 	«IF linkExpression.refName != null»
-	«IF references.get(linkExpression.refName.toString) != null»
-	references.get(linkExpression.refName.toString)
-	«ELSE»
-	linkExpression.refName.toString
-	«ENDIF»
+		«IF references.get(linkExpression.refName.toString) != null»
+			references.get(linkExpression.refName.toString)
+		«ELSE»
+			linkExpression.refName.toString
+		«ENDIF»
 	«ENDIF»
 	">«linkExpression.altText.compile»</a>
 	'''
@@ -293,7 +290,7 @@ class MyDslGenerator extends AbstractGenerator {
 	'''
 	
 	def dispatch compile(VideoExpression videoExpression) '''
-	
+	<a href="«videoExpression.linkVideo.compile»" target="_blank"><img src="«videoExpression.linkImage.compile»" alt="«videoExpression.altText.compile»" width="240" height="180" border="10" /></a>
 	'''
 	
 }
